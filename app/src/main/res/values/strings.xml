@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MenPas</string>
+    <string name="bienvenido">¡Bienvenido/a!</string>
+    <string name="introducir_datos">Introduzca sus datos</string>
+    <string name="usuario">Usuario</string>
+    <string name="email">Email</string>
+    <string name="contrasenya">Contraseña</string>
+    <string name="rep_contrasenya">Repetir contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="terminos_txt">He leído y acepto las Condiciones y Términos de Uso</string>
+    <string name="registrar">Registrar usuario</string>
+    <string name="posee_cuenta">¿Ya posee una cuenta?</string>
+    <string name="inicie_sesion">Inicie sesión aquí</string>
+    <string name="mostrar_ocultar_contrasenya">Mostrar/ocultar contraseña</string>
+</resources>
