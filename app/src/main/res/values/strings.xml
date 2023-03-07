@@ -13,4 +13,14 @@
     <string name="posee_cuenta">¿Ya posee una cuenta?</string>
     <string name="inicie_sesion">Inicie sesión aquí</string>
     <string name="mostrar_ocultar_contrasenya">Mostrar/ocultar contraseña</string>
+    <string name="modificar_datos">Modificar datos</string>
+    <string name="consultar_estadisticas">Consultar estadísticas</string>
+    <string name="registrar_centro">Registrar Centro</string>
+    <string name="cambio_de_perfil">Cambio de perfil</string>
+    <string name="dar_de_baja">Dar de baja</string>
+    <string name="modificar_datos_icono">Modificar datos icono</string>
+    <string name="consultar_estadisticas_icono">consultar estadisticas icono</string>
+    <string name="registrar_centro_icono">registrar centro icono</string>
+    <string name="cambio_de_perfil_icono">cambio de perfil icono</string>
+    <string name="dar_de_baja_icono">dar de baja icono</string>
 </resources>

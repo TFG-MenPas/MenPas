@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <ImageView
+            android:id="@+id/IVmodDatos"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/mod_datos_icon"
+            android:contentDescription="@string/modificar_datos_icono" />
+
+        <ImageView
+            android:id="@+id/IVconEstadisticas"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_below="@id/IVmodDatos"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/con_estadisticas_icon"
+            android:contentDescription="@string/consultar_estadisticas_icono" />
+
+        <ImageView
+            android:id="@+id/IVregCentro"
+            android:layout_width="24dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/IVconEstadisticas"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/reg_centro_icon"
+            android:contentDescription="@string/registrar_centro_icono" />
+
+        <ImageView
+            android:id="@+id/IVcambioPerfil"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/IVregCentro"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/cambiar_perfil_icon"
+            android:contentDescription="@string/cambio_de_perfil_icono" />
+
+        <ImageView
+            android:id="@+id/IVdarBaja"
+            android:layout_width="23dp"
+            android:layout_height="22dp"
+            android:layout_below="@id/IVcambioPerfil"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/dar_baja_icon"
+            android:contentDescription="@string/dar_de_baja_icono" />
+
+        <TextView
+            android:id="@+id/modificarDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/IVmodDatos"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:text="@string/modificar_datos"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/consultarEstadisticas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/IVconEstadisticas"
+            android:layout_below="@id/modificarDatos"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:text="@string/consultar_estadisticas"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/registrarCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/IVregCentro"
+            android:layout_below="@id/consultarEstadisticas"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:text="@string/registrar_centro"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/cambioPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/IVcambioPerfil"
+            android:layout_below="@id/registrarCentro"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:text="@string/cambio_de_perfil"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/darBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/IVdarBaja"
+            android:layout_below="@id/cambioPerfil"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:text="@string/dar_de_baja"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
