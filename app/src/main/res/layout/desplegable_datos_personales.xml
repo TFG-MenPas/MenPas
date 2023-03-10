@@ -14,7 +14,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/mod_datos_icon"
@@ -73,6 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
             android:layout_toEndOf="@id/IVmodDatos"
             android:fontFamily="@font/poppins_bold"
             android:fontWeight="700"
