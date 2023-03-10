@@ -1,5 +1,6 @@
 package com.uma.menpas
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,7 +10,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class DesplegableDatosPersonales : AppCompatActivity() {
 
-    lateinit var btnMostrarDesplegable: Button
+    private lateinit var btnMostrarDesplegable: Button
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desplegable_datos_personales)
@@ -44,7 +46,7 @@ class DesplegableDatosPersonales : AppCompatActivity() {
             dialog.show()
         }
     }
-    fun showToast(msg: String){
+    private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 }
