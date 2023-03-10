@@ -14,4 +14,5 @@
     <color name="elipseBlue">#256D85</color>
     <color name="pressed_text_color">#572364</color>
     <color name="light_grey">#F7F8F8</color>
+    <color name="transparent">#00ff0000</color>
 </resources>
