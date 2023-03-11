@@ -13,4 +13,5 @@
     <string name="posee_cuenta">¿Ya posee una cuenta?</string>
     <string name="inicie_sesion">Inicie sesión aquí</string>
     <string name="mostrar_ocultar_contrasenya">Mostrar/ocultar contraseña</string>
+    <string name="inicie_sesion_para_continuar">Inicie sesión para continuar</string>
 </resources>

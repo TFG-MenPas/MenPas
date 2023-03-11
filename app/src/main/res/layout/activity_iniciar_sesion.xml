@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/ellipse_1"
+            android:layout_width="393dp"
+            android:layout_height="567dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="-250dp"
+            android:background="@drawable/elipse2_iniciar_sesion"
+            android:rotation="90" />
+
+        <ImageView
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/menpas_logo" />
+
+        <TextView
+            android:id="@+id/textBienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/bienvenido"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textISC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="290dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/inicie_sesion_para_continuar"
+            android:textColor="@color/grey_iniciar_sesion"
+            android:textSize="16dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="315dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_edittext_inicio_sesion"
+            android:drawableLeft="@drawable/user_solid"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/usuario"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
