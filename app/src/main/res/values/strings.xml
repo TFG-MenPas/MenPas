@@ -28,4 +28,5 @@
     <string name="icono_dar_baja">icono_dar_baja</string>
     <string name="icono_modificar_datos">icono_modificar_datos</string>
     <string name="icono_registrar_centro">icono_registrar_centro</string>
+    <string name="mostrar_ocultar_rep_contrasenya">mostrar_ocultar_rep_contrasenya</string>
 </resources>

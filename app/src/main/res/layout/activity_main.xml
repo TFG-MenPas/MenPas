@@ -19,7 +19,7 @@
             android:gravity="center"
             android:text="@string/bienvenido"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:gravity="center"
             android:text="@string/introducir_datos"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="normal" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/password"
@@ -76,7 +76,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/rep_password"
@@ -97,7 +97,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/nombre"
@@ -118,7 +118,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/apellidos"
@@ -139,7 +139,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/email"
@@ -160,7 +160,7 @@
             android:paddingTop="10dp"
             android:paddingRight="12dp"
             android:paddingBottom="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/show_hide_rep_password"
@@ -171,7 +171,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="26dp"
             android:background="#FFFFFF"
-            android:contentDescription="@string/mostrar_ocultar_contrasenya"
+            android:contentDescription="@string/mostrar_ocultar_rep_contrasenya"
             android:src="@drawable/show_icon_v3" />
 
         <ImageButton
@@ -198,7 +198,7 @@
             android:fontWeight="400"
             android:text="@string/terminos_txt"
             android:textColor="@color/hintGrey"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <CheckBox
@@ -246,7 +246,7 @@
             android:paddingBottom="12dp"
             android:text="@string/registrar"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <TextView
