@@ -21,7 +21,7 @@
                 android:layout_alignParentLeft="true"
 
                 android:layout_alignParentTop="true"
-                android:background="@color/elipseBlue" />
+                android:background="@drawable/gradle_rectangle" />
 
             <View
                 android:id="@+id/bannerRectanguloBlancoCentral"
@@ -346,7 +346,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/elipseBlue"
+            android:background="@drawable/gradle_rectangle"
             app:elevation="10dp"
             app:itemIconSize="40dp"
             app:itemIconTint="@drawable/bm_items"
