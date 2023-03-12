@@ -4,10 +4,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/white">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp">
+        android:layout_marginBottom="60dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -16,220 +17,218 @@
             <View
                 android:id="@+id/bannerRectanguloAzul"
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="220dp"
                 android:layout_alignParentLeft="true"
 
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="-50dp"
-                android:background="@drawable/prueba_banner"
-                />
+                android:background="@color/elipseBlue" />
 
-            <View android:id="@+id/bannerRectanguloBlancoCentral"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_alignBottom="@+id/bannerRectanguloAzul"
+            <View
+                android:id="@+id/bannerRectanguloBlancoCentral"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignBottom="@+id/bannerRectanguloAzul"
                 android:layout_marginLeft="75dp"
                 android:layout_marginRight="75dp"
-            android:background="@android:color/white"
-            />
+                android:background="@android:color/white" />
 
-            <View android:id="@+id/bannerElipseIzquierda"
+            <View
+                android:id="@+id/bannerElipseIzquierda"
                 android:layout_width="150dp"
                 android:layout_height="80dp"
                 android:layout_alignLeft="@+id/bannerRectanguloAzul"
                 android:layout_alignBottom="@+id/bannerRectanguloAzul"
-                android:background="@drawable/elipse_banner"/>
+                android:background="@drawable/elipse_banner" />
 
-            <View android:id="@+id/bannerElipseDerecha"
+            <View
+                android:id="@+id/bannerElipseDerecha"
                 android:layout_width="150dp"
                 android:layout_height="80dp"
                 android:layout_alignRight="@+id/bannerRectanguloAzul"
                 android:layout_alignBottom="@+id/bannerRectanguloAzul"
-                android:background="@drawable/elipse_banner"/>
+                android:background="@drawable/elipse_banner" />
 
-            <View android:id="@+id/bannerRectanguloBlancoInferior"
+            <View
+                android:id="@+id/bannerRectanguloBlancoInferior"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignBottom="@+id/bannerRectanguloAzul"
-                android:background="@android:color/white"
-                />
+                android:background="@android:color/white" />
 
-            <ImageView android:id="@+id/logo"
+            <ImageView
+                android:id="@+id/logo"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_marginTop="15dp"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/logo"/>
+                android:layout_marginTop="15dp"
+                android:background="@drawable/logo" />
 
             <TextView
-                android:text="@string/datos_personales"
+                android:id="@+id/textDatosPersonales"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_bold"
                 android:fontWeight="700"
-                android:textSize="28dp"
-                android:textStyle="normal"
                 android:gravity="center"
 
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="170dp"
+                android:text="@string/datos_personales"
                 android:textColor="@color/black"
-                android:id="@+id/textDatosPersonales"/>
+                android:textSize="28dp"
+                android:textStyle="normal" />
 
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#D9D9D9"
-                android:orientation="horizontal"
                 android:layout_above="@id/RLNombreDeUsuario"
-                />
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
 
             <!--android:background="@drawable/background_border"-->
             <RelativeLayout
+                android:id="@+id/RLNombreDeUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_below="@id/textDatosPersonales"
                 android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/RLNombreDeUsuario">
+                android:minHeight="25px">
 
                 <TextView
-                    android:text="@string/nombre_de_usuario"
+                    android:id="@+id/textNombreDeUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:fontWeight="700"
+                    android:text="@string/nombre_de_usuario"
                     android:textColor="@color/black"
-                    android:id="@+id/textNombreDeUsuario"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:text="MAntonio29"
+                    android:id="@+id/NombreDeUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:fontWeight="700"
+                    android:text="MAntonio29"
                     android:textColor="@color/black"
-                    android:id="@+id/NombreDeUsuario"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <ImageButton
-                    android:src="@drawable/pencil"
-                    android:background="#FFFFFF"
+                    android:id="@+id/botonEditarNombreDeUsuario"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="40dp"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/botonEditarNombreDeUsuario"
-                    android:contentDescription="Edita tu nombre de usuario"/>
+                    android:layout_marginRight="40dp"
+                    android:background="#FFFFFF"
+                    android:contentDescription="Edita tu nombre de usuario"
+                    android:src="@drawable/pencil" />
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#D9D9D9"
-                android:orientation="horizontal"
                 android:layout_above="@id/RLNombre"
-                />
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
 
             <RelativeLayout
+                android:id="@+id/RLNombre"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
 
+                android:layout_height="100dp"
                 android:layout_below="@id/RLNombreDeUsuario"
                 android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/RLNombre">
+                android:minHeight="25px">
 
                 <TextView
-                    android:text="@string/nombre"
+                    android:id="@+id/textNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:fontWeight="700"
+                    android:text="@string/nombre"
                     android:textColor="@color/black"
-                    android:id="@+id/textNombre"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:text="Manuel Antonio"
+                    android:id="@+id/Nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:fontWeight="700"
+                    android:text="Manuel Antonio"
                     android:textColor="@color/black"
-                    android:id="@+id/Nombre"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <ImageButton
-                    android:src="@drawable/pencil"
-                    android:background="#FFFFFF"
+                    android:id="@+id/botonEditarNombre"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="40dp"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/botonEditarNombre"
-                    android:contentDescription="Edita tu nombre"/>
+                    android:layout_marginRight="40dp"
+                    android:background="#FFFFFF"
+                    android:contentDescription="Edita tu nombre"
+                    android:src="@drawable/pencil" />
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#D9D9D9"
-                android:orientation="horizontal"
                 android:layout_above="@id/RLApellidos"
-                />
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
 
             <RelativeLayout
+                android:id="@+id/RLApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_below="@id/RLNombre"
                 android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/RLApellidos">
+                android:minHeight="25px">
 
                 <TextView
-                    android:text="@string/apellidos"
+                    android:id="@+id/textApellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:fontWeight="700"
+                    android:text="@string/apellidos"
                     android:textColor="@color/black"
-                    android:id="@+id/textApellidos"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:text="Gomez Merino"
+                    android:id="@+id/Apellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:fontWeight="700"
+                    android:text="Gomez Merino"
                     android:textColor="@color/black"
-                    android:id="@+id/Apellidos"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <ImageButton
                     android:id="@+id/botonEditarApellidos"
@@ -247,116 +246,115 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#D9D9D9"
-                android:orientation="horizontal"
                 android:layout_above="@id/RLGrupo"
-                />
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
 
             <RelativeLayout
+                android:id="@+id/RLGrupo"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_below="@id/RLApellidos"
                 android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/RLGrupo">
+                android:minHeight="25px">
 
                 <TextView
-                    android:text="@string/grupo"
+                    android:id="@+id/textGrupo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:fontWeight="700"
+                    android:text="@string/grupo"
                     android:textColor="@color/black"
-                    android:id="@+id/textGrupo"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:text="GENERAL"
+                    android:id="@+id/Grupo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:fontWeight="700"
-                    android:textSize="18dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:fontWeight="700"
+                    android:text="GENERAL"
                     android:textColor="@color/black"
-                    android:id="@+id/Grupo"/>
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#D9D9D9"
-                android:orientation="horizontal"
                 android:layout_above="@id/RLSuscripcion"
-                />
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
 
             <RelativeLayout
+                android:id="@+id/RLSuscripcion"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_below="@id/RLGrupo"
                 android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/RLSuscripcion">
+                android:minHeight="25px">
 
                 <TextView
-                    android:text="@string/suscripcion_a_correo_electronico"
+                    android:id="@+id/textSuscripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:fontWeight="700"
-                    android:textSize="17dp"
-                    android:textStyle="normal"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:fontWeight="700"
+                    android:text="@string/suscripcion_a_correo_electronico"
                     android:textColor="@color/black"
-                    android:id="@+id/textSuscripcion"/>
+                    android:textSize="17dp"
+                    android:textStyle="normal" />
 
                 <CheckBox
-                    android:text=""
+                    android:id="@+id/checkBoxSuscripcion"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/checkBoxSuscripcion" />
+                    android:layout_marginTop="10dp"
+                    android:text="" />
 
             </RelativeLayout>
 
         </RelativeLayout>
 
 
-
-
     </ScrollView>
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/bottom_navigation"/>
+            android:layout_above="@+id/bottom_navigation" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            app:itemIconSize="50dp"
+            android:background="@color/elipseBlue"
             app:elevation="10dp"
+            app:itemIconSize="40dp"
+            app:itemIconTint="@drawable/bm_items"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_nav_menu"
-            android:background="@color/elipseBlue"
-            app:itemIconTint="@android:color/white"/>
+            android:focusable="false"
+
+           />
 
     </RelativeLayout>
 
