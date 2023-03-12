@@ -10,14 +10,15 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class DesplegableDatosPersonales : AppCompatActivity() {
 
-    private lateinit var btnMostrarDesplegable: Button
+    private lateinit var btnMostrarDesplegableDP: Button
+    private lateinit var btnMostrarDesplegableFaq: Button
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desplegable_datos_personales)
 
-        btnMostrarDesplegable = findViewById(R.id.idBtnShowBottomSheet)
-        btnMostrarDesplegable.setOnClickListener {
+        btnMostrarDesplegableDP = findViewById(R.id.idBtnShowBottomSheet)
+        btnMostrarDesplegableDP.setOnClickListener {
             val dialog = BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.desplegable_datos_personales, null)
 
@@ -40,6 +41,40 @@ class DesplegableDatosPersonales : AppCompatActivity() {
             val btnDarBaja = view.findViewById<RelativeLayout>(R.id.RLDarBaja)
             btnDarBaja.setOnClickListener {
                 showToast("Activity: Dar de Baja")
+            }
+
+            dialog.setContentView(view)
+            dialog.show()
+        }
+
+        btnMostrarDesplegableFaq = findViewById(R.id.idBtnShowBottomSheet2)
+        btnMostrarDesplegableFaq.setOnClickListener {
+            val dialog = BottomSheetDialog(this)
+            val view = layoutInflater.inflate(R.layout.desplegable_faq, null)
+
+            val btnDudasSugerencias = view.findViewById<RelativeLayout>(R.id.btn_dudas_sugerencias)
+            btnDudasSugerencias.setOnClickListener {
+                showToast("Activity: Dudas y sugerencias")
+            }
+            val btnAutores = view.findViewById<RelativeLayout>(R.id.btn_autores)
+            btnAutores.setOnClickListener {
+                showToast("Activity: Autores")
+            }
+            val btnAreas = view.findViewById<RelativeLayout>(R.id.btn_areas)
+            btnAreas.setOnClickListener {
+                showToast("Activity: Areas")
+            }
+            val btnFaq = view.findViewById<RelativeLayout>(R.id.btn_faq)
+            btnFaq.setOnClickListener {
+                showToast("Activity: FAQ")
+            }
+            val btnReferencias = view.findViewById<RelativeLayout>(R.id.btn_referencias)
+            btnReferencias.setOnClickListener {
+                showToast("Activity: Referencias")
+            }
+            val btnNovedades = view.findViewById<RelativeLayout>(R.id.btn_novedades)
+            btnNovedades.setOnClickListener {
+                showToast("Activity: Novedades")
             }
 
             dialog.setContentView(view)
