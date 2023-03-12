@@ -13,4 +13,8 @@
     <string name="posee_cuenta">¿Ya posee una cuenta?</string>
     <string name="inicie_sesion">Inicie sesión aquí</string>
     <string name="mostrar_ocultar_contrasenya">Mostrar/ocultar contraseña</string>
+    <string name="datos_personales">Datos personales</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="grupo">Grupo</string>
+    <string name="suscripcion_a_correo_electronico">Suscripción a correo electrónico</string>
 </resources>
