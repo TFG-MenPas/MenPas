@@ -46,6 +46,29 @@
     <string name="referencias">Referencias</string>
     <string name="icono_novedades">icono novedades</string>
     <string name="novedades">Novedades</string>
+    <!-- -->
+    <string name="edad">Edad</string>
+    <string name="genero">Género</string>
+    <string-array name="genero_array">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="deportes_array">
+        <item>Fútbol</item>
+        <item>Baloncesto</item>
+        <item>Golf</item>
+    </string-array>
+    <string-array name="nacionalidad_array">
+        <item>España</item>
+        <item>Portugal</item>
+        <item>Francia</item>
+    </string-array>
+    <string name="deporte_practicado">Deporte practicado</string>
+    <string name="repetir_email">Repetir email</string>
+    <string name="grupo">Grupo</string>
+    <string name="ano_comienzo_deporte">Año comienzo deporte</string>
+    <string name="nacionalidad">Nacionalidad</string>
 
 
 </resources>

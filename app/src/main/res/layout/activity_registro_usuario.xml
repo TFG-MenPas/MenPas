@@ -142,10 +142,79 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/editEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/apellidos"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/user_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/edad"
+            android:inputType="number"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textComienzoDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/genero"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textGenero"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectGenero"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/deporte_practicado"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDeporte"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editEdad"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="25dp"
@@ -162,16 +231,39 @@
             android:paddingBottom="10dp"
             android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/editRepEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/repetir_email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
         <ImageButton
             android:id="@+id/show_hide_rep_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="26dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="24dp"
             android:background="#FFFFFF"
             android:contentDescription="@string/mostrar_ocultar_rep_contrasenya"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:src="@drawable/show_icon_v3" />
 
         <ImageButton
@@ -180,19 +272,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/usuario"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="26dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="24dp"
             android:background="#FFFFFF"
             android:contentDescription="@string/mostrar_ocultar_contrasenya"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:src="@drawable/show_icon_v3" />
 
         <TextView
             android:id="@+id/terminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/email"
+            android:layout_below="@id/selectNacionalidad"
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
             android:clickable="true"
             android:fontFamily="@font/poppins_regular"
             android:fontWeight="400"
@@ -205,7 +300,7 @@
             android:id="@+id/checkBox_terminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/email"
+            android:layout_below="@id/selectNacionalidad"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
             android:text="" />
@@ -281,6 +376,72 @@
             android:textColor="@color/elipseBlue"
             android:textSize="16dp"
             android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/editGrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editRepEmail"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/grupo"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/textComienzoDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editGrupo"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/ano_comienzo_deporte"
+            android:inputType="number"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textNacionalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/nacionalidad"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectNacionalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNacionalidad"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
 
 
     </RelativeLayout>

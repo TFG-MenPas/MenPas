@@ -12,7 +12,7 @@
         android:theme="@style/Theme.MenPas"
         tools:targetApi="31">
         <activity
-            android:name=".DesplegableDatosPersonales"
+            android:name=".RegistroUsuario"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistroUsuario"
+            android:name=".DesplegableDatosPersonales"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
