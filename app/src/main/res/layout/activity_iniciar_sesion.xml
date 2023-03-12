@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,10 +12,10 @@
             android:id="@+id/ellipse_1"
             android:layout_width="393dp"
             android:layout_height="567dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
             android:layout_marginTop="-240dp"
             android:background="@drawable/elipse2_iniciar_sesion"
             android:rotation="90" />
@@ -39,9 +39,10 @@
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_below="@id/textUniversidad"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
             android:layout_toEndOf="@id/viewBarraVertical"
+            android:contentDescription="@string/logo_menpas"
             android:src="@drawable/menpas_logo_sombreado" />
 
         <ImageView
@@ -50,9 +51,10 @@
             android:layout_height="120dp"
             android:layout_below="@id/textUniversidad"
             android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:layout_marginRight="30dp"
             android:layout_toStartOf="@id/viewBarraVertical"
+            android:contentDescription="@string/logo_uma"
             android:src="@drawable/uma_logo" />
 
         <View
@@ -62,8 +64,7 @@
             android:layout_below="@id/textUniversidad"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:background="@color/white"
-             />
+            android:background="@color/white" />
 
         <TextView
             android:id="@+id/textBienvenido"
@@ -78,7 +79,7 @@
             android:gravity="center"
             android:text="@string/bienvenido"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="normal" />
 
         <TextView
@@ -102,7 +103,7 @@
             android:gravity="center"
             android:text="@string/inicie_sesion_para_continuar"
             android:textColor="@color/grey_iniciar_sesion"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <EditText
@@ -111,20 +112,21 @@
             android:layout_height="60dp"
             android:layout_below="@id/textISC"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="17dp"
             android:layout_marginRight="35dp"
+            android:autofillHints="AUTOFILL_HINT_USERNAME"
             android:background="@drawable/rounded_edittext_inicio_sesion"
-            android:drawableLeft="@drawable/user_solid"
+            android:drawableStart="@drawable/user_solid"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_regular"
             android:fontWeight="400"
             android:hint="@string/usuario"
             android:inputType="textEmailAddress"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="10dp"
-            android:paddingRight="12dp"
+            android:paddingEnd="12dp"
             android:paddingBottom="10dp"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/editContrasenya"
@@ -134,18 +136,19 @@
             android:layout_marginLeft="35dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="35dp"
+            android:autofillHints=""
             android:background="@drawable/rounded_edittext_inicio_sesion"
-            android:drawableLeft="@drawable/lock_solid"
+            android:drawableStart="@drawable/lock_solid"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_regular"
             android:fontWeight="400"
             android:hint="@string/contrasenya"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="15dp"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
             android:paddingTop="10dp"
-            android:paddingRight="12dp"
+            android:paddingEnd="12dp"
             android:paddingBottom="10dp"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textOlvidar"
@@ -164,9 +167,10 @@
 
         <Button
             android:id="@+id/buttonIniciar"
-            android:layout_width="match_parent"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textOlvidar"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/button"
@@ -176,7 +180,7 @@
             android:paddingBottom="12dp"
             android:text="@string/iniciar_sesion"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <TextView
@@ -212,14 +216,14 @@
             android:layout_width="23dp"
             android:layout_height="26dp"
             android:layout_below="@id/textRegistrese"
-            android:layout_marginTop="7dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="6sp"
             android:text="@string/o"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textCuestionarios"
@@ -233,7 +237,7 @@
             android:lineSpacingExtra="6sp"
             android:text="@string/cuestionarios_anonimos"
             android:textColor="@color/elipseBlue"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
     </RelativeLayout>
 
