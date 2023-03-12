@@ -26,6 +26,10 @@
     <string name="cuestionarios_anonimos">Cuestionarios anónimos</string>
     <string name="o">ó</string>
 
+    <!--Recuperar contraseña-->
+    <string name="dejenos_ayudarle">Déjenos ayudarle:</string>
+    <string name="informacion">Recibirá un correo con su nombre de usuario y su contraseña</string>
+    <string name="enviar">Enviar</string>
 
 
 </resources>
