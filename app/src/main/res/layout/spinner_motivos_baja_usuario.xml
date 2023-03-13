@@ -1,0 +1,12 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10sp"
+    android:fontFamily="@font/poppins_regular"
+    android:background="@drawable/squared_edittext"
+    android:fontWeight="400"
+    android:textSize="15sp"
+    android:drawableLeft="@drawable/question_circle_light"
+    android:drawablePadding="15sp"
+    />

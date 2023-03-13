@@ -129,8 +129,16 @@
 
     <!--Baja de usuario-->
     <string name="baja_de_usuario">Baja de usuario</string>
-    <string name="motivo_baja">Indique el motivo de su baja</string>
+    <string name="motivo_baja">Por favor, indique los motivos de su baja</string>
     <string name="darse_de_baja">Darse de baja</string>
+    <string name="aviso_baja">Recuerde que una vez dado de baja no podrá volver a acceder</string>
+    <string-array name="motivos_baja_array">
+        <item>Problemas técnicos o de acceso a la plataforma</item>
+        <item>Ya no quiero recibir más información</item>
+        <item>Ya no me interesa su contenido</item>
+        <item>Ya no uso la plataforma</item>
+        <item>Otros</item>
+    </string-array>
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
