@@ -284,7 +284,7 @@
             android:id="@+id/terminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/selectNacionalidad"
+            android:layout_below="@id/textRecibirInformacion"
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="25dp"
             android:layout_marginRight="15dp"
@@ -300,9 +300,10 @@
             android:id="@+id/checkBox_terminos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/selectNacionalidad"
+            android:layout_below="@id/checkBoxRecibirInformacion"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="19dp"
             android:text="" />
 
         <View
@@ -443,8 +444,126 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="25dp" />
 
+        <TextView
+            android:id="@+id/textEstadoCivil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectNacionalidad"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/estado_civil"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectEstadoCivil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textEstadoCivil"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textNivelEstudios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectEstadoCivil"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/nivel_estudios"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectNivelEstudios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNivelEstudios"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textHorasSemanaDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectNivelEstudios"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/horas_de_deporte_a_la_semana"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectHorasSemanaDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textHorasSemanaDeporte"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textProfesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectHorasSemanaDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/profesion"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectProfesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textProfesion"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textRecibirInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectProfesion"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/me_gustaria_recibir_informacion_por_email"
+            android:textColor="@color/hintGrey"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecibirInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectProfesion"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:text="" />
 
     </RelativeLayout>
-
 
 </ScrollView>

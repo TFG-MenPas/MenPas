@@ -87,5 +87,29 @@ class RegistroUsuario : AppCompatActivity() {
         val nacionalidadArrayAdapter = ArrayAdapter.createFromResource(this, R.array.nacionalidad_array, R.layout.spinner_list)
         nacionalidadArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
         nacionalidadSpinner.adapter = nacionalidadArrayAdapter
+
+        //Spinner estado civil
+        val estadoCivilSpinner = findViewById<Spinner>(R.id.selectEstadoCivil)
+        val estadoCivilArrayAdapter = ArrayAdapter.createFromResource(this, R.array.estadoCivil_array, R.layout.spinner_list)
+        estadoCivilArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
+        estadoCivilSpinner.adapter = estadoCivilArrayAdapter
+
+        //Spinner nivel estudios
+        val nivelEstudiosSpinner = findViewById<Spinner>(R.id.selectNivelEstudios)
+        val nivelEstudiosArrayAdapter = ArrayAdapter.createFromResource(this, R.array.nivelEstudios_array, R.layout.spinner_list)
+        nivelEstudiosArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
+        nivelEstudiosSpinner.adapter = nivelEstudiosArrayAdapter
+
+        //Spinner horas semana deporte
+        val horasSemanaDeporteSpinner = findViewById<Spinner>(R.id.selectHorasSemanaDeporte)
+        val horasSemanaDeporteArrayAdapter = ArrayAdapter.createFromResource(this, R.array.horasSemanaDeporte_array, R.layout.spinner_list)
+        horasSemanaDeporteArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
+        horasSemanaDeporteSpinner.adapter = horasSemanaDeporteArrayAdapter
+
+        //Spinner profesion
+        val profesionSpinner = findViewById<Spinner>(R.id.selectProfesion)
+        val profesionArrayAdapter = ArrayAdapter.createFromResource(this, R.array.profesion_array, R.layout.spinner_list)
+        profesionArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
+        profesionSpinner.adapter = profesionArrayAdapter
     }
 }
