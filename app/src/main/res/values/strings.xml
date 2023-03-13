@@ -1,4 +1,5 @@
 <resources>
+    <!-- Registro Usuario -->
     <string name="app_name">MenPas</string>
     <string name="bienvenido">¡Bienvenido/a!</string>
     <string name="introducir_datos">Introduzca sus datos</string>
@@ -13,4 +14,95 @@
     <string name="posee_cuenta">¿Ya posee una cuenta?</string>
     <string name="inicie_sesion">Inicie sesión aquí</string>
     <string name="mostrar_ocultar_contrasenya">Mostrar/ocultar contraseña</string>
+    <string name="mostrar_ocultar_rep_contrasenya">mostrar_ocultar_rep_contrasenya</string>
+    <string name="edad">Edad</string>
+    <string name="genero">Género</string>
+    <string-array name="genero_array">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="deportes_array">
+        <item>Fútbol</item>
+        <item>Baloncesto</item>
+        <item>Golf</item>
+    </string-array>
+    <string-array name="nacionalidad_array">
+        <item>España</item>
+        <item>Portugal</item>
+        <item>Francia</item>
+    </string-array>
+    <string-array name="estadoCivil_array">
+        <item>Soltero/a</item>
+        <item>Casado/a</item>
+        <item>Divorciado/a</item>
+        <item>Viudo/a</item>
+    </string-array>
+    <string-array name="nivelEstudios_array">
+        <item>Sin estudios</item>
+        <item>Estudios primarios (EGB o FP1)</item>
+        <item>Estudios medios (BUP o FP2)</item>
+        <item>Estudios superiores</item>
+    </string-array>
+    <string-array name="horasSemanaDeporte_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+    </string-array>
+    <string-array name="profesion_array">
+        <item>Ama de casa</item>
+        <item>Empleado cuenta ajena</item>
+        <item>Empleado cuenta propia</item>
+        <item>Enfermero</item>
+    </string-array>
+    <string name="deporte_practicado">Deporte practicado</string>
+    <string name="repetir_email">Repetir email</string>
+    <string name="grupo">Grupo</string>
+    <string name="ano_comienzo_deporte">Año comienzo deporte</string>
+    <string name="nacionalidad">Nacionalidad</string>
+    <string name="estado_civil">Estado civil</string>
+    <string name="nivel_estudios">Nivel estudios</string>
+    <string name="horas_de_deporte_a_la_semana">Horas de deporte a la semana</string>
+    <string name="profesion">Profesión</string>
+    <string name="me_gustaria_recibir_informacion_por_email">Me gustaría recibir información por email</string>
+
+    <!-- Desplegable Datos Personales-->
+    <string name="modificar_datos">Modificar datos</string>
+    <string name="consultar_estadisticas">Consultar estadísticas</string>
+    <string name="registrar_centro">Registrar Centro</string>
+    <string name="cambio_de_perfil">Cambio de perfil</string>
+    <string name="dar_de_baja">Dar de baja</string>
+    <string name="modificar_datos_icono">Modificar datos icono</string>
+    <string name="consultar_estadisticas_icono">consultar estadisticas icono</string>
+    <string name="registrar_centro_icono">registrar centro icono</string>
+    <string name="cambio_de_perfil_icono">cambio de perfil icono</string>
+    <string name="dar_de_baja_icono">dar de baja icono</string>
+    <string name="icono_cambio_perfil">icono_cambio_perfil</string>
+    <string name="icono_consultar_estadisticas">icono_consultar_estadisticas</string>
+    <string name="icono_dar_baja">icono_dar_baja</string>
+    <string name="icono_modificar_datos">icono_modificar_datos</string>
+    <string name="icono_registrar_centro">icono_registrar_centro</string>
+
+    <!-- Desplegable FAQ -->
+    <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
+    <string name="dudas_y_sugerencias">Dudas y sugerencias</string>
+    <string name="autores_icon">autores icon</string>
+    <string name="autores">Autores</string>
+    <string name="icono_areas">icono areas</string>
+    <string name="areas">Areas</string>
+    <string name="icono_faq">icono faq</string>
+    <string name="faq">FAQ</string>
+    <string name="icono_referencias">icono referencias</string>
+    <string name="referencias">Referencias</string>
+    <string name="icono_novedades">icono novedades</string>
+    <string name="novedades">Novedades</string>
+
 </resources>
