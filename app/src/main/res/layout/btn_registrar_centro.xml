@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/IVreg_centro"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/reg_centro_icon"
+        android:contentDescription="@string/icono_registrar_centro" />
+
+    <TextView
+        android:id="@+id/TVreg_centro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/IVreg_centro"
+        android:layout_toEndOf="@id/IVreg_centro"
+        android:fontFamily="@font/poppins_bold"
+        android:fontWeight="700"
+        android:text="@string/registrar_centro"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+</RelativeLayout>

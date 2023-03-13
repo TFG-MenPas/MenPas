@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/ellipse_1"
+            android:layout_width="393dp"
+            android:layout_height="567dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="-240dp"
+            android:background="@drawable/elipse2_iniciar_sesion"
+            android:rotation="90" />
+
+        <TextView
+            android:id="@+id/textUniversidad"
+            style="@style/Universidad"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/universidad_de_malaga_mayusculas"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/imageMenpas"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_below="@id/textUniversidad"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/viewBarraVertical"
+            android:contentDescription="@string/logo_menpas"
+            android:src="@drawable/menpas_logo_sombreado" />
+
+        <ImageView
+            android:id="@+id/imageUMA"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/textUniversidad"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="18dp"
+            android:layout_toStartOf="@id/viewBarraVertical"
+            android:contentDescription="@string/logo_uma"
+            android:src="@drawable/uma_logo" />
+
+        <View
+            android:id="@+id/viewBarraVertical"
+            android:layout_width="2dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/textUniversidad"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/textBienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textMenpas"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/bienvenido"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textMenpas"
+            style="@style/Menpas"
+            android:layout_width="161dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/viewBarraVertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/textISC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBienvenido"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/inicie_sesion_para_continuar"
+            android:textColor="@color/grey_iniciar_sesion"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/editUsuario"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/textISC"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="35dp"
+            android:autofillHints="AUTOFILL_HINT_USERNAME"
+            android:background="@drawable/rounded_edittext_inicio_sesion"
+            android:drawableStart="@drawable/user_solid"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/usuario"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editContrasenya"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/editUsuario"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="35dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_edittext_inicio_sesion"
+            android:drawableStart="@drawable/lock_solid"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/contrasenya"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textOlvidar"
+            android:layout_width="177dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/editContrasenya"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="12sp"
+            android:text="@string/olvido_su_contrasenya"
+            android:textColor="@color/elipseBlue"
+            android:translationY="-5.75sp" />
+
+        <Button
+            android:id="@+id/buttonIniciar"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textOlvidar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="400"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/iniciar_sesion"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textNuevo"
+            android:layout_width="324dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/buttonIniciar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/nuevo_en_la_plataforma"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textRegistrese"
+            android:layout_width="196dp"
+            android:layout_height="23dp"
+            android:layout_below="@id/textNuevo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/registrese_aqui"
+            android:textColor="@color/elipseBlue"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textO"
+            android:layout_width="23dp"
+            android:layout_height="26dp"
+            android:layout_below="@id/textRegistrese"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/o"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textCuestionarios"
+            android:layout_width="245dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/textO"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/cuestionarios_anonimos"
+            android:textColor="@color/elipseBlue"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</ScrollView>
