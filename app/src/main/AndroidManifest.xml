@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DesplegableDatosPersonales"
+            android:name=".Desplegables"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

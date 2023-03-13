@@ -8,14 +8,14 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class DesplegableDatosPersonales : AppCompatActivity() {
+class Desplegables : AppCompatActivity() {
 
     private lateinit var btnMostrarDesplegableDP: Button
     private lateinit var btnMostrarDesplegableFaq: Button
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_desplegable_datos_personales)
+        setContentView(R.layout.activity_desplegables)
 
         btnMostrarDesplegableDP = findViewById(R.id.idBtnShowBottomSheet)
         btnMostrarDesplegableDP.setOnClickListener {
