@@ -117,6 +117,10 @@
     <string name="logo_menpas">Logo de Menpas</string>
     <string name="logo_uma">Logo de la UMA</string>
 
+    <!--Recuperar contraseña-->
+    <string name="dejenos_ayudarle">Déjenos ayudarle:</string>
+    <string name="informacion">Recibirá un correo con su nombre de usuario y su contraseña</string>
+    <string name="enviar">Enviar</string>
 
 
 </resources>
