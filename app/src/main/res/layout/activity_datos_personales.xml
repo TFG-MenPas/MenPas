@@ -6,10 +6,10 @@
     android:background="@color/white">
 
     <include
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/banner"
-        layout="@layout/banner"/>
+        layout="@layout/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,7 +29,6 @@
                 android:fontFamily="@font/poppins_bold"
                 android:fontWeight="700"
                 android:gravity="center"
-
                 android:text="@string/datos_personales"
                 android:textColor="@color/black"
                 android:textSize="28dp"
@@ -286,9 +285,10 @@
 
     </ScrollView>
 
-    <include android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <include
         android:id="@+id/menu_navegacion_inferior"
-        layout="@layout/menu_navegacion_inferior"/>
+        layout="@layout/menu_navegacion_inferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

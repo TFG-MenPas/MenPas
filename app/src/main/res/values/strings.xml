@@ -17,4 +17,7 @@
     <string name="nombre_de_usuario">Nombre de usuario</string>
     <string name="grupo">Grupo</string>
     <string name="suscripcion_a_correo_electronico">Suscripción a correo electrónico</string>
+    <string name="baja_de_usuario">Baja de usuario</string>
+    <string name="motivo_baja">Indique el motivo de su baja</string>
+    <string name="darse_de_baja">Darse de baja</string>
 </resources>
