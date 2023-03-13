@@ -1,11 +1,8 @@
 <resources>
     <!-- Registro Usuario -->
     <string name="app_name">MenPas</string>
-    <string name="bienvenido">¡Bienvenido/a!</string>
     <string name="introducir_datos">Introduzca sus datos</string>
-    <string name="usuario">Usuario</string>
     <string name="email">Email</string>
-    <string name="contrasenya">Contraseña</string>
     <string name="rep_contrasenya">Repetir contraseña</string>
     <string name="nombre">Nombre</string>
     <string name="apellidos">Apellidos</string>
@@ -104,5 +101,22 @@
     <string name="referencias">Referencias</string>
     <string name="icono_novedades">icono novedades</string>
     <string name="novedades">Novedades</string>
+
+    <!--Inicio sesion-->
+    <string name="universidad_de_malaga_mayusculas">UNIVERSIDAD DE MÁLAGA</string>
+    <string name="inicie_sesion_para_continuar">Inicie sesión para continuar</string>
+    <string name="bienvenido">¡Bienvenido/a!</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasenya">Contraseña</string>
+    <string name="olvido_su_contrasenya">¿Olvidó su contraseña?</string>
+    <string name="iniciar_sesion">INICIAR SESION</string>
+    <string name="nuevo_en_la_plataforma">¿Nuevo en la plataforma?</string>
+    <string name="registrese_aqui">Regístrese aquí</string>
+    <string name="cuestionarios_anonimos">Cuestionarios anónimos</string>
+    <string name="o">ó</string>
+    <string name="logo_menpas">Logo de Menpas</string>
+    <string name="logo_uma">Logo de la UMA</string>
+
+
 
 </resources>
