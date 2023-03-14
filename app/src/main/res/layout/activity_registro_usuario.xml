@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textBienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:gravity="center"
+            android:text="@string/bienvenido"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textIntroducirDatos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBienvenido"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="700"
+            android:gravity="center"
+            android:text="@string/introducir_datos"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textIntroducirDatos"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/user_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/usuario"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/password_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/contrasenya"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rep_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/password_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/rep_contrasenya"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rep_password"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/user_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/nombre"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nombre"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/user_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/apellidos"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editEdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apellidos"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/user_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/edad"
+            android:inputType="number"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textComienzoDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/genero"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textGenero"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectGenero"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/deporte_practicado"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDeporte"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editEdad"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editRepEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/repetir_email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/show_hide_rep_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="24dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/mostrar_ocultar_rep_contrasenya"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/show_icon_v3" />
+
+        <ImageButton
+            android:id="@+id/show_hide_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="24dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/mostrar_ocultar_contrasenya"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/show_icon_v3" />
+
+        <TextView
+            android:id="@+id/terminos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textRecibirInformacion"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/terminos_txt"
+            android:textColor="@color/hintGrey"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <CheckBox
+            android:id="@+id/checkBox_terminos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBoxRecibirInformacion"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="19dp"
+            android:text="" />
+
+        <View
+            android:id="@+id/ellipse_1"
+            android:layout_width="333dp"
+            android:layout_height="253dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-240dp"
+            android:layout_marginTop="-150dp"
+            android:background="@drawable/elipse2" />
+
+        <View
+            android:id="@+id/elipse"
+            android:layout_width="158dp"
+            android:layout_height="123dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-65dp"
+            android:layout_marginTop="-85dp"
+            android:background="@drawable/elipse" />
+
+        <Button
+            android:id="@+id/buttonRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/terminos"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+
+            android:background="@drawable/button"
+            android:fontFamily="@font/poppins_bold"
+            android:fontWeight="400"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/registrar"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textPoseeCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonRegistrar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/posee_cuenta"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textInicieSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonRegistrar"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/inicie_sesion"
+            android:textColor="@color/elipseBlue"
+            android:textSize="16dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/editGrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editRepEmail"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/grupo"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/textComienzoDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editGrupo"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:hint="@string/ano_comienzo_deporte"
+            android:inputType="number"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textNacionalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/nacionalidad"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectNacionalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNacionalidad"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textEstadoCivil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectNacionalidad"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/estado_civil"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectEstadoCivil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textEstadoCivil"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textNivelEstudios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectEstadoCivil"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/nivel_estudios"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectNivelEstudios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNivelEstudios"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textHorasSemanaDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectNivelEstudios"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/horas_de_deporte_a_la_semana"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectHorasSemanaDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textHorasSemanaDeporte"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textProfesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectHorasSemanaDeporte"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/profesion"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/selectProfesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textProfesion"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="25dp" />
+
+        <TextView
+            android:id="@+id/textRecibirInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectProfesion"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:fontWeight="400"
+            android:text="@string/me_gustaria_recibir_informacion_por_email"
+            android:textColor="@color/hintGrey"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRecibirInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectProfesion"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:text="" />
+
+    </RelativeLayout>
+
+</ScrollView>

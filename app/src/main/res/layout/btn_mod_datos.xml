@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/IVmod_datos"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/mod_datos_icon"
+        android:contentDescription="@string/icono_modificar_datos" />
+
+    <TextView
+        android:id="@+id/TVmod_datos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/IVmod_datos"
+        android:layout_toEndOf="@id/IVmod_datos"
+        android:fontFamily="@font/poppins_bold"
+        android:fontWeight="700"
+        android:text="@string/modificar_datos"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+</RelativeLayout>

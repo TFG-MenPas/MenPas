@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="purple_200">#FFBB86FC</color>
-	<color name="purple_500">#FF6200EE</color>
-	<color name="purple_700">#FF3700B3</color>
-	<color name="teal_200">#FF03DAC5</color>
-	<color name="teal_700">#FF018786</color>
-	<color name="black">#FF000000</color>
-	<color name="white">#FFFFFFFF</color>
-	<color name="colorPrimary">#2c3e50</color>
-	<color name="colorPrimaryDark">#1B3147</color>
-	<color name="colorAccent">#3498db</color>
-	<color name="hintGrey">#ADA4A5</color>
-	<color name="elipseBlue">#256D85</color>
-	<color name="pressed_text_color">#572364</color>
-	<color name="light_grey">#F7F8F8</color>
-	<color name="dark_blue">#06283D</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#2c3e50</color>
+    <color name="colorPrimaryDark">#1B3147</color>
+    <color name="colorAccent">#3498db</color>
+    <color name="hintGrey">#ADA4A5</color>
+    <color name="elipseBlue">#256D85</color>
+    <color name="pressed_text_color">#572364</color>
+    <color name="light_grey">#F7F8F8</color>
+    <color name="grey_edit_text">#F0F0F0</color>
+    <color name="transparent">#00ff0000</color>
+    <color name="grey_iniciar_sesion">#7B6F72</color>
+    <color name="dark_blue">#06283D</color>
+
 </resources>
