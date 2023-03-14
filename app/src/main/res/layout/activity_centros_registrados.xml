@@ -31,16 +31,23 @@
         android:layout_below="@id/banner"
         android:background="@drawable/rounded_edittext"
         android:queryHint="Buscar centro"
+        android:iconifiedByDefault="false"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_alignParentStart="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buscarCentro"
+        android:layout_marginBottom="60dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/RVCentros"
-        android:layout_below="@id/buscarCentro"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </ScrollView>
 
     <include
         android:id="@+id/menu_navegacion_inferior"

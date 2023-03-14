@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import android.widget.SearchView
-import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.RecyclerView
 
 class CentrosRegistrados : AppCompatActivity() {
@@ -31,29 +30,15 @@ class CentrosRegistrados : AppCompatActivity() {
         adaptadorCentro.notifyDataSetChanged()
 
         barraBusqueda = findViewById(R.id.buscarCentro)
-    }
-
-
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.buscar_centro, menu)
-
-        val searchItem: MenuItem = menu.findItem(R.id.actionSearch)
-        val searchView: SearchView = searchItem.actionView as SearchView
-
-        searchView.setOnQueryTextListener(object : OnQueryTextListener,
-        android.widget.SearchView.OnQueryTextListener {
+        barraBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                filter(newText)
+            override fun onQueryTextChange(query: String): Boolean {
+                filter(query)
                 return false
             }
         })
-        return true
     }
 
     private fun filter(text: String){
