@@ -134,14 +134,31 @@
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
-	<string name="areas_trabajo">Áreas de trabajo</string>
-	<string name="autorregistro">Autorregistro</string>
-	<string name="ansiedad">Ansiedad</string>
-	<string name="autoconcepto">Autoconcepto</string>
-	<string name="atencion">Atención</string>
-	<string name="busqueda_talentos">Búsqueda de talentos</string>
-	<string name="burnout">Burnout</string>
-	<string name="dinamica_grupal">Dinámica grupal</string>
-	<string name="calidad_vida">Calidad de vida</string>
-	<string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="areas_trabajo">Áreas de trabajo</string>
+    <string name="autorregistro">Autorregistro</string>
+    <string name="ansiedad">Ansiedad</string>
+    <string name="autoconcepto">Autoconcepto</string>
+    <string name="atencion">Atención</string>
+    <string name="busqueda_talentos">Búsqueda de talentos</string>
+    <string name="burnout">Burnout</string>
+    <string name="dinamica_grupal">Dinámica grupal</string>
+    <string name="calidad_vida">Calidad de vida</string>
+    <string name="inteligencia_emocional">Inteligencia emocional</string>
+
+    <!--Autores-->
+    <string name="coordinador">Coordinador:</string>
+    <string name="jose_luis">José Luis Pastrana Brincones</string>
+    <string name="antonio_hernandez">Antonio Hernández Mendo</string>
+    <string name="email_jose_luis">pastrana@lcc.uma.es</string>
+    <string name="email_antonio">mendo@uma.es</string>
+
+    <string name="desarrolladores">Desarrolladores:</string>
+    <string name="manuel_gomez">Manuel Antonio Gómez Merino</string>
+    <string name="daniel_melero">Daniel Melero García</string>
+    <string name="miguel_cabanillas">Miguel Ángel Cabanillas Silva</string>
+    <string name="francisco_bono">Francisco María Bono Navarro</string>
+    <string name="email_manuel_gomez">manuel.agm@uma.es</string>
+    <string name="email_daniel_melero">danijlg92@uma.es</string>
+    <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
+    <string name="email_francisco_bono">franbono2@alu.uma.es</string>
 </resources>
