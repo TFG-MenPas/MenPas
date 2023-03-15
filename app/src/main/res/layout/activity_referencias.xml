@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:text="@string/referencias"
                 android:textColor="@color/black"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/primera_referencia"
                 android:textColor="@color/black"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/link_primera_referencia"
                 android:textColorLink="@color/light_blue"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/segunda_referencia"
                 android:textColor="@color/black"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -84,7 +84,7 @@
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/link_segunda_referencia"
                 android:textColorLink="@color/light_blue"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="normal" />
 
 
