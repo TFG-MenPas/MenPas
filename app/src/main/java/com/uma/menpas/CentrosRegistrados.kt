@@ -16,6 +16,7 @@ class CentrosRegistrados : AppCompatActivity() {
     lateinit var adaptadorCentro: AdaptadorCentro
     lateinit var listaCentros: ArrayList<Centro>
     lateinit var barraBusqueda: SearchView
+    lateinit var botonAñadirCentro: ImageButton
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -25,6 +26,10 @@ class CentrosRegistrados : AppCompatActivity() {
         setContentView(R.layout.activity_centros_registrados)
 
         myOnclickListener = MyOnClickListener(this)
+        botonAñadirCentro = findViewById(R.id.imageButtonAñadirCentro)
+        botonAñadirCentro.setOnClickListener {
+            showToast("Activity: Añadir Centro")
+        }
 
         centroRV = findViewById(R.id.RVCentros)
         listaCentros = ArrayList()

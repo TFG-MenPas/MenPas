@@ -24,6 +24,18 @@
         android:textColor="@color/black"
         android:textSize="24sp" />
 
+    <ImageButton
+        android:id="@+id/imageButtonAñadirCentro"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@id/textCentrosRegistrados"
+        android:layout_alignBottom="@id/textCentrosRegistrados"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/boton_cerrar_desplegable"
+        android:src="@drawable/icon_cerrar" />
+
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
