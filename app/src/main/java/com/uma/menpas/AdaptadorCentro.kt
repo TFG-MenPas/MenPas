@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.uma.menpas.CentrosRegistrados.MyOnClickListener
 
 class AdaptadorCentro(
     // on below line we are passing variables as course list and context
@@ -23,7 +24,7 @@ class AdaptadorCentro(
             R.layout.cardview_centro,
             parent, false
         )
-
+        itemView.setOnClickListener(CentrosRegistrados.myOnclickListener)
         // at last we are returning our view holder
         // class with our item View File.
         return CentroViewHolder(itemView)
