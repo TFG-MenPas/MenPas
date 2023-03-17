@@ -148,4 +148,8 @@
     <!--Centros registrados-->
     <string name="centros_registrados">Centros registrados</string>
     <string name="ver_informacion_del_centro">Ver informacion del centro</string>
+    <string name="direccion">Dirección:</string>
+    <string name="cp">CP:</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
 </resources>

@@ -1,12 +1,15 @@
 package com.uma.menpas
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.SearchView
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
@@ -52,12 +55,38 @@ class CentrosRegistrados : AppCompatActivity() {
             mostrarDetalles(v)
         }
 
+        @SuppressLint("InflateParams")
         private fun mostrarDetalles(v: View) {
-            var viewHolder : RecyclerView.ViewHolder? = context.centroRV.getChildViewHolder(v)
-            var textViewNombreCentro : TextView = viewHolder!!.itemView.findViewById<TextView?>(R.id.textNombreCentro)
-            var textNombreCentro = textViewNombreCentro.text
+            val viewHolder : RecyclerView.ViewHolder? = context.centroRV.getChildViewHolder(v)
+            val textViewNombreCentro : TextView = viewHolder!!.itemView.findViewById<TextView?>(R.id.textNombreCentro)
+            val textNombreCentro: String = textViewNombreCentro.text as String
 
-            context.showToast(textNombreCentro as String)
+            val dialog = BottomSheetDialog(context)
+            val view = context.layoutInflater.inflate(R.layout.informacion_centro, null)
+            var centro : Centro? = null
+            //Cuando conectemos por base de datos se puede hacer por id
+            for (item in context.listaCentros){
+                if (item.nombre.lowercase().equals(textNombreCentro.lowercase())){
+                     centro = item
+                }
+            }
+
+            if (centro != null){
+                val textNombreInfoCentro = view.findViewById<TextView>(R.id.textNombreInfoCentro)
+                textNombreInfoCentro.text = centro.nombre
+
+                val textPaisInfoCentro = view.findViewById<TextView>(R.id.textPaisInfoCentro)
+                textPaisInfoCentro.text = centro.pais
+
+                val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
+                btnCerrar.setOnClickListener{
+                    dialog.dismiss()
+                }
+                dialog.setCancelable(false)
+                dialog.setContentView(view)
+                dialog.show()
+            }
+
         }
     }
 

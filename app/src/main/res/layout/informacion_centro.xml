@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <TextView
+            android:id="@+id/textNombreInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="150dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_extra_bold"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textPaisInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNombreInfoCentro"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textPaisInfoCentro"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/direccion"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textCodigoPostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDireccion"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/cp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textCodigoPostal"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/telefono"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textDireccionInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/textDireccion"
+            android:layout_alignBottom="@id/textDireccion"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textCodigoPostalInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/textCodigoPostal"
+            android:layout_alignBottom="@id/textCodigoPostal"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textTelefonoInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/textTelefono"
+            android:layout_alignBottom="@id/textTelefono"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCerrarDesplegable"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_toEndOf="@id/textNombreInfoCentro"
+            android:layout_alignBottom="@id/textNombreInfoCentro"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/boton_cerrar_desplegable"
+            android:rotation="45"
+            android:src="@drawable/icon_cerrar" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
