@@ -169,4 +169,14 @@
         <item>España</item>
     </string-array>
 
+    <!--Cambio de perfil-->
+    <string name="solicitud_de_admin">Solicitud de administrador</string>
+    <string name="cuestionarios_necesarios">Cuestionarios necesarios</string>
+    <string name="titulo_investigacion">Título de la investigación</string>
+    <string name="estimacion_participantes_muestra">Estimación de participantes de la muestra</string>
+    <string name="duracion_estimada_investigacion">Duración estimada de la investigación en meses</string>
+    <string name="tipo_publicacion">Tipo de publicación</string>
+    <string name="motivo">Motivo</string>
+    <string name="observaciones">Observaciones</string>
+
 </resources>
