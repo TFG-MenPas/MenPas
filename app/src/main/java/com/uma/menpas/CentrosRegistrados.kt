@@ -31,9 +31,9 @@ class CentrosRegistrados : AppCompatActivity() {
         adaptadorCentro = AdaptadorCentro(listaCentros)
         centroRV.adapter = adaptadorCentro
 
-        listaCentros.add(Centro("Club Pumas", "España"))
-        listaCentros.add(Centro("Remadores", "Estados Unidos"))
-        listaCentros.add(Centro("ARCS Sport", "Paraguay"))
+        listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
+        listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
+        listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
 
         adaptadorCentro.notifyDataSetChanged()
 
@@ -77,6 +77,15 @@ class CentrosRegistrados : AppCompatActivity() {
 
                 val textPaisInfoCentro = view.findViewById<TextView>(R.id.textPaisInfoCentro)
                 textPaisInfoCentro.text = centro.pais
+
+                val textDireccionInfoCentro = view.findViewById<TextView>(R.id.textDireccionInfoCentro)
+                textDireccionInfoCentro.text = centro.direccion
+
+                val textCodigoPostalInfoCentro = view.findViewById<TextView>(R.id.textCodigoPostalInfoCentro)
+                textCodigoPostalInfoCentro.text = centro.codigoPostal.toString()
+
+                val textTelefonoInfoCentro = view.findViewById<TextView>(R.id.textTelefonoInfoCentro)
+                textTelefonoInfoCentro.text = centro.telefono.toString()
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
