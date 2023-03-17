@@ -166,36 +166,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/RLPais"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@id/RLTelefono"
-                android:minWidth="25px"
-                android:minHeight="25px">
-
-                <Spinner
-                    android:id="@+id/selectPais"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/selectPais"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="3.5dp"
-                    android:background="@color/line_grey"
-                    android:orientation="horizontal" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@+id/RLCodigoPostal"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/RLPais"
+                android:layout_below="@id/RLTelefono"
                 android:minWidth="25px"
                 android:minHeight="25px">
 
@@ -214,14 +188,33 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/RLPais"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/RLCodigoPostal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_marginTop="20dp">
+
+                <Spinner
+                    android:id="@+id/selectPais"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </RelativeLayout>
+
             <Button
                 android:id="@+id/buttonRegistrarCentro"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/RLCodigoPostal"
+                android:layout_below="@id/RLPais"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="25dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/button"

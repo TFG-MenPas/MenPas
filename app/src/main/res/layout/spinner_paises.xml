@@ -1,0 +1,14 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|left"
+    android:padding="10dp"
+    android:fontFamily="@font/poppins_regular"
+    android:background="@drawable/squared_edittext"
+    android:fontWeight="400"
+    android:textSize="15sp"
+    android:drawableLeft="@drawable/world"
+    android:drawablePadding="15sp"
+
+    />

@@ -163,6 +163,7 @@
     <string name="pais">País</string>
     <string name="codigo_postal">Código postal</string>
     <string-array name="paises_array">
+        <item>--Seleccione país--</item>
         <item>Afghanistán</item>
         <item>Albania</item>
         <item>Alemania</item>

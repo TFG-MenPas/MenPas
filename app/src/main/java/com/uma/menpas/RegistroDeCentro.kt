@@ -46,8 +46,8 @@ class RegistroDeCentro : AppCompatActivity() {
 
         //Spinner paises
         val paisesSpinner = findViewById<Spinner>(R.id.selectPais)
-        val paisesArrayAdapter = ArrayAdapter.createFromResource(this, R.array.paises_array, R.layout.spinner_motivos_baja_usuario)
-        paisesArrayAdapter.setDropDownViewResource(R.layout.spinner_motivos_baja_usuario)
+        val paisesArrayAdapter = ArrayAdapter.createFromResource(this, R.array.paises_array, R.layout.spinner_paises)
+        paisesArrayAdapter.setDropDownViewResource(R.layout.spinner_paises)
         paisesSpinner.adapter = paisesArrayAdapter
     }
 }
