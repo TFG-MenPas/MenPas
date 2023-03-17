@@ -142,14 +142,31 @@
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
-	<string name="areas_trabajo">Áreas de trabajo</string>
-	<string name="autorregistro">Autorregistro</string>
-	<string name="ansiedad">Ansiedad</string>
-	<string name="autoconcepto">Autoconcepto</string>
-	<string name="atencion">Atención</string>
-	<string name="busqueda_talentos">Búsqueda de talentos</string>
-	<string name="burnout">Burnout</string>
-	<string name="dinamica_grupal">Dinámica grupal</string>
-	<string name="calidad_vida">Calidad de vida</string>
-	<string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="areas_trabajo">Áreas de trabajo</string>
+    <string name="autorregistro">Autorregistro</string>
+    <string name="ansiedad">Ansiedad</string>
+    <string name="autoconcepto">Autoconcepto</string>
+    <string name="atencion">Atención</string>
+    <string name="busqueda_talentos">Búsqueda de talentos</string>
+    <string name="burnout">Burnout</string>
+    <string name="dinamica_grupal">Dinámica grupal</string>
+    <string name="calidad_vida">Calidad de vida</string>
+    <string name="inteligencia_emocional">Inteligencia emocional</string>
+
+    <!--Registro de centro-->
+    <string name="registro_de_centro">Registro de centro</string>
+    <string name="nombre_del_centro">Nombre del centro</string>
+    <string name="provincia">Provincia</string>
+    <string name="localidad">Localidad</string>
+    <string name="direccion">Dirección</string>
+    <string name="telefono">Teléfono</string>
+    <string name="pais">País</string>
+    <string name="codigo_postal">Código postal</string>
+    <string-array name="paises_array">
+        <item>Afghanistán</item>
+        <item>Albania</item>
+        <item>Alemania</item>
+        <item>España</item>
+    </string-array>
+
 </resources>
