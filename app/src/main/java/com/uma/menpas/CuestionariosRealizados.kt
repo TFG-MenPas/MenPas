@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
@@ -21,6 +22,7 @@ class CuestionariosRealizados : AppCompatActivity() {
         lateinit var myOnclickListener: MyOnClickListener
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionarios_realizados)
@@ -29,7 +31,7 @@ class CuestionariosRealizados : AppCompatActivity() {
         cuestionarioRV = findViewById(R.id.RVCuestionario)
         listaCuestionarios = ArrayList()
         adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
-        cuestionarioRV.adapter = adaptadorCuestionario
+
 
         listaCuestionarios.add(Cuestionario("Ansiedad", "CSAI2: Autoconfianza", "12/02/2023-11:07:32"))
         listaCuestionarios.add(Cuestionario("Atención", "Mondrian: Colores", "12/02/2023-11:07:32"))
@@ -37,7 +39,11 @@ class CuestionariosRealizados : AppCompatActivity() {
         listaCuestionarios.add(Cuestionario("Autorregistro", "Comida", "10/02/2023-12:08:00"))
         listaCuestionarios.add(Cuestionario("Burnout", "BSQ", "10/02/2023-11:00:00"))
 
+        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
+        cuestionarioRV.layoutAnimation = controller
         adaptadorCuestionario.notifyDataSetChanged()
+        cuestionarioRV.scheduleLayoutAnimation()
+        cuestionarioRV.adapter = adaptadorCuestionario
 
         barraBusqueda = findViewById(R.id.buscarCuestionario)
         barraBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -87,6 +93,7 @@ class CuestionariosRealizados : AppCompatActivity() {
             showToast("No se han encontrado cuestionarios")
         }else{
             adaptadorCuestionario.filterList(filteredList)
+            cuestionarioRV.scheduleLayoutAnimation()
         }
     }
 

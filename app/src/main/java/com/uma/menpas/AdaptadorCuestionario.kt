@@ -35,6 +35,7 @@ class AdaptadorCuestionario(
         // below line is to notify our adapter
         // as change in recycler view data.
         notifyDataSetChanged()
+
     }
 
     override fun onBindViewHolder(holder: AdaptadorCuestionario.CuestionarioViewHolder, position: Int) {
