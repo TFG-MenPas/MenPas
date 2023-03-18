@@ -100,6 +100,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/autorregistro"
                     android:layout_gravity="center"
@@ -132,6 +134,8 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/autoconcepto"
                     android:layout_gravity="center"
@@ -164,6 +168,8 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/busqueda_talentos"
                     android:layout_gravity="center"
@@ -173,6 +179,7 @@
                     card_view:cardCornerRadius="30dp"
                     android:translationZ="5dp"
                     android:layout_marginBottom="20dp">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -184,7 +191,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         android:fontFamily="@font/poppins_bold"
-                        android:textSize="14dp"></TextView>
+                        android:textSize="14dp" />
                     <ImageView
                         android:id="@+id/art_busquedatalentos"
                         android:layout_width="match_parent"
@@ -196,6 +203,8 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/dinamicagrupal"
                     android:layout_gravity="center"
@@ -227,6 +236,8 @@
                         app:srcCompat="@drawable/art_dinamicagrupal" />
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/inteligencia_emocional"
                     android:layout_gravity="center"
@@ -267,6 +278,8 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/ansiedad"
                 android:layout_gravity="center"
@@ -299,6 +312,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/atencion"
                 android:layout_gravity="center"
@@ -331,6 +346,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/burnout"
                 android:layout_gravity="center"
@@ -363,6 +380,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/calidadvida"
                 android:layout_gravity="center"
@@ -373,6 +392,7 @@
                 android:translationZ="5dp"
                 android:layout_marginBottom="20dp">
                 <TextView
+                    android:id="@+id/Calidadvida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/calidad_vida"
@@ -396,4 +416,9 @@
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
+    <include
+        android:id="@+id/menu_navegacion_inferior"
+        layout="@layout/menu_navegacion_inferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
