@@ -152,4 +152,8 @@
     <string name="cp">CP:</string>
     <string name="telefono">Teléfono:</string>
     <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
+
+    <!--Centros registrados-->
+    <string name="cuestionarios_realizados">Cuestionarios realizados</string>
+    <string name="ver_informacion_del_cuestionario">Ver información del cuestionario</string>
 </resources>
