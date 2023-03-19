@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import android.widget.SearchView
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +22,7 @@ class CentrosRegistrados : AppCompatActivity() {
         lateinit var myOnclickListener: MyOnClickListener
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_centros_registrados)
@@ -34,13 +36,17 @@ class CentrosRegistrados : AppCompatActivity() {
         centroRV = findViewById(R.id.RVCentros)
         listaCentros = ArrayList()
         adaptadorCentro = AdaptadorCentro(listaCentros)
-        centroRV.adapter = adaptadorCentro
+
 
         listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
         listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
         listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
 
+        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
+        centroRV.layoutAnimation = controller
         adaptadorCentro.notifyDataSetChanged()
+        centroRV.scheduleLayoutAnimation()
+        centroRV.adapter = adaptadorCentro
 
         barraBusqueda = findViewById(R.id.buscarCentro)
         barraBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -67,7 +73,7 @@ class CentrosRegistrados : AppCompatActivity() {
             val textNombreCentro: String = textViewNombreCentro.text as String
 
             val dialog = BottomSheetDialog(context)
-            val view = context.layoutInflater.inflate(R.layout.informacion_centro, null)
+            val view = context.layoutInflater.inflate(R.layout.desplegable_info_centro, null)
             var centro : Centro? = null
             //Cuando conectemos por base de datos se puede hacer por id
             for (item in context.listaCentros){
@@ -116,6 +122,7 @@ class CentrosRegistrados : AppCompatActivity() {
             Toast.makeText(this, "No se han encontrado centros", Toast.LENGTH_SHORT).show()
         }else{
             adaptadorCentro.filterList(filteredList)
+            centroRV.scheduleLayoutAnimation()
         }
     }
 
