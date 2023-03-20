@@ -21,11 +21,11 @@ class Referencias : AppCompatActivity() {
 
 
 
-        barraNavegacionInferior.getMenu().getItem(0).setCheckable(false);
+        barraNavegacionInferior.menu.getItem(0).isCheckable = false;
         barraNavegacionInferior.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_faq -> {
-                    it.setCheckable(true); // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
+                    it.isCheckable = true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
                     Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
                         .show()
                     return@setOnItemSelectedListener true
