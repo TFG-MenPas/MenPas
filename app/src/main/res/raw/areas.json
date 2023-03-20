@@ -1,0 +1,57 @@
+{
+	"Ansiedad": [
+		"CSAI2",
+		"SCAT",
+		"STAI"
+	],
+	"Atención": [
+		"Test de atención D2",
+		"Efecto Stroop",
+		"Mondrian",
+		"Procesos atencionales"
+	],
+	"Autoconcepto": [
+		"AF5",
+		"BSQ",
+		"CAF"
+	],
+	"Autorregistros": [
+		"Comida",
+		"Diario",
+		"Entrenamiento",
+		"Libre",
+		"Pensamientos negativos",
+		"Consulta de autorregistros", 
+		"Documentación"
+	],
+	"Burnout": [
+		"MASLACH",
+		"ABQ"
+	],
+	"Búsqueda de talentos": [
+		"ACSI-28",
+		"EMBU",
+		"EACS",
+		"IPSETA",
+		"MPS",
+		"RS"
+	],
+	"Calidad de vida": [
+		"SF-36",
+		"SF-12",
+		"Vitalidad subjetiva"
+	],
+	"Dinámica grupal": [
+		"CCD"
+	],
+	"Entrenamiento mental y evaluación": [
+		"Consulta psicológica",
+		"EPI",
+		"Generador de test",
+		"IPED",
+		"POMS"
+	],
+	"Inteligencia emocional": [
+		"Perfil E. Davidson"
+	]
+}
