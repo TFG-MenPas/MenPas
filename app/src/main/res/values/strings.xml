@@ -156,4 +156,20 @@
     <!--Centros registrados-->
     <string name="cuestionarios_realizados">Cuestionarios realizados</string>
     <string name="ver_informacion_del_cuestionario">Ver información del cuestionario</string>
+
+    <!--Autores-->
+    <string name="coordinador">Coordinador:</string>
+    <string name="jose_luis">José Luis Pastrana Brincones</string>
+    <string name="antonio_hernandez">Antonio Hernández Mendo</string>
+    <string name="email_jose_luis">pastrana@lcc.uma.es</string>
+    <string name="email_antonio">mendo@uma.es</string>
+    <string name="desarrolladores">Desarrolladores:</string>
+    <string name="manuel_gomez">Manuel Antonio Gómez Merino</string>
+    <string name="daniel_melero">Daniel Melero García</string>
+    <string name="miguel_cabanillas">Miguel Ángel Cabanillas Silva</string>
+    <string name="francisco_bono">Francisco María Bono Navarro</string>
+    <string name="email_manuel_gomez">manuel.agm@uma.es</string>
+    <string name="email_daniel_melero">danijlg92@uma.es</string>
+    <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
+    <string name="email_francisco_bono">franbono2@alu.uma.es</string>
 </resources>
