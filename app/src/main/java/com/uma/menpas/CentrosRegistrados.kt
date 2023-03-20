@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class CentrosRegistrados : AppCompatActivity() {
@@ -26,6 +27,8 @@ class CentrosRegistrados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_centros_registrados)
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         myOnclickListener = MyOnClickListener(this)
         botonAñadirCentro = findViewById(R.id.imageButtonAñadirCentro)
@@ -58,6 +61,28 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
+        barraNavegacionInferior.menu.getItem(0).isCheckable = false;
+        barraNavegacionInferior.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_faq -> {
+                    it.isCheckable = true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
+                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.menu_home -> {
+                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.menu_user -> {
+                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+            }
+            false
+        }
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {

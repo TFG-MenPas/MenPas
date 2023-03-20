@@ -34,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/boton_cerrar_desplegable"
-        android:src="@drawable/icon_cerrar" />
+        android:src="@drawable/icon_anyadir_centro" />
 
     <SearchView
         android:layout_width="match_parent"
@@ -46,6 +46,7 @@
         android:iconifiedByDefault="false"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentStart="true" />
     <ScrollView
         android:layout_width="match_parent"

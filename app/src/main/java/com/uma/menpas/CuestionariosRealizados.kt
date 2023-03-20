@@ -10,6 +10,7 @@ import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class CuestionariosRealizados : AppCompatActivity() {
@@ -26,6 +27,8 @@ class CuestionariosRealizados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionarios_realizados)
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         myOnclickListener = MyOnClickListener(this)
         cuestionarioRV = findViewById(R.id.RVCuestionario)
@@ -55,6 +58,28 @@ class CuestionariosRealizados : AppCompatActivity() {
                 return false
             }
         })
+        barraNavegacionInferior.menu.getItem(0).isCheckable = false;
+        barraNavegacionInferior.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_faq -> {
+                    it.isCheckable = true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
+                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.menu_home -> {
+                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.menu_user -> {
+                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnItemSelectedListener true
+                }
+            }
+            false
+        }
     }
     class MyOnClickListener(cuestionarioRealizado: CuestionariosRealizados) : View.OnClickListener {
         val context = cuestionarioRealizado

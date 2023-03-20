@@ -123,11 +123,10 @@
             android:layout_toEndOf="@id/textNombreInfoCentro"
             android:layout_alignBottom="@id/textNombreInfoCentro"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:contentDescription="@string/boton_cerrar_desplegable"
             android:rotation="45"
-            android:src="@drawable/icon_cerrar" />
+            android:src="@drawable/icon_anyadir_centro" />
 
     </RelativeLayout>
 
