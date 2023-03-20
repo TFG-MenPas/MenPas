@@ -153,6 +153,10 @@
     <string name="calidad_vida">Calidad de vida</string>
     <string name="inteligencia_emocional">Inteligencia emocional</string>
 
+    <!--Dudas y sugerencias-->
+    <string name="asunto">Asunto</string>
+    <string name="mensaje">Mensaje</string>
+
     <!--Centros registrados-->
     <string name="centros_registrados">Centros registrados</string>
     <string name="ver_informacion_del_centro">Ver informacion del centro</string>
@@ -198,6 +202,7 @@
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
     <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
     <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
     <string name="nombre_del_centro">Nombre del centro</string>
@@ -225,4 +230,5 @@
     <string name="motivo">Motivo</string>
     <string name="observaciones">Observaciones</string>
 
+    
 </resources>
