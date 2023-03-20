@@ -3,9 +3,11 @@ package com.uma.menpas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -24,6 +26,7 @@ class Area1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area1)
+        window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
         drawTitle(AREA)
@@ -51,6 +54,12 @@ class Area1 : AppCompatActivity() {
                 setTextColor(resources.getColor(R.color.dark_blue))
                 setTypeface(resources.getFont(R.font.poppins_bold))
                 setBackgroundResource(R.drawable.button_white)
+                val params = ViewGroup.MarginLayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                params.setMargins(100,0,100,0)
+                layoutParams = params
             }
             linearLayout.addView(boton)
         }

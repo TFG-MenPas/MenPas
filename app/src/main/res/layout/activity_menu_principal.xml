@@ -84,6 +84,8 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         android:layout_marginTop="230dp"
+
+        android:layout_marginBottom="60dp"
         android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,7 +98,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="25dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView

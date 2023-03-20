@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginBottom
@@ -20,7 +21,6 @@ class Area2 : AppCompatActivity() {
     companion object {
         private const val JSON_RESOURCE_NAME = "ansiedad_csai2"
         private const val JSON_RESOURCE_TYPE = "raw"
-        private const val BUTTON_TEXT_SIZE = 18f
         private const val AREA = "CSAI2"
     }
 
@@ -80,6 +80,7 @@ class Area2 : AppCompatActivity() {
             button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
             button.gravity = Gravity.CENTER
             button.isAllCaps = false
+            button.elevation = 8F
             button.setPadding(50,20,50,20)
             val params = ViewGroup.MarginLayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -88,11 +89,11 @@ class Area2 : AppCompatActivity() {
             params.setMargins(150,0,150,100)
             button.layoutParams = params
             button.marginBottom
-
+            button.setOnClickListener {
+                Toast.makeText(applicationContext, button.text as String, Toast.LENGTH_SHORT).show()
+            }
             linearLayout.addView(button)
-
         }
-
     }
 
     private fun transformJSONtoString(): String {
