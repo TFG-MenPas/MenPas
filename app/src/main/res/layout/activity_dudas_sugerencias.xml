@@ -62,7 +62,7 @@
                     android:fontWeight="700"
                     android:hint="@string/nombre"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textStyle="normal" />
             </RelativeLayout>
 
@@ -92,7 +92,7 @@
                     android:fontWeight="700"
                     android:hint="@string/email"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="normal" />
             </RelativeLayout>
 
@@ -122,7 +122,7 @@
                     android:fontWeight="700"
                     android:hint="@string/asunto"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="normal" />
             </RelativeLayout>
 
@@ -153,7 +153,7 @@
                     android:hint="@string/mensaje"
                     android:textColor="@color/black"
                     android:paddingRight="15dp"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="normal" />
             </RelativeLayout>
 
