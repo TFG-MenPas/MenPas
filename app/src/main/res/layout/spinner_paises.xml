@@ -8,7 +8,4 @@
     android:background="@drawable/squared_edittext"
     android:fontWeight="400"
     android:textSize="15sp"
-    android:drawableLeft="@drawable/world"
-    android:drawablePadding="15sp"
-
     />
