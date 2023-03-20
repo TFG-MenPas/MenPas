@@ -70,6 +70,45 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Novedades"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CambioDePerfil"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegistroDeCentro"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuPrincipal"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".RecuperarContrasenya"
             android:exported="true" >
             <intent-filter>
@@ -80,7 +119,12 @@
         </activity>
         <activity
             android:name=".BajaUsuario"
+<<<<<<< HEAD
             android:exported="true" >
+=======
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+>>>>>>> origin/novedades
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -89,7 +133,12 @@
         </activity>
         <activity
             android:name=".DatosPersonales"
+<<<<<<< HEAD
             android:exported="true" >
+=======
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+>>>>>>> origin/novedades
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

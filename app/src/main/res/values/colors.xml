@@ -19,4 +19,5 @@
     <color name="grey_iniciar_sesion">#7B6F72</color>
     <color name="dark_blue">#06283D</color>
     <color name="light_blue">#47B5FF</color>
+    <color name="line_grey">#D9D9D9</color>
 </resources>

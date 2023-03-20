@@ -2,21 +2,19 @@ package com.uma.menpas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Spinner
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class BajaUsuario : AppCompatActivity() {
+class CambioDePerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_baja_usuario)
+        setContentView(R.layout.activity_cambio_de_perfil)
 
-        val buttonDarseDeBaja = findViewById<Button>(R.id.buttonDarseDeBaja)
+        val buttonEnviar = findViewById<Button>(R.id.buttonEnviar)
 
-        buttonDarseDeBaja.setOnClickListener {
-            Toast.makeText(applicationContext, "Baja realizada con éxito", Toast.LENGTH_SHORT)
+        buttonEnviar.setOnClickListener {
+            Toast.makeText(applicationContext, "Solicitud enviada con éxito", Toast.LENGTH_SHORT)
                 .show()
         }
 
@@ -43,11 +41,5 @@ class BajaUsuario : AppCompatActivity() {
             }
             false
         }
-
-        //Spinner motivos
-        val motivosSpinner = findViewById<Spinner>(R.id.selectMotivo)
-        val motivosArrayAdapter = ArrayAdapter.createFromResource(this, R.array.motivos_baja_array, R.layout.spinner_motivos_baja_usuario)
-        motivosArrayAdapter.setDropDownViewResource(R.layout.spinner_motivos_baja_usuario)
-        motivosSpinner.adapter = motivosArrayAdapter
     }
 }
