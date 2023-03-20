@@ -26,6 +26,7 @@
         android:textStyle="normal" />
 
     <ScrollView
+        android:id="@+id/scrollGeneral"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textSugerencias"
@@ -39,7 +40,6 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/relativeGeneral"
                 android:background="#D9D9D9"
                 android:orientation="horizontal" />
 
@@ -57,8 +57,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_regular"
                     android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
                     android:fontWeight="700"
                     android:hint="@string/nombre"
                     android:textColor="@color/black"
@@ -87,8 +87,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_regular"
                     android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
                     android:fontWeight="700"
                     android:hint="@string/email"
                     android:textColor="@color/black"
@@ -117,8 +117,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_regular"
                     android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
                     android:fontWeight="700"
                     android:hint="@string/asunto"
                     android:textColor="@color/black"
@@ -147,8 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_regular"
                     android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
                     android:fontWeight="700"
                     android:hint="@string/mensaje"
                     android:textColor="@color/black"
