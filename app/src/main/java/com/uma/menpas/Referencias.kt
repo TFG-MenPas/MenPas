@@ -19,8 +19,6 @@ class Referencias : AppCompatActivity() {
         textLinkReferencia1.movementMethod = LinkMovementMethod.getInstance();
         textLinkReferencia2.movementMethod = LinkMovementMethod.getInstance();
 
-
-
         barraNavegacionInferior.menu.getItem(0).isCheckable = false;
         barraNavegacionInferior.setOnItemSelectedListener {
             when (it.itemId) {
