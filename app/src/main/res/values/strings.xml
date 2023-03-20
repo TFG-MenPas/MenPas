@@ -172,4 +172,22 @@
     <string name="email_daniel_melero">danijlg92@uma.es</string>
     <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
     <string name="email_francisco_bono">franbono2@alu.uma.es</string>
+    
+    <!--Detalles cuestionario-->
+    <string name="detalles">Detalles</string>
+    <string name="categoria">Categoría:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="tiempo">Tiempo:</string>
+    <string name="resultados">Resultados:</string>
+    <string name="icono_cerrar">icono_cerrar</string>
+    <string name="texto_de_prueba_categoria">Autoconcepto</string>
+    <string name="texto_de_prueba_tipo">AF5</string>
+    <string name="texto_de_prueba_fecha">11/02/2023-11:07:32</string>
+    <string name="texto_de_prueba_tiempo">198 segundos</string>
+    <string name="texto_de_prueba_resultados">Académico: 6,57</string>
+
+
+
+
 </resources>
