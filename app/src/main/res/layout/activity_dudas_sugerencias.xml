@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/banner"
+        layout="@layout/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textSugerencias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:fontWeight="700"
+                android:gravity="center"
+                android:text="@string/dudas_y_sugerencias"
+                android:textColor="@color/black"
+                android:textSize="28dp"
+                android:textStyle="normal" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@id/relativeNombre"
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
+
+            <!--android:background="@drawable/background_border"-->
+            <RelativeLayout
+                android:id="@+id/relativeNombre"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/textSugerencias"
+                android:minWidth="25px"
+                android:minHeight="25px">
+
+                <EditText
+                    android:id="@+id/editNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@color/transparent"
+                    android:fontWeight="700"
+                    android:hint="@string/nombre"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@id/relativeCorreo"
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/relativeCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/relativeNombre"
+                android:minWidth="25px"
+                android:minHeight="25px">
+
+                <EditText
+                    android:id="@+id/editCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@color/transparent"
+                    android:fontWeight="700"
+                    android:hint="@string/email"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@id/relativeAsunto"
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/relativeAsunto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/relativeCorreo"
+                android:minWidth="25px"
+                android:minHeight="25px">
+
+                <EditText
+                    android:id="@+id/editAsunto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@color/transparent"
+                    android:fontWeight="700"
+                    android:hint="@string/asunto"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@id/relativeMensaje"
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/relativeMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/relativeAsunto"
+                android:minWidth="25px"
+                android:minHeight="25px">
+
+                <EditText
+                    android:id="@+id/editMensaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@color/transparent"
+                    android:fontWeight="700"
+                    android:hint="@string/mensaje"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@id/buttonEnviar"
+                android:layout_marginBottom="30dp"
+                android:background="#D9D9D9"
+                android:orientation="horizontal" />
+
+            <Button
+                android:id="@+id/buttonEnviar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeMensaje"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/poppins_bold"
+                android:fontWeight="400"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/enviar"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/menu_navegacion_inferior"
+        layout="@layout/menu_navegacion_inferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
