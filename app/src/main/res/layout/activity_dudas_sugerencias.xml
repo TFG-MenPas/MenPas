@@ -152,6 +152,7 @@
                     android:fontWeight="700"
                     android:hint="@string/mensaje"
                     android:textColor="@color/black"
+                    android:paddingRight="15dp"
                     android:textSize="18sp"
                     android:textStyle="normal" />
             </RelativeLayout>
