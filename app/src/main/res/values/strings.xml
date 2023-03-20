@@ -148,4 +148,53 @@
     <!--Dudas y sugerencias-->
     <string name="asunto">Asunto</string>
     <string name="mensaje">Mensaje</string>
+
+    <!--Centros registrados-->
+    <string name="centros_registrados">Centros registrados</string>
+    <string name="ver_informacion_del_centro">Ver informacion del centro</string>
+    <string name="direccion">Dirección:</string>
+    <string name="cp">CP:</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
+
+    <!--Centros registrados-->
+    <string name="cuestionarios_realizados">Cuestionarios realizados</string>
+    <string name="ver_informacion_del_cuestionario">Ver información del cuestionario</string>
+
+    <!--Autores-->
+    <string name="coordinador">Coordinador:</string>
+    <string name="jose_luis">José Luis Pastrana Brincones</string>
+    <string name="antonio_hernandez">Antonio Hernández Mendo</string>
+    <string name="email_jose_luis">pastrana@lcc.uma.es</string>
+    <string name="email_antonio">mendo@uma.es</string>
+    <string name="desarrolladores">Desarrolladores:</string>
+    <string name="manuel_gomez">Manuel Antonio Gómez Merino</string>
+    <string name="daniel_melero">Daniel Melero García</string>
+    <string name="miguel_cabanillas">Miguel Ángel Cabanillas Silva</string>
+    <string name="francisco_bono">Francisco María Bono Navarro</string>
+    <string name="email_manuel_gomez">manuel.agm@uma.es</string>
+    <string name="email_daniel_melero">danijlg92@uma.es</string>
+    <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
+    <string name="email_francisco_bono">franbono2@alu.uma.es</string>
+    
+    <!--Detalles cuestionario-->
+    <string name="detalles">Detalles</string>
+    <string name="categoria">Categoría:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="tiempo">Tiempo:</string>
+    <string name="resultados">Resultados:</string>
+    <string name="icono_cerrar">icono_cerrar</string>
+    <string name="texto_de_prueba_categoria">Autoconcepto</string>
+    <string name="texto_de_prueba_tipo">AF5</string>
+    <string name="texto_de_prueba_fecha">11/02/2023-11:07:32</string>
+    <string name="texto_de_prueba_tiempo">198 segundos</string>
+    <string name="texto_de_prueba_resultados">Académico: 6,57</string>
+
+    <!--Referencias-->
+    <string name="primera_referencia">González Ruiz, S. L., Hernández Mendo, A., Pastrana Brincones, J.L. (2010). Herramienta software para la evaluación psicosocial de deportistas y entornos deportivos. Lecturas: EF y Deportes. Revista Digital, 15 (144), mayo.</string>
+    <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
+    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
+    <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    
 </resources>

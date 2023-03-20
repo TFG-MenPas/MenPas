@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp">
+
+    <!--on below line we are creating
+        a linear layout for grid view item-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--on below line we are creating
+            a simple text view-->
+        <TextView
+            android:id="@+id/textNombreCuestionario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="RelativeOverlap,RtlCompat" />
+
+        <TextView
+            android:id="@+id/textTipoCuestionario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/textNombreCuestionario"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:ignore="RelativeOverlap,RtlCompat" />
+
+        <TextView
+            android:id="@+id/textFechaHoraCuestionario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_below="@id/textTipoCuestionario"
+            android:layout_marginStart="10dp"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/grey_iniciar_sesion"
+            android:textSize="12sp"
+            tools:ignore="RtlCompat" />
+
+        <ImageButton
+            android:id="@+id/botonMostrarInformacionCuestionario"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="5dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/ver_informacion_del_cuestionario"
+            android:src="@drawable/flecha" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
