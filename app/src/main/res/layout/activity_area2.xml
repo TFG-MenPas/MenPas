@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Area1">
+    tools:context=".Area2">
 
     <include
         android:id="@+id/banner"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textArea"
+        android:id="@+id/textArea2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="165dp"
@@ -34,12 +34,12 @@
         android:layout_marginBottom="60dp"
         android:fillViewport="true">
         <LinearLayout
-            android:id="@+id/botones_areas"
+
+            android:id="@+id/doc_txt_area2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
         </LinearLayout>
     </ScrollView>
