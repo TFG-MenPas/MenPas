@@ -134,14 +134,26 @@
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
-	<string name="areas_trabajo">Áreas de trabajo</string>
-	<string name="autorregistro">Autorregistro</string>
-	<string name="ansiedad">Ansiedad</string>
-	<string name="autoconcepto">Autoconcepto</string>
-	<string name="atencion">Atención</string>
-	<string name="busqueda_talentos">Búsqueda de talentos</string>
-	<string name="burnout">Burnout</string>
-	<string name="dinamica_grupal">Dinámica grupal</string>
-	<string name="calidad_vida">Calidad de vida</string>
-	<string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="areas_trabajo">Áreas de trabajo</string>
+    <string name="autorregistro">Autorregistro</string>
+    <string name="ansiedad">Ansiedad</string>
+    <string name="autoconcepto">Autoconcepto</string>
+    <string name="atencion">Atención</string>
+    <string name="busqueda_talentos">Búsqueda de talentos</string>
+    <string name="burnout">Burnout</string>
+    <string name="dinamica_grupal">Dinámica grupal</string>
+    <string name="calidad_vida">Calidad de vida</string>
+    <string name="inteligencia_emocional">Inteligencia emocional</string>
+
+    <!--Detalles cuestionario-->
+    <string name="detalles">Detalles</string>
+    <string name="categoria">Categoría:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="tiempo">Tiempo:</string>
+    <string name="resultados">Resultados:</string>
+
+
+
+
 </resources>
