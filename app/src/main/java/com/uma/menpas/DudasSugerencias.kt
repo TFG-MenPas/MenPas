@@ -2,6 +2,7 @@ package com.uma.menpas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -11,6 +12,11 @@ class DudasSugerencias : AppCompatActivity() {
         setContentView(R.layout.activity_dudas_sugerencias)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val buttonEnviar = findViewById<Button>(R.id.buttonEnviar)
+
+        buttonEnviar.setOnClickListener {
+            Toast.makeText(this, "Botón enviar", Toast.LENGTH_SHORT).show()
+        }
 
         barraNavegacionInferior.menu.getItem(0).isCheckable =
             false; // LINEA PROVISIONAL PARA QUITAR EL FOCUS INICIAL DEL PRIMER ELEMENTO
