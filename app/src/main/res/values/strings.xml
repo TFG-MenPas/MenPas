@@ -184,7 +184,7 @@
     <string name="email_daniel_melero">danijlg92@uma.es</string>
     <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
     <string name="email_francisco_bono">franbono2@alu.uma.es</string>
-    
+
     <!--Detalles cuestionario-->
     <string name="detalles">Detalles</string>
     <string name="categoria">Categoría:</string>
@@ -204,7 +204,7 @@
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
     <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
     <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
-    
+
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
     <string name="nombre_del_centro">Nombre del centro</string>
@@ -231,4 +231,8 @@
     <string name="tipo_publicacion">Tipo de publicación</string>
     <string name="motivo">Motivo</string>
     <string name="observaciones">Observaciones</string>
+
+    <!--Cuestionarios genericos-->
+    <string name="anterior">Anterior</string>
+    <string name="boton_cerrar_cuestionario">boton cerrar cuestionario</string>
 </resources>

@@ -35,7 +35,7 @@
         android:background="#FFFFFF"
         android:rotation="45"
         android:contentDescription="@string/icono_cerrar"
-        android:src="@drawable/icon_anyadir_centro" />
+        android:src="@drawable/icon_cruz" />
 
     <ScrollView
         android:layout_width="match_parent"

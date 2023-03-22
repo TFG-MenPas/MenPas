@@ -34,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/boton_cerrar_desplegable"
-        android:src="@drawable/icon_anyadir_centro" />
+        android:src="@drawable/icon_cruz" />
 
     <SearchView
         android:layout_width="match_parent"

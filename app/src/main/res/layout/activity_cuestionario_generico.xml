@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <View
+        android:id="@+id/bannerRectanguloAzul"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/gradle_rectangle" />
+
+    <View
+        android:id="@+id/ellipse_45"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-160dp"
+        android:background="@drawable/elipse_45" />
+
+    <View
+        android:id="@+id/ellipse_46"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="125dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-130dp"
+        android:background="@drawable/elipse_46" />
+
+    <include
+        android:id="@+id/btn_anterior"
+        layout="@layout/btn_anterior"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/ellipse_45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCerrarDesplegable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/btn_anterior"
+        android:background="#9CD3ED"
+        android:contentDescription="@string/boton_cerrar_cuestionario"
+        android:rotation="45"
+        android:src="@drawable/icon_cruz" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_anterior"
+        android:layout_toEndOf="@id/btn_anterior"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/numeroPreguntaActual"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDe"
+        android:layout_toEndOf="@id/numeroPreguntaActual"
+        android:layout_alignBottom="@id/numeroPreguntaActual"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="de" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numeroPreguntas"
+        android:layout_toEndOf="@id/textDe"
+        android:layout_alignBottom="@id/textDe"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="30" />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarCuestionario"
+        android:layout_below="@id/textDe"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/custom_progressbar"
+        android:max="30"
+        android:progress="4"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:id="@+id/textPregunta"
+        android:layout_below="@id/progressBarCuestionario"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Me doy cuenta de cuándo alguien está actuando de un modo que parece estar fuera de lugar, como cuando se comporta de manera demasiado informal en el trabajo." />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bannerRectanguloAzul">
+
+        <RelativeLayout
+            android:id="@+id/dynamic_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/menu_navegacion_inferior"
+        layout="@layout/menu_navegacion_inferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
