@@ -235,4 +235,5 @@
     <!--Cuestionarios genericos-->
     <string name="anterior">Anterior</string>
     <string name="boton_cerrar_cuestionario">boton cerrar cuestionario</string>
+    <string name="siguiente">Siguiente</string>
 </resources>
