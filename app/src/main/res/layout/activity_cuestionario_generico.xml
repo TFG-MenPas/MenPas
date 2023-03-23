@@ -121,8 +121,8 @@
 
         <RelativeLayout
             android:id="@+id/RLDynamicContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
     </ScrollView>
@@ -131,7 +131,7 @@
         android:id="@+id/lineaGris"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_above="@+id/menu_navegacion_inferior"
+        android:layout_alignParentBottom="true"
         android:background="@color/line_grey"
         android:layout_marginBottom="100dp"
         android:orientation="horizontal" />
@@ -140,7 +140,7 @@
         android:id="@+id/buttonSiguiente"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/menu_navegacion_inferior"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:background="@drawable/button"
@@ -152,12 +152,5 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="normal" />
-
-    <include
-        android:id="@+id/menu_navegacion_inferior"
-        layout="@layout/menu_navegacion_inferior"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp" />
 
 </RelativeLayout>
