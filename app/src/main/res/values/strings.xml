@@ -236,4 +236,6 @@
     <string name="anterior">Anterior</string>
     <string name="boton_cerrar_cuestionario">boton cerrar cuestionario</string>
     <string name="siguiente">Siguiente</string>
+    <string name="si">Sí</string>
+    <string name="no">no</string>
 </resources>

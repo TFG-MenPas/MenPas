@@ -3,6 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    
+    <Button
+        android:id="@+id/buttonSi"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_checkbox"
+        android:drawableEnd="@drawable/icon_unchecked"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/si"
+        android:textAlignment="textStart"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/buttonNo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonSi"
+        android:background="@drawable/rounded_checkbox_checked"
+        android:drawableEnd="@drawable/icon_checked"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/no"
+        android:textAlignment="textStart"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp"
+        android:textStyle="normal" />
+
 
 </RelativeLayout>
