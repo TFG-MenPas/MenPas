@@ -23,10 +23,43 @@ class CuestionarioGenerico : AppCompatActivity() {
 
         val checked = getDrawable(R.drawable.icon_checked)
         val backChecked = getDrawable(R.drawable.rounded_checkbox_checked)
+        val unchecked = getDrawable(R.drawable.icon_unchecked)
+        val backunChecked = getDrawable(R.drawable.rounded_checkbox)
+
+        var btnSiChecked = false
+        var btnNoChecked = true
 
         btnSi.setOnClickListener {
-            btnSi.background = backChecked
-            btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null,null,checked,null)
+            if (!btnSiChecked){
+                btnSi.background = backChecked
+                btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+                btnSiChecked = true
+                if (btnNoChecked){
+                    btnNo.background = backunChecked
+                    btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                    btnNoChecked = false
+                }
+            }else{
+                btnSi.background = backunChecked
+                btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                btnSiChecked = false
+            }
+        }
+        btnNo.setOnClickListener {
+            if (!btnNoChecked){
+                btnNo.background = backChecked
+                btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+                btnNoChecked = true
+                if (btnSiChecked){
+                    btnSi.background = backunChecked
+                    btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                    btnSiChecked = false
+                }
+            }else{
+                btnNo.background = backunChecked
+                btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                btnNoChecked = false
+            }
         }
     }
 }
