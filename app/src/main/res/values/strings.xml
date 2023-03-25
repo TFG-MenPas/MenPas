@@ -129,19 +129,106 @@
 
     <!--Baja de usuario-->
     <string name="baja_de_usuario">Baja de usuario</string>
-    <string name="motivo_baja">Indique el motivo de su baja</string>
+    <string name="motivo_baja">Por favor, indique los motivos de su baja</string>
     <string name="darse_de_baja">Darse de baja</string>
+    <string name="aviso_baja">Recuerde que una vez dado de baja no podrá volver a acceder</string>
+    <string-array name="motivos_baja_array">
+        <item>Problemas técnicos o de acceso a la plataforma</item>
+        <item>Ya no quiero recibir más información</item>
+        <item>Ya no me interesa su contenido</item>
+        <item>Ya no uso la plataforma</item>
+        <item>Otros</item>
+    </string-array>
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
-	<string name="areas_trabajo">Áreas de trabajo</string>
-	<string name="autorregistro">Autorregistro</string>
-	<string name="ansiedad">Ansiedad</string>
-	<string name="autoconcepto">Autoconcepto</string>
-	<string name="atencion">Atención</string>
-	<string name="busqueda_talentos">Búsqueda de talentos</string>
-	<string name="burnout">Burnout</string>
-	<string name="dinamica_grupal">Dinámica grupal</string>
-	<string name="calidad_vida">Calidad de vida</string>
-	<string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="areas_trabajo">Áreas de trabajo</string>
+    <string name="autorregistro">Autorregistro</string>
+    <string name="ansiedad">Ansiedad</string>
+    <string name="autoconcepto">Autoconcepto</string>
+    <string name="atencion">Atención</string>
+    <string name="busqueda_talentos">Búsqueda de talentos</string>
+    <string name="burnout">Burnout</string>
+    <string name="dinamica_grupal">Dinámica grupal</string>
+    <string name="calidad_vida">Calidad de vida</string>
+    <string name="inteligencia_emocional">Inteligencia emocional</string>
+
+    <!--Dudas y sugerencias-->
+    <string name="asunto">Asunto</string>
+    <string name="mensaje">Mensaje</string>
+
+    <!--Centros registrados-->
+    <string name="centros_registrados">Centros registrados</string>
+    <string name="ver_informacion_del_centro">Ver informacion del centro</string>
+    <string name="cp">CP:</string>
+    <string name="direccion2puntos">Dirección:</string>
+    <string name="telefono2puntos">Teléfono:</string>
+    <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
+
+    <!--Cuestionarios realizados-->
+    <string name="cuestionarios_realizados">Cuestionarios realizados</string>
+    <string name="ver_informacion_del_cuestionario">Ver información del cuestionario</string>
+
+    <!--Autores-->
+    <string name="coordinador">Coordinador:</string>
+    <string name="jose_luis">José Luis Pastrana Brincones</string>
+    <string name="antonio_hernandez">Antonio Hernández Mendo</string>
+    <string name="email_jose_luis">pastrana@lcc.uma.es</string>
+    <string name="email_antonio">mendo@uma.es</string>
+    <string name="desarrolladores">Desarrolladores:</string>
+    <string name="manuel_gomez">Manuel Antonio Gómez Merino</string>
+    <string name="daniel_melero">Daniel Melero García</string>
+    <string name="miguel_cabanillas">Miguel Ángel Cabanillas Silva</string>
+    <string name="francisco_bono">Francisco María Bono Navarro</string>
+    <string name="email_manuel_gomez">manuel.agm@uma.es</string>
+    <string name="email_daniel_melero">danijlg92@uma.es</string>
+    <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
+    <string name="email_francisco_bono">franbono2@alu.uma.es</string>
+    
+    <!--Detalles cuestionario-->
+    <string name="detalles">Detalles</string>
+    <string name="categoria">Categoría:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="tiempo">Tiempo:</string>
+    <string name="resultados">Resultados:</string>
+    <string name="icono_cerrar">icono_cerrar</string>
+    <string name="texto_de_prueba_categoria">Autoconcepto</string>
+    <string name="texto_de_prueba_tipo">AF5</string>
+    <string name="texto_de_prueba_fecha">11/02/2023-11:07:32</string>
+    <string name="texto_de_prueba_tiempo">198 segundos</string>
+    <string name="texto_de_prueba_resultados">Académico: 6,57</string>
+
+    <!--Referencias-->
+    <string name="primera_referencia">González Ruiz, S. L., Hernández Mendo, A., Pastrana Brincones, J.L. (2010). Herramienta software para la evaluación psicosocial de deportistas y entornos deportivos. Lecturas: EF y Deportes. Revista Digital, 15 (144), mayo.</string>
+    <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
+    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
+    <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    
+    <!--Registro de centro-->
+    <string name="registro_de_centro">Registro de centro</string>
+    <string name="nombre_del_centro">Nombre del centro</string>
+    <string name="provincia">Provincia</string>
+    <string name="localidad">Localidad</string>
+    <string name="direccion">Dirección</string>
+    <string name="telefono">Teléfono</string>
+    <string name="pais">País</string>
+    <string name="codigo_postal">Código postal</string>
+    <string-array name="paises_array">
+        <item>--Seleccione país--</item>
+        <item>Afghanistán</item>
+        <item>Albania</item>
+        <item>Alemania</item>
+        <item>España</item>
+    </string-array>
+
+    <!--Cambio de perfil-->
+    <string name="solicitud_de_admin">Solicitud de administrador</string>
+    <string name="cuestionarios_necesarios">Cuestionarios necesarios</string>
+    <string name="titulo_investigacion">Título de la investigación</string>
+    <string name="estimacion_participantes_muestra">Estimación de participantes de la muestra</string>
+    <string name="duracion_estimada_investigacion">Duración estimada de la investigación en meses</string>
+    <string name="tipo_publicacion">Tipo de publicación</string>
+    <string name="motivo">Motivo</string>
+    <string name="observaciones">Observaciones</string>
 </resources>

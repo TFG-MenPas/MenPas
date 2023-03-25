@@ -1,0 +1,13 @@
+{
+	"content": {
+		"Procedimiento a seguir": "En los cuestionarios a realizar, encontrará una serie de afirmaciones que los atletas han utilizado para describir sus pensamientos, sentimientos, actitudes o comportamientos antes de la competición. Nos gustaría saber hasta qué punto te sientes identificado con estas afirmaciones. \n\nNo existen respuestas correctas o incorrectas, malas o buenas, verdaderas o falsas, únicamente deseamos conocer tu opinión al respecto. Lee atentamente cada frase y selecciona la respuesta que más se aproxime a tus preferencias en este momento. \n\nPodemos elegir para cada afirmación entre 5 posibles valores que van desde el valor 5 que corresponde a Casi siempre hasta el valor 1 que representa a Casi nunca.",
+		"Características": "Cuestionario para medir la Ansiedad competitiva. \n\nSe administra en 5 minutos , no debiendo superar la hora. \n\nSe recomienda pasarlo tanto antes como después de la competición. \n\nConsta de 27 items. \n\nTiene 3 escalas: Cognitiva , Somática, Autoconfianza",
+		"Historia": "La competición supone un juicio interno y externo de la capacidad individual y crea incertidumbre sobre el resultado. Cuanto mayor sea el grado de inseguridad y la importancia concedida al resultado, mayor será la percepción de amenaza y,en consecuencia, la respuesta de ansiedad. \n\nUno de los instrumentos más utilizados para evaluar el estado de ansiedad precompetitiva ha sido el «Competitive State Anxiety Inventory-2» (CSAI-2. En su origen, el CSAI fue un inventario específico para deporte, pero con una concepción unidimensional del estado de ansiedad. El CSAI- 2 se diseñó precisamente para disponer de un instrumento específico que midiese tanto Ansiedad cognitiva como somática. Otros aspectos, como Miedo al daño físico y Ansiedad generalizada, no consiguieron replicarse. Durante el proceso de validación, sin embargo, se encontró un nuevo componente, denominado Autoconfianza. \n\nDe este modo, la versión final del CSAI-2 contaba con 27 ítems relativos a tres dimensiones de ansiedad, cada una de las cuales estaba representada por nueve enunciados."
+	},
+	"buttons": [
+		"Inventario",
+		"Escala de autoconfianza",
+		"Escala cognitiva",
+		"Escala somática"
+	]
+}
