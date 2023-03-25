@@ -1,5 +1,6 @@
 package com.uma.menpas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,21 +17,26 @@ class IniciarSesion : AppCompatActivity() {
         val textRegistrar = findViewById<TextView>(R.id.textRegistrese)
         val textCuestionario = findViewById<TextView>(R.id.textCuestionarios)
         val buttonIniciarSesion = findViewById<Button>(R.id.buttonIniciar)
+        lateinit var intent: Intent
 
         textOlvidar.setOnClickListener {
-            Toast.makeText(this, "Olvidar contraseña", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, RecuperarContrasenya::class.java)
+            startActivity(intent)
         }
 
         textRegistrar.setOnClickListener {
-            Toast.makeText(this, "Registrese aquí", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, RegistroUsuario::class.java)
+            startActivity(intent)
         }
 
         textCuestionario.setOnClickListener {
-            Toast.makeText(this, "Cuestionarios anónimos", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, RegistroUsuario::class.java)
+            startActivity(intent)
         }
 
         buttonIniciarSesion.setOnClickListener {
-            Toast.makeText(this, "Iniciar sesion", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, MenuPrincipal::class.java)
+            startActivity(intent)
         }
     }
 }

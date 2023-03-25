@@ -1,5 +1,6 @@
 package com.uma.menpas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +15,9 @@ class RecuperarContrasenya : AppCompatActivity() {
         val buttonEnviar = findViewById<Button>(R.id.buttonEnviar)
 
         buttonEnviar.setOnClickListener {
-            Toast.makeText(this, "Enviar", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Recuperación realizada con éxito", Toast.LENGTH_SHORT)
+                .show()
+            finish()
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.uma.menpas
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,13 +28,17 @@ class CentrosRegistrados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_centros_registrados)
+        lateinit var intent: Intent
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        BarraNavegacion(barraNavegacionInferior, this)
 
         myOnclickListener = MyOnClickListener(this)
         botonAñadirCentro = findViewById(R.id.imageButtonAñadirCentro)
         botonAñadirCentro.setOnClickListener {
-            showToast("Activity: Añadir Centro")
+            intent = Intent(this, RegistroDeCentro::class.java)
+            startActivity(intent)
         }
 
         centroRV = findViewById(R.id.RVCentros)
@@ -61,28 +66,6 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
-        barraNavegacionInferior.menu.getItem(0).isCheckable = false;
-        barraNavegacionInferior.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_faq -> {
-                    it.isCheckable = true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
-                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_home -> {
-                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_user -> {
-                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
-        }
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {
