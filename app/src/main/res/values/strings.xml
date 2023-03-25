@@ -73,8 +73,7 @@
 
     <!-- Desplegable Datos Personales-->
     <string name="modificar_datos">Modificar datos</string>
-    <string name="consultar_estadisticas">Consultar estadísticas</string>
-    <string name="registrar_centro">Registrar Centro</string>
+    <string name="centros">Centros</string>
     <string name="cambio_de_perfil">Cambio de perfil</string>
     <string name="dar_de_baja">Dar de baja</string>
     <string name="modificar_datos_icono">Modificar datos icono</string>
@@ -207,6 +206,7 @@
     
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
+    <string name="registrar_centro">Registrar centro</string>
     <string name="nombre_del_centro">Nombre del centro</string>
     <string name="provincia">Provincia</string>
     <string name="localidad">Localidad</string>

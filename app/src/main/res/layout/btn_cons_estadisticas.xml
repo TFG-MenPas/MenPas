@@ -24,7 +24,7 @@
         android:layout_toEndOf="@id/IVconEstadisticas"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="700"
-        android:text="@string/consultar_estadisticas"
+        android:text="@string/cuestionarios_realizados"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal" />
