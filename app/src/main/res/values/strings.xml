@@ -231,4 +231,16 @@
     <string name="tipo_publicacion">Tipo de publicación</string>
     <string name="motivo">Motivo</string>
     <string name="observaciones">Observaciones</string>
+
+    <!--FAQ-->
+    <string name="incidencia_rejilla_q">Incidencia al exportar dados del programa REJILLA</string>
+    <string name="incidencia_rejilla_a">La incidencia que se menciona al exportar a Excel, es porque no se tiene instalada la PIA2003 (primary Interop Assembly), y que se debe de solucionar instalando la misma. para ello vaya a la siguiente enlace Descargar.</string>
+    <string name="admin_restringido_q">Participar como administrador restringido</string>
+    <string name="admin_restringido_a">Para participar como administrador restringido y realizar sus propias investigaciones, deberá ponerse en contacto con el Coordinador: Dr. Antonio Hernández Mendo, (mendo@uma.es) indicando la finalidad de la investigación.</string>
+    <string name="validacion_usuarios_q">Validación de usuarios</string>
+    <string name="validacion_usuarios_a">Al registrarse, recibirá un email para validar la cuenta. Puede encontrarse en la bandeja de entrada, Spam, Correo no deseado. No podrá acceder si no valida la cuenta.</string>
+    <string name="acceso_plataforma_q">Acceso a la plataforma</string>
+    <string name="acceso_plataforma_a">Si tiene problemas con el acceso a plataforma, primero pruebe a entrar desde otro navegador, si sigue con las incidencias contacte con nosotros a través del formulario de dudas y sugerencias del menú de MenPas.</string>
+    <string name="compatibilidad_macos_q">Compatibilidad con MacOS</string>
+    <string name="compatibilidad_macos_a">Los programas que se descargan solo se pueden instalar en sistemas operativos Windows.</string>
 </resources>
