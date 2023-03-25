@@ -10,7 +10,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textProposicion"
         android:indeterminate="false"
-        android:tickMark="@drawable/tickbar_enabled"
+        android:tickMark="@drawable/tickbar_disabled"
         android:progressDrawable="@drawable/seekbar_multichoice"
         android:thumb="@drawable/thumb"/>
 
