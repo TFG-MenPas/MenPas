@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textProposicion"
+        android:indeterminate="false"
+        android:tickMark="@drawable/tickbar_enabled"
+        android:progressDrawable="@drawable/seekbar_multichoice"
+        android:thumb="@drawable/thumb"/>
+
+    <TextView
+        android:id="@+id/textProposicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="¿Esta de acuerdo?"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textOpcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Parcialmente de acuerdo"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp" />
+
+
+</RelativeLayout>
