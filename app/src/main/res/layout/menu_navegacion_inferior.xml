@@ -22,7 +22,6 @@
         app:itemIconTint="@drawable/bm_items"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_nav_menu"
-
         />
 
 </RelativeLayout>

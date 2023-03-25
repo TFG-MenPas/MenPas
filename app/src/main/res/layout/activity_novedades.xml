@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/banner"
+        layout="@layout/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textNovedades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:fontWeight="700"
+        android:gravity="center"
+        android:text="@string/novedades"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="normal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textNovedades"
+        android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/novedad1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:fontWeight="400"
+                android:text="Aplicación móvil complementaria a la web MenPas."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/novedad2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:fontWeight="400"
+                android:text="Cuestionario Mondrian Simon actualizado con sonido y parpadeo realista."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@id/novedad1"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/novedad3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:fontWeight="400"
+                android:text="Nueva interfaz de usuario con diseño minimalista."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textStyle="normal"
+                android:layout_below="@id/novedad2"
+                android:layout_margin="10dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/menu_navegacion_inferior"
+        layout="@layout/menu_navegacion_inferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

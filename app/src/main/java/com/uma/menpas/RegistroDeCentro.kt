@@ -8,15 +8,15 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class BajaUsuario : AppCompatActivity() {
+class RegistroDeCentro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_baja_usuario)
+        setContentView(R.layout.activity_registro_de_centro)
 
-        val buttonDarseDeBaja = findViewById<Button>(R.id.buttonDarseDeBaja)
+        val buttonRegistrarCentro = findViewById<Button>(R.id.buttonRegistrarCentro)
 
-        buttonDarseDeBaja.setOnClickListener {
-            Toast.makeText(applicationContext, "Baja realizada con éxito", Toast.LENGTH_SHORT)
+        buttonRegistrarCentro.setOnClickListener {
+            Toast.makeText(applicationContext, "Centro registrado con éxito", Toast.LENGTH_SHORT)
                 .show()
         }
 
@@ -44,10 +44,10 @@ class BajaUsuario : AppCompatActivity() {
             false
         }
 
-        //Spinner motivos
-        val motivosSpinner = findViewById<Spinner>(R.id.selectMotivo)
-        val motivosArrayAdapter = ArrayAdapter.createFromResource(this, R.array.motivos_baja_array, R.layout.spinner_motivos_baja_usuario)
-        motivosArrayAdapter.setDropDownViewResource(R.layout.spinner_motivos_baja_usuario)
-        motivosSpinner.adapter = motivosArrayAdapter
+        //Spinner paises
+        val paisesSpinner = findViewById<Spinner>(R.id.selectPais)
+        val paisesArrayAdapter = ArrayAdapter.createFromResource(this, R.array.paises_array, R.layout.spinner_paises)
+        paisesArrayAdapter.setDropDownViewResource(R.layout.spinner_paises)
+        paisesSpinner.adapter = paisesArrayAdapter
     }
 }

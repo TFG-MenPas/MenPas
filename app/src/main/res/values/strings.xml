@@ -129,8 +129,16 @@
 
     <!--Baja de usuario-->
     <string name="baja_de_usuario">Baja de usuario</string>
-    <string name="motivo_baja">Indique el motivo de su baja</string>
+    <string name="motivo_baja">Por favor, indique los motivos de su baja</string>
     <string name="darse_de_baja">Darse de baja</string>
+    <string name="aviso_baja">Recuerde que una vez dado de baja no podrá volver a acceder</string>
+    <string-array name="motivos_baja_array">
+        <item>Problemas técnicos o de acceso a la plataforma</item>
+        <item>Ya no quiero recibir más información</item>
+        <item>Ya no me interesa su contenido</item>
+        <item>Ya no uso la plataforma</item>
+        <item>Otros</item>
+    </string-array>
 
     <!--Menu principal-->
     <string name="bienvenido_principal">Bienvenido/a,</string>
@@ -152,12 +160,12 @@
     <!--Centros registrados-->
     <string name="centros_registrados">Centros registrados</string>
     <string name="ver_informacion_del_centro">Ver informacion del centro</string>
-    <string name="direccion">Dirección:</string>
     <string name="cp">CP:</string>
-    <string name="telefono">Teléfono:</string>
+    <string name="direccion2puntos">Dirección:</string>
+    <string name="telefono2puntos">Teléfono:</string>
     <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
 
-    <!--Centros registrados-->
+    <!--Cuestionarios realizados-->
     <string name="cuestionarios_realizados">Cuestionarios realizados</string>
     <string name="ver_informacion_del_cuestionario">Ver información del cuestionario</string>
 
@@ -197,4 +205,30 @@
     <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
     <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
     
+    <!--Registro de centro-->
+    <string name="registro_de_centro">Registro de centro</string>
+    <string name="nombre_del_centro">Nombre del centro</string>
+    <string name="provincia">Provincia</string>
+    <string name="localidad">Localidad</string>
+    <string name="direccion">Dirección</string>
+    <string name="telefono">Teléfono</string>
+    <string name="pais">País</string>
+    <string name="codigo_postal">Código postal</string>
+    <string-array name="paises_array">
+        <item>--Seleccione país--</item>
+        <item>Afghanistán</item>
+        <item>Albania</item>
+        <item>Alemania</item>
+        <item>España</item>
+    </string-array>
+
+    <!--Cambio de perfil-->
+    <string name="solicitud_de_admin">Solicitud de administrador</string>
+    <string name="cuestionarios_necesarios">Cuestionarios necesarios</string>
+    <string name="titulo_investigacion">Título de la investigación</string>
+    <string name="estimacion_participantes_muestra">Estimación de participantes de la muestra</string>
+    <string name="duracion_estimada_investigacion">Duración estimada de la investigación en meses</string>
+    <string name="tipo_publicacion">Tipo de publicación</string>
+    <string name="motivo">Motivo</string>
+    <string name="observaciones">Observaciones</string>
 </resources>
