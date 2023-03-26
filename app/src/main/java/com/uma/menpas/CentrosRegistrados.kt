@@ -12,13 +12,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
     lateinit var adaptadorCentro: AdaptadorCentro
     lateinit var listaCentros: ArrayList<Centro>
     lateinit var barraBusqueda: SearchView
-    lateinit var botonAñadirCentro: ImageButton
+    lateinit var fabAñadirCentro: FloatingActionButton
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -31,8 +32,9 @@ class CentrosRegistrados : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         myOnclickListener = MyOnClickListener(this)
-        botonAñadirCentro = findViewById(R.id.imageButtonAñadirCentro)
-        botonAñadirCentro.setOnClickListener {
+
+        fabAñadirCentro = findViewById(R.id.fabAñadirCentro)
+        fabAñadirCentro.setOnClickListener {
             showToast("Activity: Añadir Centro")
         }
 
