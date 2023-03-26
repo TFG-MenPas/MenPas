@@ -18,6 +18,8 @@ class DatosPersonales : AppCompatActivity() {
         val checkBoxSuscripcion = findViewById<CheckBox>(R.id.checkBoxSuscripcion)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+        BarraNavegacion(barraNavegacionInferior, this)
+
         botonEditarNombreDeUsuario.setOnClickListener{
             Toast.makeText(applicationContext, "Edita el nombre de usuario", Toast.LENGTH_SHORT)
                 .show()
@@ -41,30 +43,6 @@ class DatosPersonales : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Suscripción desactivada", Toast.LENGTH_SHORT)
                     .show()
             }
-
-        }
-
-        barraNavegacionInferior.getMenu().getItem(0).setCheckable(false); // LINEA PROVISIONAL PARA QUITAR EL FOCUS INICIAL DEL PRIMER ELEMENTO
-        barraNavegacionInferior.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_faq -> {
-                    it.setCheckable(true); // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
-                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_home -> {
-                        Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_user -> {
-                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
         }
     }
 }

@@ -73,8 +73,7 @@
 
     <!-- Desplegable Datos Personales-->
     <string name="modificar_datos">Modificar datos</string>
-    <string name="consultar_estadisticas">Consultar estadísticas</string>
-    <string name="registrar_centro">Registrar Centro</string>
+    <string name="centros">Centros</string>
     <string name="cambio_de_perfil">Cambio de perfil</string>
     <string name="dar_de_baja">Dar de baja</string>
     <string name="modificar_datos_icono">Modificar datos icono</string>
@@ -184,7 +183,7 @@
     <string name="email_daniel_melero">danijlg92@uma.es</string>
     <string name="email_miguel_cabanillas">miguelangelcabanillassilva@uma.es</string>
     <string name="email_francisco_bono">franbono2@alu.uma.es</string>
-    
+
     <!--Detalles cuestionario-->
     <string name="detalles">Detalles</string>
     <string name="categoria">Categoría:</string>
@@ -204,9 +203,10 @@
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
     <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
     <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
-    
+
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
+    <string name="registrar_centro">Registrar centro</string>
     <string name="nombre_del_centro">Nombre del centro</string>
     <string name="provincia">Provincia</string>
     <string name="localidad">Localidad</string>
@@ -231,4 +231,25 @@
     <string name="tipo_publicacion">Tipo de publicación</string>
     <string name="motivo">Motivo</string>
     <string name="observaciones">Observaciones</string>
+
+    <!--FAQ-->
+    <string name="incidencia_rejilla_q">Incidencia al exportar dados del programa REJILLA</string>
+    <string name="incidencia_rejilla_a">La incidencia que se menciona al exportar a Excel, es porque no se tiene instalada la PIA2003 (primary Interop Assembly), y que se debe de solucionar instalando la misma. para ello vaya a la siguiente enlace Descargar.</string>
+    <string name="admin_restringido_q">Participar como administrador restringido</string>
+    <string name="admin_restringido_a">Para participar como administrador restringido y realizar sus propias investigaciones, deberá ponerse en contacto con el Coordinador: Dr. Antonio Hernández Mendo, (mendo@uma.es) indicando la finalidad de la investigación.</string>
+    <string name="validacion_usuarios_q">Validación de usuarios</string>
+    <string name="validacion_usuarios_a">Al registrarse, recibirá un email para validar la cuenta. Puede encontrarse en la bandeja de entrada, Spam, Correo no deseado. No podrá acceder si no valida la cuenta.</string>
+    <string name="acceso_plataforma_q">Acceso a la plataforma</string>
+    <string name="acceso_plataforma_a">Si tiene problemas con el acceso a plataforma, primero pruebe a entrar desde otro navegador, si sigue con las incidencias contacte con nosotros a través del formulario de dudas y sugerencias del menú de MenPas.</string>
+    <string name="compatibilidad_macos_q">Compatibilidad con MacOS</string>
+    <string name="compatibilidad_macos_a">Los programas que se descargan solo se pueden instalar en sistemas operativos Windows.</string>
+
+    <!--Cuestionarios genericos-->
+    <string name="anterior">Anterior</string>
+    <string name="boton_cerrar_cuestionario">boton cerrar cuestionario</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="si">Sí</string>
+    <string name="no">no</string>
+    <string name="title_activity_prueba">prueba</string>
+    <string name="escriba_aqui">Escriba aquí...</string>
 </resources>
