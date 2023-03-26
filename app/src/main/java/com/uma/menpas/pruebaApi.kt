@@ -28,7 +28,6 @@ class pruebaApi : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<String
     //private val METHOD_NAME = "lista_estado_civil"
     private val METHOD_NAME = "getUser"
     private val SOAP_ACTION = "$NAMESPACE$METHOD_NAME"
-    //private val URL = "http://150.214.108.138/menpas/ServiceApp.asmx?op=$METHOD_NAME"
     private val URL = "http://150.214.108.138/menpas/ServiceApp.asmx?WSDL"
     private val LOADER_ID = 1
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,8 +47,8 @@ class pruebaApi : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<String
             }
             override fun loadInBackground(): List<String>? {
                 val request = SoapObject(NAMESPACE, METHOD_NAME)
-                request.addProperty("username", "miguel15700")
-                request.addProperty("pwd", "chiqui2010")
+                request.addProperty("username", "menpasprueba")
+                request.addProperty("pwd", "menpasprueba")
                 val envelope = SoapSerializationEnvelope(SoapEnvelope.VER12)
                 envelope.dotNet = true
                 envelope.setOutputSoapObject(request)
