@@ -19,18 +19,19 @@ import java.io.InputStreamReader
 
 class Area2 : AppCompatActivity() {
     companion object {
-        private const val JSON_RESOURCE_NAME = "ansiedad_csai2"
         private const val JSON_RESOURCE_TYPE = "raw"
-        private const val AREA = "CSAI2"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area2)
+        val intent = intent
+        var subarea = intent.getStringExtra("subarea")
+        var json_resource_name = intent.getStringExtra("json_resource_name")
 
         val linearLayout = findViewById<LinearLayout>(R.id.doc_txt_area2)
-        this.drawTitle(AREA)
-        val json = getJSON()
+        this.drawTitle(subarea.toString())
+        val json = getJSON(json_resource_name.toString())
         val content = json["content"] as JSONObject
         val buttons = json["buttons"] as JSONArray
         drawContent(content, buttons, linearLayout)
@@ -41,8 +42,8 @@ class Area2 : AppCompatActivity() {
         textArea.text = area
     }
 
-    private fun getJSON(): JSONObject {
-        val jsonString = transformJSONtoString()
+    private fun getJSON(json_resource_name: String): JSONObject {
+        val jsonString = transformJSONtoString(json_resource_name)
         return JSONObject(jsonString)
     }
 
@@ -96,9 +97,9 @@ class Area2 : AppCompatActivity() {
         }
     }
 
-    private fun transformJSONtoString(): String {
+    private fun transformJSONtoString(json_resource_name: String): String {
         val res = resources
-        val resId = res.getIdentifier(JSON_RESOURCE_NAME, JSON_RESOURCE_TYPE, packageName)
+        val resId = res.getIdentifier(json_resource_name, JSON_RESOURCE_TYPE, packageName)
 
         val inputStream = res.openRawResource(resId)
         val reader = BufferedReader(InputStreamReader(inputStream))
