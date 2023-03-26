@@ -1,18 +1,22 @@
 package com.uma.menpas
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R.attr.button
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+
 
 class Area1 : AppCompatActivity() {
 
@@ -20,17 +24,21 @@ class Area1 : AppCompatActivity() {
         private const val JSON_RESOURCE_NAME = "areas"
         private const val JSON_RESOURCE_TYPE = "raw"
         private const val BUTTON_TEXT_SIZE = 18f
-        private const val AREA = "Ansiedad"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val intent = intent
+        var area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area1)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
-        drawTitle(AREA)
-        iterateSections(getSections(AREA), linearLayout)
+        drawTitle(area)
+        iterateSections(area, getSections(area), linearLayout)
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        BarraNavegacion(barraNavegacionInferior, this)
     }
 
     private fun drawTitle(area: String) {
@@ -44,7 +52,7 @@ class Area1 : AppCompatActivity() {
         return jsonObject.toDict()[area] as List<String>
     }
 
-    private fun iterateSections(sections: List<String>, linearLayout: LinearLayout) {
+    private fun iterateSections(area: String, sections: List<String>, linearLayout: LinearLayout) {
         for (section in sections) {
             val boton = Button(this).apply {
                 text = section
@@ -62,6 +70,12 @@ class Area1 : AppCompatActivity() {
                 layoutParams = params
             }
             linearLayout.addView(boton)
+            boton.setOnClickListener {
+                val intent = Intent(this, Area2::class.java)
+                intent.putExtra("json_resource_name",area.toLowerCase() + "_" + section.toLowerCase())
+                intent.putExtra("subarea", section)
+                startActivity(intent)
+            }
         }
     }
 

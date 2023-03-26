@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define the background properties like color etc -->
+    <item android:id="@android:id/background" android:drawable="@drawable/rectangle_pb"/>
+
+    <!-- Define the progress properties like start color, end color etc -->
+    <item android:id="@android:id/progress" android:drawable="@drawable/gradle_rectangle"/>
+
+</layer-list>

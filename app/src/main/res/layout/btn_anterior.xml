@@ -6,26 +6,26 @@
     android:layout_margin="10dp">
 
     <ImageView
-        android:id="@+id/IVconEstadisticas"
+        android:id="@+id/imageFlecha"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/con_estadisticas_icon"
-        android:contentDescription="@string/icono_consultar_estadisticas" />
+        android:src="@drawable/flecha"
+        android:rotation="180"
+        android:contentDescription="@string/icono_faq" />
 
     <TextView
-        android:id="@+id/TVmod_datos"
+        android:id="@+id/textFaq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/IVconEstadisticas"
-        android:layout_toEndOf="@id/IVconEstadisticas"
+        android:layout_alignBottom="@id/imageFlecha"
+        android:layout_toEndOf="@id/imageFlecha"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="700"
-        android:text="@string/cuestionarios_realizados"
+        android:text="@string/anterior"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="normal" />
 </RelativeLayout>

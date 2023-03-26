@@ -1,5 +1,6 @@
 package com.uma.menpas
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +20,7 @@ class RegistroUsuario : AppCompatActivity() {
         val terminos = findViewById<TextView>(R.id.terminos)
         val iniSesion = findViewById<TextView>(R.id.textInicieSesion)
 
-        val registrar = findViewById<Button>(R.id.buttonRegistrar)
+        val buttonRegistrar = findViewById<Button>(R.id.buttonRegistrar)
 
         var isPasswordVisible = false
 
@@ -62,12 +63,13 @@ class RegistroUsuario : AppCompatActivity() {
         }
 
         iniSesion.setOnClickListener {
-            Toast.makeText(applicationContext, "Activity Iniciar Sesion", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
-        registrar.setOnClickListener {
+        buttonRegistrar.setOnClickListener {
             Toast.makeText(applicationContext, "Registro realizado con éxito", Toast.LENGTH_SHORT)
                 .show()
+            finish()
         }
 
         //Spinner genero
@@ -111,5 +113,6 @@ class RegistroUsuario : AppCompatActivity() {
         val profesionArrayAdapter = ArrayAdapter.createFromResource(this, R.array.profesion_array, R.layout.spinner_list)
         profesionArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
         profesionSpinner.adapter = profesionArrayAdapter
+
     }
 }

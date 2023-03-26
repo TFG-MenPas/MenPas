@@ -1,6 +1,7 @@
 package com.uma.menpas
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,7 +19,6 @@ class CuestionariosRealizados : AppCompatActivity() {
     lateinit var adaptadorCuestionario: AdaptadorCuestionario
     lateinit var listaCuestionarios: ArrayList<Cuestionario>
     lateinit var barraBusqueda: SearchView
-
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -28,13 +28,16 @@ class CuestionariosRealizados : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionarios_realizados)
 
+
+
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        BarraNavegacion(barraNavegacionInferior, this)
 
         myOnclickListener = MyOnClickListener(this)
         cuestionarioRV = findViewById(R.id.RVCuestionario)
         listaCuestionarios = ArrayList()
         adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
-
 
         listaCuestionarios.add(Cuestionario("Ansiedad", "CSAI2: Autoconfianza", "12/02/2023-11:07:32"))
         listaCuestionarios.add(Cuestionario("Atención", "Mondrian: Colores", "12/02/2023-11:07:32"))
@@ -58,33 +61,14 @@ class CuestionariosRealizados : AppCompatActivity() {
                 return false
             }
         })
-        barraNavegacionInferior.menu.getItem(0).isCheckable = false;
-        barraNavegacionInferior.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_faq -> {
-                    it.isCheckable = true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
-                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_home -> {
-                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_user -> {
-                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
-        }
+
     }
     class MyOnClickListener(cuestionarioRealizado: CuestionariosRealizados) : View.OnClickListener {
         val context = cuestionarioRealizado
         override fun onClick(v: View) {
-            mostrarDetalles(v)
+            //mostrarDetalles(v)
+            var intent = Intent(context, DetallesCuestionario::class.java)
+            context.startActivity(intent)
         }
 
         @SuppressLint("InflateParams")

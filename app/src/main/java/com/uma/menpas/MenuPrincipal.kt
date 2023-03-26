@@ -1,9 +1,12 @@
 package com.uma.menpas
 
+import android.content.Intent
+import android.hardware.Camera.Area
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,42 +22,69 @@ class MenuPrincipal : AppCompatActivity() {
         val dinamica_grupal = findViewById<CardView>(R.id.dinamicagrupal)
         val calidad_vida = findViewById<CardView>(R.id.calidadvida)
         val inteligencia_emocional = findViewById<CardView>(R.id.inteligencia_emocional)
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        BarraNavegacion(barraNavegacionInferior, this)
 
         autorregistro.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Autorregistro", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         ansiedad.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Ansiedad", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         autoconcepto.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Autoconcepto", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         atencion.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Atención", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
         busqueda_talentos.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Búsqueda de Talentos", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         burnout.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Burnout", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         dinamica_grupal.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Dinámica Grupal", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         calidad_vida.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Calidad de Vida", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
 
         inteligencia_emocional.setOnClickListener {
-            Toast.makeText(applicationContext, "Sección Inteligencia Emocional", Toast.LENGTH_SHORT).show()
+            abrirArea(it.id)
         }
+    }
 
+    override fun onBackPressed(){
 
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Toast.makeText(this, "Intent reciclado", Toast.LENGTH_SHORT).show()
+    }
+
+    fun abrirArea(id: Int) {
+        var nombre = resources.getResourceName(id).split(":id/")[1]
+        var intent = Intent(this, Area1::class.java)
+        when(nombre){
+            "autorregistro" -> intent.putExtra("area", "Autorregistro")
+            "ansiedad" -> intent.putExtra("area", "Ansiedad")
+            "autoconcepto" -> intent.putExtra("area", "Autoconcepto")
+            "atencion" -> intent.putExtra("area", "Atención")
+            "busqueda_talentos" -> intent.putExtra("area", "Busqueda de talentos")
+            "burnout" -> intent.putExtra("area", "Burnout")
+            "dinamicagrupal" -> intent.putExtra("area", "Dinámica grupal")
+            "calidadvida" -> intent.putExtra("area", "Calidad de vida")
+            "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia emocional")
+        }
+        startActivity(intent)
     }
 }
