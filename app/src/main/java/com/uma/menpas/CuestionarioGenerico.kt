@@ -4,34 +4,44 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.RelativeLayout
-import android.widget.SeekBar
-import android.widget.TextView
+import android.view.LayoutInflater
+import android.widget.*
 
 class CuestionarioGenerico : AppCompatActivity() {
     lateinit var rlDinamico: RelativeLayout
-    lateinit var btnSi: Button
-    lateinit var btnNo: Button
-    lateinit var seekbar: SeekBar
-    lateinit var textOpcion: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionario_generico)
 
-        rlDinamico = findViewById(R.id.RLDynamicContent)
-        //val cuestionarioSiNo: View = layoutInflater.inflate(R.layout.cuestionario_si_no, rlDinamico, false)
-        //rlDinamico.addView(cuestionarioSiNo)
-        val cuestionarioSeleccionMultiple: View = layoutInflater.inflate(R.layout.cuestionario_seleccion_multiple, rlDinamico, false)
-        rlDinamico.addView(cuestionarioSeleccionMultiple)
+        val tipoCuestionario = "seleccionMultiple"
+        var layoutDinamica = 0
 
-        textOpcion = findViewById(R.id.textOpcion)
-        seekbar = findViewById(R.id.seekbar)
+        when (tipoCuestionario) {
+            "textoLibre" -> layoutDinamica = R.layout.cuestionario_texto_libre
+            "fecha" -> layoutDinamica = R.layout.cuestionario_fecha
+            "siNo" -> layoutDinamica = R.layout.cuestionario_si_no
+            "seleccionMultiple" -> layoutDinamica = R.layout.cuestionario_seleccion_multiple
+            else -> {
+                layoutDinamica = -1
+            }
+        }
+
+        rlDinamico = findViewById(R.id.RLDynamicContent)
+        val cuestionarioDinamico: View = layoutInflater.inflate(layoutDinamica, rlDinamico, false)
+        rlDinamico.addView(cuestionarioDinamico)
+
+        when (tipoCuestionario) {
+            "textoLibre" -> ""
+            "fecha" -> ""
+            "siNo" -> cuestionarioSiNo()
+            "seleccionMultiple" -> cuestionarioSeleccionMultiple()
+        }
+    }
+    private fun cuestionarioSeleccionMultiple(){
+        val textOpcion : TextView = findViewById(R.id.textOpcion)
+        val seekbar : SeekBar = findViewById(R.id.seekbar)
         seekbar.progress = 0
         seekbar.max = 4
-
-        val tickbar_enabled = getDrawable(R.drawable.tickbar_enabled)
-        val tickbar_disabled = getDrawable(R.drawable.tickbar_disabled)
 
         val respuestas = arrayOf("Nunca", "Raramente", "A veces", "Casi siempre", "Siempre")
 
@@ -46,18 +56,16 @@ class CuestionarioGenerico : AppCompatActivity() {
                 }
             }
 
-            override fun onStartTrackingTouch(p0: SeekBar?) {
-            }
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
 
-            override fun onStopTrackingTouch(p0: SeekBar?) {
-            }
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
 
         })
-
     }
+
     private fun cuestionarioSiNo(){
-        btnSi = findViewById(R.id.buttonSi)
-        btnNo = findViewById(R.id.buttonNo)
+        val btnSi : Button = findViewById(R.id.buttonSi)
+        val btnNo : Button = findViewById(R.id.buttonNo)
 
         val checked = getDrawable(R.drawable.icon_checked)
         val backChecked = getDrawable(R.drawable.rounded_checkbox_checked)

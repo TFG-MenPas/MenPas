@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/RLEditTextCuestionarioTextoLibre">
+
+    <EditText
+        android:id="@+id/editTextCuestionarioTextoLibre"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:fontFamily="@font/poppins_regular"
+        android:fontWeight="400"
+        android:hint="@string/escriba_aqui"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:textSize="14sp"
+        android:backgroundTint="@color/transparent"
+        android:scrollbars="vertical"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:lines="13"
+        android:maxLines="13"
+        android:minLines="1"
+        android:paddingRight="20dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/pencil"/>
+
+</RelativeLayout>
