@@ -17,24 +17,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/banner"
         android:layout_marginTop="-55dp"
-        android:layout_marginStart="70dp"
         android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/centros_registrados"
         android:textColor="@color/black"
         android:textSize="24sp" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAñadirCentro"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_toEndOf="@id/textCentrosRegistrados"
-        android:layout_alignBottom="@id/textCentrosRegistrados"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/boton_cerrar_desplegable"
-        android:src="@drawable/icon_anyadir_centro" />
 
     <SearchView
         android:layout_width="match_parent"
@@ -62,9 +52,21 @@
 
     </ScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAñadirCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:elevation="4dp"
+        app:srcCompat="@drawable/icon_cruz" />
+
     <include
         android:id="@+id/menu_navegacion_inferior"
         layout="@layout/menu_navegacion_inferior"
+        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
