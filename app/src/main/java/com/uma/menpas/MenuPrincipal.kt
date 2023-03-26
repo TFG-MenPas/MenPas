@@ -79,11 +79,11 @@ class MenuPrincipal : AppCompatActivity() {
             "ansiedad" -> intent.putExtra("area", "Ansiedad")
             "autoconcepto" -> intent.putExtra("area", "Autoconcepto")
             "atencion" -> intent.putExtra("area", "Atención")
-            "busqueda_de_talentos" -> intent.putExtra("area", "Búsqueda_de_talentos")
+            "busqueda_talentos" -> intent.putExtra("area", "Busqueda de talentos")
             "burnout" -> intent.putExtra("area", "Burnout")
-            "dinamica_grupal" -> intent.putExtra("area", "Dinámica_grupal")
-            "calidad_de_vida" -> intent.putExtra("area", "Calidad_de_vida")
-            "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia_emocional")
+            "dinamicagrupal" -> intent.putExtra("area", "Dinámica grupal")
+            "calidadvida" -> intent.putExtra("area", "Calidad de vida")
+            "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia emocional")
         }
         startActivity(intent)
     }

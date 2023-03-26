@@ -64,6 +64,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
         android:elevation="4dp"
+        android:backgroundTint="@color/elipseBlue"
         app:srcCompat="@drawable/icon_cruz" />
 
     <include

@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -27,15 +28,17 @@ class Area1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
-        var area = intent.getStringExtra("area")
-        area = "Ansiedad"
+        var area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area1)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
-        drawTitle(area.toString())
-        iterateSections(area, getSections(area.toString()), linearLayout)
+        drawTitle(area)
+        iterateSections(area, getSections(area), linearLayout)
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        BarraNavegacion(barraNavegacionInferior, this)
     }
 
     private fun drawTitle(area: String) {

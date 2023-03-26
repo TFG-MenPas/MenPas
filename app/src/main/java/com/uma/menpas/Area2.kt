@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginBottom
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -35,6 +36,9 @@ class Area2 : AppCompatActivity() {
         val content = json["content"] as JSONObject
         val buttons = json["buttons"] as JSONArray
         drawContent(content, buttons, linearLayout)
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        BarraNavegacion(barraNavegacionInferior, this)
     }
 
     private fun drawTitle(area: String) {
