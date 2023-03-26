@@ -1,5 +1,6 @@
 package com.uma.menpas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -14,39 +15,26 @@ class BajaUsuario : AppCompatActivity() {
         setContentView(R.layout.activity_baja_usuario)
 
         val buttonDarseDeBaja = findViewById<Button>(R.id.buttonDarseDeBaja)
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        lateinit var intent: Intent
+
+        BarraNavegacion(barraNavegacionInferior, this)
 
         buttonDarseDeBaja.setOnClickListener {
             Toast.makeText(applicationContext, "Baja realizada con éxito", Toast.LENGTH_SHORT)
                 .show()
-        }
-
-        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        barraNavegacionInferior.getMenu().getItem(0).setCheckable(false); // LINEA PROVISIONAL PARA QUITAR EL FOCUS INICIAL DEL PRIMER ELEMENTO
-        barraNavegacionInferior.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_faq -> {
-                    it.setCheckable(true); // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
-                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_home -> {
-                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_user -> {
-                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
+            intent = Intent(this, IniciarSesion::class.java)
+            startActivity(intent)
+            finish()
         }
 
         //Spinner motivos
         val motivosSpinner = findViewById<Spinner>(R.id.selectMotivo)
-        val motivosArrayAdapter = ArrayAdapter.createFromResource(this, R.array.motivos_baja_array, R.layout.spinner_motivos_baja_usuario)
+        val motivosArrayAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.motivos_baja_array,
+            R.layout.spinner_motivos_baja_usuario
+        )
         motivosArrayAdapter.setDropDownViewResource(R.layout.spinner_motivos_baja_usuario)
         motivosSpinner.adapter = motivosArrayAdapter
     }

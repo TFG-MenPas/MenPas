@@ -24,7 +24,7 @@
         android:layout_toEndOf="@id/IVreg_centro"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="700"
-        android:text="@string/registrar_centro"
+        android:text="@string/centros"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal" />
