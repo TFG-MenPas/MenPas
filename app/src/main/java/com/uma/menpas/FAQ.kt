@@ -2,29 +2,16 @@ package com.uma.menpas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.TypedValue
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.SearchView
-import android.widget.Spinner
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.searchviewkotlin.PreguntaFAQAdaptador
+import com.example.searchviewkotlin.AdaptadorPreguntaFAQ
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.ms.square.android.expandabletextview.ExpandableTextView
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
 
 class FAQ : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<PreguntaFAQ>()
-    private lateinit var adapter: PreguntaFAQAdaptador
+    private lateinit var adapter: AdaptadorPreguntaFAQ
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +22,7 @@ class FAQ : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         addDataToList()
-        adapter = PreguntaFAQAdaptador(mList)
+        adapter = AdaptadorPreguntaFAQ(mList)
         recyclerView.adapter = adapter
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
