@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MondrianColores"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".CuestionarioGenerico"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
@@ -26,16 +36,6 @@
         </activity>
         <activity
             android:name=".pruebaApi"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Referencias"
-            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,9 +44,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CuestionariosRealizados"
-            android:launchMode="singleTask"
+            android:name=".Referencias"
             android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CuestionariosRealizados"
+            android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,8 +66,8 @@
         </activity>
         <activity
             android:name=".BajaUsuario"
-            android:launchMode="singleTask"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,8 +77,8 @@
         </activity>
         <activity
             android:name=".DatosPersonales"
-            android:launchMode="singleTask"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -88,8 +98,8 @@
         </activity>
         <activity
             android:name=".Autores"
-            android:launchMode="singleTask"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -100,8 +110,8 @@
         <activity
             android:name=".CentrosRegistrados"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -112,15 +122,16 @@
             android:name=".DudasSugerencias"
             android:exported="true"
             android:launchMode="singleTask">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Area2"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -129,8 +140,8 @@
         </activity>
         <activity
             android:name=".FAQ"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -149,8 +160,8 @@
         </activity>
         <activity
             android:name=".MenuPrincipal"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -159,8 +170,8 @@
         </activity>
         <activity
             android:name=".Novedades"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -170,8 +181,8 @@
         <activity
             android:name=".CambioDePerfil"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -181,8 +192,8 @@
         <activity
             android:name=".RegistroDeCentro"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -191,8 +202,8 @@
         </activity>
         <activity
             android:name=".RecuperarContrasenya"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -201,8 +212,8 @@
         </activity>
         <activity
             android:name=".Desplegables"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -211,8 +222,8 @@
         </activity>
         <activity
             android:name=".IniciarSesion"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -221,8 +232,8 @@
         </activity>
         <activity
             android:name=".RegistroUsuario"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

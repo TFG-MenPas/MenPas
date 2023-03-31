@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/bannerRectanguloAzul"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/azul_banner_cuestionarios" />
+
+    <View
+        android:id="@+id/ellipse_45"
+        android:layout_width="230dp"
+        android:layout_height="210dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-160dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_45" />
+
+    <View
+        android:id="@+id/ellipse_46"
+        android:layout_width="170dp"
+        android:layout_height="153dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-130dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_46" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCerrarDesplegable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#9CD3ED"
+        android:contentDescription="@string/boton_cerrar_cuestionario"
+        android:rotation="45"
+        android:src="@drawable/icon_cruz" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:id="@+id/textPregunta"
+        android:layout_below="@id/ellipse_45"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/dark_blue"
+        android:textSize="28sp"
+        android:text="Mondrian Colores" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bannerRectanguloAzul"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <GridLayout
+                    android:id="@+id/gridColores"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:columnCount="2">
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Rojo"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Marron"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Verde"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="2"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Gris"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="2"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Azul"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="3"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Rosa"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="3"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Amarillo"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="4"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Violeta"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="4"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Negro"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="5"
+                        android:textColor="@color/dark_blue"
+                        android:layout_columnWeight="1"
+                        android:fontFamily="@font/poppins_bold" />
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Fucsia"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="5"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Naranja"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="6"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Cyan"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="6"
+                        android:layout_columnWeight="1"
+                        android:fontFamily="@font/poppins_bold" />
+
+                </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="25dp"
+                android:textAlignment="center"
+                android:id="@+id/textTiempoRealizacion"
+                android:layout_below="@id/gridColores"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="Tiempo de realización" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
