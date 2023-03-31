@@ -252,4 +252,8 @@
     <string name="no">no</string>
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
+
+    <!--Peticiones SOAP-->
+    <string name="namespace">http://tempuri.org/</string>
+    <string name="apiurl">http://150.214.108.138/menpas/ServiceApp.asmx?WSDL</string>
 </resources>
