@@ -18,8 +18,6 @@ class IniciarSesion : AppCompatActivity() {
         val textCuestionario = findViewById<TextView>(R.id.textCuestionarios)
         val buttonIniciarSesion = findViewById<Button>(R.id.buttonIniciar)
 
-        UsuarioService.getUser("menpasprueba", "menpasprueba")
-
         lateinit var intent: Intent
 
         textOlvidar.setOnClickListener {
