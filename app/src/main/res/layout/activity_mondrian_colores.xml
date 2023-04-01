@@ -8,7 +8,7 @@
     <View
         android:id="@+id/bannerRectanguloAzul"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="@color/azul_banner_cuestionarios" />
 
     <View
@@ -52,12 +52,15 @@
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/dark_blue"
         android:textSize="28sp"
-        android:text="Mondrian Colores" />
+        android:text="@string/mondrian_colores" />
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollMondrianColores"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="100dp"
         android:layout_below="@id/bannerRectanguloAzul"
         android:background="@color/white">
 
@@ -76,7 +79,20 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Rojo"
+                        android:text="@string/rojo"
+                        android:minHeight="48dp"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="@string/marron"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="1"
@@ -87,10 +103,23 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Marron"
+                        android:text="@string/verde"
+                        android:minHeight="48dp"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
-                        android:layout_rowWeight="1"
+                        android:layout_rowWeight="2"
+                        android:layout_columnWeight="1"
+                        android:textColor="@color/dark_blue"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <CheckBox
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/gris"
+                        android:minHeight="48dp"
+                        android:textSize="20sp"
+                        android:paddingTop="5dp"
+                        android:layout_rowWeight="2"
                         android:layout_columnWeight="2"
                         android:textColor="@color/dark_blue"
                         android:fontFamily="@font/poppins_bold" />
@@ -98,30 +127,9 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Verde"
+                        android:text="@string/azul"
                         android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="2"
-                        android:layout_columnWeight="1"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Gris"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="2"
-                        android:layout_columnWeight="1"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Azul"
-                        android:textSize="20sp"
+                        android:minHeight="48dp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="3"
                         android:layout_columnWeight="1"
@@ -131,18 +139,20 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Rosa"
+                        android:minHeight="48dp"
+                        android:text="@string/rosa"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="3"
-                        android:layout_columnWeight="1"
+                        android:layout_columnWeight="2"
                         android:textColor="@color/dark_blue"
                         android:fontFamily="@font/poppins_bold" />
 
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Amarillo"
+                        android:text="@string/amarillo"
+                        android:minHeight="48dp"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="4"
@@ -153,18 +163,20 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Violeta"
+                        android:text="@string/violeta"
                         android:textSize="20sp"
+                        android:minHeight="48dp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="4"
-                        android:layout_columnWeight="1"
+                        android:layout_columnWeight="2"
                         android:textColor="@color/dark_blue"
                         android:fontFamily="@font/poppins_bold" />
 
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Negro"
+                        android:text="@string/negro"
+                        android:minHeight="48dp"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="5"
@@ -174,18 +186,20 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Fucsia"
+                        android:text="@string/fucsia"
+                        android:minHeight="48dp"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="5"
-                        android:layout_columnWeight="1"
+                        android:layout_columnWeight="2"
                         android:textColor="@color/dark_blue"
                         android:fontFamily="@font/poppins_bold" />
 
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Naranja"
+                        android:text="@string/naranja"
+                        android:minHeight="48dp"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="6"
@@ -196,31 +210,137 @@
                     <CheckBox
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Cyan"
+                        android:text="@string/cyan"
+                        android:minHeight="48dp"
                         android:textColor="@color/dark_blue"
                         android:textSize="20sp"
                         android:paddingTop="5dp"
                         android:layout_rowWeight="6"
-                        android:layout_columnWeight="1"
+                        android:layout_columnWeight="2"
                         android:fontFamily="@font/poppins_bold" />
 
                 </GridLayout>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
                 android:textAlignment="center"
                 android:id="@+id/textTiempoRealizacion"
                 android:layout_below="@id/gridColores"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
-                android:text="Tiempo de realización" />
+                android:text="@string/tiempo_de_realizacion" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textTiempoRealizacion"
+                android:background="@color/line_grey"
+                android:orientation="horizontal" />
+
+            <EditText
+                android:id="@+id/editTextTiempoRealizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_below="@id/textTiempoRealizacion"
+                android:backgroundTint="@color/line_grey"
+                android:fontFamily="@font/poppins_regular"
+                android:fontWeight="400"
+                android:hint="@string/hintFormato"
+                android:inputType="time"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:id="@+id/textTiempoEspera"
+                android:layout_below="@id/editTextTiempoRealizacion"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/tiempo_de_espera" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textTiempoEspera"
+                android:background="@color/line_grey"
+                android:orientation="horizontal" />
+
+            <EditText
+                android:id="@+id/editTextTiempoEspera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_below="@id/textTiempoEspera"
+                android:backgroundTint="@color/line_grey"
+                android:fontFamily="@font/poppins_regular"
+                android:fontWeight="400"
+                android:hint="@string/hintFormato"
+                android:inputType="time"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:id="@+id/textFormato"
+                android:layout_below="@id/editTextTiempoEspera"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/formato" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:id="@+id/textFormatoMax"
+                android:layout_toEndOf="@+id/textFormato"
+                android:layout_alignBottom="@id/textFormato"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/cadenaFormato" />
 
         </RelativeLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_grey"
+        android:layout_above="@id/buttonComenzar"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal" />
+
+    <Button
+        android:id="@+id/buttonComenzar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_bold"
+        android:fontWeight="400"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/comenzar"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal" />
 
 </RelativeLayout>

@@ -252,4 +252,25 @@
     <string name="no">no</string>
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
+
+    <!--Mondrian Colores-->
+    <string name="comenzar">Comenzar</string>
+    <string name="cadenaFormato">mm:ss (max 30:00)</string>
+    <string name="formato">Formato:</string>
+    <string name="hintFormato">mm:ss</string>
+    <string name="tiempo_de_espera">Tiempo de espera</string>
+    <string name="tiempo_de_realizacion">Tiempo de realización</string>
+    <string name="cyan">Cyan</string>
+    <string name="naranja">Naranja</string>
+    <string name="fucsia">Fucsia</string>
+    <string name="negro">Negro</string>
+    <string name="violeta">Violeta</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="rosa">Rosa</string>
+    <string name="azul">Azul</string>
+    <string name="gris">Gris</string>
+    <string name="verde">Verde</string>
+    <string name="marron">Marron</string>
+    <string name="rojo">Rojo</string>
+    <string name="mondrian_colores">Mondrian Colores</string>
 </resources>
