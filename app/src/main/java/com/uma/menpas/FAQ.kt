@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.searchviewkotlin.PreguntaFAQAdaptador
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import org.json.JSONArray
 import org.json.JSONObject
@@ -36,6 +37,9 @@ class FAQ : AppCompatActivity() {
         addDataToList()
         adapter = PreguntaFAQAdaptador(mList)
         recyclerView.adapter = adapter
+
+        val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        BarraNavegacion(barraNavegacionInferior, this)
 
     }
 

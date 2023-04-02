@@ -14,33 +14,13 @@ class DudasSugerencias : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val buttonEnviar = findViewById<Button>(R.id.buttonEnviar)
 
+        BarraNavegacion(barraNavegacionInferior, this)
+
         buttonEnviar.setOnClickListener {
-            Toast.makeText(this, "Botón enviar", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Enviado con exito", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
-        barraNavegacionInferior.menu.getItem(0).isCheckable =
-            false; // LINEA PROVISIONAL PARA QUITAR EL FOCUS INICIAL DEL PRIMER ELEMENTO
-        barraNavegacionInferior.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_faq -> {
-                    it.isCheckable =
-                        true; // LINEA PROVISIONAL PARA DEVOLVER EL CHECKABLE AL PRIMER ELEMENTO
-                    Toast.makeText(applicationContext, "FAQ", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_home -> {
-                    Toast.makeText(applicationContext, "HOME", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.menu_user -> {
-                    Toast.makeText(applicationContext, "USER", Toast.LENGTH_SHORT)
-                        .show()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
-        }
+
     }
 }
