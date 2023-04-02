@@ -36,8 +36,7 @@
         android:layout_alignParentTop="true"
         android:background="#9CD3ED"
         android:contentDescription="@string/boton_cerrar_cuestionario"
-        android:rotation="45"
-        android:src="@drawable/icon_cruz" />
+        android:rotation="45" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -110,8 +109,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="3"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="20dp" />
             <ImageButton
                 android:id="@+id/color01"
                 android:layout_width="48dp"
@@ -120,8 +118,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="3"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color02"
                 android:layout_width="48dp"
@@ -130,8 +127,7 @@
                 android:layout_columnWeight="3"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color03"
                 android:layout_width="48dp"
@@ -140,8 +136,7 @@
                 android:layout_columnWeight="3"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color10"
                 android:layout_width="48dp"
@@ -150,8 +145,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color11"
                 android:layout_width="48dp"
@@ -160,8 +154,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
 
             <ImageButton
                 android:id="@+id/color12"
@@ -171,8 +164,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color13"
                 android:layout_width="48dp"
@@ -181,8 +173,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color20"
                 android:layout_width="48dp"
@@ -191,8 +182,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color21"
                 android:layout_width="48dp"
@@ -201,8 +191,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color22"
                 android:layout_width="48dp"
@@ -211,8 +200,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color23"
                 android:layout_width="48dp"
@@ -221,8 +209,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
 
             <ImageButton
                 android:id="@+id/color30"
@@ -232,8 +219,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="20dp" />
             <ImageButton
                 android:id="@+id/color31"
                 android:layout_width="48dp"
@@ -242,8 +228,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color32"
                 android:layout_width="48dp"
@@ -252,8 +237,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color33"
                 android:layout_width="48dp"
@@ -262,8 +246,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color40"
                 android:layout_width="48dp"
@@ -272,8 +255,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color41"
                 android:layout_width="48dp"
@@ -282,8 +264,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color42"
                 android:layout_width="48dp"
@@ -292,8 +273,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color43"
                 android:layout_width="48dp"
@@ -302,8 +282,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_cruz" />
+                android:layout_marginBottom="10dp" />
             <ImageButton
                 android:id="@+id/color50"
                 android:layout_width="48dp"
@@ -312,8 +291,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color51"
                 android:layout_width="48dp"
@@ -322,8 +300,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color52"
                 android:layout_width="48dp"
@@ -332,8 +309,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
                 android:id="@+id/color53"
                 android:layout_width="48dp"
@@ -342,8 +318,7 @@
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:contentDescription="@string/boton_cerrar_cuestionario"
-                android:src="@drawable/icon_cruz" />
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
 
         </GridLayout>
 
