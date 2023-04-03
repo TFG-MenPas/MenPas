@@ -2,24 +2,30 @@ package com.uma.menpas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.marginEnd
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MondrianColoresGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
     lateinit var arrayColores : ArrayList<String>
+    lateinit var arrayEliminar : ArrayList<String>
     lateinit var botonResolver : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores_grid)
 
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
-
+        arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         colores = findViewById(R.id.gridColores)
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
@@ -45,81 +51,39 @@ class MondrianColoresGrid : AppCompatActivity() {
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
 
-                val btnColorRojo = view.findViewById<ImageButton>(R.id.color00)
-                btnColorRojo.setOnClickListener {
-                    btnColor.background = btnColorRojo.background
-                    dialog.dismiss()
-                }
-
-                val btnColorVerde = view.findViewById<ImageButton>(R.id.color01)
-                btnColorVerde.setOnClickListener {
-                    btnColor.background = btnColorVerde.background
-                    dialog.dismiss()
-                }
-
-                val btnColorAzul = view.findViewById<ImageButton>(R.id.color02)
-                btnColorAzul.setOnClickListener {
-                    btnColor.background = btnColorAzul.background
-                    dialog.dismiss()
-                }
-
-                val btnColorAmarillo = view.findViewById<ImageButton>(R.id.color03)
-                btnColorAmarillo.setOnClickListener {
-                    btnColor.background = btnColorAmarillo.background
-                    dialog.dismiss()
-                }
-
-                val btnColorMarron = view.findViewById<ImageButton>(R.id.color10)
-                btnColorMarron.setOnClickListener {
-                    btnColor.background = btnColorMarron.background
-                    dialog.dismiss()
-                }
-
-                val btnColorGris = view.findViewById<ImageButton>(R.id.color11)
-                btnColorGris.setOnClickListener {
-                    btnColor.background = btnColorGris.background
-                    dialog.dismiss()
-                }
-
-                val btnColorRosa = view.findViewById<ImageButton>(R.id.color12)
-                btnColorRosa.setOnClickListener {
-                    btnColor.background = btnColorRosa.background
-                    dialog.dismiss()
-                }
-
-                val btnColorVioleta = view.findViewById<ImageButton>(R.id.color13)
-                btnColorVioleta.setOnClickListener {
-                    btnColor.background = btnColorVioleta.background
-                    dialog.dismiss()
-                }
-
-                val btnColorNegro = view.findViewById<ImageButton>(R.id.color20)
-                btnColorNegro.setOnClickListener {
-                    btnColor.background = btnColorNegro.background
-                    dialog.dismiss()
-                }
-
-                val btnColorNaranja = view.findViewById<ImageButton>(R.id.color21)
-                btnColorNaranja.setOnClickListener {
-                    btnColor.background = btnColorNaranja.background
-                    dialog.dismiss()
-                }
-
-                val btnColorCyan = view.findViewById<ImageButton>(R.id.color22)
-                btnColorCyan.setOnClickListener {
-                    btnColor.background = btnColorCyan.background
-                    dialog.dismiss()
-                }
-
-                val btnColorFucsia = view.findViewById<ImageButton>(R.id.color23)
-                btnColorFucsia.setOnClickListener {
-                    btnColor.background = btnColorFucsia.background
-                    dialog.dismiss()
+                val gridColoresSeleccion = view.findViewById<GridLayout>(R.id.gridColoresSeleccion)
+                for (i in 0 until gridColoresSeleccion.childCount){
+                   val colorSeleccion = gridColoresSeleccion.getChildAt(i) as ImageButton
+                    if (estaMarcado(colorSeleccion, arrayColores)){
+                        colorSeleccion.setOnClickListener {
+                            btnColor.background = colorSeleccion.background
+                            dialog.dismiss()
+                        }
+                    }
                 }
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
                     dialog.dismiss()
+                }
+
+                for (texColorEliminar in arrayEliminar){
+                    val imageButtonColor = when(texColorEliminar){
+                        "rojo" -> view.findViewById<ImageButton>(R.id.color00)
+                        "marron" -> view.findViewById(R.id.color10)
+                        "verde" -> view.findViewById(R.id.color01)
+                        "gris" -> view.findViewById(R.id.color11)
+                        "azul" -> view.findViewById(R.id.color02)
+                        "rosa" -> view.findViewById(R.id.color12)
+                        "amarillo" -> view.findViewById(R.id.color03)
+                        "violeta" -> view.findViewById(R.id.color13)
+                        "negro" -> view.findViewById(R.id.color20)
+                        "fucsia" -> view.findViewById(R.id.color23)
+                        "naranja" -> view.findViewById(R.id.color21)
+                        "cyan" -> view.findViewById(R.id.color22)
+                        else -> view.findViewById(R.id.imageButtonCerrarDesplegable)
+                    }
+                    gridColoresSeleccion.removeViewAt(gridColoresSeleccion.indexOfChild(imageButtonColor))
                 }
 
                 dialog.setCancelable(false)
@@ -136,5 +100,14 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun estaMarcado(gridBotonColor: ImageButton, arrayColores: ArrayList<String>): Boolean {
+        for (textColor in arrayColores){
+            if (textColor == gridBotonColor.contentDescription){
+                return true
+            }
+        }
+        return false
     }
 }

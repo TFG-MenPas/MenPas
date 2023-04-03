@@ -102,7 +102,7 @@
             android:columnCount="4">
 
             <ImageButton
-                android:id="@+id/color00"
+                android:id="@+id/colorCasilla00"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -114,7 +114,7 @@
 
                 android:layout_marginBottom="20dp" />
             <ImageButton
-                android:id="@+id/color01"
+                android:id="@+id/colorCasilla01"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -125,7 +125,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color02"
+                android:id="@+id/colorCasilla02"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -136,7 +136,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color03"
+                android:id="@+id/colorCasilla03"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -147,7 +147,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color10"
+                android:id="@+id/colorCasilla10"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -158,7 +158,7 @@
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color11"
+                android:id="@+id/colorCasilla11"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -170,7 +170,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
 
             <ImageButton
-                android:id="@+id/color12"
+                android:id="@+id/colorCasilla12"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -181,7 +181,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color13"
+                android:id="@+id/colorCasilla13"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -192,7 +192,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color20"
+                android:id="@+id/colorCasilla20"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -203,7 +203,7 @@
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color21"
+                android:id="@+id/colorCasilla21"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -214,7 +214,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color22"
+                android:id="@+id/colorCasilla22"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -225,7 +225,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color23"
+                android:id="@+id/colorCasilla23"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -237,7 +237,7 @@
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
 
             <ImageButton
-                android:id="@+id/color30"
+                android:id="@+id/colorCasilla30"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -248,7 +248,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp" />
             <ImageButton
-                android:id="@+id/color31"
+                android:id="@+id/colorCasilla31"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -259,7 +259,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color32"
+                android:id="@+id/colorCasilla32"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -270,7 +270,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color33"
+                android:id="@+id/colorCasilla33"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -281,7 +281,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color40"
+                android:id="@+id/colorCasilla40"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -292,7 +292,7 @@
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color41"
+                android:id="@+id/colorCasilla41"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -303,7 +303,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color42"
+                android:id="@+id/colorCasilla42"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -314,7 +314,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color43"
+                android:id="@+id/colorCasilla43"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -325,7 +325,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
             <ImageButton
-                android:id="@+id/color50"
+                android:id="@+id/colorCasilla50"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -336,7 +336,7 @@
                 android:layout_marginBottom="20dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color51"
+                android:id="@+id/colorCasilla51"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -347,7 +347,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color52"
+                android:id="@+id/colorCasilla52"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"
@@ -358,7 +358,7 @@
                 android:layout_marginBottom="10dp"
                 android:contentDescription="@string/boton_cerrar_cuestionario" />
             <ImageButton
-                android:id="@+id/color53"
+                android:id="@+id/colorCasilla53"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:layout_width="48dp"

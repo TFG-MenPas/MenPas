@@ -43,7 +43,7 @@
             android:fillViewport="true">
 
             <GridLayout
-                android:id="@+id/gridColores"
+                android:id="@+id/gridColoresSeleccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -58,7 +58,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/rojo"
-                    android:contentDescription="@string/boton_cerrar_cuestionario"
+                    android:contentDescription="rojo"
                     android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp" />
@@ -67,7 +67,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/verde"
-                    android:contentDescription="@string/boton_cerrar_cuestionario"
+                    android:contentDescription="verde"
                     android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp" />
@@ -79,7 +79,7 @@
                     android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="azul" />
                 <ImageButton
                     android:id="@+id/color03"
                     android:layout_width="48dp"
@@ -88,7 +88,7 @@
                     android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="amarillo" />
                 <ImageButton
                     android:id="@+id/color10"
                     android:layout_width="48dp"
@@ -97,7 +97,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="marron" />
                 <ImageButton
                     android:id="@+id/color11"
                     android:layout_width="48dp"
@@ -106,14 +106,14 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="gris" />
 
                 <ImageButton
                     android:id="@+id/color12"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/rosa"
-                    android:contentDescription="@string/boton_cerrar_cuestionario"
+                    android:contentDescription="rosa"
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp" />
@@ -122,7 +122,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/violeta"
-                    android:contentDescription="@string/boton_cerrar_cuestionario"
+                    android:contentDescription="violeta"
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp" />
@@ -134,7 +134,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="black" />
                 <ImageButton
                     android:id="@+id/color21"
                     android:layout_width="48dp"
@@ -143,7 +143,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="naranja" />
                 <ImageButton
                     android:id="@+id/color22"
                     android:layout_width="48dp"
@@ -152,7 +152,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="cyan" />
                 <ImageButton
                     android:id="@+id/color23"
                     android:layout_width="48dp"
@@ -161,7 +161,7 @@
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/boton_cerrar_cuestionario" />
+                    android:contentDescription="fucsia" />
 
             </GridLayout>
 
