@@ -94,7 +94,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/marron"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
                     android:contentDescription="marron" />
@@ -103,7 +103,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/gris"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="gris" />
@@ -114,7 +114,7 @@
                     android:layout_height="48dp"
                     android:background="@color/rosa"
                     android:contentDescription="rosa"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp" />
                 <ImageButton
@@ -123,7 +123,7 @@
                     android:layout_height="48dp"
                     android:background="@color/violeta"
                     android:contentDescription="violeta"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp" />
                 <ImageButton
@@ -131,16 +131,16 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/black"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
-                    android:contentDescription="black" />
+                    android:contentDescription="negro" />
                 <ImageButton
                     android:id="@+id/color21"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/naranja"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="naranja" />
@@ -149,7 +149,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/cyan"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="cyan" />
@@ -158,7 +158,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:background="@color/fucsia"
-                    android:layout_columnWeight="1"
+                    android:layout_columnWeight="3"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="fucsia" />

@@ -1,15 +1,23 @@
 package com.uma.menpas
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.AttributeSet
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.getSystemService
 import androidx.core.view.marginEnd
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -29,7 +37,8 @@ class MondrianColoresGrid : AppCompatActivity() {
         colores = findViewById(R.id.gridColores)
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
-            val color = when(arrayColores[(0 until arrayColores.size).random()]){
+            val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
+            val color = when(colorAleatorio){
                 "rojo" -> R.color.rojo
                 "marron" -> R.color.marron
                 "verde" -> R.color.verde
@@ -45,25 +54,43 @@ class MondrianColoresGrid : AppCompatActivity() {
                 else -> R.color.black
             }
             botonColor.background = AppCompatResources.getDrawable(this, color)
+            botonColor.contentDescription = colorAleatorio
             botonColor.setOnClickListener {
                 val dialog = BottomSheetDialog(this)
                 val view = layoutInflater.inflate(R.layout.desplegable_colores, null)
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
 
+                val animation = AlphaAnimation(1.toFloat(), 0.toFloat())
+                animation.duration = 500
+                animation.interpolator = LinearInterpolator()
+                animation.repeatCount = Animation.INFINITE
+                animation.repeatMode = Animation.REVERSE
+                btnColor.startAnimation(animation)
+
+                val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
                 val gridColoresSeleccion = view.findViewById<GridLayout>(R.id.gridColoresSeleccion)
                 for (i in 0 until gridColoresSeleccion.childCount){
                    val colorSeleccion = gridColoresSeleccion.getChildAt(i) as ImageButton
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
-                            btnColor.background = colorSeleccion.background
-                            dialog.dismiss()
+                            if (btnColor.contentDescription == colorSeleccion.contentDescription){
+                                btnColor.background = colorSeleccion.background
+                                btnColor.clearAnimation()
+                                btnColor.isEnabled = false
+                                btnColor.isActivated = false
+                                dialog.dismiss()
+                            }else{
+                                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                            }
                         }
                     }
                 }
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
+                    btnColor.clearAnimation()
                     dialog.dismiss()
                 }
 
