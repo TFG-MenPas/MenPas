@@ -127,6 +127,11 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
         }
 
+        Thread(Runnable {
+            Thread.sleep(3000)
+            runOnUiThread{botonResolver.performClick()}
+
+        }).start()
     }
 
     private fun estaMarcado(gridBotonColor: ImageButton, arrayColores: ArrayList<String>): Boolean {
