@@ -1,45 +1,39 @@
 package com.uma.menpas
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.os.VibratorManager
-import android.util.AttributeSet
-import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.getSystemService
-import androidx.core.view.marginEnd
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import java.util.concurrent.TimeUnit
 
 class MondrianColoresGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
-    lateinit var botonResolver : Button
     lateinit var textTiempo : TextView
+    lateinit var crono : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores_grid)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        crono = findViewById(R.id.tiempoEspera)
         textTiempo = findViewById(R.id.textTiempoEspera)
-        var longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
-        var longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
+        val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
+        val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         colores = findViewById(R.id.gridColores)
@@ -63,6 +57,8 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
             botonColor.background = AppCompatResources.getDrawable(this, color)
             botonColor.contentDescription = colorAleatorio
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
             botonColor.setOnClickListener {
                 val dialog = BottomSheetDialog(this)
                 val view = layoutInflater.inflate(R.layout.desplegable_colores, null)
@@ -124,25 +120,52 @@ class MondrianColoresGrid : AppCompatActivity() {
                 dialog.show()
             }
         }
-        //Boton para it a resolver el cuestionario TODO Timer
-        botonResolver = findViewById(R.id.buttonResolver)
-        botonResolver.setOnClickListener {
-            for (i in 0 until colores.childCount){
-                botonColor = colores.getChildAt(i) as ImageButton
-                botonColor.background = AppCompatResources.getDrawable(this, R.color.elipseBlue)
-            }
-        }
 
-        Thread(Runnable {
-            Thread.sleep(longTiempoEspera)
-            runOnUiThread{
-                botonResolver.performClick()
+        object : CountDownTimer(longTiempoEspera, 1000){
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+                actualizarCronometro(millisUntilFinished)
+            }
+
+            override fun onFinish() {
+                activarRealizacionCuestionario()
                 textTiempo.text = getString(R.string.tiempo_de_realizacion)
                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+
+                object : CountDownTimer(longTiempoRealizacion, 1000){
+                    @SuppressLint("SetTextI18n")
+                    override fun onTick(millisUntilFinished: Long) {
+                        actualizarCronometro(millisUntilFinished)
+                    }
+
+                    override fun onFinish() {
+                        vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                        finish()
+                    }
+
+                }.start()
             }
-            Thread.sleep(longTiempoRealizacion)
-            runOnUiThread{finish()}
-        }).start()
+
+        }.start()
+    }
+
+    private fun activarRealizacionCuestionario(){
+        for (i in 0 until colores.childCount){
+            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor.background = AppCompatResources.getDrawable(this, R.color.azul_banner_cuestionarios)
+            botonColor.isEnabled = true
+            botonColor.isActivated = true
+        }
+    }
+
+    private fun actualizarCronometro(millisUntilFinished: Long) {
+        val min =  TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
+        val secs = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished - TimeUnit.MINUTES.toMillis(min))
+        if (secs < 10){
+            crono.text = "$min : 0$secs"
+        }else{
+            crono.text = "$min : $secs"
+        }
     }
 
     private fun estaMarcado(gridBotonColor: ImageButton, arrayColores: ArrayList<String>): Boolean {

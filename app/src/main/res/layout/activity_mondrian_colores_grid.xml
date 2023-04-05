@@ -373,21 +373,4 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/buttonResolver"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/poppins_bold"
-        android:fontWeight="400"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:text="Resolver"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="normal" />
-
 </RelativeLayout>
