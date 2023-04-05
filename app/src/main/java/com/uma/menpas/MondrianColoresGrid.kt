@@ -10,12 +10,15 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.getSystemService
 import androidx.core.view.marginEnd
@@ -27,11 +30,16 @@ class MondrianColoresGrid : AppCompatActivity() {
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var botonResolver : Button
+    lateinit var textTiempo : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores_grid)
 
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        textTiempo = findViewById(R.id.textTiempoEspera)
+        var longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
+        var longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         colores = findViewById(R.id.gridColores)
@@ -61,14 +69,10 @@ class MondrianColoresGrid : AppCompatActivity() {
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
 
-                val animation = AlphaAnimation(1.toFloat(), 0.toFloat())
-                animation.duration = 500
-                animation.interpolator = LinearInterpolator()
-                animation.repeatCount = Animation.INFINITE
-                animation.repeatMode = Animation.REVERSE
-                btnColor.startAnimation(animation)
+                val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
+                alphaBlink.interpolator = LinearInterpolator()
+                btnColor.startAnimation(alphaBlink)
 
-                val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
                 val gridColoresSeleccion = view.findViewById<GridLayout>(R.id.gridColoresSeleccion)
                 for (i in 0 until gridColoresSeleccion.childCount){
@@ -83,6 +87,8 @@ class MondrianColoresGrid : AppCompatActivity() {
                                 dialog.dismiss()
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                                val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise)
+                                colorSeleccion.startAnimation(clk_rotate)
                             }
                         }
                     }
@@ -128,9 +134,14 @@ class MondrianColoresGrid : AppCompatActivity() {
         }
 
         Thread(Runnable {
-            Thread.sleep(3000)
-            runOnUiThread{botonResolver.performClick()}
-
+            Thread.sleep(longTiempoEspera)
+            runOnUiThread{
+                botonResolver.performClick()
+                textTiempo.text = getString(R.string.tiempo_de_realizacion)
+                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+            }
+            Thread.sleep(longTiempoRealizacion)
+            runOnUiThread{finish()}
         }).start()
     }
 

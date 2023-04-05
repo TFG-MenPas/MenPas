@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.content.res.AppCompatResources
+import java.util.concurrent.TimeUnit
 
 class MondrianColores : AppCompatActivity() {
     lateinit var botonComenzar : Button
@@ -37,22 +38,47 @@ class MondrianColores : AppCompatActivity() {
                 }
             }
 
-            if (arrayColores.size >= 2 && !tiempoEspera.text.isEmpty() && !tiempoRealizacion.text.isEmpty()){
+            if (arrayColores.size >= 2 && esValido(tiempoEspera.text.toString()) && esValido(tiempoRealizacion.text.toString())){
+                val longTiempoRealizacion = stringToMilis(tiempoRealizacion.text.toString())
+                val longTiempoEspera = stringToMilis(tiempoEspera.text.toString())
+                intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
+                intent.putExtra("longTiempoEspera", longTiempoEspera)
                 intent.putExtra("arrayColores", arrayColores)
                 intent.putExtra("arrayEliminar", arrayEliminar)
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")
-            }else if(tiempoRealizacion.text.isEmpty()){
-                showToast("Introduzca un tiempo de realizacion")
-            }else if(tiempoEspera.text.isEmpty()){
-                showToast("Introduzca un tiempo de espera")
+            }else if(!esValido(tiempoRealizacion.text.toString())){
+                showToast("Introduzca un tiempo de realizacion valido")
+            }else if(!esValido(tiempoEspera.text.toString())){
+                showToast("Introduzca un tiempo de espera valido")
             }
 
         }
 
 
     }
+
+    private fun esValido(tiempo: String): Boolean {
+        if(tiempo.contains(":")){
+            val minSecArray = tiempo.split(":")
+            val min = minSecArray[0]
+            val sec = minSecArray[1]
+            return min.length == 2 && sec.length == 2
+        }else{
+            return false
+        }
+    }
+
+    private fun stringToMilis(tiempo: String): Long {
+        val minSecArray = tiempo.split(":")
+        val min = minSecArray[0]
+        val sec = minSecArray[1]
+        val minMillis = TimeUnit.MINUTES.toMillis(min.toLong())
+        val secMillis = TimeUnit.SECONDS.toMillis(sec.toLong())
+        return minMillis + secMillis
+    }
+
     private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
