@@ -252,4 +252,6 @@
     <string name="no">no</string>
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
+
+    <string name="click_aqui"> Hacer click aquí</string>
 </resources>

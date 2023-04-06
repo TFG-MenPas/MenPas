@@ -1,0 +1,9 @@
+{
+	"content": {
+		"Instrucciones": "El usuario tendrá que revisar de izquierda a derecha el contenido de cada una de las líneas.\n\nMarcará todas las letras 'd' que tengan dos pequeñas rayitas (pueden estar las dos arriba, las dos abajo o una arriba y otra abajo)\n\nPara cada línea, el sujeto dispone de 20 segundos. Se empezará por la línea 1 y se seguirá de manera secuencial.\n\nEl número de la línea activa en cada momento aparecerá de color verde.\n\nAl pasar los 20 segundos, aparecerá el número de la fila en rojo, y se escuchará un sonido (indicando el cambio a la siguiente fila).\n\nUna vez transcurrido el tiempo de cada fila los elementos son inaccesibles.\n\nCuando termine pulse el botón solución."
+	},
+	"buttons": [
+		"Test original",
+		"Test aleatorio"
+	]
+}

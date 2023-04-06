@@ -1,6 +1,10 @@
 package com.uma.menpas
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
@@ -68,11 +72,22 @@ class Area2 : AppCompatActivity() {
             linearLayout.addView(titulo)
 
             val textView = TextView(this)
-            textView.setTextColor(resources.getColor(R.color.black))
-            textView.setText(value as String)
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+            val text = value as String
             textView.setTypeface(resources.getFont(R.font.poppins_light))
             textView.setPadding(40,0,40,70)
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+            if (text.startsWith("http://")) {
+                textView.setText(resources.getString(R.string.click_aqui))
+                Linkify.addLinks(textView, Linkify.WEB_URLS)
+                textView.movementMethod = LinkMovementMethod.getInstance()
+                textView.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(text))
+                    startActivity(intent)
+                }
+            } else {
+                textView.setTextColor(resources.getColor(R.color.black))
+                textView.setText(text)
+            }
             linearLayout.addView(textView)
         }
 

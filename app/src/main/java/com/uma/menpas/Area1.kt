@@ -16,6 +16,7 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.text.Normalizer
 
 
 class Area1 : AppCompatActivity() {
@@ -72,7 +73,7 @@ class Area1 : AppCompatActivity() {
             linearLayout.addView(boton)
             boton.setOnClickListener {
                 val intent = Intent(this, Area2::class.java)
-                intent.putExtra("json_resource_name",area.toLowerCase() + "_" + section.toLowerCase())
+                intent.putExtra("json_resource_name",Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), ""))
                 intent.putExtra("subarea", section)
                 startActivity(intent)
             }
