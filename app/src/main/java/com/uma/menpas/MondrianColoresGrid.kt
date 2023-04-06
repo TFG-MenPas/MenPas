@@ -60,10 +60,14 @@ class MondrianColoresGrid : AppCompatActivity() {
             botonColor.isEnabled = false
             botonColor.isActivated = false
             botonColor.setOnClickListener {
-                val dialog = BottomSheetDialog(this)
-                val view = layoutInflater.inflate(R.layout.desplegable_colores, null)
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
+                btnColor.isActivated = false
+                btnColor.isEnabled = false
+
+                val dialog = BottomSheetDialog(this)
+                val view = layoutInflater.inflate(R.layout.desplegable_colores, null)
+
 
                 val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
                 alphaBlink.interpolator = LinearInterpolator()
@@ -78,8 +82,6 @@ class MondrianColoresGrid : AppCompatActivity() {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
                                 btnColor.background = colorSeleccion.background
                                 btnColor.clearAnimation()
-                                btnColor.isEnabled = false
-                                btnColor.isActivated = false
                                 dialog.dismiss()
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
@@ -92,6 +94,8 @@ class MondrianColoresGrid : AppCompatActivity() {
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
+                    btnColor.isActivated = true
+                    btnColor.isEnabled = true
                     btnColor.clearAnimation()
                     dialog.dismiss()
                 }
