@@ -273,4 +273,7 @@
     <string name="marron">Marron</string>
     <string name="rojo">Rojo</string>
     <string name="mondrian_colores">Mondrian Colores</string>
+
+    <!--Test D2-->
+    <string name="test_de_atencion_d2">Test de atención d2</string>
 </resources>
