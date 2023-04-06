@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter
 
 class AdaptadorUsuario {
 
-    companion object{
+    companion object {
 
         fun soapObjectAModelo(result: SoapObject): Usuario {
             val listaAtributosUsuario = mutableListOf<String>()
@@ -18,7 +18,7 @@ class AdaptadorUsuario {
             return convertirAModelo(listaAtributosUsuario)
         }
 
-        fun modeloASoapObject(){
+        fun modeloASoapObject() {
             TODO()
         }
 
