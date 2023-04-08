@@ -1,9 +1,12 @@
 package com.uma.menpas.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.time.LocalDateTime
 
-
+@Entity
 data class Usuario(
+    @PrimaryKey(autoGenerate = false)
     var nombreUsuario: String,
     var contrasenya: String,
     var nombre: String,
@@ -12,7 +15,7 @@ data class Usuario(
     var telefono: String,
     var dni: String,
     var sexo: String,
-    var fechaRegistro: LocalDateTime,
+    var fechaRegistro: String,
     var perfil: String,
     var correo: String,
     var deportePracticado: String,

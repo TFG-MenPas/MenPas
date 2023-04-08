@@ -32,7 +32,7 @@ class AdaptadorUsuario {
             val dni = result[6]
             val sexo = result[7]
             val fechaRegistro =
-                LocalDateTime.parse(result[8], DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
+                LocalDateTime.parse(result[8], DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString()
             val perfil = result[9]
             val correo = result[10]
             val deportePracticado = result[11]
