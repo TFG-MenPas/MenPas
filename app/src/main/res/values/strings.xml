@@ -81,11 +81,13 @@
     <string name="registrar_centro_icono">registrar centro icono</string>
     <string name="cambio_de_perfil_icono">cambio de perfil icono</string>
     <string name="dar_de_baja_icono">dar de baja icono</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="icono_cambio_perfil">icono_cambio_perfil</string>
     <string name="icono_consultar_estadisticas">icono_consultar_estadisticas</string>
     <string name="icono_dar_baja">icono_dar_baja</string>
     <string name="icono_modificar_datos">icono_modificar_datos</string>
     <string name="icono_registrar_centro">icono_registrar_centro</string>
+
 
     <!-- Desplegable FAQ -->
     <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
@@ -276,4 +278,5 @@
 
     <!--Test D2-->
     <string name="test_de_atencion_d2">Test de atención d2</string>
+
 </resources>

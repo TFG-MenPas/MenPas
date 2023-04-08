@@ -6,25 +6,25 @@
     android:layout_margin="10dp">
 
     <ImageView
-        android:id="@+id/IVdar_baja"
+        android:id="@+id/IVlog_out"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/icon_dar_baja"
+        android:src="@drawable/icon_cerrar_sesion"
         android:contentDescription="@string/icono_dar_baja" />
 
     <TextView
-        android:id="@+id/TVdar_baja"
+        android:id="@+id/TVlog_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/IVdar_baja"
-        android:layout_toEndOf="@id/IVdar_baja"
+        android:layout_alignBottom="@id/IVlog_out"
+        android:layout_toEndOf="@id/IVlog_out"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="700"
-        android:text="@string/dar_de_baja"
+        android:text="@string/cerrar_sesion"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal" />
