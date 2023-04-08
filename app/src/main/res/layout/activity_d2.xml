@@ -74,7 +74,7 @@
         android:fontFamily="@font/poppins_regular"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:text="30" />
+        android:text="14" />
 
     <ProgressBar
         android:layout_width="match_parent"
@@ -86,8 +86,8 @@
         android:layout_marginTop="5dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/custom_progressbar"
-        android:max="30"
-        android:progress="4"
+        android:max="14"
+        android:progress="0"
         />
 
     <TextView
@@ -120,7 +120,7 @@
         android:textSize="20sp"
         android:text="Marca todas las letras 'd' que tengan 2 rayitas pequeñas" />
 
-    <TextView
+    <Chronometer
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -145,7 +145,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewD2"
-            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
