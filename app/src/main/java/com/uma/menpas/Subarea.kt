@@ -22,14 +22,14 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Area2 : AppCompatActivity() {
+class Subarea : AppCompatActivity() {
     companion object {
         private const val JSON_RESOURCE_TYPE = "raw"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_area2)
+        setContentView(R.layout.activity_subarea)
         val intent = intent
         var subarea = intent.getStringExtra("subarea")
         var json_resource_name = intent.getStringExtra("json_resource_name")

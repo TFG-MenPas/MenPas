@@ -1,6 +1,5 @@
 package com.uma.menpas
 
-import android.R.attr.button
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
@@ -19,7 +18,7 @@ import java.io.InputStreamReader
 import java.text.Normalizer
 
 
-class Area1 : AppCompatActivity() {
+class Area : AppCompatActivity() {
 
     companion object {
         private const val JSON_RESOURCE_NAME = "areas"
@@ -31,7 +30,7 @@ class Area1 : AppCompatActivity() {
         val intent = intent
         var area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_area1)
+        setContentView(R.layout.activity_area)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
@@ -72,7 +71,7 @@ class Area1 : AppCompatActivity() {
             }
             linearLayout.addView(boton)
             boton.setOnClickListener {
-                val intent = Intent(this, Area2::class.java)
+                val intent = Intent(this, Subarea::class.java)
                 intent.putExtra("json_resource_name",Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), ""))
                 intent.putExtra("subarea", section)
                 startActivity(intent)

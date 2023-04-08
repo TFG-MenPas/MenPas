@@ -34,6 +34,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Areas"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Referencias"
             android:launchMode="singleTask"
             android:exported="true">
@@ -118,7 +127,7 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".Area2"
+            android:name=".Subarea"
             android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
@@ -138,7 +147,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Area1"
+            android:name=".Area"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>

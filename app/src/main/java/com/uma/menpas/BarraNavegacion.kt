@@ -36,7 +36,7 @@ class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, application
                     }
                     val btnAreas = view.findViewById<RelativeLayout>(R.id.btn_areas)
                     btnAreas.setOnClickListener {
-                        intent = Intent(applicationContext, DatosPersonales::class.java)
+                        intent = Intent(applicationContext, Areas::class.java)
                         applicationContext.startActivity(intent)
                         dialog.dismiss()
                     }
