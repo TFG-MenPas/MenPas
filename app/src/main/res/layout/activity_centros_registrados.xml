@@ -65,7 +65,7 @@
         android:layout_marginBottom="80dp"
         android:elevation="4dp"
         android:backgroundTint="@color/elipseBlue"
-        app:srcCompat="@drawable/icon_cruz" />
+        app:srcCompat="@drawable/icon_anyadir_centro" />
 
     <include
         android:id="@+id/menu_navegacion_inferior"

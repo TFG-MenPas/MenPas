@@ -28,12 +28,12 @@ class RegistroUsuario : AppCompatActivity() {
             if (!isPasswordVisible) {
                 password.inputType = android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 password.typeface = usuario.typeface
-                mostrarOcultarPassword.setImageResource(R.drawable.hide_icon_v3)
+                mostrarOcultarPassword.setImageResource(R.drawable.icon_ver_contrasenya)
             } else {
                 password.inputType =
                     android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
                 password.typeface = usuario.typeface
-                mostrarOcultarPassword.setImageResource(R.drawable.show_icon_v3)
+                mostrarOcultarPassword.setImageResource(R.drawable.icon_ocultar_contrasenya)
             }
             password.setSelection(password.text.length)
             isPasswordVisible = !isPasswordVisible
@@ -46,12 +46,12 @@ class RegistroUsuario : AppCompatActivity() {
             if (!isRepPasswordVisible) {
                 repPassword.inputType = android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 repPassword.typeface = usuario.typeface
-                hideShowRepPassword.setImageResource(R.drawable.hide_icon_v3)
+                hideShowRepPassword.setImageResource(R.drawable.icon_ver_contrasenya)
             } else {
                 repPassword.inputType =
                     android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
                 repPassword.typeface = usuario.typeface
-                hideShowRepPassword.setImageResource(R.drawable.show_icon_v3)
+                hideShowRepPassword.setImageResource(R.drawable.icon_ocultar_contrasenya)
             }
             repPassword.setSelection(repPassword.text.length)
             isRepPasswordVisible = !isRepPasswordVisible

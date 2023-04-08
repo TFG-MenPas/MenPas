@@ -66,7 +66,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/rounded_edittext_inicio_sesion"
-            android:drawableLeft="@drawable/email_icon_v3"
+            android:drawableLeft="@drawable/icon_email"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_regular"
             android:fontWeight="400"
