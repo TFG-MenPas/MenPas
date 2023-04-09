@@ -72,7 +72,9 @@ class Area : AppCompatActivity() {
             linearLayout.addView(boton)
             boton.setOnClickListener {
                 val intent = Intent(this, Subarea::class.java)
-                intent.putExtra("json_resource_name",Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), ""))
+                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
+                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", section)
                 startActivity(intent)
             }

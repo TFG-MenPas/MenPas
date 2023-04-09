@@ -46,11 +46,7 @@ class Areas : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         BarraNavegacion(barraNavegacionInferior, this)
 
-        areas_listView.setOnClickListener {
-            Toast.makeText(applicationContext, "Solicitud enviada con éxito", Toast.LENGTH_SHORT)
-                .show()
-            finish()
-        }
+
 
     }
 
