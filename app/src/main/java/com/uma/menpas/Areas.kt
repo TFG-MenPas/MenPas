@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
@@ -41,12 +42,22 @@ class Areas : AppCompatActivity() {
         val areas_listView = findViewById<ExpandableListView>(R.id.areas_listView)
         areas_listView.setAdapter(areasAdaptador)
 
-
+        areas_listView.setOnChildClickListener(object : ExpandableListView.OnChildClickListener {
+            override fun onChildClick(parent: ExpandableListView?, view: View?, groupPosition: Int, childPosition: Int, id: Long): Boolean {
+                val intent = Intent(this@Areas, Subarea::class.java)
+                val area = areasList[groupPosition]
+                val subarea = subareasList[areasList[groupPosition]]?.get(childPosition) as String
+                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(subarea.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
+                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                intent.putExtra("json_resource_name", json_resource_name)
+                intent.putExtra("subarea", subarea)
+                startActivity(intent)
+                return true
+            }
+        })
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         BarraNavegacion(barraNavegacionInferior, this)
-
-
 
     }
 
@@ -102,6 +113,10 @@ class Areas : AppCompatActivity() {
             JSONObject.NULL -> null
             else            -> value
         }
+    }
+
+    private fun showToast(msg: String){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
 }

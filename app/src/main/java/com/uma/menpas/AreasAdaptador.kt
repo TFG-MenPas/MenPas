@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import android.widget.Button
 import android.widget.TextView
 
 public class AreasAdaptador internal constructor(private val context: Context,
@@ -59,6 +60,7 @@ private val areasList: List<String>, private val subareasList: HashMap<String,Li
         }
         val subareasTV = convertView!!.findViewById<TextView>(R.id.subareas_tv)
         subareasTV.setText(titulo_subarea)
+
         return convertView
     }
 
