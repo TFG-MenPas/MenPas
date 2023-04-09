@@ -13,6 +13,7 @@
         android:text="Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible."
         app:layout_constraintHorizontal_bias="0.5"
         android:fontFamily="@font/poppins_light"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
