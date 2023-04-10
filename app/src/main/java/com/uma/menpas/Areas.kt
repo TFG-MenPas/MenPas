@@ -44,7 +44,7 @@ class Areas : AppCompatActivity() {
 
         areas_listView.setOnChildClickListener(object : ExpandableListView.OnChildClickListener {
             override fun onChildClick(parent: ExpandableListView?, view: View?, groupPosition: Int, childPosition: Int, id: Long): Boolean {
-                val intent = Intent(this@Areas, Subarea::class.java)
+                val intent = Intent(this@Areas, Documentacion::class.java)
                 val area = areasList[groupPosition]
                 val subarea = subareasList[areasList[groupPosition]]?.get(childPosition) as String
                 val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(subarea.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")

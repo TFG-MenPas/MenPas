@@ -22,7 +22,7 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Subarea : AppCompatActivity() {
+class Documentacion: AppCompatActivity() {
     companion object {
         private const val JSON_RESOURCE_TYPE = "raw"
     }
@@ -37,9 +37,8 @@ class Subarea : AppCompatActivity() {
         val linearLayout = findViewById<LinearLayout>(R.id.doc_txt_area2)
         this.drawTitle(subarea.toString())
         val json = getJSON(json_resource_name.toString())
-        val content = json["instructions"] as JSONObject
-        val buttons = json["buttons"] as JSONArray
-        drawContent(content, buttons, linearLayout)
+        val content = json["content"] as JSONObject
+        drawContent(content, linearLayout)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         BarraNavegacion(barraNavegacionInferior, this)
@@ -55,7 +54,7 @@ class Subarea : AppCompatActivity() {
         return JSONObject(jsonString)
     }
 
-    private fun drawContent(content: JSONObject, buttons: JSONArray, linearLayout: LinearLayout) {
+    private fun drawContent(content: JSONObject, linearLayout: LinearLayout) {
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val keys = content.keys()
@@ -67,7 +66,7 @@ class Subarea : AppCompatActivity() {
             titulo.setText(key)
             titulo.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
             titulo.setTypeface(resources.getFont(R.font.poppins_bold))
-                titulo.setPadding(40,0,40,0)
+            titulo.setPadding(40,0,40,0)
 
             linearLayout.addView(titulo)
 
@@ -89,30 +88,6 @@ class Subarea : AppCompatActivity() {
                 textView.setText(text)
             }
             linearLayout.addView(textView)
-        }
-
-        for (i in 0 until buttons.length()) {
-            val button = Button(this)
-            button.setBackgroundResource(R.drawable.button)
-            button.setText(buttons[i] as String)
-            button.setTextColor(resources.getColor(R.color.white))
-            button.setTypeface(resources.getFont(R.font.poppins_bold))
-            button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-            button.gravity = Gravity.CENTER
-            button.isAllCaps = false
-            button.elevation = 8F
-            button.setPadding(50,20,50,20)
-            val params = ViewGroup.MarginLayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            params.setMargins(150,0,150,100)
-            button.layoutParams = params
-            button.marginBottom
-            button.setOnClickListener {
-                Toast.makeText(applicationContext, button.text as String, Toast.LENGTH_SHORT).show()
-            }
-            linearLayout.addView(button)
         }
     }
 

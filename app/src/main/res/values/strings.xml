@@ -255,7 +255,7 @@
 
     <string name="click_aqui"> Hacer click aquí</string>
     <string name="efecto_stroop">Efecto Stroop</string>
-    <string name="comenzar">Comenzar</string>
+    <string name="iniciar">Iniciar</string>
     <string name="congruente">Congruente</string>
     <string name="incongruente">Incongruente</string>
     <string name="mixto">Mixto</string>

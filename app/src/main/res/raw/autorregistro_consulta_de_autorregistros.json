@@ -1,8 +1,15 @@
 {
 	"content": {
-		"Mock": "Mock"
+		"Resultados": "En este apartado se le da la oportunidad al usuario de consultar sus autorregistros previos."
 		},
+	"instructions": {
+		"Instrucciones": "Seleccione los autorregistros que desee consultar."
+	},
 	"buttons": [
-		"Mock"
+		"Comida y bebida",
+		"Diario",
+		"Entrenamiento",
+		"Pensamientos negativos",
+		"Libres"
 	]
 }
