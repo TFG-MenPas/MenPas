@@ -254,4 +254,25 @@
     <string name="escriba_aqui">Escriba aquí...</string>
 
     <string name="click_aqui"> Hacer click aquí</string>
+    <string name="efecto_stroop">Efecto Stroop</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="congruente">Congruente</string>
+    <string name="incongruente">Incongruente</string>
+    <string name="mixto">Mixto</string>
+    <string name="fondo">¿Fondo?</string>
+
+    <!--Colores-->
+    <string name="rojo">Rojo</string>
+    <string name="marron">Marrón</string>
+    <string name="verde">Verde</string>
+    <string name="gris">Gris</string>
+    <string name="azul">Azul</string>
+    <string name="rosa">Rosa</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="violeta">Violeta</string>
+    <string name="negro">Negro</string>
+    <string name="fucsia">Fucsia</string>
+    <string name="naranja">Naranja</string>
+    <string name="blanco">Blanco</string>
+    <string name="cyan">Cyan</string>
 </resources>
