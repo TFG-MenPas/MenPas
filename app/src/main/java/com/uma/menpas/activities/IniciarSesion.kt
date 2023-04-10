@@ -4,19 +4,16 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import com.uma.menpas.R
 import com.uma.menpas.controllers.InicioSesionController
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.room.UsuarioDB
-import com.uma.menpas.services.UsuarioService
-import org.w3c.dom.Text
 import java.time.LocalDateTime
 
 class IniciarSesion : AppCompatActivity() {
@@ -29,6 +26,8 @@ class IniciarSesion : AppCompatActivity() {
         val textCuestionario = findViewById<TextView>(R.id.textCuestionarios)
         val buttonIniciarSesion = findViewById<Button>(R.id.buttonIniciar)
         val layout = findViewById<RelativeLayout>(R.id.relativeInicioSesion)
+        val editTextUsuario = findViewById<EditText>(R.id.editUsuario)
+        val editTextContrasenya= findViewById<EditText>(R.id.editContrasenya)
 
         val snackbarComprobacion = Snackbar.make(layout, R.string.datos_incorrectos, 2000)
         snackbarComprobacion.view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
@@ -37,7 +36,6 @@ class IniciarSesion : AppCompatActivity() {
             )
 
         lateinit var intent: Intent
-        //InicioSesionController.comprobarUsuario("falso", "falso")
 
         val room: UsuarioDB = Room.databaseBuilder(this, UsuarioDB::class.java, "usuario").allowMainThreadQueries().build()
         val usuarioPrueba = Usuario(
@@ -64,14 +62,13 @@ class IniciarSesion : AppCompatActivity() {
 
         textOlvidar.setOnClickListener {
             intent = Intent(this, RecuperarContrasenya::class.java)
-            //startActivity(intent)
-            room.UsuarioDAO().insertUsuario(usuarioPrueba)
+            startActivity(intent)
         }
 
         textRegistrar.setOnClickListener {
             intent = Intent(this, RegistroUsuario::class.java)
-            room.UsuarioDAO().deleteUsuario(usuarioPrueba)
-            //startActivity(intent)
+            //room.UsuarioDAO().deleteUsuario(usuarioPrueba)
+            startActivity(intent)
         }
 
         textCuestionario.setOnClickListener {
@@ -80,17 +77,21 @@ class IniciarSesion : AppCompatActivity() {
         }
 
         buttonIniciarSesion.setOnClickListener {
-            intent = Intent(this, MenuPrincipal::class.java)
-            //snackbarComprobacion.show()
-            val usuario = room.UsuarioDAO().getUsuario()
-            if(usuario == null){
-                Toast.makeText(this, "USUARIO NULO", Toast.LENGTH_SHORT).show()
+            val entradaUsuario = editTextUsuario.text.toString()
+            val entradaContrasenya = editTextContrasenya.text.toString()
+            if (InicioSesionController.validarDatos(entradaUsuario, entradaContrasenya)){
+                //val user = InicioSesionController.comprobarUsuario("menpasprueba", "menpasprueba")
+                val user = InicioSesionController.comprobarUsuario(entradaUsuario, entradaContrasenya)
+                if(user == null){
+                    snackbarComprobacion.show()
+                }else{
+                    room.UsuarioDAO().insertUsuario(user)
+                    intent = Intent(this, MenuPrincipal::class.java)
+                    startActivity(intent)
+                }
             }else{
-                Log.v("USUARIO", usuario.toString())
-                Toast.makeText(this, "USUARIO EXISTE", Toast.LENGTH_SHORT).show()
-                startActivity(intent)
+                snackbarComprobacion.show()
             }
-
         }
 
     }

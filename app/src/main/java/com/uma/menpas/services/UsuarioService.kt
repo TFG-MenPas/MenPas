@@ -10,7 +10,7 @@ import java.time.LocalDate
 class UsuarioService(){
 
     companion object{
-        fun getUser(nombreUsuario: String, contrasenya: String): Usuario{
+        fun getUser(nombreUsuario: String, contrasenya: String): Usuario? {
             val request = SoapObject("http://tempuri.org/", "getUser")
             request.addProperty("username", nombreUsuario)
             request.addProperty("pwd", contrasenya)

@@ -9,13 +9,17 @@ class AdaptadorUsuario {
 
     companion object {
 
-        fun soapObjectAModelo(result: SoapObject): Usuario {
+        fun soapObjectAModelo(result: SoapObject): Usuario? {
             val listaAtributosUsuario = mutableListOf<String>()
-            val listaPropiedades: SoapObject = result.getProperty(0) as SoapObject
-            for (i in 0 until listaPropiedades.propertyCount) {
-                listaAtributosUsuario.add(listaPropiedades.getPropertyAsString(i))
+            return if(result.propertyCount != 0){
+                val listaPropiedades: SoapObject = result.getProperty(0) as SoapObject
+                for (i in 0 until listaPropiedades.propertyCount) {
+                    listaAtributosUsuario.add(listaPropiedades.getPropertyAsString(i))
+                }
+                convertirAModelo(listaAtributosUsuario)
+            }else{
+                null
             }
-            return convertirAModelo(listaAtributosUsuario)
         }
 
         fun modeloASoapObject() {
