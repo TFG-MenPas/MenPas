@@ -279,4 +279,9 @@
     <!--Test D2-->
     <string name="test_de_atencion_d2">Test de atención d2</string>
 
+    <!--Modrian Fotos-->
+    <string name="modrian_fotos">Modrian Fotos</string>
+    <string name="tamanyo_tablero">Tamaño del tablero</string>
+    <string name="numero_imagenes">Número de imágenes</string>
+
 </resources>
