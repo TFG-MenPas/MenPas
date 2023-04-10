@@ -38,6 +38,7 @@ class IniciarSesion : AppCompatActivity() {
         lateinit var intent: Intent
 
         val room: UsuarioDB = Room.databaseBuilder(this, UsuarioDB::class.java, "usuario").allowMainThreadQueries().build()
+        val usuario = InicioSesionController.comprobarUsuario("prueba1111111", "prueba1111111")
         val usuarioPrueba = Usuario(
             "nombreUsuario",
             "c",
@@ -85,7 +86,7 @@ class IniciarSesion : AppCompatActivity() {
                 if(user == null){
                     snackbarComprobacion.show()
                 }else{
-                    room.UsuarioDAO().insertUsuario(user)
+                    //room.UsuarioDAO().insertUsuario(user)
                     intent = Intent(this, MenuPrincipal::class.java)
                     startActivity(intent)
                 }

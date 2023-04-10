@@ -26,6 +26,15 @@ class AdaptadorUsuario {
             TODO()
         }
 
+        fun soapDatosRegistroAArray(result: SoapObject): Array<String> {
+            val listaAtributos = mutableListOf<String>()
+            val listaPropiedades: SoapObject = result.getProperty(0) as SoapObject
+            for (i in 0 until listaPropiedades.propertyCount) {
+                listaAtributos.add(listaPropiedades.getPropertyAsString(i))
+            }
+            return listaAtributos.toTypedArray()
+        }
+
         private fun convertirAModelo(result: MutableList<String>): Usuario {
             val nombreUsuario = result[0]
             val contrasenya = result[1]
