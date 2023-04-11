@@ -1,0 +1,15 @@
+{
+	"content": {
+		"Resultados": "En este apartado se le da la oportunidad al usuario de consultar sus autorregistros previos."
+		},
+	"instructions": {
+		"Instrucciones": "Rellene los siguientes campos para completar su autorregistro."
+	},
+	"buttons": [
+		"Comida y bebida",
+		"Diario",
+		"Entrenamiento",
+		"Pensamientos negativos",
+		"Libres"
+	]
+}

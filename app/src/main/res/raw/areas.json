@@ -7,7 +7,7 @@
 	"Atención": [
 		"Test de atención D2",
 		"Efecto Stroop",
-		"Mondrian",
+		"Modrian",
 		"Procesos atencionales"
 	],
 	"Autoconcepto": [
@@ -21,8 +21,7 @@
 		"Entrenamiento",
 		"Libre",
 		"Pensamientos negativos",
-		"Consulta de autorregistros", 
-		"Documentación"
+		"Consulta de autorregistros"
 	],
 	"Burnout": [
 		"MASLACH",
@@ -44,10 +43,8 @@
 	"Dinámica grupal": [
 		"CCD"
 	],
-	"Entrenamiento mental y evaluación": [
-		"Consulta psicológica",
+	"Entrenamiento mental": [
 		"EPI",
-		"Generador de test",
 		"IPED",
 		"POMS"
 	],

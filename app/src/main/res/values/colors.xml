@@ -5,7 +5,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#2c3e50</color>
     <color name="colorPrimaryDark">#1B3147</color>
@@ -22,4 +21,17 @@
     <color name="line_grey">#D9D9D9</color>
     <color name="azul_banner_cuestionarios">#9CD3ED</color>
     <color name="grisSeekbar">#E2E2E2</color>
+    <!-- Colores Grid Cuestionario-->
+    <color name="rojo">#FF0000</color>
+    <color name="marron">#582900</color>
+    <color name="verde">#008000</color>
+    <color name="gris">#808080</color>
+    <color name="azul">#0000FF</color>
+    <color name="rosa">#FFC0CB</color>
+    <color name="amarillo">#FFFF00</color>
+    <color name="violeta">#800080</color>
+    <color name="black">#FF000000</color>
+    <color name="fucsia">#FF00FF</color>
+    <color name="naranja">#FFA500</color>
+    <color name="cyan">#00FFFF</color>
 </resources>

@@ -67,13 +67,13 @@
             android:textSize="12sp"
             tools:ignore="RtlCompat" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/botonMostrarInformacionCuestionario"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="34dp"
             android:layout_marginEnd="5dp"
             android:background="#FFFFFF"
             android:contentDescription="@string/ver_informacion_del_cuestionario"

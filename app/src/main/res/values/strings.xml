@@ -81,11 +81,14 @@
     <string name="registrar_centro_icono">registrar centro icono</string>
     <string name="cambio_de_perfil_icono">cambio de perfil icono</string>
     <string name="dar_de_baja_icono">dar de baja icono</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="icono_cambio_perfil">icono_cambio_perfil</string>
     <string name="icono_consultar_estadisticas">icono_consultar_estadisticas</string>
     <string name="icono_dar_baja">icono_dar_baja</string>
     <string name="icono_modificar_datos">icono_modificar_datos</string>
     <string name="icono_registrar_centro">icono_registrar_centro</string>
+
+
 
     <!-- Desplegable FAQ -->
     <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
@@ -93,13 +96,14 @@
     <string name="autores_icon">autores icon</string>
     <string name="autores">Autores</string>
     <string name="icono_areas">icono areas</string>
-    <string name="areas">Areas</string>
+    <string name="areas">Áreas</string>
     <string name="icono_faq">icono faq</string>
     <string name="faq">FAQ</string>
     <string name="icono_referencias">icono referencias</string>
     <string name="referencias">Referencias</string>
     <string name="icono_novedades">icono novedades</string>
     <string name="novedades">Novedades</string>
+    <string name="documentacion_areas">Documentación de áreas</string>
 
     <!--Inicio sesion-->
     <string name="universidad_de_malaga_mayusculas">UNIVERSIDAD DE MÁLAGA</string>
@@ -112,6 +116,7 @@
     <string name="nuevo_en_la_plataforma">¿Nuevo en la plataforma?</string>
     <string name="registrese_aqui">Regístrese aquí</string>
     <string name="cuestionarios_anonimos">Cuestionarios anónimos</string>
+    <string name="datos_incorrectos">Los datos introducidos no son correctos</string>
     <string name="o">ó</string>
     <string name="logo_menpas">Logo de Menpas</string>
     <string name="logo_uma">Logo de la UMA</string>
@@ -151,6 +156,7 @@
     <string name="dinamica_grupal">Dinámica grupal</string>
     <string name="calidad_vida">Calidad de vida</string>
     <string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="entrenamiento_mental">Entrenamiento mental</string>
 
     <!--Dudas y sugerencias-->
     <string name="asunto">Asunto</string>
@@ -252,4 +258,50 @@
     <string name="no">no</string>
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
+
+    <!--Mondrian Colores-->
+    <string name="comenzar">Comenzar</string>
+    <string name="cadenaFormato">mm:ss (max 30:00)</string>
+    <string name="formato">Formato:</string>
+    <string name="hintFormato">mm:ss</string>
+    <string name="tiempo_de_espera">Tiempo de espera</string>
+    <string name="tiempo_de_realizacion">Tiempo de realización</string>
+    <string name="mondrian_colores">Mondrian Colores</string>
+
+    <!--Test D2-->
+    <string name="test_de_atencion_d2">Test de atención d2</string>
+
+    <!--Peticiones SOAP-->
+    <string name="namespace">http://tempuri.org/</string>
+    <string name="apiurl">http://150.214.108.138/menpas/ServiceApp.asmx?WSDL</string>
+
+    <!--Modrian Fotos-->
+    <string name="modrian_fotos">Modrian Fotos</string>
+    <string name="tamanyo_tablero">Tamaño del tablero</string>
+    <string name="numero_imagenes">Número de imágenes</string>
+    <string name="click_aqui"> Hacer click aquí</string>
+    <string name="efecto_stroop">Efecto Stroop</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="congruente">Congruente</string>
+    <string name="incongruente">Incongruente</string>
+    <string name="mixto">Mixto</string>
+    <string name="fondo">¿Fondo?</string>
+
+    <!--Colores-->
+    <string name="rojo">Rojo</string>
+    <string name="marron">Marrón</string>
+    <string name="verde">Verde</string>
+    <string name="gris">Gris</string>
+    <string name="azul">Azul</string>
+    <string name="rosa">Rosa</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="violeta">Violeta</string>
+    <string name="negro">Negro</string>
+    <string name="fucsia">Fucsia</string>
+    <string name="naranja">Naranja</string>
+    <string name="blanco">Blanco</string>
+    <string name="cyan">Cyan</string>
+
+
+
 </resources>
