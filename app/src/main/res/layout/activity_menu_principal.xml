@@ -411,6 +411,42 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/art_calidadvida" />
             </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/entrenamiento_mental"
+                    android:layout_gravity="center"
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="30dp"
+                    android:translationZ="5dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:id="@+id/EntrenamientoMental"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/entrenamiento_mental"
+                        android:textColor="@color/dark_blue"
+                        android:textAlignment="center"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="13dp"></TextView>
+                    <ImageView
+                        android:id="@+id/art_entrenamientomental"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/art_entrenamientomental" />
+                </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </LinearLayout>
     </ScrollView>

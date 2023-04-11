@@ -4,7 +4,7 @@
 		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/Perfeccionismo,MPS-Manual.pdf"
 	},
 	"instructions": {
-		"Instrucciones": "\nLea cada Item, el uso de la escala indica en qué medida está de acuerdo o en desacuerdo con ella. Para ello seleccione la casilla correspondiente. Al final, por favor confirmar que contestó todas las preguntas. La escala es la siguiente: estoy completamente en desacuerdo, en desacuerdo, en desacuerdo / ni de acuerdo y completamente de acuerdo."
+		"Instrucciones": "Lea cada Item, el uso de la escala indica en qué medida está de acuerdo o en desacuerdo con ella. Para ello seleccione la casilla correspondiente. Al final, por favor confirmar que contestó todas las preguntas. La escala es la siguiente: estoy completamente en desacuerdo, en desacuerdo, en desacuerdo / ni de acuerdo y completamente de acuerdo."
 	},
 	"buttons": [
 		"Realizar cuestionario"

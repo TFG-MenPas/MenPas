@@ -21,6 +21,7 @@ class MenuPrincipal : AppCompatActivity() {
         val dinamica_grupal = findViewById<CardView>(R.id.dinamicagrupal)
         val calidad_vida = findViewById<CardView>(R.id.calidadvida)
         val inteligencia_emocional = findViewById<CardView>(R.id.inteligencia_emocional)
+        val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         BarraNavegacion(barraNavegacionInferior, this)
@@ -59,6 +60,10 @@ class MenuPrincipal : AppCompatActivity() {
         inteligencia_emocional.setOnClickListener {
             abrirArea(it.id)
         }
+
+        entrenamiento_mental.setOnClickListener {
+            abrirArea(it.id)
+        }
     }
 
     override fun onBackPressed(){
@@ -83,6 +88,7 @@ class MenuPrincipal : AppCompatActivity() {
             "dinamicagrupal" -> intent.putExtra("area", "Dinámica grupal")
             "calidadvida" -> intent.putExtra("area", "Calidad de vida")
             "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia emocional")
+            "entrenamiento_mental" -> intent.putExtra("area", "Entrenamiento mental")
         }
         startActivity(intent)
     }

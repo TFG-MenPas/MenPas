@@ -151,6 +151,7 @@
     <string name="dinamica_grupal">Dinámica grupal</string>
     <string name="calidad_vida">Calidad de vida</string>
     <string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="entrenamiento_mental">Entrenamiento mental</string>
 
     <!--Dudas y sugerencias-->
     <string name="asunto">Asunto</string>
@@ -275,4 +276,6 @@
     <string name="naranja">Naranja</string>
     <string name="blanco">Blanco</string>
     <string name="cyan">Cyan</string>
+
+    <string name="documentacion_areas">Documentación de áreas</string>
 </resources>
