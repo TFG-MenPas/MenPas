@@ -1,0 +1,11 @@
+{
+	"content": {
+		"Documentación": "El empleo de autorregistros, es un tipo especial de observación (auto-observación) y es un procedmiento muy habitual en el campo de la Psicología. Su fiabilidad como método objetivo de valoración de la conducta ha sido estudiada en varios trabajos. Mediante el empleo de autorregistros, el sujeto recoge, información relevante sobre la conducta problema, el día, la hora, el lugar, la compañía, el estado de ánimo, los antecedentes y los consecuentes de la conducta. Además de proporcionar una información muy valiosa al psicólogo, poco distorsionada por errores de memoria (como ocurre con los procedimientos retrospectivos), este instrumento proporciona al sujeto una retroalimentación inmediata que le sirve de ayuda para un posterior cambio de comportamiento.\n\nLos autorregistros se utilizan, sobre todo, en el inicio de la intervención terapéutica, cuando el paciente/deportista y buscan producir reactividad, esto es, que la observación del propio comportamiento produzca una reducción en la conducta problema. En definitiva, el uso de autorregistros reporta varias ventajas, p. e., es de gran utilidad para identificar situaciones donde aparece la conducta problema, ofrece información continua al paciente/deportista sobre la misma, en todas las fases de la intervención y, por último, proporciona feedback al psicólogo/terapeuta sobre la efectividad del tratamiento."
+		},
+	"instructions": {
+		"Instrucciones": "Rellene los siguientes campos para completar su autorregistro."
+	},
+	"buttons": [
+		"Realizar autorregistro"
+	]
+}

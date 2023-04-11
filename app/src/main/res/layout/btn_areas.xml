@@ -24,7 +24,7 @@
         android:layout_toEndOf="@id/imageAreas"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="700"
-        android:text="@string/areas"
+        android:text="@string/documentacion_areas"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal" />

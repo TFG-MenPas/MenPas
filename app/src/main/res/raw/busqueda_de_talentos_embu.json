@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autores": "Perris C.; Jacobson, L.; Lindstorm, H.; von Knorring, L., & Perris, H. (1980) - University of Umea",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/EMBU,vers%C3%A3oPortuguesa-Manual.pdf"
+	},
+	"instructions": {
+		"Instrucciones": "En primer lugar, se presentan algunas de las declaraciones. Para cada pregunta, piense acerca de cómo su padre y luego su madre se comporta con usted. Luego, para cada item seleccione una de las cuatro opciones que mejor refleje su punto de vista. Los intentos para distinguir el comportamiento de su padre (P) de tu madre (M). Al final, por favor confirmar que contestó todas las preguntas. La escala es la siguiente: nunca, a veces, a menudo y siempre."
+	},
+	"buttons": [
+		"Realizar cuestionario"
+	]
+}
