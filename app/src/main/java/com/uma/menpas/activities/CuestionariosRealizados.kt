@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
-import com.uma.menpas.adapters.AdaptadorCuestionario
+import com.uma.menpas.models.adapters.AdaptadorCuestionario
 import com.uma.menpas.models.Cuestionario
 
 class CuestionariosRealizados : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.uma.menpas.adapters
+package com.uma.menpas.models.adapters
 
 import android.view.LayoutInflater
 import android.view.View

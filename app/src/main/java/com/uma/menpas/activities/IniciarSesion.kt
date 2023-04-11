@@ -73,7 +73,7 @@ class IniciarSesion : AppCompatActivity() {
         }
 
         textCuestionario.setOnClickListener {
-            intent = Intent(this, RegistroUsuario::class.java)
+            intent = Intent(this, MenuPrincipal::class.java)
             startActivity(intent)
         }
 

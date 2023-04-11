@@ -16,7 +16,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
-import com.uma.menpas.adapters.AdaptadorCentro
+import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.models.Centro
 
 class CentrosRegistrados : AppCompatActivity() {
