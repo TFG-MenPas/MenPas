@@ -112,6 +112,7 @@
     <string name="nuevo_en_la_plataforma">¿Nuevo en la plataforma?</string>
     <string name="registrese_aqui">Regístrese aquí</string>
     <string name="cuestionarios_anonimos">Cuestionarios anónimos</string>
+    <string name="datos_incorrectos">Los datos introducidos no son correctos</string>
     <string name="o">ó</string>
     <string name="logo_menpas">Logo de Menpas</string>
     <string name="logo_uma">Logo de la UMA</string>
@@ -252,4 +253,8 @@
     <string name="no">no</string>
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
+
+    <!--Peticiones SOAP-->
+    <string name="namespace">http://tempuri.org/</string>
+    <string name="apiurl">http://150.214.108.138/menpas/ServiceApp.asmx?WSDL</string>
 </resources>
