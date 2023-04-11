@@ -18,6 +18,17 @@
         <activity
             android:name=".activities.CuestionarioD2"
             android:launchMode="singleTask"
+
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ModrianFotosGrid"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +38,16 @@
         </activity>
         <activity
             android:name=".activities.MondrianColoresGrid"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ModrianFotos"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>

@@ -283,4 +283,10 @@
     <!--Peticiones SOAP-->
     <string name="namespace">http://tempuri.org/</string>
     <string name="apiurl">http://150.214.108.138/menpas/ServiceApp.asmx?WSDL</string>
+
+    <!--Modrian Fotos-->
+    <string name="modrian_fotos">Modrian Fotos</string>
+    <string name="tamanyo_tablero">Tamaño del tablero</string>
+    <string name="numero_imagenes">Número de imágenes</string>
+
 </resources>
