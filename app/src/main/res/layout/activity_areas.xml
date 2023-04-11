@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Area2">
+    tools:context=".activities.Areas">
 
     <include
         android:id="@+id/banner"
@@ -12,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
     <TextView
-        android:id="@+id/textArea2"
+        android:id="@+id/title_areas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="165dp"
@@ -22,32 +23,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/poppins_bold"
-        android:textSize="30dp"></TextView>
+        android:text="@string/areas"
+        android:textSize="30sp" />
+
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/black"
-        android:animateLayoutChanges="true"
         android:layout_marginTop="225dp"
-        android:layout_marginBottom="60dp"
-        android:fillViewport="true">
-        <LinearLayout
+        android:animateLayoutChanges="true"
+        android:backgroundTint="@color/black"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteY="225dp">
 
-            android:id="@+id/doc_txt_area2"
+        <ExpandableListView
+            android:id="@+id/areas_listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layoutDirection="rtl"
+            android:paddingBottom="60sp"
             >
 
-        </LinearLayout>
+        </ExpandableListView>
+
     </ScrollView>
 
     <include
         android:id="@+id/menu_navegacion_inferior"
         layout="@layout/menu_navegacion_inferior"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

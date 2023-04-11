@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autores": "(Cooper, P.J., M.J. Taylor, Z. Cooper & C.G. Fairburn (1986))",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/BSQ.pdf"
+		},
+	"instructions": {
+		"Instrucciones": "Lee las siguientes afirmaciones y selecciona la respuesta que más se aproxime a tus preferencias."
+	},
+	"buttons": [
+		"Inventario BSQ"
+	]
+}

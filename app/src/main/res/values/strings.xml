@@ -89,19 +89,21 @@
     <string name="icono_registrar_centro">icono_registrar_centro</string>
 
 
+
     <!-- Desplegable FAQ -->
     <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
     <string name="dudas_y_sugerencias">Dudas y sugerencias</string>
     <string name="autores_icon">autores icon</string>
     <string name="autores">Autores</string>
     <string name="icono_areas">icono areas</string>
-    <string name="areas">Areas</string>
+    <string name="areas">Áreas</string>
     <string name="icono_faq">icono faq</string>
     <string name="faq">FAQ</string>
     <string name="icono_referencias">icono referencias</string>
     <string name="referencias">Referencias</string>
     <string name="icono_novedades">icono novedades</string>
     <string name="novedades">Novedades</string>
+    <string name="documentacion_areas">Documentación de áreas</string>
 
     <!--Inicio sesion-->
     <string name="universidad_de_malaga_mayusculas">UNIVERSIDAD DE MÁLAGA</string>
@@ -154,6 +156,7 @@
     <string name="dinamica_grupal">Dinámica grupal</string>
     <string name="calidad_vida">Calidad de vida</string>
     <string name="inteligencia_emocional">Inteligencia emocional</string>
+    <string name="entrenamiento_mental">Entrenamiento mental</string>
 
     <!--Dudas y sugerencias-->
     <string name="asunto">Asunto</string>
@@ -263,18 +266,6 @@
     <string name="hintFormato">mm:ss</string>
     <string name="tiempo_de_espera">Tiempo de espera</string>
     <string name="tiempo_de_realizacion">Tiempo de realización</string>
-    <string name="cyan">Cyan</string>
-    <string name="naranja">Naranja</string>
-    <string name="fucsia">Fucsia</string>
-    <string name="negro">Negro</string>
-    <string name="violeta">Violeta</string>
-    <string name="amarillo">Amarillo</string>
-    <string name="rosa">Rosa</string>
-    <string name="azul">Azul</string>
-    <string name="gris">Gris</string>
-    <string name="verde">Verde</string>
-    <string name="marron">Marron</string>
-    <string name="rojo">Rojo</string>
     <string name="mondrian_colores">Mondrian Colores</string>
 
     <!--Test D2-->
@@ -288,5 +279,29 @@
     <string name="modrian_fotos">Modrian Fotos</string>
     <string name="tamanyo_tablero">Tamaño del tablero</string>
     <string name="numero_imagenes">Número de imágenes</string>
+    <string name="click_aqui"> Hacer click aquí</string>
+    <string name="efecto_stroop">Efecto Stroop</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="congruente">Congruente</string>
+    <string name="incongruente">Incongruente</string>
+    <string name="mixto">Mixto</string>
+    <string name="fondo">¿Fondo?</string>
+
+    <!--Colores-->
+    <string name="rojo">Rojo</string>
+    <string name="marron">Marrón</string>
+    <string name="verde">Verde</string>
+    <string name="gris">Gris</string>
+    <string name="azul">Azul</string>
+    <string name="rosa">Rosa</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="violeta">Violeta</string>
+    <string name="negro">Negro</string>
+    <string name="fucsia">Fucsia</string>
+    <string name="naranja">Naranja</string>
+    <string name="blanco">Blanco</string>
+    <string name="cyan">Cyan</string>
+
+
 
 </resources>

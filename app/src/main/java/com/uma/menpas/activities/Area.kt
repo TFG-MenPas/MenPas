@@ -17,9 +17,10 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.text.Normalizer
 
 
-class Area1 : AppCompatActivity() {
+class Area : AppCompatActivity() {
 
     companion object {
         private const val JSON_RESOURCE_NAME = "areas"
@@ -31,7 +32,7 @@ class Area1 : AppCompatActivity() {
         val intent = intent
         var area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_area1)
+        setContentView(R.layout.activity_area)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
@@ -72,8 +73,10 @@ class Area1 : AppCompatActivity() {
             }
             linearLayout.addView(boton)
             boton.setOnClickListener {
-                val intent = Intent(this, Area2::class.java)
-                intent.putExtra("json_resource_name",area.toLowerCase() + "_" + section.toLowerCase())
+                val intent = Intent(this, Subarea::class.java)
+                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
+                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", section)
                 startActivity(intent)
             }
