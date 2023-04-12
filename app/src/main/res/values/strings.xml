@@ -89,7 +89,6 @@
     <string name="icono_registrar_centro">icono_registrar_centro</string>
 
 
-
     <!-- Desplegable FAQ -->
     <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
     <string name="dudas_y_sugerencias">Dudas y sugerencias</string>
@@ -302,6 +301,8 @@
     <string name="blanco">Blanco</string>
     <string name="cyan">Cyan</string>
 
+    <!--Modrian Stroop-->
+    <string name="modrian_stroop">Modrian Stroop</string>
 
 
 </resources>

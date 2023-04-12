@@ -97,7 +97,7 @@
                     android:layout_columnWeight="3"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
-                    android:contentDescription="marron" />
+                    android:contentDescription="marrón" />
                 <ImageButton
                     android:id="@+id/color11"
                     android:layout_width="48dp"

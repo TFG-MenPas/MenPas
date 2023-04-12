@@ -43,7 +43,7 @@ class MondrianColoresGrid : AppCompatActivity() {
             val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
             val color = when(colorAleatorio){
                 "rojo" -> R.color.rojo
-                "marron" -> R.color.marron
+                "marrón" -> R.color.marron
                 "verde" -> R.color.verde
                 "gris" -> R.color.gris
                 "azul" -> R.color.azul
@@ -104,7 +104,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                 for (texColorEliminar in arrayEliminar){
                     val imageButtonColor = when(texColorEliminar){
                         "rojo" -> view.findViewById<ImageButton>(R.id.color00)
-                        "marron" -> view.findViewById(R.id.color10)
+                        "marrón" -> view.findViewById(R.id.color10)
                         "verde" -> view.findViewById(R.id.color01)
                         "gris" -> view.findViewById(R.id.color11)
                         "azul" -> view.findViewById(R.id.color02)
