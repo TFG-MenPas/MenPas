@@ -103,7 +103,7 @@ class ModrianStroop : AppCompatActivity() {
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
-            val intent = Intent(this, MondrianColoresGrid::class.java)
+            val intent = Intent(this, ModrianStroopGrid::class.java)
             arrayColores = ArrayList()
             arrayEliminar = ArrayList()
             colores.entries.forEach {color ->
