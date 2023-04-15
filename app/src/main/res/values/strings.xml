@@ -302,6 +302,7 @@
     <string name="blanco">Blanco</string>
     <string name="cyan">Cyan</string>
 
-
+    <!--Desplegable Fotos-->
+    <string name="elija_una_foto">Elija una foto</string>
 
 </resources>
