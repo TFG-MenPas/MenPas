@@ -2,6 +2,7 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -84,10 +85,12 @@ class ModrianStroopGrid : AppCompatActivity() {
                 val gridColoresSeleccion = view.findViewById<GridLayout>(R.id.gridColoresSeleccion)
                 for (i in 0 until gridColoresSeleccion.childCount){
                     val colorSeleccion = gridColoresSeleccion.getChildAt(i) as ImageButton
+                    setDrawableColor(colorSeleccion)
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
-                                btnColor.background = colorSeleccion.background
+                                val drawable = btnColor.background.mutate() as GradientDrawable
+                                drawable.setColor(getColor(color))
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                             }else{
@@ -158,9 +161,33 @@ class ModrianStroopGrid : AppCompatActivity() {
 
         }.start()
     }
+
+    private fun setDrawableColor(colorSeleccion: ImageButton) {
+        val color = when(colorSeleccion.contentDescription){
+            "rojo" -> R.color.rojo
+            "marrón" -> R.color.marron
+            "verde" -> R.color.verde
+            "gris" -> R.color.gris
+            "azul" -> R.color.azul
+            "rosa" -> R.color.rosa
+            "amarillo" -> R.color.amarillo
+            "violeta" -> R.color.violeta
+            "negro" -> R.color.black
+            "fucsia" -> R.color.fucsia
+            "naranja" -> R.color.naranja
+            "cyan" -> R.color.cyan
+            else -> R.color.black
+        }
+        val drawable = colorSeleccion.background.mutate() as GradientDrawable
+        drawable.setColor(getColor(color))
+    }
+
     private fun rellenarBotonCongruente(color: Int, fondo: Boolean) {
         botonColor.setTextColor(getColor(color))
-        if (fondo) botonColor.background = AppCompatResources.getDrawable(this, color)
+        if (fondo) {
+            val drawable = botonColor.background.mutate() as GradientDrawable
+            drawable.setColor(getColor(color))
+        }
     }
     private fun rellenarBotonIncongruente(colorOriginal: Int, fondo: Boolean) {
         var colorAleatorio : Int = getColorAleatorio()
@@ -172,7 +199,8 @@ class ModrianStroopGrid : AppCompatActivity() {
             while (colorFondo == colorOriginal || colorFondo == colorAleatorio){
                 colorFondo = getColorAleatorio()
             }
-            botonColor.background = AppCompatResources.getDrawable(this, colorFondo)
+            val drawable = botonColor.background.mutate() as GradientDrawable
+            drawable.setColor(getColor(colorFondo))
         }
         botonColor.setTextColor(getColor(colorAleatorio))
     }
@@ -212,7 +240,8 @@ class ModrianStroopGrid : AppCompatActivity() {
     private fun activarRealizacionCuestionario(){
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as Button
-            botonColor.background = AppCompatResources.getDrawable(this, R.color.azul_banner_cuestionarios)
+            val drawable = botonColor.background.mutate() as GradientDrawable
+            drawable.setColor(getColor(R.color.azul_banner_cuestionarios))
             botonColor.text = ""
             botonColor.isEnabled = true
             botonColor.isActivated = true
