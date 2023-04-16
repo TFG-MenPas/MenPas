@@ -1,0 +1,37 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Estoy concentrado en la competición",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Estoy inquieto",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Me encuentro a gusto",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		}
+	]
+}
