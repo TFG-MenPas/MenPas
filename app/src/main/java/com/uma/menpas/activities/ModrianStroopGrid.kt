@@ -14,7 +14,6 @@ import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
@@ -95,7 +94,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                                 dialog.dismiss()
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-                                val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise)
+                                val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 colorSeleccion.startAnimation(clk_rotate)
                             }
                         }
