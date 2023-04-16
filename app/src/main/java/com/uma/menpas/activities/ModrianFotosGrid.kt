@@ -21,7 +21,7 @@ class ModrianFotosGrid : AppCompatActivity() {
 
     lateinit var fotos : GridLayout
     lateinit var botonFoto : ImageButton
-    lateinit var tamanyoTablero : String
+    //lateinit var tamanyoTablero : String
     var numImg : Int = 0
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
