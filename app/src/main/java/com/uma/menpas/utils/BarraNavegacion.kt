@@ -5,10 +5,13 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
+import androidx.core.content.IntentCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
 import com.uma.menpas.activities.*
+import com.uma.menpas.room.UsuarioDB
+
 
 class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, applicationContext: Context) {
     init {
@@ -103,6 +106,19 @@ class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, application
                     val btnDarBaja = view.findViewById<RelativeLayout>(R.id.RLDarBaja)
                     btnDarBaja.setOnClickListener {
                         intent = Intent(applicationContext, BajaUsuario::class.java)
+                        applicationContext.startActivity(intent)
+                        dialog.dismiss()
+                    }
+                    val btnCerrarSesion = view.findViewById<RelativeLayout>(R.id.RLLogout)
+                    btnCerrarSesion.setOnClickListener {
+                        intent = Intent(applicationContext, IniciarSesion::class.java)
+                        intent.addFlags(
+                            Intent.FLAG_ACTIVITY_NEW_TASK
+                                    or Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        )
+                        val usuarioDB = UsuarioDB.getDatabase(applicationContext)
+                        usuarioDB?.UsuarioDAO()?.limpiarUsuario()
+
                         applicationContext.startActivity(intent)
                         dialog.dismiss()
                     }
