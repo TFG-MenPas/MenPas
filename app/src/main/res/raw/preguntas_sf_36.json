@@ -1,0 +1,37 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "En general, usted diría que su salud es:",
+			"tipo": "seleccionMultiple",
+			"respuestas":  [
+				"Excelente",
+				"Muy buena",
+				"Regular",
+				"Mala"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "¿Cómo diría que es su salud actual, comparada con la de hace un año?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho mejor ahora que hace un año",
+				"Algo mejor ahora que hace un año",
+				"Más o menos igual que hace un año",
+				"Algo peor ahora que hace un año",
+				"Mucho peor ahora que hace un año"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Durante las 4 últimas semanas, ¿Tuvo que reducir el tiempo dedicado al trabajo o a sus actividades cotidianas, a causa de su salud física?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 4,
+			"pregunta": " Durante las 4 últimas semanas, ¿Hizo menos de lo que hubiera querido hacer, a causa de su salud física?",
+			"tipo": "siNo"
+		}
+	]
+}
