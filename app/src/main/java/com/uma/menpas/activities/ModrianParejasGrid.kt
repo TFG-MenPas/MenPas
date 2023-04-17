@@ -150,7 +150,10 @@ class ModrianParejasGrid : AppCompatActivity() {
     private fun generarFotosArray(numImg: Int): ArrayList<Int> {
         val aux = ArrayList<Int>(numImg)
         for(i in 0 until (numImg / 2)){
-            val fotoAleatoria = (0 until numTotalImg).random()
+            var fotoAleatoria = (0 until numTotalImg).random()
+            while(aux.contains(fotoAleatoria)){
+                fotoAleatoria = (0 until numTotalImg).random()
+            }
             aux.add(fotoAleatoria)
             aux.add(fotoAleatoria)
         }
