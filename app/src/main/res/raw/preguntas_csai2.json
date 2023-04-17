@@ -3,6 +3,7 @@
 		{
 			"numero": 1,
 			"pregunta": "Estoy concentrado en la competición",
+			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
 				"Casi siempre",
@@ -14,6 +15,7 @@
 		{
 			"numero": 2,
 			"pregunta": "Estoy inquieto",
+			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
 				"Casi siempre",
@@ -25,6 +27,7 @@
 		{
 			"numero": 3,
 			"pregunta": "Me encuentro a gusto",
+			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
 				"Casi siempre",

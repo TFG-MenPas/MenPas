@@ -21,10 +21,12 @@ class CSAI2 : AppCompatActivity() {
     lateinit var textPregunta : TextView
     lateinit var botonSiguiente : Button
     lateinit var rlDinamico: RelativeLayout
+    lateinit var cuestionarioDinamico : View
     private val JSON_RESOURCE_NAME = "preguntas_csai2"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
+    private var layoutDinamico = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_csai2)
@@ -47,12 +49,10 @@ class CSAI2 : AppCompatActivity() {
             rlDinamico.addView(cuestionarioDinamico)
         }
         */
-        val cuestionarioDinamico: View = layoutInflater.inflate(R.layout.cuestionario_seleccion_multiple, rlDinamico, false)
-        rlDinamico.addView(cuestionarioDinamico)
 
         val obj = getJSONObjectFromRaw()
         val preguntas = obj.getJSONArray(JSON_OBJECT_NAME)
-        rellenarPregunta(preguntas, cuestionarioDinamico)
+        rellenarPregunta(preguntas)
 
         botonSiguiente.setOnClickListener {
             //TODO: Como no cambia el tipo de pregunta no actualizo el tipo (Habria que meterlo en el JSON)
@@ -61,7 +61,7 @@ class CSAI2 : AppCompatActivity() {
                 showToast("Cuestionario Finalizado")
             }else{
                 indicePregunta++
-                rellenarPregunta(preguntas, cuestionarioDinamico)
+                rellenarPregunta(preguntas)
             }
         }
 
@@ -73,7 +73,7 @@ class CSAI2 : AppCompatActivity() {
                 botonAnterior.startAnimation(viewShake)
             }else{
                 indicePregunta--
-                rellenarPregunta(preguntas, cuestionarioDinamico)
+                rellenarPregunta(preguntas)
             }
         }
     }
@@ -104,7 +104,7 @@ class CSAI2 : AppCompatActivity() {
     private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
-    private fun rellenarPregunta(preguntas: JSONArray, cuestionarioDinamico: View) {
+    private fun rellenarPregunta(preguntas: JSONArray) {
         val numeroTotalPreguntas = preguntas.length()
         val pregunta = preguntas.getJSONObject(indicePregunta)
         val numeroPregunta =  pregunta.getInt("numero")
@@ -117,12 +117,16 @@ class CSAI2 : AppCompatActivity() {
         progressBar.progress = numeroPregunta
         textPregunta.text = textoPregunta
 
-        rellenarCuestionarioSeleccionMultiple(cuestionarioDinamico, respuestas)
+        rellenarCuestionarioSeleccionMultiple(respuestas)
     }
-    private fun rellenarCuestionarioSeleccionMultiple(
-        cuestionarioDinamico: View,
-        respuestas: JSONArray
-    ) {
+    private fun rellenarCuestionarioSeleccionMultiple(respuestas: JSONArray) {
+        if(layoutDinamico != R.layout.cuestionario_seleccion_multiple){
+            layoutDinamico = R.layout.cuestionario_seleccion_multiple
+            rlDinamico.removeAllViews()
+            cuestionarioDinamico = layoutInflater.inflate(R.layout.cuestionario_seleccion_multiple, rlDinamico, false)
+            rlDinamico.addView(cuestionarioDinamico)
+        }
+
         val textProposicion = cuestionarioDinamico.findViewById<TextView>(R.id.textProposicion)
         textProposicion.text = "¿Como se identifica?"
         val textOpcion : TextView = cuestionarioDinamico.findViewById(R.id.textOpcion)
