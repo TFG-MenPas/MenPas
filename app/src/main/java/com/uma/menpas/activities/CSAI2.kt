@@ -22,6 +22,7 @@ class CSAI2 : AppCompatActivity() {
     lateinit var botonSiguiente : Button
     lateinit var rlDinamico: RelativeLayout
     lateinit var cuestionarioDinamico : View
+    lateinit var respuestasUsuario : ArrayList<String>
     private val JSON_RESOURCE_NAME = "preguntas_csai2"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
@@ -39,6 +40,7 @@ class CSAI2 : AppCompatActivity() {
         textPregunta = findViewById(R.id.textPregunta)
         botonSiguiente = findViewById(R.id.buttonSiguiente)
         rlDinamico = findViewById(R.id.RLDynamicContent)
+        respuestasUsuario = ArrayList()
         /* TODO: SI HAY QUE CAMBIAR EL TIPO DE PREGUNTA
         val cuestionarioDinamico: View = layoutInflater.inflate(R.layout.cuestionario_si_no, rlDinamico, false)
         rlDinamico.addView(cuestionarioDinamico)
@@ -57,6 +59,7 @@ class CSAI2 : AppCompatActivity() {
         botonSiguiente.setOnClickListener {
             //TODO: Como no cambia el tipo de pregunta no actualizo el tipo (Habria que meterlo en el JSON)
             //TODO: Mantener informacion de la respuesta del usuario
+            guardarRespuesta()
             if(indicePregunta == preguntas.length() - 1){
                 showToast("Cuestionario Finalizado")
             }else{
@@ -72,11 +75,27 @@ class CSAI2 : AppCompatActivity() {
                 val viewShake = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                 botonAnterior.startAnimation(viewShake)
             }else{
+                guardarRespuesta()
                 indicePregunta--
                 rellenarPregunta(preguntas)
             }
         }
     }
+
+    private fun guardarRespuesta() {
+        guardarRespuestaSeleccionMultiple()
+    }
+
+    private fun guardarRespuestaSeleccionMultiple() {
+        val textOpcion : TextView = cuestionarioDinamico.findViewById(R.id.textOpcion)
+
+        if(respuestasUsuario.elementAtOrNull(indicePregunta) == null){
+            respuestasUsuario.add(indicePregunta, textOpcion.text as String)
+        }else{
+            respuestasUsuario[indicePregunta] = textOpcion.text as String
+        }
+    }
+
     private fun getJSONObjectFromRaw(): JSONObject {
         val jsonString = transformJSONtoString()
         return JSONObject(jsonString)
@@ -127,13 +146,24 @@ class CSAI2 : AppCompatActivity() {
             rlDinamico.addView(cuestionarioDinamico)
         }
 
+        val listaRespuestas : ArrayList<String> = ArrayList()
+        for (i in 0 until respuestas.length()){
+            listaRespuestas.add(i, respuestas.getString(i))
+        }
+
         val textProposicion = cuestionarioDinamico.findViewById<TextView>(R.id.textProposicion)
         textProposicion.text = "¿Como se identifica?"
         val textOpcion : TextView = cuestionarioDinamico.findViewById(R.id.textOpcion)
-        textOpcion.text = respuestas[0] as CharSequence
         val seekbar : SeekBar = cuestionarioDinamico.findViewById(R.id.seekbar)
-        seekbar.progress = 0
         seekbar.max = respuestas.length() - 1
+        if(respuestasUsuario.elementAtOrNull(indicePregunta) == null){
+            textOpcion.text = respuestas[0] as CharSequence
+            seekbar.progress = 0
+        }else{
+            val respuesta = respuestasUsuario[indicePregunta]
+            textOpcion.text = respuesta
+            seekbar.progress = listaRespuestas.indexOf(respuesta)
+        }
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
