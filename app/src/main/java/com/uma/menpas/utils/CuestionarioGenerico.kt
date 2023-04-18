@@ -1,4 +1,4 @@
-package com.uma.menpas.activities
+package com.uma.menpas.utils
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

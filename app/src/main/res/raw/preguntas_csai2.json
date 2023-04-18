@@ -2,7 +2,7 @@
 	"Preguntas": [
 		{
 			"numero": 1,
-			"pregunta": "Estoy concentrado en la competición",
+			"pregunta": "Estoy concentrado en la competición.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
@@ -14,7 +14,7 @@
 		},
 		{
 			"numero": 2,
-			"pregunta": "Estoy inquieto",
+			"pregunta": "Estoy inquieto.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
@@ -26,7 +26,294 @@
 		},
 		{
 			"numero": 3,
-			"pregunta": "Me encuentro a gusto",
+			"pregunta": "Me encuentro a gusto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Dudo de mis capacidades.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Estoy nervioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Me encuentro cómodo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Me preocupa que no pueda hacerlo tan bien como podría.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Mi cuerpo está tenso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Confío en mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Soy consciente de la posibilidad de perder.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Antes de competir siento molestias en el estómago.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me siento seguro.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Soy consciente de las situaciones de presión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Mi cuerpo está relajado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Tengo confianza en mi mismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Confio en mi buena preparación física.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Antes de competir mi corazón late más rápido de lo habitual.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Confio en mi rendimiento.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Me preocupo por alcanzar mi meta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Tengo el estómago revuelto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Estoy mentalmente relajado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},{
+			"numero": 22,
+			"pregunta": "Me preocupa que los demás queden desilucionados con mi rendimiento.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Me sudan las manos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Estoy confiado porque me veo alcanzando más metas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Me preocupa no sentirme capacitado para concentrarme.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Mi cuerpo está rígido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Confío lograrlo todo aún bajo presión.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Siempre",
@@ -36,5 +323,6 @@
 				"Nunca"
 			]
 		}
+
 	]
 }

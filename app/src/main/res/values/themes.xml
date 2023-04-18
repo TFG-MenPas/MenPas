@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
+        <item name="colorControlActivated">@color/elipseBlue</item>
     </style>
 
     <style name="Theme.MenPas.NoActionBar">

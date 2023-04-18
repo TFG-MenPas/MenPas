@@ -142,7 +142,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.CuestionarioGenerico"
+            android:name=".utils.CuestionarioGenerico"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
