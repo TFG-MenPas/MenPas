@@ -29,12 +29,11 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
     //private val JSON_RESOURCE_NAME = "preguntas_csai2"
-    private val JSON_RESOURCE_NAME = "preguntas_autorregistro_comida"
-    //private val JSON_RESOURCE_NAME = "preguntas_sf_36"
+    //private val JSON_RESOURCE_NAME = "preguntas_autorregistro_comida"
+    private val JSON_RESOURCE_NAME = "preguntas_sf_36"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
-    private var date = 0L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionario_dinamico)
@@ -106,7 +105,8 @@ class CuestionarioDinamico : AppCompatActivity() {
     }
 
     private fun guardarRespuestaFecha() {
-        actualizarRespuestasUsuario(date.toString())
+        val calendar : CalendarView = cuestionarioDinamico.findViewById(R.id.calendarView)
+        actualizarRespuestasUsuario(calendar.date.toString())
     }
 
     private fun guardarRespuestaSeleccionMultiple() {
@@ -259,7 +259,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         calendar.setOnDateChangeListener { _, year, month, day ->
             val c = Calendar.getInstance()
             c.set(year, month, day)
-            date = c.timeInMillis
+            calendar.date = c.timeInMillis
         }
         if(respuestasUsuario.elementAtOrNull(indicePregunta) != null){
             calendar.date = respuestasUsuario[indicePregunta].toLong()

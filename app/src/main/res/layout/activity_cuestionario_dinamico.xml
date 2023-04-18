@@ -102,15 +102,15 @@
         />
 
     <TextView
+        android:id="@+id/textPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/textPregunta"
         android:layout_below="@id/progressBarCuestionario"
         android:fontFamily="@font/poppins_bold"
+        android:padding="20dp"
+        android:text="Me doy cuenta de cuándo alguien está actuando de un modo que parece estar fuera de lugar, como cuando se comporta de manera demasiado informal en el trabajo."
         android:textColor="@color/dark_blue"
-        android:textSize="16sp"
-        android:text="Me doy cuenta de cuándo alguien está actuando de un modo que parece estar fuera de lugar, como cuando se comporta de manera demasiado informal en el trabajo." />
+        android:textSize="16sp" />
 
     <ScrollView
         android:layout_width="match_parent"
