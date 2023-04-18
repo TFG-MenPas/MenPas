@@ -105,6 +105,15 @@ class UsuarioService(){
             return AdaptadorUsuario.soapObjectABoolean(result)
         }
 
+        fun darDeBaja(nombreUsuario: String?, contrasenya: String?): Boolean {
+            val request = SoapObject("http://tempuri.org/", "borrarUser")
+            request.addProperty("username", nombreUsuario)
+            request.addProperty("pwd", contrasenya)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
 
 
     }

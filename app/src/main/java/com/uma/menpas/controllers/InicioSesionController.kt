@@ -1,7 +1,6 @@
 package com.uma.menpas.controllers
 
 import android.content.Context
-import androidx.room.Room
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.services.UsuarioService
@@ -10,7 +9,9 @@ class InicioSesionController {
 
     companion object{
         fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
-            return UsuarioService.getUser(usuario, contrasenya)
+            var usuario = UsuarioService.getUser(usuario, contrasenya)
+            usuario?.contrasenya = contrasenya
+            return usuario
         }
 
         fun validarDatos(usuario: String, contrasenya: String): Boolean{
@@ -23,8 +24,7 @@ class InicioSesionController {
         }
 
         fun getUsuarioGuardado(context: Context): Usuario? {
-            val usuarioGuardado = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
-            return usuarioGuardado
+            return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
         }
 
     }
