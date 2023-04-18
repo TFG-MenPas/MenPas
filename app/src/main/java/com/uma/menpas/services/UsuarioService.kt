@@ -88,5 +88,24 @@ class UsuarioService(){
 
             return AdaptadorUsuario.soapDatosRegistroAArray(result)
         }
+
+        fun existeCorreo(correo: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "existeCorreo")
+            request.addProperty("correo", correo)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
+        fun existeNombreUsuario(usuario: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "existeUsuario")
+            request.addProperty("username", usuario)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
+
+
     }
 }

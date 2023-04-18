@@ -5,13 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
-import androidx.core.content.IntentCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
 import com.uma.menpas.activities.*
 import com.uma.menpas.room.UsuarioDB
-
 
 class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, applicationContext: Context) {
     init {
