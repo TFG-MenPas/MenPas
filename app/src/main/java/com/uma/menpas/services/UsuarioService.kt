@@ -114,6 +114,38 @@ class UsuarioService(){
             return AdaptadorUsuario.soapObjectABoolean(result)
         }
 
+        fun editarNombreUsuario(nuevoNombreUsuario: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUserName")
+            //request.addProperty("username", nuevoNombreUsuario)
+
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+        fun editarNombre(nuevoNombre: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUser")
+            //request.addProperty("username", nuevoNombre)
+
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+        fun editarApellidos(nuevoApellido: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUser")
+            //request.addProperty("username", nuevoApellido)
+            
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+
+
 
 
     }
