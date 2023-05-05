@@ -28,9 +28,7 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var rlDinamico: RelativeLayout
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
-    //private val JSON_RESOURCE_NAME = "preguntas_csai2"
-    //private val JSON_RESOURCE_NAME = "preguntas_autorregistro_comida"
-    private val JSON_RESOURCE_NAME = "preguntas_sf_36"
+    private val JSON_RESOURCE_NAME = "preguntas_caf"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0

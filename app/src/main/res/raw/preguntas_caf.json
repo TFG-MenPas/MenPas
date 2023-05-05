@@ -1,0 +1,436 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Soy bueno/a en los deportes",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Tengo mucha resistencia física",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tengo más fuerza que la mayoría de la gente de mi edad",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Físicamente me siento bien",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Me siento a disgusto conmigo mismo/a",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "No tengo cualidades para los deportes",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": " Me quedo pronto sin aliento y tengo que bajar el ritmo o abandonar en los ejercicios físicos intensos",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Me cuesta tener un buen aspecto físico",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me cuesta levantar tanto peso como los demás",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Me siento feliz",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Estoy en buena forma física",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me siento contento/a con mi imagen corporal",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Soy capaz de realizar actividades que exigen fuerza",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "En lo físico me siento satisfecho/a conmigo mismo/a",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "No me gusta lo que estoy haciendo con mi vida",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Soy de las personas que están descontentas de cómo son físicamente",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Tengo más habilidad que la gente de mi edad practicando deportes",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Puedo correr y hacer ejercicio durante mucho tiempo sin cansarme",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Siento confianza en cuanto a la imagen física que transmito",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Destaco en actividades en las que se precisa fuerza física",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Mi cuerpo me transmite sensaciones positivas",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Desearía ser diferente",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Soy de las personas a las que les cuesta aprender un deporte nuevo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "En actividades como la de correr, tengo que tomar pronto un descanso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "No me gusta mi imagen corporal",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "No me siento a gusto conmigo mismo/a en lo físico",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Estoy haciendo bien las cosas",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Practicando deportes soy una persona hábil",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Tengo mucha energía física",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Soy guapo/a",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Soy fuerte",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "No tengo demasiadas cualidades como persona",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Me veo torpe en las actividades deportivas",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Me gusta mi cara y mi cuerpo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "No me veo en el grupo de quienes tienen mucha fuerza física",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 36,
+			"pregunta": "Físicamente me siento peor que los demás",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Falso",
+				"Casi siempre falso",
+				"A veces verdadero/falso",
+				"Casi siempre verdadero",
+				"Verdadero"
+			]
+		}
+	]
+}
