@@ -64,6 +64,8 @@ class ModrianSimon : AppCompatActivity() {
 
         comenzarJuego()
 
+
+
     }
 
     private fun comprobarBotton(color: Int) {
