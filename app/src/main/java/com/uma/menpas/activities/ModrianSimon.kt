@@ -98,14 +98,14 @@ class ModrianSimon : AppCompatActivity() {
     }
 
     private fun mostrarSecuencia() {
-        for(i in this.secuencia){
-            generarAnimacion(i)
-            reproducirSonido(this,i, 2000)
+        for(color in this.secuencia){
+            generarAnimacion(color,1000)
+            reproducirSonido(this,color, 1000)
         }
 
     }
 
-    private fun generarAnimacion(color: Int) {
+    private fun generarAnimacion(color: Int, tiempo: Long) {
         val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
         alphaBlink.interpolator = LinearInterpolator()
 
@@ -121,7 +121,7 @@ class ModrianSimon : AppCompatActivity() {
             }
 
             botonSeleccionado.startAnimation(alphaBlink)
-            sleep(2000)
+            sleep(tiempo)
             botonSeleccionado.clearAnimation()
             semaforoAnimacion.release()
         }
@@ -147,13 +147,6 @@ class ModrianSimon : AppCompatActivity() {
 
         return aux
 
-    }
-
-    private fun flashButton(button: ImageButton) {
-        button.setColorFilter(Color.WHITE)
-        Handler().postDelayed({
-            button.setColorFilter(null)
-        }, 500L)
     }
 
     private fun showToast(msg: String){
