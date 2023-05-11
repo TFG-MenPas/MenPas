@@ -1,18 +1,23 @@
 package com.uma.menpas.activities
 
+import android.content.Context
 import android.graphics.Color
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.os.postDelayed
 import com.uma.menpas.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Semaphore
+import java.lang.Thread.sleep
+import kotlin.collections.ArrayList
 
 class ModrianSimon : AppCompatActivity() {
 
@@ -21,10 +26,15 @@ class ModrianSimon : AppCompatActivity() {
     lateinit var botonVioleta : ImageButton
     lateinit var botonAzul : ImageButton
     lateinit var nivelText : TextView
+    lateinit var botonSeleccionado : ImageButton
     var nivel : Int = 1
     lateinit var secuencia : ArrayList<Int>
     var indiceSecuencia: Int = 0
     var turnoJugador: Boolean = false
+    lateinit var sonido: MediaPlayer
+    var semaforoSonido : Semaphore = Semaphore(1)
+    var semaforoAnimacion : Semaphore = Semaphore(1)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,27 +99,33 @@ class ModrianSimon : AppCompatActivity() {
 
     private fun mostrarSecuencia() {
         for(i in this.secuencia){
-            Handler().postDelayed(
-                {
-                    when (i) {
-                        0 -> generarAnimacion(this.botonRojo)
-                        1 -> generarAnimacion(this.botonVerde)
-                        2 -> generarAnimacion(this.botonVioleta)
-                        3 -> generarAnimacion(this.botonAzul)
-                    }
-                }, (i+1)*1000L
-
-            )
+            generarAnimacion(i)
+            reproducirSonido(this,i, 2000)
         }
 
     }
 
-    private fun generarAnimacion(btn: ImageButton) {
+    private fun generarAnimacion(color: Int) {
         val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
         alphaBlink.interpolator = LinearInterpolator()
-        btn.startAnimation(alphaBlink)
 
-        Handler().postDelayed({btn.clearAnimation()},500L)
+        GlobalScope.launch(Dispatchers.IO) {
+
+            semaforoAnimacion.acquire()
+
+            when (color) {
+                0 -> botonSeleccionado = botonRojo
+                1 -> botonSeleccionado = botonVerde
+                2 -> botonSeleccionado = botonVioleta
+                3 -> botonSeleccionado = botonAzul
+            }
+
+            botonSeleccionado.startAnimation(alphaBlink)
+            sleep(2000)
+            botonSeleccionado.clearAnimation()
+            semaforoAnimacion.release()
+        }
+
     }
 
     private fun habilitarBotones(turnoJugador: Boolean) {
@@ -142,5 +158,28 @@ class ModrianSimon : AppCompatActivity() {
 
     private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+
+    private fun reproducirSonido(context: Context,color: Int, tiempo: Long){
+
+        GlobalScope.launch(Dispatchers.IO) {
+
+            semaforoSonido.acquire()
+
+            when(color){
+                0 -> sonido = MediaPlayer.create(context, R.raw.simon_sound_rojo)
+                1 -> sonido = MediaPlayer.create(context, R.raw.simon_sound_verde)
+                2 -> sonido = MediaPlayer.create(context, R.raw.simon_sound_violeta)
+                3 -> sonido = MediaPlayer.create(context, R.raw.simon_sound_azul)
+            }
+
+            sonido.start()
+            sleep(tiempo)
+            sonido.stop()
+            sonido.release()
+
+            semaforoSonido.release()
+        }
+
     }
 }
