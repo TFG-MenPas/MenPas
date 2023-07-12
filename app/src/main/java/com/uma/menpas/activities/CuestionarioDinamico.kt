@@ -28,7 +28,8 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var rlDinamico: RelativeLayout
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
-    private val JSON_RESOURCE_NAME = "preguntas_caf"
+    lateinit var listaSeries : ArrayList<View>
+    private val JSON_RESOURCE_NAME = "preguntas_autorregistro_entrenamiento"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
@@ -80,6 +81,7 @@ class CuestionarioDinamico : AppCompatActivity() {
             "fecha" -> guardarRespuestaFecha()
             "siNo" -> guardarRespuestaSiNo()
             "seleccionMultiple" ->  guardarRespuestaSeleccionMultiple()
+            "seleccionMultipleSeries" -> guardarRespuestaSeleccionMultipleSeriesEntrenamiento()
         }
     }
 
@@ -110,6 +112,18 @@ class CuestionarioDinamico : AppCompatActivity() {
     private fun guardarRespuestaSeleccionMultiple() {
         val textOpcion : TextView = cuestionarioDinamico.findViewById(R.id.textOpcion)
         actualizarRespuestasUsuario(textOpcion.text as String)
+    }
+
+    private fun guardarRespuestaSeleccionMultipleSeriesEntrenamiento() {
+        var respuestaSeries = "${listaSeries.size}|"
+        for (serie in listaSeries){
+            val textOpcionAtleta = serie.findViewById<TextView>(R.id.textOpcionAtleta).text as String
+            val textOpcionEntrenador = serie.findViewById<TextView>(R.id.textOpcionEntrenador).text as String
+            respuestaSeries += textOpcionAtleta + "|" + textOpcionEntrenador + "|"
+
+        }
+        // 'numero de series | Opcion Atleta | Opcion Entrenador |
+        actualizarRespuestasUsuario(respuestaSeries)
     }
 
     private fun actualizarRespuestasUsuario(res: String){
@@ -165,6 +179,7 @@ class CuestionarioDinamico : AppCompatActivity() {
             "fecha" -> rellenarPreguntaFecha()
             "siNo" -> rellenarPreguntaSiNo()
             "seleccionMultiple" -> rellenarPreguntaSeleccionMultiple(pregunta.getJSONArray("respuestas"))
+            "seleccionMultipleSeries" -> rellenarPreguntaSeleccionMultipleSeriesEntrenamiento(pregunta.getJSONArray("respuestas"), pregunta.getJSONArray("respuestasAtleta"), pregunta.getJSONArray("respuestasEntrenador"))
         }
     }
 
@@ -243,6 +258,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         when(input){
             "tiempo" -> editText.inputType = InputType.TYPE_CLASS_DATETIME
             "texto" -> editText.inputType = InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            "number" -> editText.inputType = InputType.TYPE_CLASS_NUMBER
         }
         if(respuestasUsuario.elementAtOrNull(indicePregunta) != null){
             editText.setText(respuestasUsuario[indicePregunta])
@@ -298,6 +314,132 @@ class CuestionarioDinamico : AppCompatActivity() {
 
         })
     }
+    private fun rellenarPreguntaSeleccionMultipleSeriesEntrenamiento(respuestas: JSONArray, respuestasAtleta: JSONArray, respuestasEntrenador: JSONArray) {
+        actualizarLayout(R.layout.cuestionario_seleccion_multiple)
+
+        val llSeleccionMultiple: LinearLayout = cuestionarioDinamico.findViewById(R.id.llSeleccionMultiple)
+        listaSeries = ArrayList()
+        val listaRespuestas : ArrayList<String> = ArrayList()
+        for (i in 0 until respuestas.length()){
+            listaRespuestas.add(i, respuestas.getString(i))
+        }
+        val listaRespuestasAtleta : ArrayList<String> = ArrayList()
+        for (i in 0 until respuestasAtleta.length()){
+            listaRespuestasAtleta.add(i, respuestasAtleta.getString(i))
+        }
+        val listaRespuestasEntrenador : ArrayList<String> = ArrayList()
+        for (i in 0 until respuestasEntrenador.length()){
+            listaRespuestasEntrenador.add(i, respuestasEntrenador.getString(i))
+        }
+        val textOpcion : TextView = cuestionarioDinamico.findViewById(R.id.textOpcion)
+        val seekbar : SeekBar = cuestionarioDinamico.findViewById(R.id.seekbar)
+        seekbar.max = listaRespuestas.size - 1
+        if (seekbar.max > 7) seekbar.tickMark = null
+        seekbar.progressDrawable = null
+        if(respuestasUsuario.elementAtOrNull(indicePregunta) == null){
+            textOpcion.text = listaRespuestas[0]
+            seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+            seekbar.progress = 0
+            val serie = layoutInflater.inflate(R.layout.entrenamiento_series, llSeleccionMultiple, false)
+            rellenarSerie(
+                serie,
+                0,
+                listaRespuestasAtleta,
+                listaRespuestasEntrenador,
+                0,
+                0
+            )
+            listaSeries.add(serie)
+            llSeleccionMultiple.addView(serie)
+        }else{
+            val respuestaSeries = respuestasUsuario[indicePregunta] // 'numero de series | Opcion Atleta | Opcion Entrenador |
+            val numeroSeries = respuestaSeries.split('|')[0]
+            textOpcion.text = numeroSeries
+            seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+            seekbar.progress = listaRespuestas.indexOf(numeroSeries)
+            //TODO: respuesas series
+            for (i in 0 until numeroSeries.toInt()){
+                val respuestaAtleta = respuestaSeries.split('|')[2*i + 1].toInt()
+                val respuestaEntrenador = respuestaSeries.split('|')[2*i + 2].toInt()
+                val serie = layoutInflater.inflate(R.layout.entrenamiento_series, llSeleccionMultiple, false)
+                rellenarSerie(serie, i, listaRespuestasAtleta, listaRespuestasEntrenador, respuestaAtleta - 1,  respuestaEntrenador - 1)
+                listaSeries.add(serie)
+                llSeleccionMultiple.addView(serie)
+            }
+        }
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textOpcion.text = listaRespuestas[progress]
+                for(serie in listaSeries){
+                    llSeleccionMultiple.removeView(serie)
+                }
+                listaSeries.clear()
+                var serie: View
+                for (i in 0 .. progress){
+                    serie = layoutInflater.inflate(R.layout.entrenamiento_series, llSeleccionMultiple, false)
+                    rellenarSerie(
+                        serie,
+                        i,
+                        listaRespuestasAtleta,
+                        listaRespuestasEntrenador,
+                        0,
+                        0
+                    )
+                    listaSeries.add(serie)
+                    llSeleccionMultiple.addView(serie)
+                }
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+    }
+
+    private fun rellenarSerie(
+        serie: View,
+        i: Int,
+        listaRespuestasAtleta: ArrayList<String>,
+        listaRespuestasEntrenador: ArrayList<String>,
+        respuestaAtleta: Int,
+        respuestaEntrenador: Int
+    ) {
+        val textSerie = serie.findViewById<TextView>(R.id.textSerie)
+        textSerie.text = "Serie " + (i + 1)
+        val seekbarAtleta = serie.findViewById<SeekBar>(R.id.seekbarAtleta)
+        seekbarAtleta.max = listaRespuestasAtleta.size - 1
+        seekbarAtleta.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+        seekbarAtleta.progress = respuestaAtleta
+        val textOpcionAtleta = serie.findViewById<TextView>(R.id.textOpcionAtleta)
+        textOpcionAtleta.text = listaRespuestasAtleta[respuestaAtleta]
+        seekbarAtleta.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                textOpcionAtleta.text = listaRespuestasAtleta[p1]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+        val seekbarEntrenador = serie.findViewById<SeekBar>(R.id.seekbarEntrenador)
+        seekbarEntrenador.max = listaRespuestasEntrenador.size - 1
+        seekbarEntrenador.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+        seekbarEntrenador.progress = respuestaEntrenador
+        val textOpcionEntrenador = serie.findViewById<TextView>(R.id.textOpcionEntrenador)
+        textOpcionEntrenador.text = listaRespuestasEntrenador[respuestaEntrenador]
+        seekbarEntrenador.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                textOpcionEntrenador.text = listaRespuestasEntrenador[p1]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+    }
+
     private fun actualizarLayout(layout: Int){
             rlDinamico.removeAllViews()
             cuestionarioDinamico = layoutInflater.inflate(layout, rlDinamico, false)

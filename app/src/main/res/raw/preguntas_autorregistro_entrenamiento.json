@@ -1,0 +1,72 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Fecha",
+			"tipo": "fecha"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Objetivo General",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tareas",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Deporte practicado",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 5,
+			"pregunta": "Metas",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 6,
+			"pregunta": "Número de Series",
+			"tipo": "seleccionMultipleSeries",
+			"respuestas": [
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8"
+			],
+			"respuestasAtleta": [
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+				"9",
+				"10"
+			],
+			"respuestasEntrenador": [
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+				"9",
+				"10"
+			]
+		}
+	]
+}

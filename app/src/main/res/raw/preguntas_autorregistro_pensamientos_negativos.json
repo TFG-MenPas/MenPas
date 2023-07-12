@@ -1,0 +1,88 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Fecha",
+			"tipo": "fecha"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Hora",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"00",
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"23"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Ciudad, País, Recinto Deportivo...",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Situación y Conducta Previa / COMPAÑIA",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 5,
+			"pregunta": "Pensamientos y Verbalizaciones Negativas",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 6,
+			"pregunta": "Intensidad, Pensamientos y Verbalizaciones Negativas ",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"00",
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Situación y Conducta Posterior / COMPAÑIA",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 8,
+			"pregunta": "El pensamiento POSITIVO debe ser…",
+			"tipo": "textoLibre",
+			"input": "texto"
+		}
+	]
+}
