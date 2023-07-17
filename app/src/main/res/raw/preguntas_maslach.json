@@ -1,0 +1,312 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me siento emocionalmente agotado por mi trabajo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Me siento cansado al final de la jornada de trabajo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Me siento fatigado cuando me levanto por la mañana y tengo que enfrentarme con otro día de trabajo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Fácilmente comprendo como se sienten las personas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Creo que trato a algunas personas como si fuesen objetos impersonales.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Trabajar todo el día con personas es un esfuerzo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Trato muy eficazmente los problemas de las personas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Me siento quemado por mi trabajo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Creo que estoy influyendo positivamente con mi trabajo en las vidas de los demás.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Me he vuelto más insensible con la gente desde que ejerzo esta profesión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Me preocupa el hecho de que este trabajo me esté endureciendo emocionalmente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me siento muy activo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Me siento frustrado en mi trabajo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Creo que estoy trabajando demasiado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "No me preocuoa realmente lo que le ocurre a algunas personas a las que doy servicio.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Trabajar directamente con personas me produce estrés.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Fácilmente puedo crear una atmosfera relajada con las personas a las que doy servicio.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Me siento estimulado después de trabajar en contacto con personas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "He conseguido muchas cosas útiles en mi profesión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Me siento acabado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "En mi trabajo trato los problemas emocionales con mucha calma.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Creo que las personas que trato me culpan de algunos de sus problemas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Pocas veces al año o menos",
+				"Una vez al mes o menos",
+				"Unas pocas veces al mes",
+				"Una vez a la semana",
+				"Pocas veces a la semana",
+				"Todos los días"
+			]
+		}
+	]
+}
