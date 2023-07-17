@@ -1,0 +1,69 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "AÑOS JUGANDO AL FÚTBOL A NIVEL COMPETITIVO",
+			"tipo": "textoLibre",
+			"input": "number"
+		},
+		{
+			"numero": 2,
+			"pregunta": "ANTES DE ESPECIALIZARTE EN EL FÚTBOL, ¿HAS PRACTICADO OTRO DEPORTE?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 3,
+			"pregunta": "CLUB:",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 4,
+			"pregunta": "CATEGORÍA EN LA QUE COMPITES:",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 5,
+			"pregunta": "NIVEL COMPETITIVO A NIVEL DEMOGRÁFICO:",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"LOCAL/COMARCAL",
+				"AUTONÓMICO",
+				"NACIONAL"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Nº DE ENTRENAMIENTOS A LA SEMANA:",
+			"tipo": "textoLibre",
+			"input": "number"
+		},
+
+		{
+			"numero": 7,
+			"pregunta": "DURACIÓN APROXIMADA DE CADA ENTRENAMIENTO EN HORAS:",
+			"tipo": "textoLibre",
+			"input": "number"
+		},
+		{
+			"numero": 8,
+			"pregunta": "MESES AL AÑO QUE PRACTICAS FÚTBOL:",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6",
+				"7",
+				"8",
+				"9",
+				"10",
+				"11",
+				"12"
+			]
+		}
+	]
+}
