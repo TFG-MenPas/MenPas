@@ -1,0 +1,466 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Mis padre me muestra con gestos y palabras que me quiere",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Mis madre me muestra con gestos y palabras que me quiere",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Mi padre está involucrado en todo lo que hago",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Mi madre está involucrada en todo lo que hago",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Tengo la impresión de que mi padre piensa que es mi culpa si no está contento",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Tengo la impresión de que mi madre piensa que es mi culpa si no está contenta",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Mi padre da su opinión sobre los amigos con los que me gusta ir",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Mi madre da su opinión sobre los amigos con los que me gusta ir",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Si las cosas van mal tengo la impresión de que mi padre trata de consolarme y me anima",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Si las cosas van mal tengo la impresión de que mi madre trata de consolarme y me anima",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Mi padre es brusco conmigo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Mi madre es brusca conmigo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Mi padre quiere saber lo que hago cuando tengo alguna actividad por la noche",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Mi madre quiere saber lo que hago cuando tengo alguna actividad por la noche",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Tengo la sensación de que mi padre me quiere",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Tengo la sensación de que mi madre me quiere",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Mi padre me castiga severamente por las cosas más triviales",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Mi madre me castiga severamente por las cosas más triviales",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Mi padre establece reglas en cuanto a lo que puedo o no puedo hacer y luego se adhiere estrictamente a ese conjunto",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Mi madre establece reglas en cuanto a lo que puedo o no puedo hacer y luego se adhiere estrictamente a ese conjunto",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Cuando estoy triste puedo buscar el apoyo de mi padre",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Cuando estoy triste puedo buscar el apoyo de mi madre",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "A veces mi padre quiere que sea otra persona",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "A veces mi madre quiere que sea otra persona",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Creo que es exagerada la ansiedad de mi padre acerca de cualquier cosa que puede suceder",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Creo que es exagerada la ansiedad de mi madre acerca de cualquier cosa que puede suceder",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Es costumbre que mi padre me abrace",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Es costumbre que mi madre me abrace",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Mi padre me golpeaba",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Mi madre me golpeaba",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Mi padre me demuestra que me quiere mucho",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Mi madre me demuestra que me quiere mucho",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Cuando llego a casa, mi padre quiere saber todo lo que hice",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Cuando llego a casa, mi madre quiere saber todo lo que hice",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "A veces, es que mi padre es tacaño conmigo o me ofrece cosas de mala gana",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 36,
+			"pregunta": "A veces, es que mi madre es tacaña conmigo o me ofrece cosas de mala gana",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 37,
+			"pregunta": "Creo que existe afecto y ternura entre mi padre y yo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 38,
+			"pregunta": "Creo que existe afecto y ternura entre mi madre y yo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 39,
+			"pregunta": "Mi padre me llama la atención y critica delante de los demás, dice que soy vago y / o un inútil",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 40,
+			"pregunta": "Mi madre me llama la atención y critica delante de los demás, dice que soy vago y / o un inútil",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 41,
+			"pregunta": "Mi padre quiere decidir cómo vestirme y mi apariencia",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 42,
+			"pregunta": "Mi madre quiere decidir cómo vestirme y mi apariencia",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"A veces",
+				"A menudo",
+				"Siempre"
+			]
+		}
+	]
+}
