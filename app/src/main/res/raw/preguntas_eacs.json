@@ -1,0 +1,124 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Renunciar a las reuniones con los amigos (fiestas, viajes al cine, salidas nocturnas, etc.)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Deja los estudios / trabajo retrasados (en segundo lugar)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Evitar comer cosas que me gustan",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Renunciar a las reuniones familiares (bautizos, aniversarios, las estaciones festivas, etc.)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Faltar a la escuela / trabajo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Renunciar a acciones conjuntas con el (la) novio (a) / esposa / esposo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Renunciar a los viajes de ocio (viajes fin de curso, alquileres, etc.)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Tomar más tiempo para finalizar el estudio / completar un trabajo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Abandonar la escuela / trabajo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Permanecer mucho tiempo sin estar con la gente que me gustan (familia, amigos, novia (o), esposa / marido, etc.)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"Deacuerdo",
+				"Completamente deacuerdo"
+			]
+		}
+	]
+}
