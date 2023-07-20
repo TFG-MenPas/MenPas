@@ -1,0 +1,354 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Cuando hago planes, trato de llevarlos hasta el final.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "De una u otra manera puedo lidiar los problemas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Yo puedo depender solo de mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Para mí es importante mantener el interés en las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Si es necesario, puedo ser totalmente autónomo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Estoy orgulloso de que pude lograr en mi vida.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "A menudo hago cosas sin mucha preocupación.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Soy amigo de mí mismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Siento que puedo lidiar con varios problemas a la vez.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Estoy decidido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Yo rara vez pienso en el fin de las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Hago cada cosa que tengo que hacer a su debido tiempo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Puedo lidiar con situaciones difíciles debido a que he estado en problemas antes.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Tiendo a ser disciplinado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Por lo general mantengo el interés en las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Me parece muchas veces para reír.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Creer en mí mismo me ayuda a hacer frente a los tiempos difíciles.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "En una emergencia,en general, yo soy alguien en quien la gente puede confiar.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Generalmente puedo ver la situación de varias maneras.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "A veces me obligo a hacer las cosas si quiero o no quiero.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Mi vida tiene sentido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "No insisto en cosas que no puedo cambiar.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Cuando estoy en una situación difícil, por lo general encuentro una solución.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Tengo suficiente energía para cumplir con mis obligaciones.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "No hay ningún problema si algunas personas no me gusta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"Bastante en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutro",
+				"Algo de acuerdo",
+				"Bastante en acuerdo",
+				"Completamente de acuerdo"
+			]
+		}
+	]
+}
