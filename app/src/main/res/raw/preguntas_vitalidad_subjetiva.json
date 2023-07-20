@@ -1,0 +1,88 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me siento vivo/a y vital.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "A veces me siento tan vivo/a que solo quiero saltar.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tengo energía y ánimo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Me ilusiono con cada nuevo día.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Casi siempre me siento alerta y despierto/a.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Me siento activado/a (siento que tengo mucha energía).",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No es verdad",
+				"No es verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Algo de verdad",
+				"Verdadero",
+				"Verdadero"
+			]
+		}
+	]
+}
