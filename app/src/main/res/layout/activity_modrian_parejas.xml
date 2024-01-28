@@ -52,15 +52,15 @@
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/dark_blue"
         android:textSize="28sp"
-        android:text="@string/modrian_fotos" />
+        android:text="@string/modrian_parejas" />
 
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollModrianFotos"
+        android:id="@+id/nestedScrollModrianParejas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
-        android:layout_marginBottom="100dp"
+
         android:layout_below="@id/bannerRectanguloAzul"
         android:background="@color/white">
 
@@ -101,38 +101,7 @@
                 android:inputType="time"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="15dp"
-                android:textAlignment="center"
-                android:id="@+id/textTiempoEspera"
-                android:layout_below="@id/editTextTiempoRealizacion"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/dark_blue"
-                android:textSize="24sp"
-                android:text="@string/tiempo_de_espera" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/textTiempoEspera"
-                android:background="@color/line_grey"
-                android:orientation="horizontal" />
-
-            <EditText
-                android:id="@+id/editTextTiempoEspera"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:layout_below="@id/textTiempoEspera"
-                android:backgroundTint="@color/line_grey"
-                android:fontFamily="@font/poppins_regular"
-                android:fontWeight="400"
-                android:hint="@string/hintFormato"
-                android:inputType="time"
-                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,12 +110,12 @@
                 android:layout_marginStart="15dp"
                 android:textAlignment="center"
                 android:id="@+id/textFormato"
-                android:layout_below="@+id/editTextTiempoEspera"
+                android:layout_below="@+id/editTextTiempoRealizacion"
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
                 android:text="@string/formato"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="30dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -161,85 +130,6 @@
                 android:textSize="24sp"
                 android:text="@string/cadenaFormato" />
 
-            <!--<TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="40dp"
-                android:textAlignment="center"
-                android:id="@+id/textTamanyoTablero"
-                android:layout_below="@+id/textFormato"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/dark_blue"
-                android:textSize="24sp"
-                android:text="@string/tamanyo_tablero" />
-
-            <SeekBar
-                android:id="@+id/seekbarTamanyoTablero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/textTamanyoTablero"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:indeterminate="false"
-                android:tickMark="@drawable/tickbar_enabled"
-                android:progressDrawable="@drawable/seekbar_multichoice"
-                android:thumb="@drawable/thumb"/>
-
-            <TextView
-                android:id="@+id/textOpcionTamanyoTablero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seekbarTamanyoTablero"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Pequeño"
-                android:textColor="@color/dark_blue"
-                android:textSize="24sp" />-->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="70dp"
-                android:textAlignment="center"
-                android:id="@+id/textNumImg"
-                android:layout_below="@+id/textFormato"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/dark_blue"
-                android:textSize="24sp"
-                android:text="@string/numero_imagenes" />
-
-            <SeekBar
-                android:id="@+id/seekbarNumImg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/textNumImg"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:indeterminate="false"
-                android:layout_marginTop="10dp"
-                android:tickMark="@drawable/tickbar_enabled"
-                android:progressDrawable="@drawable/seekbar_multichoice"
-                android:thumb="@drawable/thumb"/>
-
-            <TextView
-                android:id="@+id/textOpcionNumImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seekbarNumImg"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="2"
-                android:textColor="@color/dark_blue"
-                android:textSize="24sp" />
-
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -250,9 +140,9 @@
         android:id="@+id/buttonComenzar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
+        android:layout_below="@+id/nestedScrollModrianParejas"
+        android:layout_marginTop="100dp"
         android:background="@drawable/button"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="400"
