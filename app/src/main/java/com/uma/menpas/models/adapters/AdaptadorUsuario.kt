@@ -79,5 +79,9 @@ class AdaptadorUsuario {
                 aComienzoDeporte
             )
         }
+
+        fun soapObjectABoolean(result: SoapObject): Boolean {
+            return result.getPropertyAsString(0).toBoolean()
+        }
     }
 }

@@ -304,6 +304,9 @@
     <!--Desplegable Fotos-->
     <string name="elija_una_foto">Elija una foto</string>
 
+    <!--Modrian Stroop-->
+    <string name="modrian_stroop">Modrian Stroop</string>
+
     <!--Modrian Parejas-->
     <string name="modrian_parejas">Modrian Parejas</string>
 

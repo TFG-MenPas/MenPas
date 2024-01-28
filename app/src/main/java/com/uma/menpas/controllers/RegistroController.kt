@@ -90,11 +90,11 @@ class RegistroController {
         }
 
         fun comprobarUsuarioExiste(usuario: String): Boolean {
-            return false
+            return UsuarioService.existeNombreUsuario(usuario)
         }
 
         fun comprobarEmailExiste(email: String): Boolean {
-            return false
+            return UsuarioService.existeCorreo(email)
         }
 
         fun comprobarContrasenya(contrasenya: String, repContrasenya: String): Int {

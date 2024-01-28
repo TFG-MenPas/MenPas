@@ -88,5 +88,65 @@ class UsuarioService(){
 
             return AdaptadorUsuario.soapDatosRegistroAArray(result)
         }
+
+        fun existeCorreo(correo: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "existeCorreo")
+            request.addProperty("correo", correo)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
+        fun existeNombreUsuario(usuario: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "existeUsuario")
+            request.addProperty("username", usuario)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
+        fun darDeBaja(nombreUsuario: String?, contrasenya: String?): Boolean {
+            val request = SoapObject("http://tempuri.org/", "borrarUser")
+            request.addProperty("username", nombreUsuario)
+            request.addProperty("pwd", contrasenya)
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+        }
+
+        fun editarNombreUsuario(nuevoNombreUsuario: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUserName")
+            //request.addProperty("username", nuevoNombreUsuario)
+
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+        fun editarNombre(nuevoNombre: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUser")
+            //request.addProperty("username", nuevoNombre)
+
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+        fun editarApellidos(nuevoApellido: String): Boolean {
+            val request = SoapObject("http://tempuri.org/", "updateUser")
+            //request.addProperty("username", nuevoApellido)
+            
+            val result = PeticionSOAP.enviarPeticion(request)
+
+            return AdaptadorUsuario.soapObjectABoolean(result)
+
+        }
+
+
+
+
+
     }
 }
