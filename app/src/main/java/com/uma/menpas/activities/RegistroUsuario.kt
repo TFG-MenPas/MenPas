@@ -134,8 +134,7 @@ class RegistroUsuario : AppCompatActivity() {
         }
 
         iniSesion.setOnClickListener {
-            SnackBarPersonalizada.mostrarSnack(layout, "HOLA ESTO ES SNACKBAR PERSON", 2000)
-            //finish()
+            finish()
         }
 
         buttonRegistrar.setOnClickListener {
@@ -158,6 +157,7 @@ class RegistroUsuario : AppCompatActivity() {
             val profesion = profesionSpinner.selectedItem.toString()
             val terminoSeleccionado = checkBoxterminos.isChecked
 
+
             val resultadoComprobacion = RegistroController.comprobarDatos(
                 usuario,
                 contrasenya,
@@ -179,12 +179,13 @@ class RegistroUsuario : AppCompatActivity() {
                 terminoSeleccionado
             )
 
-            /*val usuarionew = RegistroController.registrarUsuario("prueba1111111",
-                "prueba1111111",
-                "prueba3111111",
-                "prueba3111111",
+            /*
+            val usuarionew = RegistroController.registrarUsuario("pNombre",
+                "pNombre",
+                "nombreMuyLargoAVerComoQuedaEnLaAplicacion",
+                "nombreMuyLargoAVerComoQuedaEnLaAplicacion",
                 "12",
-                "prueba3111111",
+                "prueba3111111123",
                 "prueba1",
                 "11",
                 genero,
@@ -194,10 +195,10 @@ class RegistroUsuario : AppCompatActivity() {
                 nivelEstudios,
                 horasSemanales,
                 profesion)
-
              */
+
             var textoSnackbar = ""
-            when(resultadoComprobacion){
+            when (resultadoComprobacion) {
                 1 -> textoSnackbar = "Todavía quedan campos sin rellenar"
                 2 -> textoSnackbar = "El nombre de usuario introducido ya existe"
                 3 -> textoSnackbar = "Las contraseñas no coinciden"
@@ -206,8 +207,9 @@ class RegistroUsuario : AppCompatActivity() {
                 6 -> textoSnackbar = "No se han aceptado los términos"
             }
             SnackBarPersonalizada.mostrarSnack(layout, textoSnackbar, 2000)
-            if(resultadoComprobacion == 0){
-               val user = RegistroController.registrarUsuario(usuario,
+            if (resultadoComprobacion == 0) {
+                val user = RegistroController.registrarUsuario(
+                    usuario,
                     contrasenya,
                     nombre,
                     apellidos,
@@ -221,10 +223,13 @@ class RegistroUsuario : AppCompatActivity() {
                     estadoCivil,
                     nivelEstudios,
                     horasSemanales,
-                    profesion)
+                    profesion
+                )
+
                 Toast.makeText(this, "Registro realizado con éxito", Toast.LENGTH_SHORT)
                 finish()
             }
         }
     }
 }
+

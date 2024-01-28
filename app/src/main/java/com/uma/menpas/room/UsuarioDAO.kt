@@ -14,6 +14,6 @@ interface UsuarioDAO {
     @Update
     fun updateUsuario(usuario: Usuario)
 
-    @Delete
-    fun deleteUsuario(usuario: Usuario)
+    @Query("DELETE FROM Usuario")
+    fun limpiarUsuario()
 }

@@ -10,6 +10,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
@@ -17,9 +18,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class MondrianColoresGrid : AppCompatActivity() {
+class ModrianStroopGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
-    lateinit var botonColor : ImageButton
+    lateinit var botonColor : Button
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
@@ -27,18 +28,21 @@ class MondrianColoresGrid : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mondrian_colores_grid)
+        setContentView(R.layout.activity_modrian_stroop_grid)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoEspera)
         textTiempo = findViewById(R.id.textTiempoEspera)
+        colores = findViewById(R.id.gridColores)
         val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
-        arrayColores = intent.getStringArrayListExtra("arrayColores")!!
-        arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
-        colores = findViewById(R.id.gridColores)
+        arrayColores = intent.getStringArrayListExtra("arrayColores") as ArrayList<String>
+        arrayEliminar = intent.getStringArrayListExtra("arrayEliminar") as ArrayList<String>
+        val tipoStroop = intent.getCharSequenceExtra("tipoStroop")
+        val fondo = intent.getBooleanExtra("fondo", false)
+
         for (i in 0 until colores.childCount){
-            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor = colores.getChildAt(i) as Button
             val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
             val color = when(colorAleatorio){
                 "rojo" -> R.color.rojo
@@ -55,13 +59,17 @@ class MondrianColoresGrid : AppCompatActivity() {
                 "cyan" -> R.color.cyan
                 else -> R.color.black
             }
-            val drawable = botonColor.background.mutate() as GradientDrawable
-            drawable.setColor(getColor(color))
             botonColor.contentDescription = colorAleatorio
+            botonColor.text = colorAleatorio
+            when(tipoStroop){
+                "Congruente" -> rellenarBotonCongruente(color, fondo)
+                "Incongruente" -> rellenarBotonIncongruente(color, fondo)
+                "Mixto" -> rellenarBotonMixto(color, fondo)
+            }
             botonColor.isEnabled = false
             botonColor.isActivated = false
             botonColor.setOnClickListener {
-                val btnColor = colores.focusedChild as ImageButton
+                val btnColor = colores.focusedChild as Button
                 btnColor.requestFocus()
                 btnColor.isActivated = false
                 btnColor.isEnabled = false
@@ -69,15 +77,13 @@ class MondrianColoresGrid : AppCompatActivity() {
                 val dialog = BottomSheetDialog(this)
                 val view = layoutInflater.inflate(R.layout.desplegable_colores, null)
 
-
                 val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
                 alphaBlink.interpolator = LinearInterpolator()
                 btnColor.startAnimation(alphaBlink)
 
-
                 val gridColoresSeleccion = view.findViewById<GridLayout>(R.id.gridColoresSeleccion)
                 for (i in 0 until gridColoresSeleccion.childCount){
-                   val colorSeleccion = gridColoresSeleccion.getChildAt(i) as ImageButton
+                    val colorSeleccion = gridColoresSeleccion.getChildAt(i) as ImageButton
                     setDrawableColor(colorSeleccion)
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
@@ -87,7 +93,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                             }else{
-                                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 colorSeleccion.startAnimation(clk_rotate)
                             }
@@ -127,7 +133,6 @@ class MondrianColoresGrid : AppCompatActivity() {
                 dialog.show()
             }
         }
-
         object : CountDownTimer(longTiempoEspera, 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -176,16 +181,71 @@ class MondrianColoresGrid : AppCompatActivity() {
         drawable.setColor(getColor(color))
     }
 
+    private fun rellenarBotonCongruente(color: Int, fondo: Boolean) {
+        botonColor.setTextColor(getColor(color))
+        if (fondo) {
+            val drawable = botonColor.background.mutate() as GradientDrawable
+            drawable.setColor(getColor(color))
+        }
+    }
+    private fun rellenarBotonIncongruente(colorOriginal: Int, fondo: Boolean) {
+        var colorAleatorio : Int = getColorAleatorio()
+        while (colorAleatorio == colorOriginal){
+            colorAleatorio = getColorAleatorio()
+        }
+        if (fondo){
+            var colorFondo : Int = getColorAleatorio()
+            while (colorFondo == colorOriginal || colorFondo == colorAleatorio){
+                colorFondo = getColorAleatorio()
+            }
+            val drawable = botonColor.background.mutate() as GradientDrawable
+            drawable.setColor(getColor(colorFondo))
+        }
+        botonColor.setTextColor(getColor(colorAleatorio))
+    }
+    private fun rellenarBotonMixto(colorOriginal: Int, fondo: Boolean) {
+        when ((0..1).random()) {
+            0 ->  rellenarBotonCongruente(colorOriginal, fondo)
+            1 ->  rellenarBotonIncongruente(colorOriginal, fondo)
+        }
+    }
+    private fun getColorAleatorio(): Int {
+        val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
+        val color = when(colorAleatorio){
+            "rojo" -> R.color.rojo
+            "marrón" -> R.color.marron
+            "verde" -> R.color.verde
+            "gris" -> R.color.gris
+            "azul" -> R.color.azul
+            "rosa" -> R.color.rosa
+            "amarillo" -> R.color.amarillo
+            "violeta" -> R.color.violeta
+            "negro" -> R.color.black
+            "fucsia" -> R.color.fucsia
+            "naranja" -> R.color.naranja
+            "cyan" -> R.color.cyan
+            else -> R.color.black
+        }
+        return color
+    }
+    private fun estaMarcado(gridBotonColor: ImageButton, arrayColores: ArrayList<String>): Boolean {
+        for (textColor in arrayColores){
+            if (textColor == gridBotonColor.contentDescription){
+                return true
+            }
+        }
+        return false
+    }
     private fun activarRealizacionCuestionario(){
         for (i in 0 until colores.childCount){
-            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor = colores.getChildAt(i) as Button
             val drawable = botonColor.background.mutate() as GradientDrawable
             drawable.setColor(getColor(R.color.azul_banner_cuestionarios))
+            botonColor.text = ""
             botonColor.isEnabled = true
             botonColor.isActivated = true
         }
     }
-
     private fun actualizarCronometro(millisUntilFinished: Long) {
         val min =  TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
         val secs = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished - TimeUnit.MINUTES.toMillis(min))
@@ -194,14 +254,5 @@ class MondrianColoresGrid : AppCompatActivity() {
         }else{
             crono.text = "$min : $secs"
         }
-    }
-
-    private fun estaMarcado(gridBotonColor: ImageButton, arrayColores: ArrayList<String>): Boolean {
-        for (textColor in arrayColores){
-            if (textColor == gridBotonColor.contentDescription){
-                return true
-            }
-        }
-        return false
     }
 }
