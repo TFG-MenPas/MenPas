@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/bannerRectanguloAzul"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/azul_banner_cuestionarios" />
+
+    <View
+        android:id="@+id/ellipse_45"
+        android:layout_width="230dp"
+        android:layout_height="210dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-160dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_45" />
+
+    <View
+        android:id="@+id/ellipse_46"
+        android:layout_width="170dp"
+        android:layout_height="153dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-130dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_46" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCerrarDesplegable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#9CD3ED"
+        android:contentDescription="@string/boton_cerrar_cuestionario"
+        android:rotation="45"
+        android:src="@drawable/icon_cruz" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:id="@+id/textPregunta"
+        android:layout_below="@id/ellipse_45"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/dark_blue"
+        android:textSize="28sp"
+        android:text="@string/modrian_simon" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollModrianSimon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/bannerRectanguloAzul"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
+                android:id="@+id/gridSimon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_margin="40dp"
+                android:columnCount="2"
+                android:padding="30dp">
+
+                <ImageButton
+                    android:id="@+id/buttonRojo"
+                    android:focusable="true"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:background="@color/rojo"
+                    android:contentDescription="rojo"
+                    android:layout_marginTop="100px"
+                    android:clickable="true"
+                    android:longClickable="false"
+                    android:layout_columnWeight="1"
+                    android:padding="30dp"/>
+
+                <ImageButton
+                    android:id="@+id/buttonVerde"
+                    android:focusable="true"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:background="@color/verde"
+                    android:contentDescription="verde"
+                    android:layout_marginTop="100px"
+                    android:layout_marginLeft="30px"
+                    android:clickable="true"
+                    android:longClickable="false"
+                    android:layout_columnWeight="1"
+                    android:padding="60dp"/>
+
+                <ImageButton
+                    android:id="@+id/buttonVioleta"
+                    android:focusable="true"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:background="@color/violeta"
+                    android:contentDescription="violeta"
+                    android:layout_marginTop="100px"
+                    android:clickable="true"
+                    android:longClickable="false"
+                    android:layout_columnWeight="1"
+                    android:padding="50dp"/>
+
+                <ImageButton
+                    android:id="@+id/buttonAzul"
+                    android:focusable="true"
+                    android:layout_width="50dp"
+                    android:layout_height="90dp"
+                    android:background="@color/azul"
+                    android:contentDescription="azul"
+                    android:layout_marginTop="100px"
+                    android:layout_marginLeft="30px"
+                    android:clickable="true"
+                    android:longClickable="false"
+                    android:layout_columnWeight="1"
+                    android:padding="30dp" />
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/textNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="45dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/nivel"/>
+
+            <TextView
+                android:id="@+id/nivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="150dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="1"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</RelativeLayout>
