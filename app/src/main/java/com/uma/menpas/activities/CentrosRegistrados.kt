@@ -52,9 +52,9 @@ class CentrosRegistrados : AppCompatActivity() {
         adaptadorCentro = AdaptadorCentro(listaCentros)
 
 
-        listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
-        listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
-        listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
+        //listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
+        //listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
+        //listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
 
         val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
         centroRV.layoutAnimation = controller

@@ -42,7 +42,7 @@ class AdaptadorCentro(
 
     override fun onBindViewHolder(holder: CentroViewHolder, position: Int) {
         // on below line we are setting data to our text view and our image view.
-        holder.nombre.text = listaCentros.get(position).nombre
+       // holder.nombre.text = listaCentros.get(position).nombre
         holder.pais.text = listaCentros.get(position).pais
         //Imagen--> holder.image.setImageResource(courseList.get(position).courseImg)
     }
