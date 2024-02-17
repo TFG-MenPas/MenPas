@@ -29,7 +29,7 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
     lateinit var listaSeries : ArrayList<View>
-    private val JSON_RESOURCE_NAME = "preguntas_vitalidad_subjetiva"
+    private val JSON_RESOURCE_NAME = "preguntas_dinamica_grupal_ccd"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
