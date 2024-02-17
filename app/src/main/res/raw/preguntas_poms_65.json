@@ -1,0 +1,784 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Cordial.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Tenso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Enfadado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Rendido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Infeliz",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Perspicaz.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Animado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Confuso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Arrepentido por cosas hechas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Inestable.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Apático.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Enojado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Considerado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Triste.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Activo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Con los nervios de punta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Malhumorado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Melancólico.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Energético.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Asustado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Falto de esperanza.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Relajado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Indigno.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Rencoroso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Benévolo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Intranquilo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Inquieto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Incapaz de concentrarme.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Fatigado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Servicial.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Irritado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Desanimado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Resentido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Nervioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "Solo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 36,
+			"pregunta": "Miserable.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 37,
+			"pregunta": "Atontado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 38,
+			"pregunta": "De buen humor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 39,
+			"pregunta": "Amargado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 40,
+			"pregunta": "Exhausto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 41,
+			"pregunta": "Ansioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 42,
+			"pregunta": "Listo para pelear.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 43,
+			"pregunta": "Afable.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 44,
+			"pregunta": "Pesimista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 45,
+			"pregunta": "Desesperado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 46,
+			"pregunta": "Perezoso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 47,
+			"pregunta": "Rebelde.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 48,
+			"pregunta": "Indefenso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 49,
+			"pregunta": "Abatido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 50,
+			"pregunta": "Desconcertado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 51,
+			"pregunta": "Alerta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 52,
+			"pregunta": "Decepcionado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 53,
+			"pregunta": "Furioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 54,
+			"pregunta": "Eficiente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 55,
+			"pregunta": "Confiado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 56,
+			"pregunta": "Lleno de dinamismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 57,
+			"pregunta": "Con mal genio.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 58,
+			"pregunta": "Inútil.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 59,
+			"pregunta": "Sin memoria.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 60,
+			"pregunta": "Despreocupado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 61,
+			"pregunta": "Aterrorizado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 62,
+			"pregunta": "Culpable.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 63,
+			"pregunta": "Vigoroso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 64,
+			"pregunta": "Inseguro de las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 65,
+			"pregunta": "Tirado (muy cansado)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		}
+	]
+}
