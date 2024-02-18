@@ -29,7 +29,7 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
     lateinit var listaSeries : ArrayList<View>
-    private val JSON_RESOURCE_NAME = "preguntas_dinamica_grupal_ccd"
+    private val JSON_RESOURCE_NAME = "preguntas_poms_confusion_orientacion"
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
@@ -162,7 +162,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
     private fun rellenarPregunta(preguntas: JSONArray) {
-        val numeroTotalPreguntas = preguntas.length()
+        val numeroTotalPreguntas = preguntas.getJSONObject(preguntas.length() - 1).getInt("numero")
         val pregunta = preguntas.getJSONObject(indicePregunta)
         val numeroPregunta =  pregunta.getInt("numero")
         val textoPregunta = pregunta.getString("pregunta")

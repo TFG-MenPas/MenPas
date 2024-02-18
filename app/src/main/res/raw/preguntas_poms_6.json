@@ -1,0 +1,76 @@
+{
+	"Preguntas": [
+		{
+			"numero": 8,
+			"pregunta": "Confuso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Triste.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Energético.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Fatigado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Irritado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 41,
+			"pregunta": "Ansioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		}
+	]
+}

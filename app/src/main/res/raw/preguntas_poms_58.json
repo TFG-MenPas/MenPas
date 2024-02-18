@@ -1,18 +1,6 @@
 {
 	"Preguntas": [
 		{
-			"numero": 1,
-			"pregunta": "Cordial.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
 			"numero": 2,
 			"pregunta": "Tenso.",
 			"tipo": "seleccionMultiple",
@@ -51,18 +39,6 @@
 		{
 			"numero": 5,
 			"pregunta": "Infeliz.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
-			"numero": 6,
-			"pregunta": "Perspicaz.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Nada",
@@ -135,18 +111,6 @@
 		{
 			"numero": 12,
 			"pregunta": "Enojado.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
-			"numero": 13,
-			"pregunta": "Considerado.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Nada",
@@ -289,18 +253,6 @@
 			]
 		},
 		{
-			"numero": 25,
-			"pregunta": "Benévolo.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
 			"numero": 26,
 			"pregunta": "Intranquilo.",
 			"tipo": "seleccionMultiple",
@@ -339,18 +291,6 @@
 		{
 			"numero": 29,
 			"pregunta": "Fatigado.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
-			"numero": 30,
-			"pregunta": "Servicial.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Nada",
@@ -505,18 +445,6 @@
 			]
 		},
 		{
-			"numero": 43,
-			"pregunta": "Afable.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
 			"numero": 44,
 			"pregunta": "Pesimista.",
 			"tipo": "seleccionMultiple",
@@ -639,18 +567,6 @@
 		{
 			"numero": 54,
 			"pregunta": "Eficiente.",
-			"tipo": "seleccionMultiple",
-			"respuestas": [
-				"Nada",
-				"Muy Poco",
-				"Poco",
-				"Mucho",
-				"Muchisimo"
-			]
-		},
-		{
-			"numero": 55,
-			"pregunta": "Confiado.",
 			"tipo": "seleccionMultiple",
 			"respuestas": [
 				"Nada",

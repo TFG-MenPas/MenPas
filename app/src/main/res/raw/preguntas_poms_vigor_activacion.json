@@ -1,0 +1,100 @@
+{
+	"Preguntas": [
+		{
+			"numero": 7,
+			"pregunta": "Animado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Activo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Energético.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 38,
+			"pregunta": "De buen humor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 51,
+			"pregunta": "Alerta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 56,
+			"pregunta": "Lleno de dinamismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 60,
+			"pregunta": "Despreocupado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 63,
+			"pregunta": "Vigoroso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		}
+	]
+}
