@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.uma.menpas.models.Centro
 import com.uma.menpas.activities.CentrosRegistrados
 import com.uma.menpas.R
+import com.uma.menpas.models.Centro
 
 class AdaptadorCentro(
     // on below line we are passing variables as course list and context
@@ -42,7 +42,7 @@ class AdaptadorCentro(
 
     override fun onBindViewHolder(holder: CentroViewHolder, position: Int) {
         // on below line we are setting data to our text view and our image view.
-       // holder.nombre.text = listaCentros.get(position).nombre
+        holder.nombre.text = listaCentros.get(position).nombreCentro
         holder.pais.text = listaCentros.get(position).pais
         //Imagen--> holder.image.setImageResource(courseList.get(position).courseImg)
     }

@@ -1,16 +1,15 @@
-package com.uma.menpas.models.adapters
+package com.uma.menpas.models.mappers
 
-import com.uma.menpas.models.NuevoCentro
-import org.ksoap2.serialization.PropertyInfo
+import com.uma.menpas.models.Centro
 import org.ksoap2.serialization.SoapObject
 import org.ksoap2.serialization.SoapPrimitive
 
-class AdaptadorNuevoCentro {
+class CentroSoapMapper {
 
     companion object {
-        fun soapListToCenterList(result: SoapObject): List<NuevoCentro>? {
+        fun soapListToCenterList(result: SoapObject): List<Centro>? {
             try {
-                val centerList = mutableListOf<NuevoCentro>()
+                val centerList = mutableListOf<Centro>()
                 return if(result.propertyCount != 0) {
                     val lista: SoapObject = result.getProperty(0) as SoapObject
                     if(lista.getProperty(0) is SoapPrimitive){ // Si es un solo centro debido al getByID()
@@ -33,8 +32,8 @@ class AdaptadorNuevoCentro {
             }
         }
 
-        fun soapObjectToCenter(response: SoapObject) : NuevoCentro {
-            return NuevoCentro(
+        fun soapObjectToCenter(response: SoapObject) : Centro {
+            return Centro(
                 response.getPrimitiveProperty("ID_Centro").toString(),
                 response.getPrimitiveProperty("Nombre_Usuario1").toString(),
                 response.getPrimitiveProperty("Nombre_Centro").toString(),

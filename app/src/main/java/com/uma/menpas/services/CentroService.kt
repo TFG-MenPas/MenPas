@@ -1,30 +1,24 @@
 package com.uma.menpas.services
 
-import com.uma.menpas.models.NuevoCentro
-import com.uma.menpas.models.Usuario
-import com.uma.menpas.models.adapters.AdaptadorNuevoCentro
-import com.uma.menpas.models.adapters.AdaptadorUsuario
+import com.uma.menpas.models.Centro
+import com.uma.menpas.models.mappers.CentroSoapMapper
 import com.uma.menpas.network.PeticionSOAP
 import com.uma.menpas.network.SoapBuilder
-import org.ksoap2.serialization.SoapObject
 
-class CentroService {
-    companion object {
+class CentroService() {
 
-        fun listCentersDetailed(): List<NuevoCentro>? {
+        fun listCentersDetailed(): List<Centro>? {
             val request = SoapBuilder.createSoapObject("lista_datos_centros")
-
-            return AdaptadorNuevoCentro.soapListToCenterList(PeticionSOAP.enviarPeticion(request))
+            return CentroSoapMapper.soapListToCenterList(PeticionSOAP.enviarPeticion(request))
         }
-        fun getCenterById(id: String): NuevoCentro {
+
+        fun getCenterById(id: String): Centro {
             val request = SoapBuilder.createSoapObject("getCentro")
             request.addProperty("ID", id);
-            var centerList = listOf<NuevoCentro>()
+            var centerList = listOf<Centro>()
             val result = PeticionSOAP.enviarPeticion(request)
-            centerList = AdaptadorNuevoCentro.soapListToCenterList(result)!!
+            centerList = CentroSoapMapper.soapListToCenterList(result)!!
             return centerList.get(0)
-            }
         }
-
 
 }
