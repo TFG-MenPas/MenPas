@@ -12,8 +12,8 @@ import com.uma.menpas.R
 class MenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_principal)
-
+        setContentView(R.layout.activity_menu_principal_v2)
+        /*
         val autorregistro = findViewById<CardView>(R.id.autorregistro)
         val ansiedad = findViewById<CardView>(R.id.ansiedad)
         val autoconcepto = findViewById<CardView>(R.id.autoconcepto)
@@ -66,6 +66,7 @@ class MenuPrincipal : AppCompatActivity() {
         entrenamiento_mental.setOnClickListener {
             abrirArea(it.id)
         }
+         */
     }
 
     override fun onBackPressed(){
