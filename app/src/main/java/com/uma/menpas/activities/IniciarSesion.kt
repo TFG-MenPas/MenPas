@@ -38,8 +38,6 @@ class IniciarSesion : AppCompatActivity() {
 
         lateinit var intent: Intent
 
-        val usuario = inicioSesionController.comprobarUsuario("prueba1111111", "prueba1111111")
-
         textOlvidar.setOnClickListener {
             intent = Intent(this, RecuperarContrasenya::class.java)
             startActivity(intent)
