@@ -51,21 +51,22 @@
             android:layout_marginLeft="30dp"
             android:textSize="20dp"
             />
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textNombreUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:autoSizeTextType="uniform"
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:scaleType="fitXY"
             android:text="@string/usuario"
             android:fontFamily="@font/poppins_bold_italic"
             android:textColor="@color/white"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="75dp"
             android:layout_marginLeft="30dp"
-            android:textSize="20dp"
+            android:textSize="30dp"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
