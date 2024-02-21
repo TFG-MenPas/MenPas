@@ -42,7 +42,7 @@
         android:text="@string/bienvenido_principal"
         android:fontFamily="@font/poppins_light"
         android:textColor="@color/white"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginStart="30dp"
         android:textSize="20sp"
         />
@@ -70,6 +70,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
         android:id="@+id/nestedScrollMenuPrincipal"
         android:fillViewport="true">
 
