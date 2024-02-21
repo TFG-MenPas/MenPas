@@ -8,16 +8,16 @@
 	"instructions": {
 		"Instrucciones": "Lea atentamente la lista de palabras que se describen en los diferentes cuestionarios, estas palabras describen sentimientos que tienen las personas. Después de leer cada palabra fíjese en las cinco opciones que aparecen arriba y elija entre ellas la que mejor describa como se ha sentido usted durante las últimas 24 horas. Seleccione un valor en la casilla situada a la derecha de cada palabra. No deje ninguna casilla en blanco."
 	},
-	"buttons": [
-		"POMS de 65 items",
-		"POMS de 58 items",
-		"POMS de 15 items",
-		"POMS de 6 items",
-		"Escala tensión/ansiedad",
-		"Escala depresión",
-		"Esscala angustia/cólera",
-		"Escala vigor/activación",
-		"Escala fatiga/inercia",
-		"Escala confusión/orientación"
-	]
+	"buttons": {
+		"POMS de 65 items": "preguntas_poms_65",
+		"POMS de 58 items": "preguntas_poms_58",
+		"POMS de 15 items": "preguntas_poms_15",
+		"POMS de 6 items": "preguntas_poms_6",
+		"Escala tensión/ansiedad": "preguntas_poms_tension_ansiedad",
+		"Escala depresión": "preguntas_poms_depresion",
+		"Esscala angustia/cólera": "preguntas_poms_angustia_colera",
+		"Escala vigor/activación": "preguntas_poms_vigor_activacion",
+		"Escala fatiga/inercia": "preguntas_poms_fatiga_inercia",
+		"Escala confusión/orientación": "preguntas_poms_confusion_orientacion"
+	}
 }
