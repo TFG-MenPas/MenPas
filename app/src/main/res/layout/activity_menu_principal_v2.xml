@@ -19,16 +19,13 @@
         android:id="@+id/art_banner"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@id/textBienvenido"
         android:layout_alignBottom="@+id/banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
         android:paddingTop="4dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/art_banner" />
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textBienvenido"
@@ -42,11 +39,11 @@
         android:text="@string/bienvenido_principal"
         android:fontFamily="@font/poppins_light"
         android:textColor="@color/white"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
         android:textSize="20sp"
         />
-    <!-- Hasta 21 caracteres caben en el nombre -->
+    <!-- Hasta 18 en tlf fran caracteres caben en el nombre -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,8 +55,8 @@
         android:layout_alignBottom="@+id/banner"
         android:layout_marginBottom="30dp"
         android:textSize="18sp"
-        android:maxLines="2"
-        android:text="Miguel Angel Cabanillas Silva"
+        android:maxLines="1"
+        android:text="Miguel157000"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold_italic" />
 
