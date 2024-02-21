@@ -3,11 +3,11 @@ package com.uma.menpas.services
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.models.adapters.AdaptadorUsuario
 import com.uma.menpas.network.PeticionSOAP
+import com.uma.menpas.network.SoapBuilder
 import org.ksoap2.serialization.SoapObject
 
 class UsuarioService(){
 
-    companion object{
         fun getUser(nombreUsuario: String, contrasenya: String): Usuario? {
             val request = SoapObject("http://tempuri.org/", "getUser")
             request.addProperty("username", nombreUsuario)
@@ -144,5 +144,4 @@ class UsuarioService(){
 
         }
 
-    }
 }

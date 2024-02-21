@@ -5,16 +5,15 @@ import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.services.UsuarioService
 
 class BajaUsuarioController {
+    val usuarioService = UsuarioService()
 
-    companion object{
-        fun bajaDeUsuario(context: Context): Boolean {
-            val usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
-            if(UsuarioService.darDeBaja(usuario?.nombreUsuario, usuario?.contrasenya)){
-                UsuarioDB.getDatabase(context)?.UsuarioDAO()?.limpiarUsuario()
-                return true
-            }
-            return false
+    fun bajaDeUsuario(context: Context): Boolean {
+        val usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
+        if(usuarioService.darDeBaja(usuario?.nombreUsuario, usuario?.contrasenya)){
+            UsuarioDB.getDatabase(context)?.UsuarioDAO()?.limpiarUsuario()
+            return true
         }
-
+        return false
     }
+
 }

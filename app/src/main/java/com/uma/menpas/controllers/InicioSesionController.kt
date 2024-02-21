@@ -6,27 +6,25 @@ import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.services.UsuarioService
 
 class InicioSesionController {
+    val usuarioService = UsuarioService()
 
-    companion object{
-        fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
-            var usuario = UsuarioService.getUser(usuario, contrasenya)
-            usuario?.contrasenya = contrasenya
-            return usuario
-        }
+    fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
+        var usuario = usuarioService.getUser(usuario, contrasenya)
+        usuario?.contrasenya = contrasenya
+        return usuario
+    }
 
-        fun validarDatos(usuario: String, contrasenya: String): Boolean{
-            return !(usuario.isNullOrBlank() || contrasenya.isNullOrBlank())
-        }
+    fun validarDatos(usuario: String, contrasenya: String): Boolean{
+        return !(usuario.isNullOrBlank() || contrasenya.isNullOrBlank())
+    }
 
-        fun guardarUsuario(context: Context, usuario: Usuario){
-            val usuarioDB = UsuarioDB.getDatabase(context)
-            usuarioDB?.UsuarioDAO()?.insertUsuario(usuario)
-        }
+    fun guardarUsuario(context: Context, usuario: Usuario){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.insertUsuario(usuario)
+    }
 
-        fun getUsuarioGuardado(context: Context): Usuario? {
-            return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
-        }
-
+    fun getUsuarioGuardado(context: Context): Usuario? {
+        return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
     }
 
 }

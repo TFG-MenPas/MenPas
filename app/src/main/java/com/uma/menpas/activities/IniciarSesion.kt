@@ -18,6 +18,7 @@ import com.uma.menpas.utils.SnackBarPersonalizada
 import java.time.LocalDateTime
 
 class IniciarSesion : AppCompatActivity() {
+    val inicioSesionController = InicioSesionController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
@@ -30,14 +31,14 @@ class IniciarSesion : AppCompatActivity() {
         val editTextUsuario = findViewById<EditText>(R.id.editUsuario)
         val editTextContrasenya= findViewById<EditText>(R.id.editContrasenya)
 
-        if(InicioSesionController.getUsuarioGuardado(this) != null){
+        if(inicioSesionController.getUsuarioGuardado(this) != null){
             intent = Intent(this, MenuPrincipal::class.java)
             startActivity(intent)
         }
 
         lateinit var intent: Intent
 
-        val usuario = InicioSesionController.comprobarUsuario("prueba1111111", "prueba1111111")
+        val usuario = inicioSesionController.comprobarUsuario("prueba1111111", "prueba1111111")
 
         textOlvidar.setOnClickListener {
             intent = Intent(this, RecuperarContrasenya::class.java)
@@ -57,13 +58,12 @@ class IniciarSesion : AppCompatActivity() {
         buttonIniciarSesion.setOnClickListener {
             val entradaUsuario = editTextUsuario.text.toString()
             val entradaContrasenya = editTextContrasenya.text.toString()
-            if (InicioSesionController.validarDatos(entradaUsuario, entradaContrasenya)){
-                //val user = InicioSesionController.comprobarUsuario("menpasprueba", "menpasprueba")
-                val user = InicioSesionController.comprobarUsuario(entradaUsuario, entradaContrasenya)
+            if (inicioSesionController.validarDatos(entradaUsuario, entradaContrasenya)){
+                val user = inicioSesionController.comprobarUsuario(entradaUsuario, entradaContrasenya)
                 if(user == null){
                     SnackBarPersonalizada.mostrarSnack(layout, this.resources.getString(R.string.datos_incorrectos), 2000)
                 }else{
-                    InicioSesionController.guardarUsuario(this, user)
+                    inicioSesionController.guardarUsuario(this, user)
                     intent = Intent(this, MenuPrincipal::class.java)
                     startActivity(intent)
                 }
