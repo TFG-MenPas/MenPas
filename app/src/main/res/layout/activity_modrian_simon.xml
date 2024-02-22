@@ -68,66 +68,59 @@
             <GridLayout
                 android:id="@+id/gridSimon"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:orientation="horizontal"
-                android:layout_margin="40dp"
                 android:columnCount="2"
-                android:padding="30dp">
+                android:paddingTop="50dp">
 
                 <ImageButton
                     android:id="@+id/buttonRojo"
                     android:focusable="true"
                     android:layout_width="50dp"
                     android:layout_height="90dp"
-                    android:background="@color/rojo"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="rojo"
-                    android:layout_marginTop="100px"
                     android:clickable="true"
                     android:longClickable="false"
                     android:layout_columnWeight="1"
-                    android:padding="30dp"/>
+                    android:layout_margin="20dp"/>
 
                 <ImageButton
                     android:id="@+id/buttonVerde"
                     android:focusable="true"
                     android:layout_width="50dp"
                     android:layout_height="90dp"
-                    android:background="@color/verde"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="verde"
-                    android:layout_marginTop="100px"
-                    android:layout_marginLeft="30px"
                     android:clickable="true"
                     android:longClickable="false"
                     android:layout_columnWeight="1"
-                    android:padding="60dp"/>
+                    android:layout_margin="20dp"/>
 
                 <ImageButton
                     android:id="@+id/buttonVioleta"
                     android:focusable="true"
                     android:layout_width="50dp"
                     android:layout_height="90dp"
-                    android:background="@color/violeta"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="violeta"
-                    android:layout_marginTop="100px"
                     android:clickable="true"
                     android:longClickable="false"
                     android:layout_columnWeight="1"
-                    android:padding="50dp"/>
+                    android:layout_margin="20dp"/>
 
                 <ImageButton
                     android:id="@+id/buttonAzul"
                     android:focusable="true"
                     android:layout_width="50dp"
                     android:layout_height="90dp"
-                    android:background="@color/azul"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="azul"
-                    android:layout_marginTop="100px"
-                    android:layout_marginLeft="30px"
                     android:clickable="true"
                     android:longClickable="false"
                     android:layout_columnWeight="1"
-                    android:padding="30dp" />
+                    android:layout_margin="20dp" />
 
             </GridLayout>
 

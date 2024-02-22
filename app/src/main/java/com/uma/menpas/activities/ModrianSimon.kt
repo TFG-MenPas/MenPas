@@ -2,6 +2,7 @@ package com.uma.menpas.activities
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +35,7 @@ class ModrianSimon : AppCompatActivity() {
     lateinit var sonido: MediaPlayer
     var semaforoSonido : Semaphore = Semaphore(1)
     var semaforoAnimacion : Semaphore = Semaphore(1)
+    var semaforoClick : Semaphore = Semaphore(1)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,29 +45,54 @@ class ModrianSimon : AppCompatActivity() {
         nivelText = findViewById(R.id.nivel)
 
         botonRojo = findViewById(R.id.buttonRojo)
-        botonRojo.setClickable(true);
-        botonRojo.setLongClickable(false);
-        botonRojo.setOnClickListener {    botonRojo.requestFocus(); comprobarBotton(0)    }
+        setUpButton(botonRojo,0)
 
         botonVerde = findViewById(R.id.buttonVerde)
-        botonVerde.setClickable(true);
-        botonVerde.setLongClickable(false);
-        botonVerde.setOnClickListener {   botonVerde.requestFocus(); comprobarBotton(1)     }
+        setUpButton(botonVerde,1)
 
         botonVioleta = findViewById(R.id.buttonVioleta)
-        botonVioleta.setClickable(true);
-        botonVioleta.setLongClickable(false);
-        botonVioleta.setOnClickListener {  botonVioleta.requestFocus();  comprobarBotton(2)    }
+        setUpButton(botonVioleta,2)
 
         botonAzul = findViewById(R.id.buttonAzul)
-        botonAzul.setClickable(true);
-        botonAzul.setLongClickable(false);
-        botonAzul.setOnClickListener {  botonAzul.requestFocus();  comprobarBotton(3)    }
+        setUpButton(botonAzul,3)
 
         comenzarJuego()
+    }
 
+    private fun setUpButton(button: ImageButton, color: Int){
+        val drawable = button.background.mutate() as GradientDrawable
 
+        when(color){
+            0 -> drawable.setColor(getColor(R.color.rojo))
+            1 -> drawable.setColor(getColor(R.color.verde))
+            2 -> drawable.setColor(getColor(R.color.violeta))
+            3 -> drawable.setColor(getColor(R.color.azul))
+        }
 
+        button.setClickable(true);
+        button.setLongClickable(false);
+        button.setOnClickListener {    button.requestFocus(); clickAnimation(color); comprobarBotton(color)    }
+    }
+
+    private fun clickAnimation(color: Int) {
+        val scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up)
+        val scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down)
+
+        GlobalScope.launch(Dispatchers.IO) {
+
+            semaforoClick.acquire()
+
+            when (color) {
+                0 -> botonSeleccionado = botonRojo
+                1 -> botonSeleccionado = botonVerde
+                2 -> botonSeleccionado = botonVioleta
+                3 -> botonSeleccionado = botonAzul
+            }
+
+            botonSeleccionado.startAnimation(scaleUp)
+            botonSeleccionado.startAnimation(scaleDown)
+            semaforoClick.release()
+        }
     }
 
     private fun comprobarBotton(color: Int) {
