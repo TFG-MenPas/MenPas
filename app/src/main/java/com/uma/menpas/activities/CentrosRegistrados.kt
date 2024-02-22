@@ -16,8 +16,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
-import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.models.Centro
+import com.uma.menpas.models.adapters.AdaptadorCentro
+import com.uma.menpas.services.CentroService
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
@@ -25,6 +26,8 @@ class CentrosRegistrados : AppCompatActivity() {
     lateinit var listaCentros: ArrayList<Centro>
     lateinit var barraBusqueda: SearchView
     lateinit var fabAñadirCentro: FloatingActionButton
+
+    private val centroService = CentroService()
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -48,13 +51,9 @@ class CentrosRegistrados : AppCompatActivity() {
         }
 
         centroRV = findViewById(R.id.RVCentros)
-        listaCentros = ArrayList()
+
+        listaCentros = centroService.listCentersDetailed() as ArrayList<Centro>
         adaptadorCentro = AdaptadorCentro(listaCentros)
-
-
-        listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
-        listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
-        listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
 
         val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
         centroRV.layoutAnimation = controller
@@ -91,14 +90,14 @@ class CentrosRegistrados : AppCompatActivity() {
             var centro : Centro? = null
             //Cuando conectemos por base de datos se puede hacer por id
             for (item in context.listaCentros){
-                if (item.nombre.lowercase().equals(textNombreCentro.lowercase())){
+                if (item.nombreCentro.lowercase().equals(textNombreCentro.lowercase())){
                      centro = item
                 }
             }
 
             if (centro != null){
                 val textNombreInfoCentro = view.findViewById<TextView>(R.id.textNombreInfoCentro)
-                textNombreInfoCentro.text = centro.nombre
+                textNombreInfoCentro.text = centro.nombreCentro
 
                 val textPaisInfoCentro = view.findViewById<TextView>(R.id.textPaisInfoCentro)
                 textPaisInfoCentro.text = centro.pais
@@ -128,7 +127,7 @@ class CentrosRegistrados : AppCompatActivity() {
         val filteredList: ArrayList<Centro> = ArrayList()
 
         for (item in listaCentros){
-            if (item.nombre.lowercase().contains(text.lowercase())){
+            if (item.nombreCentro.lowercase().contains(text.lowercase())){
                 filteredList.add(item)
             }
         }

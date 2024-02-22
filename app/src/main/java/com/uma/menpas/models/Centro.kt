@@ -1,9 +1,26 @@
 package com.uma.menpas.models
 
+
 data class Centro (
-    var nombre: String,
+    var idCentro: String,
+
+    var nombreUsuario1: String,
+
+    var nombreCentro: String,
+
+    var localidad: String,
+
+    var provincia: String,
+
     var pais: String,
+
     var direccion: String,
-    var codigoPostal: Long,
-    var telefono: Long
+
+    var telefono: String,
+
+    var codigoPostal: String,
+
+    var limitado: String,
+
+    var contador: String,
 )

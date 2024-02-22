@@ -301,8 +301,22 @@
     <string name="blanco">Blanco</string>
     <string name="cyan">Cyan</string>
 
+    <!--Desplegable Fotos-->
+    <string name="elija_una_foto">Elija una foto</string>
+
     <!--Modrian Stroop-->
     <string name="modrian_stroop">Modrian Stroop</string>
 
+    <!--Modrian Parejas-->
+    <string name="modrian_parejas">Modrian Parejas</string>
+
+    <!--Modrian Simon Inicio-->
+    <string name="modrian_simon">Modrian Simon</string>
+    <string name="modrian_simon_descripcion">El juego de forma aleatoria va iluminando los cuadrantes de colores.\n\n
+        Después de esperar, el usuario debe ir introduciendo la secuencia mostrada en el orden correcto, ayudándose de su memoria visual.\n\n
+        Si lo consigue, éste responderá con una secuencia más larga, y así sucesivamente. Si falla, el usuario debe volver a empezar y se muestra una tabla con los usuarios que han conseguido un mayor nivel.</string>
+
+    <!--Modrian Simon-->
+    <string name="nivel">Nivel:</string>
 
 </resources>

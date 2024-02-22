@@ -52,6 +52,7 @@
             android:textSize="20dp"
             />
         <TextView
+            android:id="@+id/textNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +96,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
@@ -272,7 +272,6 @@
             <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
