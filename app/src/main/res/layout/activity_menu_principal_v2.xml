@@ -45,20 +45,21 @@
         />
     <!-- Hasta 18 en tlf fran caracteres caben en el nombre -->
     <TextView
+        android:id="@+id/textNombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textBienvenido"
+        android:layout_alignBottom="@+id/banner"
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="5dp"
-        android:layout_toStartOf="@+id/art_banner"
-        android:layout_alignBottom="@+id/banner"
         android:layout_marginBottom="30dp"
-        android:textSize="18sp"
+        android:layout_toStartOf="@+id/art_banner"
+        android:fontFamily="@font/poppins_bold_italic"
         android:maxLines="1"
         android:text="Miguel157000"
         android:textColor="@color/white"
-        android:fontFamily="@font/poppins_bold_italic" />
+        android:textSize="18sp" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
