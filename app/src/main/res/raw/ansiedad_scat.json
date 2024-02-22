@@ -7,8 +7,8 @@
 	"instructions": {
 		"Instrucciones": "Queremos saber cómo te sientes cuando compites. Tú sabes lo que es la competición. Todos nosotros competimos. Nosotros intentamos ser mejor que nuestros hermanos o hermanas, que nuestros amigos alguna vez. Solemos intentar ser los mejores de la clase o ganar los juegos en que participamos.\n\nHay que contestar una serie de frases que indican lo que los niños y niñas sienten cuando ellos compiten en juegos o deportes. Lee cada frase y decide si tú casi nunca, a veces o a menudo sientes eso cuando compites.\n\nNo hay respuestas buenas o malas. No tardes mucho en contestar. Recuerda que tienes que elegir la palabra que describa cómo te sientes generalmente cuando compites."
 	},
-	"buttons": [
-		"Inventario SCAT"
-	]
+	"buttons": {
+		"Inventario SCAT": "preguntas_scat"
+	}
 }
 

@@ -6,8 +6,8 @@
 	"instructions": {
 		"Instrucciones": "Efecto Stroop: interferencia semántica producida como consecuencia de la automaticidad en la lectura. Esto ocurre cuando el significado de la palabra interfiere en la tarea de nombrar, por ejemplo, el color en que está escrita (Ridley Stroop, 1935).\n\nPara comenzar con la aplicación, pulsamos sobre el boton INICIAR. Al pulsar sobre él, nos aparecerán debajo una serie de palabras en un determinado color.\n\nEl objetivo es que en el menor tiempo posible se asocie el color de la palabra con uno de los botones correspondientes a los colores que pueden aparecer."
 	},
-	"buttons": [
-		"Efecto Stroop"
-	]
+	"buttons": {
+		"Efecto Stroop": "cuestionario_stroop"
+	}
 }
 

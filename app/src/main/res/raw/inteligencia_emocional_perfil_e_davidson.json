@@ -6,13 +6,13 @@
 	"instructions": {
 		"Instrucciones": "Le rogamos que conteste a las siguientes preguntas: VERDADERO (V) o FALSO (F). Los resultados más exactos se obtienen de un juicio rápido, no se detenga demasiado en pensar las respuestas, por favor sea espontáneo. La impresión inicial es la más válida."
 	},
-	"buttons": [
-		"Cuestionario completo",
-		"Cuestionario de actitud",
-		"Cuestionario de atención",
-		"Cuesitonario de autoconciencia",
-		"Cuestionario de contexto",
-		"Cuestionario de intuición social",
-		"Cuestionario de resistencia"
-	]
+	"buttons": {
+		"Cuestionario completo": "",
+		"Cuestionario de actitud": "",
+		"Cuestionario de atención": "",
+		"Cuesitonario de autoconciencia": "",
+		"Cuestionario de contexto": "",
+		"Cuestionario de intuición social": "",
+		"Cuestionario de resistencia": ""
+	}
 }

@@ -8,7 +8,7 @@
 	"instructions": {
 		"Instrucciones": "Hay que contestar indicando la frecuencia con que Vd. ha experimentado ese sentimiento:\n\n0: nunca\n1: pocas veces al año o menos\n2: una vez al mes o menos\n3: unas pocas veces al mes\n4: una vez a la semana\n5: pocas veces a la semana\n6: todos los días."
 	},
-	"buttons": [
-		"Realizar cuestionario"
-	]
+	"buttons": {
+		"Realizar cuestionario": "preguntas_maslach"
+	}
 }

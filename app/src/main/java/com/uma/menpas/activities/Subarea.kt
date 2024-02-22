@@ -121,7 +121,16 @@ class Subarea : AppCompatActivity() {
             }
             linearLayout.addView(button)
             button.setOnClickListener{
-                val intent = Intent(this, CuestionarioDinamico::class.java)
+                val intent = when(btn_value as String){
+                    "cuestionario_stroop" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_modrian_colores" -> Intent(this, MondrianColores::class.java)
+                    "cuestionario_modrian_fotos" -> Intent(this, ModrianFotos::class.java)
+                    "cuestionario_modrian_parejas" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_modrian_simon" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_d2_original" -> Intent(this, CuestionarioD2::class.java)
+                    "cuestionario_d2_aleatorio" -> Intent(this, CuestionarioD2::class.java)
+                    else -> Intent(this, CuestionarioDinamico::class.java)
+                }
                 intent.putExtra("json_resource_name", btn_value as String)
                 startActivity(intent)
             }

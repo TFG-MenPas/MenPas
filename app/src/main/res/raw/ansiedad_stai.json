@@ -7,9 +7,9 @@
 	"instructions": {
 		"Instrucciones": "No tiene tiempo limitado. Su validez descansa en el supuesto de que el sujeto entiende claramente las instrucciones referidas al “estado” y lo que siente en ese momento, mientras que en la parte referida a “rasgo” anota lo que siente “en general”.\n\nTipificación: se aplica siempre primero la parte A/E y luego la A/R. Para medir los cambios de “estado” después de un tiempo, se recomienda aplicar la parte A/E en cada ocasión crítica aumentando así su fiabilidad.\n\nEdad: adolescentes y adultos.\n\nLa prueba consta de dos partes, con 20 cuestiones cada una de ellas. La primera (A/E) evalúa un estado emocional transitorio, caracterizado por sentimientos subjetivos, conscientemente percibidos, de atención y aprensión y por hiperactividad del sistema nervioso autónomo. La segunda (A/R) señala una propensión ansiosa, relativamente estable, que caracteriza a los individuos con tendencia a percibir las situaciones como amenazadoras."
 	},
-	"buttons": [
-		"STAI A/E",
-		"STAI A/R"
-	]
+	"buttons": {
+		"STAI A/E": "preguntas_stai_ae",
+		"STAI A/R": "preguntas_stai_ar"
+		}
 }
 

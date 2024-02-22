@@ -7,7 +7,7 @@
 	"instructions": {
 		"Instrucciones": "En el cuestionario encontrará algunas preguntas que hacen referencia a su manera de proceder, de sentir y de actuar. Después de cada pregunta Vd. debe elegir Si o No seleccionando con el raton en el circulo correspondiente.\n\nLea cada una de las preguntas y decida si, aplicada a Vd. mismo, indica su modo habitual de actuar o sentir. Si quiere Vd. contestar Si, seleccione el primer circulo, en la columna encabezada con el Si. Si desea contestar No, seleccione el segundo circulo, en la columna del NO.\n\nTrabaje rápidamente y no emplee demasiado tiempo en cada pregunta; es preferible su primera reacción, la espontánea, y no una contestación largamente meditada y pensada. Conteste a todas las preguntas sin omitir ninguna. Normalmente se tarda unos poco minutos en completar todo el cuestionario.\n\nNo existen contestaciones buenas ni malas; esto no es una prueba de inteligencia o habilidad, sino simplemente una apreciación de su modo normal de actuar. Trabaje rápidamente y no olvide contestar a todas las preguntas. Si tienes dudas ante una pregunta, decídase por la respuesta que se acerque más a su modo de ser."
 	},
-	"buttons": [
-		"Realizar cuestionario"
-	]
+	"buttons": {
+		"Realizar cuestionario": ""
+	}
 }

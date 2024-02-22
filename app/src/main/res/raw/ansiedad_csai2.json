@@ -6,10 +6,10 @@
 	"instructions": {
 		"Procedimiento a seguir": "En los cuestionarios a realizar encontrará una serie de afirmaciones que los atletas han utilizado para describir sus pensamientos, sentimientos, actitudes o comportamientos antes de la competición. Nos gustaría saber hasta qué punto te sientes identificado con estas afirmaciones.\n\nNo existen respuestas correctas o incorrectas, malas o buenas, verdaderas o falsas, únicamente deseamos conocer tu opinión al respecto. Lee atentamente cada frase y selecciona la respuesta que más se aproxime a tus preferencias en este momento.\n\nPodemos elegir para cada afirmación entre 5 posibles valores que van desde el valor 5 que corresponde a 'Casi siempre' hasta el valor 1 que representa 'Casi nunca'."
 	},
-	"buttons": [
-		"Inventario",
-		"Escala de autoconfianza",
-		"Escala cognitiva",
-		"Escala somática"
-	]
+	"buttons": {
+		"Inventario": "preguntas_csai2",
+		"Escala de autoconfianza": "",
+		"Escala cognitiva": "",
+		"Escala somática": ""
+	}
 }
