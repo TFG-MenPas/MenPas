@@ -13,6 +13,7 @@ import com.uma.menpas.controllers.BajaUsuarioController
 import com.uma.menpas.utils.SnackBarPersonalizada
 
 class BajaUsuario : AppCompatActivity() {
+    val bajaUsuarioController = BajaUsuarioController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_baja_usuario)
@@ -65,7 +66,7 @@ class BajaUsuario : AppCompatActivity() {
 
     fun darseDeBaja(){
         val layout = findViewById<RelativeLayout>(R.id.relativeBajaUsuario)
-        val dadoDeBaja = BajaUsuarioController.bajaDeUsuario(this)
+        val dadoDeBaja = bajaUsuarioController.bajaDeUsuario(this)
         if(dadoDeBaja){
             Toast.makeText(applicationContext, "Baja realizada con éxito", Toast.LENGTH_SHORT)
                 .show()

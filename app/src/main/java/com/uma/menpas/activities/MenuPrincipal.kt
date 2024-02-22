@@ -13,6 +13,7 @@ import com.uma.menpas.controllers.MenuPrincipalController
 import org.w3c.dom.Text
 
 class MenuPrincipal : AppCompatActivity() {
+    val menuPrincipalController = MenuPrincipalController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
@@ -30,7 +31,7 @@ class MenuPrincipal : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         val textNombreUsuario = findViewById<TextView>(R.id.textNombreUsuario)
-        textNombreUsuario.text = MenuPrincipalController.getNombre(this).toString()
+        textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
 
         BarraNavegacion(barraNavegacionInferior, this)
 

@@ -62,7 +62,7 @@
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/NombreDeUsuario"
+                    android:id="@+id/nombreDeUsuarioActual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -117,7 +117,7 @@
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/Nombre"
+                    android:id="@+id/nombreActual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -171,7 +171,7 @@
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/Apellidos"
+                    android:id="@+id/apellidosActual"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"

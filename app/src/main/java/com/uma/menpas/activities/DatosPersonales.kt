@@ -1,19 +1,24 @@
 package com.uma.menpas.activities
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.text.InputType
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.BarraNavegacion
 
 class DatosPersonales : AppCompatActivity() {
+    val usuarioController = UsuarioController()
+    lateinit var textNombreUsuario: TextView
+    lateinit var textNombre: TextView
+    lateinit var textApellidos: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datos_personales)
@@ -24,25 +29,23 @@ class DatosPersonales : AppCompatActivity() {
         val checkBoxSuscripcion = findViewById<CheckBox>(R.id.checkBoxSuscripcion)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-
-
+        textNombreUsuario = findViewById<TextView>(R.id.nombreDeUsuarioActual)
+        textNombre = findViewById<TextView>(R.id.nombreActual)
+        textApellidos = findViewById<TextView>(R.id.apellidosActual)
 
         BarraNavegacion(barraNavegacionInferior, this)
+        setDatosUsuario()
 
         botonEditarNombreDeUsuario.setOnClickListener {
-            Toast.makeText(applicationContext, "Edita el nombre de usuario", Toast.LENGTH_SHORT)
-                .show()
-            crearAlertDialog()
+            crearAlertDialog(1)
         }
 
         botonEditarNombre.setOnClickListener {
-            Toast.makeText(applicationContext, "Edita el nombre", Toast.LENGTH_SHORT)
-                .show()
+            crearAlertDialog(2)
         }
 
         botonEditarApellidos.setOnClickListener {
-            Toast.makeText(applicationContext, "Edita los apellidos", Toast.LENGTH_SHORT)
-                .show()
+            crearAlertDialog(3)
         }
 
         checkBoxSuscripcion.setOnClickListener {
@@ -56,7 +59,7 @@ class DatosPersonales : AppCompatActivity() {
         }
     }
 
-    fun crearAlertDialog() {
+    private fun crearAlertDialog(opcion: Int) {
         var editTextDialog = EditText(this)
         editTextDialog.inputType = InputType.TYPE_CLASS_TEXT
 
@@ -68,16 +71,26 @@ class DatosPersonales : AppCompatActivity() {
 
         var mAlertDialog = alertBuilder.create()
 
+        mAlertDialog.show()
+
         val mBotonGuardar = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
         mBotonGuardar.setOnClickListener {
-
-
-
+            usuarioController.realizarActualizacion(this, opcion, editTextDialog.text.toString())
+            mAlertDialog.cancel()
         }
 
         val mBotonCancelar = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
         mBotonCancelar.setOnClickListener {
             mAlertDialog.cancel()
         }
+
     }
+
+    private fun setDatosUsuario() {
+        val usuario = usuarioController.getUsuario(this)
+        textNombreUsuario.text = usuario.nombreUsuario
+        textNombre.text = usuario.nombre
+        textApellidos.text = usuario.apellidos
+    }
+
 }

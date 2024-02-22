@@ -8,6 +8,7 @@ import com.uma.menpas.controllers.RegistroController
 import com.uma.menpas.utils.SnackBarPersonalizada
 
 class RegistroUsuario : AppCompatActivity() {
+    val registroController = RegistroController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_usuario)
@@ -38,13 +39,13 @@ class RegistroUsuario : AppCompatActivity() {
 
         var isPasswordVisible = false
 
-        val arrayDeportes = RegistroController.getListaDeportes()
-        val arrayEstadoCivil = RegistroController.getListaEstadoCivil()
-        val arrayNacionalidades = RegistroController.getListaNacionalidades()
-        val arrayNivelEstudios = RegistroController.getNivelEstudios()
-        val arrayPerfiles = RegistroController.getListaPerfiles()
-        val arrayProfesion = RegistroController.getListaProfesion()
-        val arrayGenero = RegistroController.getListaSexo()
+        val arrayDeportes = registroController.getListaDeportes()
+        val arrayEstadoCivil = registroController.getListaEstadoCivil()
+        val arrayNacionalidades = registroController.getListaNacionalidades()
+        val arrayNivelEstudios = registroController.getNivelEstudios()
+        val arrayPerfiles = registroController.getListaPerfiles()
+        val arrayProfesion = registroController.getListaProfesion()
+        val arrayGenero = registroController.getListaSexo()
 
         //Spinner genero
         val generoSpinner = findViewById<Spinner>(R.id.selectGenero)
@@ -158,7 +159,7 @@ class RegistroUsuario : AppCompatActivity() {
             val terminoSeleccionado = checkBoxterminos.isChecked
 
 
-            val resultadoComprobacion = RegistroController.comprobarDatos(
+            val resultadoComprobacion = registroController.comprobarDatos(
                 usuario,
                 contrasenya,
                 repContrasenya,
@@ -208,7 +209,7 @@ class RegistroUsuario : AppCompatActivity() {
             }
             SnackBarPersonalizada.mostrarSnack(layout, textoSnackbar, 2000)
             if (resultadoComprobacion == 0) {
-                val user = RegistroController.registrarUsuario(
+                val user = registroController.registrarUsuario(
                     usuario,
                     contrasenya,
                     nombre,
