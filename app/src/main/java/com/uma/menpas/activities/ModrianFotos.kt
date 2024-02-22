@@ -17,7 +17,7 @@ class ModrianFotos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos)
 
-        val textOpcionTamanyoTablero : TextView = findViewById(R.id.textOpcionTamanyoTablero)
+        /*val textOpcionTamanyoTablero : TextView = findViewById(R.id.textOpcionTamanyoTablero)
         val seekbarTamanyoTablero : SeekBar = findViewById(R.id.seekbarTamanyoTablero)
         seekbarTamanyoTablero.progress = 0
         seekbarTamanyoTablero.max = 2
@@ -35,21 +35,22 @@ class ModrianFotos : AppCompatActivity() {
 
             override fun onStopTrackingTouch(p0: SeekBar?) {}
 
-        })
+        })*/
 
         val textOpcionNumImg : TextView = findViewById(R.id.textOpcionNumImg)
         val seekbarNumImg : SeekBar = findViewById(R.id.seekbarNumImg)
         seekbarNumImg.progress = 0
-        seekbarNumImg.max = 4
+        seekbarNumImg.max = 5
 
         seekbarNumImg.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
                 when(progress) {
-                    0 -> textOpcionNumImg.text = "1"
-                    1 -> textOpcionNumImg.text = "2"
-                    2 -> textOpcionNumImg.text = "3"
-                    3 -> textOpcionNumImg.text = "4"
-                    4 -> textOpcionNumImg.text = "5"
+                    0 -> textOpcionNumImg.text = "2"
+                    1 -> textOpcionNumImg.text = "3"
+                    2 -> textOpcionNumImg.text = "4"
+                    3 -> textOpcionNumImg.text = "5"
+                    4 -> textOpcionNumImg.text = "6"
+                    5 -> textOpcionNumImg.text = "7"
                 }
             }
 
@@ -63,18 +64,17 @@ class ModrianFotos : AppCompatActivity() {
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
-            val intent = Intent(this, MondrianColoresGrid::class.java)
+            val intent = Intent(this, ModrianFotosGrid::class.java)
 
             if (esValido(tiempoEspera.text.toString()) && esValido(tiempoRealizacion.text.toString())){
                 val longTiempoRealizacion = stringToMilis(tiempoRealizacion.text.toString())
                 val longTiempoEspera = stringToMilis(tiempoEspera.text.toString())
-                /*intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
+                intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
                 intent.putExtra("longTiempoEspera", longTiempoEspera)
-                intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
+                //intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
                 intent.putExtra("numImg", textOpcionNumImg.text)
-                startActivity(intent)*/
-                showToast("Realizacion: " + longTiempoRealizacion + ", Espera: " + longTiempoEspera + ", Tamaño: "
-                        + textOpcionTamanyoTablero.text + ", NumImg: " + textOpcionNumImg.text)
+                startActivity(intent)
+
             }else if(!esValido(tiempoRealizacion.text.toString())){
                 showToast("Introduzca un tiempo de realizacion valido")
             }else if(!esValido(tiempoEspera.text.toString())){
