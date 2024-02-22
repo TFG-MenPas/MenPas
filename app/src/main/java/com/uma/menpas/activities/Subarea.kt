@@ -52,6 +52,7 @@ class Subarea : AppCompatActivity() {
     private fun drawTitle(area: String) {
         val textArea = findViewById<TextView>(R.id.textArea2)
         textArea.text = area
+        if(area.length >= 10) textArea.textSize = 25F
     }
 
     private fun getJSON(json_resource_name: String): JSONObject {
