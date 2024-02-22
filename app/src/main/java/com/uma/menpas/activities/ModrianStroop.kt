@@ -1,6 +1,7 @@
 package com.uma.menpas.activities
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -17,11 +18,26 @@ class ModrianStroop : AppCompatActivity() {
     lateinit var tiempoRealizacion : EditText
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
+    lateinit var colores : MutableMap<Button,Boolean>
+    private lateinit var checked : Drawable
+    private lateinit var backChecked : Drawable
+    private lateinit var unchecked : Drawable
+    private lateinit var backunChecked : Drawable
+    private var btnFondoChecked = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_stroop)
+        checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
+        backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
+        unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
+        backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)!!
         barraModalidad()
         botones()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshButtonDrawables()
     }
 
     private fun barraModalidad(){
@@ -48,15 +64,10 @@ class ModrianStroop : AppCompatActivity() {
         })
     }
     private fun botones(){
-        val checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)
-        val backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)
-        val unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)
-        val backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)
-
         btnFondo = findViewById(R.id.button_fondo)
-        var btnFondoChecked = false
+        btnFondoChecked = false
 
-        val colores = mutableMapOf<Button, Boolean>()
+        colores = mutableMapOf()
         colores[findViewById(R.id.button_rojo)] = true
         colores[findViewById(R.id.button_marron)] = true
         colores[findViewById(R.id.button_verde)] = true
@@ -132,6 +143,28 @@ class ModrianStroop : AppCompatActivity() {
             }else if(!Tiempo.esValido(tiempoEspera.text.toString())){
                 showToast("Introduzca un tiempo de espera valido")
             }
+        }
+    }
+
+    private fun refreshButtonDrawables(){
+        colores.entries.forEach{
+                color ->
+            color.key.background = null
+            if(color.value){
+                color.key.background = backChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+            }else{
+                color.key.background = backunChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+            }
+        }
+        btnFondo.background = null
+        if (btnFondoChecked){
+            btnFondo.background = backChecked
+            btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+        }else{
+            btnFondo.background = backunChecked
+            btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
         }
     }
 

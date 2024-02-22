@@ -3,17 +3,18 @@ package com.uma.menpas.activities
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
@@ -68,6 +69,13 @@ class ModrianStroopGrid : AppCompatActivity() {
             }
             botonColor.isEnabled = false
             botonColor.isActivated = false
+            botonColor.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                   botonColor.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonColor.setOnClickListener {
                 val btnColor = colores.focusedChild as Button
                 btnColor.requestFocus()
@@ -88,8 +96,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
-                                val drawable = btnColor.background.mutate() as GradientDrawable
-                                drawable.setColor(getColor(color))
+                                setDrawableColor(btnColor)
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                             }else{
@@ -160,8 +167,8 @@ class ModrianStroopGrid : AppCompatActivity() {
 
         }.start()
     }
-
-    private fun setDrawableColor(colorSeleccion: ImageButton) {
+    
+    private fun setDrawableColor(colorSeleccion: View) {
         val color = when(colorSeleccion.contentDescription){
             "rojo" -> R.color.rojo
             "marrón" -> R.color.marron

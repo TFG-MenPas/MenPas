@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.TestActivity"
+            android:name=".activities.ModrianStroop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ModrianStroop"
+            android:name=".activities.ModrianStroopGrid"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
