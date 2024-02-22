@@ -39,7 +39,7 @@
         android:text="@string/bienvenido_principal"
         android:fontFamily="@font/poppins_light"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginStart="30dp"
         android:textSize="20sp"
         />
