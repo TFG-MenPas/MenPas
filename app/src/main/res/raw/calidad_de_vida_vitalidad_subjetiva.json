@@ -5,7 +5,7 @@
 	"instructions": {
 		"Instrucciones": "Por favor, responde a cada una de las siguientes afirmaciones, indicando el grado en que por lo general son verdaderas para ti (el grado varía del 1 al 7, siendo 1 completamente falso y siendo 7 completamente cierto)."
 	},
-	"buttons": [
-		"Realizar cuestionario"
-	]
+	"buttons": {
+		"Realizar cuestionario": "preguntas_vitalidad_subjetiva"
+	}
 }

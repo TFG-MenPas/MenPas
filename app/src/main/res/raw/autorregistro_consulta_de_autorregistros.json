@@ -5,11 +5,11 @@
 	"instructions": {
 		"Instrucciones": "Rellene los siguientes campos para completar su autorregistro."
 	},
-	"buttons": [
-		"Comida y bebida",
-		"Diario",
-		"Entrenamiento",
-		"Pensamientos negativos",
-		"Libres"
-	]
+	"buttons": {
+		"Comida y bebida": "",
+		"Diario": "",
+		"Entrenamiento": "",
+		"Pensamientos negativos": "",
+		"Libres": ""
+	}
 }

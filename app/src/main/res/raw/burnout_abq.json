@@ -8,8 +8,8 @@
 	"instructions": {
 		"Instrucciones": "Indica con qué frecuencia tienes cada una de las sensaciones que se describen. Para ello,selecciona tu respuesta en el cuadro que corresponda. No existen respuestas mejores ni peores, cada deportista es diferente, por lo que puedes contestar con la máxima sinceridad."
 	},
-	"buttons": [
-		"Preliminar",
-		"Cuestionario"
-	]
+	"buttons": {
+		"Preliminar": "preguntas_preliminar_abq",
+		"Cuestionario": "preguntas_abq"
+	}
 }

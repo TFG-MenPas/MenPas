@@ -6,7 +6,7 @@
 	"instructions": {
 		"Instrucciones": "Por favor indica el nivel de acuerdo con cada una de las siguientes afirmaciones que se le presentan más abajo teniendo en cuenta la experiencia que tienes en TU DEPORTE Seleccionando el número que mejor refleje su opinión, según la siguiente escala:\n\n0: nada.\n1: muy poco.\n2: algo.\n3: bastante.\n4: mucho.\n\nRECUERDE QUE NO HAY RESPUESTAS BUENAS O MALAS, ÚNICAMENTE SE TRATA DE CONOCER SU OPINIÓN."
 	},
-	"buttons": [
-		"Realizar cuestionario"
-	]
+	"buttons": {
+		"Realizar cuestionario": "preguntas_dinamica_grupal_ccd"
+	}
 }

@@ -29,18 +29,20 @@ class Subarea : AppCompatActivity() {
         private const val JSON_RESOURCE_TYPE = "raw"
     }
 
+    private lateinit var subarea : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_subarea)
         val intent = intent
-        var subarea = intent.getStringExtra("subarea")
+        subarea = intent.getStringExtra("subarea") as String
         var json_resource_name = intent.getStringExtra("json_resource_name")
 
         val linearLayout = findViewById<LinearLayout>(R.id.doc_txt_area2)
-        this.drawTitle(subarea.toString())
+        this.drawTitle(subarea)
         val json = getJSON(json_resource_name.toString())
         val content = json["instructions"] as JSONObject
-        val buttons = json["buttons"] as JSONArray
+        val buttons = json["buttons"] as JSONObject
         drawContent(content, buttons, linearLayout)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -57,7 +59,7 @@ class Subarea : AppCompatActivity() {
         return JSONObject(jsonString)
     }
 
-    private fun drawContent(content: JSONObject, buttons: JSONArray, linearLayout: LinearLayout) {
+    private fun drawContent(content: JSONObject, buttons: JSONObject, linearLayout: LinearLayout) {
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val keys = content.keys()
@@ -93,10 +95,13 @@ class Subarea : AppCompatActivity() {
             linearLayout.addView(textView)
         }
 
-        for (i in 0 until buttons.length()) {
+        val btn_keys = buttons.keys()
+        while (btn_keys.hasNext()) {
+            val btn_key = btn_keys.next()
+            val btn_value = buttons[btn_key]
             val button = Button(this)
             button.setBackgroundResource(R.drawable.button)
-            button.setText(buttons[i] as String)
+            button.setText(btn_key)
             button.setTextColor(resources.getColor(R.color.white))
             button.setTypeface(resources.getFont(R.font.poppins_bold))
             button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
@@ -115,8 +120,24 @@ class Subarea : AppCompatActivity() {
                 Toast.makeText(applicationContext, button.text as String, Toast.LENGTH_SHORT).show()
             }
             linearLayout.addView(button)
+            button.setOnClickListener{
+                val intent = when(btn_value as String){
+                    "cuestionario_stroop" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_modrian_colores" -> Intent(this, MondrianColores::class.java)
+                    "cuestionario_modrian_fotos" -> Intent(this, ModrianFotos::class.java)
+                    "cuestionario_modrian_parejas" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_modrian_simon" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_d2_original" -> Intent(this, CuestionarioD2::class.java)
+                    "cuestionario_d2_aleatorio" -> Intent(this, CuestionarioD2::class.java)
+                    else -> Intent(this, CuestionarioDinamico::class.java)
+                }
+                intent.putExtra("json_resource_name", btn_value as String)
+                startActivity(intent)
+            }
         }
     }
+
+
 
     private fun transformJSONtoString(json_resource_name: String): String {
         val res = resources

@@ -5,7 +5,7 @@
 	"instructions": {
 		"Instrucciones": "Rellene los siguientes campos para completar su autorregistro."
 	},
-	"buttons": [
-		"Realizar autorregistro"
-	]
+	"buttons": {
+		"Realizar autorregistro": "preguntas_autorregistro_entrenamiento"
+	}
 }

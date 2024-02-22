@@ -7,12 +7,12 @@
 	"instructions": {
 		"Instrucciones": "Presentamos una aplicación que le permitirá evaluar su memoria. El objetivo consiste simplemente en memorizar una serie de colores u objetos que aparecerán y que podrás visualizar durante un tiempo de espera determinado. Pasado este tiempo, los objetos desaparecerán y se mostrarán unas casillas en otro color.\n\nDependiendo del número de colores u objetos que recuerdes se te dará una puntuación con los aciertos y fallos obtenidos, asi como con el tiempo empleado en la realización de la prueba. Para iniciar la aplicación pulsamos sobre Modrian Colores, apareciendo unas casillas donde se deben seleccionar los valores para el numero de filas y columnas de la matriz que se quiere generar, así como el número de colores que aparecerán en nuestra paleta de colores.\n\nUna vez rellenados esos campos seleccionamos el botón COMENZAR para iniciar nuestra aplicación, si algún campo se deja vacío, se mostrará una ventana de error indicándonos que hay casillas sin rellenar. Una vez pulsado el botón COMENZAR, aparecerá nuestra matriz, con los colores correspondientes y una ventana superpuesta que nos indica que seleccionemos el tiempo de espera que deseemos que la matriz se mantenga visible para memorizarla antes de que desaparezca.\n\nUna vez seleccionado el tiempo de espera, nuestra matriz de colores desaparece, quedando la misma matriz de un mismo color, y se muestra una paleta que contiene los colores seleccionados aleatoriamente elegidos al comienzo. Seleccionar el color que deseemos de la paleta. Debemos pulsar en el cuadrado que creamos que contiene el mismo color que el de la paleta seleccionada.\n\nSi resulta que el color de la paleta seleccionado es el mismo que había en esa posición de la matriz, habrá un acierto y esa cuadrícula se coloreará del mismo color, de lo contrario habrá un fallo."
 	},
-	"buttons": [
-		"Modrian Colores",
-		"Modrian Fotos",
-		"Modrian Parejas",
-		"Modrian Simon",
-		"Modrian Stroop"
-	]
+	"buttons": {
+		"Modrian Colores": "cuestionario_modrian_colores",
+		"Modrian Fotos": "cuestionario_modrian_fotos",
+		"Modrian Parejas": "cuestionario_modrian_parejas",
+		"Modrian Simon": "cuestionario_modrian_simon",
+		"Modrian Stroop": "cuestionario_stroop"
+	}
 }
 

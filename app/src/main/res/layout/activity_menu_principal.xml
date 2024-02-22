@@ -33,7 +33,6 @@
             android:layout_marginLeft="90dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-
             app:srcCompat="@drawable/art_banner" />
 
         <TextView

@@ -5,7 +5,7 @@
 	"instructions": {
 		"Instrucciones": "A rellenar."
 	},
-	"buttons": [
-		"A rellenar"
-	]
+	"buttons": {
+		"A rellenar": ""
+	}
 }

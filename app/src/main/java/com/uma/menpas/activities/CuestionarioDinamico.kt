@@ -29,13 +29,15 @@ class CuestionarioDinamico : AppCompatActivity() {
     lateinit var cuestionarioDinamico : View
     lateinit var respuestasUsuario : ArrayList<String>
     lateinit var listaSeries : ArrayList<View>
-    private val JSON_RESOURCE_NAME = "preguntas_poms_confusion_orientacion"
+    private lateinit var JSON_RESOURCE_NAME : String
     private val JSON_OBJECT_NAME = "Preguntas"
     private val JSON_RESOURCE_TYPE = "raw"
     private var indicePregunta = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionario_dinamico)
+
+        JSON_RESOURCE_NAME = intent.getStringExtra("json_resource_name") as String
 
         botonAnterior = findViewById(R.id.btn_anterior)
         botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarDesplegable)

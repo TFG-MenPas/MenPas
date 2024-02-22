@@ -6,8 +6,8 @@
 	"instructions": {
 		"Instrucciones": "Lee las siguientes afirmaciones y conteste la respuesta que más se aproxime a tus preferencias con valores entre 1 y 99, según su grado de acuerdo con cada frase."
 	},
-	"buttons": [
-		"Inventario AF5"
-	]
+	"buttons": {
+		"Inventario AF5": "preguntas_af5"
+	}
 }
 
