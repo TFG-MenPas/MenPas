@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Cuestión 1",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Cuestión 2",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 3,
+			"pregunta": "Cuestión 3",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuestión 4",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 5,
+			"pregunta": "Cuestión 5",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 6,
+			"pregunta": "Cuestión 6",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 7,
+			"pregunta": "Cuestión 7",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 8,
+			"pregunta": "Cuestión 8",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 9,
+			"pregunta": "Cuestión 9",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 10,
+			"pregunta": "Cuestión 10",
+			"tipo": "textoLibre",
+			"input": "texto"
+		}
+	]
+}

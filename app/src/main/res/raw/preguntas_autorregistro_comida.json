@@ -1,0 +1,99 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Fecha",
+			"tipo": "fecha"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Hora del día",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"00",
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"23"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tiempo empleado en comer",
+			"tipo": "textoLibre",
+			"input": "tiempo"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cantidad de hambre",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"00",
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Actividad realizada mientras come",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 6,
+			"pregunta": "Lugar donde se come",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 7,
+			"pregunta": "Comida y bebida: tipo y cantidad",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 8,
+			"pregunta": "Comida y bebida: calorías aproximadas",
+			"tipo": "textoLibre",
+			"input": "texto"
+		},
+		{
+			"numero": 9,
+			"pregunta": "Tipo de comida",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Desayuno",
+				"Almuerzo",
+				"Cena",
+				"Otra"
+			]
+		}
+	]
+}

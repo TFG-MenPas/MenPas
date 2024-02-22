@@ -1,0 +1,424 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Mis padres me ponen el listón muy alto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "La organización es muy importante para mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Cuando era niño, fui castigado por hacer las cosas a menos de la perfección.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Si no establece los estándares más altos para mí, me hace una persona de segunda categoría.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Mis padres nunca trataron de entender mis errores.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Es importante para mí que puedo ser muy competente en todo lo que hago.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Yo soy una persona ordenada.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Trato de ser una persona organizada.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Si no lo consigo en el deporte / escuela, soy un fracaso como persona.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Que debería estar molesto si cometo un error.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Mis padres querían que yo fuera el mejor en todo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me puse metas más altas para mí que la mayoría de la gente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Si alguien realiza una tarea en el deporte / la escuela mejor que yo, entonces me siento como si no toda la tarea.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Si no lo consigo, en parte, es tan malo como ser un completo fracaso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Sólo un excelente rendimiento es bastante bueno en mi familia.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Soy muy bueno a centrar mis esfuerzos en la consecución de un objetivo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Incluso cuando hago algo con mucho cuidado, a menudo siento que no está muy bien hecho.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "No me gusta ser menos que el mejor en las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Tengo metas muy altas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Mis padres siempre han esperado la excelencia de mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Probablemente la gente va a pensar mal de mí si cometo un error.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Nunca me sentí como que podía cumplir con las expectativas de mis padres.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Si no lo hago, igual de bien que otras personas, eso significa que soy un ser humano inferior.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Las otras personas parecen aceptar estándares más bajos de sí mismos que yo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Si no lo hago bien todo el tiempo, la gente no me respeta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Mis padres siempre han tenido las mayores expectativas para mi futuro que yo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Trato de ser una persona ordenada.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Por lo general tengo dudas acerca de las cosas simples que hago todos los días.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "La precisión es muy importante para mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Exijo una mayor perfección en mis tareas que la mayoría de la gente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Soy una persona organizada.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Tiendo a retrasarme en mi trabajo porque repito las cosas una y otra vez.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Me toma mucho tiempo para hacerlo bien.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Los menos errores que yo hago, la gente más me gusta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "Nunca me sentí como que podía cumplir con las exigencias de mis padres.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Completamente en desacuerdo",
+				"En desacuerdo",
+				"Neutro",
+				"De acuerdo",
+				"Completamente de acuerdo"
+			]
+		}
+	]
+}

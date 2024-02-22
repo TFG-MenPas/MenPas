@@ -1,0 +1,184 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "En fútbol estoy logrando muchas cosas que valen la pena.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "El entrenamiento me deja tan cansado/a que me cuesta reunir la energía suficiente para hacer otras cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Estoy dejando de disfrutar del fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "La práctica del fútbol me deja demasiado cansado/a.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Creo que no estoy logrando mucho en el fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Mi rendimiento en el fútbol me importa menos que antes.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Pienso que no estoy rindiendo a mi nivel real en el fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "La práctica del fútbol me deja mentalmente agotado/a.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Creo que no me interesa tanto el fútbol como antes.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Me siento físicamente agotado/a por el fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Me preocupo menos que antes por triunfar en el fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me agotan las exigencias físicas y mentales del fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Parece que, haga lo que haga, no rindo como debería.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Creo que tengo éxito en el fútbol.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Tengo dudas de si el fútbol merece todo el tiempo que le dedico.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"Pocas veces",
+				"Algunas veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		}
+	]
+}

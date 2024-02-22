@@ -1,0 +1,119 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "En general, usted diría que su salud es:",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Excelente",
+				"Muy Buena",
+				"Buena",
+				"Regular",
+				"Mala"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "¿Le limita hacer esfuerzos moderados, como mover una mesa,pasar la aspiradora, jugar a los bolos o caminar más de 1 hora?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "¿Le limita subir varios pisos por la escalera?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "¿A causa de su salud física, hizo menos de lo que hubiera querido hacer?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 5,
+			"pregunta": "¿A causa de su salud física, tuvo que dejar de hacer algunas tareas en su trabajo o en sus actividades cotidianas?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 6,
+			"pregunta": "¿A causa de su salud emocional, hizo menos de lo que hubiera querido hacer?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 7,
+			"pregunta": "¿A causa de su salud emocional, tuvo que dejar de hacer algunas tareas en su trabajo o en sus actividades cotidianas?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 8,
+			"pregunta": "¿Hasta qué punto el dolor le ha dificultado su trabajo habitual?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Un poco",
+				"Regular",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "¿Durante las últimas 4 semanas, se sintió calmado y tranquilo?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Solo una vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "¿Durante las últimas 4 semanas, tuvo mucha energía?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Solo una vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "¿Durante las últimas 4 semanas, se sintió desanimado y triste?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Solo una vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Durante las 4 últimas semanas, ¿con qué frecuencia la salud física o los problemas emocionales le han dificultado sus actividades sociales (como visitar a los amigos o familiares)?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Algunas veces",
+				"Solo una vez",
+				"Nunca"
+			]
+		}
+	]
+}

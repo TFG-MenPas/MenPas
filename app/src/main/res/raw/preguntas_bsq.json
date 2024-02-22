@@ -1,0 +1,186 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "¿Te has preocupado tanto por tu figura que has pensado que tendrías que ponerte a dieta?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Estar con gente delgada ¿Te ha hecho fijar en tu figura?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Al fijarte en la figura de otras personas, ¿la has comparado con la tuya desfavorablemente?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": " Estar desnudo-a (por ejemplo cuando te duchas) ¿te ha hecho sentirte gordo-a?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Comer dulces, pasteles u otros alimentos con muchas calorías ¿te ha hecho sentir gordo-a?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "¿Te has sentido excesivamente gordo-a y redondeado-a?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "¿Te has sentido acomplejado-a con tu cuerpo?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Preocuparte por tu figura, ¿te ha hecho poner a dieta?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "¿Has pensado que la figura que tienes es debido a tu falta de autocontrol?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "¿Te ha preocupado que otra gente vea michelines alrededor de tu cintura o estómago?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "¿Has pensado que no es justo que otra gente sea más delgada que tú?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Verte reflejado-a en un espejo o escaparate, ¿te ha hecho sentir mal por tu figura?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "¿Te has fijado más en tu figura estando en compañía de otras personas?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "La preocupación por tu figura, ¿te ha hecho pensar que deberías hacer ejercicio?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nunca",
+				"Raramente",
+				"Algunas veces",
+				"A menudo",
+				"Muy a menudo",
+				"Siempre"
+			]
+		}
+	]
+}

@@ -1,0 +1,377 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "En general, usted diría que su salud es:",
+			"tipo": "seleccionMultiple",
+			"respuestas":  [
+				"Excelente",
+				"Muy buena",
+				"Regular",
+				"Mala"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "¿Cómo diría que es su salud actual, comparada con la de hace un año?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho mejor ahora que hace un año",
+				"Algo mejor ahora que hace un año",
+				"Más o menos igual que hace un año",
+				"Algo peor ahora que hace un año",
+				"Mucho peor ahora que hace un año"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Su salud actual, ¿Le limita para hacer esfuerzos intensos, tales como correr, levantar objetos pesados, o participar en deportes agotadores?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Su salud actual, ¿Le limita para hacer esfuerzos moderados, como mover una mesa, pasar la aspiradora, jugar a los bolos o caminar más de una hora?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Su salud actual, ¿Le limita para coger o llevar la bolsa de la compra?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Su salud actual, ¿Le limita para subir varios pisos por la escalera?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Su salud actual, ¿Le limita para subir un solo piso por la escalera?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Su salud actual, ¿Le limita para agacharse o arrodillarse?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Su salud actual, ¿Le limita para caminar un kilómetro o más?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Su salud actual, ¿Le limita para caminar varias manzanas (varios centenares de metros)?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Su salud actual, ¿Le limita para caminar una sola manzana (aprox 100 metros)?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Su salud actual, ¿Le limita para bañarse o vestirse por sí mismo?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Sí, me limita mucho",
+				"Sí, me limita un poco",
+				"No, no me limita nada"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Durante las 4 últimas semanas, ¿Tuvo que reducir el tiempo dedicado al trabajo o a sus actividades cotidianas, a causa de su salud física?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 14,
+			"pregunta": " Durante las 4 últimas semanas, ¿Hizo menos de lo que hubiera querido hacer, a causa de su salud física?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 15,
+			"pregunta": "Durante las 4 últimas semanas, ¿Tuvo que dejar de hacer algunas tareas en su trabajo o en sus actividades cotidianas, a causa de su salud física?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 16,
+			"pregunta": "Durante las 4 últimas semanas, ¿Tuvo dificultad para hacer su trabajo o sus actividades cotidianas (por ejemplo, le costó más de lo normal), a causa de su salud física?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 17,
+			"pregunta": "Durante las 4 últimas semanas, ¿Tuvo que reducir el tiempo dedicado al trabajo o a sus actividades cotidianas, a causa de algún problema emocional (como estar triste, deprimido, o nervioso?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 18,
+			"pregunta": "Durante las 4 últimas semanas, ¿Hizo menos de lo que hubiera querido hacer, a causa de algún problema emocional (como estar triste, deprimido, o nervioso)?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 19,
+			"pregunta": "Durante las 4 últimas semanas, ¿No hizo su trabajo o sus actividades cotidianas tan cuidadosamente como de costumbre, a causa de algún problema emocional (como estar triste, deprimido, o nervioso)?",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 20,
+			"pregunta": "Durante las 4 últimas semanas, ¿Hasta qué punto su salud física o los problemas emocionales han dificultado sus actividades sociales habituales con la familia, los amigos, los vecinos u otras personas?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Un poco",
+				"Regular",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "¿Tuvo dolor en alguna parte del cuerpo durante las 4 últimas semanas?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"No, ninguno",
+				"Sí, muy poco",
+				"Sí, un poco",
+				"Sí, moderado",
+				"Sí, mucho",
+				"Sí, muchísimo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Durante las 4 últimas semanas, ¿Hasta qué punto el dolor le ha dificultado su trabajo habitual (incluido el trabajo fuera de casa y las tareas domésticas)?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Un poco",
+				"Regular",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió lleno de vitalidad?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo estuvo muy nervioso?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió tan bajo de moral que nada podía animarle?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió calmado y tranquilo?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo tuvo mucha energía?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió desanimado y triste?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió agotado?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió feliz?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Durante las 4 últimas semanas, ¿Cuánto tiempo se sintió cansado?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Durante las 4 últimas semanas, ¿Con qué frecuencia la salud física o los problemas emocionales le han dificultado sus actividades sociales (como visitar a los amigos o familiares)?",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"Muchas veces",
+				"Algunas veces",
+				"Sólo alguna vez",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Creo que me pongo enfermo más fácilmente que otras personas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente cierta",
+				"Bastante cierta",
+				"No lo sé",
+				"Bastante falsa",
+				"Totalmente falsa"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Estoy tan sano como cualquiera.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente cierta",
+				"Bastante cierta",
+				"No lo sé",
+				"Bastante falsa",
+				"Totalmente falsa"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "Creo que mi salud va a empeorar.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente cierta",
+				"Bastante cierta",
+				"No lo sé",
+				"Bastante falsa",
+				"Totalmente falsa"
+			]
+		},
+		{
+			"numero": 36,
+			"pregunta": "Mi salud es excelente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente cierta",
+				"Bastante cierta",
+				"No lo sé",
+				"Bastante falsa",
+				"Totalmente falsa"
+			]
+		}
+	]
+}

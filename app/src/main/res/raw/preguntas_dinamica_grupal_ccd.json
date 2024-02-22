@@ -1,0 +1,184 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Si todos nos esforzamos, y nos ayudamos unos a otros, el equipo es capaz de hacer más cosas y lograr mejor sus objetivos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Yo colaboro con mis compañeros y entrenador, sean cuales sean las circunstancias del juego.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Es tan importante el cooperar fuera como hacerlo en un partido, aunque yo me considere un profesional.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuando ayudo al entrenador, siguiendo sus instrucciones y esforzándome en el partido y en los entrenamientos, espero que me lo reconozca, alineándome o diciéndomelo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Coopero con el entrenador, tanto si juego habitualmente como si soy suplente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Colaboro con mis compañeros, aunque en el equipo pueda existir algún grupo que no ayude a los compañeros.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Trabajo conjuntamente con el entrenador, tanto si juego habitualmente como si soy suplente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Cuando con mi juego o con mi esfuerzo ayudo a algún compañero en el campo, espero que me lo reconozcan de alguna forma.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Sigo siempre las instrucciones del entrenador y acato sus decisiones, tanto en el partido como en los entrenamientos, llegando a sacrificar mis ideas del juego.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Para lograr el objetivo del equipo, hay que ayudarse unos a otros fuera del campo, en temas personales, o en el vestuario.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Me esfuerzo mucho en los entrenamientos aunque esto signifique competir con algún compañero.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Mi cooperación con mis compañeros y el entrenador, tanto en los partidos como en los entrenamientos, depende de la colaboración que ellos me dan a mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Yo colaboro con mis compañeros aunque sean más hábiles que yo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Yo coopero durante el partido, aunque no se note, por ejemplo, moviéndome sin balón y tapando a un compañero.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Si todos cooperamos, el equipo está más unido y puede rendir más o hacerlo mejor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Mucho",
+				"Bastante",
+				"Algo",
+				"Muy Poco",
+				"Nada"
+			]
+		}
+	]
+}

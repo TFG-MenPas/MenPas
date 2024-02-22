@@ -1,0 +1,154 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Competir contra otros es divertido",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Antes de competir me siento inquieto",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Antes de competir me preocupa hacerlo mal",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuanto compito yo soy un buen deportista",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Cuando compito me preocupa cometer errores",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Antes de competir me siento tranquilo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Es importante establecer objetivos al competir",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Antes de competir siento algo raro en mi estomago",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Justo antes de competir me doy cuenta de que mi corazón late más deprisa de lo normal",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Me gustan los juegos duros",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Antes de competir me siento relajado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Antes de competir me siento nervioso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Los deportes de equipo son más exitantes que los individuales",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Cuando estoy esperando que de comienzo la competición me pongo nervioso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Antes de competir me pongo tenso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo"
+			]
+		}
+	]
+}
