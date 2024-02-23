@@ -7,6 +7,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.ImageButton
@@ -74,24 +75,34 @@ class ModrianSimon : AppCompatActivity() {
         button.setOnClickListener {    button.requestFocus(); clickAnimation(color); comprobarBotton(color)    }
     }
 
+    private fun comenzarJuego(){
+        this.nivel = 1
+        this.nivelText.text = this.nivel.toString()
+        comenzarRonda()
+    }
+
     private fun clickAnimation(color: Int) {
-        val scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up)
-        val scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down)
+        if(this.turnoJugador) {
+            val scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up)
+            val scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down)
 
-        GlobalScope.launch(Dispatchers.IO) {
+            GlobalScope.launch(Dispatchers.IO) {
 
-            semaforoClick.acquire()
+                semaforoAnimacion.acquire()
+                semaforoClick.acquire()
 
-            when (color) {
-                0 -> botonSeleccionado = botonRojo
-                1 -> botonSeleccionado = botonVerde
-                2 -> botonSeleccionado = botonVioleta
-                3 -> botonSeleccionado = botonAzul
+                when (color) {
+                    0 -> botonSeleccionado = botonRojo
+                    1 -> botonSeleccionado = botonVerde
+                    2 -> botonSeleccionado = botonVioleta
+                    3 -> botonSeleccionado = botonAzul
+                }
+
+                botonSeleccionado.startAnimation(scaleUp)
+                botonSeleccionado.startAnimation(scaleDown)
+                semaforoClick.release()
+                semaforoAnimacion.release()
             }
-
-            botonSeleccionado.startAnimation(scaleUp)
-            botonSeleccionado.startAnimation(scaleDown)
-            semaforoClick.release()
         }
     }
 
@@ -103,18 +114,17 @@ class ModrianSimon : AppCompatActivity() {
                 if(this.indiceSecuencia == this.secuencia.size){
                     this.nivel++
                     this.nivelText.text = this.nivel.toString()
-                    comenzarJuego()
+                    comenzarRonda()
                 }
             }else{
                 showToast("Juego finalizado, has alcanzado el nivel: "+ this.nivel)
-                this.nivel = 1
-                this.nivelText.text = this.nivel.toString()
                 comenzarJuego()
+
             }
         }
     }
 
-    private fun comenzarJuego() {
+    private fun comenzarRonda() {
         this.turnoJugador = false
         habilitarBotones(this.turnoJugador)
         println("Botones deshabilitados, turno del jugador: "+this.turnoJugador)
@@ -137,6 +147,19 @@ class ModrianSimon : AppCompatActivity() {
     private fun generarAnimacion(color: Int, tiempo: Long) {
         val alphaBlink = AnimationUtils.loadAnimation(this, R.anim.alpha_blink)
         alphaBlink.interpolator = LinearInterpolator()
+
+        alphaBlink.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+                habilitarBotones(false)
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                habilitarBotones(true)
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+            }
+        })
 
         GlobalScope.launch(Dispatchers.IO) {
 
