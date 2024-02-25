@@ -1,6 +1,6 @@
 {
 	"content": {
-		"Documentación": "A rellenar."
+		"Documentación": "El Test de Atención d2 es una prueba estandarizada para valorar la atención.\n\nEl test consta de 14 líneas, cada una de las cuales aparece la letra d de modo repetido, intercalada con la p. Algunas grafías van acompañadas de una o dos líneas cortas, situadas en distintas posiciones alrededor de las grafías. El sujeto debe marcar cada letra 'd' que tenga dos rayitas repartidas en cualquier posición. El sujeto dispone de 20 segundos para realizar cada línea. Una vez pasado este tiempo, debe cambiar inmediatamente a la siguiente línea.\n\nEsta tarea exige que el sujeto mantenga la atención de forma sostenida durante 4 minutos y 40 segundos. En este tiempo, debe seleccionar los estímulos relevantes e inhibir los irrelevantes."
 	},
 	"instructions": {
 		"Instrucciones": "El usuario tendrá que revisar de izquierda a derecha el contenido de cada una de las líneas.\n\nMarcará todas las letras 'd' que tengan dos pequeñas rayitas (pueden estar las dos arriba, las dos abajo o una arriba y otra abajo)\n\nPara cada línea, el sujeto dispone de 20 segundos. Se empezará por la línea 1 y se seguirá de manera secuencial.\n\nEl número de la línea activa en cada momento aparecerá de color verde.\n\nAl pasar los 20 segundos, aparecerá el número de la fila en rojo, y se escuchará un sonido (indicando el cambio a la siguiente fila).\n\nUna vez transcurrido el tiempo de cada fila los elementos son inaccesibles.\n\nCuando termine pulse el botón solución."
