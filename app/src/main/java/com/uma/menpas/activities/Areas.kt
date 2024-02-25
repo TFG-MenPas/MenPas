@@ -52,6 +52,7 @@ class Areas : AppCompatActivity() {
         })
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_left)
         BarraNavegacion(barraNavegacionInferior, this)
 
     }

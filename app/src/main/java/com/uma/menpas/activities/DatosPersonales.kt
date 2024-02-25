@@ -26,7 +26,7 @@ class DatosPersonales : AppCompatActivity() {
 
 
 
-
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
 
         botonEditarNombreDeUsuario.setOnClickListener {
