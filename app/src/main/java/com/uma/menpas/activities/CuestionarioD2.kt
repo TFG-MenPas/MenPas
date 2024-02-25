@@ -9,6 +9,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
 import android.widget.Chronometer
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -27,6 +28,7 @@ class CuestionarioD2 : AppCompatActivity() {
     lateinit var progressBar: ProgressBar
     lateinit var textProgressBar: TextView
     lateinit var crono: Chronometer
+    lateinit var botonCerrarCuestionario: ImageButton
     private var contadorFilas = 0
     private val NUMERO_FILAS_D2 = 14
     private val NUMERO_D2 = 47
@@ -41,6 +43,11 @@ class CuestionarioD2 : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBarCuestionario)
         textProgressBar = findViewById(R.id.numeroPreguntaActual)
         crono = findViewById(R.id.tiempoCrono)
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarDesplegable)
+
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
 
         myOnClickListener = myOnClickListener(this)
         listaD2 = ArrayList()
@@ -69,7 +76,6 @@ class CuestionarioD2 : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                //TODO CountDownTimer modifique progrees bar
                 if(contadorFilas == NUMERO_FILAS_D2){
                     showToast("Cuestionario D2 finalizado")
                     crono.stop()
