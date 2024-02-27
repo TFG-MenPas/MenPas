@@ -318,5 +318,6 @@
 
     <!--Modrian Simon-->
     <string name="nivel">Nivel:</string>
-
+    <string name="segundo">1s</string>
+    <string name="stroop">Efecto Stroop</string>
 </resources>
