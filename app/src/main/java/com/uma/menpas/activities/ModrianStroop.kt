@@ -38,6 +38,11 @@ class ModrianStroop : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         refreshButtonDrawables()
+        when(textOpcion.text.toString()){
+            "Congruente" -> seekbar.progress = 0
+            "Incongruente" -> seekbar.progress = 1
+            "Mixto" -> seekbar.progress = 2
+        }
     }
 
     private fun barraModalidad(){
