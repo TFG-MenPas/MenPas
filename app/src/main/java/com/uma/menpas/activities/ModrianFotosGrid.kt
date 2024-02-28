@@ -58,6 +58,13 @@ class ModrianFotosGrid : AppCompatActivity() {
             botonFoto.contentDescription = fotoAleatoria.toString()
             botonFoto.isEnabled = false
             botonFoto.isActivated = false
+            botonFoto.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonFoto.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonFoto.setOnClickListener {
                 val btnFoto = fotos.focusedChild as ImageButton
                 btnFoto.requestFocus()
