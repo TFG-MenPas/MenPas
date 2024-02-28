@@ -1,6 +1,7 @@
 package com.uma.menpas.activities
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -9,35 +10,72 @@ import java.util.concurrent.TimeUnit
 
 class MondrianColores : AppCompatActivity() {
     lateinit var botonComenzar : Button
-    lateinit var colores : GridLayout
-    lateinit var checkBoxColor : CheckBox
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
+    lateinit var colores : MutableMap<Button,Boolean>
+    private lateinit var checked : Drawable
+    private lateinit var backChecked : Drawable
+    private lateinit var unchecked : Drawable
+    private lateinit var backunChecked : Drawable
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores)
 
+        checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
+        backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
+        unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
+        backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)!!
+        botones()
+    }
+
+    private fun botones(){
+        colores = mutableMapOf()
+        colores[findViewById(R.id.button_rojo)] = true
+        colores[findViewById(R.id.button_marron)] = true
+        colores[findViewById(R.id.button_verde)] = true
+        colores[findViewById(R.id.button_gris)] = true
+        colores[findViewById(R.id.button_azul)] = true
+        colores[findViewById(R.id.button_rosa)] = true
+        colores[findViewById(R.id.button_amarillo)] = true
+        colores[findViewById(R.id.button_violeta)] = true
+        colores[findViewById(R.id.button_negro)] = true
+        colores[findViewById(R.id.button_fucsia)] = true
+        colores[findViewById(R.id.button_naranja)] = true
+        colores[findViewById(R.id.button_cyan)] = true
+
+        colores.entries.forEach{
+                color ->
+            color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+            color.key.background = backChecked
+            color.key.setOnClickListener {
+                if (!color.value){
+                    color.key.background = backChecked
+                    color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+                    color.setValue(true)
+                } else {
+                    color.key.background = backunChecked
+                    color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                    color.setValue(false)
+                }
+            }
+        }
         tiempoEspera = findViewById(R.id.editTextTiempoEspera)
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
             val intent = Intent(this, MondrianColoresGrid::class.java)
-            colores = findViewById(R.id.gridColores)
             arrayColores = ArrayList()
             arrayEliminar = ArrayList()
-            for (i in 0 until colores.childCount){
-                checkBoxColor = colores.getChildAt(i) as CheckBox
-                var color : String
-                color = checkBoxColor.text as String
-                if (checkBoxColor.isChecked){
-                    arrayColores.add(color.lowercase())
+            colores.entries.forEach {color ->
+                val textColor = color.key.text as String
+                if (color.value){
+                    arrayColores.add(textColor.lowercase())
                 }else{
-                    arrayEliminar.add(color.lowercase())
+                    arrayEliminar.add(textColor.lowercase())
                 }
             }
-
             if (arrayColores.size >= 2 && esValido(tiempoEspera.text.toString()) && esValido(tiempoRealizacion.text.toString())){
                 val longTiempoRealizacion = stringToMilis(tiempoRealizacion.text.toString())
                 val longTiempoEspera = stringToMilis(tiempoEspera.text.toString())
@@ -53,10 +91,26 @@ class MondrianColores : AppCompatActivity() {
             }else if(!esValido(tiempoEspera.text.toString())){
                 showToast("Introduzca un tiempo de espera valido")
             }
-
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
+        refreshButtonDrawables()
+    }
 
+    private fun refreshButtonDrawables(){
+        colores.entries.forEach{
+                color ->
+            color.key.background = null
+            if(color.value){
+                color.key.background = backChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+            }else{
+                color.key.background = backunChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+            }
+        }
     }
 
     private fun esValido(tiempo: String): Boolean {
