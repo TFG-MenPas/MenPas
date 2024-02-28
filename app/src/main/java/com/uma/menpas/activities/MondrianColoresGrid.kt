@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.GridLayout
@@ -60,6 +61,13 @@ class MondrianColoresGrid : AppCompatActivity() {
             botonColor.contentDescription = colorAleatorio
             botonColor.isEnabled = false
             botonColor.isActivated = false
+            botonColor.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonColor.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonColor.setOnClickListener {
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
@@ -82,8 +90,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
-                                val drawable = btnColor.background.mutate() as GradientDrawable
-                                drawable.setColor(getColor(color))
+                                setDrawableColor(btnColor)
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                             }else{
@@ -156,7 +163,7 @@ class MondrianColoresGrid : AppCompatActivity() {
         }.start()
     }
 
-    private fun setDrawableColor(colorSeleccion: ImageButton) {
+    private fun setDrawableColor(colorSeleccion: View) {
         val color = when(colorSeleccion.contentDescription){
             "rojo" -> R.color.rojo
             "marrón" -> R.color.marron

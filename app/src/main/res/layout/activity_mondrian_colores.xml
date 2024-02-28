@@ -76,154 +76,222 @@
                     android:layout_centerHorizontal="true"
                     android:columnCount="2">
 
-                    <CheckBox
+                    <Button
+                        android:id="@+id/button_rojo"
+                        android:layout_width="150dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/rojo"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_marron"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:minHeight="48dp"
+                        android:layout_marginTop="15dp"
+
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/marron"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="2"
-                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
 
-                    <CheckBox
+                    <Button
+                        android:id="@+id/button_verde"
+                        android:layout_width="150dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/verde"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="2"
-                        android:layout_columnWeight="1"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_gris"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/gris"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_rowWeight="2"
-                        android:layout_columnWeight="2"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_azul"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/azul"
-                        android:textSize="20sp"
-                        android:minHeight="48dp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="3"
-                        android:layout_columnWeight="1"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_rosa"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:minHeight="48dp"
+                        android:layout_marginTop="15dp"
+
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/rosa"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_rowWeight="3"
-                        android:layout_columnWeight="2"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_amarillo"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/amarillo"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="4"
-                        android:layout_columnWeight="1"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_violeta"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/violeta"
-                        android:textSize="20sp"
-                        android:minHeight="48dp"
-                        android:layout_marginStart="20dp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="4"
-                        android:layout_columnWeight="2"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_negro"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/negro"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="5"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:layout_columnWeight="1"
-                        android:fontFamily="@font/poppins_bold" />
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_fucsia"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/fucsia"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="5"
-                        android:layout_columnWeight="2"
-                        android:layout_marginStart="20dp"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_naranja"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/naranja"
-                        android:minHeight="48dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="6"
-                        android:layout_columnWeight="1"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/poppins_bold" />
-
-                    <CheckBox
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                    <Button
+                        android:id="@+id/button_cyan"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rounded_checkbox"
+                        android:drawableEnd="@drawable/icon_checked"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/cyan"
-                        android:minHeight="48dp"
+                        android:textAlignment="textStart"
                         android:textColor="@color/dark_blue"
-                        android:layout_marginStart="20dp"
-                        android:textSize="20sp"
-                        android:paddingTop="5dp"
-                        android:layout_rowWeight="6"
-                        android:layout_columnWeight="2"
-                        android:fontFamily="@font/poppins_bold" />
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
 
                 </GridLayout>
 
