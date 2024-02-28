@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
@@ -13,10 +14,16 @@ class ModrianParejas : AppCompatActivity() {
 
     lateinit var botonComenzar : Button
     lateinit var tiempoRealizacion : EditText
-
+    lateinit var botonCerrarCuestionario: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_parejas)
+
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
+
 
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)

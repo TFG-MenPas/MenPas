@@ -16,6 +16,7 @@ class MondrianColores : AppCompatActivity() {
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
     lateinit var colores : MutableMap<Button,Boolean>
+    lateinit var botonCerrarCuestionario: ImageButton
     private lateinit var checked : Drawable
     private lateinit var backChecked : Drawable
     private lateinit var unchecked : Drawable
@@ -28,6 +29,12 @@ class MondrianColores : AppCompatActivity() {
         backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
         unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
         backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)!!
+
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
+
         botones()
     }
 

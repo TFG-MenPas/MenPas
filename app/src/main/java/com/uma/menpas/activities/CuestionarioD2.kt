@@ -50,6 +50,7 @@ class CuestionarioD2 : AppCompatActivity() {
 
         botonCerrarCuestionario.setOnClickListener {
             d2CerradoAntesDeFinalizar = true
+            vibrator.cancel()
             finish()
         }
 

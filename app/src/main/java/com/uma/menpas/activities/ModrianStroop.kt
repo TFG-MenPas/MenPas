@@ -14,6 +14,7 @@ class ModrianStroop : AppCompatActivity() {
     lateinit var seekbar : SeekBar
     lateinit var btnFondo : Button
     lateinit var botonComenzar : Button
+    lateinit var botonCerrarCuestionario: ImageButton
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
     lateinit var arrayColores : ArrayList<String>
@@ -31,6 +32,11 @@ class ModrianStroop : AppCompatActivity() {
         backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
         unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
         backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)!!
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
+
         barraModalidad()
         botones()
     }

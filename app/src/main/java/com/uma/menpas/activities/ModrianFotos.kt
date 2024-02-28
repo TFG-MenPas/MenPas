@@ -12,10 +12,16 @@ class ModrianFotos : AppCompatActivity() {
     lateinit var botonComenzar : Button
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
+    lateinit var botonCerrarCuestionario: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos)
+
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
 
         /*val textOpcionTamanyoTablero : TextView = findViewById(R.id.textOpcionTamanyoTablero)
         val seekbarTamanyoTablero : SeekBar = findViewById(R.id.seekbarTamanyoTablero)
