@@ -29,10 +29,12 @@ class CuestionarioD2 : AppCompatActivity() {
     lateinit var textProgressBar: TextView
     lateinit var crono: Chronometer
     lateinit var botonCerrarCuestionario: ImageButton
+    lateinit var vibrator: Vibrator
     private var contadorFilas = 0
     private val NUMERO_FILAS_D2 = 14
     private val NUMERO_D2 = 47
     private val SECS_FILA_D2 = 20000
+    private var d2CerradoAntesDeFinalizar = false
     companion object {
         lateinit var myOnClickListener: myOnClickListener
     }
@@ -40,12 +42,14 @@ class CuestionarioD2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_d2)
 
+        vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         progressBar = findViewById(R.id.progressBarCuestionario)
         textProgressBar = findViewById(R.id.numeroPreguntaActual)
         crono = findViewById(R.id.tiempoCrono)
         botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarDesplegable)
 
         botonCerrarCuestionario.setOnClickListener {
+            d2CerradoAntesDeFinalizar = true
             finish()
         }
 
@@ -68,7 +72,6 @@ class CuestionarioD2 : AppCompatActivity() {
     }
 
     private fun countDownTimer(){
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         object : CountDownTimer(SECS_FILA_D2.toLong(), 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -76,19 +79,21 @@ class CuestionarioD2 : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                if(contadorFilas == NUMERO_FILAS_D2){
-                    showToast("Cuestionario D2 finalizado")
-                    crono.stop()
-                }else{
-                    listaD2.clear()
-                    rellenarFilaD2()
-                    contadorFilas++
-                    progressBar.progress = contadorFilas
-                    textProgressBar.text = contadorFilas.toString()
-                    adaptadorD2.notifyDataSetChanged()
-                    countDownTimer()
+                if(!d2CerradoAntesDeFinalizar){
+                    if(contadorFilas == NUMERO_FILAS_D2){
+                        showToast("Cuestionario D2 finalizado")
+                        crono.stop()
+                    }else{
+                        listaD2.clear()
+                        rellenarFilaD2()
+                        contadorFilas++
+                        progressBar.progress = contadorFilas
+                        textProgressBar.text = contadorFilas.toString()
+                        adaptadorD2.notifyDataSetChanged()
+                        countDownTimer()
+                    }
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                 }
-                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
             }
 
         }.start()
