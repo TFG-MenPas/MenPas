@@ -320,4 +320,7 @@
     <string name="nivel">Nivel:</string>
     <string name="segundo">1s</string>
     <string name="stroop">Efecto Stroop</string>
+    <string name="numero_errores">Número de errores: </string>
+    <string name="numero_errores_omision">Número de errores por omisión: </string>
+    <string name="aciertos">Número de aciertos: </string>
 </resources>

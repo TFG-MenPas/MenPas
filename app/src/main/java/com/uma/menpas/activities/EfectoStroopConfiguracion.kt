@@ -182,13 +182,29 @@ class EfectoStroopConfiguracion : AppCompatActivity() {
                 intent.putExtra("arrayColores", arrayColores)
                 intent.putExtra("fondo", btnChecked)
                 intent.putExtra("modalidad", textOpcion.text)
-                intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text)
-                intent.putExtra("tiempo", textTiempo.text)
+                intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text
+                    .substring(26).toInt())
+                intent.putExtra("tiempo", convertTiempoExposicion(textTiempo.text.toString()))
                 startActivity(intent)
             } else {
                 showToast("Debe seleccionar al menos dos colores")
             }
         }
+    }
+
+    private fun convertTiempoExposicion(intentTiempo: String): Long {
+        var value: Long = 1000
+        when(intentTiempo) {
+            "Tiempo de refresco: 1.5s" -> value = 1500
+            "Tiempo de refresco: 2s" -> value =  2000
+            "Tiempo de refresco: 2.5s" -> value =  2500
+            "Tiempo de refresco: 3s" -> value =  3000
+            "Tiempo de refresco: 3.5s" -> value =  3500
+            "Tiempo de refresco: 4s" -> value = 4000
+            "Tiempo de refresco: 4.5s" -> value =  4500
+            "Tiempo de refresco: 5s" -> value =  5000
+        }
+        return value
     }
 
     private fun showToast(msg: String){
