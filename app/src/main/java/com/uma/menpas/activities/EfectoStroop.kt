@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uma.menpas.R
 import kotlin.random.Random
@@ -110,6 +111,20 @@ class EfectoStroop : AppCompatActivity() {
         timer.start()
     }
 
+    private fun hasFinished() {
+        if (valueAciertos + valueErroresOmision >= intentNumeroPresentaciones) {
+            timer.cancel()
+            val dialog = AlertDialog.Builder(this)
+                .setMessage("Test finalizado")
+                .setPositiveButton("Aceptar") {_,_ ->}
+                .create()
+            dialog.show()
+        } else {
+            generateviewShowcase()
+            restartTimer()
+        }
+    }
+
     private fun startTimer() {
         timer = object: CountDownTimer(intentTiempoExposicion, 100) {
             override fun onTick(p0: Long) {
@@ -118,10 +133,9 @@ class EfectoStroop : AppCompatActivity() {
             }
             override fun onFinish() {
                 timerCurrentTime = 0f
-                generateviewShowcase()
                 valueErroresOmision++
                 viewTextErroresOmision.text = valueErroresOmision.toString()
-                restartTimer()
+                hasFinished()
             }
         }
         timer.start()
@@ -134,8 +148,7 @@ class EfectoStroop : AppCompatActivity() {
                 if (valueRandomColor.equals(i)) {
                     valueAciertos++
                     viewTextAciertos.text = valueAciertos.toString()
-                    generateviewShowcase()
-                    restartTimer()
+                    hasFinished()
                 } else {
                     valueErrores++
                     viewTextErrores.text = valueErrores.toString()
