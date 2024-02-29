@@ -69,20 +69,17 @@ class EfectoStroop : AppCompatActivity() {
     }
 
     private fun generateviewShowcase() {
-        val randomColor = Random.nextInt(0, intentColores.size)
-        valueRandomColor = randomColor
+        valueRandomColor = Random.nextInt(0, intentColores.size)
         var randomText = 0
         var randomintentFondo = -1
         when (intentTipo) {
-            "Congruente" -> randomText = randomColor
+            "Congruente" -> randomText = valueRandomColor
             "Incongruente" -> do { randomText = Random.nextInt(0, intentColores.size) }
-                while (randomText == randomColor)
+                while (randomText == valueRandomColor)
             "Mixto" -> randomText = Random.nextInt(0, intentColores.size)
         }
-
         viewTextShowcase.text= intentColores[randomText].toUpperCase()
-        viewTextShowcase.setTextColor(colorSelect(intentColores[randomColor]))
-
+        viewTextShowcase.setTextColor(colorSelect(intentColores[valueRandomColor]))
         if (intentFondo)  {
             randomintentFondo = Random.nextInt(0, intentColores.size)
             val viewShowcaseDrawable = viewShowcase.background.mutate() as GradientDrawable
@@ -91,8 +88,6 @@ class EfectoStroop : AppCompatActivity() {
     }
 
     private fun generateColorButtons() {
-        var flag = true
-        var i = 0
         for (i in 0 until viewGrid.childCount) {
             val button = viewGrid.getChildAt(i) as Button
             if (i < intentColores.size) {
@@ -108,19 +103,25 @@ class EfectoStroop : AppCompatActivity() {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
+    private fun restartTimer() {
+        timer.cancel()
+        timerCurrentTime = 0f
+        viewTiempoEspera.text = "0"
+        timer.start()
+    }
+
     private fun startTimer() {
         timer = object: CountDownTimer(intentTiempoExposicion, 100) {
             override fun onTick(p0: Long) {
                 timerCurrentTime += 0.1f
-                viewTiempoEspera.text = timerCurrentTime.toString().substring(0,3)
+                viewTiempoEspera.text = timerCurrentTime.toString().substring(0, 3)
             }
             override fun onFinish() {
-                showToast("C'est fini")
                 timerCurrentTime = 0f
                 generateviewShowcase()
                 valueErroresOmision++
                 viewTextErroresOmision.text = valueErroresOmision.toString()
-                timer.start()
+                restartTimer()
             }
         }
         timer.start()
@@ -133,6 +134,8 @@ class EfectoStroop : AppCompatActivity() {
                 if (valueRandomColor.equals(i)) {
                     valueAciertos++
                     viewTextAciertos.text = valueAciertos.toString()
+                    generateviewShowcase()
+                    restartTimer()
                 } else {
                     valueErrores++
                     viewTextErrores.text = valueErrores.toString()
