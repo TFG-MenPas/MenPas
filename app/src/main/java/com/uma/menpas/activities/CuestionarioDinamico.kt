@@ -3,18 +3,21 @@ package com.uma.menpas.activities
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputType
+import android.text.TextWatcher
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
+import com.uma.menpas.utils.Boton.Companion.deshabilitarBoton
+import com.uma.menpas.utils.Boton.Companion.habilitarBoton
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.util.*
 import kotlin.collections.ArrayList
 
 class CuestionarioDinamico : AppCompatActivity() {
@@ -198,7 +201,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         var btnSiChecked = false
         var btnNoChecked = false
 
-
+        botonSiguiente.deshabilitarBoton()
 
         btnSi.setOnClickListener {
             if (!btnSiChecked){
@@ -206,6 +209,7 @@ class CuestionarioDinamico : AppCompatActivity() {
                 btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
                 btnSiChecked = true
                 btnSi.contentDescription = "checked"
+                botonSiguiente.habilitarBoton()
                 if (btnNoChecked){
                     btnNo.background = backunChecked
                     btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
@@ -217,6 +221,7 @@ class CuestionarioDinamico : AppCompatActivity() {
                 btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
                 btnSiChecked = false
                 btnSi.contentDescription = "unchecked"
+                botonSiguiente.deshabilitarBoton()
             }
         }
         btnNo.setOnClickListener {
@@ -225,6 +230,7 @@ class CuestionarioDinamico : AppCompatActivity() {
                 btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
                 btnNoChecked = true
                 btnNo.contentDescription = "checked"
+                botonSiguiente.habilitarBoton()
                 if (btnSiChecked){
                     btnSi.background = backunChecked
                     btnSi.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
@@ -236,6 +242,7 @@ class CuestionarioDinamico : AppCompatActivity() {
                 btnNo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
                 btnNoChecked = false
                 btnNo.contentDescription = "unchecked"
+                botonSiguiente.deshabilitarBoton()
             }
         }
 
@@ -257,6 +264,8 @@ class CuestionarioDinamico : AppCompatActivity() {
         actualizarLayout(R.layout.cuestionario_texto_libre)
         val editText : EditText = cuestionarioDinamico.findViewById(R.id.editTextCuestionarioTextoLibre)
         editText.clearComposingText()
+
+        botonSiguiente.deshabilitarBoton()
         when(input){
             "tiempo" -> editText.inputType = InputType.TYPE_CLASS_DATETIME
             "texto" -> editText.inputType = InputType.TYPE_TEXT_FLAG_MULTI_LINE
@@ -267,6 +276,20 @@ class CuestionarioDinamico : AppCompatActivity() {
         }else{
             editText.setText("")
         }
+
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(editText.text.toString().trim().isEmpty()){
+                    botonSiguiente.deshabilitarBoton()
+                }else{
+                    botonSiguiente.habilitarBoton()
+                }
+            }
+        })
     }
 
     private fun rellenarPreguntaFecha() {
