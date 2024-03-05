@@ -1,0 +1,360 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Si tengo una discrepancia menor con un amigo personal o con mi cónyuge, más del estilo “No, te toca a ti lavar los platos”, que “¡Me has engañado!”, el mal humor por regla general me dura horas o más.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Si otro conductor utiliza el arcén para adelantar a una larga cola de coches que aguardan su turno para pasar e incorporarse al carril de la autopista, lo más probable es que sacuda la cabeza y no que esté furioso mucho tiempo.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 3,
+			"pregunta": "Cuando he sentido un dolor profundo, como la muerte de alguien allegado, eso ha afectado durante meses mi capacidad de funcionar.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Si cometo un error, falta o equivocación en el trabajo y me reprenden por ello, le quito importancia y lo considero una manera de aprender.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 5,
+			"pregunta": "Si pruebo un nuevo restaurante y la comida me parece horrible y el servicio se da demasiado tono, eso me estropea la velada.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "Si me encuentro en un atasco de tráfico causado por un accidente que se ha producido más adelante, cuando dejo atrás el embotellamiento en general piso a fondo el acelerador para desahogar mi frustración, pero sigo furioso por dentro.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Si se estropea el calentador del agua en casa, no afecta mucho a mi estado de ánimo, porque sé que puedo llamar al fontanero y solucionar el problema.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Si conozco a una mujer (o a un hombre) que considero maravilloso y le pregunto si le gustaría que nos volviéramos a ver, cuando me dicen que no suelo ponerme de mal humor durante horas e incluso días.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Si me están considerando para un galardón profesional o un ascenso y acaban concediéndoselo a alguien que considero menos cualificado, el enojo en general se me pasa pronto.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "En los momentos críticos de la competición me da la impresión de que mi cabeza va muy deprisa.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 11,
+			"pregunta": "Cuando me invitan a participar en una reunión con otra gente, espero con ganas que llegue el momento, y pienso que pueden llegar a ser mis amigos, en lugar de verlo como una tarea, pensando que nunca valdrá la pena conocer a estas personas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 12,
+			"pregunta": "Cuando evalúo a un colaborador, me centro en los detalles de las áreas en las que es preciso que mejore en lugar de en su rendimiento positivo general.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 13,
+			"pregunta": "Creo que los diez próximos años serán mejores para mí que los últimos diez..",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 14,
+			"pregunta": "La posibilidad de trasladarme a vivir a una nueva ciudad la percibo como un paso aterrador hacia lo desconocido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 15,
+			"pregunta": "Cuando algo pequeño pero inesperado y positivo me sucede por la mañana –por ejemplo, mantener una extraordinaria conversación con un desconocido-, el estado de ánimo positivo se desvanece en cuestión de minutos.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 16,
+			"pregunta": "Cuando voy a una fiesta y me lo paso bien al principio, ese sentimiento positivo tiende a durarme toda la velada.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 17,
+			"pregunta": "Considero que los paisajes hermosos, como una magnífica puesta de sol, desaparecen rápidamente y me aburro con facilidad.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 18,
+			"pregunta": "Cuando me levanto por la mañana, pienso en una grata actividad que he planeado hacer y ese pensamiento me pone de un buen humor que me dura todo el día.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 19,
+			"pregunta": "Cuando voy a un museo o asisto a un concierto, los primeros minutos son realmente agradables, pero esa sensación no dura.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 20,
+			"pregunta": "A menudo tengo la impresión de que, en los días de más trabajo, puedo seguir pasando de un asunto a otro sin cansarme.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 21,
+			"pregunta": "Cuando hablo con otras personas, a menudo percibo sutiles señales sociales acerca de sus emociones –incomodidad, por ejemplo, o enfado- antes aun de que reconozcan esos sentimientos en ellas mismas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 22,
+			"pregunta": "A menudo me doy cuenta de que observo las expresiones faciales y el lenguaje corporal.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 23,
+			"pregunta": "Considero que en realidad no importa si hablo con alguien por teléfono o cara a cara, porque en contadas ocasiones consigo obtener información adicional al observar a la persona con la que hablo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 24,
+			"pregunta": "A menudo siento como si supiera más acerca de los verdaderos sentimientos de una persona que ella misma.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 25,
+			"pregunta": "A menudo me coge por sorpresa cuando alguien con quien estoy hablando se enfada o se altera por algo que he dicho, sin motivo aparente.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 26,
+			"pregunta": "En un restaurante, prefiero sentarme al lado de alguien con quien estoy hablando de manera que no tenga que verle de cara.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 27,
+			"pregunta": "A menudo veo que respondo a la incomodidad o aflicción de otra persona basándome en un sentimiento intuitivo y no en un diálogo explícito.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 28,
+			"pregunta": "Cuando me encuentro en lugares públicos, me gusta observar a la gente que tengo a mi alrededor.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 29,
+			"pregunta": "Me resulta incómodo cuando alguien a quien apenas conozco me mira directamente a los ojos durante una conversación.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 30,
+			"pregunta": "A menudo puedo saber cuándo algo molesta a otra persona simplemente mirándola.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 31,
+			"pregunta": "A menudo, cuando alguien me pregunta por qué estoy tan enfadado o tan triste, respondo –o me digo a mí mismo- que no lo estoy.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 32,
+			"pregunta": "Cuando las personas que tengo a mi alrededor me preguntan por qué he tratado tan mal o con tanta brusquedad a alguien, a menudo no considero que lo haya hecho.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 33,
+			"pregunta": "Con frecuencia –más de un par de veces al mes- el ritmo de mi corazón se desboca o mi pulso se acelera, y no tengo ni idea del porqué.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 34,
+			"pregunta": "Cuando observo a alguien que sufre, siento ese dolor yo mismo, tanto emocional como físicamente.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 35,
+			"pregunta": "Por regla general, estoy tan seguro de cómo me siento que puedo expresar mis emociones con palabras.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 36,
+			"pregunta": "A veces noto dolores y molestias, y no tengo ni idea de dónde vienen.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 37,
+			"pregunta": "Me gusta quedarme quieto y relajado un rato, el tiempo suficiente para sentir qué sucede dentro de mí.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 38,
+			"pregunta": "Creo que habito mi cuerpo y me siento a gusto en mi cuerpo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 39,
+			"pregunta": "Estoy mucho más orientado al mundo exterior y son muy pocas las ocasiones en que tomo en cuenta lo que le ocurre a mi cuerpo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 40,
+			"pregunta": "Cuando hago ejercicio, soy muy sensible a los cambios que ocurren en mi cuerpo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 41,
+			"pregunta": "Alguien allegado me ha dicho que muy pocas veces soy sensible a los sentimientos de otras personas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 42,
+			"pregunta": "A veces me han dicho que me comporto de un modo socialmente inadecuado, lo cual me ha sorprendido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 43,
+			"pregunta": "A veces he sufrido un contratiempo en el trabajo o he discutido con un amigo porque he sido demasiado cordial en el trato con un superior o demasiado jovial cuando un buen amigo estaba desesperado.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 44,
+			"pregunta": "Cuando hablo con la gente, a veces veo que se apartan para dejar más distancia entre nosotros.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 45,
+			"pregunta": "A menudo me descubro censurando lo que iba a decir porque he sentido algo en la situación que haría que fuera inadecuado (por ejemplo, antes de responder a “Cariño, ¿estos tejanos me hacen parecer gorda?).",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 46,
+			"pregunta": "Cuando estoy en un lugar público como un restaurante, cuido sobre todo de modular el volumen de mi voz.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 47,
+			"pregunta": "Con frecuencia me recuerdan que cuando esté en público evite mencionar los nombres de personas que pueden estar cerca.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 48,
+			"pregunta": "Casi siempre soy consciente de si ya he estado antes en algún lugar, aunque sea en una autopista por la que conduje hace muchos años.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 49,
+			"pregunta": "Me doy cuenta de cuándo alguien está actuando de un modo que parece estar fuera de lugar, como cuando se comporta de manera demasiado informal en el trabajo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 50,
+			"pregunta": "Mi pareja o mis compañeros me han dicho que muestro buenos modales con extraños y en situaciones nuevas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 51,
+			"pregunta": "Puedo concentrarme en un entorno con mucho ruido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 52,
+			"pregunta": "Cuando me encuentro en una situación en la que ocurren muchas cosas y es mucha la estimulación sensorial como, por ejemplo, en una fiesta o entre el gentío en un aeropuerto, no pierdo el hilo de mis pensamientos sobre una cosa particular que veo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 53,
+			"pregunta": "Si decido centrar mi atención en una tarea particular, considero que puedo seguir centrado en ella en estos ambientes.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 54,
+			"pregunta": "Si estoy en casa tratando de trabajar, los ruidos del televisor o de otras personas me distraen mucho.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 55,
+			"pregunta": "Considero que si me siento tranquilamente un momento, una avalancha de pensamientos entran en mi mente y acabo siguiendo múltiples hilos de pensamientos, a menudo sin saber cómo empezaba cada uno de ellos.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 56,
+			"pregunta": "Si un acontecimiento inesperado me distrae, vuelvo a centrar mi atención en lo que estaba haciendo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 57,
+			"pregunta": "Durante periodos de relativa tranquilidad, como por ejemplo cuando estoy sentado en el tren o en el autobús o haciendo cola en una tienda, me fijo en multitud de cosas que tengo a mi alrededor.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 58,
+			"pregunta": "Cuando un proyecto importante que debo hacer en solitario requiere de mí una atención plena y centrada, procuro trabajar en el lugar más tranquilo que puedo encontrar.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 59,
+			"pregunta": "Los estímulos y sucesos que se producen a mi alrededor tienden a captar mi atención, y cuando esto sucede me resulta difícil desconectarme.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 60,
+			"pregunta": "Tengo cierta facilidad para hablar con otra persona en una situación en la que hay mucha gente como un cóctel o un cubículo en la oficina. Puedo desconectar de lo que otros dicen en un entorno con mucha gente, aunque si me concentro puedo entender lo que dicen.",
+			"tipo": "siNo"
+			
+		}
+	]
+}

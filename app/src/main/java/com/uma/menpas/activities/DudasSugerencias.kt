@@ -16,6 +16,7 @@ class DudasSugerencias : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val buttonEnviar = findViewById<Button>(R.id.buttonEnviar)
 
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_left)
         BarraNavegacion(barraNavegacionInferior, this)
 
         buttonEnviar.setOnClickListener {

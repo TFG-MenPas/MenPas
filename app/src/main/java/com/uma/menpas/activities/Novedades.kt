@@ -12,6 +12,7 @@ class Novedades : AppCompatActivity() {
         setContentView(R.layout.activity_novedades)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_left)
         BarraNavegacion(barraNavegacionInferior, this)
     }
 }
