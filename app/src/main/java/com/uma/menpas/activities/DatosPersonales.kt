@@ -32,7 +32,7 @@ class DatosPersonales : AppCompatActivity() {
         textNombreUsuario = findViewById<TextView>(R.id.nombreDeUsuarioActual)
         textNombre = findViewById<TextView>(R.id.nombreActual)
         textApellidos = findViewById<TextView>(R.id.apellidosActual)
-
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
         setDatosUsuario()
 

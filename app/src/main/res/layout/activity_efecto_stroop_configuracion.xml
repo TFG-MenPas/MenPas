@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".activities.EfectoStroopConfiguracion">
+    tools:context=".activities.EfectoStroop">
     <View
         android:id="@+id/bannerRectanguloAzul"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:background="@color/azul_banner_cuestionarios" />
 
     <View
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="90sp"
         android:id="@+id/numeroPreguntaActual"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
@@ -57,7 +57,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         android:layout_marginBottom="102dp"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -377,6 +377,54 @@
                 android:gravity="center"
                 android:layout_marginTop="10sp"
                 android:text="@string/congruente"
+                android:textSize="20sp"
+                android:textColor="@color/dark_blue"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/seekbar_tiempo_stroop"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:indeterminate="false"
+
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+            <TextView
+                android:id="@+id/tiempo_stroop"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Tiempo de refresco: 1s"
+                android:textSize="20sp"
+                android:textColor="@color/dark_blue"
+                android:fontFamily="@font/poppins_light"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/seekbar_numero_stroop"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:indeterminate="false"
+
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+            <TextView
+                android:id="@+id/numero_stroop"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Numero de presentaciones: 1"
                 android:textSize="20sp"
                 android:textColor="@color/dark_blue"
                 android:fontFamily="@font/poppins_light"

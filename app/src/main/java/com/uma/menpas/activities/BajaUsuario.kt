@@ -22,7 +22,7 @@ class BajaUsuario : AppCompatActivity() {
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         lateinit var intent: Intent
-
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
 
         buttonDarseDeBaja.setOnClickListener {

@@ -64,7 +64,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
         android:elevation="4dp"
-        android:backgroundTint="@color/elipseBlue"
+        app:rippleColor="@color/azul_uma"
+        app:backgroundTint="@color/azul_uma"
         app:srcCompat="@drawable/icon_anyadir_centro" />
 
     <include

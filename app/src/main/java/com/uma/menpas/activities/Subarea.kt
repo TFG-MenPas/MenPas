@@ -18,7 +18,6 @@ import androidx.core.view.marginBottom
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
-import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
@@ -123,7 +122,8 @@ class Subarea : AppCompatActivity() {
             linearLayout.addView(button)
             button.setOnClickListener{
                 val intent = when(btn_value as String){
-                    "cuestionario_stroop" -> Intent(this, ModrianStroop::class.java)
+                    "cuestionario_stroop" -> Intent(this, EfectoStroop::class.java)
+                    "cuestionario_modrian_stroop" -> Intent(this, ModrianStroop::class.java)
                     "cuestionario_modrian_colores" -> Intent(this, MondrianColores::class.java)
                     "cuestionario_modrian_fotos" -> Intent(this, ModrianFotos::class.java)
                     "cuestionario_modrian_parejas" -> Intent(this, ModrianParejas::class.java)

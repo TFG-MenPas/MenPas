@@ -16,7 +16,7 @@ android:viewportHeight="123"
 
 		<path
 		android:pathData="M0 0V123H158V0"
-		android:fillColor="#1A6179"
+		android:fillColor="@color/azul_uma"
 />
 
 	</group>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/bannerRectanguloAzul"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/azul_banner_cuestionarios" />
+
+    <View
+        android:id="@+id/ellipse_45"
+        android:layout_width="230dp"
+        android:layout_height="210dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-160dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_45" />
+
+    <View
+        android:id="@+id/ellipse_46"
+        android:layout_width="170dp"
+        android:layout_height="153dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-130dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/elipse_46" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCerrarDesplegable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#9CD3ED"
+        android:src="@drawable/icon_cruz"
+        android:contentDescription="@string/boton_cerrar_cuestionario"
+        android:rotation="45" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:id="@+id/textPregunta"
+        android:layout_below="@id/ellipse_45"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/dark_blue"
+        android:textSize="28sp"
+        android:text="@string/stroop" />
+
+    <View
+        android:id="@+id/view_showcase"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/bannerRectanguloAzul"
+        />
+
+    <View
+        android:id="@+id/showcase"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bannerRectanguloAzul"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+
+        android:background="@drawable/grid_button_colores" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:textAlignment="center"
+        android:id="@+id/textTiempoEspera"
+        android:layout_below="@id/view_showcase"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="@string/tiempo_de_espera" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:id="@+id/text_showcase"
+        android:layout_below="@id/bannerRectanguloAzul"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_below="@id/view_showcase"
+        android:textAlignment="center"
+        android:id="@+id/tiempoEsperaStroop"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="45" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textTiempoEspera"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/nestedScrollStroop"
+        android:layout_marginBottom="100dp"
+        android:fillViewport="true">
+
+        <GridLayout
+            android:id="@+id/gridStroop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="-5dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:columnCount="4">
+
+            <Button
+                android:id="@+id/casillaStroop00"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:contentDescription="@string/boton_cerrar_cuestionario"
+                android:layout_columnWeight="3"
+                android:layout_marginEnd="20dp"
+
+                android:layout_marginBottom="20dp" />
+            <Button
+                android:id="@+id/casillaStroop01"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:contentDescription="@string/boton_cerrar_cuestionario"
+                android:layout_columnWeight="3"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp" />
+            <Button
+                android:id="@+id/casillaStroop02"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="3"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop03"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="3"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop10"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop11"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+
+            <Button
+                android:id="@+id/casillaStroop12"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:contentDescription="@string/boton_cerrar_cuestionario"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp" />
+            <Button
+                android:id="@+id/casillaStroop13"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:contentDescription="@string/boton_cerrar_cuestionario"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp" />
+            <Button
+                android:id="@+id/casillaStroop20"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop21"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop22"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop23"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/boton_cerrar_cuestionario" />
+            <Button
+                android:id="@+id/casillaStroop30"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/grid_button_colores"
+                android:contentDescription="@string/boton_cerrar_cuestionario"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp" />
+        </GridLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="70dp"
+        android:textAlignment="center"
+        android:id="@+id/textAciertos"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="@string/aciertos" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="70dp"
+        android:textAlignment="center"
+        android:id="@+id/textNumeroAciertos"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="0" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="45dp"
+        android:textAlignment="center"
+        android:id="@+id/textErrores"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="@string/numero_errores" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="45dp"
+        android:textAlignment="center"
+        android:id="@+id/textNumeroErrores"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="0" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:id="@+id/textErroresOmision"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="@string/numero_errores_omision" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:id="@+id/textNumeroErroresOmision"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="0" />
+</RelativeLayout>

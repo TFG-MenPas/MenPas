@@ -100,7 +100,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.EfectoStroopConfiguracion"
+            android:name=".activities.EfectoStroop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -355,6 +355,16 @@
         </activity>
         <activity
             android:name=".activities.RegistroUsuario"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.EfectoStroopGrid"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
