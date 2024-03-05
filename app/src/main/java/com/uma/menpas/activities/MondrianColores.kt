@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
