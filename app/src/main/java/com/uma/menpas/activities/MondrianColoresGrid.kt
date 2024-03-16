@@ -25,6 +25,7 @@ class MondrianColoresGrid : AppCompatActivity() {
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
+    private lateinit var numeroFallosPermitidos: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,7 @@ class MondrianColoresGrid : AppCompatActivity() {
         val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
+        numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
@@ -54,6 +56,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                 "fucsia" -> R.color.fucsia
                 "naranja" -> R.color.naranja
                 "cyan" -> R.color.cyan
+                "blanco" -> R.color.blanco
                 else -> R.color.black
             }
             val drawable = botonColor.background.mutate() as GradientDrawable
@@ -124,6 +127,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                         "fucsia" -> view.findViewById(R.id.color23)
                         "naranja" -> view.findViewById(R.id.color21)
                         "cyan" -> view.findViewById(R.id.color22)
+                        "blanco" -> view.findViewById(R.id.color40)
                         else -> view.findViewById(R.id.imageButtonCerrarDesplegable)
                     }
                     gridColoresSeleccion.removeViewAt(gridColoresSeleccion.indexOfChild(imageButtonColor))
@@ -163,6 +167,16 @@ class MondrianColoresGrid : AppCompatActivity() {
         }.start()
     }
 
+    private fun calcularFallosPermitidos(): Int {
+        when(numeroFallosPermitidos){
+            "25% Matriz" -> 0
+            "50% Matriz" -> 1
+            "75% Matriz" -> 2
+            "Sin control de fallos" -> 3
+        }
+        return 0
+    }
+
     private fun setDrawableColor(colorSeleccion: View) {
         val color = when(colorSeleccion.contentDescription){
             "rojo" -> R.color.rojo
@@ -177,6 +191,7 @@ class MondrianColoresGrid : AppCompatActivity() {
             "fucsia" -> R.color.fucsia
             "naranja" -> R.color.naranja
             "cyan" -> R.color.cyan
+            "blanco" -> R.color.blanco
             else -> R.color.black
         }
         val drawable = colorSeleccion.background.mutate() as GradientDrawable

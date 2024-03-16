@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
@@ -14,8 +15,11 @@ class MondrianColores : AppCompatActivity() {
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
+    lateinit var fallosPermitidos : SeekBar
     lateinit var colores : MutableMap<Button,Boolean>
     lateinit var botonCerrarCuestionario: ImageButton
+    lateinit var numeroFallosPermitidos: TextView
+    lateinit var seekbar: SeekBar
     private lateinit var checked : Drawable
     private lateinit var backChecked : Drawable
     private lateinit var unchecked : Drawable
@@ -33,8 +37,32 @@ class MondrianColores : AppCompatActivity() {
         botonCerrarCuestionario.setOnClickListener {
             finish()
         }
-
+        InicializarSeekbarFallosPermitidos()
         botones()
+    }
+    private fun InicializarSeekbarFallosPermitidos(){
+        numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
+        seekbar = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbar.progress = 0
+        seekbar.max = 3 //Max casillas del tablero
+
+        val respuestas = arrayOf("25% Matriz", "50% Matriz", "75% Matriz", "Sin control de fallos")
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                when(progress) {
+                    0 -> numeroFallosPermitidos.text = respuestas[0]
+                    1 -> numeroFallosPermitidos.text = respuestas[1]
+                    2 -> numeroFallosPermitidos.text = respuestas[2]
+                    3 -> numeroFallosPermitidos.text = respuestas[3]
+                }
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
     }
 
     private fun botones(){
@@ -51,6 +79,7 @@ class MondrianColores : AppCompatActivity() {
         colores[findViewById(R.id.button_fucsia)] = true
         colores[findViewById(R.id.button_naranja)] = true
         colores[findViewById(R.id.button_cyan)] = true
+        colores[findViewById(R.id.button_blanco)] = true
 
         colores.entries.forEach{
                 color ->
@@ -70,6 +99,7 @@ class MondrianColores : AppCompatActivity() {
         }
         tiempoEspera = findViewById(R.id.editTextTiempoEspera)
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
+        fallosPermitidos = findViewById(R.id.seekbar_fallos_permitidos)
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
             val intent = Intent(this, MondrianColoresGrid::class.java)
@@ -90,6 +120,7 @@ class MondrianColores : AppCompatActivity() {
                 intent.putExtra("longTiempoEspera", longTiempoEspera)
                 intent.putExtra("arrayColores", arrayColores)
                 intent.putExtra("arrayEliminar", arrayEliminar)
+                intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")
