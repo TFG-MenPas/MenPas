@@ -44,7 +44,7 @@ class MondrianColores : AppCompatActivity() {
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
         seekbar = findViewById(R.id.seekbar_fallos_permitidos)
         seekbar.progress = 0
-        seekbar.max = 3 //Max casillas del tablero
+        seekbar.max = 3
 
         val respuestas = arrayOf("25% Matriz", "50% Matriz", "75% Matriz", "Sin control de fallos")
 

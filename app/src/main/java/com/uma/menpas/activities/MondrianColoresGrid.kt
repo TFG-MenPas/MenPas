@@ -21,11 +21,15 @@ import java.util.concurrent.TimeUnit
 class MondrianColoresGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
+    lateinit var botonCerrar : ImageButton
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
     private lateinit var numeroFallosPermitidos: String
+    private var limiteFallos: Int = 0
+    private var fallos: Int = 0
+    private var cerrado: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +44,7 @@ class MondrianColoresGrid : AppCompatActivity() {
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
+        limiteFallos = calcularFallosPermitidos()
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
             val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
@@ -100,6 +105,11 @@ class MondrianColoresGrid : AppCompatActivity() {
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 colorSeleccion.startAnimation(clk_rotate)
+                                fallos++
+                                if(fallos > limiteFallos){
+                                    cerrado = true
+                                    finish()
+                                }
                             }
                         }
                     }
@@ -139,6 +149,12 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
         }
 
+        botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener {
+            cerrado = true
+            finish()
+        }
+
         object : CountDownTimer(longTiempoEspera, 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -146,35 +162,40 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                activarRealizacionCuestionario()
-                textTiempo.text = getString(R.string.tiempo_de_realizacion)
-                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                if (!cerrado){
+                    activarRealizacionCuestionario()
+                    textTiempo.text = getString(R.string.tiempo_de_realizacion)
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                    object : CountDownTimer(longTiempoRealizacion, 1000){
+                        @SuppressLint("SetTextI18n")
+                        override fun onTick(millisUntilFinished: Long) {
+                            actualizarCronometro(millisUntilFinished)
+                        }
 
-                object : CountDownTimer(longTiempoRealizacion, 1000){
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        actualizarCronometro(millisUntilFinished)
-                    }
-
-                    override fun onFinish() {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
-                        finish()
-                    }
-
-                }.start()
+                        override fun onFinish() {
+                            if(!cerrado){
+                                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                                cerrado = true
+                                finish()
+                            }
+                        }
+                    }.start()
+                }
             }
-
         }.start()
     }
 
     private fun calcularFallosPermitidos(): Int {
-        when(numeroFallosPermitidos){
-            "25% Matriz" -> 0
-            "50% Matriz" -> 1
-            "75% Matriz" -> 2
-            "Sin control de fallos" -> 3
-        }
-        return 0
+        val numeroTotalCasillas = colores.childCount
+        val fallosPermitidos =
+            when(numeroFallosPermitidos){
+            "25% Matriz" -> (numeroTotalCasillas * 0.25).toInt()
+            "50% Matriz" -> (numeroTotalCasillas * 0.5).toInt()
+            "75% Matriz" -> (numeroTotalCasillas * 0.75).toInt()
+            "Sin control de fallos" -> Int.MAX_VALUE
+                else -> Int.MAX_VALUE
+            }
+        return fallosPermitidos
     }
 
     private fun setDrawableColor(colorSeleccion: View) {
