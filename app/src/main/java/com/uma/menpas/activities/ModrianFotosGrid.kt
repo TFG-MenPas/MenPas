@@ -21,7 +21,7 @@ class ModrianFotosGrid : AppCompatActivity() {
 
     lateinit var fotos : GridLayout
     lateinit var botonFoto : ImageButton
-    //lateinit var tamanyoTablero : String
+    lateinit var tamanyoTablero : String
     var numImg : Int = 0
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
@@ -37,7 +37,7 @@ class ModrianFotosGrid : AppCompatActivity() {
         textTiempo = findViewById(R.id.textTiempoEspera)
         val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
-        //tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
+        tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
         numImg = intent.getStringExtra("numImg")!!.toInt()
         fotos = findViewById(R.id.gridFotos)
 

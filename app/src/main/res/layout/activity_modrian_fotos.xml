@@ -67,13 +67,52 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:textAlignment="center"
+                android:id="@+id/textTamanyoTablero"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/tamanyo_tablero" />
+
+            <SeekBar
+                android:id="@+id/seekbarTamanyoTablero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textTamanyoTablero"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:indeterminate="false"
+                android:tickMark="@drawable/tickbar_enabled"
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+
+            <TextView
+                android:id="@+id/textOpcionTamanyoTablero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekbarTamanyoTablero"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Pequeño"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
+                android:layout_below="@id/textOpcionTamanyoTablero"
                 android:textAlignment="center"
                 android:id="@+id/textTiempoRealizacion"
                 android:fontFamily="@font/poppins_regular"
@@ -161,26 +200,26 @@
                 android:textSize="24sp"
                 android:text="@string/cadenaFormato" />
 
-            <!--<TextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="40dp"
                 android:textAlignment="center"
-                android:id="@+id/textTamanyoTablero"
-                android:layout_below="@+id/textFormato"
+                android:id="@+id/textNumeroFallos"
+                android:layout_below="@id/textOpcionNumImg"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
-                android:text="@string/tamanyo_tablero" />
+                android:text="@string/fallos_permitidos" />
 
             <SeekBar
-                android:id="@+id/seekbarTamanyoTablero"
+                android:id="@+id/seekbar_fallos_permitidos"
+                android:layout_marginTop="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/textTamanyoTablero"
+                android:layout_below="@id/textNumeroFallos"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:indeterminate="false"
@@ -189,23 +228,24 @@
                 android:thumb="@drawable/thumb"/>
 
             <TextView
-                android:id="@+id/textOpcionTamanyoTablero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seekbarTamanyoTablero"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Pequeño"
+                android:id="@+id/numero_fallos_permitidos"
+                android:layout_below="@id/seekbar_fallos_permitidos"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="@string/_25_matriz"
+                android:textSize="20sp"
                 android:textColor="@color/dark_blue"
-                android:textSize="24sp" />-->
+                android:fontFamily="@font/poppins_regular"
+                android:layout_height="wrap_content">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
                 android:textAlignment="center"
                 android:id="@+id/textNumImg"
                 android:layout_below="@+id/textFormato"
@@ -223,7 +263,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:indeterminate="false"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:tickMark="@drawable/tickbar_enabled"
                 android:progressDrawable="@drawable/seekbar_multichoice"
                 android:thumb="@drawable/thumb"/>
@@ -238,7 +278,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="2"
                 android:textColor="@color/dark_blue"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
         </RelativeLayout>
 
