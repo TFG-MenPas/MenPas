@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.GridLayout
@@ -15,6 +16,7 @@ import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.utils.Fallos
 import java.util.concurrent.TimeUnit
 
 class ModrianFotosGrid : AppCompatActivity() {
@@ -25,12 +27,18 @@ class ModrianFotosGrid : AppCompatActivity() {
     var numImg : Int = 0
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
+    private var limiteFallos: Int = 0
+    private var fallos: Int = 0
+    private var cerrado: Boolean = false
+    private var numeroFallosPermitidos : String = ""
+    lateinit var botonCerrar : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos_grid)
 
         val numTotalImg = 7 ///HARDCODE TODO
+
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoEspera)
@@ -40,6 +48,8 @@ class ModrianFotosGrid : AppCompatActivity() {
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
         numImg = intent.getStringExtra("numImg")!!.toInt()
         fotos = findViewById(R.id.gridFotos)
+        numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
+        ajustarTablero()
 
         for (i in 0 until fotos.childCount){
             botonFoto = fotos.getChildAt(i) as ImageButton
@@ -91,8 +101,13 @@ class ModrianFotosGrid : AppCompatActivity() {
                                 dialog.dismiss()
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-                                val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise)
+                                val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 fotoSeleccion.startAnimation(clk_rotate)
+                                fallos++
+                                if(fallos > limiteFallos){
+                                    cerrado = true
+                                    finish()
+                                }
                             }
                         }
                     }
@@ -127,6 +142,12 @@ class ModrianFotosGrid : AppCompatActivity() {
             }
         }
 
+        botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener {
+            cerrado = true
+            finish()
+        }
+
         object : CountDownTimer(longTiempoEspera, 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -134,27 +155,56 @@ class ModrianFotosGrid : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                activarRealizacionCuestionario()
-                textTiempo.text = getString(R.string.tiempo_de_realizacion)
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+                if (!cerrado){
+                    activarRealizacionCuestionario()
+                    textTiempo.text = getString(R.string.tiempo_de_realizacion)
+                    vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
 
-                object : CountDownTimer(longTiempoRealizacion, 1000){
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        actualizarCronometro(millisUntilFinished)
-                    }
+                    object : CountDownTimer(longTiempoRealizacion, 1000){
+                        @SuppressLint("SetTextI18n")
+                        override fun onTick(millisUntilFinished: Long) {
+                            actualizarCronometro(millisUntilFinished)
+                        }
 
-                    override fun onFinish() {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-                        finish()
-                    }
-
-                }.start()
+                        override fun onFinish() {
+                            if (!cerrado){
+                                cerrado = true
+                                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+                                finish()
+                            }
+                        }
+                    }.start()
+                }
             }
-
         }.start()
+    }
 
+    private fun ajustarTablero() {
+        when (tamanyoTablero){
+            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Mediano" -> ajustarTableroMediano()
+            "Pequeño" -> ajustarTableroPequeño()
+        }
+    }
 
+    private fun ajustarTableroMediano() {
+        for (i in fotos.childCount - 1  downTo  fotos.childCount - 3){
+            botonFoto = fotos.getChildAt(i) as ImageButton
+            botonFoto.isEnabled = false
+            botonFoto.isActivated = false
+            botonFoto.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 3, numeroFallosPermitidos)
+    }
+
+    private fun ajustarTableroPequeño() {
+        for (i in fotos.childCount - 1  downTo  fotos.childCount - 6){
+            botonFoto = fotos.getChildAt(i) as ImageButton
+            botonFoto.isEnabled = false
+            botonFoto.isActivated = false
+            botonFoto.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 6, numeroFallosPermitidos)
     }
 
     private fun activarRealizacionCuestionario(){
