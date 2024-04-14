@@ -317,11 +317,51 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
+                android:textAlignment="center"
+                android:id="@+id/textTamanyoTablero"
+                android:layout_below="@+id/gridColores"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/tamanyo_tablero" />
+
+            <SeekBar
+                android:id="@+id/seekbarTamanyoTablero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textTamanyoTablero"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:indeterminate="false"
+                android:tickMark="@drawable/tickbar_enabled"
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+
+            <TextView
+                android:id="@+id/textOpcionTamanyoTablero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekbarTamanyoTablero"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Pequeño"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
                 android:textAlignment="center"
                 android:id="@+id/textTiempoRealizacion"
-                android:layout_below="@id/gridColores"
+                android:layout_below="@id/textOpcionTamanyoTablero"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"

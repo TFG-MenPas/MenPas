@@ -20,6 +20,7 @@ class MondrianColores : AppCompatActivity() {
     lateinit var botonCerrarCuestionario: ImageButton
     lateinit var numeroFallosPermitidos: TextView
     lateinit var seekbar: SeekBar
+    private lateinit var textOpcionTamanyoTablero: TextView
     private lateinit var checked : Drawable
     private lateinit var backChecked : Drawable
     private lateinit var unchecked : Drawable
@@ -38,6 +39,7 @@ class MondrianColores : AppCompatActivity() {
             finish()
         }
         InicializarSeekbarFallosPermitidos()
+        seekbarTamanyoTablero()
         botones()
     }
     private fun InicializarSeekbarFallosPermitidos(){
@@ -121,6 +123,7 @@ class MondrianColores : AppCompatActivity() {
                 intent.putExtra("arrayColores", arrayColores)
                 intent.putExtra("arrayEliminar", arrayEliminar)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
+                intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")
@@ -130,6 +133,26 @@ class MondrianColores : AppCompatActivity() {
                 showToast("Introduzca un tiempo de espera valido")
             }
         }
+    }
+
+    private fun seekbarTamanyoTablero() {
+        textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
+        val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progress = 0
+        seekbarTamanyoTablero.max = 2
+
+        val respuestas = arrayOf("Pequeño", "Mediano", "Grande")
+
+        seekbarTamanyoTablero.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textOpcionTamanyoTablero.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
     }
 
     override fun onResume() {

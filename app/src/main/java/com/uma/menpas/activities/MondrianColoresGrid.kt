@@ -16,6 +16,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.utils.Fallos
 import java.util.concurrent.TimeUnit
 
 class MondrianColoresGrid : AppCompatActivity() {
@@ -30,6 +31,7 @@ class MondrianColoresGrid : AppCompatActivity() {
     private var limiteFallos: Int = 0
     private var fallos: Int = 0
     private var cerrado: Boolean = false
+    lateinit var tamanyoTablero : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +46,8 @@ class MondrianColoresGrid : AppCompatActivity() {
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
-        limiteFallos = calcularFallosPermitidos()
+        tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
+        ajustarTablero()
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
             val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
@@ -184,18 +187,34 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
         }.start()
     }
+    private fun ajustarTablero() {
+        when (tamanyoTablero){
+            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Mediano" -> ajustarTableroMediano()
+            "Pequeño" -> ajustarTableroPequeño()
+        }
+    }
 
-    private fun calcularFallosPermitidos(): Int {
-        val numeroTotalCasillas = colores.childCount
-        val fallosPermitidos =
-            when(numeroFallosPermitidos){
-            "25% Matriz" -> (numeroTotalCasillas * 0.25).toInt()
-            "50% Matriz" -> (numeroTotalCasillas * 0.5).toInt()
-            "75% Matriz" -> (numeroTotalCasillas * 0.75).toInt()
-            "Sin control de fallos" -> Int.MAX_VALUE
-                else -> Int.MAX_VALUE
-            }
-        return fallosPermitidos
+    private fun ajustarTableroMediano() {
+        val numeroCasillasEliminar = 8
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
+    private fun ajustarTableroPequeño() { 
+        val numeroCasillasEliminar = 12
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
     }
 
     private fun setDrawableColor(colorSeleccion: View) {
