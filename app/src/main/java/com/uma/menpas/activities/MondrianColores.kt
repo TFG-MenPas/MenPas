@@ -15,7 +15,6 @@ class MondrianColores : AppCompatActivity() {
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
-    lateinit var fallosPermitidos : SeekBar
     lateinit var colores : MutableMap<Button,Boolean>
     lateinit var botonCerrarCuestionario: ImageButton
     lateinit var numeroFallosPermitidos: TextView
@@ -101,7 +100,6 @@ class MondrianColores : AppCompatActivity() {
         }
         tiempoEspera = findViewById(R.id.editTextTiempoEspera)
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
-        fallosPermitidos = findViewById(R.id.seekbar_fallos_permitidos)
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
             val intent = Intent(this, MondrianColoresGrid::class.java)

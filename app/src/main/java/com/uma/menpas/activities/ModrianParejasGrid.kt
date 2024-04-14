@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.GridLayout
@@ -15,6 +16,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
+import com.uma.menpas.utils.Fallos
 import java.util.concurrent.TimeUnit
 
 class ModrianParejasGrid : AppCompatActivity() {
@@ -26,6 +28,12 @@ class ModrianParejasGrid : AppCompatActivity() {
     lateinit var fotosArray : ArrayList<Int>
     val numTotalImg = 7 ///HARDCODE TODO
     lateinit var fotoSeleccionada : ImageButton
+    lateinit var tamanyoTablero : String
+    private lateinit var numeroFallosPermitidos: String
+    private var limiteFallos: Int = 0
+    private var fallos: Int = 0
+    private var cerrado: Boolean = false
+    lateinit var botonCerrar : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +42,18 @@ class ModrianParejasGrid : AppCompatActivity() {
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoRealizacion)
         textTiempo = findViewById(R.id.textTiempoRealizacion)
-        val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         fotos = findViewById(R.id.gridFotos)
+        val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
+        numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
+        tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
+        ajustarTablero()
+
+        botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener {
+            cerrado = true
+            finish()
+        }
+
         fotoSeleccionada = ImageButton(this)
         fotoSeleccionada.contentDescription = "-1"
         fotosArray = generarFotosArray(fotos.childCount)
@@ -48,6 +66,13 @@ class ModrianParejasGrid : AppCompatActivity() {
             botonFoto.contentDescription = fotoAleatoria.toString()
             botonFoto.isEnabled = false
             botonFoto.isActivated = false
+            botonFoto.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonFoto.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonFoto.setOnClickListener {
                 val btnFoto = fotos.focusedChild as ImageButton
                 btnFoto.requestFocus()
@@ -87,6 +112,11 @@ class ModrianParejasGrid : AppCompatActivity() {
                             this.fotoSeleccionada.isEnabled = true
                             this.fotoSeleccionada.isActivated = true
 
+                            fallos++
+                            if(fallos > limiteFallos){
+                                cerrado = true
+                                finish()
+                            }
                         }
 
                         btnFoto.clearAnimation()
@@ -109,26 +139,46 @@ class ModrianParejasGrid : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                textTiempo.text = getString(R.string.tiempo_de_realizacion)
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-
-                object : CountDownTimer(longTiempoRealizacion, 1000){
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        actualizarCronometro(millisUntilFinished)
-                    }
-
-                    override fun onFinish() {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-                        finish()
-                    }
-
-                }.onFinish()  // FINALIZA LA ACTIVITY TODO
+                if(!cerrado){
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                    cerrado = true
+                    finish()
+                }
             }
 
         }.start()
 
 
+    }
+
+    private fun ajustarTablero() {
+        when (tamanyoTablero){
+            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Mediano" -> ajustarTableroMediano()
+            "Pequeño" -> ajustarTableroPequeño()
+        }
+    }
+
+    private fun ajustarTableroMediano() {
+        val numeroCasillasEliminar = 4
+        for (i in fotos.childCount - 1  downTo  fotos.childCount - numeroCasillasEliminar){
+            botonFoto = fotos.getChildAt(i) as ImageButton
+            botonFoto.isEnabled = false
+            botonFoto.isActivated = false
+            botonFoto.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
+    private fun ajustarTableroPequeño() {
+        val numeroCasillasEliminar = 6
+        for (i in fotos.childCount - 1  downTo  fotos.childCount - numeroCasillasEliminar){
+            botonFoto = fotos.getChildAt(i) as ImageButton
+            botonFoto.isEnabled = false
+            botonFoto.isActivated = false
+            botonFoto.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
     }
 
     private fun destaparFoto(btnFoto: ImageButton) {

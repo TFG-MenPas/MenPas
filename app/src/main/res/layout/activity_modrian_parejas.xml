@@ -67,15 +67,53 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:textAlignment="center"
+                android:id="@+id/textTamanyoTablero"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/tamanyo_tablero" />
+
+            <SeekBar
+                android:id="@+id/seekbarTamanyoTablero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textTamanyoTablero"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:indeterminate="false"
+                android:tickMark="@drawable/tickbar_enabled"
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+
+            <TextView
+                android:id="@+id/textOpcionTamanyoTablero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekbarTamanyoTablero"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Pequeño"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
                 android:textAlignment="center"
                 android:id="@+id/textTiempoRealizacion"
+                android:layout_below="@+id/textOpcionTamanyoTablero"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
@@ -101,7 +139,45 @@
                 android:inputType="time"
                 android:textSize="14sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:id="@+id/textNumeroFallos"
+                android:layout_below="@id/editTextTiempoRealizacion"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:text="@string/fallos_permitidos" />
 
+            <SeekBar
+                android:id="@+id/seekbar_fallos_permitidos"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textNumeroFallos"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:indeterminate="false"
+                android:tickMark="@drawable/tickbar_enabled"
+                android:progressDrawable="@drawable/seekbar_multichoice"
+                android:thumb="@drawable/thumb"/>
+
+            <TextView
+                android:id="@+id/numero_fallos_permitidos"
+                android:layout_below="@id/seekbar_fallos_permitidos"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="@string/_25_matriz"
+                android:textSize="20sp"
+                android:textColor="@color/dark_blue"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_height="wrap_content">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,7 +186,7 @@
                 android:layout_marginStart="15dp"
                 android:textAlignment="center"
                 android:id="@+id/textFormato"
-                android:layout_below="@+id/editTextTiempoRealizacion"
+                android:layout_below="@+id/numero_fallos_permitidos"
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
@@ -134,15 +210,21 @@
 
     </androidx.core.widget.NestedScrollView>
 
-
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_grey"
+        android:layout_above="@id/buttonComenzar"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal" />
 
     <Button
         android:id="@+id/buttonComenzar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/nestedScrollModrianParejas"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/button"
         android:fontFamily="@font/poppins_bold"
         android:fontWeight="400"

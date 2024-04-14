@@ -206,7 +206,7 @@ class MondrianColoresGrid : AppCompatActivity() {
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
     }
 
-    private fun ajustarTableroPequeño() { 
+    private fun ajustarTableroPequeño() {
         val numeroCasillasEliminar = 12
         for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
             botonColor = colores.getChildAt(i) as ImageButton
