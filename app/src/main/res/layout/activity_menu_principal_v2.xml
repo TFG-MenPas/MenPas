@@ -22,8 +22,8 @@
         android:layout_alignBottom="@+id/banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
-        android:layout_marginBottom="30dp"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="40dp"
         android:src="@drawable/logo" />
 
@@ -43,7 +43,7 @@
         android:layout_marginStart="30dp"
         android:textSize="20sp"
         />
-    <!-- Hasta 18 en tlf fran caracteres caben en el nombre -->
+
     <TextView
         android:id="@+id/textNombreUsuario"
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         android:layout_toStartOf="@+id/art_banner"
         android:fontFamily="@font/poppins_bold_italic"
         android:maxLines="1"
-        android:text="Miguel157000"
+        android:text="NombreUsuario"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
