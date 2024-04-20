@@ -10,6 +10,7 @@ import android.os.Vibrator
 import android.view.View
 import android.widget.Chronometer
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -35,6 +36,8 @@ class CuestionarioD2 : AppCompatActivity() {
     private val NUMERO_D2 = 47
     private val SECS_FILA_D2 = 20000
     private var d2CerradoAntesDeFinalizar = false
+    private var azulClaro = 0
+    private var azulOscuro = 0
     companion object {
         lateinit var myOnClickListener: myOnClickListener
     }
@@ -53,6 +56,9 @@ class CuestionarioD2 : AppCompatActivity() {
             vibrator.cancel()
             finish()
         }
+
+        azulClaro = getColor(R.color.light_blue)
+        azulOscuro = getColor(R.color.dark_blue)
 
         myOnClickListener = myOnClickListener(this)
         listaD2 = ArrayList()
@@ -81,6 +87,9 @@ class CuestionarioD2 : AppCompatActivity() {
 
             override fun onFinish() {
                 if(!d2CerradoAntesDeFinalizar){
+                    totalAciertosPorFila()
+                    erroresComisionPorFila()
+                    erroresOmisionPorFila()
                     if(contadorFilas == NUMERO_FILAS_D2){
                         showToast("Cuestionario D2 finalizado")
                         crono.stop()
@@ -99,6 +108,51 @@ class CuestionarioD2 : AppCompatActivity() {
 
         }.start()
     }
+
+    private fun erroresOmisionPorFila() {
+
+    }
+
+    private fun erroresComisionPorFila() {
+
+    }
+
+    private fun totalAciertosPorFila() {
+        var totalAciertosPorFila = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2RayaArriba : TextView = d2.findViewById(R.id.textRayaArriba)
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            val textD2RayaAbajo : TextView = d2.findViewById(R.id.textRayaAbajo)
+            if(textD2Letra.currentTextColor == azulOscuro){
+                continue
+            }
+            if (textD2Letra.text != "d"){
+                continue
+            }
+            if(sumaRayas(textD2RayaArriba,textD2RayaAbajo) == 2){
+                totalAciertosPorFila++
+            }
+        }
+        showToast("Aciertos: $totalAciertosPorFila")
+    }
+
+    private fun sumaRayas(textD2RayaArriba: TextView, textD2RayaAbajo: TextView): Int {
+        val rayasArriba = when(textD2RayaArriba.text){
+            "''" -> 2
+            "'" -> 1
+            "" -> 0
+            else -> 0
+        }
+        val rayasAbajo = when(textD2RayaAbajo.text){
+            "''" -> 2
+            "'" -> 1
+            "" -> 0
+            else -> 0
+        }
+        return rayasArriba + rayasAbajo
+    }
+
     private fun rellenarFilaD2(){
         var rayaArriba : String
         var letra : String
