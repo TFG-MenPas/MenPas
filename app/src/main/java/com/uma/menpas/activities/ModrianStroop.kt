@@ -25,6 +25,8 @@ class ModrianStroop : AppCompatActivity() {
     private lateinit var unchecked : Drawable
     private lateinit var backunChecked : Drawable
     private var btnFondoChecked = false
+    lateinit var numeroFallosPermitidos: TextView
+    private lateinit var textOpcionTamanyoTablero: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_stroop)
@@ -36,9 +38,50 @@ class ModrianStroop : AppCompatActivity() {
         botonCerrarCuestionario.setOnClickListener {
             finish()
         }
-
+        InicializarSeekbarFallosPermitidos()
+        seekbarTamanyoTablero()
         barraModalidad()
         botones()
+    }
+
+    private fun InicializarSeekbarFallosPermitidos() {
+        numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
+        val seekbarFallosPermitidos: SeekBar = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbarFallosPermitidos.progress = 0
+        seekbarFallosPermitidos.max = 3
+
+        val respuestas = arrayOf("25% Matriz", "50% Matriz", "75% Matriz", "Sin control de fallos")
+
+        seekbarFallosPermitidos.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                    numeroFallosPermitidos.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+    }
+
+    private fun seekbarTamanyoTablero() {
+        textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
+        val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progress = 0
+        seekbarTamanyoTablero.max = 2
+
+        val respuestas = arrayOf("Pequeño", "Mediano", "Grande")
+
+        seekbarTamanyoTablero.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textOpcionTamanyoTablero.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
     }
 
     override fun onResume() {
@@ -91,6 +134,7 @@ class ModrianStroop : AppCompatActivity() {
         colores[findViewById(R.id.button_fucsia)] = true
         colores[findViewById(R.id.button_naranja)] = true
         colores[findViewById(R.id.button_cyan)] = true
+        colores[findViewById(R.id.button_blanco)] = true
 
         colores.entries.forEach{
                 color ->
@@ -146,6 +190,8 @@ class ModrianStroop : AppCompatActivity() {
                 intent.putExtra("arrayEliminar", arrayEliminar)
                 intent.putExtra("tipoStroop", textOpcion.text)
                 intent.putExtra("fondo", btnFondoChecked)
+                intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
+                intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")

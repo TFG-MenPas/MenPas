@@ -31,7 +31,7 @@ class MondrianColoresGrid : AppCompatActivity() {
     private var limiteFallos: Int = 0
     private var fallos: Int = 0
     private var cerrado: Boolean = false
-    lateinit var tamanyoTablero : String
+    private lateinit var tamanyoTablero : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -46,8 +46,7 @@ class ModrianParejasGrid : AppCompatActivity() {
         val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
-        ajustarTablero()
-
+        val numeroCasillasEliminar = ajustarTablero()
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
             cerrado = true
@@ -56,26 +55,17 @@ class ModrianParejasGrid : AppCompatActivity() {
 
         fotoSeleccionada = ImageButton(this)
         fotoSeleccionada.contentDescription = "-1"
-        fotosArray = generarFotosArray(fotos.childCount)
 
-        for (i in 0 until fotos.childCount){
+        for (i in 0 until fotos.childCount - numeroCasillasEliminar){
             botonFoto = fotos.getChildAt(i) as ImageButton
             val indiceFotoAleatoria = (0 until fotosArray.size).random()
-            val fotoAleatoria = fotosArray.get(indiceFotoAleatoria)
+            val fotoAleatoria = fotosArray[indiceFotoAleatoria]
             fotosArray.removeAt(indiceFotoAleatoria)
             botonFoto.contentDescription = fotoAleatoria.toString()
             botonFoto.isEnabled = false
             botonFoto.isActivated = false
-            botonFoto.setOnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    botonFoto.performClick()
-                } else {
-                    // Do nothing when Focus is not on the EditText
-                }
-            }
             botonFoto.setOnClickListener {
                 val btnFoto = fotos.focusedChild as ImageButton
-                btnFoto.requestFocus()
                 btnFoto.isActivated = false
                 btnFoto.isEnabled = false
 
@@ -126,7 +116,13 @@ class ModrianParejasGrid : AppCompatActivity() {
                     }
 
                 }, 200)
-
+            }
+            botonFoto.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonFoto.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
             }
         }
 
@@ -151,15 +147,22 @@ class ModrianParejasGrid : AppCompatActivity() {
 
     }
 
-    private fun ajustarTablero() {
-        when (tamanyoTablero){
-            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount, numeroFallosPermitidos) //Tablero por defecto
+    private fun ajustarTablero(): Int {
+        return when (tamanyoTablero){
+            "Grande" ->  ajustarTableroGrande()
             "Mediano" -> ajustarTableroMediano()
             "Pequeño" -> ajustarTableroPequeño()
+            else -> 0
         }
     }
 
-    private fun ajustarTableroMediano() {
+    private fun ajustarTableroGrande(): Int {
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount, numeroFallosPermitidos)
+        fotosArray = generarFotosArray(fotos.childCount)
+        return 0
+    }
+
+    private fun ajustarTableroMediano(): Int {
         val numeroCasillasEliminar = 4
         for (i in fotos.childCount - 1  downTo  fotos.childCount - numeroCasillasEliminar){
             botonFoto = fotos.getChildAt(i) as ImageButton
@@ -168,9 +171,11 @@ class ModrianParejasGrid : AppCompatActivity() {
             botonFoto.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        fotosArray = generarFotosArray(fotos.childCount - numeroCasillasEliminar)
+        return numeroCasillasEliminar
     }
 
-    private fun ajustarTableroPequeño() {
+    private fun ajustarTableroPequeño(): Int {
         val numeroCasillasEliminar = 6
         for (i in fotos.childCount - 1  downTo  fotos.childCount - numeroCasillasEliminar){
             botonFoto = fotos.getChildAt(i) as ImageButton
@@ -179,6 +184,8 @@ class ModrianParejasGrid : AppCompatActivity() {
             botonFoto.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        fotosArray = generarFotosArray(fotos.childCount - numeroCasillasEliminar)
+        return numeroCasillasEliminar
     }
 
     private fun destaparFoto(btnFoto: ImageButton) {

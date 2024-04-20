@@ -17,6 +17,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.utils.Fallos
 import java.util.concurrent.TimeUnit
 
 class ModrianStroopGrid : AppCompatActivity() {
@@ -26,6 +27,12 @@ class ModrianStroopGrid : AppCompatActivity() {
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
+    lateinit var botonCerrar : ImageButton
+    private lateinit var numeroFallosPermitidos: String
+    private var limiteFallos: Int = 0
+    private var fallos: Int = 0
+    private var cerrado: Boolean = false
+    private lateinit var tamanyoTablero : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +46,17 @@ class ModrianStroopGrid : AppCompatActivity() {
         val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores") as ArrayList<String>
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar") as ArrayList<String>
+        numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
+        tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
         val tipoStroop = intent.getCharSequenceExtra("tipoStroop")
         val fondo = intent.getBooleanExtra("fondo", false)
+        ajustarTablero()
+
+        botonCerrar = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrar.setOnClickListener{
+            cerrado = true
+            finish()
+        }
 
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as Button
@@ -58,6 +74,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                 "fucsia" -> R.color.fucsia
                 "naranja" -> R.color.naranja
                 "cyan" -> R.color.cyan
+                "blanco" -> R.color.blanco
                 else -> R.color.black
             }
             botonColor.contentDescription = colorAleatorio
@@ -103,6 +120,11 @@ class ModrianStroopGrid : AppCompatActivity() {
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 colorSeleccion.startAnimation(clk_rotate)
+                                fallos++
+                                if(fallos > limiteFallos){
+                                    cerrado = true
+                                    finish()
+                                }
                             }
                         }
                     }
@@ -130,6 +152,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                         "fucsia" -> view.findViewById(R.id.color23)
                         "naranja" -> view.findViewById(R.id.color21)
                         "cyan" -> view.findViewById(R.id.color22)
+                        "blanco" -> view.findViewById(R.id.color40)
                         else -> view.findViewById(R.id.imageButtonCerrarDesplegable)
                     }
                     gridColoresSeleccion.removeViewAt(gridColoresSeleccion.indexOfChild(imageButtonColor))
@@ -147,27 +170,60 @@ class ModrianStroopGrid : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                activarRealizacionCuestionario()
-                textTiempo.text = getString(R.string.tiempo_de_realizacion)
-                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                if(!cerrado){
+                    activarRealizacionCuestionario()
+                    textTiempo.text = getString(R.string.tiempo_de_realizacion)
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
 
-                object : CountDownTimer(longTiempoRealizacion, 1000){
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        actualizarCronometro(millisUntilFinished)
-                    }
+                    object : CountDownTimer(longTiempoRealizacion, 1000){
+                        @SuppressLint("SetTextI18n")
+                        override fun onTick(millisUntilFinished: Long) {
+                            actualizarCronometro(millisUntilFinished)
+                        }
 
-                    override fun onFinish() {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
-                        finish()
-                    }
-
-                }.start()
+                        override fun onFinish() {
+                            if (!cerrado){
+                                cerrado = true
+                                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                                finish()
+                            }
+                        }
+                    }.start()
+                }
             }
-
         }.start()
     }
-    
+
+    private fun ajustarTablero() {
+        when (tamanyoTablero){
+            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Mediano" -> ajustarTableroMediano()
+            "Pequeño" -> ajustarTableroPequeño()
+        }
+    }
+
+    private fun ajustarTableroPequeño() {
+        val numeroCasillasEliminar = 12
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as Button
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
+    private fun ajustarTableroMediano() {
+        val numeroCasillasEliminar = 8
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as Button
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
     private fun setDrawableColor(colorSeleccion: View) {
         val color = when(colorSeleccion.contentDescription){
             "rojo" -> R.color.rojo
@@ -182,6 +238,7 @@ class ModrianStroopGrid : AppCompatActivity() {
             "fucsia" -> R.color.fucsia
             "naranja" -> R.color.naranja
             "cyan" -> R.color.cyan
+            "blanco" -> R.color.blanco
             else -> R.color.black
         }
         val drawable = colorSeleccion.background.mutate() as GradientDrawable
@@ -231,6 +288,7 @@ class ModrianStroopGrid : AppCompatActivity() {
             "fucsia" -> R.color.fucsia
             "naranja" -> R.color.naranja
             "cyan" -> R.color.cyan
+            "blanco" -> R.color.blanco
             else -> R.color.black
         }
         return color
