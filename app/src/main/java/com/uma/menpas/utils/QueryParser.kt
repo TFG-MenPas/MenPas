@@ -8,12 +8,27 @@ class QueryParser {
     fun parse(jsonResourceName: String, respuestasUsuario: Map<String,String>): String {
         return when (jsonResourceName) {
             "preguntas_csai2" -> parseCSAI2(respuestasUsuario)
+            "preguntas_scat" -> parseSCAT(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
     }
 
+    private fun parseSCAT(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO scat VALUES(" + respuestasUsuario["ID_Scat"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Resultado_Scat"] + "," + respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["Item1"] + "," + respuestasUsuario["Item2"] + "," +
+                respuestasUsuario["Item3"] + "," + respuestasUsuario["Item4"] + "," +
+                respuestasUsuario["Item5"] + "," + respuestasUsuario["Item6"] + "," +
+                respuestasUsuario["Item7"] + "," + respuestasUsuario["Item8"] + "," +
+                respuestasUsuario["Item9"] + "," + respuestasUsuario["Item10"] + "," +
+                respuestasUsuario["Item11"] + "," + respuestasUsuario["Item12"] + "," +
+                respuestasUsuario["Item13"] + "," + respuestasUsuario["Item14"] + "," +
+                respuestasUsuario["Item15"] + "," + respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Tiempo"] + ")"
+    }
+
     private fun parseCSAI2(respuestasUsuario: Map<String, String>): String {
-        return "INSERT INTO csai2 VALUES(" + respuestasUsuario["id"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+        return "INSERT INTO csai2 VALUES(" + respuestasUsuario["ID_CSAI2"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
                 respuestasUsuario["Cognitiva"] + "," + respuestasUsuario["Somatica"] + "," +
                 respuestasUsuario["Autoconfianza"] + "," + respuestasUsuario["Fecha"] + "," +
                 respuestasUsuario["Item1"] + "," + respuestasUsuario["Item2"] + "," +
