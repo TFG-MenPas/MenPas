@@ -13,8 +13,7 @@ class QueryParser {
     }
 
     private fun parseCSAI2(respuestasUsuario: Map<String, String>): String {
-
-        return "INSERT INTO csai2 VALUES(" + respuestasUsuario["Nombre_Usuario"] + "," +
+        return "INSERT INTO csai2 VALUES(" + respuestasUsuario["id"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
                 respuestasUsuario["Cognitiva"] + "," + respuestasUsuario["Somatica"] + "," +
                 respuestasUsuario["Autoconfianza"] + "," + respuestasUsuario["Fecha"] + "," +
                 respuestasUsuario["Item1"] + "," + respuestasUsuario["Item2"] + "," +
