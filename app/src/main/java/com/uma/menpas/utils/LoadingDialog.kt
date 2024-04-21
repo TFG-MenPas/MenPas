@@ -1,10 +1,12 @@
 package com.uma.menpas.utils
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
@@ -33,8 +35,17 @@ class LoadingDialog(context: Context) : Dialog(context) {
         dialog.show()
     }
 
-    override fun dismiss() {
-        dialog.dismiss()
+    fun dismiss(seconds: Long) {
+        object : CountDownTimer(seconds*1000, 1000){
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+            }
+
+            override fun onFinish() {
+                dialog.dismiss()
+            }
+
+        }.start()
     }
 
 }
