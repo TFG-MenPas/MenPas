@@ -1,5 +1,6 @@
 package com.uma.menpas.activities
 
+import android.app.DownloadManager.Query
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,9 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import kotlin.collections.ArrayList
+import com.uma.menpas.utils.QueryParser
+import com.uma.menpas.utils.CalculoResultados
+import com.uma.menpas.services.CuestionarioService
 
 class CuestionarioDinamico : AppCompatActivity() {
     lateinit var botonAnterior : RelativeLayout
@@ -60,7 +64,7 @@ class CuestionarioDinamico : AppCompatActivity() {
             val tipoPregunta = preguntas.getJSONObject(indicePregunta).getString("tipo")
             guardarRespuesta(tipoPregunta)
             if(indicePregunta == preguntas.length() - 1){
-                showToast("Cuestionario Finalizado")
+                this.finalizarCuestionario()
             }else{
                 indicePregunta++
                 rellenarPregunta(preguntas)
@@ -78,6 +82,17 @@ class CuestionarioDinamico : AppCompatActivity() {
                 rellenarPregunta(preguntas)
             }
         }
+    }
+
+    private fun finalizarCuestionario() {
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario))
+        try {
+            CuestionarioService().insertarCuestionario(query)
+            showToast("Éxito en la petición")
+        } catch (e: Error) {
+            showToast("Algo salió mal realizando la petición")
+        }
+        //Aquí iría el intent al activity de resultados
     }
 
     private fun guardarRespuesta(tipoPregunta: String) {
