@@ -82,6 +82,9 @@ class CuestionarioDinamico : AppCompatActivity() {
                 rellenarPregunta(preguntas)
             }
         }
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
     }
 
     private fun finalizarCuestionario() {
