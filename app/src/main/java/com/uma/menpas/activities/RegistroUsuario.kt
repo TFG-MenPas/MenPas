@@ -157,6 +157,7 @@ class RegistroUsuario : AppCompatActivity() {
             val horasSemanales = horasSemanaDeporteSpinner.selectedItem.toString()
             val profesion = profesionSpinner.selectedItem.toString()
             val terminoSeleccionado = checkBoxterminos.isChecked
+            val estaSuscrito = checkBoxSuscripcion.isChecked
 
 
             val resultadoComprobacion = registroController.comprobarDatos(
@@ -224,7 +225,8 @@ class RegistroUsuario : AppCompatActivity() {
                     estadoCivil,
                     nivelEstudios,
                     horasSemanales,
-                    profesion
+                    profesion,
+                    estaSuscrito
                 )
 
                 Toast.makeText(this, "Registro realizado con éxito", Toast.LENGTH_SHORT)

@@ -25,5 +25,6 @@ data class Usuario(
     var horasSemanales: Int,
     var estudios: String,
     var profesion: String,
-    var aComienzoDeporte: Int
+    var aComienzoDeporte: Int,
+    var infoEmail: Boolean
 )

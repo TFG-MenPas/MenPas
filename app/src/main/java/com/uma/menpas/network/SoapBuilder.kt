@@ -9,6 +9,14 @@ class SoapBuilder {
         fun createSoapObject(operationName: String): SoapObject {
             return SoapObject(NAMESPACE, operationName)
         }
+
+        fun createSoapObject(namespace: String, operationName: String): SoapObject {
+            return SoapObject(namespace, operationName)
+        }
+
+        fun soapObjectABoolean(result: SoapObject): Boolean {
+            return result.getPropertyAsString(0).toBoolean()
+        }
     }
 }
 

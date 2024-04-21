@@ -18,7 +18,7 @@ import com.uma.menpas.utils.SnackBarPersonalizada
 import java.time.LocalDateTime
 
 class IniciarSesion : AppCompatActivity() {
-    val inicioSesionController = InicioSesionController()
+    private val inicioSesionController = InicioSesionController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
@@ -31,7 +31,10 @@ class IniciarSesion : AppCompatActivity() {
         val editTextUsuario = findViewById<EditText>(R.id.editUsuario)
         val editTextContrasenya= findViewById<EditText>(R.id.editContrasenya)
 
-        if(inicioSesionController.getUsuarioGuardado(this) != null){
+        val usuarioGuardado = inicioSesionController.getUsuarioGuardado(this)
+        if(usuarioGuardado != null){
+            val usuarioActualizado = inicioSesionController.comprobarUsuario(usuarioGuardado.nombreUsuario, usuarioGuardado.contrasenya)
+            inicioSesionController.guardarUsuario(this, usuarioActualizado!!)
             intent = Intent(this, MenuPrincipal::class.java)
             startActivity(intent)
         }

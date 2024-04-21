@@ -19,6 +19,7 @@ class DatosPersonales : AppCompatActivity() {
     lateinit var textNombreUsuario: TextView
     lateinit var textNombre: TextView
     lateinit var textApellidos: TextView
+    lateinit var checkBoxSuscripcion: CheckBox
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datos_personales)
@@ -26,9 +27,9 @@ class DatosPersonales : AppCompatActivity() {
         val botonEditarNombreDeUsuario = findViewById<ImageButton>(R.id.botonEditarNombreDeUsuario)
         val botonEditarNombre = findViewById<ImageButton>(R.id.botonEditarNombre)
         val botonEditarApellidos = findViewById<ImageButton>(R.id.botonEditarApellidos)
-        val checkBoxSuscripcion = findViewById<CheckBox>(R.id.checkBoxSuscripcion)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+        checkBoxSuscripcion = findViewById<CheckBox>(R.id.checkBoxSuscripcion)
         textNombreUsuario = findViewById<TextView>(R.id.nombreDeUsuarioActual)
         textNombre = findViewById<TextView>(R.id.nombreActual)
         textApellidos = findViewById<TextView>(R.id.apellidosActual)
@@ -50,11 +51,24 @@ class DatosPersonales : AppCompatActivity() {
 
         checkBoxSuscripcion.setOnClickListener {
             if (checkBoxSuscripcion.isChecked) {
-                Toast.makeText(applicationContext, "Suscripción activada", Toast.LENGTH_SHORT)
-                    .show()
+
+                if(usuarioController.editarSuscripcionCorreo(this, true)){
+                    Toast.makeText(applicationContext, "Suscripción activada", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    checkBoxSuscripcion.isChecked = false
+                    Toast.makeText(applicationContext, "Error al suscribirse", Toast.LENGTH_SHORT)
+                        .show()
+                }
             } else {
-                Toast.makeText(applicationContext, "Suscripción desactivada", Toast.LENGTH_SHORT)
-                    .show()
+                if (usuarioController.editarSuscripcionCorreo(this, false)){
+                    Toast.makeText(applicationContext, "Suscripción desactivada", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    checkBoxSuscripcion.isChecked = true
+                    Toast.makeText(applicationContext, "Error al desuscribirse", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
     }
@@ -69,7 +83,7 @@ class DatosPersonales : AppCompatActivity() {
             .setNegativeButton("Cancelar", null)
             .setView(editTextDialog)
 
-        var mAlertDialog = alertBuilder.create()
+        val mAlertDialog = alertBuilder.create()
 
         mAlertDialog.show()
 
@@ -91,6 +105,7 @@ class DatosPersonales : AppCompatActivity() {
         textNombreUsuario.text = usuario.nombreUsuario
         textNombre.text = usuario.nombre
         textApellidos.text = usuario.apellidos
+        checkBoxSuscripcion.isChecked = usuario.infoEmail
     }
 
 }

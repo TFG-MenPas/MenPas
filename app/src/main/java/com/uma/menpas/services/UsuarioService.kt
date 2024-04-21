@@ -19,6 +19,7 @@ class UsuarioService(){
 
     fun registrarUsuario(usuario: Usuario): Usuario? {
         val request = SoapObject("http://tempuri.org/", "CrearUsuario")
+
         request.addProperty("userName", usuario.nombreUsuario)
         request.addProperty("clave", usuario.contrasenya)
         request.addProperty("nombre", usuario.nombre)
@@ -115,10 +116,10 @@ class UsuarioService(){
     }
 
     fun editarNombreDeUsuario(usuario: String, contrasenya: String, nuevoValor: String): Boolean {
-        val request = SoapBuilder.createSoapObject("updateUserName")
+        val request = SoapBuilder.createSoapObject("updateNombreUsuario")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
-        request.addProperty("newUserName", nuevoValor)
+        request.addProperty("newName", nuevoValor)
 
         val result = PeticionSOAP.enviarPeticion(request)
 
@@ -127,10 +128,10 @@ class UsuarioService(){
     }
 
     fun editarNombre(usuario: String?, contrasenya: String?, nuevoValor: String?): Boolean {
-        val request = SoapBuilder.createSoapObject("updateNombreUsuario")
+        val request = SoapBuilder.createSoapObject("updateUserName")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
-        request.addProperty("newName", nuevoValor)
+        request.addProperty("newUserName", nuevoValor)
 
         val result = PeticionSOAP.enviarPeticion(request)
 
@@ -150,7 +151,7 @@ class UsuarioService(){
     }
 
     fun editarSuscripcion(usuario: String, contrasenya: String, nuevoValor: Boolean): Boolean {
-        val request = SoapBuilder.createSoapObject("SuscripcionCorreoElectr%C3%B3nico")
+        val request = SoapBuilder.createSoapObject("SuscripcionCorreoElectrónico")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
         request.addProperty("activa", nuevoValor)
@@ -158,6 +159,48 @@ class UsuarioService(){
         val result = PeticionSOAP.enviarPeticion(request)
 
         return AdaptadorUsuario.soapObjectABoolean(result)
+    }
+
+    fun editarUsuario(usuarioAntiguo: Usuario, usuarioActualizado: Usuario): Boolean {
+        val request = SoapBuilder.createSoapObject("updateUser")
+
+        val oldUser = buildUsuarioSoap("oldUser", usuarioAntiguo)
+        val newUser = buildUsuarioSoap("newUser", usuarioActualizado)
+
+        request.addProperty("oldUser", oldUser)
+        request.addProperty("newUser", newUser)
+
+        val result = PeticionSOAP.enviarPeticion(request)
+
+        return AdaptadorUsuario.soapObjectABoolean(result)
+    }
+
+
+    private fun buildUsuarioSoap(namespace: String, usuario: Usuario): SoapObject {
+        val request = SoapBuilder.createSoapObject(namespace)
+
+        request.addProperty("Nombre_Usuario", usuario.nombreUsuario)
+        request.addProperty("Contraseña", usuario.contrasenya)
+        request.addProperty("Nombre", usuario.nombre)
+        request.addProperty("Apellidos", usuario.apellidos)
+        request.addProperty("Edad", usuario.edad)
+        request.addProperty("Telefono", "usuario.telefono")
+        request.addProperty("Dni", "usuario.dni")
+        request.addProperty("Sexo", usuario.sexo)
+        request.addProperty("Fecha", usuario.fechaRegistro)
+        request.addProperty("Perfil", usuario.perfil)
+        request.addProperty("Correo", usuario.correo)
+        request.addProperty("Deporte_Practicado", usuario.deportePracticado)
+        request.addProperty("Grupo", usuario.grupo)
+        request.addProperty("Nacionalidad", usuario.nacionalidad)
+        request.addProperty("Estado_Civil", usuario.estadoCivil)
+        request.addProperty("HorasSemanales", usuario.horasSemanales)
+        request.addProperty("Estudios", usuario.estudios)
+        request.addProperty("Profesion", usuario.profesion)
+        request.addProperty("aComienzoDeporte", usuario.aComienzoDeporte)
+        request.addProperty("infoEmail", usuario.infoEmail)
+
+        return request
     }
 
 

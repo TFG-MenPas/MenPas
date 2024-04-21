@@ -2,12 +2,16 @@ package com.uma.menpas.network
 
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.util.Log
 import org.ksoap2.SoapEnvelope
+import org.ksoap2.SoapFault12
 import org.ksoap2.serialization.SoapObject
 import org.ksoap2.serialization.SoapSerializationEnvelope
 import org.ksoap2.transport.HttpTransportSE
+import java.util.logging.Logger
 
 private class ConexionSOAP {
+
     companion object {
         fun enviarPeticion(request: SoapObject): SoapObject {
             val SOAP_ACTION = "${request.namespace}${request.name}"
@@ -26,6 +30,7 @@ private class ConexionSOAP {
 
                 result = envelope.bodyIn as SoapObject
             } catch (e: Exception) {
+                Log.e("ConexionSOAP", envelope.bodyIn.toString())
                 e.printStackTrace()
             }
             return result
