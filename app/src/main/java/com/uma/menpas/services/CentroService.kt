@@ -28,10 +28,11 @@ class CentroService() {
 
 
         fun crearCentro(nuevoCentro: Centro): Boolean {
-            val request = SoapBuilder.createSoapObject("AddCentro")
+            //val request = SoapBuilder.createSoapObject("AddCentro")
 
-            val centro = SoapBuilder.createSoapObject("c","c")
+            //val centro = SoapBuilder.createSoapObject("c","")
 
+            /*
             //Se ha puesto como ID el nombre del centro, si ya existe, da error
             centro.addProperty("ID_Centro", "nuevoCentro.nombreCentro")
             centro.addProperty("Nombre_Usuario1", nuevoCentro.nombreUsuario1)
@@ -42,8 +43,39 @@ class CentroService() {
             centro.addProperty("Direccion", nuevoCentro.direccion)
             centro.addProperty("Telefono", nuevoCentro.telefono)
             centro.addProperty("Codigo_Postal", nuevoCentro.codigoPostal)
+            */
+
+            val request = SoapBuilder.createSoapObject("AddCentro")
+            val centro = SoapBuilder.createSoapObject("c", "c")
+
+
+            centro.addProperty("ID_Centro", "string221122")
+            centro.addProperty("Nombre_Usuario1", "string")
+            centro.addProperty("Nombre_Centro", "string")
+            centro.addProperty("Localidad", "string")
+            centro.addProperty("Provincia", "string")
+            centro.addProperty("Pais", "string")
+            centro.addProperty("Direccion", "string")
+            centro.addProperty("Telefono", "string")
+            centro.addProperty("Codigo_Postal", "string")
 
             request.addSoapObject(centro)
+
+/*
+            centro.addProperty("ID_Centro", "string221122")
+            centro.addProperty("Nombre_Usuario1", "string")
+            centro.addProperty("Nombre_Centro", "string")
+            centro.addProperty("Localidad", "string")
+            centro.addProperty("Provincia", "string")
+            centro.addProperty("Pais", "string")
+            centro.addProperty("Direccion", "string")
+            centro.addProperty("Telefono", "string")
+            centro.addProperty("Codigo_Postal", "string")
+
+            request.addProperty("c", centro)
+            //request.addSoapObject(centro)
+
+ */
 
             val result = PeticionSOAP.enviarPeticion(request)
 

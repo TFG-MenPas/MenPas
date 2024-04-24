@@ -89,7 +89,14 @@ class DatosPersonales : AppCompatActivity() {
 
         val mBotonGuardar = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
         mBotonGuardar.setOnClickListener {
-            usuarioController.realizarActualizacion(this, opcion, editTextDialog.text.toString())
+            if(usuarioController.realizarActualizacion(this, opcion, editTextDialog.text.toString())) {
+                setDatosUsuario()
+                Toast.makeText(applicationContext, "Actualización realizada con éxito", Toast.LENGTH_SHORT)
+                    .show()
+            }else {
+                Toast.makeText(applicationContext, "Error al realizar la actualización", Toast.LENGTH_SHORT)
+                    .show()
+            }
             mAlertDialog.cancel()
         }
 

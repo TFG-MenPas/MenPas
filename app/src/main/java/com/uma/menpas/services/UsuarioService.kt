@@ -1,9 +1,11 @@
 package com.uma.menpas.services
 
+import android.content.Context
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.models.adapters.AdaptadorUsuario
 import com.uma.menpas.network.PeticionSOAP
 import com.uma.menpas.network.SoapBuilder
+import com.uma.menpas.room.UsuarioDB
 import org.ksoap2.serialization.SoapObject
 
 class UsuarioService(){
@@ -116,10 +118,10 @@ class UsuarioService(){
     }
 
     fun editarNombreDeUsuario(usuario: String, contrasenya: String, nuevoValor: String): Boolean {
-        val request = SoapBuilder.createSoapObject("updateNombreUsuario")
+        val request = SoapBuilder.createSoapObject("updateUserName")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
-        request.addProperty("newName", nuevoValor)
+        request.addProperty("newUserName", nuevoValor)
 
         val result = PeticionSOAP.enviarPeticion(request)
 
@@ -128,10 +130,10 @@ class UsuarioService(){
     }
 
     fun editarNombre(usuario: String?, contrasenya: String?, nuevoValor: String?): Boolean {
-        val request = SoapBuilder.createSoapObject("updateUserName")
+        val request = SoapBuilder.createSoapObject("updateNombreUsuario")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
-        request.addProperty("newUserName", nuevoValor)
+        request.addProperty("newName", nuevoValor)
 
         val result = PeticionSOAP.enviarPeticion(request)
 
@@ -161,6 +163,28 @@ class UsuarioService(){
         return AdaptadorUsuario.soapObjectABoolean(result)
     }
 
+    fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
+        var usuario = getUser(usuario, contrasenya)
+        usuario?.contrasenya = contrasenya
+        return usuario
+    }
+
+    fun guardarUsuarioEnBD(context: Context, usuario: Usuario){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.insertUsuario(usuario)
+    }
+
+    fun actualizarUsuarioEnBD(context: Context, usuario: Usuario){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.updateUsuario(usuario)
+    }
+
+    fun borrarUsuarioEnBD(context: Context){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.limpiarUsuario()
+    }
+
+    /*
     fun editarUsuario(usuarioAntiguo: Usuario, usuarioActualizado: Usuario): Boolean {
         val request = SoapBuilder.createSoapObject("updateUser")
 
@@ -174,7 +198,6 @@ class UsuarioService(){
 
         return AdaptadorUsuario.soapObjectABoolean(result)
     }
-
 
     private fun buildUsuarioSoap(namespace: String, usuario: Usuario): SoapObject {
         val request = SoapBuilder.createSoapObject(namespace)
@@ -202,6 +225,7 @@ class UsuarioService(){
 
         return request
     }
+    */
 
 
 }

@@ -27,7 +27,7 @@ private class ConexionSOAP {
             try {
                 val androidHttpTransport = HttpTransportSE(URL)
                 androidHttpTransport.call(SOAP_ACTION, envelope)
-
+                val response = envelope.response
                 result = envelope.bodyIn as SoapObject
             } catch (e: Exception) {
                 Log.e("ConexionSOAP", envelope.bodyIn.toString())

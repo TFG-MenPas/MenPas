@@ -29,7 +29,7 @@ class DudasSugerencias : AppCompatActivity() {
         BarraNavegacion(barraNavegacionInferior, this)
 
         buttonEnviar.setOnClickListener {
-            if (emailController.enviarFormulario(editNombre.text.toString(),
+            if (emailController.enviarDudaSugerencia(editNombre.text.toString(),
                     editCorreo.text.toString(),
                     editMensaje.text.toString(),
                     editAsunto.text.toString())) {

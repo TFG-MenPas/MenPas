@@ -6,7 +6,6 @@ import java.time.LocalDateTime
 
 @Entity
 data class Usuario(
-    @PrimaryKey(autoGenerate = false)
     var nombreUsuario: String,
     var contrasenya: String,
     var nombre: String,
@@ -17,6 +16,7 @@ data class Usuario(
     var sexo: String,
     var fechaRegistro: String,
     var perfil: String,
+    @PrimaryKey(autoGenerate = false)
     var correo: String,
     var deportePracticado: String,
     var grupo: String,
