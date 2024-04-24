@@ -9,8 +9,52 @@ class QueryParser {
         return when (jsonResourceName) {
             "preguntas_csai2" -> parseCSAI2(respuestasUsuario)
             "preguntas_scat" -> parseSCAT(respuestasUsuario)
+            "preguntas_acsi_28" -> parseACSI28(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseACSI28(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO ACSI_28 VALUES(" + respuestasUsuario["Id_ACSI_28"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Rendimiento"] + "," +
+                respuestasUsuario["Ausencia"] + "," +
+                respuestasUsuario["Confrontacion"] + "," +
+                respuestasUsuario["Concentracion"] + "," +
+                respuestasUsuario["Formulacion"] + "," +
+                respuestasUsuario["Confianza"] + "," +
+                respuestasUsuario["Capacidad"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," +
+                respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," +
+                respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," +
+                respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," +
+                respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," +
+                respuestasUsuario["n11"] + "," +
+                respuestasUsuario["n12"] + "," +
+                respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," +
+                respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," +
+                respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," +
+                respuestasUsuario["n19"] + "," +
+                respuestasUsuario["n20"] + "," +
+                respuestasUsuario["n21"] + "," +
+                respuestasUsuario["n22"] + "," +
+                respuestasUsuario["n23"] + "," +
+                respuestasUsuario["n24"] + "," +
+                respuestasUsuario["n25"] + "," +
+                respuestasUsuario["n26"] + "," +
+                respuestasUsuario["n27"] + "," +
+                respuestasUsuario["n28"] + ")"
     }
 
     private fun parseSCAT(respuestasUsuario: Map<String, String>): String {

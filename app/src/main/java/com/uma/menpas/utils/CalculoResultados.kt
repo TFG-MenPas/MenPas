@@ -10,8 +10,52 @@ class CalculoResultados {
         return when (jsonResourceName) {
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario)
             "preguntas_scat" -> calculateSCAT(respuestasUsuario)
+            "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario)
             else -> calculateCSAI2(respuestasUsuario)
         }
+    }
+
+
+    private fun calculateACSI28(respuestasUsuario: ArrayList<String>): Map<String, String> {
+        val keys = listOf("Id_ACSI_28", "Nombre_Usuario", "Rendimiento", "Ausencia", "Confrontacion",
+        "Concentracion", "Formulacion", "Confianza", "Capacidad", "Tiempo", "Idioma", "Fecha",
+        "n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18",
+            "n19","n20","n21","n22","n23","n24","n25","n26","n27","n28")
+        val id = "10000"
+        val nombre_usuario = formattedString("manuel.agm")
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        val valores = mutableListOf(0,0,0,0,0,0,0)
+        val itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Casi nunca" -> "0"
+                "A veces" -> "1"
+                "A menudo" -> "2"
+                "Casi siempre de acuerdo" -> "3"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(6,18,22,28)) {
+                valores[0] += valor.toInt()
+            } else if (index in listOf(7,12,19,23)) {
+                valores[1] += valor.toInt()
+            }else if (index in listOf(5,17,21,24)) {
+                valores[2] += valor.toInt()
+            }else if (index in listOf(4,11,16,25)) {
+                valores[3] += valor.toInt()
+            }else if (index in listOf(1,8,13,20)) {
+                valores[4] += valor.toInt()
+            }else if (index in listOf(2,9,14,26)) {
+                valores[5] += valor.toInt()
+            }else if (index in listOf(3,10,15,27)) {
+                valores[6] += valor.toInt()
+            }
+        }
+        val valoresString = valores.map {it -> it.toString()}
+        val values = listOf(id,nombre_usuario, *valoresString.toTypedArray(), tiempo, idioma, fecha, *itemList.toTypedArray() )
+        return keys.zip(values).toMap()
     }
 
     private fun calculateSCAT(respuestasUsuario: ArrayList<String>): Map<String, String> {
