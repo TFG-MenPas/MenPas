@@ -1,11 +1,10 @@
 package com.uma.menpas.utils
 
-import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class QueryParser {
 
-    fun parse(jsonResourceName: String, respuestasUsuario: Map<String,String>): String {
+    fun parse(jsonResourceName: String, respuestasUsuario: Map<String, String>): String {
         return when (jsonResourceName) {
             "preguntas_csai2" -> parseCSAI2(respuestasUsuario)
             "preguntas_scat" -> parseSCAT(respuestasUsuario)

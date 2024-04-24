@@ -63,6 +63,7 @@ class IniciarSesion : AppCompatActivity() {
                 }else{
                     inicioSesionController.guardarUsuario(this, user)
                     intent = Intent(this, MenuPrincipal::class.java)
+                    intent.putExtra("usuario", entradaUsuario)
                     startActivity(intent)
                 }
             }else{

@@ -6,23 +6,23 @@ import java.util.Dictionary
 
 class CalculoResultados {
 
-    fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>): Map<String, String> {
+    fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         return when (jsonResourceName) {
-            "preguntas_csai2" -> calculateCSAI2(respuestasUsuario)
-            "preguntas_scat" -> calculateSCAT(respuestasUsuario)
-            "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario)
-            else -> calculateCSAI2(respuestasUsuario)
+            "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario)
+            "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
+            "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
+            else -> calculateCSAI2(respuestasUsuario, usuario)
         }
     }
 
 
-    private fun calculateACSI28(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateACSI28(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf("Id_ACSI_28", "Nombre_Usuario", "Rendimiento", "Ausencia", "Confrontacion",
         "Concentracion", "Formulacion", "Confianza", "Capacidad", "Tiempo", "Idioma", "Fecha",
         "n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18",
             "n19","n20","n21","n22","n23","n24","n25","n26","n27","n28")
         val id = "10000"
-        val nombre_usuario = formattedString("manuel.agm")
+        val nombre_usuario = formattedString(usuario)
         val tiempo = "100"
         val idioma = formattedString("es-es")
         val fecha = formattedString(obtenerFechaActual())
@@ -58,14 +58,14 @@ class CalculoResultados {
         return keys.zip(values).toMap()
     }
 
-    private fun calculateSCAT(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateSCAT(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "ID_Scat", "Nombre_Usuario", "Resultado_Scat", "Fecha", "Item1",
             "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9",
             "Item10", "Item11", "Item12", "Item13", "Item14", "Item15", "Idioma", "Tiempo"
         )
         val id = "10000"
-        val usuario = formattedString("manuel.agm")
+        val usuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -95,7 +95,7 @@ class CalculoResultados {
         return keys.zip(values).toMap()
     }
 
-    private fun calculateCSAI2(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateCSAI2(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "ID_CSAI2", "Nombre_Usuario", "Cognitiva", "Somatica", "Autoconfianza", "Fecha", "Item1", "Item2", "Item3", "Item4",
             "Item5", "Item6", "Item7", "Item8", "Item9", "Item10", "Item11", "Item12", "Item13", "Item14",
@@ -104,7 +104,7 @@ class CalculoResultados {
         )
 
         val id = listOf("10000")
-        val nombreUsuario = listOf("'" + "manuel.agm" + "'")
+        val nombreUsuario = listOf(formattedString(usuario))
 
         val values = mutableListOf(0, 0, 0)
         var i = 0
