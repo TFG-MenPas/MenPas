@@ -15,8 +15,33 @@ class QueryParser {
             "preguntas_af5" -> parseAF5(respuestasUsuario)
             "preguntas_bsq" -> parseBSQ(respuestasUsuario)
             "preguntas_caf" -> parseCAF(respuestasUsuario)
+            "preguntas_sf_36" -> parseSF36(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseSF36(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO SF36 VALUES(" + respuestasUsuario["Id_SF36"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["F_Fisica"] + "," + respuestasUsuario["Rol_Fisico"] + "," + respuestasUsuario["Dolor"] + "," +
+                respuestasUsuario["Salud"] + "," + respuestasUsuario["Vitalidad"] + "," + respuestasUsuario["FuncionS"] + "," +
+                respuestasUsuario["Rol_Emocional"] + "," + respuestasUsuario["Salud_Mental"] + "," +
+                respuestasUsuario["Cambio_Salud"] + "," +  respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," + respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," + respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," + respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," + respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," + respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," + respuestasUsuario["n11"] + "," + respuestasUsuario["n12"] + "," + respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," + respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," + respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," + respuestasUsuario["n19"] + "," +
+                respuestasUsuario["n20"] + "," + respuestasUsuario["n21"] + "," +
+                respuestasUsuario["n22"] + "," + respuestasUsuario["n23"] + "," +
+                respuestasUsuario["n24"] + "," + respuestasUsuario["n25"] + "," + respuestasUsuario["n26"] + "," + respuestasUsuario["n27"] + "," +
+                respuestasUsuario["n28"] + "," + respuestasUsuario["n29"] + "," + respuestasUsuario["n30"] + "," +
+                respuestasUsuario["n31"] + "," + respuestasUsuario["n32"] + "," + respuestasUsuario["n33"] + "," + respuestasUsuario["n34"] + "," +
+                respuestasUsuario["n35"] +  "," + respuestasUsuario["n36"] + ")"
     }
 
     private fun parseCAF(respuestasUsuario: Map<String, String>): String {
