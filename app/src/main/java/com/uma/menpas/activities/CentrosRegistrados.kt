@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.widget.Toast
 import android.widget.SearchView
 import android.view.View
@@ -19,6 +20,7 @@ import com.uma.menpas.R
 import com.uma.menpas.models.Centro
 import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.services.CentroService
+import com.uma.menpas.utils.LoadingDialog
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
@@ -71,6 +73,10 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
+
+        val loadingDialog = LoadingDialog(this)
+        loadingDialog.show()
+        loadingDialog.dismiss(3)
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {

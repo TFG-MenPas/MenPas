@@ -82,7 +82,6 @@ class MenuPrincipal : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        Toast.makeText(this, "Intent reciclado", Toast.LENGTH_SHORT).show()
     }
 
     fun abrirArea(id: Int) {
