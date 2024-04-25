@@ -89,10 +89,8 @@ class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, application
                     val btnRegCentro = view.findViewById<RelativeLayout>(R.id.RLRegCentro)
                     btnRegCentro.setOnClickListener {
                         intent = Intent(applicationContext, CentrosRegistrados::class.java)
-
                         val loadingDialog = LoadingDialog(applicationContext)
                         loadingDialog.show()
-
                         applicationContext.startActivity(intent)
                         dialog.dismiss()
                         loadingDialog.dismiss(3)
