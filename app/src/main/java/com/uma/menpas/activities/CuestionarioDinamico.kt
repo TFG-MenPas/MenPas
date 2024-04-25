@@ -1,6 +1,7 @@
 package com.uma.menpas.activities
 
 import android.app.DownloadManager.Query
+import android.content.Intent
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,8 @@ import kotlin.collections.ArrayList
 import com.uma.menpas.utils.QueryParser
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.ObtenerResultados
+import java.io.Serializable
 
 class CuestionarioDinamico : AppCompatActivity() {
     lateinit var botonAnterior : RelativeLayout
@@ -88,14 +91,31 @@ class CuestionarioDinamico : AppCompatActivity() {
     }
 
     private fun finalizarCuestionario() {
-        val query = QueryParser().parse(JSON_RESOURCE_NAME, CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario))
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
             CuestionarioService().insertarCuestionario(query)
             showToast("Éxito en la petición")
         } catch (e: Error) {
             showToast("Algo salió mal realizando la petición")
         }
-        //Aquí iría el intent al activity de resultados
+
+        //TODO: borrar cuando se terminen de implementar los resultados de todos los cuestionarios
+        for ((clave, valor) in calculosCuestionario) {
+            println("Clave: $clave, Valor: $valor")
+        }
+
+        val resultadosObtenidos: Map<String,String> = ObtenerResultados().obtenerResultados(JSON_RESOURCE_NAME,calculosCuestionario)
+        val bundle = Bundle().apply {
+            for ((key, value) in resultadosObtenidos) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, ResultadosCuestionario::class.java)
+        //intent.putExtra("nombreCuestionario",ObtenerResultados().obtenerNombreCuestionario(JSON_RESOURCE_NAME))
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 
     private fun guardarRespuesta(tipoPregunta: String) {

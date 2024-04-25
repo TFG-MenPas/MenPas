@@ -74,7 +74,7 @@ class CentrosRegistrados : AppCompatActivity() {
         })
         val loadingDialog = LoadingDialog(this)
         loadingDialog.show()
-        loadingDialog.dismiss(3)
+        loadingDialog.dismiss(2)
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {
