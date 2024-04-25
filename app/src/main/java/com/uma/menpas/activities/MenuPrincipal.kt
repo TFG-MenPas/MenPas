@@ -100,7 +100,7 @@ class MenuPrincipal : AppCompatActivity() {
             "ansiedad" -> intent.putExtra("area", "Ansiedad")
             "autoconcepto" -> intent.putExtra("area", "Autoconcepto")
             "atencion" -> intent.putExtra("area", "Atención")
-            "busqueda_talentos" -> intent.putExtra("area", "Búsqueda de talentos")
+            "busqueda_talentos" -> intent.putExtra("area", "Busqueda de talentos")
             "burnout" -> intent.putExtra("area", "Burnout")
             "dinamicagrupal" -> intent.putExtra("area", "Dinámica grupal")
             "calidadvida" -> intent.putExtra("area", "Calidad de vida")

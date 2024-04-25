@@ -3,6 +3,7 @@ package com.uma.menpas.utils
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Dictionary
+import com.uma.menpas.services.CuestionarioService
 
 class CalculoResultados {
 
@@ -11,18 +12,88 @@ class CalculoResultados {
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario)
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
             "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
+            "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false)
+            "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
     }
 
+    private fun calculateSTAI(respuestasUsuario: ArrayList<String>, usuario: String, isAE: Boolean): Map<String, String> {
+        val keys = listOf("ID_Stai", "Nombre_Usuario", "Stai_A_R", "Stai_A_E", "Centiles", "Fecha",
+        "Item1","Item2","Item3","Item4","Item5","Item6","Item7","Item8","Item9","Item10","Item11",
+        "Item12","Item13","Item14","Item15","Item16","Item17","Item18","Item19","Item20","CentilesA_E",
+        "CentilesA_R", "Idioma", "Tipo", "Tiempo")
+        val id = CuestionarioService().obtenerIdDisponible("stai", "ID_Stai")
+        val nombreUsuario = formattedString(usuario)
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val tipo = if (isAE) {formattedString("Stai_A_E")} else {formattedString("Stai_A_R")}
+        val tiempo = "100"
+        var staiAR = 0
+        var centilesStaiAR = 0
+        var staiAE = 0
+        var centilesStaiAE = 0
+        var itemList = mutableListOf<String>()
+        if (isAE) {
+            for ((index, respuesta) in respuestasUsuario.withIndex()) {
+                var valor = "0"
+                if (index in listOf(0, 1, 4, 7, 9, 10, 14, 15, 18, 19)) {
+                    valor = when (respuesta) {
+                        "Nada" -> "3"
+                        "Algo" -> "2"
+                        "Bastante" -> "1"
+                        "Mucho" -> "0"
+                        else -> "0"
+                    }
+                } else if (index in listOf(2, 3, 5, 6, 8, 11, 12, 13, 16, 17)) {
+                    valor = when (respuesta) {
+                        "Nada" -> "0"
+                        "Algo" -> "1"
+                        "Bastante" -> "2"
+                        "Mucho" -> "3"
+                        else -> "0"
+                    }
+                }
+                staiAE += valor.toInt()
+                itemList.add(valor)
+            }
+        } else {
+            for ((index, respuesta) in respuestasUsuario.withIndex()) {
+                var valor = "0"
+                if (index in listOf(0,5,6,9,12,15,18)) {
+                    valor = when (respuesta) {
+                        "Casi nunca" -> "3"
+                        "A veces" -> "2"
+                        "A menudo" -> "1"
+                        "Casi siempre" -> "0"
+                        else -> "0"
+                    }
+                } else if (index in listOf(1,2,3,4,7,8,10,11,13,14,16,17,19)) {
+                    valor = when (respuesta) {
+                        "Casi nunca" -> "0"
+                        "A veces" -> "1"
+                        "A menudo" -> "2"
+                        "Casi siempre" -> "3"
+                        else -> "0"
+                    }
+                }
+                staiAR += valor.toInt()
+                itemList.add(valor)
+            }
+        }
+        val values = listOf(id, nombreUsuario, staiAR.toString(), staiAE.toString(),
+            "50", fecha, *itemList.toTypedArray(), centilesStaiAE.toString(), centilesStaiAR.toString(),
+            idioma, tipo, tiempo)
+        return keys.zip(values).toMap()
+    }
 
     private fun calculateACSI28(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf("Id_ACSI_28", "Nombre_Usuario", "Rendimiento", "Ausencia", "Confrontacion",
         "Concentracion", "Formulacion", "Confianza", "Capacidad", "Tiempo", "Idioma", "Fecha",
         "n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18",
             "n19","n20","n21","n22","n23","n24","n25","n26","n27","n28")
-        val id = "10000"
-        val nombre_usuario = formattedString(usuario)
+        val id = CuestionarioService().obtenerIdDisponible("ACSI_28", "Id_ACSI_28")
+        val nombreUsuario = formattedString(usuario)
         val tiempo = "100"
         val idioma = formattedString("es-es")
         val fecha = formattedString(obtenerFechaActual())
@@ -54,7 +125,7 @@ class CalculoResultados {
             }
         }
         val valoresString = valores.map {it -> it.toString()}
-        val values = listOf(id,nombre_usuario, *valoresString.toTypedArray(), tiempo, idioma, fecha, *itemList.toTypedArray() )
+        val values = listOf(id, nombreUsuario, *valoresString.toTypedArray(), tiempo, idioma, fecha, *itemList.toTypedArray() )
         return keys.zip(values).toMap()
     }
 
@@ -103,7 +174,7 @@ class CalculoResultados {
             "Item25", "Item26", "Item27", "Idioma", "Tipo", "Tiempo"
         )
 
-        val id = listOf("10000")
+        val id = listOf(CuestionarioService().obtenerIdDisponible("csai2", "id_csai2"))
         val nombreUsuario = listOf(formattedString(usuario))
 
         val values = mutableListOf(0, 0, 0)
@@ -140,7 +211,7 @@ class CalculoResultados {
 
     private fun obtenerFechaActual(): String {
         val currentDateTime = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss a")
+        val formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss")
         return currentDateTime.format(formatter)
     }
 

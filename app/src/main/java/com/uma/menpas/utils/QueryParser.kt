@@ -9,8 +9,44 @@ class QueryParser {
             "preguntas_csai2" -> parseCSAI2(respuestasUsuario)
             "preguntas_scat" -> parseSCAT(respuestasUsuario)
             "preguntas_acsi_28" -> parseACSI28(respuestasUsuario)
+            "preguntas_stai_ar" -> parseSTAI(respuestasUsuario)
+            "preguntas_stai_ae" -> parseSTAI(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseSTAI(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO STAI VALUES(" + respuestasUsuario["ID_Stai"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Stai_A_R"] + "," +
+                respuestasUsuario["Stai_A_E"] + "," +
+                respuestasUsuario["Centiles"] + "," +
+                respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["Item1"] + "," +
+                respuestasUsuario["Item2"] + "," +
+                respuestasUsuario["Item3"] + "," +
+                respuestasUsuario["Item4"] + "," +
+                respuestasUsuario["Item5"] + "," +
+                respuestasUsuario["Item6"] + "," +
+                respuestasUsuario["Item7"] + "," +
+                respuestasUsuario["Item8"] + "," +
+                respuestasUsuario["Item9"] + "," +
+                respuestasUsuario["Item10"] + "," +
+                respuestasUsuario["Item11"] + "," +
+                respuestasUsuario["Item12"] + "," +
+                respuestasUsuario["Item13"] + "," +
+                respuestasUsuario["Item14"] + "," +
+                respuestasUsuario["Item15"] + "," +
+                respuestasUsuario["Item16"] + "," +
+                respuestasUsuario["Item17"] + "," +
+                respuestasUsuario["Item18"] + "," +
+                respuestasUsuario["Item19"] + "," +
+                respuestasUsuario["Item20"] + "," +
+                respuestasUsuario["CentilesA_E"] + "," +
+                respuestasUsuario["CentilesA_R"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Tipo"] + "," +
+                respuestasUsuario["Tiempo"] + ")"
     }
 
     private fun parseACSI28(respuestasUsuario: Map<String, String>): String {
