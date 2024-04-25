@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.GridLayout
@@ -15,15 +16,22 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.utils.Fallos
 import java.util.concurrent.TimeUnit
 
 class MondrianColoresGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
+    lateinit var botonCerrar : ImageButton
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
+    private lateinit var numeroFallosPermitidos: String
+    private var limiteFallos: Int = 0
+    private var fallos: Int = 0
+    private var cerrado: Boolean = false
+    private lateinit var tamanyoTablero : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +44,10 @@ class MondrianColoresGrid : AppCompatActivity() {
         val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
+        numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
+        tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
+        ajustarTablero()
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
             val colorAleatorio = arrayColores[(0 until arrayColores.size).random()]
@@ -53,6 +64,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                 "fucsia" -> R.color.fucsia
                 "naranja" -> R.color.naranja
                 "cyan" -> R.color.cyan
+                "blanco" -> R.color.blanco
                 else -> R.color.black
             }
             val drawable = botonColor.background.mutate() as GradientDrawable
@@ -60,6 +72,13 @@ class MondrianColoresGrid : AppCompatActivity() {
             botonColor.contentDescription = colorAleatorio
             botonColor.isEnabled = false
             botonColor.isActivated = false
+            botonColor.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonColor.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonColor.setOnClickListener {
                 val btnColor = colores.focusedChild as ImageButton
                 btnColor.requestFocus()
@@ -82,14 +101,18 @@ class MondrianColoresGrid : AppCompatActivity() {
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
-                                val drawable = btnColor.background.mutate() as GradientDrawable
-                                drawable.setColor(getColor(color))
+                                setDrawableColor(btnColor)
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
                                 colorSeleccion.startAnimation(clk_rotate)
+                                fallos++
+                                if(fallos > limiteFallos){
+                                    cerrado = true
+                                    finish()
+                                }
                             }
                         }
                     }
@@ -117,6 +140,7 @@ class MondrianColoresGrid : AppCompatActivity() {
                         "fucsia" -> view.findViewById(R.id.color23)
                         "naranja" -> view.findViewById(R.id.color21)
                         "cyan" -> view.findViewById(R.id.color22)
+                        "blanco" -> view.findViewById(R.id.color40)
                         else -> view.findViewById(R.id.imageButtonCerrarDesplegable)
                     }
                     gridColoresSeleccion.removeViewAt(gridColoresSeleccion.indexOfChild(imageButtonColor))
@@ -128,6 +152,12 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
         }
 
+        botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener {
+            cerrado = true
+            finish()
+        }
+
         object : CountDownTimer(longTiempoEspera, 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -135,28 +165,59 @@ class MondrianColoresGrid : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                activarRealizacionCuestionario()
-                textTiempo.text = getString(R.string.tiempo_de_realizacion)
-                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                if (!cerrado){
+                    activarRealizacionCuestionario()
+                    textTiempo.text = getString(R.string.tiempo_de_realizacion)
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                    object : CountDownTimer(longTiempoRealizacion, 1000){
+                        @SuppressLint("SetTextI18n")
+                        override fun onTick(millisUntilFinished: Long) {
+                            actualizarCronometro(millisUntilFinished)
+                        }
 
-                object : CountDownTimer(longTiempoRealizacion, 1000){
-                    @SuppressLint("SetTextI18n")
-                    override fun onTick(millisUntilFinished: Long) {
-                        actualizarCronometro(millisUntilFinished)
-                    }
-
-                    override fun onFinish() {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
-                        finish()
-                    }
-
-                }.start()
+                        override fun onFinish() {
+                            if(!cerrado){
+                                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
+                                cerrado = true
+                                finish()
+                            }
+                        }
+                    }.start()
+                }
             }
-
         }.start()
     }
+    private fun ajustarTablero() {
+        when (tamanyoTablero){
+            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Mediano" -> ajustarTableroMediano()
+            "Pequeño" -> ajustarTableroPequeño()
+        }
+    }
 
-    private fun setDrawableColor(colorSeleccion: ImageButton) {
+    private fun ajustarTableroMediano() {
+        val numeroCasillasEliminar = 8
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
+    private fun ajustarTableroPequeño() {
+        val numeroCasillasEliminar = 12
+        for (i in colores.childCount - 1  downTo  colores.childCount - numeroCasillasEliminar){
+            botonColor = colores.getChildAt(i) as ImageButton
+            botonColor.isEnabled = false
+            botonColor.isActivated = false
+            botonColor.visibility = View.GONE
+        }
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+    }
+
+    private fun setDrawableColor(colorSeleccion: View) {
         val color = when(colorSeleccion.contentDescription){
             "rojo" -> R.color.rojo
             "marrón" -> R.color.marron
@@ -170,6 +231,7 @@ class MondrianColoresGrid : AppCompatActivity() {
             "fucsia" -> R.color.fucsia
             "naranja" -> R.color.naranja
             "cyan" -> R.color.cyan
+            "blanco" -> R.color.blanco
             else -> R.color.black
         }
         val drawable = colorSeleccion.background.mutate() as GradientDrawable

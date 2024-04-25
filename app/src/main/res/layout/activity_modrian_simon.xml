@@ -29,7 +29,7 @@
         android:background="@drawable/elipse_46" />
 
     <ImageButton
-        android:id="@+id/imageButtonCerrarDesplegable"
+        android:id="@+id/imageButtonCerrarCuestionario"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"

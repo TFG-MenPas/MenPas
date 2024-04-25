@@ -9,6 +9,8 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
 import android.widget.Chronometer
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -27,10 +29,18 @@ class CuestionarioD2 : AppCompatActivity() {
     lateinit var progressBar: ProgressBar
     lateinit var textProgressBar: TextView
     lateinit var crono: Chronometer
+    lateinit var botonCerrarCuestionario: ImageButton
+    lateinit var vibrator: Vibrator
     private var contadorFilas = 0
     private val NUMERO_FILAS_D2 = 14
     private val NUMERO_D2 = 47
     private val SECS_FILA_D2 = 20000
+    private var d2CerradoAntesDeFinalizar = false
+    private var azulClaro = 0
+    private var azulOscuro = 0
+    private lateinit var filasD2Original: List<List<D2>>
+    private lateinit var tipoTestD2: String
+
     companion object {
         lateinit var myOnClickListener: myOnClickListener
     }
@@ -38,9 +48,25 @@ class CuestionarioD2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_d2)
 
+        tipoTestD2 = intent.getStringExtra("json_resource_name").toString()
+        if (tipoTestD2 == "cuestionario_d2_original"){
+            filasD2Original = inicializarFilasD2Original()
+        }
+
+        vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
         progressBar = findViewById(R.id.progressBarCuestionario)
         textProgressBar = findViewById(R.id.numeroPreguntaActual)
         crono = findViewById(R.id.tiempoCrono)
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarDesplegable)
+
+        botonCerrarCuestionario.setOnClickListener {
+            d2CerradoAntesDeFinalizar = true
+            vibrator.cancel()
+            finish()
+        }
+
+        azulClaro = getColor(R.color.light_blue)
+        azulOscuro = getColor(R.color.dark_blue)
 
         myOnClickListener = myOnClickListener(this)
         listaD2 = ArrayList()
@@ -51,7 +77,11 @@ class CuestionarioD2 : AppCompatActivity() {
         recyclerViewD2.addItemDecoration(DividerItemDecoration(this, 1))
         recyclerViewD2.adapter = adaptadorD2
 
-        rellenarFilaD2()
+        if (tipoTestD2 == "cuestionario_d2_original"){
+            rellenarFilaD2Original(contadorFilas)
+        }else{
+            rellenarFilaD2Aleatorio()
+        }
         contadorFilas++
         progressBar.progress = contadorFilas
         textProgressBar.text = contadorFilas.toString()
@@ -61,7 +91,6 @@ class CuestionarioD2 : AppCompatActivity() {
     }
 
     private fun countDownTimer(){
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         object : CountDownTimer(SECS_FILA_D2.toLong(), 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -69,25 +98,111 @@ class CuestionarioD2 : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                //TODO CountDownTimer modifique progrees bar
-                if(contadorFilas == NUMERO_FILAS_D2){
-                    showToast("Cuestionario D2 finalizado")
-                    crono.stop()
-                }else{
-                    listaD2.clear()
-                    rellenarFilaD2()
-                    contadorFilas++
-                    progressBar.progress = contadorFilas
-                    textProgressBar.text = contadorFilas.toString()
-                    adaptadorD2.notifyDataSetChanged()
-                    countDownTimer()
+                if(!d2CerradoAntesDeFinalizar){
+                    totalAciertosPorFila()
+                    erroresComisionPorFila()
+                    erroresOmisionPorFila()
+                    if(contadorFilas == NUMERO_FILAS_D2){
+                        showToast("Cuestionario D2 finalizado")
+                        crono.stop()
+                    }else{
+                        listaD2.clear()
+                        if (tipoTestD2 == "cuestionario_d2_original"){
+                            rellenarFilaD2Original(contadorFilas)
+                        }else{
+                            rellenarFilaD2Aleatorio()
+                        }
+                        contadorFilas++
+                        progressBar.progress = contadorFilas
+                        textProgressBar.text = contadorFilas.toString()
+                        adaptadorD2.notifyDataSetChanged()
+                        countDownTimer()
+                    }
+                    vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                 }
-                vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
             }
 
         }.start()
     }
-    private fun rellenarFilaD2(){
+
+    private fun erroresOmisionPorFila() {
+        var erroresOmisionPorFila = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2RayaArriba : TextView = d2.findViewById(R.id.textRayaArriba)
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            val textD2RayaAbajo : TextView = d2.findViewById(R.id.textRayaAbajo)
+            if(textD2Letra.currentTextColor == azulClaro){
+                continue
+            }
+            if (textD2Letra.text != "d"){
+                continue
+            }
+            if(sumaRayas(textD2RayaArriba,textD2RayaAbajo) == 2){
+                erroresOmisionPorFila++
+            }
+        }
+        showToast("Errores Omision: $erroresOmisionPorFila")
+    }
+
+    private fun erroresComisionPorFila() {
+        var erroresComisionPorFila = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2RayaArriba : TextView = d2.findViewById(R.id.textRayaArriba)
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            val textD2RayaAbajo : TextView = d2.findViewById(R.id.textRayaAbajo)
+            if(textD2Letra.currentTextColor == azulOscuro){
+                continue
+            }
+            if (textD2Letra.text != "d"){
+                erroresComisionPorFila++
+                continue
+            }
+            if(sumaRayas(textD2RayaArriba,textD2RayaAbajo) != 2){
+                erroresComisionPorFila++
+            }
+        }
+        showToast("Errores Comision: $erroresComisionPorFila")
+    }
+
+    private fun totalAciertosPorFila() {
+        var totalAciertosPorFila = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2RayaArriba : TextView = d2.findViewById(R.id.textRayaArriba)
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            val textD2RayaAbajo : TextView = d2.findViewById(R.id.textRayaAbajo)
+            if(textD2Letra.currentTextColor == azulOscuro){
+                continue
+            }
+            if (textD2Letra.text != "d"){
+                continue
+            }
+            if(sumaRayas(textD2RayaArriba,textD2RayaAbajo) == 2){
+                totalAciertosPorFila++
+            }
+        }
+        showToast("Aciertos: $totalAciertosPorFila")
+    }
+
+    private fun sumaRayas(textD2RayaArriba: TextView, textD2RayaAbajo: TextView): Int {
+        val rayasArriba = when(textD2RayaArriba.text){
+            "''" -> 2
+            "'" -> 1
+            "" -> 0
+            else -> 0
+        }
+        val rayasAbajo = when(textD2RayaAbajo.text){
+            "''" -> 2
+            "'" -> 1
+            "" -> 0
+            else -> 0
+        }
+        return rayasArriba + rayasAbajo
+    }
+
+    private fun rellenarFilaD2Aleatorio(){
         var rayaArriba : String
         var letra : String
         var rayaAbajo :String
@@ -118,6 +233,13 @@ class CuestionarioD2 : AppCompatActivity() {
             listaD2.add(D2(rayaArriba, letra, rayaAbajo))
         }
     }
+
+    private fun rellenarFilaD2Original(contador : Int){
+        val filad2 = filasD2Original[contador]
+        for (d2 in filad2){
+            listaD2.add(d2)
+        }
+    }
     private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
@@ -140,5 +262,695 @@ class CuestionarioD2 : AppCompatActivity() {
                 textD2RayaAbajo.setTextColor(azulOscuro)
             }
         }
+    }
+    private fun inicializarFilasD2Original(): List<List<D2>> {
+        return listOf(
+            listOf(
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","p","'"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","d","'"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d","''"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("''","d","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d","''"),
+                D2("'","p","''"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("'","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+            ),
+            listOf(
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","d","''"),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("'","d","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","p","'"),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("''","d",""),
+            ),
+            listOf(
+                D2("''","d","''"),
+                D2("'","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","p","'"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("'","d","''"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","d","''"),
+                D2("''","d",""),
+                D2("'","p","'"),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+            ),
+            listOf(
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","p","'"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","d","'"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d","''"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("''","d","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("'","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+            ),
+            listOf(
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","d","''"),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("'","d","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","p","'"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+            ),
+            listOf(
+                D2("''","d","''"),
+                D2("'","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","p","'"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("'","d","''"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","d","''"),
+                D2("''","d",""),
+                D2("'","p","'"),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+            ),
+            listOf(
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","p","'"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","d","'"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d","''"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("''","d","''"),
+                D2("'","d",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("'","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+            ),
+            listOf(
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","d","''"),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("'","d","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","p","'"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("''","d",""),
+            ),
+            listOf(
+                D2("''","d","''"),
+                D2("'","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","p","'"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("'","d","''"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","d","''"),
+                D2("''","d",""),
+                D2("'","p","'"),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+            ),
+            listOf(
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","p","'"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","d","'"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d","''"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("''","d","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("'","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+            ),
+            listOf(
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","d","''"),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("'","d","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","p","'"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("''","d",""),
+            ),
+            listOf(
+                D2("''","d","''"),
+                D2("'","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","p","'"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("'","d","''"),
+                D2("'","d","'"),
+                D2("","p","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","d","''"),
+                D2("''","d",""),
+                D2("'","p","'"),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","d","'"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("'","d","'"),
+            ),
+            listOf(
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","p","'"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","d","'"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d","''"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("''","d","''"),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("'","d","''"),
+                D2("''","d",""),
+                D2("''","p",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+            ),
+            listOf(
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","d","'"),
+                D2("''","d","''"),
+                D2("'","d","'"),
+                D2("''","p",""),
+                D2("''","d","''"),
+                D2("'","p",""),
+                D2("'","d","''"),
+                D2("","d","''"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("'","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","''"),
+                D2("","p","'"),
+                D2("''","d",""),
+                D2("'","d","'"),
+                D2("","p","''"),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("''","d","'"),
+                D2("","d","''"),
+                D2("''","d",""),
+                D2("","d","'"),
+                D2("''","p",""),
+                D2("","d","''"),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("'","p","'"),
+                D2("''","d",""),
+                D2("'","p",""),
+                D2("''","d",""),
+                D2("","d","''"),
+                D2("'","d","'"),
+                D2("","d","''"),
+                D2("''","p",""),
+                D2("''","d",""),
+                D2("","p","''"),
+                D2("'","d","'"),
+                D2("''","d",""),
+            )
+        )
     }
 }

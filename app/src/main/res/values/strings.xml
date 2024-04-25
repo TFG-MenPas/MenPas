@@ -206,7 +206,7 @@
     <!--Referencias-->
     <string name="primera_referencia">González Ruiz, S. L., Hernández Mendo, A., Pastrana Brincones, J.L. (2010). Herramienta software para la evaluación psicosocial de deportistas y entornos deportivos. Lecturas: EF y Deportes. Revista Digital, 15 (144), mayo.</string>
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
-    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
+    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Modrian Color. Sustainability, 12, 7655.</string>
     <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
 
     <!--Registro de centro-->
@@ -258,14 +258,14 @@
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
 
-    <!--Mondrian Colores-->
+    <!--Modrian Colores-->
     <string name="comenzar">Comenzar</string>
     <string name="cadenaFormato">mm:ss (max 30:00)</string>
     <string name="formato">Formato:</string>
     <string name="hintFormato">mm:ss</string>
     <string name="tiempo_de_espera">Tiempo de espera</string>
     <string name="tiempo_de_realizacion">Tiempo de realización</string>
-    <string name="mondrian_colores">Mondrian Colores</string>
+    <string name="mondrian_colores">Modrian Colores</string>
 
     <!--Test D2-->
     <string name="test_de_atencion_d2">Test de atención d2</string>
@@ -323,4 +323,6 @@
     <string name="numero_errores">Número de errores: </string>
     <string name="numero_errores_omision">Número de errores por omisión: </string>
     <string name="aciertos">Número de aciertos: </string>
+    <string name="fallos_permitidos">Fallos permitidos</string>
+    <string name="_25_matriz">25% Matriz</string>
 </resources>
