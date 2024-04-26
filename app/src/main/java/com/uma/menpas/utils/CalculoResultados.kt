@@ -14,8 +14,57 @@ class CalculoResultados {
             "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false)
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true)
+            "preguntas_embu" -> calculateEMBU(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateEMBU(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("Id_EMBU", "Nombre_Usuario", "SoporteP", "SoporteM", "RechazoP",
+            "RechazoM", "SobreproteccionP", "SobreproteccionM", "Tiempo", "Idioma", "Fecha", "n1",
+            "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14",
+            "n15", "n16", "n17", "n18", "n19", "n20", "n21", "n22", "n23", "n24", "n25", "n26",
+            "n27", "n28", "n29", "n30", "n31", "n32", "n33", "n34", "n35", "n36", "n37", "n38",
+            "n39", "n40", "n41", "n42")
+        val id = CuestionarioService().obtenerIdDisponible("EMBU", "Id_EMBU")
+        val nombreUsuario = formattedString(usuario)
+        var soporteP = 0
+        var soporteM = 0
+        var rechazoP = 0
+        var rechazoM = 0
+        var sobreproteccionP = 0
+        var sobreproteccionM = 0
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Nunca" -> "1"
+                "A veces" -> "2"
+                "A menudo" -> "3"
+                "Siempre" -> "4"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(0, 8, 14, 20, 26, 30, 36)) {
+                soporteP += valor.toInt()
+            } else if (index in listOf(1, 9, 15, 21, 27, 31, 37)) {
+                soporteM += valor.toInt()
+            } else if (index in listOf(4, 10, 16, 22, 28, 34, 38)) {
+                rechazoP += valor.toInt()
+            } else if (index in listOf(5, 11, 17, 23, 29, 35, 39)) {
+                rechazoM += valor.toInt()
+            } else if (index in listOf(2, 6, 12, 18, 24, 32, 40)) {
+                sobreproteccionP += valor.toInt()
+            } else if (index in listOf(3, 7, 13, 19, 25, 33, 41)) {
+                sobreproteccionM += valor.toInt()
+            }
+        }
+        val values = listOf(id, nombreUsuario, soporteP.toString(), soporteM.toString(),
+        rechazoP.toString(), rechazoM.toString(), sobreproteccionP.toString(),
+        sobreproteccionM.toString(), tiempo, idioma, fecha, *itemList.toTypedArray())
+        return keys.zip(values).toMap()
     }
 
     private fun calculateSTAI(respuestasUsuario: ArrayList<String>, usuario: String, isAE: Boolean): Map<String, String> {

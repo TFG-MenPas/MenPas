@@ -11,8 +11,65 @@ class QueryParser {
             "preguntas_acsi_28" -> parseACSI28(respuestasUsuario)
             "preguntas_stai_ar" -> parseSTAI(respuestasUsuario)
             "preguntas_stai_ae" -> parseSTAI(respuestasUsuario)
+            "preguntas_embu" -> parseEMBU(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseEMBU(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO EMBU VALUES(" + respuestasUsuario["Id_EMBU"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["SoporteP"] + "," +
+                respuestasUsuario["SoporteM"] + "," +
+                respuestasUsuario["RechazoP"] + "," +
+                respuestasUsuario["RechazoM"] + "," +
+                respuestasUsuario["SobreproteccionP"] + "," +
+                respuestasUsuario["SobreproteccionM"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," +
+                respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," +
+                respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," +
+                respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," +
+                respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," +
+                respuestasUsuario["n11"] + "," +
+                respuestasUsuario["n12"] + "," +
+                respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," +
+                respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," +
+                respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," +
+                respuestasUsuario["n19"] + "," +
+                respuestasUsuario["n20"] + "," +
+                respuestasUsuario["n21"] + "," +
+                respuestasUsuario["n22"] + "," +
+                respuestasUsuario["n23"] + "," +
+                respuestasUsuario["n24"] + "," +
+                respuestasUsuario["n25"] + "," +
+                respuestasUsuario["n26"] + "," +
+                respuestasUsuario["n27"] + "," +
+                respuestasUsuario["n28"] + "," +
+                respuestasUsuario["n29"] + "," +
+                respuestasUsuario["n30"] + "," +
+                respuestasUsuario["n31"] + "," +
+                respuestasUsuario["n32"] + "," +
+                respuestasUsuario["n33"] + "," +
+                respuestasUsuario["n34"] + "," +
+                respuestasUsuario["n35"] + "," +
+                respuestasUsuario["n36"] + "," +
+                respuestasUsuario["n37"] + "," +
+                respuestasUsuario["n38"] + "," +
+                respuestasUsuario["n39"] + "," +
+                respuestasUsuario["n40"] + "," +
+                respuestasUsuario["n41"] + "," +
+                respuestasUsuario["n42"] + ")"
     }
 
     private fun parseSTAI(respuestasUsuario: Map<String, String>): String {
