@@ -16,8 +16,21 @@ class QueryParser {
             "preguntas_bsq" -> parseBSQ(respuestasUsuario)
             "preguntas_caf" -> parseCAF(respuestasUsuario)
             "preguntas_sf_36" -> parseSF36(respuestasUsuario)
+            "preguntas_sf_12" -> parseSF12(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseSF12(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO SF12 VALUES(" + respuestasUsuario["Id_SF12"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Medida_S_Fisica"] + "," + respuestasUsuario["Medida_S_Mental"] + "," +  respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," + respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," + respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," + respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," + respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," + respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," + respuestasUsuario["n11"] + "," + respuestasUsuario["n12"] + ")"
     }
 
     private fun parseSF36(respuestasUsuario: Map<String, String>): String {

@@ -17,8 +17,114 @@ class CalculoResultados {
             "preguntas_bsq" -> calculateBSQ(respuestasUsuario)
             "preguntas_caf" -> calculateCAF(respuestasUsuario)
             "preguntas_sf_36" -> calculateSF36(respuestasUsuario)
+            "preguntas_sf_12" -> calculateSF12(respuestasUsuario)
             else -> calculateCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun calculateSF12(respuestasUsuario: ArrayList<String>): Map<String, String> {
+        val keys = listOf(
+            "Id_SF12", "Nombre_Usuario", "Medida_S_Fisica", "Medida_S_Mental", "Tiempo", "Idioma", "Fecha", "n1",
+            "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
+            "n10", "n11", "n12"
+        )
+        val id = "1916"
+        val usuario = formattedString("pruebamenpas")
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val tiempo = "100"
+        val Medida_S_Fisica = mutableListOf<Int>()
+        val Medida_S_Mental = mutableListOf<Int>()
+        val itemList = mutableListOf<String>()
+        for ((index,respuesta) in respuestasUsuario.withIndex()) {
+            if (index == 0) {
+                val valor = when (respuesta) {
+                    "Excelente" -> "100"
+                    "Muy Buena" -> "75"
+                    "Buena" -> "50"
+                    "Regular" -> "25"
+                    "Mala" -> "0"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Fisica.add(valor.toInt())
+                continue
+            }
+            if (index in listOf(1, 2)) {
+                val valor = when (respuesta) {
+                    "Sí, me limita mucho" -> "0"
+                    "Sí, me limita un poco" -> "50"
+                    "No, no me limita nada" -> "100"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Fisica.add(valor.toInt())
+                continue
+            }
+            if (index in listOf(3, 4)) {
+                val valor = when (respuesta) {
+                    "si" -> "0"
+                    "no" -> "100"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Fisica.add(valor.toInt())
+                continue
+            }
+            if (index == 7) {
+                val valor = when (respuesta) {
+                    "Nada" -> "100"
+                    "Un poco" -> "75"
+                    "Regular" -> "50"
+                    "Bastante" -> "25"
+                    "Mucho" -> "0"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Fisica.add(valor.toInt())
+                continue
+            }
+            if (index in listOf(5, 6)) {
+                val valor = when (respuesta) {
+                    "si" -> "0"
+                    "no" -> "100"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Mental.add(valor.toInt())
+                continue
+            }
+            if (index in listOf(8, 9, 10)) {
+                val valor = when (respuesta) {
+                    "Siempre" -> "100"
+                    "Casi siempre" -> "80"
+                    "Muchas veces" -> "60"
+                    "Algunas veces" -> "40"
+                    "Solo una vez" -> "20"
+                    "Nunca" -> "0"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Mental.add(valor.toInt())
+                continue
+            }
+            if (index == 11) {
+                val valor = when (respuesta) {
+                    "Siempre" -> "0"
+                    "Casi siempre" -> "25"
+                    "Algunas veces" -> "50"
+                    "Solo una vez" -> "75"
+                    "Nunca" -> "100"
+                    else -> "0"
+                }
+                itemList.add(valor)
+                Medida_S_Mental.add(valor.toInt())
+            }
+        }
+        val values = listOf(
+            id, usuario, Medida_S_Fisica.average().toInt().toString(), Medida_S_Mental.average().toInt().toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+        )
+        return keys.zip(values).toMap()
     }
 
     private fun calculateSF36(respuestasUsuario: ArrayList<String>): Map<String, String> {
