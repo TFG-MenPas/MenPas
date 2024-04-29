@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.CuestionarioController
 import com.uma.menpas.models.adapters.AdaptadorCuestionario
 import com.uma.menpas.models.Cuestionario
 
@@ -21,6 +22,7 @@ class CuestionariosRealizados : AppCompatActivity() {
     lateinit var adaptadorCuestionario: AdaptadorCuestionario
     lateinit var listaCuestionarios: ArrayList<Cuestionario>
     lateinit var barraBusqueda: SearchView
+    private val cuestionarioController = CuestionarioController()
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -30,8 +32,6 @@ class CuestionariosRealizados : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionarios_realizados)
 
-
-
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
@@ -39,13 +39,10 @@ class CuestionariosRealizados : AppCompatActivity() {
         myOnclickListener = MyOnClickListener(this)
         cuestionarioRV = findViewById(R.id.RVCuestionario)
         listaCuestionarios = ArrayList()
-        adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
 
-        listaCuestionarios.add(Cuestionario("Ansiedad", "CSAI2: Autoconfianza", "12/02/2023-11:07:32"))
-        listaCuestionarios.add(Cuestionario("Atención", "Mondrian: Colores", "12/02/2023-11:07:32"))
-        listaCuestionarios.add(Cuestionario("Autoconcepto", "AF5", "10/02/2023-12:08:00"))
-        listaCuestionarios.add(Cuestionario("Autorregistro", "Comida", "10/02/2023-12:08:00"))
-        listaCuestionarios.add(Cuestionario("Burnout", "BSQ", "10/02/2023-11:00:00"))
+        listaCuestionarios = cuestionarioController.getCuestionariosRealizados(applicationContext) as ArrayList<Cuestionario>
+
+        adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
 
         val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
         cuestionarioRV.layoutAnimation = controller

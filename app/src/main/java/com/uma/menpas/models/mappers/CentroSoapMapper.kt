@@ -7,28 +7,28 @@ import org.ksoap2.serialization.SoapPrimitive
 class CentroSoapMapper {
 
     companion object {
-        fun soapListToCenterList(result: SoapObject): List<Centro>? {
+        fun soapListToCenterList(result: SoapObject): List<Centro> {
+            val centerList = mutableListOf<Centro>()
+
             try {
-                val centerList = mutableListOf<Centro>()
-                return if(result.propertyCount != 0) {
+                if(result.propertyCount != 0) {
                     val lista: SoapObject = result.getProperty(0) as SoapObject
-                    if(lista.getProperty(0) is SoapPrimitive){ // Si es un solo centro debido al getByID()
-                        centerList.add(soapObjectToCenter(lista))
-                    } else{
-                        for (i in 0 until lista.propertyCount) {
-                            val centerToParse = lista.getProperty(i) as SoapObject
-                            val newCenter = soapObjectToCenter(centerToParse)
-                            centerList.add(newCenter)
+                    if(lista.propertyCount != 0) { //Si no hay ningún centro
+                        if (lista.getProperty(0) is SoapPrimitive) { // Si es un solo centro debido al getByID()
+                            centerList.add(soapObjectToCenter(lista))
+                        } else {
+                            for (i in 0 until lista.propertyCount) {
+                                val centerToParse = lista.getProperty(i) as SoapObject
+                                val newCenter = soapObjectToCenter(centerToParse)
+                                centerList.add(newCenter)
+                            }
                         }
                     }
-                    return centerList
-                }else{
-                    null
                 }
+                return centerList
             }catch (e : Exception){
-
                 e.printStackTrace()
-                return null
+                return centerList
             }
         }
 

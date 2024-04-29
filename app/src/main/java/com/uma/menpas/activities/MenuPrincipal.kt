@@ -82,6 +82,12 @@ class MenuPrincipal : AppCompatActivity() {
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        actualizarNombreUsuario()
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+    }
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         actualizarNombreUsuario()

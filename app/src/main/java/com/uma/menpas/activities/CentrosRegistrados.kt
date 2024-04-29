@@ -2,23 +2,23 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import android.widget.SearchView
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
+import android.widget.SearchView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.models.Centro
 import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.services.CentroService
+import com.uma.menpas.utils.BarraNavegacion
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
@@ -52,14 +52,7 @@ class CentrosRegistrados : AppCompatActivity() {
 
         centroRV = findViewById(R.id.RVCentros)
 
-        listaCentros = centroService.listCentersDetailed() as ArrayList<Centro>
-        adaptadorCentro = AdaptadorCentro(listaCentros)
-
-        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
-        centroRV.layoutAnimation = controller
-        adaptadorCentro.notifyDataSetChanged()
-        centroRV.scheduleLayoutAnimation()
-        centroRV.adapter = adaptadorCentro
+        actualizarCentros()
 
         barraBusqueda = findViewById(R.id.buscarCentro)
         barraBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -123,6 +116,16 @@ class CentrosRegistrados : AppCompatActivity() {
         }
     }
 
+    private fun actualizarCentros() {
+        listaCentros = centroService.listCentersDetailed() as ArrayList<Centro>
+        adaptadorCentro = AdaptadorCentro(listaCentros)
+
+        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
+        centroRV.layoutAnimation = controller
+        adaptadorCentro.notifyDataSetChanged()
+        centroRV.scheduleLayoutAnimation()
+        centroRV.adapter = adaptadorCentro
+    }
     private fun filter(text: String){
         val filteredList: ArrayList<Centro> = ArrayList()
 
@@ -137,6 +140,20 @@ class CentrosRegistrados : AppCompatActivity() {
             adaptadorCentro.filterList(filteredList)
             centroRV.scheduleLayoutAnimation()
         }
+    }
+
+    /*
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        actualizarCentros()
+    }
+
+     */
+
+    override fun onRestart() {
+        super.onRestart()
+        actualizarCentros()
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
     }
 
     private fun showToast(msg: String){
