@@ -15,8 +15,46 @@ class CalculoResultados {
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false)
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true)
             "preguntas_embu" -> calculateEMBU(respuestasUsuario, usuario)
+            "preguntas_eacs" -> calculateEACS(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateEACS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf(
+            "Id_EACS", "Nombre_Usuario", "Factor1_Marginado", "Factor2_Aislamiento", "Factor3_Disciplina",
+            "Tiempo", "Idioma", "Fecha", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n10",
+            "n11", "n12")
+        val id = CuestionarioService().obtenerIdDisponible("EACS", "Id_EACS")
+        val nombreUsuario = formattedString(usuario)
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        var factor1 = 0
+        var factor2 = 0
+        var factor3 = 0
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Completamente en desacuerdo" -> "1"
+                "En desacuerdo" -> "2"
+                "Neutro" -> "3"
+                "De acuerdo" -> "4"
+                "Completamente de acuerdo" -> "5"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(3,4,5,6)) {
+                factor1 += valor.toInt()
+            } else if (index in listOf(0,1,2,8)) {
+                factor2 += valor.toInt()
+            } else {
+                factor3 += valor.toInt()
+            }
+        }
+        val values = listOf(id, nombreUsuario, factor1.toString(), factor2.toString(),
+            factor3.toString(), tiempo, idioma, fecha, *itemList.toTypedArray(), "0", "0")
+        return keys.zip(values).toMap()
     }
 
     private fun calculateEMBU(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
