@@ -18,8 +18,41 @@ class CalculoResultados {
             "preguntas_caf" -> calculateCAF(respuestasUsuario)
             "preguntas_sf_36" -> calculateSF36(respuestasUsuario)
             "preguntas_sf_12" -> calculateSF12(respuestasUsuario)
+            "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario)
             else -> calculateCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun calculateVS(respuestasUsuario: ArrayList<String>): Map<String, String> {
+        val keys = listOf(
+            "Id_VS", "Nombre_Usuario", "Suma", "Media", "Solucion", "Tiempo", "Idioma", "Fecha", "n1",
+            "n2", "n3", "n4", "n5", "n6"
+        )
+        val id = "1916"
+        val usuario = formattedString("pruebamenpas")
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val tiempo = "100"
+        val valores = mutableListOf<Int>()
+        val itemList = mutableListOf<String>()
+        for (respuesta in respuestasUsuario) {
+            val valor = when (respuesta) {
+                "Totalmente en desacuerdo" -> "1"
+                "Muy en desacuerdo" -> "2"
+                "Algo en desacuerdo" -> "3"
+                "Neutral" -> "4"
+                "Algo de acuerdo" -> "5"
+                "Muy de acuerdo" -> "6"
+                "Totalmente de acuerdo" -> "7"
+                else -> "0"
+            }
+            itemList.add(valor)
+            valores.add(valor.toInt())
+        }
+        val values = listOf(
+            id, usuario, valores.sum().toString(), valores.average().toInt().toString(), valores.average().toInt().toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+        )
+        return keys.zip(values).toMap()
     }
 
     private fun calculateSF12(respuestasUsuario: ArrayList<String>): Map<String, String> {
