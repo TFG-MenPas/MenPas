@@ -18,8 +18,45 @@ class CalculoResultados {
             "preguntas_eacs" -> calculateEACS(respuestasUsuario, usuario)
             //"preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
+            "preguntas_rs" -> calculateRS (respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateRS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("Id_RS", "Nombre_Usuario", "Factor1", "Factor2","Tiempo",
+            "Idioma", "Fecha", "n1", "n2", "n3", "n4",
+            "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14", "n15", "n16", "n17",
+            "n18", "n19", "n20", "n21", "n22", "n23", "n24", "n25")
+        val id = CuestionarioService().obtenerIdDisponible("RS", "Id_RS")
+        val nombreUsuario = formattedString(usuario)
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        var factor1 = 0
+        var factor2 = 0
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Completamente en desacuerdo" -> "1"
+                "Bastante en desacuerdo" -> "2"
+                "Algo en desacuerdo" -> "3"
+                "Neutro" -> "4"
+                "Algo de acuerdo" -> "5"
+                "Bastante en acuerdo" -> "6"
+                "Completamente de acuerdo" -> "7"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(0,1,3,5,7,8,9,13,14,17,18)) {
+                factor1 += valor.toInt()
+            } else {
+                factor2 += valor.toInt()
+            }
+        }
+        val values = listOf(id, nombreUsuario, factor1.toString(), factor2.toString(),
+            tiempo, idioma, fecha, *itemList.toTypedArray())
+        return keys.zip(values).toMap()
     }
 
     private fun calculateMPS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {

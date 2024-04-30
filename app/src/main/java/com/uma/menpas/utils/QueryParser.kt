@@ -14,8 +14,44 @@ class QueryParser {
             "preguntas_embu" -> parseEMBU(respuestasUsuario)
             "preguntas_eacs" -> parseEACS(respuestasUsuario)
             "preguntas_mps" -> parseMPS(respuestasUsuario)
+            "preguntas_rs" -> parseRS(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseRS(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO RS VALUES(" + respuestasUsuario["Id_RS"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Factor1"] + "," +
+                respuestasUsuario["Factor2"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," +
+                respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," +
+                respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," +
+                respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," +
+                respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," +
+                respuestasUsuario["n11"] + "," +
+                respuestasUsuario["n12"] + "," +
+                respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," +
+                respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," +
+                respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," +
+                respuestasUsuario["n19"] + "," +
+                respuestasUsuario["n20"] + "," +
+                respuestasUsuario["n21"] + "," +
+                respuestasUsuario["n22"] + "," +
+                respuestasUsuario["n23"] + "," +
+                respuestasUsuario["n24"] + "," +
+                respuestasUsuario["n25"] + ")"
     }
 
     private fun parseMPS(respuestasUsuario: Map<String, String>): String {
