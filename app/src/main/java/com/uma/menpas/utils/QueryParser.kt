@@ -13,8 +13,58 @@ class QueryParser {
             "preguntas_stai_ae" -> parseSTAI(respuestasUsuario)
             "preguntas_embu" -> parseEMBU(respuestasUsuario)
             "preguntas_eacs" -> parseEACS(respuestasUsuario)
+            "preguntas_mps" -> parseMPS(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseMPS(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO MPS VALUES(" + respuestasUsuario["Id_MPS"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["Preocupaciones"] + "," +
+                respuestasUsuario["Normas"] + "," +
+                respuestasUsuario["Expectativas"] + "," +
+                respuestasUsuario["Criticas"] + "," +
+                respuestasUsuario["Dudas"] + "," +
+                respuestasUsuario["Organizacion"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Fecha"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," +
+                respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," +
+                respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," +
+                respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," +
+                respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," +
+                respuestasUsuario["n11"] + "," +
+                respuestasUsuario["n12"] + "," +
+                respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," +
+                respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," +
+                respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," +
+                respuestasUsuario["n19"] + "," +
+                respuestasUsuario["n20"] + "," +
+                respuestasUsuario["n21"] + "," +
+                respuestasUsuario["n22"] + "," +
+                respuestasUsuario["n23"] + "," +
+                respuestasUsuario["n24"] + "," +
+                respuestasUsuario["n25"] + "," +
+                respuestasUsuario["n26"] + "," +
+                respuestasUsuario["n27"] + "," +
+                respuestasUsuario["n28"] + "," +
+                respuestasUsuario["n29"] + "," +
+                respuestasUsuario["n30"] + "," +
+                respuestasUsuario["n31"] + "," +
+                respuestasUsuario["n32"] + "," +
+                respuestasUsuario["n33"] + "," +
+                respuestasUsuario["n34"] + "," +
+                respuestasUsuario["n35"] + ")"
     }
 
     private fun parseEACS(respuestasUsuario: Map<String, String>): String {

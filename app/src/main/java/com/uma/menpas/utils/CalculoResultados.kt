@@ -16,9 +16,104 @@ class CalculoResultados {
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true)
             "preguntas_embu" -> calculateEMBU(respuestasUsuario, usuario)
             "preguntas_eacs" -> calculateEACS(respuestasUsuario, usuario)
+            //"preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
+            "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
     }
+
+    private fun calculateMPS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("Id_MPS", "Nombre_Usuario", "Preocupaciones", "Normas", "Expectativas",
+        "Criticas", "Dudas", "Organizacion", "Tiempo", "Idioma", "Fecha", "n1", "n2", "n3", "n4",
+            "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14", "n15", "n16", "n17",
+            "n18", "n19", "n20", "n21", "n22", "n23", "n24", "n25", "n26", "n27", "n28",
+            "n29", "n30", "n31", "n32", "n33", "n34", "n35")
+        val id = CuestionarioService().obtenerIdDisponible("MPS", "Id_MPS")
+        val nombreUsuario = formattedString(usuario)
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        var preocupaciones = 0
+        var normas = 0
+        var expectativas = 0
+        var criticas = 0
+        var dudas = 0
+        var organizacion = 0
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Completamente en desacuerdo" -> "1"
+                "En desacuerdo" -> "2"
+                "Neutro" -> "3"
+                "De acuerdo" -> "4"
+                "Completamente de acuerdo" -> "5"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(8,9,13,20,22,24,33,12,17)) {
+                preocupaciones += valor.toInt()
+            } else if (index in listOf(3,5,11,15,18,23,29)) {
+                normas += valor.toInt()
+            } else if (index in listOf(0,10,14,19,15)) {
+                expectativas += valor.toInt()
+            } else if (index in listOf(2,4,21,34)) {
+                criticas += valor.toInt()
+            } else if (index in listOf(16,27,31,32)) {
+                dudas += valor.toInt()
+            } else if (index in listOf(1,6,7,26,28,30)) {
+                organizacion += valor.toInt()
+            }
+        }
+        val values = listOf(id, nombreUsuario, preocupaciones.toString(), normas.toString(),
+            expectativas.toString(),criticas.toString(),dudas.toString(),organizacion.toString(),
+            tiempo, idioma, fecha, *itemList.toTypedArray())
+        return keys.zip(values).toMap()
+    }
+
+    /*
+    private fun calculateIPSETA(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf(
+            "Id_IPSETA", "Nombre_Usuario", "M_Intrinseca", "M_Logro", "Auto",
+            "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n10",
+            "n11", "n12", "n13", "n14", "n15", "n16", "n17", "n18", "n19", "Tiempo", "Idioma",
+            "Fecha")
+        val id = CuestionarioService().obtenerIdDisponible("IPSETA", "Id_IPSETA")
+        val nombreUsuario = formattedString(usuario)
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val fecha = formattedString(obtenerFechaActual())
+        var intrinseca = 0
+        var logro = 0
+        var auto = 0
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Casi nunca" -> "1"
+                "A veces" -> "2"
+                "Casi siempre" -> "3"
+                else -> "0"
+            }
+            itemList.add(valor)
+            if (index in listOf(8,9,13,20,22,24,33,12,17)) {
+                factor1 += valor.toInt()
+            } else if (index in listOf(3,5,11,15,18,23,29)) {
+                factor2 += valor.toInt()
+            } else if (index in listOf(0,10,14,19,15)) {
+                factor2 += valor.toInt()
+            } else if (index in listOf(2,4,21,34)) {
+                factor2 += valor.toInt()
+            } else if (index in listOf(16,27,31,32)) {
+                factor2 += valor.toInt()
+            } else if (index in listOf(1,6,7,26,28,30)) {
+                factor2 += valor.toInt()
+            }
+        }
+        val values = listOf(id, nombreUsuario, factor1.toString(), factor2.toString(),
+            factor3.toString(), tiempo, idioma, fecha, *itemList.toTypedArray(), "0", "0")
+        return keys.zip(values).toMap()
+
+    }
+     */
 
     private fun calculateEACS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
