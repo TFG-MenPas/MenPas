@@ -1,8 +1,12 @@
 package com.uma.menpas.utils
 
+import android.widget.CalendarView
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Dictionary
+import java.time.temporal.TemporalAccessor
+import java.util.Calendar
+import java.util.Date
+import kotlin.math.round
 
 class CalculoResultados {
 
@@ -19,16 +23,48 @@ class CalculoResultados {
             "preguntas_sf_36" -> calculateSF36(respuestasUsuario)
             "preguntas_sf_12" -> calculateSF12(respuestasUsuario)
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario)
+            "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario)
             else -> calculateCSAI2(respuestasUsuario)
         }
     }
 
+    private fun calculateAutoComida(respuestasUsuario: ArrayList<String>): Map<String, String> {
+        val keys = listOf(
+            "Id_Autorregistro", "Nombre_Usuario", "Dia", "Hora", "Tiempo", "Cantidad", "Actividad", "LugarComida", "Comida_tipo", "Calorias", "Categoria", "Idioma", "Fecha", "Tipo"
+        )
+        val id = "13125"
+        val tipo = formattedString("A Comida")
+        val usuario = formattedString("pruebamenpas")
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val itemList = mutableListOf<String>()
+        for ((index,respuesta) in respuestasUsuario.withIndex()) {
+            if(index == 0){
+                //Fecha
+                val c = Calendar.getInstance()
+                c.timeInMillis = respuesta.toLong()
+                val currentDateTime = LocalDateTime.of( c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.HOUR), c.get(Calendar.MINUTE))
+                val formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy")
+                itemList.add(formattedString(currentDateTime.format(formatter)))
+                continue
+            }
+            if(index in listOf(4, 5, 6, 7, 8)){
+                itemList.add(formattedString(respuesta))
+            }else{
+                itemList.add(respuesta)
+            }
+        }
+        val values = listOf(
+            id, usuario, *itemList.toTypedArray(), idioma, fecha, tipo
+        )
+        return keys.zip(values).toMap()
+    }
+
     private fun calculateVS(respuestasUsuario: ArrayList<String>): Map<String, String> {
         val keys = listOf(
-            "Id_VS", "Nombre_Usuario", "Suma", "Media", "Solucion", "Tiempo", "Idioma", "Fecha", "n1",
-            "n2", "n3", "n4", "n5", "n6"
+            "Id_Vitalidad", "Nombre_Usuario", "sol", "n1", "n2", "n3", "n4", "n5", "n6", "Tiempo", "Idioma", "Fecha"
         )
-        val id = "1916"
+        val id = "407"
         val usuario = formattedString("pruebamenpas")
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
@@ -50,7 +86,7 @@ class CalculoResultados {
             valores.add(valor.toInt())
         }
         val values = listOf(
-            id, usuario, valores.sum().toString(), valores.average().toInt().toString(), valores.average().toInt().toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+            id, usuario, valores.average().toInt().toString(), *itemList.toTypedArray(), tiempo, idioma, fecha,
         )
         return keys.zip(values).toMap()
     }
@@ -61,7 +97,7 @@ class CalculoResultados {
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12"
         )
-        val id = "1916"
+        val id = "1917"
         val usuario = formattedString("pruebamenpas")
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
@@ -526,7 +562,8 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, Academico.toString(), Social.toString(), Emocional.toString(), Familiar.toString(), Fisico.toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+            id, usuario, round((Academico / 60).toDouble()).toString(),  round((Social / 60).toDouble()).toString(),  round((Emocional / 60).toDouble()).toString(),
+            round((Familiar / 60).toDouble()).toString(),  round((Fisico / 60).toDouble()).toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
@@ -606,6 +643,78 @@ class CalculoResultados {
             if (index in listOf(2, 5, 8, 10, 14)) {
                 DPD += valor.toInt()
             }
+        }
+        when (DPD) {
+            5 -> DPD_T = 40
+            6 -> DPD_T = 43
+            7 -> DPD_T = 45
+            8 -> DPD_T = 48
+            9 -> DPD_T = 50
+            10 -> DPD_T = 53
+            11 -> DPD_T = 55
+            12 -> DPD_T = 57
+            13 -> DPD_T = 60
+            14 -> DPD_T = 62
+            15 -> DPD_T = 64
+            16 -> DPD_T = 67
+            17 -> DPD_T = 69
+            18 -> DPD_T = 72
+            19 -> DPD_T = 74
+            20 -> DPD_T = 76
+            21 -> DPD_T = 79
+            22 -> DPD_T = 81
+            23 -> DPD_T = 84
+            24 -> DPD_T = 86
+            25 -> DPD_T = 88
+            else -> DPD_T = 80
+        }
+        when (RSL) {
+            5 -> RSL_T = 26
+            6 -> RSL_T = 29
+            7 -> RSL_T = 32
+            8 -> RSL_T = 34
+            9 -> RSL_T = 37
+            10 -> RSL_T = 40
+            11 -> RSL_T = 43
+            12 -> RSL_T = 46
+            13 -> RSL_T = 49
+            14 -> RSL_T = 52
+            15 -> RSL_T = 54
+            16 -> RSL_T = 57
+            17 -> RSL_T = 60
+            18 -> RSL_T = 63
+            19 -> RSL_T = 66
+            20 -> RSL_T = 69
+            21 -> RSL_T = 71
+            22 -> RSL_T = 74
+            23 -> RSL_T = 77
+            24 -> RSL_T = 80
+            25 -> RSL_T = 83
+            else -> RSL_T = 80
+        }
+        when (AFE) {
+            5 -> AFE_T = 35
+            6 -> AFE_T = 41
+            7 -> AFE_T = 44
+            8 -> AFE_T = 47
+            9 -> AFE_T = 50
+            10 -> AFE_T = 53
+            11 -> AFE_T = 55
+            12 -> AFE_T = 58
+            13 -> AFE_T = 61
+            14 -> AFE_T = 64
+            15 -> AFE_T = 67
+            16 -> AFE_T = 69
+            17 -> AFE_T = 72
+            18 -> AFE_T = 75
+            19 -> AFE_T = 78
+            20 -> AFE_T = 81
+            21 -> AFE_T = 83
+            22 -> AFE_T = 86
+            23 -> AFE_T = 89
+            24 -> AFE_T = 92
+            25 -> AFE_T = 95
+            else -> AFE_T = 80
         }
         val values = listOf(
             id, usuario, AFE.toString(), RSL.toString(), DPD.toString(), AFE_T.toString(), RSL_T.toString(), DPD_T.toString(), *itemList.toTypedArray(), fecha, idioma, tiempo

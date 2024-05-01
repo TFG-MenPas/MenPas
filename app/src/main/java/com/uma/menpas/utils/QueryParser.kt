@@ -17,8 +17,30 @@ class QueryParser {
             "preguntas_caf" -> parseCAF(respuestasUsuario)
             "preguntas_sf_36" -> parseSF36(respuestasUsuario)
             "preguntas_sf_12" -> parseSF12(respuestasUsuario)
+            "preguntas_vitalidad_subjetiva" -> parseVS(respuestasUsuario)
+            "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseAutoComida(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO Autorregistros  (Id_Autorregistro, Nombre_Usuario, Dia, Hora, Tiempo, Cantidad, Actividad, LugarComida, Comida_tipo, Calorias, Categoria, Idioma, Fecha, Tipo) VALUES(" + respuestasUsuario["Id_Autorregistro"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+        respuestasUsuario["Dia"] + "," +
+                respuestasUsuario["Hora"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Cantidad"] + "," + respuestasUsuario["Actividad"] + "," +
+                respuestasUsuario["LugarComida"] + "," + respuestasUsuario["Comida_tipo"] + "," +
+                respuestasUsuario["Calorias"] + "," + respuestasUsuario["Categoria"] + "," + respuestasUsuario["Idioma"] + "," + respuestasUsuario["Fecha"] + "," + respuestasUsuario["Tipo"] + ")"
+    }
+
+    private fun parseVS(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO Vitalidad  (Id_Vitalidad, Nombre_Usuario, sol, n1, n2, n3, n4, n5, n6, Tiempo, Idioma, Fecha) VALUES(" + respuestasUsuario["Id_Vitalidad"] + "," + respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["sol"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," + respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," + respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," + respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," + respuestasUsuario["Fecha"] + ")"
     }
 
     private fun parseSF12(respuestasUsuario: Map<String, String>): String {
