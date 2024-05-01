@@ -14,11 +14,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.models.Centro
 import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.services.CentroService
-import com.uma.menpas.utils.BarraNavegacion
+import com.uma.menpas.utils.LoadingDialog
 
 class CentrosRegistrados : AppCompatActivity() {
     lateinit var centroRV: RecyclerView
@@ -64,6 +65,9 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
+        val loadingDialog = LoadingDialog(this)
+        loadingDialog.show()
+        loadingDialog.dismiss(2)
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {
@@ -126,6 +130,7 @@ class CentrosRegistrados : AppCompatActivity() {
         centroRV.scheduleLayoutAnimation()
         centroRV.adapter = adaptadorCentro
     }
+
     private fun filter(text: String){
         val filteredList: ArrayList<Centro> = ArrayList()
 
@@ -141,14 +146,6 @@ class CentrosRegistrados : AppCompatActivity() {
             centroRV.scheduleLayoutAnimation()
         }
     }
-
-    /*
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-        actualizarCentros()
-    }
-
-     */
 
     override fun onRestart() {
         super.onRestart()

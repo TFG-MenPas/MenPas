@@ -1,6 +1,5 @@
 package com.uma.menpas.utils
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -15,10 +14,8 @@ class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, application
     init {
         barraNavegacionInferior.menu.getItem(0).isCheckable = false;
         lateinit var intent : Intent
-        var context: Activity = applicationContext as Activity
         val layoutInflater = applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val dialog = BottomSheetDialog(applicationContext)
-        var nombreActivityInvoca = context.localClassName
         barraNavegacionInferior.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_faq -> {
@@ -92,8 +89,11 @@ class BarraNavegacion(barraNavegacionInferior: BottomNavigationView, application
                     val btnRegCentro = view.findViewById<RelativeLayout>(R.id.RLRegCentro)
                     btnRegCentro.setOnClickListener {
                         intent = Intent(applicationContext, CentrosRegistrados::class.java)
+                        val loadingDialog = LoadingDialog(applicationContext)
+                        loadingDialog.show()
                         applicationContext.startActivity(intent)
                         dialog.dismiss()
+                        loadingDialog.dismiss(3)
                     }
                     val btnCambiarPerfil = view.findViewById<RelativeLayout>(R.id.RLCambioPerfil)
                     btnCambiarPerfil.setOnClickListener {

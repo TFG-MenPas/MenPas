@@ -44,13 +44,43 @@
         android:layout_marginBottom="60dp">
 
         <RelativeLayout
+            android:id="@+id/relativeLayoutDetallesCuestionario"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textNombreCuestionario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:fontWeight="700"
+                android:gravity="left"
+                android:text="@string/cuestionario"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textEntradaNombreCuestionario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textNombreCuestionario"
+                android:fontFamily="@font/poppins_regular"
+                android:fontWeight="700"
+                android:gravity="left"
+                android:text="@string/texto_de_prueba_cuestionario"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/textCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/textNombreCuestionario"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -66,6 +96,7 @@
                 android:id="@+id/textEntradaCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/textNombreCuestionario"
                 android:layout_toEndOf="@id/textCategoria"
                 android:fontFamily="@font/poppins_regular"
                 android:fontWeight="700"
@@ -177,22 +208,6 @@
                 android:fontWeight="700"
                 android:gravity="left"
                 android:text="@string/resultados"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textEntradaResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textResultados"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppins_regular"
-                android:fontWeight="700"
-                android:gravity="left"
-
-                android:text="@string/texto_de_prueba_resultados"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal" />
