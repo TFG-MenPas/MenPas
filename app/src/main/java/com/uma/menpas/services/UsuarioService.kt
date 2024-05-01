@@ -1,9 +1,11 @@
 package com.uma.menpas.services
 
+import android.content.Context
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.models.adapters.AdaptadorUsuario
 import com.uma.menpas.network.PeticionSOAP
 import com.uma.menpas.network.SoapBuilder
+import com.uma.menpas.room.UsuarioDB
 import org.ksoap2.serialization.SoapObject
 
 class UsuarioService(){
@@ -19,6 +21,7 @@ class UsuarioService(){
 
     fun registrarUsuario(usuario: Usuario): Usuario? {
         val request = SoapObject("http://tempuri.org/", "CrearUsuario")
+
         request.addProperty("userName", usuario.nombreUsuario)
         request.addProperty("clave", usuario.contrasenya)
         request.addProperty("nombre", usuario.nombre)
@@ -150,7 +153,7 @@ class UsuarioService(){
     }
 
     fun editarSuscripcion(usuario: String, contrasenya: String, nuevoValor: Boolean): Boolean {
-        val request = SoapBuilder.createSoapObject("SuscripcionCorreoElectr%C3%B3nico")
+        val request = SoapBuilder.createSoapObject("SuscripcionCorreoElectrónico")
         request.addProperty("username", usuario)
         request.addProperty("pwd", contrasenya)
         request.addProperty("activa", nuevoValor)
@@ -159,6 +162,70 @@ class UsuarioService(){
 
         return AdaptadorUsuario.soapObjectABoolean(result)
     }
+
+    fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
+        var usuario = getUser(usuario, contrasenya)
+        usuario?.contrasenya = contrasenya
+        return usuario
+    }
+
+    fun guardarUsuarioEnBD(context: Context, usuario: Usuario){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.insertUsuario(usuario)
+    }
+
+    fun actualizarUsuarioEnBD(context: Context, usuario: Usuario){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.updateUsuario(usuario)
+    }
+
+    fun borrarUsuarioEnBD(context: Context){
+        val usuarioDB = UsuarioDB.getDatabase(context)
+        usuarioDB?.UsuarioDAO()?.limpiarUsuario()
+    }
+
+    /*
+    fun editarUsuario(usuarioAntiguo: Usuario, usuarioActualizado: Usuario): Boolean {
+        val request = SoapBuilder.createSoapObject("updateUser")
+
+        val oldUser = buildUsuarioSoap("oldUser", usuarioAntiguo)
+        val newUser = buildUsuarioSoap("newUser", usuarioActualizado)
+
+        request.addProperty("oldUser", oldUser)
+        request.addProperty("newUser", newUser)
+
+        val result = PeticionSOAP.enviarPeticion(request)
+
+        return AdaptadorUsuario.soapObjectABoolean(result)
+    }
+
+    private fun buildUsuarioSoap(namespace: String, usuario: Usuario): SoapObject {
+        val request = SoapBuilder.createSoapObject(namespace)
+
+        request.addProperty("Nombre_Usuario", usuario.nombreUsuario)
+        request.addProperty("Contraseña", usuario.contrasenya)
+        request.addProperty("Nombre", usuario.nombre)
+        request.addProperty("Apellidos", usuario.apellidos)
+        request.addProperty("Edad", usuario.edad)
+        request.addProperty("Telefono", "usuario.telefono")
+        request.addProperty("Dni", "usuario.dni")
+        request.addProperty("Sexo", usuario.sexo)
+        request.addProperty("Fecha", usuario.fechaRegistro)
+        request.addProperty("Perfil", usuario.perfil)
+        request.addProperty("Correo", usuario.correo)
+        request.addProperty("Deporte_Practicado", usuario.deportePracticado)
+        request.addProperty("Grupo", usuario.grupo)
+        request.addProperty("Nacionalidad", usuario.nacionalidad)
+        request.addProperty("Estado_Civil", usuario.estadoCivil)
+        request.addProperty("HorasSemanales", usuario.horasSemanales)
+        request.addProperty("Estudios", usuario.estudios)
+        request.addProperty("Profesion", usuario.profesion)
+        request.addProperty("aComienzoDeporte", usuario.aComienzoDeporte)
+        request.addProperty("infoEmail", usuario.infoEmail)
+
+        return request
+    }
+    */
 
 
 }

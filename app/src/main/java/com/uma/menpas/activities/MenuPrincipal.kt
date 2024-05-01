@@ -14,6 +14,8 @@ import org.w3c.dom.Text
 
 class MenuPrincipal : AppCompatActivity() {
     val menuPrincipalController = MenuPrincipalController()
+
+    lateinit var textNombreUsuario: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal_v2)
@@ -30,7 +32,7 @@ class MenuPrincipal : AppCompatActivity() {
         val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        val textNombreUsuario = findViewById<TextView>(R.id.textNombreUsuario)
+        textNombreUsuario = findViewById<TextView>(R.id.textNombreUsuario)
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
 
         BarraNavegacion(barraNavegacionInferior, this)
@@ -80,8 +82,15 @@ class MenuPrincipal : AppCompatActivity() {
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        actualizarNombreUsuario()
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+    }
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
+        actualizarNombreUsuario()
         Toast.makeText(this, "Intent reciclado", Toast.LENGTH_SHORT).show()
     }
 
@@ -101,5 +110,9 @@ class MenuPrincipal : AppCompatActivity() {
             "entrenamiento_mental" -> intent.putExtra("area", "Entrenamiento mental")
         }
         startActivity(intent)
+    }
+
+    fun actualizarNombreUsuario() {
+        textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
     }
 }

@@ -8,29 +8,39 @@ import com.uma.menpas.services.UsuarioService
 class UsuarioController {
     val usuarioService = UsuarioService()
 
-    fun editarNombre(context: Context): Boolean {
-        val usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
-        var response = usuarioService.editarNombre(usuario.nombreUsuario, usuario.contrasenya, "NuevoMiguel")
-        return true
-    }
-
     fun getUsuario(context: Context): Usuario {
         return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
     }
 
     fun realizarActualizacion(context: Context, opcion: Int, nuevoValor: String): Boolean {
-        val usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
-        return when(opcion) {
-            1 -> usuarioService.editarNombreDeUsuario(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
-            2 -> usuarioService.editarNombre(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
-            3 -> usuarioService.editarApellidos(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
-            else -> false
+        var usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
+        var actualizado = false
+        when(opcion) {
+            1 -> actualizado = usuarioService.editarNombreDeUsuario(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
+            2 -> actualizado = usuarioService.editarNombre(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
+            3 -> actualizado = usuarioService.editarApellidos(usuario.nombreUsuario, usuario.contrasenya, nuevoValor)
         }
+
+        if(actualizado){
+            val contrasenya = usuario.contrasenya
+            usuario = if(opcion == 1){
+                usuarioService.getUser(nuevoValor, usuario.contrasenya)!!
+            } else {
+                usuarioService.getUser(usuario.nombreUsuario, usuario.contrasenya)!!
+            }
+            usuario.contrasenya = contrasenya
+            //usuarioService.borrarUsuarioEnBD(context)
+            usuarioService.guardarUsuarioEnBD(context, usuario)
+        }
+
+        val prueba = getUsuario(context)
+
+        return actualizado
     }
 
     fun editarSuscripcionCorreo(context: Context, valor: Boolean): Boolean {
-
-        return false
+        val usuario = UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
+        return usuarioService.editarSuscripcion(usuario.nombreUsuario,usuario.contrasenya, valor)
     }
 
 
