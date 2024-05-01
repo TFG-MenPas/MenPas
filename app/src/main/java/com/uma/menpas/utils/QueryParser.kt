@@ -15,8 +15,41 @@ class QueryParser {
             "preguntas_eacs" -> parseEACS(respuestasUsuario)
             "preguntas_mps" -> parseMPS(respuestasUsuario)
             "preguntas_rs" -> parseRS(respuestasUsuario)
+            "preguntas_ipseta" -> parseIPSETA(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseIPSETA(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO IPSETA (Id_IPSETA, Nombre_Usuario, M_Intrinseca, M_Logro, Auto, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, Tiempo, Idioma, Fecha) VALUES(" +
+                respuestasUsuario["Id_IPSETA"] + "," +
+                respuestasUsuario["Nombre_Usuario"] + "," +
+                respuestasUsuario["M_Intrinseca"] + "," +
+                respuestasUsuario["M_Logro"] + "," +
+                respuestasUsuario["Auto"] + "," +
+                respuestasUsuario["n1"] + "," +
+                respuestasUsuario["n2"] + "," +
+                respuestasUsuario["n3"] + "," +
+                respuestasUsuario["n4"] + "," +
+                respuestasUsuario["n5"] + "," +
+                respuestasUsuario["n6"] + "," +
+                respuestasUsuario["n7"] + "," +
+                respuestasUsuario["n8"] + "," +
+                respuestasUsuario["n9"] + "," +
+                respuestasUsuario["n10"] + "," +
+                respuestasUsuario["n11"] + "," +
+                respuestasUsuario["n12"] + "," +
+                respuestasUsuario["n13"] + "," +
+                respuestasUsuario["n14"] + "," +
+                respuestasUsuario["n15"] + "," +
+                respuestasUsuario["n16"] + "," +
+                respuestasUsuario["n17"] + "," +
+                respuestasUsuario["n18"] + "," +
+                respuestasUsuario["n19"] + "," +
+                respuestasUsuario["Tiempo"] + "," +
+                respuestasUsuario["Idioma"] + "," +
+                respuestasUsuario["Fecha"] + ")"
+
     }
 
     private fun parseRS(respuestasUsuario: Map<String, String>): String {
