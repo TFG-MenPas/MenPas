@@ -4,6 +4,7 @@ import android.content.Context
 import com.uma.menpas.models.Usuario
 import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.services.UsuarioService
+import com.uma.menpas.utils.CalculoResultados
 
 class UsuarioController {
     val usuarioService = UsuarioService()

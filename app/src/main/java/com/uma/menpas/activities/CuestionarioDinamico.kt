@@ -85,7 +85,7 @@ class CuestionarioDinamico : AppCompatActivity() {
     }
 
     private fun finalizarCuestionario(usuario: String) {
-        val query = QueryParser().parse(JSON_RESOURCE_NAME, CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario))
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this))
         try {
             CuestionarioService().insertarCuestionario(query)
             showToast("Éxito en la petición")
