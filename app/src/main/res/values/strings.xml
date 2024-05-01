@@ -191,12 +191,14 @@
 
     <!--Detalles cuestionario-->
     <string name="detalles">Detalles</string>
+    <string name="cuestionario">Cuestionario:</string>
     <string name="categoria">Categoría:</string>
     <string name="tipo">Tipo:</string>
     <string name="fecha">Fecha:</string>
     <string name="tiempo">Tiempo:</string>
     <string name="resultados">Resultados:</string>
     <string name="icono_cerrar">icono_cerrar</string>
+    <string name="texto_de_prueba_cuestionario">Cuestionario</string>
     <string name="texto_de_prueba_categoria">Autoconcepto</string>
     <string name="texto_de_prueba_tipo">AF5</string>
     <string name="texto_de_prueba_fecha">11/02/2023-11:07:32</string>

@@ -1,6 +1,5 @@
 package com.uma.menpas.activities
 
-import android.app.DownloadManager.Query
 import android.content.Intent
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
@@ -24,8 +23,6 @@ import kotlin.collections.ArrayList
 import com.uma.menpas.utils.QueryParser
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.services.CuestionarioService
-import com.uma.menpas.utils.ObtenerResultados
-import java.io.Serializable
 
 class CuestionarioDinamico : AppCompatActivity() {
     lateinit var botonAnterior : RelativeLayout
@@ -100,21 +97,16 @@ class CuestionarioDinamico : AppCompatActivity() {
             showToast("Algo salió mal realizando la petición")
         }
 
-        //TODO: borrar cuando se terminen de implementar los resultados de todos los cuestionarios
-        for ((clave, valor) in calculosCuestionario) {
-            println("Clave: $clave, Valor: $valor")
-        }
-
-        val resultadosObtenidos: Map<String,String> = ObtenerResultados().obtenerResultados(JSON_RESOURCE_NAME,calculosCuestionario)
         val bundle = Bundle().apply {
-            for ((key, value) in resultadosObtenidos) {
+            for ((key, value) in calculosCuestionario) {
                 putString(key, value)
             }
         }
 
-        val intent = Intent(this, ResultadosCuestionario::class.java)
-        //intent.putExtra("nombreCuestionario",ObtenerResultados().obtenerNombreCuestionario(JSON_RESOURCE_NAME))
+        val intent = Intent(this, DetallesCuestionario::class.java)
         intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
         startActivity(intent)
     }
 
