@@ -9,12 +9,12 @@ import org.ksoap2.serialization.SoapObject
 class CuestionarioController {
     val cuestionarioService = CuestionarioService()
 
-    fun getCuestionariosRealizados (context: Context): List<Cuestionario> {
+    fun getCuestionariosRealizados(context: Context): List<Cuestionario> {
         val usuario = UsuarioDB.getDatabase(context)!!.UsuarioDAO().getUsuario()
         return cuestionarioService.cuestionariosRealizados(usuario.nombreUsuario, usuario.contrasenya)
     }
 
-    fun listarCuestionarios(): SoapObject {
-        return cuestionarioService.listarCuestionarios();
+    fun getCuestionarioById(nombreCuestionario: String, id: String): Map<String, String> {
+        return cuestionarioService.getCuestionarioById(nombreCuestionario, id)
     }
 }

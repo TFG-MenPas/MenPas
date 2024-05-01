@@ -26,4 +26,14 @@ class CuestionarioService {
         return result
     }
 
+    fun getCuestionarioById(nombreCuestionario: String, id: String): Map<String, String> {
+        val request = SoapBuilder.createSoapObject("getCuestionarioById")
+        request.addProperty("cuestionario", nombreCuestionario)
+        request.addProperty("id", id)
+
+        val result = PeticionSOAP.enviarPeticion(request)
+
+        return CuestionarioSoapMapper.soapObjectToDetalleCuestionario(result)
+    }
+
 }

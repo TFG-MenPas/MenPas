@@ -18,10 +18,6 @@ class TipoCuestionario {
         "BURNOUT" to "MASLACH"
     )
 
-
-
-
-
     fun obtenerNombreYTipo(nombreCuestionario: String): Pair<String, String> {
         val nombreConvertido = conversiones[nombreCuestionario.uppercase()] ?: nombreCuestionario
         for ((tipo, nombres) in relacion) {
