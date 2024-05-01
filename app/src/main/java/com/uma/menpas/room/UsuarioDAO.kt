@@ -8,7 +8,7 @@ interface UsuarioDAO {
     @Query("SELECT * from Usuario")
     fun getUsuario(): Usuario
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUsuario(usuario: Usuario)
 
     @Update

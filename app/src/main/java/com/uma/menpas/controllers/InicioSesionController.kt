@@ -9,9 +9,7 @@ class InicioSesionController {
     val usuarioService = UsuarioService()
 
     fun comprobarUsuario(usuario: String, contrasenya: String): Usuario? {
-        var usuario = usuarioService.getUser(usuario, contrasenya)
-        usuario?.contrasenya = contrasenya
-        return usuario
+        return usuarioService.comprobarUsuario(usuario, contrasenya)
     }
 
     fun validarDatos(usuario: String, contrasenya: String): Boolean{
@@ -19,8 +17,7 @@ class InicioSesionController {
     }
 
     fun guardarUsuario(context: Context, usuario: Usuario){
-        val usuarioDB = UsuarioDB.getDatabase(context)
-        usuarioDB?.UsuarioDAO()?.insertUsuario(usuario)
+        return usuarioService.guardarUsuarioEnBD(context, usuario);
     }
 
     fun getUsuarioGuardado(context: Context): Usuario? {

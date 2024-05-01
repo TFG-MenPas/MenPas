@@ -23,6 +23,7 @@ class RegistroController {
         nivelEstudios: String,
         horasSemanales: String,
         profesion: String,
+        estaSuscrito: Boolean
     ): Usuario? {
         val usuarioNuevo = Usuario(
             usuario,
@@ -44,6 +45,7 @@ class RegistroController {
             nivelEstudios,
             profesion,
             Integer.parseInt(anyoComienzo),
+            estaSuscrito
         )
 
         return usuarioService.registrarUsuario(usuarioNuevo)

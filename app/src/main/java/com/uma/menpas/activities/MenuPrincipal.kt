@@ -4,16 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.controllers.MenuPrincipalController
-import org.w3c.dom.Text
 
 class MenuPrincipal : AppCompatActivity() {
     val menuPrincipalController = MenuPrincipalController()
+
+    lateinit var textNombreUsuario: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal_v2)
@@ -30,7 +31,7 @@ class MenuPrincipal : AppCompatActivity() {
         val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        val textNombreUsuario = findViewById<TextView>(R.id.textNombreUsuario)
+        textNombreUsuario = findViewById(R.id.textNombreUsuario)
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
 
         BarraNavegacion(barraNavegacionInferior, this)
@@ -80,8 +81,15 @@ class MenuPrincipal : AppCompatActivity() {
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        actualizarNombreUsuario()
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+    }
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
+        actualizarNombreUsuario()
     }
 
     fun abrirArea(id: Int) {
@@ -100,5 +108,9 @@ class MenuPrincipal : AppCompatActivity() {
             "entrenamiento_mental" -> intent.putExtra("area", "Entrenamiento mental")
         }
         startActivity(intent)
+    }
+
+    fun actualizarNombreUsuario() {
+        textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
     }
 }
