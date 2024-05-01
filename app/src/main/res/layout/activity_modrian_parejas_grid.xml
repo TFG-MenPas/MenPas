@@ -32,8 +32,9 @@
         android:id="@+id/imageButtonCerrarDesplegable"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/icon_cruz"
         android:background="#9CD3ED"
         android:contentDescription="@string/boton_cerrar_cuestionario"
         android:rotation="45" />
@@ -245,6 +246,29 @@
                 android:contentDescription="fotoCasilla32"
                 android:focusable="true"
                 android:focusableInTouchMode="true" />
+            <ImageButton
+                android:id="@+id/fotoCasilla40"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla40"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+            <ImageButton
+                android:id="@+id/fotoCasilla41"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla41"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
 
         </GridLayout>
 

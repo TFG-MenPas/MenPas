@@ -34,6 +34,13 @@ class CuestionarioService {
         val result = PeticionSOAP.enviarPeticion(request)
 
         return CuestionarioSoapMapper.soapObjectToDetalleCuestionario(result)
+
+    fun insertarCuestionario(query: String): SoapObject {
+        val request = SoapBuilder.createSoapObject("InsertaTabla")
+        request.addProperty("insert", query)
+
+        val result = PeticionSOAP.enviarPeticion(request)
+        return result
     }
 
 }
