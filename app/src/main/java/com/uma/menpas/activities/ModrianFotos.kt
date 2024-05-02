@@ -12,53 +12,23 @@ class ModrianFotos : AppCompatActivity() {
     lateinit var botonComenzar : Button
     lateinit var tiempoEspera : EditText
     lateinit var tiempoRealizacion : EditText
+    lateinit var botonCerrarCuestionario: ImageButton
+    private lateinit var textOpcionNumImg: TextView
+    private lateinit var textOpcionTamanyoTablero: TextView
+    private lateinit var numeroFallosPermitidos: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos)
 
-        /*val textOpcionTamanyoTablero : TextView = findViewById(R.id.textOpcionTamanyoTablero)
-        val seekbarTamanyoTablero : SeekBar = findViewById(R.id.seekbarTamanyoTablero)
-        seekbarTamanyoTablero.progress = 0
-        seekbarTamanyoTablero.max = 2
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
 
-        seekbarTamanyoTablero.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> textOpcionTamanyoTablero.text = "Pequeño"
-                    1 -> textOpcionTamanyoTablero.text = "Mediano"
-                    2 -> textOpcionTamanyoTablero.text = "Grande"
-                }
-            }
-
-            override fun onStartTrackingTouch(p0: SeekBar?) {}
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {}
-
-        })*/
-
-        val textOpcionNumImg : TextView = findViewById(R.id.textOpcionNumImg)
-        val seekbarNumImg : SeekBar = findViewById(R.id.seekbarNumImg)
-        seekbarNumImg.progress = 0
-        seekbarNumImg.max = 5
-
-        seekbarNumImg.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> textOpcionNumImg.text = "2"
-                    1 -> textOpcionNumImg.text = "3"
-                    2 -> textOpcionNumImg.text = "4"
-                    3 -> textOpcionNumImg.text = "5"
-                    4 -> textOpcionNumImg.text = "6"
-                    5 -> textOpcionNumImg.text = "7"
-                }
-            }
-
-            override fun onStartTrackingTouch(p0: SeekBar?) {}
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {}
-
-        })
+        seekbarFallosPermitidos()
+        seekbarTamanyoTablero()
+        seekbarNumImg()
 
         tiempoEspera = findViewById(R.id.editTextTiempoEspera)
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
@@ -71,8 +41,9 @@ class ModrianFotos : AppCompatActivity() {
                 val longTiempoEspera = stringToMilis(tiempoEspera.text.toString())
                 intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
                 intent.putExtra("longTiempoEspera", longTiempoEspera)
-                //intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
+                intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
                 intent.putExtra("numImg", textOpcionNumImg.text)
+                intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 startActivity(intent)
 
             }else if(!esValido(tiempoRealizacion.text.toString())){
@@ -82,6 +53,66 @@ class ModrianFotos : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun seekbarFallosPermitidos(){
+        numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
+        val seekbar: SeekBar = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbar.progress = 0
+        seekbar.max = 3
+
+        val respuestas = arrayOf("25% Matriz", "50% Matriz", "75% Matriz", "Sin control de fallos")
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                    numeroFallosPermitidos.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+    }
+
+    private fun seekbarNumImg() {
+        textOpcionNumImg = findViewById(R.id.textOpcionNumImg)
+        val seekbarNumImg: SeekBar = findViewById(R.id.seekbarNumImg)
+        seekbarNumImg.progress = 0
+        seekbarNumImg.max = 5
+
+        val respuestas = arrayOf("2", "3", "4", "5", "6", "7")
+
+        seekbarNumImg.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textOpcionNumImg.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
+    }
+
+    private fun seekbarTamanyoTablero() {
+        textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
+        val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progress = 0
+        seekbarTamanyoTablero.max = 2
+
+        val respuestas = arrayOf("Pequeño", "Mediano", "Grande")
+
+        seekbarTamanyoTablero.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textOpcionTamanyoTablero.text = respuestas[progress]
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {}
+
+        })
     }
 
     private fun esValido(tiempo: String): Boolean {

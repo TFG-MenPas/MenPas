@@ -27,6 +27,7 @@ class ModrianSimon : AppCompatActivity() {
     lateinit var botonAzul : ImageButton
     lateinit var nivelText : TextView
     lateinit var botonSeleccionado : ImageButton
+    lateinit var botonCerrarCuestionario: ImageButton
     var nivel : Int = 1
     lateinit var secuencia : ArrayList<Int>
     var indiceSecuencia: Int = 0
@@ -40,6 +41,11 @@ class ModrianSimon : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_simon)
+
+        botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
 
         nivelText = findViewById(R.id.nivel)
 

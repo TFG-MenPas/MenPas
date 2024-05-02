@@ -55,7 +55,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETNombreDelCentro"
+                    android:id="@+id/editTextNombreCentro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -81,7 +81,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETProvincia"
+                    android:id="@+id/editTextProvincia"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -105,7 +105,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETLocalidad"
+                    android:id="@+id/editTextLocalidad"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -128,7 +128,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETDireccion"
+                    android:id="@+id/editTextDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -151,7 +151,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETTelefono"
+                    android:id="@+id/editTextTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -174,7 +174,7 @@
                 android:minHeight="25px">
 
                 <EditText
-                    android:id="@+id/ETCodigoPostal"
+                    android:id="@+id/editTextCodigoPostal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"

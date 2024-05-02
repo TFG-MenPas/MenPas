@@ -1,5 +1,6 @@
 package com.uma.menpas.activities
 
+import android.content.Intent
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -82,17 +83,32 @@ class CuestionarioDinamico : AppCompatActivity() {
                 rellenarPregunta(preguntas)
             }
         }
+        botonCerrarCuestionario.setOnClickListener {
+            finish()
+        }
     }
 
     private fun finalizarCuestionario(usuario: String) {
-        val query = QueryParser().parse(JSON_RESOURCE_NAME, CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this))
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
             CuestionarioService().insertarCuestionario(query)
             showToast("Éxito en la petición")
         } catch (e: Error) {
             showToast("Algo salió mal realizando la petición")
         }
-        //Aquí iría el intent al activity de resultados
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
     }
 
     private fun guardarRespuesta(tipoPregunta: String) {
