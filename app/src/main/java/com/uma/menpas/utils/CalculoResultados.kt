@@ -22,16 +22,16 @@ class CalculoResultados {
             "preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
             "preguntas_rs" -> calculateRS (respuestasUsuario, usuario)
-            "preguntas_maslach" -> calculateMaslach(respuestasUsuario)
-            "preguntas_abq" -> calculateABQ(respuestasUsuario)
-            "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario)
-            "preguntas_af5" -> calculateAF5(respuestasUsuario)
-            "preguntas_bsq" -> calculateBSQ(respuestasUsuario)
-            "preguntas_caf" -> calculateCAF(respuestasUsuario)
-            "preguntas_sf_36" -> calculateSF36(respuestasUsuario)
-            "preguntas_sf_12" -> calculateSF12(respuestasUsuario)
-            "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario)
-            "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario)
+            "preguntas_maslach" -> calculateMaslach(respuestasUsuario,usuario)
+            "preguntas_abq" -> calculateABQ(respuestasUsuario, usuario)
+            "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario, usuario)
+            "preguntas_af5" -> calculateAF5(respuestasUsuario, usuario)
+            "preguntas_bsq" -> calculateBSQ(respuestasUsuario, usuario)
+            "preguntas_caf" -> calculateCAF(respuestasUsuario, usuario)
+            "preguntas_sf_36" -> calculateSF36(respuestasUsuario, usuario)
+            "preguntas_sf_12" -> calculateSF12(respuestasUsuario, usuario)
+            "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
+            "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
     }
@@ -358,13 +358,13 @@ class CalculoResultados {
         val values = listOf(id, nombreUsuario, *valoresString.toTypedArray(), tiempo, idioma, fecha, *itemList.toTypedArray() )
         return keys.zip(values).toMap()
     }
-    private fun calculateAutoComida(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateAutoComida(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_Autorregistro", "Nombre_Usuario", "Dia", "Hora", "Tiempo", "Cantidad", "Actividad", "LugarComida", "Comida_tipo", "Calorias", "Categoria", "Idioma", "Fecha", "Tipo"
         )
-        val id = "13125"
+        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "Id_Autorregistro")
+        val nombreUsuario = formattedString(usuario)
         val tipo = formattedString("A Comida")
-        val usuario = formattedString("pruebamenpas")
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val itemList = mutableListOf<String>()
@@ -385,17 +385,17 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, *itemList.toTypedArray(), idioma, fecha, tipo
+            id, nombreUsuario, *itemList.toTypedArray(), idioma, fecha, tipo
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateVS(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateVS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_Vitalidad", "Nombre_Usuario", "sol", "n1", "n2", "n3", "n4", "n5", "n6", "Tiempo", "Idioma", "Fecha"
         )
-        val id = "407"
-        val usuario = formattedString("pruebamenpas")
+        val id = CuestionarioService().obtenerIdDisponible("Vitalidad", "Id_Vitalidad")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -416,19 +416,19 @@ class CalculoResultados {
             valores.add(valor.toInt())
         }
         val values = listOf(
-            id, usuario, valores.average().toInt().toString(), *itemList.toTypedArray(), tiempo, idioma, fecha,
+            id, nombreUsuario, valores.average().toInt().toString(), *itemList.toTypedArray(), tiempo, idioma, fecha,
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateSF12(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateSF12(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_SF12", "Nombre_Usuario", "Medida_S_Fisica", "Medida_S_Mental", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12"
         )
-        val id = "1917"
-        val usuario = formattedString("pruebamenpas")
+        val id = CuestionarioService().obtenerIdDisponible("SF12", "Id_SF12")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -521,12 +521,12 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, Medida_S_Fisica.average().toInt().toString(), Medida_S_Mental.average().toInt().toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+            id, nombreUsuario, Medida_S_Fisica.average().toInt().toString(), Medida_S_Mental.average().toInt().toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateSF36(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateSF36(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_SF36", "Nombre_Usuario", "F_Fisica", "Rol_Fisico", "Dolor", "Salud", "Vitalidad", "FuncionS", "Rol_Emocional", "Salud_Mental", "Cambio_Salud", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
@@ -536,8 +536,8 @@ class CalculoResultados {
             "n28", "n29", "n30", "n31", "n32", "n33", "n34", "n35",
             "n36"
         )
-        val id = "1663"
-        val usuario = formattedString("pruebamenpas")
+        val id = CuestionarioService().obtenerIdDisponible("SF36", "Id_SF36")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -739,14 +739,14 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, F_Fisica.average().toInt().toString(), Rol_Fisico.average().toInt().toString(), Dolor.average().toInt().toString(), Salud.average().toInt().toString(),
+            id, nombreUsuario, F_Fisica.average().toInt().toString(), Rol_Fisico.average().toInt().toString(), Dolor.average().toInt().toString(), Salud.average().toInt().toString(),
             Vitalidad.average().toInt().toString(), FuncionS.average().toInt().toString(), Rol_Emocional.average().toInt().toString(), Salud_Mental.average().toInt().toString(),
             Cambio_Salud.toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateCAF(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateCAF(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_CAF", "Nombre_Usuario", "Habilidad", "Condicion", "Atractivo", "Fuerza", "AutoconceptoF", "AutoconceptoG", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
@@ -756,8 +756,8 @@ class CalculoResultados {
             "n28", "n29", "n30", "n31", "n32", "n33", "n34", "n35",
             "n36"
         )
-        val id = "2401"
-        val usuario = formattedString("pruebamenpas")
+        val id = CuestionarioService().obtenerIdDisponible("CAF", "Id_CAF")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -813,19 +813,19 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, Habilidad.toString(), Condicion.toString(), Atractivo.toString(), Fuerza.toString(), AutoconceptoF.toString(), AutoconceptoG.toString(),tiempo, idioma, fecha, *itemList.toTypedArray()
+            id, nombreUsuario, Habilidad.toString(), Condicion.toString(), Atractivo.toString(), Fuerza.toString(), AutoconceptoF.toString(), AutoconceptoG.toString(),tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateBSQ(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateBSQ(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_BSQ", "Nombre_Usuario", "Factor1", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12", "n13", "n14"
         )
-        val id = "1913"
-        val usuario = formattedString("nestorgc")
+        val id = CuestionarioService().obtenerIdDisponible("BSQ", "Id_BSQ")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -845,12 +845,12 @@ class CalculoResultados {
             Factor1 += valor.toInt()
         }
         val values = listOf(
-            id, usuario, Factor1.toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
+            id, nombreUsuario, Factor1.toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateAF5(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateAF5(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_AF5", "Nombre_Usuario", "Académico", "Social", "Emocional", "Familiar", "Físico", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
@@ -858,8 +858,8 @@ class CalculoResultados {
             "n17", "n18", "n19", "n20", "n21", "n22", "n23", "n24",
             "n25", "n26", "n27", "n28", "n29", "n30"
         )
-        val id = "2970"
-        val usuario = formattedString("nestorgc")
+        val id = CuestionarioService().obtenerIdDisponible("AF5", "Id_AF5")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -892,19 +892,19 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, round((Academico / 60).toDouble()).toString(),  round((Social / 60).toDouble()).toString(),  round((Emocional / 60).toDouble()).toString(),
+            id, nombreUsuario, round((Academico / 60).toDouble()).toString(),  round((Social / 60).toDouble()).toString(),  round((Emocional / 60).toDouble()).toString(),
             round((Familiar / 60).toDouble()).toString(),  round((Fisico / 60).toDouble()).toString(), tiempo, idioma, fecha, *itemList.toTypedArray()
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculatePreliminarABQ(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculatePreliminarABQ(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "Id_DatosABQ", "Nombre_Usuario", "Años", "Antes_de", "Club", "categoria", "Nivel", "Numero", "Duracion",
             "Meses", "Fecha", "Idioma"
         )
-        val id = "875"
-        val usuario = formattedString("nestorgc")
+        val id = CuestionarioService().obtenerIdDisponible("DatosABQ", "Id_DatosABQ")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val itemList = mutableListOf<String>()
@@ -916,20 +916,20 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, *itemList.toTypedArray(), fecha, idioma
+            id, nombreUsuario, *itemList.toTypedArray(), fecha, idioma
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateABQ(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateABQ(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "id_ABQ", "Nombre_Usuario", "AFE", "RSL", "DPD", "AFE_T", "RSL_T", "DPD_T", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12", "n13", "n14", "n15",
             "Fecha", "Idioma", "Tiempo"
         )
-        val id = "1331"
-        val usuario = formattedString("nestorgc")
+        val id = CuestionarioService().obtenerIdDisponible("ABQ", "Id_ABQ")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -1047,12 +1047,12 @@ class CalculoResultados {
             else -> AFE_T = 80
         }
         val values = listOf(
-            id, usuario, AFE.toString(), RSL.toString(), DPD.toString(), AFE_T.toString(), RSL_T.toString(), DPD_T.toString(), *itemList.toTypedArray(), fecha, idioma, tiempo
+            id, nombreUsuario, AFE.toString(), RSL.toString(), DPD.toString(), AFE_T.toString(), RSL_T.toString(), DPD_T.toString(), *itemList.toTypedArray(), fecha, idioma, tiempo
         )
         return keys.zip(values).toMap()
     }
 
-    private fun calculateMaslach(respuestasUsuario: ArrayList<String>): Map<String, String> {
+    private fun calculateMaslach(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
             "ID_Burnout", "Nombre_Usuario", "Escala_CE", "Escala_DP", "Escala_RP", "Fecha", "Item1",
             "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9",
@@ -1060,8 +1060,8 @@ class CalculoResultados {
             "Item17", "Item18", "Item19", "Item20", "Item21", "Item22",
             "Idioma", "Tiempo"
         )
-        val id = "4062"
-        val usuario = formattedString("nestorgc")
+        val id = CuestionarioService().obtenerIdDisponible("burnout", "ID_Burnout")
+        val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
         val tiempo = "100"
@@ -1094,7 +1094,7 @@ class CalculoResultados {
             }
         }
         val values = listOf(
-            id, usuario, escalaCE.toString(), escalaDP.toString(), escalaRP.toString(), fecha, *itemList.toTypedArray(), idioma, tiempo
+            id, nombreUsuario, escalaCE.toString(), escalaDP.toString(), escalaRP.toString(), fecha, *itemList.toTypedArray(), idioma, tiempo
         )
         return keys.zip(values).toMap()
     }
