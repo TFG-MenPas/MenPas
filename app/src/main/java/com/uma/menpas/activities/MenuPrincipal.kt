@@ -30,6 +30,13 @@ class MenuPrincipal : AppCompatActivity() {
         val inteligencia_emocional = findViewById<CardView>(R.id.inteligencia_emocional)
         val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        lateinit var usuario: String
+        try {
+            usuario = intent.getStringExtra("usuario") as String
+        } catch (e: java.lang.NullPointerException) {
+            usuario = "user"
+        }
+
 
         textNombreUsuario = findViewById(R.id.textNombreUsuario)
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
@@ -37,42 +44,42 @@ class MenuPrincipal : AppCompatActivity() {
         BarraNavegacion(barraNavegacionInferior, this)
 
         autorregistro.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         ansiedad.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id,usuario)
         }
 
         autoconcepto.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         atencion.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
         busqueda_talentos.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         burnout.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         dinamica_grupal.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         calidad_vida.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         inteligencia_emocional.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
         entrenamiento_mental.setOnClickListener {
-            abrirArea(it.id)
+            abrirArea(it.id, usuario)
         }
 
     }
@@ -92,11 +99,11 @@ class MenuPrincipal : AppCompatActivity() {
         actualizarNombreUsuario()
     }
 
-    fun abrirArea(id: Int) {
+    fun abrirArea(id: Int, usuario: String) {
         var nombre = resources.getResourceName(id).split(":id/")[1]
         var intent = Intent(this, Area::class.java)
         when(nombre){
-            "autorregistro" -> intent.putExtra("area", "Autorregistro")
+            "autorregistro" -> intent.putExtra("area", "Autorregistro");
             "ansiedad" -> intent.putExtra("area", "Ansiedad")
             "autoconcepto" -> intent.putExtra("area", "Autoconcepto")
             "atencion" -> intent.putExtra("area", "Atención")
@@ -107,6 +114,7 @@ class MenuPrincipal : AppCompatActivity() {
             "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia emocional")
             "entrenamiento_mental" -> intent.putExtra("area", "Entrenamiento mental")
         }
+        intent.putExtra("usuario", usuario)
         startActivity(intent)
     }
 

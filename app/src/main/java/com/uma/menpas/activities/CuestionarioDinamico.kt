@@ -55,6 +55,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         botonSiguiente = findViewById(R.id.buttonSiguiente)
         rlDinamico = findViewById(R.id.RLDynamicContent)
         respuestasUsuario = ArrayList()
+        val usuario = intent.getStringExtra("usuario") as String
 
         val obj = getJSONObjectFromRaw()
         val preguntas = obj.getJSONArray(JSON_OBJECT_NAME)
@@ -64,7 +65,7 @@ class CuestionarioDinamico : AppCompatActivity() {
             val tipoPregunta = preguntas.getJSONObject(indicePregunta).getString("tipo")
             guardarRespuesta(tipoPregunta)
             if(indicePregunta == preguntas.length() - 1){
-                this.finalizarCuestionario()
+                this.finalizarCuestionario(usuario)
             }else{
                 indicePregunta++
                 rellenarPregunta(preguntas)
@@ -87,8 +88,8 @@ class CuestionarioDinamico : AppCompatActivity() {
         }
     }
 
-    private fun finalizarCuestionario() {
-        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario)
+    private fun finalizarCuestionario(usuario: String) {
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
         val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
             CuestionarioService().insertarCuestionario(query)

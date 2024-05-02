@@ -12,19 +12,19 @@ import org.ksoap2.transport.HttpTransportSE
 
 class CentroService() {
 
-        fun listCentersDetailed(): List<Centro>? {
-            val request = SoapBuilder.createSoapObject("lista_datos_centros")
-            return CentroSoapMapper.soapListToCenterList(PeticionSOAP.enviarPeticion(request))
-        }
+    fun listCentersDetailed(): List<Centro>? {
+        val request = SoapBuilder.createSoapObject("lista_datos_centros")
+        return CentroSoapMapper.soapListToCenterList(PeticionSOAP.enviarPeticion(request))
+    }
 
-        fun getCenterById(id: String): Centro {
-            val request = SoapBuilder.createSoapObject("getCentro")
-            request.addProperty("ID", id);
-            var centerList = listOf<Centro>()
-            val result = PeticionSOAP.enviarPeticion(request)
-            centerList = CentroSoapMapper.soapListToCenterList(result)!!
-            return centerList.get(0)
-        }
+    fun getCenterById(id: String): Centro {
+        val request = SoapBuilder.createSoapObject("getCentro")
+        request.addProperty("ID", id);
+        var centerList = listOf<Centro>()
+        val result = PeticionSOAP.enviarPeticion(request)
+        centerList = CentroSoapMapper.soapListToCenterList(result)!!
+        return centerList.get(0)
+    }
 
 
         fun crearCentro(nuevoCentro: Centro): Boolean {

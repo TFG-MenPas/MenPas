@@ -5,6 +5,7 @@ import com.uma.menpas.models.mappers.CuestionarioSoapMapper
 import com.uma.menpas.network.PeticionSOAP
 import com.uma.menpas.network.SoapBuilder
 import org.ksoap2.serialization.SoapObject
+import org.ksoap2.serialization.SoapPrimitive
 
 class CuestionarioService {
 
@@ -44,4 +45,13 @@ class CuestionarioService {
         return result
     }
 
+    fun obtenerIdDisponible(table: String, field: String): String {
+        val request = SoapBuilder.createSoapObject("getNewID")
+        request.addProperty("table", table)
+        request.addProperty("field", field)
+        val result = PeticionSOAP.enviarPeticion(request)
+        val getNewIDResponse = result.getProperty(0) as SoapPrimitive
+        val id =  getNewIDResponse.value as String
+        return id
+    }
 }

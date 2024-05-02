@@ -30,6 +30,7 @@ class Area : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
+        val usuario = intent.getStringExtra("usuario") as String
         var area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area)
@@ -37,9 +38,10 @@ class Area : AppCompatActivity() {
 
         val linearLayout = findViewById<LinearLayout>(R.id.botones_areas)
         drawTitle(area)
-        iterateSections(area, getSections(area), linearLayout)
+        iterateSections(area, getSections(area), linearLayout, usuario)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
         BarraNavegacion(barraNavegacionInferior, this)
     }
 
@@ -54,7 +56,7 @@ class Area : AppCompatActivity() {
         return jsonObject.toDict()[area] as List<String>
     }
 
-    private fun iterateSections(area: String, sections: List<String>, linearLayout: LinearLayout) {
+    private fun iterateSections(area: String, sections: List<String>, linearLayout: LinearLayout, usuario: String) {
         for (section in sections) {
             val boton = Button(this).apply {
                 text = section
@@ -78,6 +80,7 @@ class Area : AppCompatActivity() {
                 val json_resource_name = json_resource.replace(".", "").replace("-", "")
                 intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", section)
+                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             }
         }
