@@ -1,0 +1,60 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Si tengo una discrepancia menor con un amigo personal o con mi cónyuge, más del estilo “No, te toca a ti lavar los platos”, que “¡Me has engañado!”, el mal humor por regla general me dura horas o más.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 2,
+			"pregunta": "Si otro conductor utiliza el arcén para adelantar a una larga cola de coches que aguardan su turno para pasar e incorporarse al carril de la autopista, lo más probable es que sacuda la cabeza y no que esté furioso mucho tiempo.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 3,
+			"pregunta": "Cuando he sentido un dolor profundo, como la muerte de alguien allegado, eso ha afectado durante meses mi capacidad de funcionar.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 4,
+			"pregunta": "Si cometo un error, falta o equivocación en el trabajo y me reprenden por ello, le quito importancia y lo considero una manera de aprender.",
+			"tipo": "siNo"
+		},
+		{
+			"numero": 5,
+			"pregunta": "Si pruebo un nuevo restaurante y la comida me parece horrible y el servicio se da demasiado tono, eso me estropea la velada.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "Si me encuentro en un atasco de tráfico causado por un accidente que se ha producido más adelante, cuando dejo atrás el embotellamiento en general piso a fondo el acelerador para desahogar mi frustración, pero sigo furioso por dentro.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Si se estropea el calentador del agua en casa, no afecta mucho a mi estado de ánimo, porque sé que puedo llamar al fontanero y solucionar el problema.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Si conozco a una mujer (o a un hombre) que considero maravilloso y le pregunto si le gustaría que nos volviéramos a ver, cuando me dicen que no suelo ponerme de mal humor durante horas e incluso días.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Si me están considerando para un galardón profesional o un ascenso y acaban concediéndoselo a alguien que considero menos cualificado, el enojo en general se me pasa pronto.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "En una fiesta, si estoy conversando con un extraño que me parece interesante y me quedo mudo cuando esa persona me pregunta cosas sobre mí, tiendo a repetir la conversación –en esta ocasión incluyendo lo que debería haber dicho- durante horas o incluso días después.",
+			"tipo": "siNo"
+			
+		}
+	]
+}

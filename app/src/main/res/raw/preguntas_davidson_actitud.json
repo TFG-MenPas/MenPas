@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Cuando me invitan a participar en una reunión con otra gente, espero con ganas que llegue el momento, y pienso que pueden llegar a ser mis amigos, en lugar de verlo como una tarea, pensando que nunca valdrá la pena conocer a estas personas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 2,
+			"pregunta": "Cuando evalúo a un colaborador, me centro en los detalles de las áreas en las que es preciso que mejore en lugar de en su rendimiento positivo general.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 3,
+			"pregunta": "Creo que los diez próximos años serán mejores para mí que los últimos diez..",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 4,
+			"pregunta": "La posibilidad de trasladarme a vivir a una nueva ciudad la percibo como un paso aterrador hacia lo desconocido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 5,
+			"pregunta": "Cuando algo pequeño pero inesperado y positivo me sucede por la mañana –por ejemplo, mantener una extraordinaria conversación con un desconocido-, el estado de ánimo positivo se desvanece en cuestión de minutos.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "Cuando voy a una fiesta y me lo paso bien al principio, ese sentimiento positivo tiende a durarme toda la velada.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Considero que los paisajes hermosos, como una magnífica puesta de sol, desaparecen rápidamente y me aburro con facilidad.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Cuando me levanto por la mañana, pienso en una grata actividad que he planeado hacer y ese pensamiento me pone de un buen humor que me dura todo el día.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Cuando voy a un museo o asisto a un concierto, los primeros minutos son realmente agradables, pero esa sensación no dura.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "A menudo tengo la impresión de que, en los días de más trabajo, puedo seguir pasando de un asunto a otro sin cansarme.",
+			"tipo": "siNo"
+			
+		}
+	]
+}

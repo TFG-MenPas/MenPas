@@ -7,10 +7,18 @@ import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.controllers.UsuarioController
 import java.util.Calendar
 import kotlin.math.round
+import com.uma.menpas.cuestionarios.EPI
+import com.uma.menpas.cuestionarios.IPED
+import com.uma.menpas.cuestionarios.PDavidson
 
 class CalculoResultados {
 
-    fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>, usuario: String, context: Context): Map<String, String> {
+    fun calculate(
+        jsonResourceName: String,
+        respuestasUsuario: ArrayList<String>,
+        usuario: String,
+        context: Context
+    ): Map<String, String> {
         return when (jsonResourceName) {
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario)
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
@@ -32,7 +40,10 @@ class CalculoResultados {
             "preguntas_sf_12" -> calculateSF12(respuestasUsuario, usuario)
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
-            else -> calculateCSAI2(respuestasUsuario, usuario)
+            "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
+            "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
+            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, usuario)
+            else -> IPED.calculateIPED(respuestasUsuario, usuario)
         }
     }
 

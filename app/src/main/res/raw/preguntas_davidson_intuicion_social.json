@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Cuando hablo con otras personas, a menudo percibo sutiles señales sociales acerca de sus emociones –incomodidad, por ejemplo, o enfado- antes aun de que reconozcan esos sentimientos en ellas mismas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 2,
+			"pregunta": "A menudo me doy cuenta de que observo las expresiones faciales y el lenguaje corporal.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 3,
+			"pregunta": "Considero que en realidad no importa si hablo con alguien por teléfono o cara a cara, porque en contadas ocasiones consigo obtener información adicional al observar a la persona con la que hablo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 4,
+			"pregunta": "A menudo siento como si supiera más acerca de los verdaderos sentimientos de una persona que ella misma.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 5,
+			"pregunta": "A menudo me coge por sorpresa cuando alguien con quien estoy hablando se enfada o se altera por algo que he dicho, sin motivo aparente.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "En un restaurante, prefiero sentarme al lado de alguien con quien estoy hablando de manera que no tenga que verle de cara.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "A menudo veo que respondo a la incomodidad o aflicción de otra persona basándome en un sentimiento intuitivo y no en un diálogo explícito.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Cuando me encuentro en lugares públicos, me gusta observar a la gente que tengo a mi alrededor.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me resulta incómodo cuando alguien a quien apenas conozco me mira directamente a los ojos durante una conversación.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "A menudo puedo saber cuándo algo molesta a otra persona simplemente mirándola.",
+			"tipo": "siNo"
+			
+		}
+	]
+}
