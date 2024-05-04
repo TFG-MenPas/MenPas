@@ -102,6 +102,7 @@ class CuestionarioD2 : AppCompatActivity() {
                     totalAciertosPorFila()
                     erroresComisionPorFila()
                     erroresOmisionPorFila()
+                    tiempoReaccionPorFila()
                     if(contadorFilas == NUMERO_FILAS_D2){
                         showToast("Cuestionario D2 finalizado")
                         crono.stop()
@@ -121,8 +122,19 @@ class CuestionarioD2 : AppCompatActivity() {
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                 }
             }
-
         }.start()
+    }
+
+    private fun tiempoReaccionPorFila() {
+        var tiempoReaccion = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            if(textD2Letra.currentTextColor == azulClaro){
+                tiempoReaccion = i
+            }
+        }
+        showToast("Errores Omision: $tiempoReaccion")
     }
 
     private fun erroresOmisionPorFila() {
