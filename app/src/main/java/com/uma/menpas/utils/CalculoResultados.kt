@@ -16,7 +16,13 @@ class CalculoResultados {
         return when (jsonResourceName) {
             "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
             "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
-            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, usuario)
+            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, context)
+            "preguntas_davidson_resistencia" -> PDavidson.calculatePDavidsonResistencia(respuestasUsuario, context)
+            "preguntas_davidson_actitud" -> PDavidson.calculatePDavidsonActitud(respuestasUsuario, context)
+            "preguntas_davidson_intuicion_social" -> PDavidson.calculatePDavidsonIntuicion(respuestasUsuario, context)
+            "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
+            "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
+            "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
             else -> IPED.calculateIPED(respuestasUsuario, usuario)
         }
     }
