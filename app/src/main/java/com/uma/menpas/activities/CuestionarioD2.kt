@@ -63,6 +63,7 @@ class CuestionarioD2 : AppCompatActivity() {
         if (tipoTestD2 == "cuestionario_d2_original"){
             filasD2Original = inicializarFilasD2Original()
         }
+        respuestasUsuario = ArrayList()
         TR1_14 = ""
         TA1_14 = ""
         O1_14 = ""

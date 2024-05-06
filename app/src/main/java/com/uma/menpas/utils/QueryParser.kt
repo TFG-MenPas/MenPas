@@ -1,5 +1,6 @@
 package com.uma.menpas.utils
 
+import com.uma.menpas.cuestionarios.PDavidson
 import java.time.format.DateTimeFormatter
 
 class QueryParser {
@@ -29,6 +30,25 @@ class QueryParser {
             "preguntas_evaluacion_mental_iped" -> parseGeneric(respuestasUsuario, "iped")
             "preguntas_entrenamiento_mental_epi" -> parseGeneric(respuestasUsuario, "epi")
             "cuestionario_d2" -> parseGeneric(respuestasUsuario, "d2")
+            "preguntas_davidson_completo",
+            "preguntas_davidson_resistencia",
+            "preguntas_davidson_actitud",
+            "preguntas_davidson_intuicion_social",
+            "preguntas_davidson_autoconciencia",
+            "preguntas_davidson_contexto",
+            "preguntas_davidson_atencion" -> parseGeneric(respuestasUsuario, "PED")
+            "preguntas_poms_65",
+            "preguntas_poms_58",
+            "preguntas_poms_15",
+            "preguntas_poms_6",
+            "preguntas_poms_angustia_colera",
+            "preguntas_poms_confusion_orientacion",
+            "preguntas_poms_depresion",
+            "preguntas_poms_fatiga_inercia",
+            "preguntas_poms_tension_ansiedad",
+            "preguntas_poms_vigor_activacion" -> parseGeneric(respuestasUsuario, "poms")
+
+
             else -> parseCSAI2(respuestasUsuario)
         }
     }
