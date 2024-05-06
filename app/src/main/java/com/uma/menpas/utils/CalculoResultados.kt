@@ -12,7 +12,10 @@ class CalculoResultados {
 
     fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>, usuario: String, context: Context): Map<String, String> {
         return when (jsonResourceName) {
-            "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario)
+            "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
+            "preguntas_csai2_cognitiva" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
+            "preguntas_csai2_autoconfianza" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
+            "preguntas_csai2_somatica" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
             "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false, context)
@@ -21,7 +24,7 @@ class CalculoResultados {
             "preguntas_eacs" -> calculateEACS(respuestasUsuario, usuario)
             "preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
-            "preguntas_rs" -> calculateRS (respuestasUsuario, usuario)
+            "preguntas_rs" -> calculateRS(respuestasUsuario, usuario)
             "preguntas_maslach" -> calculateMaslach(respuestasUsuario,usuario)
             "preguntas_abq" -> calculateABQ(respuestasUsuario, usuario)
             "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario, usuario)
@@ -36,7 +39,7 @@ class CalculoResultados {
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
             "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
-            else -> calculateCSAI2(respuestasUsuario, usuario)
+            else -> calculateMPS(respuestasUsuario, usuario)
         }
     }
 
@@ -1221,7 +1224,7 @@ class CalculoResultados {
         return keys.zip(values).toMap()
     }
 
-    private fun calculateCSAI2(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+    private fun calculateCSAI2(respuestasUsuario: ArrayList<String>, usuario: String, jsonResourceName: String): Map<String, String> {
         val keys = listOf(
             "ID_CSAI2", "Nombre_Usuario", "Cognitiva", "Somatica", "Autoconfianza", "Fecha", "Item1", "Item2", "Item3", "Item4",
             "Item5", "Item6", "Item7", "Item8", "Item9", "Item10", "Item11", "Item12", "Item13", "Item14",
@@ -1229,39 +1232,62 @@ class CalculoResultados {
             "Item25", "Item26", "Item27", "Idioma", "Tipo", "Tiempo"
         )
 
-        val id = listOf(CuestionarioService().obtenerIdDisponible("csai2", "id_csai2"))
-        val nombreUsuario = listOf(formattedString(usuario))
-
-        val values = mutableListOf(0, 0, 0)
-        var i = 0
-        val respuestasUsuarioInt = respuestasUsuario.map {
-            when (it) {
-                "Siempre" -> 5
-                "Casi siempre" -> 4
-                "A veces" -> 3
-                "Casi nunca" -> 2
-                "Nunca" -> 1
-                else -> 0
+        val id = CuestionarioService().obtenerIdDisponible("csai2", "ID_CSAI2")
+        val nombreUsuario = formattedString(usuario)
+        var cognitiva = 0
+        var somatica = 0
+        var autoconfianza = 0
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val tiempo = "100"
+        var itemList = mutableListOf<String>()
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            val valor = when (respuesta) {
+                "Siempre" -> "5"
+                "Casi siempre" -> "4"
+                "A veces" -> "3"
+                "Casi nunca" -> "2"
+                "Nunca" -> "1"
+                else -> "0"
+            }
+            if (jsonResourceName.equals("preguntas_csai2")) {
+                if (index % 3 == 0) {
+                    cognitiva += valor.toInt()
+                } else if (index % 3 == 1) {
+                    somatica += valor.toInt()
+                } else {
+                    autoconfianza += valor.toInt()
+                }
+                itemList.add(valor)
+            } else {
+                if (jsonResourceName.equals("preguntas_csai2_cognitiva")) {
+                    itemList.add(valor)
+                    itemList.add("0")
+                    itemList.add("0")
+                    cognitiva += valor.toInt()
+                } else if (jsonResourceName.equals("preguntas_csai2_somatica")) {
+                    itemList.add("0")
+                    itemList.add(valor)
+                    itemList.add("0")
+                    somatica += valor.toInt()
+                } else if (jsonResourceName.equals("preguntas_csai2_autoconfianza")) {
+                    itemList.add("0")
+                    itemList.add("0")
+                    itemList.add(valor)
+                    autoconfianza += valor.toInt()
+                }
             }
         }
-        respuestasUsuarioInt.forEach {
-            values[i] += it
-            when (i) {
-                0 -> i = 1
-                1 -> i = 2
-                2 -> i = 0
-            }
+        val tipo = when (jsonResourceName) {
+            "preguntas_csai2_cognitiva" -> formattedString("Cognitiva")
+            "preguntas_csai2_autoconfianza" -> formattedString("Autoconfianza")
+            "preguntas_csai2_somatica" -> formattedString("Somática")
+            else -> formattedString("Csai2")
         }
+        val values = listOf(id, nombreUsuario, cognitiva.toString(), somatica.toString(), autoconfianza.toString(),
+            fecha, *itemList.toTypedArray(), idioma, tipo, tiempo)
 
-        val fecha = listOf("'" + obtenerFechaActual() + "'")
-
-        val idioma = listOf("'" + "es-es" + "'")
-        val tipo = listOf("'" + "Csai2" + "'")
-        val tiempo = listOf("100")
-
-        val listaFinal = id + nombreUsuario + values.map { it.toString() } + fecha + respuestasUsuarioInt.map { it.toString() } + idioma + tipo + tiempo
-
-        return keys.zip(listaFinal).toMap()
+        return keys.zip(values).toMap()
     }
 
     private fun obtenerFechaActual(): String {

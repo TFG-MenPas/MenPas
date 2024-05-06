@@ -1,0 +1,110 @@
+[
+	{
+		"numero": 1,
+		"pregunta": "Estoy inquieto.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 2,
+		"pregunta": "Estoy nervioso.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 3,
+		"pregunta": "Mi cuerpo está tenso.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 4,
+		"pregunta": "Antes de competir siento molestias en el estómago.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 5,
+		"pregunta": "Mi cuerpo está relajado.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 6,
+		"pregunta": "Antes de competir mi corazón late más rápido de lo habitual.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 7,
+		"pregunta": "Tengo el estómago revuelto.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 8,
+		"pregunta": "Me sudan las manos.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	},
+	{
+		"numero": 9,
+		"pregunta": "Mi cuerpo está rígido.",
+		"tipo": "seleccionMultiple",
+		"respuestas": [
+			"Siempre",
+			"Casi siempre",
+			"A veces",
+			"Casi nunca",
+			"Nunca"
+		]
+	}
+]
