@@ -6,32 +6,38 @@ class QueryParser {
 
     fun parse(jsonResourceName: String, respuestasUsuario: Map<String, String>): String {
         return when (jsonResourceName) {
-            "preguntas_csai2" -> parseCSAI2(respuestasUsuario)
-            "preguntas_scat" -> parseSCAT(respuestasUsuario)
-            "preguntas_acsi_28" -> parseACSI28(respuestasUsuario)
-            "preguntas_stai_ar" -> parseSTAI(respuestasUsuario)
-            "preguntas_stai_ae" -> parseSTAI(respuestasUsuario)
-            "preguntas_embu" -> parseEMBU(respuestasUsuario)
-            "preguntas_eacs" -> parseEACS(respuestasUsuario)
-            "preguntas_mps" -> parseMPS(respuestasUsuario)
-            "preguntas_rs" -> parseRS(respuestasUsuario)
+            "preguntas_csai2" -> parseGeneric(respuestasUsuario, "csai2")
+            "preguntas_scat" -> parseGeneric(respuestasUsuario, "scat")
+            "preguntas_acsi_28" -> parseGeneric(respuestasUsuario, "ACSI_28")
+            "preguntas_stai_ae" -> parseGeneric(respuestasUsuario, "STAI")
+            "preguntas_stai_ar" -> parseGeneric(respuestasUsuario, "STAI")
+            "preguntas_embu" -> parseGeneric(respuestasUsuario, "EMBU")
+            "preguntas_eacs" -> parseGeneric(respuestasUsuario, "EACS")
+            "preguntas_mps" -> parseGeneric(respuestasUsuario, "MPS")
+            "preguntas_rs" -> parseGeneric(respuestasUsuario, "RS")
             "preguntas_ipseta" -> parseIPSETA(respuestasUsuario)
-            "preguntas_maslach" -> parseMaslach(respuestasUsuario)
-            "preguntas_abq" -> parseABQ(respuestasUsuario)
-            "preguntas_preliminar_abq" -> parsePreliminarABQ(respuestasUsuario)
-            "preguntas_af5" -> parseAF5(respuestasUsuario)
-            "preguntas_bsq" -> parseBSQ(respuestasUsuario)
-            "preguntas_caf" -> parseCAF(respuestasUsuario)
-            "preguntas_sf_36" -> parseSF36(respuestasUsuario)
-            "preguntas_sf_12" -> parseSF12(respuestasUsuario)
+            "preguntas_maslach" -> parseGeneric(respuestasUsuario, "burnout")
+            "preguntas_abq" -> parseGeneric(respuestasUsuario, "ABQ")
+            "preguntas_preliminar_abq" -> parseGeneric(respuestasUsuario, "DatosABQ")
+            "preguntas_af5" -> parseGeneric(respuestasUsuario, "AF5")
+            "preguntas_bsq" -> parseGeneric(respuestasUsuario, "BSQ")
+            "preguntas_caf" -> parseGeneric(respuestasUsuario, "CAF")
+            "preguntas_sf_36" -> parseGeneric(respuestasUsuario, "SF36")
+            "preguntas_sf_12" -> parseGeneric(respuestasUsuario, "SF12")
             "preguntas_dinamica_grupal_ccd" -> parseGeneric(respuestasUsuario, "CCDeportiva")
             "preguntas_vitalidad_subjetiva" -> parseVS(respuestasUsuario)
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
             "preguntas_autorregistro_pensamientos_negativos" -> parseAutorregistroPN(respuestasUsuario)
             "preguntas_autorregistro_libre" -> parseAutorregistroLibre(respuestasUsuario)
-            else -> parseCSAI2(respuestasUsuario)
+            else -> parseGeneric(respuestasUsuario, "")
         }
+    }
+
+    private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
+        val valores = respuestasUsuario.values.joinToString(separator = ",")
+        val query = "INSERT INTO $nombreTabla VALUES($valores)"
+        return query
     }
 
     private fun parseAutorregistroLibre(respuestasUsuario: Map<String, String>): String {
@@ -96,11 +102,7 @@ class QueryParser {
                 respuestasUsuario["Fecha"] + "')"
     }
 
-    private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
-        val valores = respuestasUsuario.values.joinToString(separator = ",")
-        val query = "INSERT INTO $nombreTabla VALUES($valores)"
-        return query
-    }
+
 
     private fun parseIPSETA(respuestasUsuario: Map<String, String>): String {
         return "INSERT INTO IPSETA (Id_IPSETA, Nombre_Usuario, M_Intrinseca, M_Logro, Auto, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, Tiempo, Idioma, Fecha) VALUES(" +
