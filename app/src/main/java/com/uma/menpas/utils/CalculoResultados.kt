@@ -5,7 +5,9 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.controllers.UsuarioController
-import java.util.Calendar
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.round
 
 class CalculoResultados {
@@ -67,16 +69,38 @@ class CalculoResultados {
     }
 
     private fun calculateAutorregistroDiario(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
-        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Dia", "Peso", "HorasSueño", "Pulsaciones", "Animo",
-            "T_Minima", "T_Maxima", "T_P_Deportiva", "Contenido_Prac", "P_Esfuerzo",
-            "C_Ejercicio", "I_Ejercicio", "EventoDestacado", "Estatura")
+        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Fecha", "Tipo",
+        "Tiempo", "Idioma", "Dia", "Peso", "HorasSueño", "Pulsaciones",
+        "Animo", "T_Minima", "T_Maxima", "T_P_Deportiva", "Contenido_Prac",
+        "P_Esfuerzo", "C_Ejercicio", "I_Ejercicio", "EventoDestacado", "Estatura")
 
-        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
-        val nombreUsuario = formattedString(usuario)
-        val fecha = formattedString(obtenerFechaActual())
-        val tipo = formattedString("A Diario")
+        val idAutorregistro = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val fecha = obtenerFechaActual()
+        val tipo = "A Diario"
+        val tiempo = "100"
+        val idioma = "es-es"
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        respuestasUsuario[0] = dateFormat.format(Date(respuestasUsuario[0].toLong()))
+        for ((index, respuesta) in respuestasUsuario.withIndex()) {
+            if (index in listOf(1,2,4,7,13)) {
+                respuestasUsuario[index] = formattedString(respuesta)
+                if (index == 4) {
+                    respuestasUsuario[index] = when (respuestasUsuario[index]) {
+                        "Deprimido" -> "1"
+                        "Cabreado" -> "2"
+                        "Triste" -> "3"
+                        "Aburrido" -> "4"
+                        "Neutro" -> "5"
+                        "Contento" -> "6"
+                        "Alegre" -> "7"
+                        "Feliz" -> "8"
+                        else -> "1"
+                    }
+                }
+            }
+        }
 
-        val values = listOf(id, nombreUsuario, fecha, tipo, *respuestasUsuario.toTypedArray())
+        val values = listOf(idAutorregistro, usuario, fecha, tipo, tiempo.toString(), idioma, *respuestasUsuario.toTypedArray())
 
         return keys.zip(values).toMap()
     }

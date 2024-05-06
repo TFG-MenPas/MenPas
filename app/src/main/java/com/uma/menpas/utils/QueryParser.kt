@@ -7,6 +7,9 @@ class QueryParser {
     fun parse(jsonResourceName: String, respuestasUsuario: Map<String, String>): String {
         return when (jsonResourceName) {
             "preguntas_csai2" -> parseGeneric(respuestasUsuario, "csai2")
+            "preguntas_csai2_somatica" -> parseGeneric(respuestasUsuario, "csai2")
+            "preguntas_csai2_autoconfianza" -> parseGeneric(respuestasUsuario, "csai2")
+            "preguntas_csai2_cognitiva" -> parseGeneric(respuestasUsuario, "csai2")
             "preguntas_scat" -> parseGeneric(respuestasUsuario, "scat")
             "preguntas_acsi_28" -> parseGeneric(respuestasUsuario, "ACSI_28")
             "preguntas_stai_ae" -> parseGeneric(respuestasUsuario, "STAI")
@@ -78,11 +81,13 @@ class QueryParser {
     }
 
     private fun parseAutorregistroDiario(respuestasUsuario: Map<String, String>): String {
-        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Dia, Peso, HorasSueño, Pulsaciones, Animo, T_Minima, T_Maxima, T_P_Deportiva, Contenido_Prac, P_Esfuerzo, C_Ejercicio, I_Ejercicio, EventoDestacado, Estatura, Tiempo, Idioma, Fecha) VALUES (" +
+        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Tiempo, Idioma, Dia, Peso, HorasSueño, Pulsaciones, Animo, T_Minima, T_Maxima, T_P_Deportiva, Contenido_Prac, P_Esfuerzo, C_Ejercicio, I_Ejercicio, EventoDestacado, Estatura) VALUES (" +
                 respuestasUsuario["ID_Autorregistro"] + ", '" +
                 respuestasUsuario["Nombre_Usuario"] + "', '" +
                 respuestasUsuario["Fecha"] + "', '" +
                 respuestasUsuario["Tipo"] + "', '" +
+                respuestasUsuario["Tiempo"] + "', '" +
+                respuestasUsuario["Idioma"] + "', '" +
                 respuestasUsuario["Dia"] + "', " +
                 respuestasUsuario["Peso"] + ", " +
                 respuestasUsuario["HorasSueño"] + ", " +
@@ -96,10 +101,7 @@ class QueryParser {
                 respuestasUsuario["C_Ejercicio"] + "', '" +
                 respuestasUsuario["I_Ejercicio"] + "', '" +
                 respuestasUsuario["EventoDestacado"] + "', " +
-                respuestasUsuario["Estatura"] + ", '" +
-                respuestasUsuario["Tiempo"] + "', '" +
-                respuestasUsuario["Idioma"] + "', '" +
-                respuestasUsuario["Fecha"] + "')"
+                respuestasUsuario["Estatura"] + ")"
     }
 
 
