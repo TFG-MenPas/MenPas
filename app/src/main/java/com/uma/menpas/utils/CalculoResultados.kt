@@ -41,8 +41,49 @@ class CalculoResultados {
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
             "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
+            "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
             else -> calculateMPS(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateAutorregistroEntrenamiento(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        var keys = mutableListOf("ID_Autorregistro", "Nombre_Usuario", "Fecha", "Tipo",
+            "Tiempo", "Idioma", "Dia", "Ob_general", "Tarea", "Deporte",
+            "Objetivo")
+
+        val idAutorregistro = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val nombreUsuario = formattedString(usuario)
+        val fecha = formattedString(obtenerFechaActual())
+        val tipo = formattedString("A Diario")
+        val tiempo = "100"
+        val idioma = formattedString("es-es")
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+
+        respuestasUsuario[0] = dateFormat.format(Date(respuestasUsuario[0].toLong()))
+        val series = respuestasUsuario[5].split("|").drop(1).dropLast(1)
+        respuestasUsuario.removeAt(5)
+        val respuestas = respuestasUsuario.map { it -> formattedString(it)}
+
+        var i = 1
+        var j = 0
+        var seriesValues = mutableListOf<String>()
+        while (j < series.size) {
+            keys.add("S" + i.toString() + "A")
+            keys.add("S" + i.toString() + "E")
+            keys.add("S" + i.toString() + "D")
+
+            seriesValues.add(series[j])
+            seriesValues.add(series[j+1])
+            val sd = series[j].toInt() - series[j+1].toInt()
+            seriesValues.add(sd.toString())
+
+            i++
+            j += 2
+        }
+
+        val values = listOf(idAutorregistro, nombreUsuario, fecha, tipo, tiempo, idioma, *respuestas.toTypedArray(), *seriesValues.toTypedArray())
+
+        return keys.zip(values).toMap()
     }
 
     private fun calculateAutorregistroPN(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {

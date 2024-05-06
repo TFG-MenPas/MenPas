@@ -33,13 +33,15 @@ class QueryParser {
             "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
             "preguntas_autorregistro_pensamientos_negativos" -> parseAutorregistroPN(respuestasUsuario)
             "preguntas_autorregistro_libre" -> parseAutorregistroLibre(respuestasUsuario)
+            "preguntas_autorregistro_entrenamiento" -> parseGeneric(respuestasUsuario, "Autorregistros")
             else -> parseGeneric(respuestasUsuario, "")
         }
     }
 
     private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
         val valores = respuestasUsuario.values.joinToString(separator = ",")
-        val query = "INSERT INTO $nombreTabla VALUES($valores)"
+        val claves = respuestasUsuario.keys.joinToString(separator = "," )
+        val query = "INSERT INTO $nombreTabla ($claves) VALUES ($valores)"
         return query
     }
 
