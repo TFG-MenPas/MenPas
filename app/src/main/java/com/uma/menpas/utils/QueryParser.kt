@@ -26,6 +26,18 @@ class QueryParser {
             "preguntas_davidson_autoconciencia",
             "preguntas_davidson_contexto",
             "preguntas_davidson_atencion" -> parseGeneric(respuestasUsuario, "PED")
+            "preguntas_poms_65",
+            "preguntas_poms_58",
+            "preguntas_poms_15",
+            "preguntas_poms_6",
+            "preguntas_poms_angustia_colera",
+            "preguntas_poms_confusion_orientacion",
+            "preguntas_poms_depresion",
+            "preguntas_poms_fatiga_inercia",
+            "preguntas_poms_tension_ansiedad",
+            "preguntas_poms_vigor_activacion" -> parseGeneric(respuestasUsuario, "poms")
+
+
             else -> parseCSAI2(respuestasUsuario)
         }
     }

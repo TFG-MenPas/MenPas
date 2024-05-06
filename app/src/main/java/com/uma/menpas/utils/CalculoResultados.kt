@@ -4,6 +4,7 @@ import android.content.Context
 import com.uma.menpas.cuestionarios.EPI
 import com.uma.menpas.cuestionarios.IPED
 import com.uma.menpas.cuestionarios.PDavidson
+import com.uma.menpas.cuestionarios.POMS
 
 class CalculoResultados {
 
@@ -23,6 +24,16 @@ class CalculoResultados {
             "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
             "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
             "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
+            "preguntas_poms_65" -> POMS.calculatePOMS65(respuestasUsuario, context)
+            "preguntas_poms_58" -> POMS.calculatePOMS58(respuestasUsuario, context)
+            "preguntas_poms_15" -> POMS.calculatePOMS15(respuestasUsuario, context)
+            "preguntas_poms_6" -> POMS.calculatePOMS6(respuestasUsuario, context)
+            "preguntas_poms_angustia_colera" -> POMS.calculatePOMSAngustiaColera(respuestasUsuario, context)
+            "preguntas_poms_confusion_orientacion" -> POMS.calculatePOMSConfusionOrientacion(respuestasUsuario, context)
+            "preguntas_poms_depresion" -> POMS.calculatePOMSDepresion(respuestasUsuario, context)
+            "preguntas_poms_fatiga_inercia" -> POMS.calculatePOMSFatigaInercia(respuestasUsuario, context)
+            "preguntas_poms_tension_ansiedad" -> POMS.calculatePOMSTensionAnsiedad(respuestasUsuario, context)
+            "preguntas_poms_vigor_activacion" -> POMS.calculatePOMSVigorActivacion(respuestasUsuario, context)
             else -> IPED.calculateIPED(respuestasUsuario, usuario)
         }
     }
