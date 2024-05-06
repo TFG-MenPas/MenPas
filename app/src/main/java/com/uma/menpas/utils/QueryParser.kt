@@ -24,10 +24,17 @@ class QueryParser {
             "preguntas_caf" -> parseCAF(respuestasUsuario)
             "preguntas_sf_36" -> parseSF36(respuestasUsuario)
             "preguntas_sf_12" -> parseSF12(respuestasUsuario)
+            "preguntas_dinamica_grupal_ccd" -> parseGeneric(respuestasUsuario, "CCDeportiva")
             "preguntas_vitalidad_subjetiva" -> parseVS(respuestasUsuario)
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
+        val valores = respuestasUsuario.values.joinToString(separator = ",")
+        val query = "INSERT INTO $nombreTabla VALUES($valores)"
+        return query
     }
 
     private fun parseIPSETA(respuestasUsuario: Map<String, String>): String {
