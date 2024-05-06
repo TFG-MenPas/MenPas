@@ -62,7 +62,7 @@ class QueryParser {
     }
 
     private fun parseAutorregistroPN(respuestasUsuario: Map<String, String>): String {
-        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Dia, Hora, Lugar, Conducta_Previa, Pensamiento_Negativo, Intensidad, Conducta_Posterior, Pensamiento_Positivo, Tiempo, Idioma, Fecha) VALUES (" +
+        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Dia, Hora, Lugar, Conducta_Previa, Pensamiento_Negativo, Intensidad, Conducta_Posterior, Pensamiento_Positivo, Tiempo, Idioma) VALUES (" +
                 respuestasUsuario["ID_Autorregistro"] + ", '" +
                 respuestasUsuario["Nombre_Usuario"] + "', '" +
                 respuestasUsuario["Fecha"] + "', '" +
@@ -76,8 +76,7 @@ class QueryParser {
                 respuestasUsuario["Conducta_Posterior"] + "', '" +
                 respuestasUsuario["Pensamiento_Positivo"] + "', '" +
                 respuestasUsuario["Tiempo"] + "', '" +
-                respuestasUsuario["Idioma"] + "', '" +
-                respuestasUsuario["Fecha"] + "')"
+                respuestasUsuario["Idioma"] + "')"
     }
 
     private fun parseAutorregistroDiario(respuestasUsuario: Map<String, String>): String {

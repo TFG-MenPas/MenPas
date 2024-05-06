@@ -46,13 +46,17 @@ class CalculoResultados {
     }
 
     private fun calculateAutorregistroPN(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
-        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Dia", "Hora", "Lugar", "Conducta_Previa",
+        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Fecha", "Tipo",
+            "Tiempo", "Idioma", "Dia", "Hora", "Lugar", "Conducta_Previa",
             "Pensamiento_Negativo", "Intensidad", "Conducta_Posterior", "Pensamiento_Positivo")
-        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
-        val nombreUsuario = formattedString(usuario)
-        val fecha = formattedString(obtenerFechaActual())
-        val tipo = formattedString("A Pensamientos N")
-        val values = listOf(id, nombreUsuario, fecha, tipo, *respuestasUsuario.toTypedArray())
+        val idAutorregistro = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val fecha = obtenerFechaActual()
+        val tipo = "A Diario"
+        val tiempo = "100"
+        val idioma = "es-es"
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        respuestasUsuario[0] = dateFormat.format(Date(respuestasUsuario[0].toLong()))
+        val values = listOf(idAutorregistro, usuario, fecha, tipo, tiempo, idioma, *respuestasUsuario.toTypedArray())
         return keys.zip(values).toMap()
     }
 
