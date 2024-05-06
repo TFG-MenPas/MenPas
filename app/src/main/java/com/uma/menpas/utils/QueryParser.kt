@@ -27,8 +27,34 @@ class QueryParser {
             "preguntas_dinamica_grupal_ccd" -> parseGeneric(respuestasUsuario, "CCDeportiva")
             "preguntas_vitalidad_subjetiva" -> parseVS(respuestasUsuario)
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
+            "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseAutorregistroDiario(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Dia, Peso, HorasSueño, Pulsaciones, Animo, T_Minima, T_Maxima, T_P_Deportiva, Contenido_Prac, P_Esfuerzo, C_Ejercicio, I_Ejercicio, EventoDestacado, Estatura, Tiempo, Idioma, Fecha) VALUES (" +
+                respuestasUsuario["ID_Autorregistro"] + ", '" +
+                respuestasUsuario["Nombre_Usuario"] + "', '" +
+                respuestasUsuario["Fecha"] + "', '" +
+                respuestasUsuario["Tipo"] + "', '" +
+                respuestasUsuario["Dia"] + "', " +
+                respuestasUsuario["Peso"] + ", " +
+                respuestasUsuario["HorasSueño"] + ", " +
+                respuestasUsuario["Pulsaciones"] + ", " +
+                respuestasUsuario["Animo"] + ", " +
+                respuestasUsuario["T_Minima"] + ", " +
+                respuestasUsuario["T_Maxima"] + ", " +
+                respuestasUsuario["T_P_Deportiva"] + ", '" +
+                respuestasUsuario["Contenido_Prac"] + "', '" +
+                respuestasUsuario["P_Esfuerzo"] + "', '" +
+                respuestasUsuario["C_Ejercicio"] + "', '" +
+                respuestasUsuario["I_Ejercicio"] + "', '" +
+                respuestasUsuario["EventoDestacado"] + "', " +
+                respuestasUsuario["Estatura"] + ", '" +
+                respuestasUsuario["Tiempo"] + "', '" +
+                respuestasUsuario["Idioma"] + "', '" +
+                respuestasUsuario["Fecha"] + "')"
     }
 
     private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {

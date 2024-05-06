@@ -33,8 +33,24 @@ class CalculoResultados {
             "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
+            "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateAutorregistroDiario(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Dia", "Peso", "HorasSueño", "Pulsaciones", "Animo",
+            "T_Minima", "T_Maxima", "T_P_Deportiva", "Contenido_Prac", "P_Esfuerzo",
+            "C_Ejercicio", "I_Ejercicio", "EventoDestacado", "Estatura")
+
+        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val nombreUsuario = formattedString(usuario)
+        val fecha = formattedString(obtenerFechaActual())
+        val tipo = formattedString("A Diario")
+
+        val values = listOf(id, nombreUsuario, fecha, tipo, *respuestasUsuario.toTypedArray())
+
+        return keys.zip(values).toMap()
     }
 
     private fun calculateCCD(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
