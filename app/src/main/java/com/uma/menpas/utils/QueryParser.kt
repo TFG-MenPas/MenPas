@@ -351,7 +351,8 @@ class QueryParser {
 
     private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
         val valores = respuestasUsuario.values.joinToString(separator = ",")
-        val query = "INSERT INTO $nombreTabla VALUES($valores)"
+        val keys = respuestasUsuario.keys.joinToString(separator = ",")
+        val query = "INSERT INTO $nombreTabla ($keys) VALUES($valores)"
         return query
     }
 

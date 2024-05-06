@@ -331,7 +331,7 @@ class POMS {
 
             val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
 
-            val tensionAnsiedad = sumarLista(listOf(
+            val tensionAnsiedad = sumarTensionAnsiedadConfusionOrientacion(listOf(
                 listaRespuestasNumerica[1],
                 listaRespuestasNumerica[9],
                 listaRespuestasNumerica[15],
@@ -399,7 +399,7 @@ class POMS {
                 ))
 
             val confusionOrientacion =
-                sumarLista(listOf(
+                sumarTensionAnsiedadConfusionOrientacion(listOf(
                     listaRespuestasNumerica[7],
                     listaRespuestasNumerica[27],
                     listaRespuestasNumerica[36],
@@ -445,59 +445,661 @@ class POMS {
         }
 
         fun calculatePOMS58(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
+            val keys58 = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Tension_Ansiedad",
+                "Depresion_Melancolia",
+                "Angustia_Colera",
+                "Vigor_Activacion",
+                "Fatiga_Inercia",
+                "Confusion_orientacion",
+                "TS_Tension_Ansiedad",
+                "TS_Depresion_Melancolia",
+                "TS_Angustia_Colera",
+                "TS_Vigor_Activacion",
+                "TS_Fatiga_Inercia",
+                "TS_Confusion_orientacion",
+                "Fecha",
+                "Item2",
+                "Item3",
+                "Item4",
+                "Item5",
+                "Item7",
+                "Item8",
+                "Item9",
+                "Item10",
+                "Item11",
+                "Item12",
+                "Item14",
+                "Item15",
+                "Item16",
+                "Item17",
+                "Item18",
+                "Item19",
+                "Item20",
+                "Item21",
+                "Item22",
+                "Item23",
+                "Item24",
+                "Item26",
+                "Item27",
+                "Item28",
+                "Item29",
+                "Item31",
+                "Item32",
+                "Item33",
+                "Item34",
+                "Item35",
+                "Item36",
+                "Item37",
+                "Item38",
+                "Item39",
+                "Item40",
+                "Item41",
+                "Item42",
+                "Item44",
+                "Item45",
+                "Item46",
+                "Item47",
+                "Item48",
+                "Item49",
+                "Item50",
+                "Item51",
+                "Item52",
+                "Item53",
+                "Item54",
+                "Item56",
+                "Item57",
+                "Item58",
+                "Item59",
+                "Item60",
+                "Item61",
+                "Item62",
+                "Item63",
+                "Item64",
+                "Item65",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
 
-            return mapOf()
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+            val listaBD = listOf(2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 14, 15,
+                16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28,
+                29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+                44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 56, 57,
+                58, 59, 60, 61, 62, 63, 64, 65)
+
+            val tensionAnsiedad = sumarTensionAnsiedadConfusionOrientacion(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(2)],
+                listaRespuestasNumerica[listaBD.indexOf(10)],
+                listaRespuestasNumerica[listaBD.indexOf(16)],
+                listaRespuestasNumerica[listaBD.indexOf(20)],
+                listaRespuestasNumerica[listaBD.indexOf(22)],
+                listaRespuestasNumerica[listaBD.indexOf(26)],
+                listaRespuestasNumerica[listaBD.indexOf(27)],
+                listaRespuestasNumerica[listaBD.indexOf(34)],
+                listaRespuestasNumerica[listaBD.indexOf(41)]
+            ))
+
+            val depresionMelancolia = sumarLista(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(5)],
+                listaRespuestasNumerica[listaBD.indexOf(9)],
+                listaRespuestasNumerica[listaBD.indexOf(14)],
+                listaRespuestasNumerica[listaBD.indexOf(18)],
+                listaRespuestasNumerica[listaBD.indexOf(21)],
+                listaRespuestasNumerica[listaBD.indexOf(23)],
+                listaRespuestasNumerica[listaBD.indexOf(32)],
+                listaRespuestasNumerica[listaBD.indexOf(35)],
+                listaRespuestasNumerica[listaBD.indexOf(36)],
+                listaRespuestasNumerica[listaBD.indexOf(44)],
+                listaRespuestasNumerica[listaBD.indexOf(45)],
+                listaRespuestasNumerica[listaBD.indexOf(58)],
+                listaRespuestasNumerica[listaBD.indexOf(61)],
+                listaRespuestasNumerica[listaBD.indexOf(62)],
+            ))
+
+            val angustiaColera = sumarLista(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(3)],
+                listaRespuestasNumerica[listaBD.indexOf(12)],
+                listaRespuestasNumerica[listaBD.indexOf(17)],
+                listaRespuestasNumerica[listaBD.indexOf(24)],
+                listaRespuestasNumerica[listaBD.indexOf(31)],
+                listaRespuestasNumerica[listaBD.indexOf(33)],
+                listaRespuestasNumerica[listaBD.indexOf(39)],
+                listaRespuestasNumerica[listaBD.indexOf(42)],
+                listaRespuestasNumerica[listaBD.indexOf(47)],
+                listaRespuestasNumerica[listaBD.indexOf(52)],
+                listaRespuestasNumerica[listaBD.indexOf(53)],
+                listaRespuestasNumerica[listaBD.indexOf(57)]
+            ))
+
+
+            val vigorActivacion =  sumarLista(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(7)],
+                listaRespuestasNumerica[listaBD.indexOf(15)],
+                listaRespuestasNumerica[listaBD.indexOf(19)],
+                listaRespuestasNumerica[listaBD.indexOf(38)],
+                listaRespuestasNumerica[listaBD.indexOf(51)],
+                listaRespuestasNumerica[listaBD.indexOf(56)],
+                listaRespuestasNumerica[listaBD.indexOf(60)],
+                listaRespuestasNumerica[listaBD.indexOf(63)]
+            ))
+
+            val fatigaInercia = sumarLista(listOf(
+                    listaRespuestasNumerica[listaBD.indexOf(4)],
+                    listaRespuestasNumerica[listaBD.indexOf(11)],
+                    listaRespuestasNumerica[listaBD.indexOf(29)],
+                    listaRespuestasNumerica[listaBD.indexOf(40)],
+                    listaRespuestasNumerica[listaBD.indexOf(46)],
+                    listaRespuestasNumerica[listaBD.indexOf(49)],
+                    listaRespuestasNumerica[listaBD.indexOf(65)]
+                ))
+
+            val confusionOrientacion = sumarTensionAnsiedadConfusionOrientacion(listOf(
+                    listaRespuestasNumerica[listaBD.indexOf(8)],
+                    listaRespuestasNumerica[listaBD.indexOf(28)],
+                    listaRespuestasNumerica[listaBD.indexOf(37)],
+                    listaRespuestasNumerica[listaBD.indexOf(50)],
+                    listaRespuestasNumerica[listaBD.indexOf(54)],
+                    listaRespuestasNumerica[listaBD.indexOf(59)],
+                    listaRespuestasNumerica[listaBD.indexOf(64)]
+                ))
+
+            val tsAngustiaColera = calcularTscore(angustiaColera, relactionTscoreAngustiaColera, false)
+            val tsConfusionOrientacion = calcularTscore(confusionOrientacion, relacionTscoreConfusionOrientacion, false)
+            val tsDepresionMelancolia = calcularTscore(depresionMelancolia, relacionTscoreDepresionMelancolia, false)
+            val tsFatigaInercia = calcularTscore(fatigaInercia, relacionTscoreFatigaInercia, true)
+            val tsTensionAnsiedad = calcularTscore(tensionAnsiedad, relacionTscoreTensionAnsiedad, false)
+            val tsVigorActivacion = calcularTscore(vigorActivacion, relacionTscoreVigorActivacion, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(tensionAnsiedad.toString()),
+                formattedString(depresionMelancolia.toString()),
+                formattedString(angustiaColera.toString()),
+                formattedString(vigorActivacion.toString()),
+                formattedString(fatigaInercia.toString()),
+                formattedString(confusionOrientacion.toString()),
+                tsTensionAnsiedad,
+                tsDepresionMelancolia,
+                tsAngustiaColera,
+                tsVigorActivacion,
+                tsFatigaInercia,
+                tsConfusionOrientacion,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Poms 58 ítems"), //T_Escala6
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keys58.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMS15(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
+            val keys15 = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Vigor_Activacion",
+                "Fatiga_Inercia",
+                "TS_Vigor_Activacion",
+                "TS_Fatiga_Inercia",
+                "Fecha",
+                "Item4",
+                "Item7",
+                "Item11",
+                "Item15",
+                "Item19",
+                "Item29",
+                "Item38",
+                "Item40",
+                "Item46",
+                "Item49",
+                "Item51",
+                "Item56",
+                "Item60",
+                "Item63",
+                "Item65",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
 
-            return mapOf()
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+            val listaBD = listOf(4, 7, 11, 15, 19, 29, 38, 40, 46, 49, 51, 56, 60, 63, 65)
+
+
+            val fatigaInercia =  sumarLista(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(4)],
+                listaRespuestasNumerica[listaBD.indexOf(11)],
+                listaRespuestasNumerica[listaBD.indexOf(29)],
+                listaRespuestasNumerica[listaBD.indexOf(40)],
+                listaRespuestasNumerica[listaBD.indexOf(46)],
+                listaRespuestasNumerica[listaBD.indexOf(49)],
+                listaRespuestasNumerica[listaBD.indexOf(65)]
+            ))
+
+            val vigorActivacion = sumarLista(listOf(
+                listaRespuestasNumerica[listaBD.indexOf(7)],
+                listaRespuestasNumerica[listaBD.indexOf(15)],
+                listaRespuestasNumerica[listaBD.indexOf(19)],
+                listaRespuestasNumerica[listaBD.indexOf(38)],
+                listaRespuestasNumerica[listaBD.indexOf(51)],
+                listaRespuestasNumerica[listaBD.indexOf(56)],
+                listaRespuestasNumerica[listaBD.indexOf(60)],
+                listaRespuestasNumerica[listaBD.indexOf(63)]
+            ))
+
+            val tsFatigaInercia = calcularTscore(fatigaInercia, relacionTscoreFatigaInercia, true)
+            val tsVigorActivacion = calcularTscore(vigorActivacion, relacionTscoreVigorActivacion, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(vigorActivacion.toString()),
+                formattedString(fatigaInercia.toString()),
+                tsVigorActivacion,
+                tsFatigaInercia,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Poms 15 ítems"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keys15.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMS6(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val keys6 = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Fecha",
+                "Item8",
+                "Item14",
+                "Item19",
+                "Item29",
+                "Item31",
+                "Item41",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
-            return mapOf()
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+            //val listaBD = listOf(8, 14, 19, 29, 31, 41)
+
+            val fatigaInercia = sumarLista(listaRespuestasNumerica)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(fatigaInercia.toString()), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Poms 15 ítems"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keys6.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMSAngustiaColera(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
+            val keysAngustiaColera = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Angustia_Colera",
+                "TS_Angustia_Colera",
+                "Fecha",
+                "Item3",
+                "Item12",
+                "Item17",
+                "Item24",
+                "Item31",
+                "Item33",
+                "Item39",
+                "Item42",
+                "Item47",
+                "Item52",
+                "Item53",
+                "Item57",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
+            //val numerosBD = listOf(3, 12, 17, 24, 31, 33, 39, 42, 47, 52, 53, 57)
 
-            return mapOf()
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val angustiaColera = sumarLista(listaRespuestasNumerica)
+            val tsAngustiaColera = calcularTscore(angustiaColera, relactionTscoreAngustiaColera, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(angustiaColera.toString()),
+                tsAngustiaColera,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Angustia_Cólera"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keysAngustiaColera.zip(valoresAInsertar).toMap()
+
         }
 
         fun calculatePOMSConfusionOrientacion(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val keysConfusionOrientacion = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Confusion_orientacion",
+                "TS_Confusion_orientacion",
+                "Fecha",
+                "Item8",
+                "Item28",
+                "Item37",
+                "Item50",
+                "Item54",
+                "Item59",
+                "Item64",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
-            return mapOf()
+            //val numeros = listOf(8, 28, 37, 50, 54, 59, 64)
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val confusionOrientacion = sumarTensionAnsiedadConfusionOrientacion(listaRespuestasNumerica)
+            val tsConfusionOrientacion = calcularTscore(confusionOrientacion, relacionTscoreConfusionOrientacion, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(confusionOrientacion.toString()),
+                tsConfusionOrientacion,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Confusión Orientación"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keysConfusionOrientacion.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMSDepresion(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val keysDepresion = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Depresion_Melancolia",
+                "TS_Depresion_Melancolia",
+                "Fecha",
+                "Item5",
+                "Item9",
+                "Item14",
+                "Item18",
+                "Item21",
+                "Item23",
+                "Item32",
+                "Item35",
+                "Item36",
+                "Item44",
+                "Item45",
+                "Item58",
+                "Item61",
+                "Item62",
+                "Tipo",
+                "Idioma",
+            )
 
-            return mapOf()
+            //val numeros = listOf(5, 9, 14, 18, 21, 23, 32, 35, 36, 44, 45, 58, 61, 62)
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val depresionMelancolia = sumarLista(listaRespuestasNumerica)
+            val tsDepresionMelancolia = calcularTscore(depresionMelancolia, relacionTscoreDepresionMelancolia, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(depresionMelancolia.toString()),
+                tsDepresionMelancolia,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString("Depresion_Melancolia"),
+                idioma,
+            )
+            return keysDepresion.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMSFatigaInercia(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val keysFatigaInercia = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Fatiga_Inercia",
+                "TS_Fatiga_Inercia",
+                "Fecha",
+                "Item4",
+                "Item11",
+                "Item29",
+                "Item40",
+                "Item46",
+                "Item49",
+                "Item65",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
-            return mapOf()
+            //val numeros = listOf(4, 11, 29, 40, 46, 49, 65)
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val fatigaInercia = sumarLista(listaRespuestasNumerica)
+            val tsFatigaInercia = calcularTscore(fatigaInercia, relacionTscoreFatigaInercia, true)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(fatigaInercia.toString()),
+                tsFatigaInercia,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Fatiga_Inercia"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keysFatigaInercia.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMSTensionAnsiedad(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val numeros = listOf(2, 10, 16, 20, 22, 26, 27, 34, 41)
 
-            return mapOf()
+            val keysTensionAnsiedad = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Tension_Ansiedad",
+                "TS_Tension_Ansiedad",
+                "Fecha",
+                "Item2",
+                "Item10",
+                "Item16",
+                "Item20",
+                "Item22",
+                "Item26",
+                "Item27",
+                "Item34",
+                "Item41",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val tensionAnsiedad = sumarTensionAnsiedadConfusionOrientacion(listaRespuestasNumerica)
+            val tsTensionAnsiedad = calcularTscore(tensionAnsiedad, relacionTscoreTensionAnsiedad, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(tensionAnsiedad.toString()),
+                tsTensionAnsiedad,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Tensión_Ansiedad"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keysTensionAnsiedad.zip(valoresAInsertar).toMap()
         }
 
         fun calculatePOMSVigorActivacion(respuestasUsuario: ArrayList<String>, context: Context): Map<String, String> {
 
+            val keysVigorActivacion = listOf(
+                "ID_Poms",
+                "Nombre_Usuario",
+                "Vigor_Activacion",
+                "TS_Vigor_Activacion",
+                "Fecha",
+                "Item7",
+                "Item15",
+                "Item19",
+                "Item38",
+                "Item51",
+                "Item56",
+                "Item60",
+                "Item63",
+                "Escala6",
+                "T_Escala6",
+                "Tipo",
+                "Idioma",
+                "Tiempo"
+            )
 
-            return mapOf()
+            //val numeros = listOf(7, 15, 19, 38, 51, 56, 60, 63)
+
+            val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
+            val usuario = UsuarioController().getUsuario(context)
+            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val fecha = formattedString(ParseUtils.obtenerFechaActual())
+            val idioma = formattedString("es-es")
+
+            val listaRespuestasNumerica = conversionAEnteros(respuestasUsuario)
+
+            val vigorActivacion = sumarLista(listaRespuestasNumerica)
+            val tsVigorActivacion = calcularTscore(vigorActivacion, relacionTscoreVigorActivacion, false)
+
+            val valoresAInsertar = listOf(
+                id,
+                nombreUsuarioFormateado,
+                formattedString(vigorActivacion.toString()),
+                tsVigorActivacion,
+                fecha,
+                *listaRespuestasNumerica.toTypedArray(),
+                formattedString(""), //Escala6
+                formattedString(""), //T_Escala6
+                formattedString("Vigor_Activación"), //Tipo
+                idioma,
+                formattedString(""), //Tiempo
+            )
+
+            return keysVigorActivacion.zip(valoresAInsertar).toMap()
         }
-
 
         private fun conversionAEnteros(listaRespuestas: List<String>): MutableList<String> {
             val listaResultados = mutableListOf<String>()
@@ -519,6 +1121,18 @@ class POMS {
             var suma = 0
             listaRespuestasNumerica.forEach {
                 suma += it.toInt()
+            }
+            return suma
+        }
+
+        private fun sumarTensionAnsiedadConfusionOrientacion(listaRespuestasNumerica: List<String>): Int {
+            var suma = 0
+            for((indice, numero) in listaRespuestasNumerica.withIndex()) {
+                if(indice == 4) {
+                    suma -= numero.toInt()
+                } else {
+                    suma += numero.toInt()
+                }
             }
             return suma
         }
