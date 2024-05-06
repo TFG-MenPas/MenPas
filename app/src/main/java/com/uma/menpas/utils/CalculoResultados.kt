@@ -35,6 +35,7 @@ class CalculoResultados {
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
     }
@@ -47,6 +48,18 @@ class CalculoResultados {
         val fecha = formattedString(obtenerFechaActual())
         val tipo = formattedString("A Pensamientos N")
         val values = listOf(id, nombreUsuario, fecha, tipo, *respuestasUsuario.toTypedArray())
+        return keys.zip(values).toMap()
+    }
+
+    private fun calculateAutorregistroLibre(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Fecha", "Tipo", "campo1","campo2","campo3","campo4",
+            "campo5","campo6","campo7","campo8","campo9","campo10")
+        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val nombreUsuario = formattedString(usuario)
+        val fecha = formattedString(obtenerFechaActual())
+        val tipo = formattedString("A Libre")
+        val itemList = respuestasUsuario.map{it -> formattedString(it)}
+        val values = listOf(id, nombreUsuario, fecha, tipo, *itemList.toTypedArray())
         return keys.zip(values).toMap()
     }
 

@@ -29,8 +29,27 @@ class QueryParser {
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
             "preguntas_autorregistro_pensamientos_negativos" -> parseAutorregistroPN(respuestasUsuario)
+            "preguntas_autorregistro_libre" -> parseAutorregistroLibre(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseAutorregistroLibre(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, campo1, campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10) VALUES (" +
+                respuestasUsuario["ID_Autorregistro"] + ", '" +
+                respuestasUsuario["Nombre_Usuario"] + "', '" +
+                respuestasUsuario["Fecha"] + "', '" +
+                respuestasUsuario["Tipo"] + "', '" +
+                respuestasUsuario["campo1"] + "', '" +
+                respuestasUsuario["campo2"] + "', '" +
+                respuestasUsuario["campo3"] + "', '" +
+                respuestasUsuario["campo4"] + "', '" +
+                respuestasUsuario["campo5"] + "', '" +
+                respuestasUsuario["campo6"] + "', '" +
+                respuestasUsuario["campo7"] + "', '" +
+                respuestasUsuario["campo8"] + "', '" +
+                respuestasUsuario["campo9"] + "', '" +
+                respuestasUsuario["campo10"] + "')"
     }
 
     private fun parseAutorregistroPN(respuestasUsuario: Map<String, String>): String {
