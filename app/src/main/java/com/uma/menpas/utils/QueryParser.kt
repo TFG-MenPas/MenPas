@@ -32,7 +32,7 @@ class QueryParser {
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
             "preguntas_autorregistro_pensamientos_negativos" -> parseAutorregistroPN(respuestasUsuario)
-            "preguntas_autorregistro_libre" -> parseAutorregistroLibre(respuestasUsuario)
+            "preguntas_autorregistro_libre" -> parseGeneric(respuestasUsuario, "Autorregistros")
             "preguntas_autorregistro_entrenamiento" -> parseGeneric(respuestasUsuario, "Autorregistros")
             else -> parseGeneric(respuestasUsuario, "")
         }
