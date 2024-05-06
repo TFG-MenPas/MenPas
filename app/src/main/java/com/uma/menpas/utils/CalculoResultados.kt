@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.controllers.UsuarioController
+import com.uma.menpas.cuestionarios.D2
 import java.util.Calendar
 import kotlin.math.round
 import com.uma.menpas.cuestionarios.EPI
@@ -43,6 +44,7 @@ class CalculoResultados {
             "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
             "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
             "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, usuario)
+            "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
             else -> IPED.calculateIPED(respuestasUsuario, usuario)
         }
     }

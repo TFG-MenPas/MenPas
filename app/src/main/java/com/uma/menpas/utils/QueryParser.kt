@@ -28,6 +28,7 @@ class QueryParser {
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             "preguntas_evaluacion_mental_iped" -> parseGeneric(respuestasUsuario, "iped")
             "preguntas_entrenamiento_mental_epi" -> parseGeneric(respuestasUsuario, "epi")
+            "cuestionario_d2" -> parseGeneric(respuestasUsuario, "d2")
             else -> parseCSAI2(respuestasUsuario)
         }
     }
