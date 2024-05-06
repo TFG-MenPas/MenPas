@@ -34,8 +34,20 @@ class CalculoResultados {
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
+            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
             else -> calculateCSAI2(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateAutorregistroPN(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Dia", "Hora", "Lugar", "Conducta_Previa",
+            "Pensamiento_Negativo", "Intensidad", "Conducta_Posterior", "Pensamiento_Positivo")
+        val id = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
+        val nombreUsuario = formattedString(usuario)
+        val fecha = formattedString(obtenerFechaActual())
+        val tipo = formattedString("A Pensamientos N")
+        val values = listOf(id, nombreUsuario, fecha, tipo, *respuestasUsuario.toTypedArray())
+        return keys.zip(values).toMap()
     }
 
     private fun calculateAutorregistroDiario(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {

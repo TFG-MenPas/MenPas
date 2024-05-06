@@ -28,8 +28,28 @@ class QueryParser {
             "preguntas_vitalidad_subjetiva" -> parseVS(respuestasUsuario)
             "preguntas_autorregistro_comida" -> parseAutoComida(respuestasUsuario)
             "preguntas_autorregistro_diario" -> parseAutorregistroDiario(respuestasUsuario)
+            "preguntas_autorregistro_pensamientos_negativos" -> parseAutorregistroPN(respuestasUsuario)
             else -> parseCSAI2(respuestasUsuario)
         }
+    }
+
+    private fun parseAutorregistroPN(respuestasUsuario: Map<String, String>): String {
+        return "INSERT INTO Autorregistros (ID_Autorregistro, Nombre_Usuario, Fecha, Tipo, Dia, Hora, Lugar, Conducta_Previa, Pensamiento_Negativo, Intensidad, Conducta_Posterior, Pensamiento_Positivo, Tiempo, Idioma, Fecha) VALUES (" +
+                respuestasUsuario["ID_Autorregistro"] + ", '" +
+                respuestasUsuario["Nombre_Usuario"] + "', '" +
+                respuestasUsuario["Fecha"] + "', '" +
+                respuestasUsuario["Tipo"] + "', '" +
+                respuestasUsuario["Dia"] + "', '" +
+                respuestasUsuario["Hora"] + "', '" +
+                respuestasUsuario["Lugar"] + "', '" +
+                respuestasUsuario["Conducta_Previa"] + "', '" +
+                respuestasUsuario["Pensamiento_Negativo"] + "', " +
+                respuestasUsuario["Intensidad"] + ", '" +
+                respuestasUsuario["Conducta_Posterior"] + "', '" +
+                respuestasUsuario["Pensamiento_Positivo"] + "', '" +
+                respuestasUsuario["Tiempo"] + "', '" +
+                respuestasUsuario["Idioma"] + "', '" +
+                respuestasUsuario["Fecha"] + "')"
     }
 
     private fun parseAutorregistroDiario(respuestasUsuario: Map<String, String>): String {
