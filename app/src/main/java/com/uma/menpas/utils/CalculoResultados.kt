@@ -14,34 +14,41 @@ class CalculoResultados {
 
     fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>, usuario: String, context: Context): Map<String, String> {
         return when (jsonResourceName) {
+            //Ansiedad
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
             "preguntas_csai2_cognitiva" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
             "preguntas_csai2_autoconfianza" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
             "preguntas_csai2_somatica" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
-            "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false, context)
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true, context)
+            //Búsqueda de talentos
+            "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
             "preguntas_embu" -> calculateEMBU(respuestasUsuario, usuario)
             "preguntas_eacs" -> calculateEACS(respuestasUsuario, usuario)
             "preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
             "preguntas_rs" -> calculateRS(respuestasUsuario, usuario)
+            //Burnout
             "preguntas_maslach" -> calculateMaslach(respuestasUsuario,usuario)
             "preguntas_abq" -> calculateABQ(respuestasUsuario, usuario)
             "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario, usuario)
+            //Autoconcepto
             "preguntas_af5" -> calculateAF5(respuestasUsuario, usuario)
             "preguntas_bsq" -> calculateBSQ(respuestasUsuario, usuario)
             "preguntas_caf" -> calculateCAF(respuestasUsuario, usuario)
+            //Calidad de vida
             "preguntas_sf_36" -> calculateSF36(respuestasUsuario, usuario)
             "preguntas_sf_12" -> calculateSF12(respuestasUsuario, usuario)
-            "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
+            //Dinámica grupal
+            "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
+            //Autorregistros
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
-            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
-            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
             "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
+            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
+            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
             else -> calculateMPS(respuestasUsuario, usuario)
         }
     }
@@ -229,7 +236,7 @@ class CalculoResultados {
     }
 
     private fun calculateMPS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
-        val keys = listOf("Id_MPS", "Nombre_Usuario", "Preocupaciones", "Normas", "Expectativas",
+        val keys = listOf("Id_MPS", "Nombre_Usuario", "Preocupacion", "Normas", "Expectativas",
         "Criticas", "Dudas", "Organizacion", "Tiempo", "Idioma", "Fecha", "n1", "n2", "n3", "n4",
             "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14", "n15", "n16", "n17",
             "n18", "n19", "n20", "n21", "n22", "n23", "n24", "n25", "n26", "n27", "n28",
@@ -311,7 +318,6 @@ class CalculoResultados {
             auto.toString(), *itemList.toTypedArray(), tiempo, idioma, fecha)
         return keys.zip(values).toMap()
     }
-
 
     private fun calculateEACS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
@@ -579,7 +585,7 @@ class CalculoResultados {
 
     private fun calculateSF12(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
-            "Id_SF12", "Nombre_Usuario", "Medida_S_Fisica", "Medida_S_Mental", "Tiempo", "Idioma", "Fecha", "n1",
+            "Id_SF12", "Nombre_Usuario", "Medida_S_Físico", "Medida_S_Mental", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12"
         )
@@ -684,7 +690,7 @@ class CalculoResultados {
 
     private fun calculateSF36(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
-            "Id_SF36", "Nombre_Usuario", "F_Fisica", "Rol_Fisico", "Dolor", "Salud", "Vitalidad", "FuncionS", "Rol_Emocional", "Salud_Mental", "Cambio_Salud", "Tiempo", "Idioma", "Fecha", "n1",
+            "Id_SF36", "Nombre_Usuario", "F_Física", "Rol_Físico", "Dolor", "Salud", "Vitalidad", "FunciónS", "Rol_Emocional", "Salud_Mental", "Cambio_Salud", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12", "n13", "n14",
             "n15", "n16", "n17", "n18", "n19", "n20", "n21", "n22",
@@ -904,7 +910,7 @@ class CalculoResultados {
 
     private fun calculateCAF(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf(
-            "Id_CAF", "Nombre_Usuario", "Habilidad", "Condicion", "Atractivo", "Fuerza", "AutoconceptoF", "AutoconceptoG", "Tiempo", "Idioma", "Fecha", "n1",
+            "Id_CAF", "Nombre_Usuario", "Habilidad", "Condición", "Atractivo", "Fuerza", "AutoconceptoF", "AutoconceptoG", "Tiempo", "Idioma", "Fecha", "n1",
             "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9",
             "n10", "n11", "n12", "n13", "n14",
             "n15", "n16", "n17", "n18", "n19", "n20", "n21", "n22",
@@ -1261,7 +1267,7 @@ class CalculoResultados {
             "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9",
             "Item10", "Item11", "Item12", "Item13", "Item14", "Item15", "Idioma", "Tiempo"
         )
-        val id = "10000"
+        val id = CuestionarioService().obtenerIdDisponible("scat", "ID_Scat")
         val usuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
         val idioma = formattedString("es-es")
