@@ -10,6 +10,7 @@ import java.util.Calendar
 import kotlin.math.round
 import com.uma.menpas.cuestionarios.EPI
 import com.uma.menpas.cuestionarios.IPED
+import com.uma.menpas.cuestionarios.Modrian
 import com.uma.menpas.cuestionarios.PDavidson
 import com.uma.menpas.cuestionarios.POMS
 
@@ -62,6 +63,7 @@ class CalculoResultados {
             "preguntas_poms_fatiga_inercia" -> POMS.calculatePOMSFatigaInercia(respuestasUsuario, context)
             "preguntas_poms_tension_ansiedad" -> POMS.calculatePOMSTensionAnsiedad(respuestasUsuario, context)
             "preguntas_poms_vigor_activacion" -> POMS.calculatePOMSVigorActivacion(respuestasUsuario, context)
+            "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
             else -> IPED.calculateIPED(respuestasUsuario, usuario)
         }
     }

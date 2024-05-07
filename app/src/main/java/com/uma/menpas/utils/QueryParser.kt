@@ -1,5 +1,6 @@
 package com.uma.menpas.utils
 
+import com.uma.menpas.cuestionarios.Modrian
 import com.uma.menpas.cuestionarios.PDavidson
 import java.time.format.DateTimeFormatter
 
@@ -47,7 +48,7 @@ class QueryParser {
             "preguntas_poms_fatiga_inercia",
             "preguntas_poms_tension_ansiedad",
             "preguntas_poms_vigor_activacion" -> parseGeneric(respuestasUsuario, "poms")
-
+            "cuestionario_modrian_colores" -> parseGeneric(respuestasUsuario, "modrian")
 
             else -> parseCSAI2(respuestasUsuario)
         }
@@ -514,7 +515,8 @@ class QueryParser {
 
     private fun parseGeneric(respuestasUsuario: Map<String, String>, nombreTabla: String): String {
         val valores = respuestasUsuario.values.joinToString(separator = ",")
-        val query = "INSERT INTO $nombreTabla VALUES($valores)"
+        val claves = respuestasUsuario.keys.joinToString(separator = ",")
+        val query = "INSERT INTO $nombreTabla ($claves) VALUES($valores)"
         return query
     }
 
