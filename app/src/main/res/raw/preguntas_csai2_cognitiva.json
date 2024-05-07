@@ -1,0 +1,112 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Estoy concentrado en la competición.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Dudo de mis capacidades.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Me preocupa que no pueda hacerlo tan bien como podría.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Soy consciente de la posibilidad de perder.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Soy consciente de las situaciones de presión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Confio en mi buena preparación física.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Me preocupo por alcanzar mi meta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Me preocupa que los demás queden desilucionados con mi rendimiento.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me preocupa no sentirme capacitado para concentrarme.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		}
+	]
+}

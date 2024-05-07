@@ -8,8 +8,8 @@
 	},
 	"buttons": {
 		"Inventario": "preguntas_csai2",
-		"Escala de autoconfianza": "",
-		"Escala cognitiva": "",
-		"Escala somática": ""
+		"Escala de autoconfianza": "preguntas_csai2_autoconfianza",
+		"Escala cognitiva": "preguntas_csai2_cognitiva",
+		"Escala somática": "preguntas_csai2_somatica"
 	}
 }
