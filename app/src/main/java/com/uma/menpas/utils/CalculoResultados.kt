@@ -59,6 +59,7 @@ class CalculoResultados {
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
             "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
             "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
+            //D2
             "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
             "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, context)
             "preguntas_davidson_resistencia" -> PDavidson.calculatePDavidsonResistencia(respuestasUsuario, context)
@@ -77,7 +78,9 @@ class CalculoResultados {
             "preguntas_poms_fatiga_inercia" -> POMS.calculatePOMSFatigaInercia(respuestasUsuario, context)
             "preguntas_poms_tension_ansiedad" -> POMS.calculatePOMSTensionAnsiedad(respuestasUsuario, context)
             "preguntas_poms_vigor_activacion" -> POMS.calculatePOMSVigorActivacion(respuestasUsuario, context)
+            //Modrian
             "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
+            "cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
             "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
