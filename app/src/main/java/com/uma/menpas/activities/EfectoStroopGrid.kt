@@ -1,5 +1,6 @@
 package com.uma.menpas.activities
 
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,17 +9,22 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
+import com.uma.menpas.utils.QueryParser
 import kotlin.random.Random
 
 class EfectoStroopGrid : AppCompatActivity() {
     lateinit var timer: CountDownTimer
     var timerCurrentTime: Float = 0.0f
+    var timerTotalTime: Float = 0.0f
     
     var intentTiempoExposicion: Long = 1000
     lateinit var intentColores: ArrayList<String>
     lateinit var intentTipo: String
     var intentNumeroPresentaciones: Int = 0
     var intentFondo: Boolean = true
+    lateinit var intentUsuario: String
     
     lateinit var viewShowcase: View
     lateinit var viewTextShowcase: TextView
@@ -39,6 +45,7 @@ class EfectoStroopGrid : AppCompatActivity() {
         intentTiempoExposicion = intent.getLongExtra("tiempo", 1000)
         intentNumeroPresentaciones = intent.getIntExtra("numeroPresentaciones",1)
         intentFondo = intent.getBooleanExtra("fondo", true)
+        intentUsuario = intent.getStringExtra("usuario")!!
     }
 
     private fun initXMLElements() {
@@ -119,6 +126,35 @@ class EfectoStroopGrid : AppCompatActivity() {
                 .setPositiveButton("Aceptar") {_,_ ->}
                 .create()
             dialog.show()
+
+            val respuestasUsuario = arrayListOf(valueAciertos.toString(), valueErrores.toString(), timerTotalTime.toString(),
+                intentColores.size.toString(), intentTipo,intentFondo.toString(), intentTiempoExposicion.toString(),
+                intentNumeroPresentaciones.toString(), valueErroresOmision.toString()) as ArrayList<String>
+
+            val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_stroop", respuestasUsuario, intentUsuario, this)
+
+            val query = QueryParser().parse("cuestionario_stroop", calculosCuestionario)
+
+            try {
+                CuestionarioService().insertarCuestionario(query)
+            } catch (_: Error) {
+
+            }
+
+            val bundle = Bundle().apply {
+                for ((key, value) in calculosCuestionario) {
+                    putString(key, value)
+                }
+            }
+
+            val intent = Intent(this, DetallesCuestionario::class.java)
+            intent.putExtras(bundle)
+            intent.putExtra("jsonResourceName","cuestionario_stroop")
+            intent.putExtra("isResultado",true)
+            startActivity(intent)
+
+
+
         } else {
             generateviewShowcase()
             restartTimer()
@@ -129,6 +165,7 @@ class EfectoStroopGrid : AppCompatActivity() {
         timer = object: CountDownTimer(intentTiempoExposicion, 100) {
             override fun onTick(p0: Long) {
                 timerCurrentTime += 0.1f
+                timerTotalTime += 0.1f
                 viewTiempoEspera.text = timerCurrentTime.toString().substring(0, 3)
             }
             override fun onFinish() {
@@ -161,6 +198,7 @@ class EfectoStroopGrid : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_efecto_stroop)
+
         initIntentParams()
         initXMLElements()
         generateviewShowcase()

@@ -34,6 +34,7 @@ class QueryParser {
             "preguntas_autorregistro_pensamientos_negativos" -> generateQuery(respuestasUsuario, "Autorregistros")
             "preguntas_autorregistro_libre" -> generateQuery(respuestasUsuario, "Autorregistros")
             "preguntas_autorregistro_entrenamiento" -> generateQuery(respuestasUsuario, "Autorregistros")
+            "cuestionario_stroop" -> generateQuery(respuestasUsuario, "stroop")
             else -> generateQuery(respuestasUsuario, "")
         }
     }
