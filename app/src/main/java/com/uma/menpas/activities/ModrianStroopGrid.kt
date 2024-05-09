@@ -193,7 +193,6 @@ class ModrianStroopGrid : AppCompatActivity() {
             }
         }.start()
     }
-
     private fun ajustarTablero() {
         when (tamanyoTablero){
             "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto

@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.controllers.UsuarioController
+import com.uma.menpas.cuestionarios.Modrian
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -16,9 +17,21 @@ class CalculoResultados {
         return when (jsonResourceName) {
             //Ansiedad
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
-            "preguntas_csai2_cognitiva" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
-            "preguntas_csai2_autoconfianza" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
-            "preguntas_csai2_somatica" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
+            "preguntas_csai2_cognitiva" -> calculateCSAI2(
+                respuestasUsuario,
+                usuario,
+                jsonResourceName
+            )
+            "preguntas_csai2_autoconfianza" -> calculateCSAI2(
+                respuestasUsuario,
+                usuario,
+                jsonResourceName
+            )
+            "preguntas_csai2_somatica" -> calculateCSAI2(
+                respuestasUsuario,
+                usuario,
+                jsonResourceName
+            )
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false, context)
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true, context)
@@ -30,7 +43,7 @@ class CalculoResultados {
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
             "preguntas_rs" -> calculateRS(respuestasUsuario, usuario)
             //Burnout
-            "preguntas_maslach" -> calculateMaslach(respuestasUsuario,usuario)
+            "preguntas_maslach" -> calculateMaslach(respuestasUsuario, usuario)
             "preguntas_abq" -> calculateABQ(respuestasUsuario, usuario)
             "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario, usuario)
             //Autoconcepto
@@ -45,12 +58,25 @@ class CalculoResultados {
             "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
             //Autorregistros
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
-            "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
-            "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
-            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
-            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+            "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(
+                respuestasUsuario,
+                usuario
+            )
+            "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(
+                respuestasUsuario,
+                usuario
+            )
+            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(
+                respuestasUsuario,
+                usuario
+            )
+            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(
+                respuestasUsuario,
+                usuario
+            )
             //Atención
-            "cuestionario_stroop" -> calculateStroop(respuestasUsuario,usuario)
+            "cuestionario_stroop" -> calculateStroop(respuestasUsuario, usuario)
+            "cuestionario_modrian_fotos" -> Modrian.calculateFotos(respuestasUsuario, usuario)
             else -> calculateMPS(respuestasUsuario, usuario)
         }
     }
