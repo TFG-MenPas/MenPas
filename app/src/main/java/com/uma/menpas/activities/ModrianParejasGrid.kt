@@ -34,6 +34,7 @@ class ModrianParejasGrid : AppCompatActivity() {
     private var fallos: Int = 0
     private var cerrado: Boolean = false
     lateinit var botonCerrar : ImageButton
+    private var numeroCasillasEliminar: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,7 @@ class ModrianParejasGrid : AppCompatActivity() {
         val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
-        val numeroCasillasEliminar = ajustarTablero()
+        numeroCasillasEliminar = ajustarTablero()
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
             cerrado = true
@@ -64,8 +65,16 @@ class ModrianParejasGrid : AppCompatActivity() {
             botonFoto.contentDescription = fotoAleatoria.toString()
             botonFoto.isEnabled = false
             botonFoto.isActivated = false
+            botonFoto.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonFoto.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonFoto.setOnClickListener {
                 val btnFoto = fotos.focusedChild as ImageButton
+                btnFoto.requestFocus()
                 btnFoto.isActivated = false
                 btnFoto.isEnabled = false
 
@@ -75,7 +84,7 @@ class ModrianParejasGrid : AppCompatActivity() {
 
                 destaparFoto(btnFoto)
 
-                val handler = Handler()  //DEPRECATED??? TODO
+                val handler = Handler()  //DEPRECATED???
 
                 handler.postDelayed({
                     if (this.fotoSeleccionada.contentDescription as String == "-1") {
@@ -116,13 +125,6 @@ class ModrianParejasGrid : AppCompatActivity() {
                     }
 
                 }, 200)
-            }
-            botonFoto.setOnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    botonFoto.performClick()
-                } else {
-                    // Do nothing when Focus is not on the EditText
-                }
             }
         }
 
@@ -218,7 +220,7 @@ class ModrianParejasGrid : AppCompatActivity() {
     }
 
     private fun activarRealizacionCuestionario(){
-        for (i in 0 until fotos.childCount){
+        for (i in 0 until fotos.childCount - numeroCasillasEliminar){
             botonFoto = fotos.getChildAt(i) as ImageButton
             botonFoto.background = AppCompatResources.getDrawable(this, R.color.azul_banner_cuestionarios)
             botonFoto.isEnabled = true
