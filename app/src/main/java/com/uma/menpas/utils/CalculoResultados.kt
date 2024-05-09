@@ -5,14 +5,26 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.controllers.UsuarioController
+import com.uma.menpas.cuestionarios.D2
+import java.util.Calendar
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.round
+import com.uma.menpas.cuestionarios.EPI
+import com.uma.menpas.cuestionarios.IPED
+import com.uma.menpas.cuestionarios.Modrian
+import com.uma.menpas.cuestionarios.PDavidson
+import com.uma.menpas.cuestionarios.POMS
 
 class CalculoResultados {
 
-    fun calculate(jsonResourceName: String, respuestasUsuario: ArrayList<String>, usuario: String, context: Context): Map<String, String> {
+    fun calculate(
+        jsonResourceName: String,
+        respuestasUsuario: ArrayList<String>,
+        usuario: String,
+        context: Context
+    ): Map<String, String> {
         return when (jsonResourceName) {
             //Ansiedad
             "preguntas_csai2" -> calculateCSAI2(respuestasUsuario, usuario, jsonResourceName)
@@ -45,6 +57,27 @@ class CalculoResultados {
             "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
             //Autorregistros
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
+            "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
+            "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
+            "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
+            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, context)
+            "preguntas_davidson_resistencia" -> PDavidson.calculatePDavidsonResistencia(respuestasUsuario, context)
+            "preguntas_davidson_actitud" -> PDavidson.calculatePDavidsonActitud(respuestasUsuario, context)
+            "preguntas_davidson_intuicion_social" -> PDavidson.calculatePDavidsonIntuicion(respuestasUsuario, context)
+            "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
+            "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
+            "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
+            "preguntas_poms_65" -> POMS.calculatePOMS65(respuestasUsuario, context)
+            "preguntas_poms_58" -> POMS.calculatePOMS58(respuestasUsuario, context)
+            "preguntas_poms_15" -> POMS.calculatePOMS15(respuestasUsuario, context)
+            "preguntas_poms_6" -> POMS.calculatePOMS6(respuestasUsuario, context)
+            "preguntas_poms_angustia_colera" -> POMS.calculatePOMSAngustiaColera(respuestasUsuario, context)
+            "preguntas_poms_confusion_orientacion" -> POMS.calculatePOMSConfusionOrientacion(respuestasUsuario, context)
+            "preguntas_poms_depresion" -> POMS.calculatePOMSDepresion(respuestasUsuario, context)
+            "preguntas_poms_fatiga_inercia" -> POMS.calculatePOMSFatigaInercia(respuestasUsuario, context)
+            "preguntas_poms_tension_ansiedad" -> POMS.calculatePOMSTensionAnsiedad(respuestasUsuario, context)
+            "preguntas_poms_vigor_activacion" -> POMS.calculatePOMSVigorActivacion(respuestasUsuario, context)
+            "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
             "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)

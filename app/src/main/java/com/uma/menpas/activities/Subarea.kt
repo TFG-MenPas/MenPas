@@ -133,8 +133,8 @@ class Subarea : AppCompatActivity() {
                     "cuestionario_d2_aleatorio" -> Intent(this, CuestionarioD2::class.java)
                     else -> Intent(this, CuestionarioDinamico::class.java)
                 }
-                intent.putExtra("json_resource_name", btn_value as String)
-                intent.putExtra("usuario", usuario as String)
+                intent.putExtra("json_resource_name", btn_value)
+                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             }
         }

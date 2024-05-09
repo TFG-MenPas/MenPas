@@ -19,7 +19,7 @@ abstract class UsuarioDB : RoomDatabase() {
         fun getDatabase(context: Context): UsuarioDB?{
             if(instancia == null){
                 synchronized(this){
-                    instancia = Room.databaseBuilder(context, UsuarioDB::class.java, "usuario").allowMainThreadQueries().build()
+                    instancia = Room.databaseBuilder(context, UsuarioDB::class.java, "usuario").allowMainThreadQueries().fallbackToDestructiveMigration().build()
                 }
             }
             return instancia
