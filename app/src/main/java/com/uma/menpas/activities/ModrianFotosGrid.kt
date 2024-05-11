@@ -2,21 +2,23 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.widget.Chronometer
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
+import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
 class ModrianFotosGrid : AppCompatActivity() {
@@ -24,21 +26,32 @@ class ModrianFotosGrid : AppCompatActivity() {
     lateinit var fotos : GridLayout
     lateinit var botonFoto : ImageButton
     lateinit var tamanyoTablero : String
-    var numImg : Int = 0
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
     private var limiteFallos: Int = 0
-    private var fallos: Int = 0
     private var cerrado: Boolean = false
     private var numeroFallosPermitidos : String = ""
     lateinit var botonCerrar : ImageButton
+    lateinit var cronometro: Chronometer
+    private lateinit var usuario: String
+
+    private var aciertos: Int = 0
+    private var fallos: Int = 0
+    private var blancos: Int = 0
+    private var filas: Int = 0
+    private var columnas: Int = 3
+    var numImg : Int = 0
+    private var longTiempoEspera: Long = 0
+    private var longTiempoRealizacion: Long = 0
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos_grid)
-
+        usuario = intent.getStringExtra("usuario") as String
         val numTotalImg = 7 ///HARDCODE TODO
-
+        cronometro = Chronometer(this)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoEspera)
@@ -95,10 +108,15 @@ class ModrianFotosGrid : AppCompatActivity() {
                     val fotoSeleccion = gridFotosSeleccion.getChildAt(i) as ImageButton
                     if (estaMarcado(fotoSeleccion)){
                         fotoSeleccion.setOnClickListener {
-                            if (btnFoto.contentDescription == fotoSeleccion.contentDescription){
+                            if (btnFoto.contentDescription == fotoSeleccion.contentDescription) {
+                                aciertos++
+                                blancos--
                                 btnFoto.background = fotoSeleccion.background
                                 btnFoto.clearAnimation()
                                 dialog.dismiss()
+                                if (blancos == 0) {
+                                    finalizarCuestionario(usuario)
+                                }
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
@@ -106,6 +124,7 @@ class ModrianFotosGrid : AppCompatActivity() {
                                 fallos++
                                 if(fallos > limiteFallos){
                                     cerrado = true
+                                    finalizarCuestionario(usuario)
                                     finish()
                                 }
                             }
@@ -168,6 +187,7 @@ class ModrianFotosGrid : AppCompatActivity() {
 
                         override fun onFinish() {
                             if (!cerrado){
+                                finalizarCuestionario(usuario)
                                 cerrado = true
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                                 finish()
@@ -177,6 +197,39 @@ class ModrianFotosGrid : AppCompatActivity() {
                 }
             }
         }.start()
+    }
+
+
+    private fun finalizarCuestionario(usuario: String) {
+        val respuestasUsuario = ArrayList<String>()
+        respuestasUsuario.add(aciertos.toString())
+        respuestasUsuario.add(fallos.toString())
+        respuestasUsuario.add(blancos.toString())
+        respuestasUsuario.add(filas.toString())
+        respuestasUsuario.add(columnas.toString())
+        respuestasUsuario.add(numImg.toString())
+        respuestasUsuario.add((longTiempoEspera / 1000).toString())
+        respuestasUsuario.add((elapsedTime() / 1000).toString())
+        respuestasUsuario.add((longTiempoRealizacion / 1000).toString())
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_modrian_fotos", respuestasUsuario, usuario, this)
+        val query = QueryParser().parse("cuestionario_modrian_fotos", calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+        } catch (_: Error) {
+
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName","cuestionario_modrian_fotos")
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
     }
 
     private fun ajustarTablero() {
@@ -194,7 +247,9 @@ class ModrianFotosGrid : AppCompatActivity() {
             botonFoto.isActivated = false
             botonFoto.visibility = View.GONE
         }
-        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 3, numeroFallosPermitidos)
+        limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 8, numeroFallosPermitidos)
+        blancos = fotos.childCount - 3
+        filas = 4
     }
 
     private fun ajustarTableroPequeño() {
@@ -205,6 +260,8 @@ class ModrianFotosGrid : AppCompatActivity() {
             botonFoto.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 6, numeroFallosPermitidos)
+        blancos = fotos.childCount - 12
+        filas = 3
     }
 
     private fun activarRealizacionCuestionario(){
@@ -233,5 +290,9 @@ class ModrianFotosGrid : AppCompatActivity() {
             }
         }
         return false
+    }
+
+    private fun elapsedTime(): Long {
+        return (SystemClock.elapsedRealtime() - cronometro.base) - longTiempoEspera
     }
 }
