@@ -2,22 +2,20 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
-import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.VibrationEffect
-import android.os.Vibrator
+import android.os.*
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
-import android.widget.Button
-import android.widget.GridLayout
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
+import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
 class ModrianStroopGrid : AppCompatActivity() {
@@ -30,13 +28,25 @@ class ModrianStroopGrid : AppCompatActivity() {
     lateinit var botonCerrar : ImageButton
     private lateinit var numeroFallosPermitidos: String
     private var limiteFallos: Int = 0
-    private var fallos: Int = 0
     private var cerrado: Boolean = false
     private lateinit var tamanyoTablero : String
+
+    private lateinit var usuario: String
+    lateinit var cronometro: Chronometer
+    private var blancos: Int = 0
+    private var aciertos: Int = 0
+    private var fallos: Int = 0
+    private var longTiempoEspera: Long = 0
+    private var longTiempoRealizacion: Long = 0
+    private var filas: Int = 0
+    private var columnas: Int = 4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_stroop_grid)
+
+        usuario = intent.getStringExtra("usuario") as String
+        cronometro = Chronometer(this)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoEspera)
@@ -113,9 +123,14 @@ class ModrianStroopGrid : AppCompatActivity() {
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
+                                aciertos++
+                                blancos--
                                 setDrawableColor(btnColor)
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
+                                if (blancos == 0) {
+                                    finalizarCuestionario(usuario)
+                                }
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
@@ -123,6 +138,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                                 fallos++
                                 if(fallos > limiteFallos){
                                     cerrado = true
+                                    finalizarCuestionario(usuario)
                                     finish()
                                 }
                             }
@@ -183,6 +199,7 @@ class ModrianStroopGrid : AppCompatActivity() {
 
                         override fun onFinish() {
                             if (!cerrado){
+                                finalizarCuestionario(usuario)
                                 cerrado = true
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 finish()
@@ -193,6 +210,39 @@ class ModrianStroopGrid : AppCompatActivity() {
             }
         }.start()
     }
+
+    private fun finalizarCuestionario(usuario: String) {
+        val respuestasUsuario = ArrayList<String>()
+        respuestasUsuario.add(aciertos.toString())
+        respuestasUsuario.add(fallos.toString())
+        respuestasUsuario.add(blancos.toString())
+        respuestasUsuario.add(filas.toString())
+        respuestasUsuario.add(columnas.toString())
+        respuestasUsuario.add(arrayColores.size.toString())
+        respuestasUsuario.add((longTiempoEspera / 1000).toString())
+        respuestasUsuario.add((elapsedTime() / 1000).toString())
+        respuestasUsuario.add((longTiempoRealizacion / 1000).toString())
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_modrian_stroop", respuestasUsuario, usuario, this)
+        val query = QueryParser().parse("cuestionario_modrian_stroop", calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+        } catch (_: Error) {
+
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName","cuestionario_modrian_stroop")
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
+    }
+
     private fun ajustarTablero() {
         when (tamanyoTablero){
             "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto
@@ -210,6 +260,8 @@ class ModrianStroopGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        blancos = colores.childCount - 12
+        filas = 3
     }
 
     private fun ajustarTableroMediano() {
@@ -221,6 +273,8 @@ class ModrianStroopGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        blancos = colores.childCount - 3
+        filas = 4
     }
 
     private fun setDrawableColor(colorSeleccion: View) {
@@ -318,5 +372,9 @@ class ModrianStroopGrid : AppCompatActivity() {
         }else{
             crono.text = "$min : $secs"
         }
+    }
+
+    private fun elapsedTime(): Long {
+        return (SystemClock.elapsedRealtime() - cronometro.base) - longTiempoEspera
     }
 }

@@ -77,6 +77,7 @@ class CalculoResultados {
             //Atención
             "cuestionario_stroop" -> calculateStroop(respuestasUsuario, usuario)
             "cuestionario_modrian_fotos" -> Modrian.calculateFotos(respuestasUsuario, usuario)
+            "cuestionario_modrian_stroop" -> Modrian.calculateStroop(respuestasUsuario, usuario)
             else -> calculateMPS(respuestasUsuario, usuario)
         }
     }
