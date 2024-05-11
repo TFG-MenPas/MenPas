@@ -19,6 +19,7 @@ class ModrianParejas : AppCompatActivity() {
     lateinit var botonCerrarCuestionario: ImageButton
     lateinit var numeroFallosPermitidos: TextView
     private lateinit var textOpcionTamanyoTablero: TextView
+    private lateinit var usuario: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_parejas)
@@ -30,6 +31,7 @@ class ModrianParejas : AppCompatActivity() {
         botonCerrarCuestionario.setOnClickListener {
             finish()
         }
+        usuario = intent.getStringExtra("usuario") as String
 
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)
@@ -41,6 +43,7 @@ class ModrianParejas : AppCompatActivity() {
                 intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
+                intent.putExtra("usuario", usuario)
                 startActivity(intent)
 
             }else if(!esValido(tiempoRealizacion.text.toString())){

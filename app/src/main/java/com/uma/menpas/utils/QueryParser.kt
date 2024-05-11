@@ -29,6 +29,8 @@ class QueryParser {
             "preguntas_poms_tension_ansiedad",
             "preguntas_poms_vigor_activacion" -> generateQuery(respuestasUsuario, "poms")
             "cuestionario_modrian_colores" -> generateQuery(respuestasUsuario, "modrian")
+            "cuestionario_modrian_parejas" -> generateQuery(respuestasUsuario, "modrian")
+            "cuestionario_modrian_simon" -> generateQuery(respuestasUsuario, "modrian")
             "preguntas_csai2" -> generateQuery(respuestasUsuario, "csai2")
             "preguntas_csai2_somatica" -> generateQuery(respuestasUsuario, "csai2")
             "preguntas_csai2_autoconfianza" -> generateQuery(respuestasUsuario, "csai2")

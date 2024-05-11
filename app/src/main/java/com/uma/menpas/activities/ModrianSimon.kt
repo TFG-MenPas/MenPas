@@ -1,17 +1,23 @@
 package com.uma.menpas.activities
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.widget.Chronometer
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
+import com.uma.menpas.utils.QueryParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -36,7 +42,9 @@ class ModrianSimon : AppCompatActivity() {
     var semaforoSonido : Semaphore = Semaphore(1)
     var semaforoAnimacion : Semaphore = Semaphore(1)
     var semaforoClick : Semaphore = Semaphore(1)
-
+    lateinit var cronometro: Chronometer
+    private lateinit var usuario: String
+    private val JSON_RESOURCE_NAME = "cuestionario_modrian_simon"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +54,9 @@ class ModrianSimon : AppCompatActivity() {
         botonCerrarCuestionario.setOnClickListener {
             finish()
         }
+
+        cronometro = Chronometer(this)
+        usuario = intent.getStringExtra("usuario") as String
 
         nivelText = findViewById(R.id.nivel)
 
@@ -74,8 +85,8 @@ class ModrianSimon : AppCompatActivity() {
             3 -> drawable.setColor(getColor(R.color.azul))
         }
 
-        button.setClickable(true);
-        button.setLongClickable(false);
+        button.isClickable = true;
+        button.isLongClickable = false;
         button.setOnClickListener {    button.requestFocus(); clickAnimation(color); comprobarBotton(color)    }
     }
 
@@ -122,8 +133,8 @@ class ModrianSimon : AppCompatActivity() {
                 }
             }else{
                 showToast("Juego finalizado, has alcanzado el nivel: "+ this.nivel)
-                comenzarJuego()
-
+                finish()
+                finalizarCuestionario(usuario)
             }
         }
     }
@@ -230,5 +241,32 @@ class ModrianSimon : AppCompatActivity() {
             semaforoSonido.release()
         }
 
+    }
+    private fun finalizarCuestionario(usuario: String) {
+        val respuestasUsuario = ArrayList<String>()
+        respuestasUsuario.add(nivel.toString())
+        respuestasUsuario.add((elapsedTime() / 1000).toString())
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+        } catch (_: Error) {
+
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
+    }
+    private fun elapsedTime(): Long {
+        return (SystemClock.elapsedRealtime() - cronometro.base)
     }
 }
