@@ -81,6 +81,7 @@ class CalculoResultados {
             //Modrian
             "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
             "cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
+            "cuestionario_modrian_simon" -> Modrian.calculateSimon(respuestasUsuario, usuario)
             "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
             "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
             "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
