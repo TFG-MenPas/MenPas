@@ -7,12 +7,12 @@
 		"Instrucciones": "Le rogamos que conteste a las siguientes preguntas: VERDADERO (V) o FALSO (F). Los resultados más exactos se obtienen de un juicio rápido, no se detenga demasiado en pensar las respuestas, por favor sea espontáneo. La impresión inicial es la más válida."
 	},
 	"buttons": {
-		"Cuestionario completo": "",
-		"Cuestionario de actitud": "",
-		"Cuestionario de atención": "",
-		"Cuesitonario de autoconciencia": "",
-		"Cuestionario de contexto": "",
-		"Cuestionario de intuición social": "",
-		"Cuestionario de resistencia": ""
+		"Cuestionario completo": "preguntas_davidson_completo",
+		"Cuestionario de actitud": "preguntas_davidson_actitud",
+		"Cuestionario de atención": "preguntas_davidson_atencion",
+		"Cuesitonario de autoconciencia": "preguntas_davidson_autoconciencia",
+		"Cuestionario de contexto": "preguntas_davidson_contexto",
+		"Cuestionario de intuición social": "preguntas_davidson_intuicion_social",
+		"Cuestionario de resistencia": "preguntas_davidson_resistencia"
 	}
 }

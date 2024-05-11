@@ -2,6 +2,7 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -21,6 +22,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uma.menpas.R
 import com.uma.menpas.models.D2
 import com.uma.menpas.models.adapters.AdaptadorD2
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
+import com.uma.menpas.utils.QueryParser
 
 class CuestionarioD2 : AppCompatActivity() {
     lateinit var recyclerViewD2: RecyclerView
@@ -40,6 +44,13 @@ class CuestionarioD2 : AppCompatActivity() {
     private var azulOscuro = 0
     private lateinit var filasD2Original: List<List<D2>>
     private lateinit var tipoTestD2: String
+    private val JSON_RESOURCE_NAME = "cuestionario_d2"
+    private lateinit var respuestasUsuario: ArrayList<String>
+    private lateinit var usuario: String
+    private lateinit var TR1_14: String
+    private lateinit var TA1_14: String
+    private lateinit var O1_14: String
+    private lateinit var C1_14: String
 
     companion object {
         lateinit var myOnClickListener: myOnClickListener
@@ -52,7 +63,12 @@ class CuestionarioD2 : AppCompatActivity() {
         if (tipoTestD2 == "cuestionario_d2_original"){
             filasD2Original = inicializarFilasD2Original()
         }
-
+        respuestasUsuario = ArrayList()
+        TR1_14 = ""
+        TA1_14 = ""
+        O1_14 = ""
+        C1_14 = ""
+        usuario = intent.getStringExtra("usuario") as String
         vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
         progressBar = findViewById(R.id.progressBarCuestionario)
         textProgressBar = findViewById(R.id.numeroPreguntaActual)
@@ -79,8 +95,10 @@ class CuestionarioD2 : AppCompatActivity() {
 
         if (tipoTestD2 == "cuestionario_d2_original"){
             rellenarFilaD2Original(contadorFilas)
+            respuestasUsuario.add("Original")
         }else{
             rellenarFilaD2Aleatorio()
+            respuestasUsuario.add("Aleatorio")
         }
         contadorFilas++
         progressBar.progress = contadorFilas
@@ -99,11 +117,17 @@ class CuestionarioD2 : AppCompatActivity() {
 
             override fun onFinish() {
                 if(!d2CerradoAntesDeFinalizar){
-                    totalAciertosPorFila()
-                    erroresComisionPorFila()
-                    erroresOmisionPorFila()
+                    TR1_14 += "${tiempoReaccionPorFila()};"
+                    TA1_14 += "${totalAciertosPorFila()};"
+                    O1_14 += "${erroresOmisionPorFila()};"
+                    C1_14 += "${erroresComisionPorFila()};"
                     if(contadorFilas == NUMERO_FILAS_D2){
                         showToast("Cuestionario D2 finalizado")
+                        respuestasUsuario.add(TR1_14.dropLast(1)) //Drop last para quitar el ultimo ;
+                        respuestasUsuario.add(TA1_14.dropLast(1))
+                        respuestasUsuario.add(O1_14.dropLast(1))
+                        respuestasUsuario.add(C1_14.dropLast(1))
+                        finalizarCuestionario(usuario)
                         crono.stop()
                     }else{
                         listaD2.clear()
@@ -121,11 +145,22 @@ class CuestionarioD2 : AppCompatActivity() {
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                 }
             }
-
         }.start()
     }
 
-    private fun erroresOmisionPorFila() {
+    private fun tiempoReaccionPorFila(): Int {
+        var tiempoReaccion = 0
+        for (i in 0 until  recyclerViewD2.childCount){
+            val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
+            val textD2Letra : TextView = d2.findViewById(R.id.textLetra)
+            if(textD2Letra.currentTextColor == azulClaro){
+                tiempoReaccion = i
+            }
+        }
+        return tiempoReaccion
+    }
+
+    private fun erroresOmisionPorFila(): Int {
         var erroresOmisionPorFila = 0
         for (i in 0 until  recyclerViewD2.childCount){
             val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
@@ -142,10 +177,10 @@ class CuestionarioD2 : AppCompatActivity() {
                 erroresOmisionPorFila++
             }
         }
-        showToast("Errores Omision: $erroresOmisionPorFila")
+        return erroresOmisionPorFila
     }
 
-    private fun erroresComisionPorFila() {
+    private fun erroresComisionPorFila(): Int {
         var erroresComisionPorFila = 0
         for (i in 0 until  recyclerViewD2.childCount){
             val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
@@ -163,10 +198,10 @@ class CuestionarioD2 : AppCompatActivity() {
                 erroresComisionPorFila++
             }
         }
-        showToast("Errores Comision: $erroresComisionPorFila")
+        return erroresComisionPorFila
     }
 
-    private fun totalAciertosPorFila() {
+    private fun totalAciertosPorFila(): Int {
         var totalAciertosPorFila = 0
         for (i in 0 until  recyclerViewD2.childCount){
             val d2 = recyclerViewD2.getChildAt(i) as LinearLayout
@@ -183,7 +218,7 @@ class CuestionarioD2 : AppCompatActivity() {
                 totalAciertosPorFila++
             }
         }
-        showToast("Aciertos: $totalAciertosPorFila")
+        return totalAciertosPorFila
     }
 
     private fun sumaRayas(textD2RayaArriba: TextView, textD2RayaAbajo: TextView): Int {
@@ -952,5 +987,27 @@ class CuestionarioD2 : AppCompatActivity() {
                 D2("''","d",""),
             )
         )
+    }
+    private fun finalizarCuestionario(usuario: String) {
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+            showToast("Éxito en la petición")
+        } catch (e: Error) {
+            showToast("Algo salió mal realizando la petición")
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
     }
 }

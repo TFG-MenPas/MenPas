@@ -9,14 +9,17 @@ import com.uma.menpas.R
 class ModrianSimonInicio : AppCompatActivity() {
 
     lateinit var botonComenzar : Button
+    private lateinit var usuario: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_simon_inicio)
+        usuario = intent.getStringExtra("usuario") as String
 
         botonComenzar = findViewById(R.id.buttonComenzar)
         botonComenzar.setOnClickListener {
             val intent = Intent(this, ModrianSimon::class.java)
+            intent.putExtra("usuario", usuario)
             startActivity(intent)
         }
     }

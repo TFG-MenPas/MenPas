@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Alguien allegado me ha dicho que muy pocas veces soy sensible a los sentimientos de otras personas.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 2,
+			"pregunta": "A veces me han dicho que me comporto de un modo socialmente inadecuado, lo cual me ha sorprendido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 3,
+			"pregunta": "A veces he sufrido un contratiempo en el trabajo o he discutido con un amigo porque he sido demasiado cordial en el trato con un superior o demasiado jovial cuando un buen amigo estaba desesperado.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuando hablo con la gente, a veces veo que se apartan para dejar más distancia entre nosotros.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 5,
+			"pregunta": "A menudo me descubro censurando lo que iba a decir porque he sentido algo en la situación que haría que fuera inadecuado (por ejemplo, antes de responder a “Cariño, ¿estos tejanos me hacen parecer gorda?).",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "Cuando estoy en un lugar público como un restaurante, cuido sobre todo de modular el volumen de mi voz.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Con frecuencia me recuerdan que cuando esté en público evite mencionar los nombres de personas que pueden estar cerca.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Casi siempre soy consciente de si ya he estado antes en algún lugar, aunque sea en una autopista por la que conduje hace muchos años.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me doy cuenta de cuándo alguien está actuando de un modo que parece estar fuera de lugar, como cuando se comporta de manera demasiado informal en el trabajo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "Mi pareja o mis compañeros me han dicho que muestro buenos modales con extraños y en situaciones nuevas.",
+			"tipo": "siNo"
+			
+		}
+	]
+}
