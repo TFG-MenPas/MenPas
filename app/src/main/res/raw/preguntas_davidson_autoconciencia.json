@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "A menudo, cuando alguien me pregunta por qué estoy tan enfadado o tan triste, respondo –o me digo a mí mismo- que no lo estoy.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 2,
+			"pregunta": "Cuando las personas que tengo a mi alrededor me preguntan por qué he tratado tan mal o con tanta brusquedad a alguien, a menudo no considero que lo haya hecho.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 3,
+			"pregunta": "Con frecuencia –más de un par de veces al mes- el ritmo de mi corazón se desboca o mi pulso se acelera, y no tengo ni idea del porqué.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuando observo a alguien que sufre, siento ese dolor yo mismo, tanto emocional como físicamente.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 5,
+			"pregunta": "Por regla general, estoy tan seguro de cómo me siento que puedo expresar mis emociones con palabras.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "A veces noto dolores y molestias, y no tengo ni idea de dónde vienen.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Me gusta quedarme quieto y relajado un rato, el tiempo suficiente para sentir qué sucede dentro de mí.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Creo que habito mi cuerpo y me siento a gusto en mi cuerpo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Estoy mucho más orientado al mundo exterior y son muy pocas las ocasiones en que tomo en cuenta lo que le ocurre a mi cuerpo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "Cuando hago ejercicio, soy muy sensible a los cambios que ocurren en mi cuerpo.",
+			"tipo": "siNo"
+			
+		}
+	]
+}

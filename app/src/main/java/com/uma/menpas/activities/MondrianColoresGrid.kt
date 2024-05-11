@@ -2,22 +2,30 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.widget.Chronometer
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
+import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
+
 
 class MondrianColoresGrid : AppCompatActivity() {
     lateinit var colores : GridLayout
@@ -27,26 +35,36 @@ class MondrianColoresGrid : AppCompatActivity() {
     lateinit var arrayEliminar : ArrayList<String>
     lateinit var textTiempo : TextView
     lateinit var crono : TextView
+    lateinit var cronometro: Chronometer
     private lateinit var numeroFallosPermitidos: String
     private var limiteFallos: Int = 0
     private var fallos: Int = 0
+    private var aciertos: Int = 0
+    private var blancos: Int = 0
     private var cerrado: Boolean = false
     private lateinit var tamanyoTablero : String
-
+    private lateinit var usuario: String
+    private var filas: Int = 0
+    private var columnas: Int = 4
+    private val JSON_RESOURCE_NAME = "cuestionario_modrian_colores"
+    private var longTiempoRealizacion: Long = 0
+    private var longTiempoEspera: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores_grid)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         crono = findViewById(R.id.tiempoEspera)
+        cronometro = Chronometer(this)
         textTiempo = findViewById(R.id.textTiempoEspera)
-        val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
-        val longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
+        longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
+        longTiempoEspera = intent.getLongExtra("longTiempoEspera", 10000)
         arrayColores = intent.getStringArrayListExtra("arrayColores")!!
         arrayEliminar = intent.getStringArrayListExtra("arrayEliminar")!!
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
+        usuario = intent.getStringExtra("usuario") as String
         ajustarTablero()
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
@@ -101,9 +119,14 @@ class MondrianColoresGrid : AppCompatActivity() {
                     if (estaMarcado(colorSeleccion, arrayColores)){
                         colorSeleccion.setOnClickListener {
                             if (btnColor.contentDescription == colorSeleccion.contentDescription){
+                                aciertos++
+                                blancos--
                                 setDrawableColor(btnColor)
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
+                                if(blancos == 0){
+                                    finalizarCuestionario(usuario)
+                                }
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 val clk_rotate = AnimationUtils.loadAnimation(this, R.anim.view_shake)
@@ -111,6 +134,8 @@ class MondrianColoresGrid : AppCompatActivity() {
                                 fallos++
                                 if(fallos > limiteFallos){
                                     cerrado = true
+                                    showToast("Limite de Fallos Alcanzado")
+                                    finalizarCuestionario(usuario)
                                     finish()
                                 }
                             }
@@ -155,6 +180,7 @@ class MondrianColoresGrid : AppCompatActivity() {
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
             cerrado = true
+            cronometro.stop()
             finish()
         }
 
@@ -167,6 +193,7 @@ class MondrianColoresGrid : AppCompatActivity() {
             override fun onFinish() {
                 if (!cerrado){
                     activarRealizacionCuestionario()
+                    cronometro.start()
                     textTiempo.text = getString(R.string.tiempo_de_realizacion)
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                     object : CountDownTimer(longTiempoRealizacion, 1000){
@@ -177,6 +204,9 @@ class MondrianColoresGrid : AppCompatActivity() {
 
                         override fun onFinish() {
                             if(!cerrado){
+                                cronometro.stop()
+                                showToast("Limite de Tiempo Alcanzado")
+                                finalizarCuestionario(usuario)
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 cerrado = true
                                 finish()
@@ -189,10 +219,16 @@ class MondrianColoresGrid : AppCompatActivity() {
     }
     private fun ajustarTablero() {
         when (tamanyoTablero){
-            "Grande" ->  limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos) //Tablero por defecto
+            "Grande" ->  ajustarTableroGrande()
             "Mediano" -> ajustarTableroMediano()
             "Pequeño" -> ajustarTableroPequeño()
         }
+    }
+
+    private fun ajustarTableroGrande(){
+        limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount, numeroFallosPermitidos)
+        blancos = colores.childCount
+        filas = 6
     }
 
     private fun ajustarTableroMediano() {
@@ -204,6 +240,8 @@ class MondrianColoresGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        blancos = colores.childCount - numeroCasillasEliminar
+        filas = 4
     }
 
     private fun ajustarTableroPequeño() {
@@ -215,6 +253,8 @@ class MondrianColoresGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
+        blancos = colores.childCount - numeroCasillasEliminar
+        filas = 3
     }
 
     private fun setDrawableColor(colorSeleccion: View) {
@@ -266,4 +306,42 @@ class MondrianColoresGrid : AppCompatActivity() {
         }
         return false
     }
+    private fun finalizarCuestionario(usuario: String) {
+        val respuestasUsuario = ArrayList<String>()
+        respuestasUsuario.add(aciertos.toString())
+        respuestasUsuario.add(fallos.toString())
+        respuestasUsuario.add(blancos.toString())
+        respuestasUsuario.add(filas.toString())
+        respuestasUsuario.add(columnas.toString())
+        respuestasUsuario.add(arrayColores.size.toString())
+        respuestasUsuario.add((longTiempoEspera / 1000).toString())
+        respuestasUsuario.add((elapsedTime() / 1000).toString())
+        respuestasUsuario.add((longTiempoRealizacion / 1000).toString())
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+        } catch (_: Error) {
+
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
+    }
+    private fun showToast(msg: String){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+    private fun elapsedTime(): Long {
+        return (SystemClock.elapsedRealtime() - cronometro.base) - longTiempoEspera
+    }
+
 }

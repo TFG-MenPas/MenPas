@@ -19,7 +19,8 @@ class TipoCuestionario {
     )
 
     fun obtenerNombreYTipo(nombreCuestionario: String): Pair<String, String> {
-        val nombreConvertido = conversiones[nombreCuestionario.uppercase()] ?: nombreCuestionario
+        val nombreConvertido = conversiones[nombreCuestionario.uppercase()] ?: nombreCuestionario.uppercase()
+
         for ((tipo, nombres) in relacion) {
             if (nombreConvertido in nombres) {
                 return Pair(tipo, nombreConvertido)
