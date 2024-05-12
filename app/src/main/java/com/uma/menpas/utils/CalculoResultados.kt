@@ -34,6 +34,7 @@ class CalculoResultados {
             "preguntas_scat" -> calculateSCAT(respuestasUsuario, usuario)
             "preguntas_stai_ar" -> calculateSTAI(respuestasUsuario, usuario, false, context)
             "preguntas_stai_ae" -> calculateSTAI(respuestasUsuario, usuario, true, context)
+
             //Búsqueda de talentos
             "preguntas_acsi_28" -> calculateACSI28(respuestasUsuario, usuario)
             "preguntas_embu" -> calculateEMBU(respuestasUsuario, usuario)
@@ -41,33 +42,44 @@ class CalculoResultados {
             "preguntas_ipseta" -> calculateIPSETA(respuestasUsuario, usuario)
             "preguntas_mps" -> calculateMPS(respuestasUsuario, usuario)
             "preguntas_rs" -> calculateRS(respuestasUsuario, usuario)
+
             //Burnout
-            "preguntas_maslach" -> calculateMaslach(respuestasUsuario,usuario)
+            "preguntas_maslach" -> calculateMaslach(respuestasUsuario, usuario)
             "preguntas_abq" -> calculateABQ(respuestasUsuario, usuario)
             "preguntas_preliminar_abq" -> calculatePreliminarABQ(respuestasUsuario, usuario)
+
             //Autoconcepto
             "preguntas_af5" -> calculateAF5(respuestasUsuario, usuario)
             "preguntas_bsq" -> calculateBSQ(respuestasUsuario, usuario)
             "preguntas_caf" -> calculateCAF(respuestasUsuario, usuario)
+
             //Calidad de vida
             "preguntas_sf_36" -> calculateSF36(respuestasUsuario, usuario)
             "preguntas_sf_12" -> calculateSF12(respuestasUsuario, usuario)
             "preguntas_vitalidad_subjetiva" -> calculateVS(respuestasUsuario, usuario)
+
             //Dinámica grupal
             "preguntas_dinamica_grupal_ccd" -> calculateCCD(respuestasUsuario, usuario)
+
             //Autorregistros
             "preguntas_autorregistro_comida" -> calculateAutoComida(respuestasUsuario, usuario)
+            "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
+            "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
+            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
+            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+
+            //Atención
+            "cuestionario_stroop" -> calculateStroop(respuestasUsuario, usuario)
+            "cuestionario_modrian_fotos" -> Modrian.calculateFotos(respuestasUsuario, usuario)
+            "cuestionario_modrian_stroop" -> Modrian.calculateStroop(respuestasUsuario, usuario)
+            "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
+            "cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
+            "cuestionario_modrian_simon" -> Modrian.calculateSimon(respuestasUsuario, usuario)
+            "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
+
+            //Evaluación mental
             "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
             "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
-            //D2
-            "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
-            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, context)
-            "preguntas_davidson_resistencia" -> PDavidson.calculatePDavidsonResistencia(respuestasUsuario, context)
-            "preguntas_davidson_actitud" -> PDavidson.calculatePDavidsonActitud(respuestasUsuario, context)
-            "preguntas_davidson_intuicion_social" -> PDavidson.calculatePDavidsonIntuicion(respuestasUsuario, context)
-            "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
-            "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
-            "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
             "preguntas_poms_65" -> POMS.calculatePOMS65(respuestasUsuario, context)
             "preguntas_poms_58" -> POMS.calculatePOMS58(respuestasUsuario, context)
             "preguntas_poms_15" -> POMS.calculatePOMS15(respuestasUsuario, context)
@@ -78,16 +90,40 @@ class CalculoResultados {
             "preguntas_poms_fatiga_inercia" -> POMS.calculatePOMSFatigaInercia(respuestasUsuario, context)
             "preguntas_poms_tension_ansiedad" -> POMS.calculatePOMSTensionAnsiedad(respuestasUsuario, context)
             "preguntas_poms_vigor_activacion" -> POMS.calculatePOMSVigorActivacion(respuestasUsuario, context)
-            //Modrian
-            "cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
-            "cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
-            "cuestionario_modrian_simon" -> Modrian.calculateSimon(respuestasUsuario, usuario)
-            "preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
-            "preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
-            "preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
-            "preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+
+            //Inteligencia emocional
+            "preguntas_davidson_completo" -> PDavidson.calculatePDavidsonCompleto(respuestasUsuario, context)
+            "preguntas_davidson_resistencia" -> PDavidson.calculatePDavidsonResistencia(respuestasUsuario, context)
+            "preguntas_davidson_actitud" -> PDavidson.calculatePDavidsonActitud(respuestasUsuario, context)
+            "preguntas_davidson_intuicion_social" -> PDavidson.calculatePDavidsonIntuicion(respuestasUsuario, context)
+            "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
+            "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
+            "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
+            
             else -> calculateMPS(respuestasUsuario, usuario)
         }
+    }
+
+    private fun calculateStroop(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        val keys = listOf("ID_Stroop", "Nombre_Usuario", "T_medio","Fecha", "Idioma", "Version",  "Aciertos", "Fallos", "T_total",
+            "Ncolores", "Tipo", "Fondo", "TExpo", "NPresentaciones", "E_Omision")
+        val id = CuestionarioService().obtenerIdDisponible("stroop", "ID_Stroop")
+        val nombreUsuario = formattedString(usuario)
+
+        val tiempoMedioFloat = (respuestasUsuario[2].toFloat() / respuestasUsuario[7].toFloat())
+
+        val tiempoMedio = String.format("%.2f", tiempoMedioFloat)
+        val fecha = formattedString(obtenerFechaActual())
+        val idioma = formattedString("es-es")
+        val version = formattedString("Android")
+        respuestasUsuario[2] = String.format("%.2f", respuestasUsuario[2].toFloat())
+        respuestasUsuario[4] = formattedString(respuestasUsuario[4])
+        respuestasUsuario[5] = if (respuestasUsuario[5] == "false") formattedString("NO") else formattedString("SI")
+        val tiempoExpo = respuestasUsuario[6].toFloat() / 1000
+        respuestasUsuario[6] = String.format("%.2f",tiempoExpo)
+
+        val values = listOf(id, nombreUsuario, tiempoMedio, fecha, idioma, version, *respuestasUsuario.toTypedArray())
+        return keys.zip(values).toMap()
     }
 
     private fun calculateAutorregistroEntrenamiento(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
@@ -158,9 +194,9 @@ class CalculoResultados {
 
     private fun calculateAutorregistroDiario(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf("ID_Autorregistro", "Nombre_Usuario", "Fecha", "Tipo",
-        "Tiempo", "Idioma", "Dia", "Peso", "HorasSueño", "Pulsaciones",
-        "Animo", "T_Minima", "T_Maxima", "T_P_Deportiva", "Contenido_Prac",
-        "P_Esfuerzo", "C_Ejercicio", "I_Ejercicio", "EventoDestacado", "Estatura")
+            "Tiempo", "Idioma", "Dia", "Peso", "HorasSueño", "Pulsaciones",
+            "Animo", "T_Minima", "T_Maxima", "T_P_Deportiva", "Contenido_Prac",
+            "P_Esfuerzo", "C_Ejercicio", "I_Ejercicio", "EventoDestacado", "Estatura")
 
         val idAutorregistro = CuestionarioService().obtenerIdDisponible("Autorregistros", "ID_Autorregistro")
         val fecha = obtenerFechaActual()
@@ -274,7 +310,7 @@ class CalculoResultados {
 
     private fun calculateMPS(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf("Id_MPS", "Nombre_Usuario", "Preocupacion", "Normas", "Expectativas",
-        "Criticas", "Dudas", "Organizacion", "Tiempo", "Idioma", "Fecha", "n1", "n2", "n3", "n4",
+            "Criticas", "Dudas", "Organizacion", "Tiempo", "Idioma", "Fecha", "n1", "n2", "n3", "n4",
             "n5", "n6", "n7", "n8", "n9", "n10", "n11", "n12", "n13", "n14", "n15", "n16", "n17",
             "n18", "n19", "n20", "n21", "n22", "n23", "n24", "n25", "n26", "n27", "n28",
             "n29", "n30", "n31", "n32", "n33", "n34", "n35")
@@ -436,16 +472,16 @@ class CalculoResultados {
             }
         }
         val values = listOf(id, nombreUsuario, soporteP.toString(), soporteM.toString(),
-        rechazoP.toString(), rechazoM.toString(), sobreproteccionP.toString(),
-        sobreproteccionM.toString(), tiempo, idioma, fecha, *itemList.toTypedArray())
+            rechazoP.toString(), rechazoM.toString(), sobreproteccionP.toString(),
+            sobreproteccionM.toString(), tiempo, idioma, fecha, *itemList.toTypedArray())
         return keys.zip(values).toMap()
     }
 
     private fun calculateSTAI(respuestasUsuario: ArrayList<String>, usuario: String, isAE: Boolean, context: Context): Map<String, String> {
         val keys = listOf("ID_Stai", "Nombre_Usuario", "Stai_A_R", "Stai_A_E", "Centiles", "Fecha",
-        "Item1","Item2","Item3","Item4","Item5","Item6","Item7","Item8","Item9","Item10","Item11",
-        "Item12","Item13","Item14","Item15","Item16","Item17","Item18","Item19","Item20","CentilesA_E",
-        "CentilesA_R", "Idioma", "Tipo", "Tiempo")
+            "Item1","Item2","Item3","Item4","Item5","Item6","Item7","Item8","Item9","Item10","Item11",
+            "Item12","Item13","Item14","Item15","Item16","Item17","Item18","Item19","Item20","CentilesA_E",
+            "CentilesA_R", "Idioma", "Tipo", "Tiempo")
         val id = CuestionarioService().obtenerIdDisponible("stai", "ID_Stai")
         val nombreUsuario = formattedString(usuario)
         val fecha = formattedString(obtenerFechaActual())
@@ -518,8 +554,8 @@ class CalculoResultados {
 
     private fun calculateACSI28(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
         val keys = listOf("Id_ACSI_28", "Nombre_Usuario", "Rendimiento", "Ausencia", "Confrontacion",
-        "Concentracion", "Formulacion", "Confianza", "Capacidad", "Tiempo", "Idioma", "Fecha",
-        "n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18",
+            "Concentracion", "Formulacion", "Confianza", "Capacidad", "Tiempo", "Idioma", "Fecha",
+            "n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18",
             "n19","n20","n21","n22","n23","n24","n25","n26","n27","n28")
         val id = CuestionarioService().obtenerIdDisponible("ACSI_28", "Id_ACSI_28")
         val nombreUsuario = formattedString(usuario)
