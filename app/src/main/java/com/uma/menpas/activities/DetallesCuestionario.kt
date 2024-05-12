@@ -62,24 +62,26 @@ class DetallesCuestionario : AppCompatActivity() {
         textResultados = findViewById(R.id.textResultados)
 
         textEntradaNombreCuestionario.text = resultadosObtenidos["nombreCuestionario"]
-        textEntradaFecha.text = calculosCuestionario["Fecha"]
-        textEntradaTiempo.text = calculosCuestionario["Tiempo"]
+        textEntradaFecha.text = calculosCuestionario["Fecha"]?.replace("'", "")
+        textEntradaTiempo.text = calculosCuestionario["Tiempo"]?.replace("'", "")
 
         if (resultadosObtenidos != null) {
             var lastComponentId = textResultados.id
-            var contadorId = 1
+            var contadorClaveId = 1
+            var contadorValorId = 500
             for ((clave, valor) in resultadosObtenidos) {
                 if(clave != "nombreCuestionario"){
                     val textViewClave = TextView(this)
-                    textViewClave.id = contadorId++
+                    textViewClave.id = contadorClaveId++
                     relativeLayout.addView(textViewClave)
                     setTextViewStyle(textViewClave,"$clave", lastComponentId, "clave")
 
                     val textViewValor = TextView(this)
+                    textViewValor.id = contadorValorId++
                     relativeLayout.addView(textViewValor)
                     setTextViewStyle(textViewValor,"$valor", textViewClave.id, "valor")
 
-                    lastComponentId = textViewClave.id
+                    lastComponentId = textViewValor.id
 
                 }
             }
@@ -90,20 +92,23 @@ class DetallesCuestionario : AppCompatActivity() {
     private fun setTextViewStyle(textView: TextView, text: String, referenceComponentId: Int, typeComponent: String) {
         val layoutParams : RelativeLayout.LayoutParams =
             textView.getLayoutParams() as RelativeLayout.LayoutParams;
+        var typeFont = R.font.poppins_regular
         if(typeComponent == "clave"){
             layoutParams.addRule(RelativeLayout.BELOW,referenceComponentId)
             layoutParams.addRule(RelativeLayout.ALIGN_LEFT, textResultados.id)
             layoutParams.setMargins(50, 0, 0, 0)
         } else if(typeComponent == "valor") {
-            layoutParams.addRule(RelativeLayout.ALIGN_BASELINE, referenceComponentId)
-            layoutParams.addRule(RelativeLayout.RIGHT_OF, referenceComponentId)
+            layoutParams.addRule(RelativeLayout.ALIGN_LEFT, referenceComponentId)
+            layoutParams.addRule(RelativeLayout.BELOW, referenceComponentId)
+            layoutParams.setMargins(0, 0, 0, 40)
             layoutParams.marginStart = 30
+            layoutParams.marginEnd = 50
+            typeFont = R.font.poppins_bold
         }
 
-        textView.gravity = Gravity.CENTER
-        textView.text = text
+        textView.text = text.replace("'", "")
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16f)
-        val typeface = resources.getFont(R.font.poppins_regular)
+        val typeface = resources.getFont(typeFont)
         textView.setTypeface(typeface)
         textView.setTextColor(this.getResources().getColor(R.color.black))
     }
