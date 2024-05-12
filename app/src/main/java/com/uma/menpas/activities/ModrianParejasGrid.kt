@@ -2,21 +2,28 @@ package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
+import android.widget.Chronometer
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
+import com.uma.menpas.services.CuestionarioService
+import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
+import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
 class ModrianParejasGrid : AppCompatActivity() {
@@ -34,6 +41,15 @@ class ModrianParejasGrid : AppCompatActivity() {
     private var fallos: Int = 0
     private var cerrado: Boolean = false
     lateinit var botonCerrar : ImageButton
+    private var numeroCasillasEliminar: Int = 0
+    lateinit var cronometro: Chronometer
+    private var aciertos: Int = 0
+    private var blancos: Int = 0
+    private lateinit var usuario: String
+    private var filas: Int = 0
+    private var columnas: Int = 3
+    private val JSON_RESOURCE_NAME = "cuestionario_modrian_parejas"
+    private var longTiempoRealizacion: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,10 +59,12 @@ class ModrianParejasGrid : AppCompatActivity() {
         crono = findViewById(R.id.tiempoRealizacion)
         textTiempo = findViewById(R.id.textTiempoRealizacion)
         fotos = findViewById(R.id.gridFotos)
-        val longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
+        cronometro = Chronometer(this)
+        usuario = intent.getStringExtra("usuario") as String
+        longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
-        val numeroCasillasEliminar = ajustarTablero()
+        numeroCasillasEliminar = ajustarTablero()
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
             cerrado = true
@@ -64,8 +82,16 @@ class ModrianParejasGrid : AppCompatActivity() {
             botonFoto.contentDescription = fotoAleatoria.toString()
             botonFoto.isEnabled = false
             botonFoto.isActivated = false
+            botonFoto.setOnFocusChangeListener { _, hasFocus ->
+                if (hasFocus) {
+                    botonFoto.performClick()
+                } else {
+                    // Do nothing when Focus is not on the EditText
+                }
+            }
             botonFoto.setOnClickListener {
                 val btnFoto = fotos.focusedChild as ImageButton
+                btnFoto.requestFocus()
                 btnFoto.isActivated = false
                 btnFoto.isEnabled = false
 
@@ -75,7 +101,7 @@ class ModrianParejasGrid : AppCompatActivity() {
 
                 destaparFoto(btnFoto)
 
-                val handler = Handler()  //DEPRECATED??? TODO
+                val handler = Handler()  //DEPRECATED???
 
                 handler.postDelayed({
                     if (this.fotoSeleccionada.contentDescription as String == "-1") {
@@ -105,10 +131,17 @@ class ModrianParejasGrid : AppCompatActivity() {
                             fallos++
                             if(fallos > limiteFallos){
                                 cerrado = true
+                                showToast("Limite de Fallos Alcanzado")
+                                finalizarCuestionario(usuario)
                                 finish()
                             }
+                        }else{
+                            aciertos+=2
+                            blancos-=2
+                            if(blancos == 0){
+                                finalizarCuestionario(usuario)
+                            }
                         }
-
                         btnFoto.clearAnimation()
                         this.fotoSeleccionada.clearAnimation()
                         this.fotoSeleccionada = ImageButton(this)
@@ -116,13 +149,6 @@ class ModrianParejasGrid : AppCompatActivity() {
                     }
 
                 }, 200)
-            }
-            botonFoto.setOnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    botonFoto.performClick()
-                } else {
-                    // Do nothing when Focus is not on the EditText
-                }
             }
         }
 
@@ -138,6 +164,8 @@ class ModrianParejasGrid : AppCompatActivity() {
                 if(!cerrado){
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                     cerrado = true
+                    showToast("Limite de Tiempo Alcanzado")
+                    finalizarCuestionario(usuario)
                     finish()
                 }
             }
@@ -159,6 +187,8 @@ class ModrianParejasGrid : AppCompatActivity() {
     private fun ajustarTableroGrande(): Int {
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount, numeroFallosPermitidos)
         fotosArray = generarFotosArray(fotos.childCount)
+        blancos = fotos.childCount
+        filas = 5
         return 0
     }
 
@@ -172,6 +202,8 @@ class ModrianParejasGrid : AppCompatActivity() {
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
         fotosArray = generarFotosArray(fotos.childCount - numeroCasillasEliminar)
+        blancos = fotos.childCount - numeroCasillasEliminar
+        filas = 4
         return numeroCasillasEliminar
     }
 
@@ -185,6 +217,8 @@ class ModrianParejasGrid : AppCompatActivity() {
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
         fotosArray = generarFotosArray(fotos.childCount - numeroCasillasEliminar)
+        blancos = fotos.childCount - numeroCasillasEliminar
+        filas = 3
         return numeroCasillasEliminar
     }
 
@@ -218,7 +252,7 @@ class ModrianParejasGrid : AppCompatActivity() {
     }
 
     private fun activarRealizacionCuestionario(){
-        for (i in 0 until fotos.childCount){
+        for (i in 0 until fotos.childCount - numeroCasillasEliminar){
             botonFoto = fotos.getChildAt(i) as ImageButton
             botonFoto.background = AppCompatResources.getDrawable(this, R.color.azul_banner_cuestionarios)
             botonFoto.isEnabled = true
@@ -234,5 +268,40 @@ class ModrianParejasGrid : AppCompatActivity() {
         }else{
             crono.text = "$min : $secs"
         }
+    }
+    private fun finalizarCuestionario(usuario: String) {
+        val respuestasUsuario = ArrayList<String>()
+        respuestasUsuario.add(aciertos.toString())
+        respuestasUsuario.add(fallos.toString())
+        respuestasUsuario.add(blancos.toString())
+        respuestasUsuario.add(filas.toString())
+        respuestasUsuario.add(columnas.toString())
+        respuestasUsuario.add((elapsedTime() / 1000).toString())
+        respuestasUsuario.add((longTiempoRealizacion / 1000).toString())
+        val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
+        val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
+        try {
+            CuestionarioService().insertarCuestionario(query)
+        } catch (_: Error) {
+
+        }
+
+        val bundle = Bundle().apply {
+            for ((key, value) in calculosCuestionario) {
+                putString(key, value)
+            }
+        }
+
+        val intent = Intent(this, DetallesCuestionario::class.java)
+        intent.putExtras(bundle)
+        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+        intent.putExtra("isResultado",true)
+        startActivity(intent)
+    }
+    private fun showToast(msg: String){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+    private fun elapsedTime(): Long {
+        return (SystemClock.elapsedRealtime() - cronometro.base)
     }
 }

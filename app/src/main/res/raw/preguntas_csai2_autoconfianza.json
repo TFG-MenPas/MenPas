@@ -1,0 +1,112 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me encuentro a gusto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Me encuentro cómodo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Confío en mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Me siento seguro.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Tengo confianza en mi mismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Confio en mi rendimiento.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Estoy mentalmente relajado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Estoy confiado porque me veo alcanzando más metas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Confío lograrlo todo aún bajo presión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Siempre",
+				"Casi siempre",
+				"A veces",
+				"Casi nunca",
+				"Nunca"
+			]
+		}
+	]
+}

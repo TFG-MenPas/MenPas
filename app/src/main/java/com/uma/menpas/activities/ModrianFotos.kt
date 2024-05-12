@@ -17,9 +17,12 @@ class ModrianFotos : AppCompatActivity() {
     private lateinit var textOpcionTamanyoTablero: TextView
     private lateinit var numeroFallosPermitidos: TextView
 
+    lateinit var usuario: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_fotos)
+        usuario = intent.getStringExtra("usuario") as String
 
         botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
         botonCerrarCuestionario.setOnClickListener {
@@ -44,6 +47,7 @@ class ModrianFotos : AppCompatActivity() {
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
                 intent.putExtra("numImg", textOpcionNumImg.text)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
+                intent.putExtra("usuario", usuario)
                 startActivity(intent)
 
             }else if(!esValido(tiempoRealizacion.text.toString())){

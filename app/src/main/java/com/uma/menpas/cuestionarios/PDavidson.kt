@@ -494,6 +494,13 @@ class PDavidson {
 
             val resultado = formattedString(procesarRespuestas(respuestasTransformadas.subList(0, 10), indicesInversosIntuicion))
 
+            val blz = null
+            val bdr = null
+            val bd = null
+            val valorCentilS = null
+            val valorCentilN = null
+            val valorCentilE = null
+            val respuestasUsuarioString = null
             val valoresAInsertar = listOf(
                 id,
                 nombreUsuarioFormateado,
