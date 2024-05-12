@@ -37,7 +37,7 @@ class ModrianFotosGrid : AppCompatActivity() {
 
     private var aciertos: Int = 0
     private var fallos: Int = 0
-    private var blancos: Int = 0
+    private var blancos: Int = 15
     private var filas: Int = 0
     private var columnas: Int = 3
     var numImg : Int = 0
@@ -248,7 +248,7 @@ class ModrianFotosGrid : AppCompatActivity() {
             botonFoto.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 8, numeroFallosPermitidos)
-        blancos = fotos.childCount - 3
+        blancos = 12
         filas = 4
     }
 
@@ -260,7 +260,7 @@ class ModrianFotosGrid : AppCompatActivity() {
             botonFoto.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(fotos.childCount - 6, numeroFallosPermitidos)
-        blancos = fotos.childCount - 12
+        blancos = 9
         filas = 3
     }
 
