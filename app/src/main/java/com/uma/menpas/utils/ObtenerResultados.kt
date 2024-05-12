@@ -87,7 +87,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
 
         resultadosMostrados["Nivel:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
-        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Realizacion"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian simon"
         return resultadosMostrados.toMap()
     }
