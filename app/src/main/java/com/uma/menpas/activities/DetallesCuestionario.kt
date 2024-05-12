@@ -63,7 +63,7 @@ class DetallesCuestionario : AppCompatActivity() {
 
         textEntradaNombreCuestionario.text = resultadosObtenidos["nombreCuestionario"]
         textEntradaFecha.text = calculosCuestionario["Fecha"]?.replace("'", "")
-        textEntradaTiempo.text = calculosCuestionario["Tiempo"]
+        textEntradaTiempo.text = calculosCuestionario["Tiempo"]?.replace("'", "")
 
         if (resultadosObtenidos != null) {
             var lastComponentId = textResultados.id

@@ -41,11 +41,20 @@ class ObtenerResultados {
             "preguntas_dinamica_grupal_ccd" -> obtenerResultadosDinamicaGrupalCCD(calculosCuestionario)
             
             //Autorregistros
-            "preguntas_autorregistro_comida" -> obtenerResultadosAutoComida(calculosCuestionario)
-            //"preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
-            //"preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
-            //"preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
-            //"preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+            "preguntas_autorregistro_comida" -> obtenerResultadosAutorregistroComida(calculosCuestionario)
+            "preguntas_autorregistro_diario" -> obtenerResultadosAutorregistroDiario(calculosCuestionario)
+            "preguntas_autorregistro_entrenamiento" -> obtenerResultadosAutorregistroEntrenamiento(calculosCuestionario)
+            "preguntas_autorregistro_libre" -> obtenerResultadosAutorregistroLibre(calculosCuestionario)
+            "preguntas_autorregistro_pensamientos_negativos" -> obtenerResultadosAutorregistroPensamientosNegativos(calculosCuestionario)
+
+            //Atencion
+            "cuestionario_stroop" -> obtenerResultadosStroop(calculosCuestionario)
+            "cuestionario_modrian_fotos" -> obtenerResultadosModrianFotos(calculosCuestionario)
+            "cuestionario_modrian_stroop" -> obtenerResultadosModrianStroop(calculosCuestionario)
+            "cuestionario_modrian_colores" -> obtenerResultadosModrianColores(calculosCuestionario)
+            "cuestionario_modrian_parejas" -> obtenerResultadosModrianParejas(calculosCuestionario)
+            "cuestionario_modrian_simon" -> obtenerResultadosModrianSimon(calculosCuestionario)
+            "cuestionario_d2" -> obtenerResultadosD2(calculosCuestionario)
             
             //E.Mental/Evaluacion
             "preguntas_evaluacion_mental_iped" -> obtenerResultadosIPED(calculosCuestionario)
@@ -61,9 +70,6 @@ class ObtenerResultados {
             "preguntas_poms_tension_ansiedad" -> obtenerResultadosPOMSTensionAnsiedad(calculosCuestionario)
             "preguntas_poms_vigor_activacion" -> obtenerResultadosPOMSVigorActivacion(calculosCuestionario)
             
-            //D2
-            "cuestionario_d2" -> obtenerResultadosD2(calculosCuestionario)
-            
             //Inteligencia emocional
             "preguntas_davidson_completo" -> obtenerResultadosDavidsonCompleto(calculosCuestionario)
             "preguntas_davidson_resistencia" -> obtenerResultadosDavidsonResistencia(calculosCuestionario)
@@ -73,13 +79,154 @@ class ObtenerResultados {
             "preguntas_davidson_contexto" -> obtenerResultadosDavidsonContexto(calculosCuestionario)
             "preguntas_davidson_atencion" -> obtenerResultadosDavidsonAtencion(calculosCuestionario)
             
-            //Modrian
-            //"cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
-            //"cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
-            //"cuestionario_modrian_simon" -> Modrian.calculateSimon(respuestasUsuario, usuario)
-            
             else -> obtenerResultadosMPS(calculosCuestionario)
         }
+    }
+
+    private fun obtenerResultadosModrianSimon(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Nivel:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Realizacion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Modrian simon"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosModrianParejas(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Aciertos:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
+        resultadosMostrados["Fallos:"] = calculosCuestionario["Numero_Fallos"] ?: ""
+        resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Modrian parejas"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosModrianColores(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Aciertos:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
+        resultadosMostrados["Fallos:"] = calculosCuestionario["Numero_Fallos"] ?: ""
+        resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Modrian colores"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosModrianStroop(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Aciertos:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
+        resultadosMostrados["Fallos:"] = calculosCuestionario["Numero_Fallos"] ?: ""
+        resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Modrian stroop"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosModrianFotos(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Aciertos:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
+        resultadosMostrados["Fallos:"] = calculosCuestionario["Numero_Fallos"] ?: ""
+        resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
+        resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Modrian fotos"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosStroop(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        val (horas, minutos, segundos) = segundosAHorasMinutosSegundos(calculosCuestionario["T_total"]?.toInt() ?: 0)
+
+        resultadosMostrados["Aciertos:"] = calculosCuestionario["Aciertos"] ?: ""
+        resultadosMostrados["Fallos:"] = calculosCuestionario["Fallos"] ?: ""
+        resultadosMostrados["Tiempo:"] = horas.toString() + " h, " + minutos.toString() + " m, " + segundos.toString() + " s"
+        resultadosMostrados["Tiempo medio:"] = calculosCuestionario["T_medio"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Efecto Stroop"
+        return resultadosMostrados.toMap()
+    }
+
+    fun segundosAHorasMinutosSegundos(segundos: Int): Triple<Int, Int, Int> {
+        val horas = segundos / 3600
+        val minutos = (segundos % 3600) / 60
+        val segundosRestantes = segundos % 60
+        return Triple(horas, minutos, segundosRestantes)
+    }
+
+    private fun obtenerResultadosAutorregistroPensamientosNegativos(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Día:"] = calculosCuestionario["Dia"] ?: ""
+        resultadosMostrados["Hora:"] = calculosCuestionario["Hora"] ?: "" + " horas"
+        resultadosMostrados["Ciudad, país, recinto deportivo..."] = calculosCuestionario["Lugar"] ?: ""
+        resultadosMostrados["Situación y conducta previa:"] = calculosCuestionario["Conducta_Previa"] ?: ""
+        resultadosMostrados["Pensamientos/verbalizaciones negativas:"] = calculosCuestionario["Pensamiento_Negativo"] ?: ""
+        resultadosMostrados["Intensidad pensamientos/verbalizaciones:"] = calculosCuestionario["Intensidad"] ?: ""
+        resultadosMostrados["Situación y conducta posterior:"] = calculosCuestionario["Conducta_Posterior"] ?: ""
+        resultadosMostrados["El pensamiento positivo debe ser..."] = calculosCuestionario["Pensamiento_Positivo"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Autorregistro pensamientos negativos y verbalizaciones"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosAutorregistroLibre(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Cuestión 1:"] = calculosCuestionario["campo1"] ?: ""
+        resultadosMostrados["Cuestión 2:"] = calculosCuestionario["campo2"] ?: ""
+        resultadosMostrados["Cuestión 3:"] = calculosCuestionario["campo3"] ?: ""
+        resultadosMostrados["Cuestión 4:"] = calculosCuestionario["campo4"] ?: ""
+        resultadosMostrados["Cuestión 5:"] = calculosCuestionario["campo5"] ?: ""
+        resultadosMostrados["Cuestión 6:"] = calculosCuestionario["campo6"] ?: ""
+        resultadosMostrados["Cuestión 7:"] = calculosCuestionario["campo7"] ?: ""
+        resultadosMostrados["Cuestión 8:"] = calculosCuestionario["campo8"] ?: ""
+        resultadosMostrados["Cuestión 9:"] = calculosCuestionario["campo9"] ?: ""
+        resultadosMostrados["Cuestión 10:"] = calculosCuestionario["campo10"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Autorregistro libre"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosAutorregistroEntrenamiento(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        resultadosMostrados["Día entrenamiento:"] = calculosCuestionario["Dia"] ?: ""
+        resultadosMostrados["Objetivo general:"] = calculosCuestionario["Ob_general"] ?: ""
+        resultadosMostrados["Tareas:"] = calculosCuestionario["Tarea"] ?: ""
+        resultadosMostrados["Deporte practicado:"] = calculosCuestionario["Deporte"] ?: ""
+        resultadosMostrados["Metas:"] = calculosCuestionario["Objetivo"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Adecuación autovalorativa del entrenamiento"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosAutorregistroDiario(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        val imc = calcularIMC(calculosCuestionario["Peso"]?.replace("'", "")?.toDouble() ?: 0.0,
+            calculosCuestionario["Estatura"]?.replace("'", "")?.toDouble() ?: 0.0)
+
+        resultadosMostrados["Día:"] = calculosCuestionario["Dia"] ?: ""
+        resultadosMostrados["Peso (kg):"] = calculosCuestionario["Peso"] ?: ""
+        resultadosMostrados["Horas de sueño:"] = calculosCuestionario["HorasSueño"] ?: ""
+        resultadosMostrados["Pulsaciones al despertar:"] = calculosCuestionario["Pulsaciones"] ?: ""
+        resultadosMostrados["Estado de ánimo:"] = calculosCuestionario["Animo"] ?: ""
+        resultadosMostrados["Tensión mínima:"] = calculosCuestionario["T_Minima"] ?: ""
+        resultadosMostrados["Tensión máxima:"] = calculosCuestionario["T_Maxima"] ?: ""
+        resultadosMostrados["Tiempo práctica deportiva:"] = calculosCuestionario["T_P_Deportiva"] ?: ""
+        resultadosMostrados["Contenido de la práctica:"] = calculosCuestionario["Contenido_Prac"] ?: ""
+        resultadosMostrados["Percepción del esfuerzo:"] = calculosCuestionario["P_Esfuerzo"] ?: ""
+        resultadosMostrados["Cantidad de ejercicio:"] = calculosCuestionario["C_Ejercicio"] ?: ""
+        resultadosMostrados["Intensidad del ejercicio:"] = calculosCuestionario["I_Ejercicio"] ?: ""
+        resultadosMostrados["Eventos destacados del día:"] = calculosCuestionario["EventoDestacado"] ?: ""
+        resultadosMostrados["Estatura (m):"] = calculosCuestionario["Estatura"] ?: ""
+        resultadosMostrados["IMC:"] = imc.toString()
+        resultadosMostrados["nombreCuestionario"] = "Autorregistro diario"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun calcularIMC(peso: Double, estatura: Double): Double {
+        return peso / (estatura * estatura)
     }
 
     private fun obtenerResultadosPOMSVigorActivacion(calculosCuestionario: Map<String, String>): Map<String, String> {
@@ -343,7 +490,7 @@ class ObtenerResultados {
         return resultadosMostrados.toMap()
     }
 
-    private fun obtenerResultadosAutoComida(calculosCuestionario: Map<String, String>): Map<String, String> {
+    private fun obtenerResultadosAutorregistroComida(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Hora del día:"] = calculosCuestionario["Hora"]+" horas" ?: ""
         resultadosMostrados["Tiempo empleado en comer:"] = calculosCuestionario["Tiempo"]+" minutos" ?: ""
