@@ -1,30 +1,328 @@
 package com.uma.menpas.utils
 
+import com.uma.menpas.cuestionarios.*
+
 class ObtenerResultados {
 
     fun obtenerResultados(jsonResourceName: String, calculosCuestionario: Map<String, String>): Map<String, String> {
         return when (jsonResourceName) {
+            //Ansiedad
             "preguntas_csai2" -> obtenerResultadosCSAI2(calculosCuestionario)
+            "preguntas_csai2_cognitiva" -> calculateCSAI2Cognitiva(calculosCuestionario)
+            "preguntas_csai2_autoconfianza" -> calculateCSAI2Autoconfianza(calculosCuestionario)
+            "preguntas_csai2_somatica" -> calculateCSAI2Somatica(calculosCuestionario)
             "preguntas_scat" -> obtenerResultadosSCAT(calculosCuestionario)
-            "preguntas_acsi_28" -> obtenerResultadosACSI28(calculosCuestionario)
             "preguntas_stai_ar" -> obtenerResultadosSTAIAR(calculosCuestionario)
             "preguntas_stai_ae" -> obtenerResultadosSTAIAE(calculosCuestionario)
+            
+            //Búsqueda de talentos
+            "preguntas_acsi_28" -> obtenerResultadosACSI28(calculosCuestionario)
             "preguntas_embu" -> obtenerResultadosEMBU(calculosCuestionario)
             "preguntas_eacs" -> obtenerResultadosEACS(calculosCuestionario)
             "preguntas_ipseta" -> obtenerResultadosIPSETA(calculosCuestionario)
             "preguntas_mps" -> obtenerResultadosMPS(calculosCuestionario)
             "preguntas_rs" -> obtenerResultadosRS (calculosCuestionario)
+            
+            //Burnout
             "preguntas_maslach" -> obtenerResultadosMaslach(calculosCuestionario)
             "preguntas_abq" -> obtenerResultadosABQ(calculosCuestionario)
+            
+            //Autoconcepto
             "preguntas_af5" -> obtenerResultadosAF5(calculosCuestionario)
             "preguntas_bsq" -> obtenerResultadosBSQ(calculosCuestionario)
             "preguntas_caf" -> obtenerResultadosCAF(calculosCuestionario)
+            
+            //Calidad de vida
             "preguntas_sf_36" -> obtenerResultadosSF36(calculosCuestionario)
             "preguntas_sf_12" -> obtenerResultadosSF12(calculosCuestionario)
             "preguntas_vitalidad_subjetiva" -> obtenerResultadosVS(calculosCuestionario)
+            
+            //Dinámica grupal
+            "preguntas_dinamica_grupal_ccd" -> obtenerResultadosDinamicaGrupalCCD(calculosCuestionario)
+            
+            //Autorregistros
             "preguntas_autorregistro_comida" -> obtenerResultadosAutoComida(calculosCuestionario)
-            else -> obtenerResultadosSCAT(calculosCuestionario)
+            //"preguntas_autorregistro_diario" -> calculateAutorregistroDiario(respuestasUsuario, usuario)
+            //"preguntas_autorregistro_entrenamiento" -> calculateAutorregistroEntrenamiento(respuestasUsuario, usuario)
+            //"preguntas_autorregistro_libre" -> calculateAutorregistroLibre(respuestasUsuario, usuario)
+            //"preguntas_autorregistro_pensamientos_negativos" -> calculateAutorregistroPN(respuestasUsuario, usuario)
+            
+            //E.Mental/Evaluacion
+            "preguntas_evaluacion_mental_iped" -> obtenerResultadosIPED(calculosCuestionario)
+            "preguntas_entrenamiento_mental_epi" -> obtenerResultadosEPI(calculosCuestionario)
+            "preguntas_poms_65" -> obtenerResultadosPOMS65(calculosCuestionario)
+            "preguntas_poms_58" -> obtenerResultadosPOMS58(calculosCuestionario)
+            "preguntas_poms_15" -> obtenerResultadosPOMS15(calculosCuestionario)
+            "preguntas_poms_6" -> obtenerResultadosPOMS6(calculosCuestionario)
+            "preguntas_poms_angustia_colera" -> obtenerResultadosPOMSAngustiaColera(calculosCuestionario)
+            "preguntas_poms_confusion_orientacion" -> obtenerResultadosPOMSConfusionOrientacion(calculosCuestionario)
+            "preguntas_poms_depresion" -> obtenerResultadosPOMSDepresion(calculosCuestionario)
+            "preguntas_poms_fatiga_inercia" -> obtenerResultadosPOMSFatigaInercia(calculosCuestionario)
+            "preguntas_poms_tension_ansiedad" -> obtenerResultadosPOMSTensionAnsiedad(calculosCuestionario)
+            "preguntas_poms_vigor_activacion" -> obtenerResultadosPOMSVigorActivacion(calculosCuestionario)
+            
+            //D2
+            "cuestionario_d2" -> obtenerResultadosD2(calculosCuestionario)
+            
+            //Inteligencia emocional
+            "preguntas_davidson_completo" -> obtenerResultadosDavidsonCompleto(calculosCuestionario)
+            "preguntas_davidson_resistencia" -> obtenerResultadosDavidsonResistencia(calculosCuestionario)
+            "preguntas_davidson_actitud" -> obtenerResultadosDavidsonActitud(calculosCuestionario)
+            "preguntas_davidson_intuicion_social" -> obtenerResultadosDavidsonIntuicionSocial(calculosCuestionario)
+            "preguntas_davidson_autoconciencia" -> obtenerResultadosDavidsonAutoconciencia(calculosCuestionario)
+            "preguntas_davidson_contexto" -> obtenerResultadosDavidsonContexto(calculosCuestionario)
+            "preguntas_davidson_atencion" -> obtenerResultadosDavidsonAtencion(calculosCuestionario)
+            
+            //Modrian
+            //"cuestionario_modrian_colores" -> Modrian.calculateColores(respuestasUsuario, usuario)
+            //"cuestionario_modrian_parejas" -> Modrian.calculateParejas(respuestasUsuario, usuario)
+            //"cuestionario_modrian_simon" -> Modrian.calculateSimon(respuestasUsuario, usuario)
+            
+            else -> obtenerResultadosMPS(calculosCuestionario)
         }
+    }
+
+    private fun obtenerResultadosPOMSVigorActivacion(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Vigor-Activación:"] = calculosCuestionario["Vigor_Activacion"] ?: ""
+        resultadosMostrados["Vigor-Activación (T score):"] = calculosCuestionario["TS_Vigor_Activacion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Vigor-Activación)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMSTensionAnsiedad(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Tensión-Ansiedad:"] = calculosCuestionario["Tension_Ansiedad"] ?: ""
+        resultadosMostrados["Tensión-Ansiedad (T score):"] = calculosCuestionario["TS_Tension_Ansiedad"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Tensión-Ansiedad)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMSFatigaInercia(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Fatiga-Inercia)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMSDepresion(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Depresion-Melancolía:"] = calculosCuestionario["Depresion_Melancolia"] ?: ""
+        resultadosMostrados["Depresion-Melancolía (T score):"] = calculosCuestionario["TS_Depresion_Melancolia"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Depresion-Melancolía)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMSConfusionOrientacion(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
+        resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Confusión-Orientación)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMSAngustiaColera(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Angustia-Hostilidad-Cólera:"] = calculosCuestionario["Angustia_Colera"] ?: ""
+        resultadosMostrados["Angustia-Hostilidad-Cólera (T score):"] = calculosCuestionario["TS_Angustia_Colera"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms (Escala Angustia-Cólera)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMS6(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Escala 6 items:"] = calculosCuestionario["Escala6"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms 6 items"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMS15(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Vigor-Activación:"] = calculosCuestionario["Vigor_Activacion"] ?: ""
+        resultadosMostrados["Vigor-Activación (T score):"] = calculosCuestionario["TS_Vigor_Activacion"] ?: ""
+        resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms 15 items"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMS58(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Tensión-Ansiedad:"] = calculosCuestionario["Tension_Ansiedad"] ?: ""
+        resultadosMostrados["Tensión-Ansiedad (T score):"] = calculosCuestionario["TS_Tension_Ansiedad"] ?: ""
+        resultadosMostrados["Depresion-Melancolía:"] = calculosCuestionario["Depresion_Melancolia"] ?: ""
+        resultadosMostrados["Depresion-Melancolía (T score):"] = calculosCuestionario["TS_Depresion_Melancolia"] ?: ""
+        resultadosMostrados["Angustia-Hostilidad-Cólera:"] = calculosCuestionario["Angustia_Colera"] ?: ""
+        resultadosMostrados["Angustia-Hostilidad-Cólera (T score):"] = calculosCuestionario["TS_Angustia_Colera"] ?: ""
+        resultadosMostrados["Vigor-Activación:"] = calculosCuestionario["Vigor_Activacion"] ?: ""
+        resultadosMostrados["Vigor-Activación (T score):"] = calculosCuestionario["TS_Vigor_Activacion"] ?: ""
+        resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
+        resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms 58 items"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosPOMS65(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Tensión-Ansiedad:"] = calculosCuestionario["Tension_Ansiedad"] ?: ""
+        resultadosMostrados["Tensión-Ansiedad (T score):"] = calculosCuestionario["TS_Tension_Ansiedad"] ?: ""
+        resultadosMostrados["Depresion-Melancolía:"] = calculosCuestionario["Depresion_Melancolia"] ?: ""
+        resultadosMostrados["Depresion-Melancolía (T score):"] = calculosCuestionario["TS_Depresion_Melancolia"] ?: ""
+        resultadosMostrados["Angustia-Hostilidad-Cólera:"] = calculosCuestionario["Angustia_Colera"] ?: ""
+        resultadosMostrados["Angustia-Hostilidad-Cólera (T score):"] = calculosCuestionario["TS_Angustia_Colera"] ?: ""
+        resultadosMostrados["Vigor-Activación:"] = calculosCuestionario["Vigor_Activacion"] ?: ""
+        resultadosMostrados["Vigor-Activación (T score):"] = calculosCuestionario["TS_Vigor_Activacion"] ?: ""
+        resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
+        resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
+        resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Poms 65 items"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonAtencion(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Atención:"] = calculosCuestionario["atencion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Atención)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonContexto(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Contexto:"] = calculosCuestionario["contexto"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Contexto)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonAutoconciencia(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Autoconciencia:"] = calculosCuestionario["autoconciencia"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Autoconciencia)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonIntuicionSocial(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Intuición social:"] = calculosCuestionario["intuicion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Intuición social)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonActitud(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Actitud:"] = calculosCuestionario["actitud"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Actitud)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonResistencia(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Resistencia:"] = calculosCuestionario["resistencia"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Davidson (Resistencia)"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDavidsonCompleto(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Resistencia:"] = calculosCuestionario["resistencia"] ?: ""
+        resultadosMostrados["Actitud:"] = calculosCuestionario["actitud"] ?: ""
+        resultadosMostrados["Intuición social:"] = calculosCuestionario["intuicion"] ?: ""
+        resultadosMostrados["Autoconciencia:"] = calculosCuestionario["autoconciencia"] ?: ""
+        resultadosMostrados["Contexto:"] = calculosCuestionario["contexto"] ?: ""
+        resultadosMostrados["Atención:"] = calculosCuestionario["atencion"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Evaluación del perfil emocional de Davidson"
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosD2(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["TR:"] = calculosCuestionario["TR"] ?: ""
+        resultadosMostrados["TA:"] = calculosCuestionario["TA"] ?: ""
+        resultadosMostrados["O:"] = calculosCuestionario["O"] ?: ""
+        resultadosMostrados["C:"] = calculosCuestionario["C"] ?: ""
+        resultadosMostrados["TOT:"] = calculosCuestionario["TOT"] ?: ""
+        resultadosMostrados["CON:"] = calculosCuestionario["CON"] ?: ""
+        resultadosMostrados["TR+:"] = calculosCuestionario["TRmax"] ?: ""
+        resultadosMostrados["TR-:"] = calculosCuestionario["TRmin"] ?: ""
+        resultadosMostrados["VAR:"] = calculosCuestionario["VAR"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Test de atención d2"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosEPI(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Solución(S):"] = calculosCuestionario["V_S"] ?: ""
+        resultadosMostrados["Solución(N):"] = calculosCuestionario["V_N"] ?: ""
+        resultadosMostrados["Solución(E):"] = calculosCuestionario["V_E"] ?: ""
+        resultadosMostrados["Centil(S):"] = calculosCuestionario["Centil_S"] ?: ""
+        resultadosMostrados["Centil(N):"] = calculosCuestionario["Centil_N"] ?: ""
+        resultadosMostrados["Centil(E):"] = calculosCuestionario["Centil_E"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Personalidad EPI"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosIPED(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+
+        val resultadosNumericos = arrayOf(
+            calculosCuestionario["AC"]?.replace("'", "")?.toInt() ?: 0,calculosCuestionario["CAN"]?.replace("'", "")?.toInt() ?: 0,
+            calculosCuestionario["CAT"]?.replace("'", "")?.toInt() ?: 0, calculosCuestionario["CVI"]?.replace("'", "")?.toInt() ?: 0,
+            calculosCuestionario["NM"]?.replace("'", "")?.toInt() ?: 0, calculosCuestionario["CAP"]?.replace("'", "")?.toInt() ?: 0,
+            calculosCuestionario["CACT"]?.replace("'", "")?.toInt() ?: 0)
+        val durezaMental = resultadosNumericos.average().toInt()
+
+        resultadosMostrados["AC(autoconfianza):"] = calculosCuestionario["AC"] ?: ""
+        resultadosMostrados["CAN(control de afrontamiento negativo):"] = calculosCuestionario["CAN"] ?: ""
+        resultadosMostrados["CAT(control atencional):"] = calculosCuestionario["CAT"] ?: ""
+        resultadosMostrados["CVI(control visuoimaginativo):"] = calculosCuestionario["CVI"] ?: ""
+        resultadosMostrados["NM(nivel motivación):"] = calculosCuestionario["NM"] ?: ""
+        resultadosMostrados["CAP(control de afrontamiento positivo):"] = calculosCuestionario["CAP"] ?: ""
+        resultadosMostrados["CACT(control actitudinal):"] = calculosCuestionario["CACT"] ?: ""
+        resultadosMostrados["Dureza mental:"] = durezaMental.toString()
+        resultadosMostrados["nombreCuestionario"] = "IPED"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun obtenerResultadosDinamicaGrupalCCD(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["DCC:"] = calculosCuestionario["DCC"] ?: ""
+        resultadosMostrados["DCI:"] = calculosCuestionario["DCI"] ?: ""
+        resultadosMostrados["SC:"] = calculosCuestionario["SC"] ?: ""
+        resultadosMostrados["SE:"] = calculosCuestionario["SE"] ?: ""
+        resultadosMostrados["SF:"] = calculosCuestionario["SF"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "Cooperación deportiva (CCD)"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun calculateCSAI2Somatica(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Somática:"] = calculosCuestionario["Somatica"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "CSAI2 (Somática)"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun calculateCSAI2Autoconfianza(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Autoconfianza:"] = calculosCuestionario["Autoconfianza"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "CSAI2 (Autoconfianza)"
+
+        return resultadosMostrados.toMap()
+    }
+
+    private fun calculateCSAI2Cognitiva(calculosCuestionario: Map<String, String>): Map<String, String> {
+        val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
+        resultadosMostrados["Cognitiva:"] = calculosCuestionario["Cognitiva"] ?: ""
+        resultadosMostrados["nombreCuestionario"] = "CSAI2 (Cognitiva)"
+
+        return resultadosMostrados.toMap()
     }
 
     private fun obtenerResultadosSTAIAE(calculosCuestionario: Map<String, String>): Map<String, String> {
