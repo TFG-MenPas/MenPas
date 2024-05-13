@@ -84,7 +84,7 @@ class EPI {
             val usuario = UsuarioController().getUsuario(context)
 
             val id = CuestionarioService().obtenerIdDisponible("epi", "ID_EPI")
-            val nombreUsuario = formattedString(usuario.nombreUsuario)
+            val nombreUsuario = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -117,10 +117,9 @@ class EPI {
                     else -> valorarSies(respuestasUsuario[indice])
                 }
             }
-
-            val valorCentilS = formattedString(calcularCentilesS(contadorSies, usuario.edad, usuario.sexo).toString())
-            val valorCentilN = formattedString(calcularCentilesN(contadorNoes, usuario.edad, usuario.sexo).toString())
-            val valorCentilE = formattedString(calcularCentilesE(contadorE, usuario.edad, usuario.sexo).toString())
+            val valorCentilS = formattedString(calcularCentilesS(contadorSies, usuario?.edad ?: 0, usuario?.sexo ?: "Otro").toString())
+            val valorCentilN = formattedString(calcularCentilesN(contadorNoes, usuario?.edad ?: 0, usuario?.sexo ?: "Otro").toString())
+            val valorCentilE = formattedString(calcularCentilesE(contadorE, usuario?.edad ?: 0, usuario?.sexo ?: "Otro").toString())
 
             val respuestasUsuarioString = respuestasUsuario.map {
                 formattedString(it)

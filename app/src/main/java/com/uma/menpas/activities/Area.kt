@@ -18,6 +18,7 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.text.Normalizer
+import java.util.Locale
 
 
 class Area : AppCompatActivity() {
@@ -76,8 +77,9 @@ class Area : AppCompatActivity() {
             linearLayout.addView(boton)
             boton.setOnClickListener {
                 val intent = Intent(this, Subarea::class.java)
-                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
-                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                //val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
+                //val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                val json_resource_name = section.lowercase().replace(".", "").replace(" ","_")
                 intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", section)
                 intent.putExtra("usuario", usuario)

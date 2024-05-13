@@ -325,7 +325,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -529,7 +529,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -684,7 +684,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -757,7 +757,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -811,7 +811,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -864,7 +864,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -920,7 +920,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -968,7 +968,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -1022,7 +1022,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -1075,7 +1075,7 @@ class POMS {
 
             val id = CuestionarioService().obtenerIdDisponible("poms", "ID_Poms")
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 

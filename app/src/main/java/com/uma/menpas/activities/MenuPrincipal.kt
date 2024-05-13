@@ -100,8 +100,8 @@ class MenuPrincipal : AppCompatActivity() {
     }
 
     fun abrirArea(id: Int, usuario: String) {
-        var nombre = resources.getResourceName(id).split(":id/")[1]
-        var intent = Intent(this, Area::class.java)
+        val nombre = resources.getResourceName(id).split(":id/")[1]
+        val intent = Intent(this, Area::class.java)
         when(nombre){
             "autorregistro" -> intent.putExtra("area", "Autorregistro");
             "ansiedad" -> intent.putExtra("area", "Ansiedad")

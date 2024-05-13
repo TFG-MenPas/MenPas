@@ -2,6 +2,7 @@ package com.uma.menpas.cuestionarios
 
 import android.content.Context
 import com.uma.menpas.controllers.UsuarioController
+import com.uma.menpas.models.Usuario
 import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.services.UsuarioService
@@ -182,7 +183,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -236,7 +237,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -285,7 +286,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -486,7 +487,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -541,7 +542,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -589,7 +590,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 
@@ -637,7 +638,7 @@ class PDavidson {
             val id = CuestionarioService().obtenerIdDisponible("PED", "Id_PED")
 
             val usuario = UsuarioController().getUsuario(context)
-            val nombreUsuarioFormateado = formattedString(usuario.nombreUsuario)
+            val nombreUsuarioFormateado = formattedString(usuario?.nombreUsuario ?: "anónimo")
             val fecha = formattedString(ParseUtils.obtenerFechaActual())
             val idioma = formattedString("es-es")
 

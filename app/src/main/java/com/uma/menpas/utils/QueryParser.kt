@@ -8,6 +8,7 @@ class QueryParser {
 
     fun parse(jsonResourceName: String, respuestasUsuario: Map<String, String>): String {
         return when (jsonResourceName) {
+            "preguntas_evaluacion_mental_iped_anonimo" -> generateQuery(respuestasUsuario, "IPED_Anonimo")
             "preguntas_evaluacion_mental_iped" -> generateQuery(respuestasUsuario, "iped")
             "preguntas_entrenamiento_mental_epi" -> generateQuery(respuestasUsuario, "epi")
             "cuestionario_d2" -> generateQuery(respuestasUsuario, "d2")

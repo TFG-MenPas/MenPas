@@ -9,8 +9,8 @@ import com.uma.menpas.utils.CalculoResultados
 class UsuarioController {
     val usuarioService = UsuarioService()
 
-    fun getUsuario(context: Context): Usuario {
-        return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()!!
+    fun getUsuario(context: Context): Usuario? {
+        return UsuarioDB.getDatabase(context)?.UsuarioDAO()?.getUsuario()
     }
 
     fun realizarActualizacion(context: Context, opcion: Int, nuevoValor: String): Boolean {

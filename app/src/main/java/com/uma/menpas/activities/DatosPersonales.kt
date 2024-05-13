@@ -109,10 +109,18 @@ class DatosPersonales : AppCompatActivity() {
 
     private fun setDatosUsuario() {
         val usuario = usuarioController.getUsuario(this)
-        textNombreUsuario.text = usuario.nombreUsuario
-        textNombre.text = usuario.nombre
-        textApellidos.text = usuario.apellidos
-        checkBoxSuscripcion.isChecked = usuario.infoEmail
+        if (usuario != null) {
+            textNombreUsuario.text = usuario.nombreUsuario
+        }
+        if (usuario != null) {
+            textNombre.text = usuario.nombre
+        }
+        if (usuario != null) {
+            textApellidos.text = usuario.apellidos
+        }
+        if (usuario != null) {
+            checkBoxSuscripcion.isChecked = usuario.infoEmail
+        }
     }
 
 }
