@@ -33,7 +33,7 @@ class ModrianStroopGrid : AppCompatActivity() {
 
     private lateinit var usuario: String
     lateinit var cronometro: Chronometer
-    private var blancos: Int = 0
+    private var blancos: Int = 20
     private var aciertos: Int = 0
     private var fallos: Int = 0
     private var longTiempoEspera: Long = 0
@@ -260,7 +260,7 @@ class ModrianStroopGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
-        blancos = colores.childCount - 12
+        blancos = 12
         filas = 3
     }
 
@@ -273,7 +273,7 @@ class ModrianStroopGrid : AppCompatActivity() {
             botonColor.visibility = View.GONE
         }
         limiteFallos = Fallos.calcularFallosPermitidos(colores.childCount - numeroCasillasEliminar, numeroFallosPermitidos)
-        blancos = colores.childCount - 3
+        blancos = 16
         filas = 4
     }
 
