@@ -308,6 +308,8 @@ class CuestionarioDinamico : AppCompatActivity() {
             editText.setText("")
         }
 
+        if(editText.text.isNotEmpty()) botonSiguiente.habilitarBoton()
+
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
