@@ -552,7 +552,7 @@ class ObtenerResultados {
 
     private fun obtenerResultadosSF12(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
-        resultadosMostrados["Medida sumatorio física:"] = calculosCuestionario["Medida_S_Fisica"] ?: ""
+        resultadosMostrados["Medida sumatorio física:"] = calculosCuestionario["Medida_S_Físico"] ?: ""
         resultadosMostrados["Medida sumatorio mental:"] = calculosCuestionario["Medida_S_Mental"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "SF12"
         resultadosMostrados["categoria"] = "Calidad de vida"
@@ -562,12 +562,12 @@ class ObtenerResultados {
 
     private fun obtenerResultadosSF36(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
-        resultadosMostrados["Función física:"] = calculosCuestionario["F_Fisica"] ?: ""
-        resultadosMostrados["Rol físico:"] = calculosCuestionario["Rol_Fisico"] ?: ""
+        resultadosMostrados["Función física:"] = calculosCuestionario["F_Física"] ?: ""
+        resultadosMostrados["Rol físico:"] = calculosCuestionario["Rol_Físico"] ?: ""
         resultadosMostrados["Dolor corporal:"] = calculosCuestionario["Dolor"] ?: ""
         resultadosMostrados["Salud general:"] = calculosCuestionario["Salud"] ?: ""
         resultadosMostrados["Vitalidad:"] = calculosCuestionario["Vitalidad"] ?: ""
-        resultadosMostrados["Función social:"] = calculosCuestionario["FuncionS"] ?: ""
+        resultadosMostrados["Función social:"] = calculosCuestionario["FunciónS"] ?: ""
         resultadosMostrados["Rol emocional:"] = calculosCuestionario["Rol_Emocional"] ?: ""
         resultadosMostrados["Salud mental:"] = calculosCuestionario["Salud_Mental"] ?: ""
         resultadosMostrados["Cambio de salud:"] = calculosCuestionario["Cambio_Salud"] ?: ""
@@ -580,7 +580,7 @@ class ObtenerResultados {
     private fun obtenerResultadosCAF(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Habilidad física:"] = calculosCuestionario["Habilidad"] ?: ""
-        resultadosMostrados["Condición física:"] = calculosCuestionario["Condicion"] ?: ""
+        resultadosMostrados["Condición física:"] = calculosCuestionario["Condición"] ?: ""
         resultadosMostrados["Atractivo físico:"] = calculosCuestionario["Atractivo"] ?: ""
         resultadosMostrados["Fuerza:"] = calculosCuestionario["Fuerza"] ?: ""
         resultadosMostrados["Autoconcepto físico general:"] = calculosCuestionario["AutoconceptoF"] ?: ""
