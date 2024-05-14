@@ -89,6 +89,7 @@ class ObtenerResultados {
         resultadosMostrados["Nivel:"] = calculosCuestionario["Numero_Aciertos"] ?: ""
         resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian simon"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -100,6 +101,7 @@ class ObtenerResultados {
         resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
         resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian parejas"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -111,6 +113,7 @@ class ObtenerResultados {
         resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
         resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian colores"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -122,6 +125,7 @@ class ObtenerResultados {
         resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
         resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian stroop"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -133,6 +137,7 @@ class ObtenerResultados {
         resultadosMostrados["Blancos:"] = calculosCuestionario["Numero_Blancos"] ?: ""
         resultadosMostrados["Tiempo:"] = calculosCuestionario["Tiempo_Final"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Modrian fotos"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -146,6 +151,7 @@ class ObtenerResultados {
         resultadosMostrados["Tiempo:"] = horas.toString() + " h, " + minutos.toString() + " m, " + segundos.toString() + " s"
         resultadosMostrados["Tiempo medio:"] = calculosCuestionario["T_medio"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Efecto Stroop"
+        resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
     }
 
@@ -168,6 +174,7 @@ class ObtenerResultados {
         resultadosMostrados["Situación y conducta posterior:"] = calculosCuestionario["Conducta_Posterior"] ?: ""
         resultadosMostrados["El pensamiento positivo debe ser..."] = calculosCuestionario["Pensamiento_Positivo"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autorregistro pensamientos negativos y verbalizaciones"
+        resultadosMostrados["categoria"] = "Autoregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -185,6 +192,7 @@ class ObtenerResultados {
         resultadosMostrados["Cuestión 9:"] = calculosCuestionario["campo9"] ?: ""
         resultadosMostrados["Cuestión 10:"] = calculosCuestionario["campo10"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autorregistro libre"
+        resultadosMostrados["categoria"] = "Autoregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -197,6 +205,7 @@ class ObtenerResultados {
         resultadosMostrados["Deporte practicado:"] = calculosCuestionario["Deporte"] ?: ""
         resultadosMostrados["Metas:"] = calculosCuestionario["Objetivo"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Adecuación autovalorativa del entrenamiento"
+        resultadosMostrados["categoria"] = "Autoregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -222,6 +231,7 @@ class ObtenerResultados {
         resultadosMostrados["Estatura (m):"] = calculosCuestionario["Estatura"] ?: ""
         resultadosMostrados["IMC:"] = imc.toString()
         resultadosMostrados["nombreCuestionario"] = "Autorregistro diario"
+        resultadosMostrados["categoria"] = "Autoregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -234,6 +244,7 @@ class ObtenerResultados {
         resultadosMostrados["Vigor-Activación:"] = calculosCuestionario["Vigor_Activacion"] ?: ""
         resultadosMostrados["Vigor-Activación (T score):"] = calculosCuestionario["TS_Vigor_Activacion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Vigor-Activación)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -242,6 +253,7 @@ class ObtenerResultados {
         resultadosMostrados["Tensión-Ansiedad:"] = calculosCuestionario["Tension_Ansiedad"] ?: ""
         resultadosMostrados["Tensión-Ansiedad (T score):"] = calculosCuestionario["TS_Tension_Ansiedad"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Tensión-Ansiedad)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -250,6 +262,7 @@ class ObtenerResultados {
         resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
         resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Fatiga-Inercia)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -258,6 +271,7 @@ class ObtenerResultados {
         resultadosMostrados["Depresion-Melancolía:"] = calculosCuestionario["Depresion_Melancolia"] ?: ""
         resultadosMostrados["Depresion-Melancolía (T score):"] = calculosCuestionario["TS_Depresion_Melancolia"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Depresion-Melancolía)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -266,6 +280,7 @@ class ObtenerResultados {
         resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
         resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Confusión-Orientación)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -274,6 +289,7 @@ class ObtenerResultados {
         resultadosMostrados["Angustia-Hostilidad-Cólera:"] = calculosCuestionario["Angustia_Colera"] ?: ""
         resultadosMostrados["Angustia-Hostilidad-Cólera (T score):"] = calculosCuestionario["TS_Angustia_Colera"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms (Escala Angustia-Cólera)"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -281,6 +297,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Escala 6 items:"] = calculosCuestionario["Escala6"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms 6 items"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -291,6 +308,7 @@ class ObtenerResultados {
         resultadosMostrados["Fatiga-Inercia:"] = calculosCuestionario["Fatiga_Inercia"] ?: ""
         resultadosMostrados["Fatiga-Inercia (T score):"] = calculosCuestionario["TS_Fatiga_Inercia"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms 15 items"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -309,6 +327,7 @@ class ObtenerResultados {
         resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
         resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms 58 items"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -327,6 +346,7 @@ class ObtenerResultados {
         resultadosMostrados["Confusión-Orientación:"] = calculosCuestionario["Confusion_orientacion"] ?: ""
         resultadosMostrados["Confusión-Orientación (T score):"] = calculosCuestionario["TS_Confusion_orientacion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Poms 65 items"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
         return resultadosMostrados.toMap()
     }
 
@@ -334,6 +354,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Atención:"] = calculosCuestionario["atencion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Atención)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -341,6 +362,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Contexto:"] = calculosCuestionario["contexto"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Contexto)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -348,6 +370,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Autoconciencia:"] = calculosCuestionario["autoconciencia"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Autoconciencia)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -355,6 +378,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Intuición social:"] = calculosCuestionario["intuicion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Intuición social)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -362,6 +386,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Actitud:"] = calculosCuestionario["actitud"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Actitud)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -369,6 +394,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Resistencia:"] = calculosCuestionario["resistencia"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Davidson (Resistencia)"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -381,6 +407,7 @@ class ObtenerResultados {
         resultadosMostrados["Contexto:"] = calculosCuestionario["contexto"] ?: ""
         resultadosMostrados["Atención:"] = calculosCuestionario["atencion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Evaluación del perfil emocional de Davidson"
+        resultadosMostrados["categoria"] = "Inteligencia emocional"
         return resultadosMostrados.toMap()
     }
 
@@ -396,6 +423,7 @@ class ObtenerResultados {
         resultadosMostrados["TR-:"] = calculosCuestionario["TRmin"] ?: ""
         resultadosMostrados["VAR:"] = calculosCuestionario["VAR"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Test de atención d2"
+        resultadosMostrados["categoria"] = "Atención"
 
         return resultadosMostrados.toMap()
     }
@@ -409,6 +437,7 @@ class ObtenerResultados {
         resultadosMostrados["Centil(N):"] = calculosCuestionario["Centil_N"] ?: ""
         resultadosMostrados["Centil(E):"] = calculosCuestionario["Centil_E"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Personalidad EPI"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
 
         return resultadosMostrados.toMap()
     }
@@ -432,6 +461,7 @@ class ObtenerResultados {
         resultadosMostrados["CACT(control actitudinal):"] = calculosCuestionario["CACT"] ?: ""
         resultadosMostrados["Dureza mental:"] = durezaMental.toString()
         resultadosMostrados["nombreCuestionario"] = "IPED"
+        resultadosMostrados["categoria"] = "E.Mental/Evaluación"
 
         return resultadosMostrados.toMap()
     }
@@ -444,6 +474,7 @@ class ObtenerResultados {
         resultadosMostrados["SE:"] = calculosCuestionario["SE"] ?: ""
         resultadosMostrados["SF:"] = calculosCuestionario["SF"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Cooperación deportiva (CCD)"
+        resultadosMostrados["categoria"] = "Dinámica grupal"
 
         return resultadosMostrados.toMap()
     }
@@ -452,6 +483,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Somática:"] = calculosCuestionario["Somatica"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "CSAI2 (Somática)"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -460,6 +492,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Autoconfianza:"] = calculosCuestionario["Autoconfianza"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "CSAI2 (Autoconfianza)"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -468,6 +501,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Cognitiva:"] = calculosCuestionario["Cognitiva"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "CSAI2 (Cognitiva)"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -477,6 +511,7 @@ class ObtenerResultados {
         resultadosMostrados["Solución:"] = calculosCuestionario["Stai_A_E"] ?: ""
         resultadosMostrados["Centiles:"] = calculosCuestionario["Centiles"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "STAI A-E"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -486,6 +521,7 @@ class ObtenerResultados {
         resultadosMostrados["Solución:"] = calculosCuestionario["Stai_A_R"] ?: ""
         resultadosMostrados["Centiles:"] = calculosCuestionario["Centiles"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "STAI A-R"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -500,6 +536,7 @@ class ObtenerResultados {
         resultadosMostrados["Comida y bebida (tipo y cantidad):"] = calculosCuestionario["Comida_tipo"] ?: ""
         resultadosMostrados["Comida y bebida (calorías apróx.):"] = calculosCuestionario["Calorias"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autoregistro comida y bebida"
+        resultadosMostrados["categoria"] = "Autoregistros"
 
         return resultadosMostrados.toMap()
     }
@@ -508,31 +545,34 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Solución:"] = calculosCuestionario["sol"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Vitalidad subjetiva (VS)"
+        resultadosMostrados["categoria"] = "Calidad de vida"
 
         return resultadosMostrados.toMap()
     }
 
     private fun obtenerResultadosSF12(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
-        resultadosMostrados["Medida sumatorio física:"] = calculosCuestionario["Medida_S_Fisica"] ?: ""
+        resultadosMostrados["Medida sumatorio física:"] = calculosCuestionario["Medida_S_Físico"] ?: ""
         resultadosMostrados["Medida sumatorio mental:"] = calculosCuestionario["Medida_S_Mental"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "SF12"
+        resultadosMostrados["categoria"] = "Calidad de vida"
 
         return resultadosMostrados.toMap()
     }
 
     private fun obtenerResultadosSF36(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
-        resultadosMostrados["Función física:"] = calculosCuestionario["F_Fisica"] ?: ""
-        resultadosMostrados["Rol físico:"] = calculosCuestionario["Rol_Fisico"] ?: ""
+        resultadosMostrados["Función física:"] = calculosCuestionario["F_Física"] ?: ""
+        resultadosMostrados["Rol físico:"] = calculosCuestionario["Rol_Físico"] ?: ""
         resultadosMostrados["Dolor corporal:"] = calculosCuestionario["Dolor"] ?: ""
         resultadosMostrados["Salud general:"] = calculosCuestionario["Salud"] ?: ""
         resultadosMostrados["Vitalidad:"] = calculosCuestionario["Vitalidad"] ?: ""
-        resultadosMostrados["Función social:"] = calculosCuestionario["FuncionS"] ?: ""
+        resultadosMostrados["Función social:"] = calculosCuestionario["FunciónS"] ?: ""
         resultadosMostrados["Rol emocional:"] = calculosCuestionario["Rol_Emocional"] ?: ""
         resultadosMostrados["Salud mental:"] = calculosCuestionario["Salud_Mental"] ?: ""
         resultadosMostrados["Cambio de salud:"] = calculosCuestionario["Cambio_Salud"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "SF36"
+        resultadosMostrados["categoria"] = "Calidad de vida"
 
         return resultadosMostrados.toMap()
     }
@@ -540,12 +580,13 @@ class ObtenerResultados {
     private fun obtenerResultadosCAF(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Habilidad física:"] = calculosCuestionario["Habilidad"] ?: ""
-        resultadosMostrados["Condición física:"] = calculosCuestionario["Condicion"] ?: ""
+        resultadosMostrados["Condición física:"] = calculosCuestionario["Condición"] ?: ""
         resultadosMostrados["Atractivo físico:"] = calculosCuestionario["Atractivo"] ?: ""
         resultadosMostrados["Fuerza:"] = calculosCuestionario["Fuerza"] ?: ""
         resultadosMostrados["Autoconcepto físico general:"] = calculosCuestionario["AutoconceptoF"] ?: ""
         resultadosMostrados["Autoconcepto general:"] = calculosCuestionario["AutoconceptoG"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "CAF"
+        resultadosMostrados["categoria"] = "Autoconcepto"
 
         return resultadosMostrados.toMap()
     }
@@ -554,6 +595,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Factor1:"] = calculosCuestionario["Factor1"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "BSQ"
+        resultadosMostrados["categoria"] = "Autoconcepto"
 
         return resultadosMostrados.toMap()
     }
@@ -566,6 +608,7 @@ class ObtenerResultados {
         resultadosMostrados["Familiar:"] = calculosCuestionario["Familiar"] ?: ""
         resultadosMostrados["Físico:"] = calculosCuestionario["Físico"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "AF5"
+        resultadosMostrados["categoria"] = "Autoconcepto"
 
         return resultadosMostrados.toMap()
     }
@@ -579,6 +622,7 @@ class ObtenerResultados {
         resultadosMostrados["RSL_T:"] = calculosCuestionario["RSL_T"] ?: ""
         resultadosMostrados["DPD_T:"] = calculosCuestionario["DPD_T"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "ABQ"
+        resultadosMostrados["categoria"] = "Burnout"
 
         return resultadosMostrados.toMap()
     }
@@ -589,6 +633,7 @@ class ObtenerResultados {
         resultadosMostrados["Escala DP:"] = calculosCuestionario["Escala_DP"] ?: ""
         resultadosMostrados["Escala RP:"] = calculosCuestionario["Escala_RP"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Maslach"
+        resultadosMostrados["categoria"] = "Burnout"
 
         return resultadosMostrados.toMap()
     }
@@ -598,6 +643,7 @@ class ObtenerResultados {
         resultadosMostrados["Competencias personales:"] = calculosCuestionario["Factor1"] ?: ""
         resultadosMostrados["Aceptación propia y de la vida:"] = calculosCuestionario["Factor2"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "RS"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -611,6 +657,7 @@ class ObtenerResultados {
         resultadosMostrados["Dudas sobre acciones:"] = calculosCuestionario["Dudas"] ?: ""
         resultadosMostrados["Organización:"] = calculosCuestionario["Organizacion"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "MPS"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -621,6 +668,7 @@ class ObtenerResultados {
         resultadosMostrados["Motivo de logro:"] = calculosCuestionario["M_Logro"] ?: ""
         resultadosMostrados["Autoeficacia:"] = calculosCuestionario["Auto"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "IPSETA"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -631,6 +679,7 @@ class ObtenerResultados {
         resultadosMostrados["Aislamiento social:"] = calculosCuestionario["Factor2_Aislamiento"] ?: ""
         resultadosMostrados["Disciplina de vida:"] = calculosCuestionario["Factor3_Disciplina"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "EACS"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -644,6 +693,7 @@ class ObtenerResultados {
         resultadosMostrados["Sobreprotección (Padre):"] = calculosCuestionario["SobreproteccionP"] ?: ""
         resultadosMostrados["Sobreprotección (Madre):"] = calculosCuestionario["SobreproteccionM"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "EMBU"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -657,8 +707,8 @@ class ObtenerResultados {
         resultadosMostrados["Formulación de objetivos:"] = calculosCuestionario["Formulacion"] ?: ""
         resultadosMostrados["Confianza y motivación para llevar a cabo:"] = calculosCuestionario["Confianza"] ?: ""
         resultadosMostrados["Capacidad de formación:"] = calculosCuestionario["Capacidad"] ?: ""
-
         resultadosMostrados["nombreCuestionario"] = "ACSI28"
+        resultadosMostrados["categoria"] = "Búsqueda de talentos"
 
         return resultadosMostrados.toMap()
     }
@@ -667,6 +717,7 @@ class ObtenerResultados {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
         resultadosMostrados["Resultado:"] = calculosCuestionario["Resultado_Scat"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "SCAT"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
@@ -677,6 +728,7 @@ class ObtenerResultados {
         resultadosMostrados["Somática:"] = calculosCuestionario["Somatica"] ?: ""
         resultadosMostrados["Autoconfianza:"] = calculosCuestionario["Autoconfianza"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "CSAI2"
+        resultadosMostrados["categoria"] = "Ansiedad"
 
         return resultadosMostrados.toMap()
     }
