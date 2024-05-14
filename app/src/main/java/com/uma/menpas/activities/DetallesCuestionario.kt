@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
@@ -50,6 +51,21 @@ class DetallesCuestionario : AppCompatActivity() {
             barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
             BarraNavegacion(barraNavegacionInferior, this)
         }
+
+       val callback = object: OnBackPressedCallback(true){
+           override fun handleOnBackPressed() {
+               val intent: Intent = if(usuarioDB == null){
+                   Intent(this@DetallesCuestionario, IniciarSesion::class.java)
+               }else{
+                   Intent(this@DetallesCuestionario, MenuPrincipal::class.java)
+               }
+               startActivity(intent)
+           }
+       }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         buttonCerrar.setOnClickListener {
             if(isResultado) {
