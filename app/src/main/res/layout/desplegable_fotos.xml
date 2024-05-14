@@ -44,12 +44,9 @@
 
             <GridLayout
                 android:id="@+id/gridFotosSeleccion"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="-5dp"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:columnCount="3">
 
@@ -60,8 +57,7 @@
                     android:background="@drawable/img0"
                     android:contentDescription="0"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_margin="5dp" />
                 <ImageButton
                     android:id="@+id/foto01"
                     android:layout_width="97dp"
@@ -69,16 +65,14 @@
                     android:background="@drawable/img1"
                     android:contentDescription="1"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_margin="5dp" />
                 <ImageButton
                     android:id="@+id/foto02"
                     android:layout_width="97dp"
                     android:layout_height="77dp"
                     android:background="@drawable/img2"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="5dp"
                     android:contentDescription="2" />
                 <ImageButton
                     android:id="@+id/foto10"
@@ -86,8 +80,7 @@
                     android:layout_height="77dp"
                     android:background="@drawable/img3"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="5dp"
                     android:contentDescription="3" />
                 <ImageButton
                     android:id="@+id/foto11"
@@ -95,8 +88,7 @@
                     android:layout_height="77dp"
                     android:background="@drawable/img4"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_margin="5dp"
                     android:contentDescription="4" />
                 <ImageButton
                     android:id="@+id/foto12"
@@ -104,8 +96,7 @@
                     android:layout_height="77dp"
                     android:background="@drawable/img5"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="5dp"
                     android:contentDescription="5" />
 
                 <ImageButton
@@ -115,8 +106,7 @@
                     android:background="@drawable/img6"
                     android:contentDescription="6"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_margin="5dp" />
 
 
             </GridLayout>
