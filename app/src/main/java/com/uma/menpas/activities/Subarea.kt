@@ -7,6 +7,7 @@ import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
@@ -18,6 +19,7 @@ import androidx.core.view.marginBottom
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
@@ -36,17 +38,20 @@ class Subarea : AppCompatActivity() {
         val intent = intent
         val usuario = intent.getStringExtra("usuario") as String
         subarea = intent.getStringExtra("subarea") as String
-        var json_resource_name = intent.getStringExtra("json_resource_name")
-
+        val json_resource_name = intent.getStringExtra("json_resource_name")
+        val usuarioDB = UsuarioController().getUsuario(this)
         val linearLayout = findViewById<LinearLayout>(R.id.doc_txt_area2)
         this.drawTitle(subarea)
         val json = getJSON(json_resource_name.toString())
         val content = json["instructions"] as JSONObject
         val buttons = json["buttons"] as JSONObject
         drawContent(content, buttons, linearLayout, usuario)
-
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        BarraNavegacion(barraNavegacionInferior, this)
+        if(usuarioDB == null){
+            barraNavegacionInferior.visibility = View.GONE
+        }else{
+            BarraNavegacion(barraNavegacionInferior, this)
+        }
     }
 
     private fun drawTitle(area: String) {

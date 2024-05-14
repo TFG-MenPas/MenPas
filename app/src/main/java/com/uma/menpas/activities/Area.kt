@@ -3,6 +3,7 @@ package com.uma.menpas.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
@@ -12,6 +13,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -32,7 +34,8 @@ class Area : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
         val usuario = intent.getStringExtra("usuario") as String
-        var area = intent.getStringExtra("area").toString()
+        val usuarioDB = UsuarioController().getUsuario(this)
+        val area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
@@ -43,7 +46,11 @@ class Area : AppCompatActivity() {
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        BarraNavegacion(barraNavegacionInferior, this)
+        if(usuarioDB == null){
+            barraNavegacionInferior.visibility = View.GONE
+        }else{
+            BarraNavegacion(barraNavegacionInferior, this)
+        }
     }
 
     private fun drawTitle(area: String) {
