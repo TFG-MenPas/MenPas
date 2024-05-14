@@ -35,8 +35,10 @@ class Boton {
         }
 
         fun Button.deshabilitarBoton() {
-            this.cambiarNivelDeAclarado(150)
-            this.isEnabled = false
+            if(this.isEnabled == true){
+                this.cambiarNivelDeAclarado(150)
+                this.isEnabled = false
+            }
         }
 
         fun Button.habilitarBoton() {
