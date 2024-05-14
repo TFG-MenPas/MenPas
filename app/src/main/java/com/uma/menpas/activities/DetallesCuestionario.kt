@@ -4,9 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Gravity
-import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -23,9 +20,7 @@ class DetallesCuestionario : AppCompatActivity() {
     lateinit var buttonCerrar : ImageButton
     lateinit var textEntradaNombreCuestionario : TextView
     lateinit var textEntradaCategoria : TextView
-    lateinit var textEntradaTipo : TextView
     lateinit var textEntradaFecha : TextView
-    lateinit var textEntradaTiempo : TextView
     lateinit var textResultados : TextView
     lateinit var relativeLayout : RelativeLayout
 
@@ -83,21 +78,19 @@ class DetallesCuestionario : AppCompatActivity() {
         relativeLayout = findViewById(R.id.relativeLayoutDetallesCuestionario)
         textEntradaNombreCuestionario = findViewById(R.id.textEntradaNombreCuestionario)
         textEntradaCategoria = findViewById(R.id.textEntradaCategoria)
-        textEntradaTipo = findViewById(R.id.textEntradaTipo)
         textEntradaFecha = findViewById(R.id.textEntradaFecha)
-        textEntradaTiempo = findViewById(R.id.textEntradaTiempo)
         textResultados = findViewById(R.id.textResultados)
 
         textEntradaNombreCuestionario.text = resultadosObtenidos["nombreCuestionario"]
+        textEntradaCategoria.text = resultadosObtenidos["categoria"]
         textEntradaFecha.text = calculosCuestionario["Fecha"]?.replace("'", "")
-        textEntradaTiempo.text = calculosCuestionario["Tiempo"]?.replace("'", "")
 
         if (resultadosObtenidos != null) {
             var lastComponentId = textResultados.id
             var contadorClaveId = 1
             var contadorValorId = 500
             for ((clave, valor) in resultadosObtenidos) {
-                if(clave != "nombreCuestionario"){
+                if(clave != "nombreCuestionario" && clave != "categoria"){
                     val textViewClave = TextView(this)
                     textViewClave.id = contadorClaveId++
                     relativeLayout.addView(textViewClave)

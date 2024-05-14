@@ -19,6 +19,7 @@ class QueryParser {
             "preguntas_davidson_autoconciencia",
             "preguntas_davidson_contexto",
             "preguntas_davidson_atencion" -> generateQuery(respuestasUsuario, "PED")
+
             "preguntas_poms_65",
             "preguntas_poms_58",
             "preguntas_poms_15",
@@ -29,6 +30,7 @@ class QueryParser {
             "preguntas_poms_fatiga_inercia",
             "preguntas_poms_tension_ansiedad",
             "preguntas_poms_vigor_activacion" -> generateQuery(respuestasUsuario, "poms")
+
             "cuestionario_modrian_colores" -> generateQuery(respuestasUsuario, "modrian")
             "cuestionario_modrian_parejas" -> generateQuery(respuestasUsuario, "modrian")
             "cuestionario_modrian_simon" -> generateQuery(respuestasUsuario, "modrian")
