@@ -206,6 +206,17 @@ class ObtenerResultados {
         resultadosMostrados["Metas:"] = calculosCuestionario["Objetivo"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Adecuación autovalorativa del entrenamiento"
         resultadosMostrados["categoria"] = "Autoregistros"
+
+        var contadorSeries = 1
+
+        while(contadorSeries <= 15){
+            if(calculosCuestionario.containsKey("S"+contadorSeries+"A")){
+                resultadosMostrados["Serie "+ contadorSeries + "(Puntuación atleta):"] = calculosCuestionario["S"+contadorSeries+"A"] ?: ""
+                resultadosMostrados["Serie "+ contadorSeries + "(Puntuación entrenador):"] = calculosCuestionario["S"+contadorSeries+"E"] ?: ""
+            }
+            contadorSeries++
+        }
+
         return resultadosMostrados.toMap()
     }
 
