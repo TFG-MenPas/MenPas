@@ -53,7 +53,9 @@ class IniciarSesion : AppCompatActivity() {
         }
 
         textCuestionario.setOnClickListener {
-            intent = Intent(this, MenuPrincipal::class.java)
+            intent = Intent(this, Area::class.java)
+            intent.putExtra("area", "Cuestionarios Anónimos")
+            intent.putExtra("usuario", "anónimo")
             startActivity(intent)
         }
 

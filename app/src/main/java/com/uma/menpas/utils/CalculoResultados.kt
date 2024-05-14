@@ -78,6 +78,7 @@ class CalculoResultados {
             "cuestionario_d2" -> D2.calculate(respuestasUsuario, usuario)
 
             //Evaluación mental
+            "preguntas_evaluacion_mental_iped_anonimo" -> IPED.calculateIPEDAnonimo(respuestasUsuario, "anónimo")
             "preguntas_evaluacion_mental_iped" -> IPED.calculateIPED(respuestasUsuario, usuario)
             "preguntas_entrenamiento_mental_epi" -> EPI.calculateEPI(respuestasUsuario, context)
             "preguntas_poms_65" -> POMS.calculatePOMS65(respuestasUsuario, context)
@@ -542,9 +543,10 @@ class CalculoResultados {
         }
         val usuario = UsuarioController().getUsuario(context)
         if (isAE) {
-            centilesStaiAE = calculoCentilesSTAI(usuario.sexo, usuario.edad >= 18, staiAE)
+            centilesStaiAE = calculoCentilesSTAI(usuario?.sexo ?: "Otro", (usuario?.edad ?: 0) >= 18, staiAE)
         } else {
-            centilesStaiAR = calculoCentilesSTAI(usuario.sexo, usuario.edad >= 18, staiAR)
+            centilesStaiAR = calculoCentilesSTAI(usuario?.sexo ?: "Otro",
+                (usuario?.edad ?: 0) >= 18, staiAR)
         }
         val values = listOf(id, nombreUsuario, staiAR.toString(), staiAE.toString(),
             "50", fecha, *itemList.toTypedArray(), centilesStaiAE, centilesStaiAR,

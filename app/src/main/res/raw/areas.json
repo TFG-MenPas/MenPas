@@ -5,7 +5,7 @@
 		"STAI"
 	],
 	"Atención": [
-		"Test de atención D2",
+		"Test de atencion D2",
 		"Efecto Stroop",
 		"Modrian",
 		"Procesos atencionales"
@@ -20,8 +20,7 @@
 		"Diario",
 		"Entrenamiento",
 		"Libre",
-		"Pensamientos negativos",
-		"Consulta de autorregistros"
+		"Pensamientos negativos"
 	],
 	"Burnout": [
 		"MASLACH",
@@ -50,5 +49,12 @@
 	],
 	"Inteligencia emocional": [
 		"Perfil E. Davidson"
+	],
+	"Cuestionarios Anónimos": [
+		"IPED",
+		"IPSETA",
+		"Perfil E. Davidson",
+		"Vitalidad subjetiva",
+		"Test de atencion D2"
 	]
 }

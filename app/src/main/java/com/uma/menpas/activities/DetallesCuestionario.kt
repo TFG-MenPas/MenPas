@@ -7,9 +7,11 @@ import android.util.TypedValue
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.ObtenerResultados
 
 class DetallesCuestionario : AppCompatActivity() {
@@ -25,7 +27,7 @@ class DetallesCuestionario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalles_cuestionario)
-
+        val usuarioDB = UsuarioController().getUsuario(this)
         val bundle = intent.extras
         val calculosCuestionario = bundle?.keySet()?.associateWith { bundle.getString(it) }
 
@@ -38,15 +40,39 @@ class DetallesCuestionario : AppCompatActivity() {
 
         buttonCerrar = findViewById(R.id.buttonCerrar)
         barraNavegacionInferior = findViewById(R.id.bottom_navigation)
-        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
-        BarraNavegacion(barraNavegacionInferior, this)
+        if(usuarioDB == null){
+            barraNavegacionInferior.visibility = View.GONE
+        }else{
+            barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
+            BarraNavegacion(barraNavegacionInferior, this)
+        }
+
+       val callback = object: OnBackPressedCallback(true){
+           override fun handleOnBackPressed() {
+               val intent: Intent = if(usuarioDB == null){
+                   Intent(this@DetallesCuestionario, IniciarSesion::class.java)
+               }else{
+                   Intent(this@DetallesCuestionario, MenuPrincipal::class.java)
+               }
+               startActivity(intent)
+           }
+       }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         buttonCerrar.setOnClickListener {
             if(isResultado) {
-                val intent = Intent(this, MenuPrincipal::class.java)
+                val intent: Intent = if(usuarioDB == null){
+                    Intent(this, IniciarSesion::class.java)
+                }else{
+                    Intent(this, MenuPrincipal::class.java)
+                }
                 startActivity(intent)
+            }else{
+                finish()
             }
-                else finish()
         }
 
         relativeLayout = findViewById(R.id.relativeLayoutDetallesCuestionario)

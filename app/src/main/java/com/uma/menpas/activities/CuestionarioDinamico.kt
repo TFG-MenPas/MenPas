@@ -89,6 +89,9 @@ class CuestionarioDinamico : AppCompatActivity() {
     }
 
     private fun finalizarCuestionario(usuario: String) {
+        if(JSON_RESOURCE_NAME == "preguntas_evaluacion_mental_iped" && usuario == "anónimo"){
+            JSON_RESOURCE_NAME = "preguntas_evaluacion_mental_iped_anonimo"
+        }
         val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
         val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
