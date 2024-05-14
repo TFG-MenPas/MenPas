@@ -16,6 +16,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.CuestionarioController
 import com.uma.menpas.models.adapters.AdaptadorCuestionario
 import com.uma.menpas.models.Cuestionario
+import com.uma.menpas.utils.JsonResourceName
 
 class CuestionariosRealizados : AppCompatActivity() {
     lateinit var cuestionarioRV: RecyclerView
@@ -64,31 +65,32 @@ class CuestionariosRealizados : AppCompatActivity() {
     }
     class MyOnClickListener(cuestionarioRealizado: CuestionariosRealizados) : View.OnClickListener {
         val context = cuestionarioRealizado
-        override fun onClick(v: View) {
-            //mostrarDetalles(v)
-            var intent = Intent(context, DetallesCuestionario::class.java)
-            context.startActivity(intent)
-        }
+        val cuestionarioController = CuestionarioController()
+        val jsonResourceName = JsonResourceName()
 
-        @SuppressLint("InflateParams")
-        private fun mostrarDetalles(v: View) {
+        override fun onClick(v: View) {
             val viewHolder : RecyclerView.ViewHolder? = context.cuestionarioRV.getChildViewHolder(v)
             val textViewNombreCuestionario : TextView = viewHolder!!.itemView.findViewById<TextView?>(
                 R.id.textNombreCuestionario
             )
-            val textNombreCuestionario: String = textViewNombreCuestionario.text as String
 
-            var cuestionario : Cuestionario? = null
-            //Cuando conectemos por base de datos se puede hacer por id
-            for (item in context.listaCuestionarios){
-                if (item.nombre.lowercase().equals(textNombreCuestionario.lowercase())){
-                    cuestionario = item
+            val cuestionarioSeleccionado = viewHolder.itemView.tag as Cuestionario
+            val resultadosCuestionario = cuestionarioController.getCuestionarioById(cuestionarioSeleccionado.nombre, cuestionarioSeleccionado.id)
+
+            val cuestionarioJsonResourceName = jsonResourceName.getJsonResourceName(cuestionarioSeleccionado.nombre, resultadosCuestionario)
+
+
+            val bundle = Bundle().apply {
+                for ((key, value) in resultadosCuestionario) {
+                    putString(key, value)
                 }
             }
 
-            if (cuestionario != null){
-                Toast.makeText(context, "Nombre: " + cuestionario.nombre + " Tipo: " + cuestionario.tipo, Toast.LENGTH_LONG).show()
-            }
+            val intent = Intent(context, DetallesCuestionario::class.java)
+            intent.putExtras(bundle)
+            intent.putExtra("jsonResourceName", cuestionarioJsonResourceName)
+            intent.putExtra("isResultado",false)
+            context.startActivity(intent)
         }
     }
     private fun filter(text: String){
