@@ -299,7 +299,7 @@ class CuestionarioDinamico : AppCompatActivity() {
         botonSiguiente.deshabilitarBoton()
         when(input){
             "tiempo" -> editText.inputType = InputType.TYPE_CLASS_DATETIME
-            "texto" -> editText.inputType = InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            "texto" -> editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
             "number" -> editText.inputType = InputType.TYPE_CLASS_NUMBER
         }
         if(respuestasUsuario.elementAtOrNull(indicePregunta) != null){
@@ -307,6 +307,8 @@ class CuestionarioDinamico : AppCompatActivity() {
         }else{
             editText.setText("")
         }
+
+        if(editText.text.isNotEmpty()) botonSiguiente.habilitarBoton()
 
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
