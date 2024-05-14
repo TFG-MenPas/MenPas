@@ -80,10 +80,7 @@ class JsonResourceName {
             "IPED_ANONIMO"  -> "preguntas_evaluacion_mental_iped"
             "IPED_ARG" -> "preguntas_evaluacion_mental_iped"
             "EPI" -> "preguntas_entrenamiento_mental_epi"
-            "POMS" -> {
-                val tipoFormateado = (calculosCuestionario["Tipo"]!!).uppercase()
-                return relacionPoms[tipoFormateado]!!
-            }
+            "POMS" -> relacionPoms[(calculosCuestionario["Tipo"]!!).uppercase()]!!
             "PED" -> relacionPed[(calculosCuestionario["Tipo"]!!).uppercase()]!!
             else -> "preguntas_mps"
         }
