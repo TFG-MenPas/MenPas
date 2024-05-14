@@ -3,8 +3,10 @@ package com.uma.menpas.activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
@@ -65,6 +67,21 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
+
+        findViewById<View>(android.R.id.content).setOnTouchListener { view, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    // Ocultar el teclado y quitar el foco del SearchView
+                    hideKeyboardAndClearFocus()
+                }
+                MotionEvent.ACTION_UP -> {
+                    // Realizar la acción de clic
+                    view.performClick()
+                }
+            }
+            false
+        }
+
         val loadingDialog = LoadingDialog(this)
         loadingDialog.show()
         loadingDialog.dismiss(2)
@@ -110,6 +127,7 @@ class CentrosRegistrados : AppCompatActivity() {
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
+                    context.barraBusqueda.clearFocus()
                     dialog.dismiss()
                 }
                 dialog.setCancelable(false)
@@ -117,6 +135,23 @@ class CentrosRegistrados : AppCompatActivity() {
                 dialog.show()
             }
 
+        }
+    }
+
+    private fun hideKeyboardAndClearFocus() {
+        // Obtener el InputMethodManager
+        val inputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+
+        // Ocultar el teclado
+        currentFocus?.let { focusedView ->
+            inputMethodManager.hideSoftInputFromWindow(
+                focusedView.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
+
+            // Quitar el foco del SearchView
+            barraBusqueda.clearFocus()
         }
     }
 
