@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 
-class EfectoStroop : AppCompatActivity() {
+class EfectoStroop : BaseActivity() {
     lateinit var seekbar: SeekBar
     lateinit var seekbarTiempo: SeekBar
     lateinit var seekbarNumeroPresentaciones: SeekBar

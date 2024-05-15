@@ -18,7 +18,7 @@ import com.uma.menpas.models.adapters.AdaptadorCuestionario
 import com.uma.menpas.models.Cuestionario
 import com.uma.menpas.utils.JsonResourceName
 
-class CuestionariosRealizados : AppCompatActivity() {
+class CuestionariosRealizados : BaseActivity() {
     lateinit var cuestionarioRV: RecyclerView
     lateinit var adaptadorCuestionario: AdaptadorCuestionario
     lateinit var listaCuestionarios: ArrayList<Cuestionario>

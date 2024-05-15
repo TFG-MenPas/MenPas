@@ -12,7 +12,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.BajaUsuarioController
 import com.uma.menpas.utils.SnackBarPersonalizada
 
-class BajaUsuario : AppCompatActivity() {
+class BajaUsuario : BaseActivity() {
     val bajaUsuarioController = BajaUsuarioController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

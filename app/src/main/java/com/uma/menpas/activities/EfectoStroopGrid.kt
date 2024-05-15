@@ -15,7 +15,7 @@ import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
 import kotlin.random.Random
 
-class EfectoStroopGrid : AppCompatActivity() {
+class EfectoStroopGrid : BaseActivity() {
     lateinit var timer: CountDownTimer
     var timerCurrentTime: Float = 0.0f
     var timerTotalTime: Float = 0.0f

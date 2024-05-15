@@ -102,13 +102,14 @@ class CuestionarioDinamico : BaseActivity() {
         if(JSON_RESOURCE_NAME == "preguntas_evaluacion_mental_iped" && usuario == "anónimo"){
             JSON_RESOURCE_NAME = "preguntas_evaluacion_mental_iped_anonimo"
         }
+
         val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
         val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
             CuestionarioService().insertarCuestionario(query)
-            showToast("Éxito en la petición")
+            showToast("Cuestionario finalizado con éxito")
         } catch (e: Error) {
-            showToast("Algo salió mal realizando la petición")
+            showToast("Algo salió mal realizando el cuestionario")
         }
 
         val bundle = Bundle().apply {
@@ -117,11 +118,16 @@ class CuestionarioDinamico : BaseActivity() {
             }
         }
 
-        val intent = Intent(this, DetallesCuestionario::class.java)
-        intent.putExtras(bundle)
-        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
-        intent.putExtra("isResultado",true)
-        startActivity(intent)
+        if(JSON_RESOURCE_NAME.contentEquals("preguntas_preliminar_abq", true)){
+            Toast.makeText(this, "Cuestionario finalizado con éxito", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            val intent = Intent(this, DetallesCuestionario::class.java)
+            intent.putExtras(bundle)
+            intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+            intent.putExtra("isResultado",true)
+            startActivity(intent)
+        }
     }
 
     private fun guardarRespuesta(tipoPregunta: String) {

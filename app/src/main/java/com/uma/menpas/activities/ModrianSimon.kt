@@ -27,7 +27,7 @@ import kotlinx.coroutines.sync.Semaphore
 import java.lang.Thread.sleep
 import kotlin.collections.ArrayList
 
-class ModrianSimon : AppCompatActivity() {
+class ModrianSimon : BaseActivity() {
 
     lateinit var botonRojo : ImageButton
     lateinit var botonVerde : ImageButton

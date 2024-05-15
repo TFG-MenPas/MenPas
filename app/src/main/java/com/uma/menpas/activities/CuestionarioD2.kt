@@ -28,7 +28,7 @@ import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
 
-class CuestionarioD2 : AppCompatActivity() {
+class CuestionarioD2 : BaseActivity() {
     lateinit var recyclerViewD2: RecyclerView
     lateinit var adaptadorD2: AdaptadorD2
     lateinit var listaD2: ArrayList<D2>

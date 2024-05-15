@@ -13,7 +13,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class MondrianColores : AppCompatActivity() {
+class MondrianColores : BaseActivity() {
     lateinit var botonComenzar : Button
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>

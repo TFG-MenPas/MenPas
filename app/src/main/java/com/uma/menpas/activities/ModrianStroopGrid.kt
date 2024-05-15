@@ -20,7 +20,7 @@ import com.uma.menpas.utils.Fallos
 import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
-class ModrianStroopGrid : AppCompatActivity() {
+class ModrianStroopGrid : BaseActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : Button
     lateinit var arrayColores : ArrayList<String>

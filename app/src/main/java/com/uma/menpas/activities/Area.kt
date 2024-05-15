@@ -23,7 +23,7 @@ import java.text.Normalizer
 import java.util.Locale
 
 
-class Area : AppCompatActivity() {
+class Area : BaseActivity() {
 
     companion object {
         private const val JSON_RESOURCE_NAME = "areas"

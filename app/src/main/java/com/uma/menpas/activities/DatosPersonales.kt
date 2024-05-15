@@ -14,7 +14,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.BarraNavegacion
 
-class DatosPersonales : AppCompatActivity() {
+class DatosPersonales : BaseActivity() {
     val usuarioController = UsuarioController()
     lateinit var textNombreUsuario: TextView
     lateinit var textNombre: TextView

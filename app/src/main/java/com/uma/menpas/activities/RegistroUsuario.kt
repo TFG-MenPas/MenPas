@@ -7,7 +7,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.RegistroController
 import com.uma.menpas.utils.SnackBarPersonalizada
 
-class RegistroUsuario : AppCompatActivity() {
+class RegistroUsuario : BaseActivity() {
     val registroController = RegistroController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

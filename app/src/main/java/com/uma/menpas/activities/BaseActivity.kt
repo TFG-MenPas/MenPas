@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 
 open class BaseActivity : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,4 +28,5 @@ open class BaseActivity : AppCompatActivity() {
             }
             return super.dispatchTouchEvent(ev)
         }
-    }
+
+}

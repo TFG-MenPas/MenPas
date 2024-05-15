@@ -31,7 +31,7 @@ import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
 
-class MondrianColoresGrid : AppCompatActivity() {
+class MondrianColoresGrid : BaseActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
     lateinit var botonCerrar : ImageButton

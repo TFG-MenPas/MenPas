@@ -6,7 +6,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 
-class Autores : AppCompatActivity() {
+class Autores : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_autores)

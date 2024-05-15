@@ -23,7 +23,7 @@ import com.uma.menpas.utils.Fallos
 import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
-class ModrianFotosGrid : AppCompatActivity() {
+class ModrianFotosGrid : BaseActivity() {
 
     lateinit var fotos : GridLayout
     lateinit var botonFoto : ImageButton

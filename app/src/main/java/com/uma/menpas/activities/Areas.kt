@@ -17,7 +17,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.text.Normalizer
 
-class Areas : AppCompatActivity() {
+class Areas : BaseActivity() {
     private lateinit var areasAdaptador: AdaptadorAreas
     private lateinit var areasList: List<String>
     private lateinit var subareasList: HashMap<String,List<String>>

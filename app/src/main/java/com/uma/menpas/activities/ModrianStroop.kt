@@ -9,7 +9,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.utils.Tiempo
 
-class ModrianStroop : AppCompatActivity() {
+class ModrianStroop : BaseActivity() {
     lateinit var textOpcion : TextView
     lateinit var seekbar : SeekBar
     lateinit var btnFondo : Button
