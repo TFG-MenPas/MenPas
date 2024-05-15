@@ -1,20 +1,19 @@
 package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageButton
-import android.widget.SearchView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
@@ -99,7 +98,7 @@ class CentrosRegistrados : AppCompatActivity() {
             val textViewNombreCentro : TextView = viewHolder!!.itemView.findViewById<TextView?>(R.id.textNombreCentro)
             val textNombreCentro: String = textViewNombreCentro.text as String
 
-            val dialog = BottomSheetDialog(context)
+            val dialog = Dialog(context)
             val view = context.layoutInflater.inflate(R.layout.desplegable_info_centro, null)
             var centro : Centro? = null
             //Cuando conectemos por base de datos se puede hacer por id
@@ -120,10 +119,10 @@ class CentrosRegistrados : AppCompatActivity() {
                 textDireccionInfoCentro.text = centro.direccion
 
                 val textCodigoPostalInfoCentro = view.findViewById<TextView>(R.id.textCodigoPostalInfoCentro)
-                textCodigoPostalInfoCentro.text = centro.codigoPostal.toString()
+                textCodigoPostalInfoCentro.text = centro.codigoPostal
 
                 val textTelefonoInfoCentro = view.findViewById<TextView>(R.id.textTelefonoInfoCentro)
-                textTelefonoInfoCentro.text = centro.telefono.toString()
+                textTelefonoInfoCentro.text = centro.telefono
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
@@ -132,6 +131,7 @@ class CentrosRegistrados : AppCompatActivity() {
                 }
                 dialog.setCancelable(false)
                 dialog.setContentView(view)
+                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 dialog.show()
             }
 
@@ -186,9 +186,5 @@ class CentrosRegistrados : AppCompatActivity() {
         super.onRestart()
         actualizarCentros()
         //When BACK BUTTON is pressed, the activity on the stack is restarted
-    }
-
-    private fun showToast(msg: String){
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 }
