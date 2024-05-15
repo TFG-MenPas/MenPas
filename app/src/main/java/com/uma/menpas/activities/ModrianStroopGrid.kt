@@ -12,6 +12,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
@@ -31,7 +32,7 @@ class ModrianStroopGrid : AppCompatActivity() {
     private var cerrado: Boolean = false
     private lateinit var tamanyoTablero : String
 
-    private lateinit var usuario: String
+
     lateinit var cronometro: Chronometer
     private var blancos: Int = 20
     private var aciertos: Int = 0
@@ -41,11 +42,13 @@ class ModrianStroopGrid : AppCompatActivity() {
     private var filas: Int = 0
     private var columnas: Int = 4
 
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_stroop_grid)
 
-        usuario = intent.getStringExtra("usuario") as String
+
         cronometro = Chronometer(this)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -129,7 +132,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                                 if (blancos == 0) {
-                                    finalizarCuestionario(usuario)
+                                    finalizarCuestionario(usuario.toString())
                                 }
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
@@ -138,7 +141,7 @@ class ModrianStroopGrid : AppCompatActivity() {
                                 fallos++
                                 if(fallos > limiteFallos){
                                     cerrado = true
-                                    finalizarCuestionario(usuario)
+                                    finalizarCuestionario(usuario.toString())
                                     finish()
                                 }
                             }
@@ -199,7 +202,7 @@ class ModrianStroopGrid : AppCompatActivity() {
 
                         override fun onFinish() {
                             if (!cerrado){
-                                finalizarCuestionario(usuario)
+                                finalizarCuestionario(usuario.toString())
                                 cerrado = true
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 finish()

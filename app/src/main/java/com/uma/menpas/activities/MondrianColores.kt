@@ -24,7 +24,7 @@ class MondrianColores : AppCompatActivity() {
     private lateinit var backChecked : Drawable
     private lateinit var unchecked : Drawable
     private lateinit var backunChecked : Drawable
-    private lateinit var usuario: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores)
@@ -41,7 +41,7 @@ class MondrianColores : AppCompatActivity() {
         InicializarSeekbarFallosPermitidos()
         seekbarTamanyoTablero()
         botones()
-        usuario = intent.getStringExtra("usuario") as String
+
     }
     private fun InicializarSeekbarFallosPermitidos(){
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
@@ -124,7 +124,7 @@ class MondrianColores : AppCompatActivity() {
                 intent.putExtra("arrayEliminar", arrayEliminar)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
-                intent.putExtra("usuario", usuario)
+
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")

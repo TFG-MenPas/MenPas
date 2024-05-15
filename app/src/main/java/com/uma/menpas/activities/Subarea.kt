@@ -36,7 +36,6 @@ class Subarea : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_subarea)
         val intent = intent
-        val usuario = intent.getStringExtra("usuario") as String
         subarea = intent.getStringExtra("subarea") as String
         val json_resource_name = intent.getStringExtra("json_resource_name")
         val usuarioDB = UsuarioController().getUsuario(this)
@@ -45,7 +44,7 @@ class Subarea : AppCompatActivity() {
         val json = getJSON(json_resource_name.toString())
         val content = json["instructions"] as JSONObject
         val buttons = json["buttons"] as JSONObject
-        drawContent(content, buttons, linearLayout, usuario)
+        drawContent(content, buttons, linearLayout)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         if(usuarioDB == null){
             barraNavegacionInferior.visibility = View.GONE
@@ -65,7 +64,7 @@ class Subarea : AppCompatActivity() {
         return JSONObject(jsonString)
     }
 
-    private fun drawContent(content: JSONObject, buttons: JSONObject, linearLayout: LinearLayout, usuario: String) {
+    private fun drawContent(content: JSONObject, buttons: JSONObject, linearLayout: LinearLayout) {
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
         val keys = content.keys()
@@ -139,7 +138,6 @@ class Subarea : AppCompatActivity() {
                     else -> Intent(this, CuestionarioDinamico::class.java)
                 }
                 intent.putExtra("json_resource_name", btn_value)
-                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             }
         }

@@ -17,12 +17,12 @@ class EfectoStroop : AppCompatActivity() {
     lateinit var textTiempo: TextView
     lateinit var textNumeroPresentaciones: TextView
 
-    lateinit var usuario: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_efecto_stroop_configuracion)
-        usuario = intent.getStringExtra("usuario") as String
+
         botones()
         barraModalidad()
     }
@@ -187,7 +187,6 @@ class EfectoStroop : AppCompatActivity() {
                 intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text
                     .substring(26).toInt())
                 intent.putExtra("tiempo", convertTiempoExposicion(textTiempo.text.toString()))
-                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             } else {
                 showToast("Debe seleccionar al menos dos colores")

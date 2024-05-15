@@ -20,6 +20,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
@@ -45,11 +46,13 @@ class ModrianParejasGrid : AppCompatActivity() {
     lateinit var cronometro: Chronometer
     private var aciertos: Int = 0
     private var blancos: Int = 0
-    private lateinit var usuario: String
+
     private var filas: Int = 0
     private var columnas: Int = 3
     private val JSON_RESOURCE_NAME = "cuestionario_modrian_parejas"
     private var longTiempoRealizacion: Long = 0
+
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +63,7 @@ class ModrianParejasGrid : AppCompatActivity() {
         textTiempo = findViewById(R.id.textTiempoRealizacion)
         fotos = findViewById(R.id.gridFotos)
         cronometro = Chronometer(this)
-        usuario = intent.getStringExtra("usuario") as String
+
         longTiempoRealizacion = intent.getLongExtra("longTiempoRealizacion", 60000)
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
@@ -132,14 +135,14 @@ class ModrianParejasGrid : AppCompatActivity() {
                             if(fallos > limiteFallos){
                                 cerrado = true
                                 showToast("Limite de Fallos Alcanzado")
-                                finalizarCuestionario(usuario)
+                                finalizarCuestionario(usuario.toString())
                                 finish()
                             }
                         }else{
                             aciertos+=2
                             blancos-=2
                             if(blancos == 0){
-                                finalizarCuestionario(usuario)
+                                finalizarCuestionario(usuario.toString())
                             }
                         }
                         btnFoto.clearAnimation()
@@ -165,7 +168,7 @@ class ModrianParejasGrid : AppCompatActivity() {
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                     cerrado = true
                     showToast("Limite de Tiempo Alcanzado")
-                    finalizarCuestionario(usuario)
+                    finalizarCuestionario(usuario.toString())
                     finish()
                 }
             }

@@ -100,7 +100,7 @@ class CalculoResultados {
             "preguntas_davidson_autoconciencia" -> PDavidson.calculatePDavidsonAutoconciencia(respuestasUsuario, context)
             "preguntas_davidson_contexto" -> PDavidson.calculatePDavidsonContexto(respuestasUsuario, context)
             "preguntas_davidson_atencion" -> PDavidson.calculatePDavidsonAtencion(respuestasUsuario, context)
-            
+
             else -> calculateMPS(respuestasUsuario, usuario)
         }
     }

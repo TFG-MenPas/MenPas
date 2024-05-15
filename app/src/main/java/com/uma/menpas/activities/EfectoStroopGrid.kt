@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
@@ -24,7 +25,6 @@ class EfectoStroopGrid : AppCompatActivity() {
     lateinit var intentTipo: String
     var intentNumeroPresentaciones: Int = 0
     var intentFondo: Boolean = true
-    lateinit var intentUsuario: String
     
     lateinit var viewShowcase: View
     lateinit var viewTextShowcase: TextView
@@ -39,13 +39,14 @@ class EfectoStroopGrid : AppCompatActivity() {
     var valueErrores: Int = 0
     var valueErroresOmision: Int = 0
 
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
+
     private fun initIntentParams() {
         intentColores = intent.getStringArrayListExtra("arrayColores")!!
         intentTipo = intent.getStringExtra("modalidad")!!
         intentTiempoExposicion = intent.getLongExtra("tiempo", 1000)
         intentNumeroPresentaciones = intent.getIntExtra("numeroPresentaciones",1)
         intentFondo = intent.getBooleanExtra("fondo", true)
-        intentUsuario = intent.getStringExtra("usuario")!!
     }
 
     private fun initXMLElements() {
@@ -131,7 +132,7 @@ class EfectoStroopGrid : AppCompatActivity() {
                 intentColores.size.toString(), intentTipo,intentFondo.toString(), intentTiempoExposicion.toString(),
                 intentNumeroPresentaciones.toString(), valueErroresOmision.toString()) as ArrayList<String>
 
-            val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_stroop", respuestasUsuario, intentUsuario, this)
+            val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_stroop", respuestasUsuario, usuario.toString(), this)
 
             val query = QueryParser().parse("cuestionario_stroop", calculosCuestionario)
 
