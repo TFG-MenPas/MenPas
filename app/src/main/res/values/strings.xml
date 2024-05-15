@@ -163,8 +163,11 @@
 
     <!--Centros registrados-->
     <string name="centros_registrados">Centros registrados</string>
-    <string name="ver_informacion_del_centro">Ver informacion del centro</string>
+    <string name="ver_informacion_del_centro">Ver información del centro</string>
+    <string name="informacion_del_centro">Información del centro</string>
     <string name="cp">CP:</string>
+    <string name="nombre2puntos">Nombre:</string>
+    <string name="pais2puntos">País:</string>
     <string name="direccion2puntos">Dirección:</string>
     <string name="telefono2puntos">Teléfono:</string>
     <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
