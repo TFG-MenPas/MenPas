@@ -42,8 +42,7 @@ class Areas : AppCompatActivity() {
                 val intent = Intent(this@Areas, Documentacion::class.java)
                 val area = areasList[groupPosition]
                 val subarea = subareasList[areasList[groupPosition]]?.get(childPosition) as String
-                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(subarea.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
-                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                val json_resource_name = subarea.lowercase().replace(".", "").replace(" ","_").replace("-", "")
                 intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", subarea)
                 startActivity(intent)
