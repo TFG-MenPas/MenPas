@@ -15,7 +15,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.ObtenerResultados
 
-class DetallesCuestionario : AppCompatActivity() {
+class DetallesCuestionario : BaseActivity() {
 
     lateinit var barraNavegacionInferior : BottomNavigationView
     lateinit var buttonCerrar : ImageButton

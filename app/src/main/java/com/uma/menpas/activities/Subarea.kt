@@ -19,18 +19,20 @@ import androidx.core.view.marginBottom
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.CuestionarioController
 import com.uma.menpas.controllers.UsuarioController
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Subarea : AppCompatActivity() {
+class Subarea : BaseActivity() {
     companion object {
         private const val JSON_RESOURCE_TYPE = "raw"
     }
 
     private lateinit var subarea : String
+    private val cuestionarioController = CuestionarioController()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -136,11 +138,24 @@ class Subarea : AppCompatActivity() {
                     "cuestionario_modrian_simon" -> Intent(this, ModrianSimonInicio::class.java)
                     "cuestionario_d2_original" -> Intent(this, CuestionarioD2::class.java)
                     "cuestionario_d2_aleatorio" -> Intent(this, CuestionarioD2::class.java)
-                    else -> Intent(this, CuestionarioDinamico::class.java)
+                    else -> {
+                        Intent(this, CuestionarioDinamico::class.java)
+
+                    }
                 }
+
                 intent.putExtra("json_resource_name", btn_value)
                 intent.putExtra("usuario", usuario)
-                startActivity(intent)
+
+                if (btn_value.contentEquals("preguntas_abq",true)) {
+                    if (!cuestionarioController.isPreliminarABQRealizado(this)) {
+                        Toast.makeText(this, "Es obligatorio haber realizado un preliminar ABQ previamente", Toast.LENGTH_SHORT).show()
+                    }else{
+                        startActivity(intent)
+                    }
+                }else{
+                    startActivity(intent)
+                }
             }
         }
     }

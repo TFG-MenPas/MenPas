@@ -9,10 +9,11 @@ import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class ModrianParejas : AppCompatActivity() {
+class ModrianParejas : BaseActivity() {
 
     lateinit var botonComenzar : Button
     lateinit var tiempoRealizacion : EditText
@@ -56,6 +57,8 @@ class ModrianParejas : AppCompatActivity() {
     private fun InicializarSeekbarFallosPermitidos(){
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
         val fallosPermitidos : SeekBar = findViewById(R.id.seekbar_fallos_permitidos)
+        fallosPermitidos.progressDrawable = null
+        fallosPermitidos.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         fallosPermitidos.progress = 0
         fallosPermitidos.max = 3
 
@@ -63,12 +66,7 @@ class ModrianParejas : AppCompatActivity() {
 
         fallosPermitidos.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> numeroFallosPermitidos.text = respuestas[0]
-                    1 -> numeroFallosPermitidos.text = respuestas[1]
-                    2 -> numeroFallosPermitidos.text = respuestas[2]
-                    3 -> numeroFallosPermitidos.text = respuestas[3]
-                }
+                numeroFallosPermitidos.text = respuestas[progress]
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}
@@ -81,6 +79,8 @@ class ModrianParejas : AppCompatActivity() {
     private fun seekbarTamanyoTablero() {
         textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
         val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progressDrawable = null
+        seekbarTamanyoTablero.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarTamanyoTablero.progress = 0
         seekbarTamanyoTablero.max = 2
 

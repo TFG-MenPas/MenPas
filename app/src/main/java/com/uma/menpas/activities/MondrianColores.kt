@@ -4,12 +4,16 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class MondrianColores : AppCompatActivity() {
+class MondrianColores : BaseActivity() {
     lateinit var botonComenzar : Button
     lateinit var arrayColores : ArrayList<String>
     lateinit var arrayEliminar : ArrayList<String>
@@ -18,7 +22,8 @@ class MondrianColores : AppCompatActivity() {
     lateinit var colores : MutableMap<Button,Boolean>
     lateinit var botonCerrarCuestionario: ImageButton
     lateinit var numeroFallosPermitidos: TextView
-    lateinit var seekbar: SeekBar
+    lateinit var seekbarFallosPermitidos: SeekBar
+    lateinit var seekbarTamanyoTablero: SeekBar
     private lateinit var textOpcionTamanyoTablero: TextView
     private lateinit var checked : Drawable
     private lateinit var backChecked : Drawable
@@ -45,20 +50,17 @@ class MondrianColores : AppCompatActivity() {
     }
     private fun InicializarSeekbarFallosPermitidos(){
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
-        seekbar = findViewById(R.id.seekbar_fallos_permitidos)
-        seekbar.progress = 0
-        seekbar.max = 3
+        seekbarFallosPermitidos = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbarFallosPermitidos.progressDrawable = null
+        seekbarFallosPermitidos.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+        seekbarFallosPermitidos.progress = 0
+        seekbarFallosPermitidos.max = 3
 
         val respuestas = arrayOf("25% Matriz", "50% Matriz", "75% Matriz", "Sin control de fallos")
 
-        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        seekbarFallosPermitidos.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> numeroFallosPermitidos.text = respuestas[0]
-                    1 -> numeroFallosPermitidos.text = respuestas[1]
-                    2 -> numeroFallosPermitidos.text = respuestas[2]
-                    3 -> numeroFallosPermitidos.text = respuestas[3]
-                }
+                numeroFallosPermitidos.text = respuestas[progress]
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}
@@ -138,7 +140,9 @@ class MondrianColores : AppCompatActivity() {
 
     private fun seekbarTamanyoTablero() {
         textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
-        val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progressDrawable = null
+        seekbarTamanyoTablero.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarTamanyoTablero.progress = 0
         seekbarTamanyoTablero.max = 2
 
@@ -172,6 +176,17 @@ class MondrianColores : AppCompatActivity() {
                 color.key.background = backunChecked
                 color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
             }
+        }
+        when(numeroFallosPermitidos.text.toString()){
+            "25% Matriz" -> seekbarFallosPermitidos.progress = 0
+            "50% Matriz" -> seekbarFallosPermitidos.progress = 1
+            "75% Matriz" -> seekbarFallosPermitidos.progress = 2
+            "Sin control de fallos" -> seekbarFallosPermitidos.progress = 3
+        }
+        when(textOpcionTamanyoTablero.text.toString()){
+            "Pequeño" -> seekbarTamanyoTablero.progress = 0
+            "Mediano" -> seekbarTamanyoTablero.progress = 1
+            "Grande" -> seekbarTamanyoTablero.progress = 2
         }
     }
 

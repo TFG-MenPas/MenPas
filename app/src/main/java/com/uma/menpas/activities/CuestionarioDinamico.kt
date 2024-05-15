@@ -2,7 +2,6 @@ package com.uma.menpas.activities
 
 import android.content.Intent
 import android.icu.util.Calendar
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -10,6 +9,8 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.utils.Boton.Companion.deshabilitarBoton
@@ -24,7 +25,7 @@ import com.uma.menpas.utils.QueryParser
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.services.CuestionarioService
 
-class CuestionarioDinamico : AppCompatActivity() {
+class CuestionarioDinamico : BaseActivity() {
     lateinit var botonAnterior : RelativeLayout
     lateinit var botonCerrarCuestionario : ImageButton
     lateinit var textNumeroPregunta : TextView
@@ -84,21 +85,31 @@ class CuestionarioDinamico : AppCompatActivity() {
             }
         }
         botonCerrarCuestionario.setOnClickListener {
-            finish()
+            confirmarSalida()
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
     }
 
     private fun finalizarCuestionario(usuario: String) {
         if(JSON_RESOURCE_NAME == "preguntas_evaluacion_mental_iped" && usuario == "anónimo"){
             JSON_RESOURCE_NAME = "preguntas_evaluacion_mental_iped_anonimo"
         }
+
         val calculosCuestionario: Map<String, String> = CalculoResultados().calculate(JSON_RESOURCE_NAME, respuestasUsuario, usuario, this)
         val query = QueryParser().parse(JSON_RESOURCE_NAME, calculosCuestionario)
         try {
             CuestionarioService().insertarCuestionario(query)
-            showToast("Éxito en la petición")
+            showToast("Cuestionario finalizado con éxito")
         } catch (e: Error) {
-            showToast("Algo salió mal realizando la petición")
+            showToast("Algo salió mal realizando el cuestionario")
         }
 
         val bundle = Bundle().apply {
@@ -107,11 +118,16 @@ class CuestionarioDinamico : AppCompatActivity() {
             }
         }
 
-        val intent = Intent(this, DetallesCuestionario::class.java)
-        intent.putExtras(bundle)
-        intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
-        intent.putExtra("isResultado",true)
-        startActivity(intent)
+        if(JSON_RESOURCE_NAME.contentEquals("preguntas_preliminar_abq", true)){
+            Toast.makeText(this, "Cuestionario finalizado con éxito", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            val intent = Intent(this, DetallesCuestionario::class.java)
+            intent.putExtras(bundle)
+            intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
+            intent.putExtra("isResultado",true)
+            startActivity(intent)
+        }
     }
 
     private fun guardarRespuesta(tipoPregunta: String) {
@@ -500,10 +516,30 @@ class CuestionarioDinamico : AppCompatActivity() {
 
         })
     }
-
     private fun actualizarLayout(layout: Int){
             rlDinamico.removeAllViews()
             cuestionarioDinamico = layoutInflater.inflate(layout, rlDinamico, false)
             rlDinamico.addView(cuestionarioDinamico)
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            finish()
+        }
     }
 }

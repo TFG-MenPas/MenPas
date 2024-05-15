@@ -15,7 +15,7 @@ import com.uma.menpas.controllers.CentroController
 import com.uma.menpas.models.Centro
 import com.uma.menpas.room.UsuarioDB
 
-class RegistroDeCentro : AppCompatActivity() {
+class RegistroDeCentro : BaseActivity() {
     private var centroController = CentroController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

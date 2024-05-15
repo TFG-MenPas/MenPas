@@ -22,7 +22,7 @@ import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.services.CentroService
 import com.uma.menpas.utils.LoadingDialog
 
-class CentrosRegistrados : AppCompatActivity() {
+class CentrosRegistrados : BaseActivity() {
     lateinit var centroRV: RecyclerView
     lateinit var adaptadorCentro: AdaptadorCentro
     lateinit var listaCentros: ArrayList<Centro>

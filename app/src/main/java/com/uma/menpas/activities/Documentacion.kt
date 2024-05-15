@@ -18,7 +18,7 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Documentacion: AppCompatActivity() {
+class Documentacion: BaseActivity() {
     companion object {
         private const val JSON_RESOURCE_TYPE = "raw"
     }

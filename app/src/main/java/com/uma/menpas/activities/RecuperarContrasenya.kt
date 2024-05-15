@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.uma.menpas.R
 
-class RecuperarContrasenya : AppCompatActivity() {
+class RecuperarContrasenya : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasenya)

@@ -18,7 +18,7 @@ import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.utils.SnackBarPersonalizada
 import java.time.LocalDateTime
 
-class IniciarSesion : AppCompatActivity() {
+class IniciarSesion : BaseActivity() {
     private val inicioSesionController = InicioSesionController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

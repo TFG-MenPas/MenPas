@@ -15,6 +15,8 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,7 +28,7 @@ import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
 
-class CuestionarioD2 : AppCompatActivity() {
+class CuestionarioD2 : BaseActivity() {
     lateinit var recyclerViewD2: RecyclerView
     lateinit var adaptadorD2: AdaptadorD2
     lateinit var listaD2: ArrayList<D2>
@@ -76,11 +78,18 @@ class CuestionarioD2 : AppCompatActivity() {
         botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarDesplegable)
 
         botonCerrarCuestionario.setOnClickListener {
-            d2CerradoAntesDeFinalizar = true
-            vibrator.cancel()
+            confirmarSalida()
             finish()
         }
-
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
         azulClaro = getColor(R.color.light_blue)
         azulOscuro = getColor(R.color.dark_blue)
 
@@ -1009,5 +1018,27 @@ class CuestionarioD2 : AppCompatActivity() {
         intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
         intent.putExtra("isResultado",true)
         startActivity(intent)
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            d2CerradoAntesDeFinalizar = true
+            finish()
+        }
     }
 }

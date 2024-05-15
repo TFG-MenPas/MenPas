@@ -1,13 +1,13 @@
 package com.uma.menpas.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class ModrianFotos : AppCompatActivity() {
+class ModrianFotos : BaseActivity() {
 
     lateinit var botonComenzar : Button
     lateinit var tiempoEspera : EditText
@@ -62,6 +62,8 @@ class ModrianFotos : AppCompatActivity() {
     private fun seekbarFallosPermitidos(){
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
         val seekbar: SeekBar = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbar.progressDrawable = null
+        seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbar.progress = 0
         seekbar.max = 3
 
@@ -82,6 +84,8 @@ class ModrianFotos : AppCompatActivity() {
     private fun seekbarNumImg() {
         textOpcionNumImg = findViewById(R.id.textOpcionNumImg)
         val seekbarNumImg: SeekBar = findViewById(R.id.seekbarNumImg)
+        seekbarNumImg.progressDrawable = null
+        seekbarNumImg.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarNumImg.progress = 0
         seekbarNumImg.max = 5
 
@@ -102,6 +106,8 @@ class ModrianFotos : AppCompatActivity() {
     private fun seekbarTamanyoTablero() {
         textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
         val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progressDrawable = null
+        seekbarTamanyoTablero.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarTamanyoTablero.progress = 0
         seekbarTamanyoTablero.max = 2
 

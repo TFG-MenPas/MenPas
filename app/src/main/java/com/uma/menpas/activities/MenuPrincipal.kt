@@ -10,7 +10,7 @@ import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.controllers.MenuPrincipalController
 
-class MenuPrincipal : AppCompatActivity() {
+class MenuPrincipal : BaseActivity() {
     val menuPrincipalController = MenuPrincipalController()
 
     lateinit var textNombreUsuario: TextView
