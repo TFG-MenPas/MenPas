@@ -14,6 +14,8 @@ import android.widget.Chronometer
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import com.uma.menpas.R
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
@@ -52,8 +54,17 @@ class ModrianSimon : AppCompatActivity() {
 
         botonCerrarCuestionario = findViewById(R.id.imageButtonCerrarCuestionario)
         botonCerrarCuestionario.setOnClickListener {
-            finish()
+            confirmarSalida()
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         cronometro = Chronometer(this)
         usuario = intent.getStringExtra("usuario") as String
@@ -268,5 +279,26 @@ class ModrianSimon : AppCompatActivity() {
     }
     private fun elapsedTime(): Long {
         return (SystemClock.elapsedRealtime() - cronometro.base)
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            finish()
+        }
     }
 }

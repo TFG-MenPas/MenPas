@@ -10,6 +10,8 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.utils.Boton.Companion.deshabilitarBoton
@@ -84,8 +86,17 @@ class CuestionarioDinamico : AppCompatActivity() {
             }
         }
         botonCerrarCuestionario.setOnClickListener {
-            finish()
+            confirmarSalida()
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
     }
 
     private fun finalizarCuestionario(usuario: String) {
@@ -500,10 +511,30 @@ class CuestionarioDinamico : AppCompatActivity() {
 
         })
     }
-
     private fun actualizarLayout(layout: Int){
             rlDinamico.removeAllViews()
             cuestionarioDinamico = layoutInflater.inflate(layout, rlDinamico, false)
             rlDinamico.addView(cuestionarioDinamico)
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            finish()
+        }
     }
 }
