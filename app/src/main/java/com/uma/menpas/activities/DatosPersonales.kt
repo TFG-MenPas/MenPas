@@ -77,8 +77,15 @@ class DatosPersonales : AppCompatActivity() {
         var editTextDialog = EditText(this)
         editTextDialog.inputType = InputType.TYPE_CLASS_TEXT
 
+        val valorTextoEdicion = when (opcion) {
+            1 -> "el nuevo nombre de usuario"
+            2 -> "el nuevo nombre"
+            3 -> "los nuevos apellidos"
+            else -> "el nuevo valor"
+        }
+
         val alertBuilder = AlertDialog.Builder(this)
-            .setTitle("Introduza el nuevo nombre")
+            .setTitle("Introduza $valorTextoEdicion")
             .setPositiveButton("Guardar", null)
             .setNegativeButton("Cancelar", null)
             .setView(editTextDialog)

@@ -1,13 +1,12 @@
 package com.uma.menpas.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import com.uma.menpas.R
 import java.util.concurrent.TimeUnit
 
-class ModrianFotos : AppCompatActivity() {
+class ModrianFotos : BaseActivity() {
 
     lateinit var botonComenzar : Button
     lateinit var tiempoEspera : EditText

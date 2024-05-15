@@ -2,7 +2,6 @@ package com.uma.menpas.activities
 
 import android.content.Intent
 import android.icu.util.Calendar
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -24,7 +23,7 @@ import com.uma.menpas.utils.QueryParser
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.services.CuestionarioService
 
-class CuestionarioDinamico : AppCompatActivity() {
+class CuestionarioDinamico : BaseActivity() {
     lateinit var botonAnterior : RelativeLayout
     lateinit var botonCerrarCuestionario : ImageButton
     lateinit var textNumeroPregunta : TextView
