@@ -66,8 +66,8 @@
         android:layout_height="60dp"
         android:layout_below="@id/bannerRectanguloAzul"
         android:layout_centerInParent="true"
-        android:layout_marginTop="25dp"
 
+        android:layout_marginTop="25dp"
         android:background="@drawable/grid_button_colores" />
 
     <TextView

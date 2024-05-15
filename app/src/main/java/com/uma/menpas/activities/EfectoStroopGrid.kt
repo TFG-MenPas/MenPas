@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uma.menpas.R
@@ -205,5 +206,39 @@ class EfectoStroopGrid : AppCompatActivity() {
         generateColorButtons()
         startTimer()
         clickButtons()
+        val botonCerrar = findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener{
+            confirmarSalida()
+        }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            finish()
+        }
     }
 }

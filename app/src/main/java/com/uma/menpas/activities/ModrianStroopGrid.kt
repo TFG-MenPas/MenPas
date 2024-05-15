@@ -9,6 +9,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
@@ -64,9 +66,17 @@ class ModrianStroopGrid : AppCompatActivity() {
 
         botonCerrar = findViewById(R.id.imageButtonCerrarCuestionario)
         botonCerrar.setOnClickListener{
-            cerrado = true
-            finish()
+           confirmarSalida()
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as Button
@@ -373,8 +383,29 @@ class ModrianStroopGrid : AppCompatActivity() {
             crono.text = "$min : $secs"
         }
     }
-
     private fun elapsedTime(): Long {
         return (SystemClock.elapsedRealtime() - cronometro.base) - longTiempoEspera
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            cerrado = true
+            finish()
+        }
     }
 }
