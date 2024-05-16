@@ -172,7 +172,6 @@ class EfectoStroop : BaseActivity() {
                 intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text
                     .substring(26).toInt())
                 intent.putExtra("tiempo", convertTiempoExposicion(textTiempo.text.toString()))
-                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             } else {
                 showToast("Debe seleccionar al menos dos colores")

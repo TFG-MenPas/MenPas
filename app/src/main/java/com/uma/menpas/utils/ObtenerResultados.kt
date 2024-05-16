@@ -144,22 +144,15 @@ class ObtenerResultados {
     private fun obtenerResultadosStroop(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
 
-        val (horas, minutos, segundos) = segundosAHorasMinutosSegundos(calculosCuestionario["T_total"]?.toInt() ?: 0)
 
         resultadosMostrados["Aciertos:"] = calculosCuestionario["Aciertos"] ?: ""
         resultadosMostrados["Fallos:"] = calculosCuestionario["Fallos"] ?: ""
-        resultadosMostrados["Tiempo:"] = horas.toString() + " h, " + minutos.toString() + " m, " + segundos.toString() + " s"
-        resultadosMostrados["Tiempo medio:"] = calculosCuestionario["T_medio"] ?: ""
+        resultadosMostrados["Fallos por omisión:"] = calculosCuestionario["E_Omision"] ?: ""
+        resultadosMostrados["Tiempo:"] = (calculosCuestionario["T_total"] + " s") ?: ""
+        resultadosMostrados["Tiempo medio:"] = (calculosCuestionario["T_medio"] + " s") ?: ""
         resultadosMostrados["nombreCuestionario"] = "Efecto Stroop"
         resultadosMostrados["categoria"] = "Atención"
         return resultadosMostrados.toMap()
-    }
-
-    fun segundosAHorasMinutosSegundos(segundos: Int): Triple<Int, Int, Int> {
-        val horas = segundos / 3600
-        val minutos = (segundos % 3600) / 60
-        val segundosRestantes = segundos % 60
-        return Triple(horas, minutos, segundosRestantes)
     }
 
     private fun obtenerResultadosAutorregistroPensamientosNegativos(calculosCuestionario: Map<String, String>): Map<String, String> {

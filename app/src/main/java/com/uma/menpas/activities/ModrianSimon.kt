@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
@@ -45,8 +46,10 @@ class ModrianSimon : BaseActivity() {
     var semaforoAnimacion : Semaphore = Semaphore(1)
     var semaforoClick : Semaphore = Semaphore(1)
     lateinit var cronometro: Chronometer
-    private lateinit var usuario: String
+
     private val JSON_RESOURCE_NAME = "cuestionario_modrian_simon"
+
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +70,7 @@ class ModrianSimon : BaseActivity() {
         )
 
         cronometro = Chronometer(this)
-        usuario = intent.getStringExtra("usuario") as String
+
 
         nivelText = findViewById(R.id.nivel)
 
@@ -145,7 +148,7 @@ class ModrianSimon : BaseActivity() {
             }else{
                 showToast("Juego finalizado, has alcanzado el nivel: "+ this.nivel)
                 finish()
-                finalizarCuestionario(usuario)
+                finalizarCuestionario(usuario.toString())
             }
         }
     }

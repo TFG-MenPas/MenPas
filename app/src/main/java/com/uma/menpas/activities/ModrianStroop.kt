@@ -28,11 +28,11 @@ class ModrianStroop : BaseActivity() {
     lateinit var numeroFallosPermitidos: TextView
     private lateinit var textOpcionTamanyoTablero: TextView
 
-    lateinit var usuario: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_stroop)
-        usuario = intent.getStringExtra("usuario") as String
+
         checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
         backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
         unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
@@ -192,7 +192,7 @@ class ModrianStroop : BaseActivity() {
                 intent.putExtra("fondo", btnFondoChecked)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
-                intent.putExtra("usuario", usuario)
+
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")

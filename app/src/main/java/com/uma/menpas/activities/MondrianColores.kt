@@ -29,7 +29,7 @@ class MondrianColores : BaseActivity() {
     private lateinit var backChecked : Drawable
     private lateinit var unchecked : Drawable
     private lateinit var backunChecked : Drawable
-    private lateinit var usuario: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores)
@@ -46,7 +46,7 @@ class MondrianColores : BaseActivity() {
         InicializarSeekbarFallosPermitidos()
         seekbarTamanyoTablero()
         botones()
-        usuario = intent.getStringExtra("usuario") as String
+
     }
     private fun InicializarSeekbarFallosPermitidos(){
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
@@ -126,7 +126,7 @@ class MondrianColores : BaseActivity() {
                 intent.putExtra("arrayEliminar", arrayEliminar)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
-                intent.putExtra("usuario", usuario)
+
                 startActivity(intent)
             }else if(arrayColores.size < 2){
                 showToast("Selecciona mínimo 2 colores")
@@ -191,12 +191,13 @@ class MondrianColores : BaseActivity() {
     }
 
     private fun esValido(tiempo: String): Boolean {
-        if(tiempo.contains(":")){
+        if (tiempo.contains(":")) {
             val minSecArray = tiempo.split(":")
             val min = minSecArray[0]
             val sec = minSecArray[1]
-            return min.length == 2 && sec.length == 2
-        }else{
+            return min.length == 2 && sec.length == 2 &&
+                    ((min[1] < '5') || (min[1] == '5' && sec[0] == '0' && sec[1] == '0')) && sec[0] < '6'
+        } else {
             return false
         }
     }

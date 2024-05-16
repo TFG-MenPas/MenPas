@@ -139,8 +139,8 @@ class Modrian {
                 "Version"
             )
             val id = CuestionarioService().obtenerIdDisponible("modrian", "ID_Modrian")
-            //val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
-            val nombreUsuarioFormateado = ParseUtils.formattedString("briss")
+            val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
+
             val numero_aciertos = respuestasUsuario[0]
             val numero_fallos = respuestasUsuario[1]
             val numero_blancos = respuestasUsuario[2]
@@ -195,8 +195,8 @@ class Modrian {
                 "Version"
             )
             val id = CuestionarioService().obtenerIdDisponible("modrian", "ID_Modrian")
-            //val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
-            val nombreUsuarioFormateado = ParseUtils.formattedString("briss")
+            val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
+
             val numero_aciertos = respuestasUsuario[0]
             val numero_fallos = respuestasUsuario[1]
             val numero_blancos = respuestasUsuario[2]
@@ -232,7 +232,7 @@ class Modrian {
             return keys.zip(values).toMap()
         }
 
-        fun calculateSimon(respuestasUsuario: ArrayList<String>, usuario: String): Map<String, String> {
+        fun calculateSimon(respuestasUsuario: ArrayList<String>, nombreUsuario: String): Map<String, String> {
             val keys = listOf(
                 "ID_Modrian",
                 "Nombre_Usuario",
@@ -252,8 +252,8 @@ class Modrian {
                 "Version"
             )
             val id = CuestionarioService().obtenerIdDisponible("modrian", "ID_Modrian")
-            //val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
-            val nombreUsuarioFormateado = ParseUtils.formattedString("briss")
+            val nombreUsuarioFormateado = ParseUtils.formattedString(nombreUsuario)
+
             val numero_aciertos = respuestasUsuario[0]
             val numero_fallos = 0
             val numero_blancos = 0
