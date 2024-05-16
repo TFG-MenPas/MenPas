@@ -1,37 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_marginHorizontal="30dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:paddingVertical="10dp"
+        >
 
         <TextView
-            android:id="@+id/textNombreInfoCentro"
+            android:id="@+id/textInfoCentro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:textAlignment="center"
+            android:layout_marginLeft="50dp"
             android:padding="4dp"
-            android:text="@string/app_name"
+            android:text="@string/informacion_del_centro"
             android:fontFamily="@font/poppins_extra_bold"
             android:textColor="@color/black"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInfoCentro"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/nombre2puntos"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textNombreInfoCentro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInfoCentro"
+            android:layout_toEndOf="@id/textNombre"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textPais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNombreInfoCentro"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/pais2puntos"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textPaisInfoCentro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textNombreInfoCentro"
+            android:layout_toEndOf="@id/textPais"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:padding="4dp"
             android:text="@string/app_name"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -41,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textPaisInfoCentro"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
+            android:layout_marginLeft="20dp"
             android:padding="4dp"
             android:text="@string/direccion2puntos"
             android:fontFamily="@font/poppins_bold"
@@ -54,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textDireccion"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
+            android:layout_marginLeft="20dp"
             android:padding="4dp"
             android:text="@string/cp"
             android:fontFamily="@font/poppins_bold"
@@ -66,9 +112,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textCodigoPostal"
-            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="6dp"
-            android:textAlignment="center"
             android:padding="4dp"
             android:text="@string/telefono2puntos"
             android:fontFamily="@font/poppins_bold"
@@ -80,9 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/textDireccion"
-            android:layout_alignBottom="@id/textDireccion"
+            android:layout_alignBaseline="@id/textDireccion"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:padding="4dp"
             android:text="@string/app_name"
             android:fontFamily="@font/poppins_light"
@@ -96,7 +141,6 @@
             android:layout_toEndOf="@id/textCodigoPostal"
             android:layout_alignBottom="@id/textCodigoPostal"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:padding="4dp"
             android:text="@string/app_name"
             android:fontFamily="@font/poppins_light"
@@ -110,7 +154,6 @@
             android:layout_toEndOf="@id/textTelefono"
             android:layout_alignBottom="@id/textTelefono"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:padding="4dp"
             android:text="@string/app_name"
             android:fontFamily="@font/poppins_light"
@@ -121,6 +164,7 @@
             android:id="@+id/imageButtonCerrarDesplegable"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginRight="10dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:background="#FFFFFF"
@@ -130,4 +174,4 @@
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

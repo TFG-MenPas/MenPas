@@ -1,0 +1,64 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Puedo concentrarme en un entorno con mucho ruido.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 2,
+			"pregunta": "Cuando me encuentro en una situación en la que ocurren muchas cosas y es mucha la estimulación sensorial como, por ejemplo, en una fiesta o entre el gentío en un aeropuerto, no pierdo el hilo de mis pensamientos sobre una cosa particular que veo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 3,
+			"pregunta": "Si decido centrar mi atención en una tarea particular, considero que puedo seguir centrado en ella en estos ambientes.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 4,
+			"pregunta": "Si estoy en casa tratando de trabajar, los ruidos del televisor o de otras personas me distraen mucho.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 5,
+			"pregunta": "Considero que si me siento tranquilamente un momento, una avalancha de pensamientos entran en mi mente y acabo siguiendo múltiples hilos de pensamientos, a menudo sin saber cómo empezaba cada uno de ellos.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 6,
+			"pregunta": "Si un acontecimiento inesperado me distrae, vuelvo a centrar mi atención en lo que estaba haciendo.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 7,
+			"pregunta": "Durante periodos de relativa tranquilidad, como por ejemplo cuando estoy sentado en el tren o en el autobús o haciendo cola en una tienda, me fijo en multitud de cosas que tengo a mi alrededor.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 8,
+			"pregunta": "Cuando un proyecto importante que debo hacer en solitario requiere de mí una atención plena y centrada, procuro trabajar en el lugar más tranquilo que puedo encontrar.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 9,
+			"pregunta": "Los estímulos y sucesos que se producen a mi alrededor tienden a captar mi atención, y cuando esto sucede me resulta difícil desconectarme.",
+			"tipo": "siNo"
+			
+		},
+		{
+			"numero": 10,
+			"pregunta": "Tengo cierta facilidad para hablar con otra persona en una situación en la que hay mucha gente como un cóctel o un cubículo en la oficina. Puedo desconectar de lo que otros dicen en un entorno con mucha gente, aunque si me concentro puedo entender lo que dicen.",
+			"tipo": "siNo"
+			
+		}
+	]
+}

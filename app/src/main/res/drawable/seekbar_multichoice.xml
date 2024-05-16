@@ -11,10 +11,10 @@
         <scale android:scaleWidth="100%">
             <selector>
                 <item android:state_enabled="false"
-                    android:drawable="@color/teal_700"/>
+                    android:drawable="@color/azul_uma"/>
                 <item>
                     <shape android:shape="rectangle">
-                        <solid android:color="@color/elipseBlue"/>
+                        <solid android:color="@color/azul_uma"/>
                         <size android:height="10dp"/>
                         <corners android:radius="20dp"/>
                     </shape>

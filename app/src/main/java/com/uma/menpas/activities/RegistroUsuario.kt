@@ -7,7 +7,8 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.RegistroController
 import com.uma.menpas.utils.SnackBarPersonalizada
 
-class RegistroUsuario : AppCompatActivity() {
+class RegistroUsuario : BaseActivity() {
+    val registroController = RegistroController()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_usuario)
@@ -38,13 +39,13 @@ class RegistroUsuario : AppCompatActivity() {
 
         var isPasswordVisible = false
 
-        val arrayDeportes = RegistroController.getListaDeportes()
-        val arrayEstadoCivil = RegistroController.getListaEstadoCivil()
-        val arrayNacionalidades = RegistroController.getListaNacionalidades()
-        val arrayNivelEstudios = RegistroController.getNivelEstudios()
-        val arrayPerfiles = RegistroController.getListaPerfiles()
-        val arrayProfesion = RegistroController.getListaProfesion()
-        val arrayGenero = RegistroController.getListaSexo()
+        val arrayDeportes = registroController.getListaDeportes()
+        val arrayEstadoCivil = registroController.getListaEstadoCivil()
+        val arrayNacionalidades = registroController.getListaNacionalidades()
+        val arrayNivelEstudios = registroController.getNivelEstudios()
+        val arrayPerfiles = registroController.getListaPerfiles()
+        val arrayProfesion = registroController.getListaProfesion()
+        val arrayGenero = registroController.getListaSexo()
 
         //Spinner genero
         val generoSpinner = findViewById<Spinner>(R.id.selectGenero)
@@ -134,8 +135,7 @@ class RegistroUsuario : AppCompatActivity() {
         }
 
         iniSesion.setOnClickListener {
-            SnackBarPersonalizada.mostrarSnack(layout, "HOLA ESTO ES SNACKBAR PERSON", 2000)
-            //finish()
+            finish()
         }
 
         buttonRegistrar.setOnClickListener {
@@ -157,8 +157,10 @@ class RegistroUsuario : AppCompatActivity() {
             val horasSemanales = horasSemanaDeporteSpinner.selectedItem.toString()
             val profesion = profesionSpinner.selectedItem.toString()
             val terminoSeleccionado = checkBoxterminos.isChecked
+            val estaSuscrito = checkBoxSuscripcion.isChecked
 
-            val resultadoComprobacion = RegistroController.comprobarDatos(
+
+            val resultadoComprobacion = registroController.comprobarDatos(
                 usuario,
                 contrasenya,
                 repContrasenya,
@@ -179,12 +181,13 @@ class RegistroUsuario : AppCompatActivity() {
                 terminoSeleccionado
             )
 
-            /*val usuarionew = RegistroController.registrarUsuario("prueba1111111",
-                "prueba1111111",
-                "prueba3111111",
-                "prueba3111111",
+            /*
+            val usuarionew = RegistroController.registrarUsuario("pNombre",
+                "pNombre",
+                "nombreMuyLargoAVerComoQuedaEnLaAplicacion",
+                "nombreMuyLargoAVerComoQuedaEnLaAplicacion",
                 "12",
-                "prueba3111111",
+                "prueba3111111123",
                 "prueba1",
                 "11",
                 genero,
@@ -194,10 +197,10 @@ class RegistroUsuario : AppCompatActivity() {
                 nivelEstudios,
                 horasSemanales,
                 profesion)
-
              */
+
             var textoSnackbar = ""
-            when(resultadoComprobacion){
+            when (resultadoComprobacion) {
                 1 -> textoSnackbar = "Todavía quedan campos sin rellenar"
                 2 -> textoSnackbar = "El nombre de usuario introducido ya existe"
                 3 -> textoSnackbar = "Las contraseñas no coinciden"
@@ -206,8 +209,9 @@ class RegistroUsuario : AppCompatActivity() {
                 6 -> textoSnackbar = "No se han aceptado los términos"
             }
             SnackBarPersonalizada.mostrarSnack(layout, textoSnackbar, 2000)
-            if(resultadoComprobacion == 0){
-               val user = RegistroController.registrarUsuario(usuario,
+            if (resultadoComprobacion == 0) {
+                val user = registroController.registrarUsuario(
+                    usuario,
                     contrasenya,
                     nombre,
                     apellidos,
@@ -221,10 +225,14 @@ class RegistroUsuario : AppCompatActivity() {
                     estadoCivil,
                     nivelEstudios,
                     horasSemanales,
-                    profesion)
+                    profesion,
+                    estaSuscrito
+                )
+
                 Toast.makeText(this, "Registro realizado con éxito", Toast.LENGTH_SHORT)
                 finish()
             }
         }
     }
 }
+

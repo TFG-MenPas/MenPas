@@ -1,0 +1,256 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me veo más como un perdedor que como un ganador durante las competencias o partidos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Me enojo y me frustro durante las competencias o partidos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Me distraigo y pierdo mi concentración durante las competencias o partidos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Antes de las competencias me imagino a mí mismo ejecutando mis acciones y rindiendo perfectamente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Estoy muy motivado/a para dar lo mejor de mí en cada competencia o partido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Puedo mantener emociones positivas durante las competencias.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Durante las competencias o partidos pienso positivamente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Creo en mí mismo/a como deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me pongo demasiado nervioso/a durante las competencias o partidos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 10,
+			"pregunta": "En los momentos críticos de las competencias me da la impresión de que mi cabeza va demasiado rápido (a mil kilómetros por hora).",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Practico mentalmente mis habilidades físicas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Trabajo y entreno duro gracias a los objetivos que yo me he fijado como deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Disfruto durante las competencias o partidos, aunque me encuentre con dificultades.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Durante las competencias mantengo diálogos internos (conversaciones conmigo mismo) negativos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Pierdo mi confianza fácilmente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Los errores durante las competencias me hacen sentir y pensar negativamente sobre mí mismo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Puedo controlar rápidamente mis emociones y recuperar la concentración.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Para mí es fácil pensar fotográficamente (en imágenes) acerca de mi deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 19,
+			"pregunta": "No necesito que me empujen a entrenar duro y competir con intensidad. Yo soy mi mejor motivador.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Cuando las cosas se vuelven contra mí durante las competencias, tiendo a “bajonearme” emocionalmente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Pongo todo mi esfuerzo durante las competencias o partidos, pase lo que pase.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Puedo rendir por encima de mi talento y mis habilidades.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Durante las competencias siento que mis músculos se tensan y creo que no me van a responder.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Tengo momentos de desconcentración durante las competencias o partidos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Antes de las competencias me visualizo superando situaciones difíciles y ejecutando acciones complejas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Daría lo que fuera por desarrollar todo mi potencial y alcanzar la cumbre como deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Entreno con una intensidad alta y positiva.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Controlando mi pensamiento puedo transformar estados de ánimo negativos en positivos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Soy un/a deportista fuerte mentalmente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Cuando compito, las situaciones incontrolables, como el viento, las trampas de los contrarios, los malos arbitrajes, me alteran y hacen que me derrumbe.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Durante las competencias o partidos pienso en errores pasados o en oportunidades perdidas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Durante las competencias utilizo imágenes que me ayudan a rendir mejor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Estoy aburrido/a y quemado/a con respecto a mi deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Las situaciones difíciles para mí suponen un desafío y me inspiran.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 35,
+			"pregunta": "Mi entrenador diría de mí que tengo una buena actitud.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 36,
+			"pregunta": "La imagen que proyecto al exterior es la de ser un/a luchador/a.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 37,
+			"pregunta": "Puedo permanecer tranquilo/a durante las competencias aunque aparezcan problemas perturbadores.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 38,
+			"pregunta": "Mi concentración se rompe fácilmente.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 39,
+			"pregunta": "Cuando me visualizo compitiendo o entrenando, puedo ver y sentir las cosas de forma muy real.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 40,
+			"pregunta": "Al despertar por las mañanas me siento entusiasmado/a en relación con mis entrenamientos y competencias.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 41,
+			"pregunta": "Practicar este deporte me aporta un sentido genuino de disfrute y realización.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		},
+		{
+			"numero": 42,
+			"pregunta": "Yo puedo convertir una crisis en una oportunidad.",
+			"tipo": "seleccionMultiple",
+			"respuestas": ["Casi siempre", "Muchas veces", "A veces sí, a veces no", "Pocas veces", "Casi nunca"]
+		}
+	]
+}

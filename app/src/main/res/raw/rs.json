@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autora": "G. Wagnild e H. Young.",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/Resilencia%20EscResil%20Adaptacao%20y%20EstudoPsicometrico.pdf"
+	},
+	"instructions": {
+		"Instrucciones": "Por favor, lea las siguientes declaraciones. La escala consiste de siete números, que van desde el '1' (Muy en desacuerdo) al '7' (muy de acuerdo) a la derecha. Seleccine el número que mejor indica sus sentimientos acerca de esa declaración. Por ejemplo, si está muy de acuerdo con un comunicado, seleccione '1'. Si es neutral, '4', y si está muy de acuerdo, seleccione '7'."
+	},
+	"buttons": {
+		"Realizar cuestionario": "preguntas_rs"
+	}
+}

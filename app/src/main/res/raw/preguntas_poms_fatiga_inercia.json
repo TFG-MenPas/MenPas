@@ -1,0 +1,88 @@
+{
+	"Preguntas": [
+		{
+			"numero": 4,
+			"pregunta": "Rendido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Apático.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Fatigado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 40,
+			"pregunta": "Exhausto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 46,
+			"pregunta": "Perezoso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 49,
+			"pregunta": "Abatido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 65,
+			"pregunta": "Tirado (muy cansado).",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		}
+	]
+}

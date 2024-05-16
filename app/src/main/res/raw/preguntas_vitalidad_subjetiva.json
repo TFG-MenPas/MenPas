@@ -1,0 +1,88 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me siento vivo/a y vital.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "A veces me siento tan vivo/a que solo quiero saltar.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tengo energía y ánimo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Me ilusiono con cada nuevo día.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Casi siempre me siento alerta y despierto/a.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Me siento activado/a (siento que tengo mucha energía).",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Totalmente en desacuerdo",
+				"Muy en desacuerdo",
+				"Algo en desacuerdo",
+				"Neutral",
+				"Algo de acuerdo",
+				"Muy de acuerdo",
+				"Totalmente de acuerdo"
+			]
+		}
+	]
+}

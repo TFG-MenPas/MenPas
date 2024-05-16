@@ -13,14 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.CuestionarioController
 import com.uma.menpas.models.adapters.AdaptadorCuestionario
 import com.uma.menpas.models.Cuestionario
+import com.uma.menpas.utils.JsonResourceName
 
-class CuestionariosRealizados : AppCompatActivity() {
+class CuestionariosRealizados : BaseActivity() {
     lateinit var cuestionarioRV: RecyclerView
     lateinit var adaptadorCuestionario: AdaptadorCuestionario
     lateinit var listaCuestionarios: ArrayList<Cuestionario>
     lateinit var barraBusqueda: SearchView
+    private val cuestionarioController = CuestionarioController()
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -30,22 +33,17 @@ class CuestionariosRealizados : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuestionarios_realizados)
 
-
-
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
 
         myOnclickListener = MyOnClickListener(this)
         cuestionarioRV = findViewById(R.id.RVCuestionario)
         listaCuestionarios = ArrayList()
-        adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
 
-        listaCuestionarios.add(Cuestionario("Ansiedad", "CSAI2: Autoconfianza", "12/02/2023-11:07:32"))
-        listaCuestionarios.add(Cuestionario("Atención", "Mondrian: Colores", "12/02/2023-11:07:32"))
-        listaCuestionarios.add(Cuestionario("Autoconcepto", "AF5", "10/02/2023-12:08:00"))
-        listaCuestionarios.add(Cuestionario("Autorregistro", "Comida", "10/02/2023-12:08:00"))
-        listaCuestionarios.add(Cuestionario("Burnout", "BSQ", "10/02/2023-11:00:00"))
+        listaCuestionarios = cuestionarioController.getCuestionariosRealizados(applicationContext) as ArrayList<Cuestionario>
+
+        adaptadorCuestionario = AdaptadorCuestionario(listaCuestionarios)
 
         val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
         cuestionarioRV.layoutAnimation = controller
@@ -67,31 +65,32 @@ class CuestionariosRealizados : AppCompatActivity() {
     }
     class MyOnClickListener(cuestionarioRealizado: CuestionariosRealizados) : View.OnClickListener {
         val context = cuestionarioRealizado
-        override fun onClick(v: View) {
-            //mostrarDetalles(v)
-            var intent = Intent(context, DetallesCuestionario::class.java)
-            context.startActivity(intent)
-        }
+        val cuestionarioController = CuestionarioController()
+        val jsonResourceName = JsonResourceName()
 
-        @SuppressLint("InflateParams")
-        private fun mostrarDetalles(v: View) {
+        override fun onClick(v: View) {
             val viewHolder : RecyclerView.ViewHolder? = context.cuestionarioRV.getChildViewHolder(v)
             val textViewNombreCuestionario : TextView = viewHolder!!.itemView.findViewById<TextView?>(
                 R.id.textNombreCuestionario
             )
-            val textNombreCuestionario: String = textViewNombreCuestionario.text as String
 
-            var cuestionario : Cuestionario? = null
-            //Cuando conectemos por base de datos se puede hacer por id
-            for (item in context.listaCuestionarios){
-                if (item.nombre.lowercase().equals(textNombreCuestionario.lowercase())){
-                    cuestionario = item
+            val cuestionarioSeleccionado = viewHolder.itemView.tag as Cuestionario
+            val resultadosCuestionario = cuestionarioController.getCuestionarioById(cuestionarioSeleccionado.nombre, cuestionarioSeleccionado.id)
+
+            val cuestionarioJsonResourceName = jsonResourceName.getJsonResourceName(cuestionarioSeleccionado.nombre, resultadosCuestionario)
+
+
+            val bundle = Bundle().apply {
+                for ((key, value) in resultadosCuestionario) {
+                    putString(key, value)
                 }
             }
 
-            if (cuestionario != null){
-                Toast.makeText(context, "Nombre: " + cuestionario.nombre + " Tipo: " + cuestionario.tipo, Toast.LENGTH_LONG).show()
-            }
+            val intent = Intent(context, DetallesCuestionario::class.java)
+            intent.putExtras(bundle)
+            intent.putExtra("jsonResourceName", cuestionarioJsonResourceName)
+            intent.putExtra("isResultado",false)
+            context.startActivity(intent)
         }
     }
     private fun filter(text: String){

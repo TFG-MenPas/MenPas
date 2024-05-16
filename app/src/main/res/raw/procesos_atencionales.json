@@ -1,0 +1,11 @@
+{
+	"content": {
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/Manual%20usuario%20P%20atencionales.pdf"
+		},
+	"instructions": {
+		"Instrucciones": "Programa ejecutable de ordenador. Se debe tener instalado Microsoft .Net Framework 3.5 o superior, y Windows Installer 3.1 o superior\n\nPara poder exportar los datos se debe tener instalado Microsoft Word /Excel 2003 o superior.\n\nPara poder utilizar la base de datos local de la aplicación hay que tener instalado access2007"
+	},
+	"buttons": {
+		"Descargar": "descargar_procesos_atencionales"
+	}
+}

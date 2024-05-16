@@ -56,6 +56,7 @@ class AdaptadorUsuario {
             val estudios = result[16]
             val profesion = result[17]
             val aComienzoDeporte = Integer.parseInt(result[18])
+            val infoEmail = result[19].toBoolean()
 
             return Usuario(
                 nombreUsuario,
@@ -76,8 +77,13 @@ class AdaptadorUsuario {
                 horasSemanales,
                 estudios,
                 profesion,
-                aComienzoDeporte
+                aComienzoDeporte,
+                infoEmail
             )
+        }
+
+        fun soapObjectABoolean(result: SoapObject): Boolean {
+            return result.getPropertyAsString(0).toBoolean()
         }
     }
 }

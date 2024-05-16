@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/gradle_rectangle"
+        android:background="@drawable/background_bottom_navigation_bar"
         app:elevation="10dp"
         app:itemIconSize="40dp"
         app:itemIconTint="@drawable/bm_items"

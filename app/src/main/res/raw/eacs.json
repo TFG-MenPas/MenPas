@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autores": "Serpa, S., Gouveia., E., Ramadas, S. & Rosado, A. (2006).",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/EACS.pdf"
+	},
+	"instructions": {
+		"Instrucciones": "Se presenta una escala que consta de 12 Items y cada Item tiene cinco posibles respuesta. Hay que seleccionar una opción de las posibles opciones, teniendo en cuenta los supuestos que representan el grado de acuerdo con cada pregunta, 1.- la que representa el menor grado de acuerdo (muy en desacuerdo) y 5.- a la obtención de una mayor nivel de acuerdo (muy de acuerdo). Tendrá que responder honestamente acerca de lo que están dispuestos a renunciar a este deporte."
+	},
+	"buttons": {
+		"Realizar cuestionario": "preguntas_eacs"
+	}
+}

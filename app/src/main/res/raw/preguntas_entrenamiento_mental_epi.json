@@ -1,0 +1,233 @@
+{
+  "Preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "¿Desea Vd. a menudo animacion y bullicio?",
+      "tipo": "siNo"
+    },{
+      "numero": 2,
+      "pregunta": "¿Necesita con frecuencia amigos que le comprendan y alienten?",
+      "tipo": "siNo"
+    },{
+      "numero": 3,
+      "pregunta": "De ordinario, ¿es Vd. una persona despreocupada?",
+      "tipo": "siNo"
+    },{
+      "numero": 4,
+      "pregunta": "¿Encuentra muy duro tener que aceptar una negativa?",
+      "tipo": "siNo"
+    },{
+      "numero": 5,
+      "pregunta": "Antes de llevar a cabo una acción, ¿se para Vd. a reflexionar?",
+      "tipo": "siNo"
+    },{
+      "numero": 6,
+      "pregunta": "¿Su estado de ánimo sufre altibajos algunas veces?",
+      "tipo": "siNo"
+    },{
+      "numero": 7,
+      "pregunta": "¿Se siente siempre desdichado sin ningún motivo para ello?",
+      "tipo": "siNo"
+    },{
+      "numero": 8,
+      "pregunta": "¿Generalmente dice y hace las cosas con rapidez y sin pararse a pensarlas?",
+      "tipo": "siNo"
+    },{
+      "numero": 9,
+      "pregunta": "¿Se siente Vd. súbitamente tímido cuando desea hablar con un desconocido simpático y atrayente?",
+      "tipo": "siNo"
+    },{
+      "numero": 10,
+      "pregunta": "Ante un reto o provocación, ¿haría cualquier cosa sólo para demostrar osadia?",
+      "tipo": "siNo"
+    },{
+      "numero": 11,
+      "pregunta": "¿Se preocupa a menudo por cosas que no debería haber hecho o dicho?",
+      "tipo": "siNo"
+    },{
+      "numero": 12,
+      "pregunta": "¿Son todas sus costumbres buenas y deseables?",
+      "tipo": "siNo"
+    },{
+      "numero": 13,
+      "pregunta": "¿Hace Vd. con fecuencia las cosas de repente?",
+      "tipo": "siNo"
+    },{
+      "numero": 14,
+      "pregunta": "¿Se siente Vd. fácilmente herido en sus sentimientos o amor propio?",
+      "tipo": "siNo"
+    },{
+      "numero": 15,
+      "pregunta": "En general, ¿prefiere Vd. la lectura a la conversación con la gente?",
+      "tipo": "siNo"
+    },{
+      "numero": 16,
+      "pregunta": "¿Se encuentra algunas veces rebosante de energía y otras francamente agotado?",
+      "tipo": "siNo"
+    },{
+      "numero": 17,
+      "pregunta": "¿Le gusta mucho salir de casa?",
+      "tipo": "siNo"
+    },{
+      "numero": 18,
+      "pregunta": "De todas las personas que conoce, ¿hay algunas que no le gustan en absoluto?",
+      "tipo": "siNo"
+    },{
+      "numero": 19,
+      "pregunta": "¿Le ocurre a menudo el soñar despierto?",
+      "tipo": "siNo"
+    },{
+      "numero": 20,
+      "pregunta": "¿Prefiere tener pocos amigos, pero muy escogidos?",
+      "tipo": "siNo"
+    },{
+      "numero": 21,
+      "pregunta": "¿Se siente a menudo preocupado por sentimientos de culpa?",
+      "tipo": "siNo"
+    },{
+      "numero": 22,
+      "pregunta": "Cuando alquien le grita, ¿responde Vd. también gritando?",
+      "tipo": "siNo"
+    },{
+      "numero": 23,
+      "pregunta": "¿Diria Vd. que sus nervios acostumbran a estar en tension?",
+      "tipo": "siNo"
+    },{
+      "numero": 24,
+      "pregunta": "¿Ha llegado alguna vez tarde al trabajo o a una cita?",
+      "tipo": "siNo"
+    },{
+      "numero": 25,
+      "pregunta": "¿Puede Vd. normalmente despreocuparse de sus problemas y disfrutar mucho en una fiesta?",
+      "tipo": "siNo"
+    },{
+      "numero": 26,
+      "pregunta": "Después de haber hecho algo importante, ¿piensa Vd. a menudo que podria haberlo realizado mejor?",
+      "tipo": "siNo"
+    },{
+      "numero": 27,
+      "pregunta": "¿Piensan los demás que Vd. es una persona muy activa y animada?",
+      "tipo": "siNo"
+    },{
+      "numero": 28,
+      "pregunta": "¿Acuden ideas a su cabeza que le impiden conciliar el sueño?",
+      "tipo": "siNo"
+    },{
+      "numero": 29,
+      "pregunta": "La mayoria de las veces, ¿está callado cuando se halla con otras personas?",
+      "tipo": "siNo"
+    },{
+      "numero": 30,
+      "pregunta": "¿Habla alunas veces de cosas que desconoce?",
+      "tipo": "siNo"
+    },{
+      "numero": 31,
+      "pregunta": "¿Nota Vd. palpitaciones o golpes en el corazón?",
+      "tipo": "siNo"
+    },{
+      "numero": 32,
+      "pregunta": "Si Vd. quiere conocer o enterarse de alguna cosa, ¿prefiere consultar un libro antes que preguntarlo a alquien?",
+      "tipo": "siNo"
+    },{
+      "numero": 33,
+      "pregunta": "¿Sufre temblores o estremecimiento?",
+      "tipo": "siNo"
+    },{
+      "numero": 34,
+      "pregunta": "¿Le gusta aquella clase de trabajos que exige de Vd. una intensa atención?",
+      "tipo": "siNo"
+    },{
+      "numero": 35,
+      "pregunta": "¿Es Vd. una persona irritable?",
+      "tipo": "siNo"
+    },{
+      "numero": 36,
+      "pregunta": "¿Murmura Vd. alguna vez?",
+      "tipo": "siNo"
+    },{
+      "numero": 37,
+      "pregunta": "¿Le espanta la idea de tener que dar una charla o dirigir la palabra a un grupo?",
+      "tipo": "siNo"
+    },{
+      "numero": 38,
+      "pregunta": "¿Se preocupa por desgracias que podrian suceder?",
+      "tipo": "siNo"
+    },{
+      "numero": 39,
+      "pregunta": "¿Le gusta hacer cosas en las cuales tenga que actuar con rapidez?",
+      "tipo": "siNo"
+    },{
+      "numero": 40,
+      "pregunta": "¿Tiene Vd. muchas pesadillas?",
+      "tipo": "siNo"
+    },{
+      "numero": 41,
+      "pregunta": "¿Se sentiría Vd. muy desdichado si no pudiera ver a mucha gente?",
+      "tipo": "siNo"
+    },{
+      "numero": 42,
+      "pregunta": "Alguna vez, después de oir el despertador, ¿ha preferido quedarse un rato más en la cama?",
+      "tipo": "siNo"
+    },{
+      "numero": 43,
+      "pregunta": "¿Se siente afectado por sus dolores y achaques?",
+      "tipo": "siNo"
+    },{
+      "numero": 44,
+      "pregunta": "¿Le gusta tanto hablar con la gente, que no pierde ocasión de hablar incluso con un desconocido?",
+      "tipo": "siNo"
+    },{
+      "numero": 45,
+      "pregunta": "¿Se considera Vd. una persona nerviosa?",
+      "tipo": "siNo"
+    },{
+      "numero": 46,
+      "pregunta": "¿Normalmente actua Vd. con lentitud y sin prisas?",
+      "tipo": "siNo"
+    },{
+      "numero": 47,
+      "pregunta": "¿Se siente Vd. fácilmente ofendido cuando la gente le encuentra defectos a Vd. o a su trabajo?",
+      "tipo": "siNo"
+    },{
+      "numero": 48,
+      "pregunta": "¿Le gusta que alguna vez le alaben algo de lo que ha hecho?",
+      "tipo": "siNo"
+    },{
+      "numero": 49,
+      "pregunta": "¿Diría Vd que es una persona con gran confianza en sí mismo?",
+      "tipo": "siNo"
+    },{
+      "numero": 50,
+      "pregunta": "¿Le preocupan sentimientos de inferioridad?",
+      "tipo": "siNo"
+    },{
+      "numero": 51,
+      "pregunta": "Cuando en un restaurante le sirven algo que no le agrada, ¿Prefiere Vd. dejarlo sin decir nada?",
+      "tipo": "siNo"
+    },{
+      "numero": 52,
+      "pregunta": "¿Se preocupa por su salud?",
+      "tipo": "siNo"
+    },{
+      "numero": 53,
+      "pregunta": "¿Le es fácil animar una fiesta o reunión aburrida?",
+      "tipo": "siNo"
+    },{
+      "numero": 54,
+      "pregunta": "¿Ha comido Vd. alguna vez algo más de lo que debiera?",
+      "tipo": "siNo"
+    },{
+      "numero": 55,
+      "pregunta": "¿Sufre Vd. de insomnio?",
+      "tipo": "siNo"
+    },{
+      "numero": 56,
+      "pregunta": "¿Tiene tendencia a pasar de una actividad a otra constantemente?",
+      "tipo": "siNo"
+    },{
+      "numero": 57,
+      "pregunta": "Cuando promete algo, ¿lo cumple siempre aunque le cueste hacerlo?",
+      "tipo": "siNo"
+    }
+  ]
+}

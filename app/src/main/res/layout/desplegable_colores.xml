@@ -44,124 +44,117 @@
 
             <GridLayout
                 android:id="@+id/gridColoresSeleccion"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="-5dp"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:columnCount="4">
 
                 <ImageButton
                     android:id="@+id/color00"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
-                    android:background="@color/rojo"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="rojo"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color01"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
-                    android:background="@color/verde"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="verde"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color02"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
-                    android:background="@color/azul"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="azul" />
                 <ImageButton
                     android:id="@+id/color03"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
-                    android:background="@color/amarillo"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="amarillo" />
                 <ImageButton
                     android:id="@+id/color10"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/marron"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:contentDescription="marron" />
+                    android:layout_margin="10dp"
+                    android:contentDescription="marrón" />
                 <ImageButton
                     android:id="@+id/color11"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/gris"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="gris" />
 
                 <ImageButton
                     android:id="@+id/color12"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/rosa"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="rosa"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color13"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/violeta"
+                    android:background="@drawable/grid_button_colores"
                     android:contentDescription="violeta"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color20"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/black"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="negro" />
                 <ImageButton
                     android:id="@+id/color21"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/naranja"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="naranja" />
                 <ImageButton
                     android:id="@+id/color22"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/cyan"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="cyan" />
                 <ImageButton
                     android:id="@+id/color23"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@color/fucsia"
+                    android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="fucsia" />
+                <ImageButton
+                    android:id="@+id/color40"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/grid_button_colores"
+                    android:contentDescription="blanco"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="10dp" />
 
             </GridLayout>
 

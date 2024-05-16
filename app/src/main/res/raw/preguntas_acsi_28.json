@@ -1,0 +1,312 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Sobre una base diaria o semanal, me fijo metas muy específicas por mí mismo que orientan lo que hago.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Puedo obtener el máximo provecho de mi talento y habilidades.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Cuando un entrenador o director me dice cómo corregir un error que he hecho, tiendo a tomarlo como algo personal y se siento molestos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Cuando estoy practicando deportes, puedo concentrar mi atención y bloquear las distracciones.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Sigo siendo positivo y entusiasta durante la competición, no importa cómo de mal van las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Tiendo a jugar mejor bajo presión, porque pienso con más claridad.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Me preocupo un poco acerca de lo que otros piensan acerca de mi desempeño.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Tiendo a hacer un montón de planificación acerca de cómo alcanzar mis metas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Estoy seguro de que voy a jugar bien.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Cuando un entrenador o gerente me critica, me molesta más que me ayuda.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Para mí es fácil evitar distracciones que interfieren en lo que estoy viendo y oyendo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "La preocupación por mi rendimiento me pone bajo presión.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Puedo establecer mis metas de desempeño para cada entrenamiento.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Yo no tengo que ser empujado para practicar o jugar duro, doy el 100%.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Si un entrenador me critica o grita, corrijo el error, sin molestarme por ello.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Puedo manejar situaciones inesperadas en mi deporte muy bien.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Cuando las cosas van mal, me digo a mí mismo para mantener la calma, y esto trabaja para mí.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Cuanta más presión hay en un juego, más me gusta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Cuando compito me preocupa la posibilidad de cometer errores o no ser capaz de jugar bien.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Yo tengo mi propio plan de juego trabajado en mi cabeza mucho antes de que el juego comience.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 21,
+			"pregunta": "Cuando me siento a mí mismo poniendo muy tenso, rápidamente se pueden relajar mi cuerpo y calmarme.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Para mí, las situaciones de presión son retos a los que doy la bienvenida.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Pienso e imagino lo que sucederá si no puedo, o meto la pata.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Mantengo el control emocional, no importa cómo me van las cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Es fácil para mí dirigir mi atención y concentrarse en un solo objeto o persona.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Cuando no llego a alcanzar mis metas, me hace trabajar más duro.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Puedo mejorar mis habilidades al escuchar cuidadosamente el consejo y la instrucción de los entrenadores y directivos.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Puedo cometer menos errores cuando hay presión, porque me concentro mejor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre de acuerdo"
+			]
+		}
+	]
+}

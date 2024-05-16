@@ -44,13 +44,45 @@
         android:layout_marginBottom="60dp">
 
         <RelativeLayout
+            android:id="@+id/relativeLayoutDetallesCuestionario"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textNombreCuestionario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+
+                android:fontFamily="@font/poppins_bold"
+                android:fontWeight="700"
+                android:gravity="left"
+                android:text="@string/cuestionario"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textEntradaNombreCuestionario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textNombreCuestionario"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:fontWeight="700"
+                android:gravity="left"
+                android:text="@string/texto_de_prueba_cuestionario"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/textCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textEntradaNombreCuestionario"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -66,7 +98,9 @@
                 android:id="@+id/textEntradaCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textEntradaNombreCuestionario"
                 android:layout_toEndOf="@id/textCategoria"
+                android:layout_marginBottom="22dp"
                 android:fontFamily="@font/poppins_regular"
                 android:fontWeight="700"
                 android:gravity="left"
@@ -76,40 +110,10 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/textTipo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textCategoria"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/poppins_bold"
-                android:fontWeight="700"
-                android:gravity="left"
-                android:text="@string/tipo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textEntradaTipo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textCategoria"
-                android:layout_toEndOf="@id/textTipo"
-                android:fontFamily="@font/poppins_regular"
-                android:fontWeight="700"
-                android:gravity="left"
-                android:text="@string/texto_de_prueba_tipo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
                 android:id="@+id/textFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textTipo"
+                android:layout_below="@+id/textCategoria"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -125,7 +129,7 @@
                 android:id="@+id/textEntradaFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textTipo"
+                android:layout_below="@+id/textEntradaCategoria"
                 android:layout_toEndOf="@id/textFecha"
                 android:fontFamily="@font/poppins_regular"
                 android:fontWeight="700"
@@ -136,40 +140,10 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/textTiempo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textFecha"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/poppins_bold"
-                android:fontWeight="700"
-                android:gravity="left"
-                android:text="@string/tiempo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textEntradaTiempo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textFecha"
-                android:layout_toEndOf="@id/textTiempo"
-                android:fontFamily="@font/poppins_regular"
-                android:fontWeight="700"
-                android:gravity="left"
-                android:text="@string/texto_de_prueba_tiempo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
                 android:id="@+id/textResultados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textTiempo"
+                android:layout_below="@+id/textFecha"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
@@ -177,22 +151,6 @@
                 android:fontWeight="700"
                 android:gravity="left"
                 android:text="@string/resultados"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textEntradaResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textResultados"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppins_regular"
-                android:fontWeight="700"
-                android:gravity="left"
-
-                android:text="@string/texto_de_prueba_resultados"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal" />

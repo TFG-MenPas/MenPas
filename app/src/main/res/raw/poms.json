@@ -1,0 +1,23 @@
+{
+	"content": {
+		"Autores": "Mcnair, Lorr, Droppleman, 1971; Hernández Mendo y Ramos, 1995.",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/Documentaci%C3%B3n%20Poms.pdf",
+		"Otro enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/10%20Informatizaci%C3%B3n%20del%20Profile%20of%20Moode%20States%20de%20McNair%20Lorr%20Dropleman.pdf",
+		"Información": "El cuestionario informatizado es el Profile of Mood States (P.O.M.S.) de Mcnair, Lorr y Droppelman (1971). Como es sabido este cuestionario mide seis estados de humor:\n\nTensión/ansiedad\n\nDepresión/melancolía\n\nOdio/hostilidad/angustia\n\nVigor/actividad\n\nFatiga/inercia\n\nConfusión/desconcierto\n\nDiversos trabajos han demostrado una utilidad considerable para su uso en Psicología del Deporte a través del estudio llevado a cabo con dieciocho poblaciones distintas de deportistas (Morgan, 1968, 1978, 1980; Morgan y Pollock, 1977; LeUnes y Nation,1982; Daiss y LeUnes, 1986; LeUnes, Hayward y Daiss, 1988).\n\nHernández Mendo, A. y Ramos, R. (1996). Informatización del Profile of Mood States de Mcnair, Lorr y Dropleman (1971). Aplicaciones. En A. Hernández Mendo y R. Ramos, Introducción a la informática aplicada a la psicología del deporte. Herramientas informáticas de uso en las ciencias del deporte (pp.55-85). Madrid: Editorial Ra-Ma. ISBN: 84 7897 236 6. Depósito Legal: M 40349 1996."
+		},
+	"instructions": {
+		"Instrucciones": "Lea atentamente la lista de palabras que se describen en los diferentes cuestionarios, estas palabras describen sentimientos que tienen las personas. Después de leer cada palabra fíjese en las cinco opciones que aparecen arriba y elija entre ellas la que mejor describa como se ha sentido usted durante las últimas 24 horas. Seleccione un valor en la casilla situada a la derecha de cada palabra. No deje ninguna casilla en blanco."
+	},
+	"buttons": {
+		"POMS de 65 items": "preguntas_poms_65",
+		"POMS de 58 items": "preguntas_poms_58",
+		"POMS de 15 items": "preguntas_poms_15",
+		"POMS de 6 items": "preguntas_poms_6",
+		"Escala tensión/ansiedad": "preguntas_poms_tension_ansiedad",
+		"Escala depresión": "preguntas_poms_depresion",
+		"Esscala angustia/cólera": "preguntas_poms_angustia_colera",
+		"Escala vigor/activación": "preguntas_poms_vigor_activacion",
+		"Escala fatiga/inercia": "preguntas_poms_fatiga_inercia",
+		"Escala confusión/orientación": "preguntas_poms_confusion_orientacion"
+	}
+}

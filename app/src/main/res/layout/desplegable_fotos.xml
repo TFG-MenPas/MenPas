@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textElijaFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:text="@string/elija_una_foto"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCerrarDesplegable"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/boton_cerrar_desplegable"
+            android:rotation="45"
+            android:src="@drawable/icon_cruz" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textElijaFoto"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/nestedScrollDesplegableFotos"
+            android:fillViewport="true">
+
+            <GridLayout
+                android:id="@+id/gridFotosSeleccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:columnCount="3">
+
+                <ImageButton
+                    android:id="@+id/foto00"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img0"
+                    android:contentDescription="0"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp" />
+                <ImageButton
+                    android:id="@+id/foto01"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img1"
+                    android:contentDescription="1"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp" />
+                <ImageButton
+                    android:id="@+id/foto02"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img2"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp"
+                    android:contentDescription="2" />
+                <ImageButton
+                    android:id="@+id/foto10"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img3"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp"
+                    android:contentDescription="3" />
+                <ImageButton
+                    android:id="@+id/foto11"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img4"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp"
+                    android:contentDescription="4" />
+                <ImageButton
+                    android:id="@+id/foto12"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img5"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp"
+                    android:contentDescription="5" />
+
+                <ImageButton
+                    android:id="@+id/foto20"
+                    android:layout_width="97dp"
+                    android:layout_height="77dp"
+                    android:background="@drawable/img6"
+                    android:contentDescription="6"
+                    android:layout_columnWeight="3"
+                    android:layout_margin="5dp" />
+
+
+            </GridLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

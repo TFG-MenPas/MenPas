@@ -27,6 +27,7 @@ class AdaptadorCuestionario(
         itemView.setOnClickListener(CuestionariosRealizados.myOnclickListener)
         // at last we are returning our view holder
         // class with our item View File.
+        itemView.tag
         return CuestionarioViewHolder(itemView)
     }
 
@@ -43,9 +44,12 @@ class AdaptadorCuestionario(
 
     override fun onBindViewHolder(holder: CuestionarioViewHolder, position: Int) {
         // on below line we are setting data to our text view and our image view.
+
         holder.nombre.text = listaCuestionarios.get(position).nombre
         holder.tipo.text = listaCuestionarios.get(position).tipo
         holder.fecha.text = listaCuestionarios.get(position).fecha
+
+        holder.itemView.tag = listaCuestionarios.get(position)
         //Imagen--> holder.image.setImageResource(courseList.get(position).courseImg)
     }
 

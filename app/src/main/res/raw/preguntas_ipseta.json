@@ -1,0 +1,194 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Hago deporte por que me gusta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Cuando compito con otros niños quiero ser el mejor.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Tengo mucho miedo de participar en actividades en las que pueda perder.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Me gustaría competir mucho para llegar a ser un gran deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "En actividades deportivas soy mejor que mis compañeros.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Hago deporte porque mis padres me obligan.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Me veo en el futuro siendo un gran deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Me gustaría ser mejor que otros niños en el deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Soy muy malo para el deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Elijo hacer deporte antes que hacer otras cosas.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "En deporte soy un niño muy capaz.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Hacer deporte me parece aburrido.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "La mayor parte de mi tiempo libre la dedico a hacer deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Creo que tengo capacidades para destacarme en el deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Por mucho que me esfuerce nunca llegaré a ser un gran deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Me siento muy contento cuando tengo que competir contra otros.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Mi(s) entrenador(es) piensan que seré un gran deportista.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "En general los otros niños son mejores que yo en el deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Se me facilita mucho practicar cualquier deporte.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"Casi siempre"
+			]
+		}
+	]
+}

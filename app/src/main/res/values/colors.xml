@@ -28,10 +28,12 @@
     <color name="gris">#808080</color>
     <color name="azul">#0000FF</color>
     <color name="rosa">#FFC0CB</color>
-    <color name="amarillo">#FFFF00</color>
+    <color name="amarillo">#FFDF00</color>
     <color name="violeta">#800080</color>
     <color name="black">#FF000000</color>
     <color name="fucsia">#FF00FF</color>
     <color name="naranja">#FFA500</color>
     <color name="cyan">#00FFFF</color>
+    <color name="azul_uma">#00305e</color>
+    <color name="blanco">#FFFFFF</color>
 </resources>

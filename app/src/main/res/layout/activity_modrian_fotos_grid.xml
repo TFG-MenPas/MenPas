@@ -28,16 +28,6 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/elipse_46" />
 
-    <ImageButton
-        android:id="@+id/imageButtonCerrarDesplegable"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:background="#9CD3ED"
-        android:contentDescription="@string/boton_cerrar_cuestionario"
-        android:rotation="45" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
         android:textAlignment="center"
         android:id="@+id/textTiempoEspera"
         android:layout_below="@id/bannerRectanguloAzul"
@@ -70,8 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="60dp"
         android:textAlignment="center"
         android:id="@+id/tiempoEspera"
         android:layout_below="@id/bannerRectanguloAzul"
@@ -80,6 +70,17 @@
         android:textSize="16sp"
         android:text="45" />
 
+    <ImageButton
+        android:id="@+id/imageButtonCerrarDesplegable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/icon_cruz"
+        android:background="#9CD3ED"
+        android:contentDescription="@string/boton_cerrar_cuestionario"
+        android:rotation="45" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -87,20 +88,173 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/nestedScrollModrianFotos"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="0dp"
         android:fillViewport="true">
 
         <GridLayout
             android:id="@+id/gridFotos"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="-5dp"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
-            android:columnCount="4">
+            android:columnCount="3">
 
+            <ImageButton
+                android:id="@+id/fotoCasilla00"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla00"
+                android:layout_columnWeight="3"
+                android:layout_margin="10dp" />
+            <ImageButton
+                android:id="@+id/fotoCasilla01"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla01"
+                android:layout_columnWeight="3"
+                android:layout_margin="10dp" />
+            <ImageButton
+                android:id="@+id/fotoCasilla02"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="3"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla02" />
+
+            <ImageButton
+                android:id="@+id/fotoCasilla10"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla10" />
+            <ImageButton
+                android:id="@+id/fotoCasilla11"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla11" />
+
+            <ImageButton
+                android:id="@+id/fotoCasilla12"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla12"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp" />
+
+            <ImageButton
+                android:id="@+id/fotoCasilla20"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla20" />
+            <ImageButton
+                android:id="@+id/fotoCasilla21"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla21" />
+            <ImageButton
+                android:id="@+id/fotoCasilla22"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla22" />
+
+
+            <ImageButton
+                android:id="@+id/fotoCasilla30"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla30"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp" />
+            <ImageButton
+                android:id="@+id/fotoCasilla31"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:contentDescription="fotoCasilla31"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp" />
+            <ImageButton
+                android:id="@+id/fotoCasilla32"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla32" />
+            <ImageButton
+                android:id="@+id/fotoCasilla40"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla40" />
+            <ImageButton
+                android:id="@+id/fotoCasilla41"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla41" />
+            <ImageButton
+                android:id="@+id/fotoCasilla42"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="97dp"
+                android:layout_height="77dp"
+                android:background="#9CD3ED"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:contentDescription="fotoCasilla42" />
 
 
         </GridLayout>

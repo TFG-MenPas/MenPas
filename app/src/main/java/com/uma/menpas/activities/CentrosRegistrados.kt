@@ -1,30 +1,35 @@
 package com.uma.menpas.activities
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.widget.Toast
-import android.widget.SearchView
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.ImageButton
-import android.widget.TextView
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
-import com.uma.menpas.models.adapters.AdaptadorCentro
 import com.uma.menpas.models.Centro
+import com.uma.menpas.models.adapters.AdaptadorCentro
+import com.uma.menpas.services.CentroService
+import com.uma.menpas.utils.LoadingDialog
 
-class CentrosRegistrados : AppCompatActivity() {
+class CentrosRegistrados : BaseActivity() {
     lateinit var centroRV: RecyclerView
     lateinit var adaptadorCentro: AdaptadorCentro
     lateinit var listaCentros: ArrayList<Centro>
     lateinit var barraBusqueda: SearchView
     lateinit var fabAñadirCentro: FloatingActionButton
+
+    private val centroService = CentroService()
     companion object {
         lateinit var myOnclickListener: MyOnClickListener
     }
@@ -36,7 +41,7 @@ class CentrosRegistrados : AppCompatActivity() {
         lateinit var intent: Intent
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_right)
         BarraNavegacion(barraNavegacionInferior, this)
 
         myOnclickListener = MyOnClickListener(this)
@@ -48,19 +53,8 @@ class CentrosRegistrados : AppCompatActivity() {
         }
 
         centroRV = findViewById(R.id.RVCentros)
-        listaCentros = ArrayList()
-        adaptadorCentro = AdaptadorCentro(listaCentros)
 
-
-        listaCentros.add(Centro("Club Pumas", "España", "Avenida de la concepcion", 29630, 957632146))
-        listaCentros.add(Centro("Remadores", "Estados Unidos", "Calle Carretera", 23894, 950238734))
-        listaCentros.add(Centro("ARCS Sport", "Paraguay", "Calle Competa", 88674, 677897453))
-
-        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
-        centroRV.layoutAnimation = controller
-        adaptadorCentro.notifyDataSetChanged()
-        centroRV.scheduleLayoutAnimation()
-        centroRV.adapter = adaptadorCentro
+        actualizarCentros()
 
         barraBusqueda = findViewById(R.id.buscarCentro)
         barraBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -72,6 +66,24 @@ class CentrosRegistrados : AppCompatActivity() {
                 return false
             }
         })
+
+        findViewById<View>(android.R.id.content).setOnTouchListener { view, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    // Ocultar el teclado y quitar el foco del SearchView
+                    hideKeyboardAndClearFocus()
+                }
+                MotionEvent.ACTION_UP -> {
+                    // Realizar la acción de clic
+                    view.performClick()
+                }
+            }
+            false
+        }
+
+        val loadingDialog = LoadingDialog(this)
+        loadingDialog.show()
+        loadingDialog.dismiss(2)
     }
 
     class MyOnClickListener(centrosRegistrados: CentrosRegistrados) : View.OnClickListener {
@@ -86,19 +98,19 @@ class CentrosRegistrados : AppCompatActivity() {
             val textViewNombreCentro : TextView = viewHolder!!.itemView.findViewById<TextView?>(R.id.textNombreCentro)
             val textNombreCentro: String = textViewNombreCentro.text as String
 
-            val dialog = BottomSheetDialog(context)
+            val dialog = Dialog(context)
             val view = context.layoutInflater.inflate(R.layout.desplegable_info_centro, null)
             var centro : Centro? = null
             //Cuando conectemos por base de datos se puede hacer por id
             for (item in context.listaCentros){
-                if (item.nombre.lowercase().equals(textNombreCentro.lowercase())){
+                if (item.nombreCentro.lowercase().equals(textNombreCentro.lowercase())){
                      centro = item
                 }
             }
 
             if (centro != null){
                 val textNombreInfoCentro = view.findViewById<TextView>(R.id.textNombreInfoCentro)
-                textNombreInfoCentro.text = centro.nombre
+                textNombreInfoCentro.text = centro.nombreCentro
 
                 val textPaisInfoCentro = view.findViewById<TextView>(R.id.textPaisInfoCentro)
                 textPaisInfoCentro.text = centro.pais
@@ -107,28 +119,58 @@ class CentrosRegistrados : AppCompatActivity() {
                 textDireccionInfoCentro.text = centro.direccion
 
                 val textCodigoPostalInfoCentro = view.findViewById<TextView>(R.id.textCodigoPostalInfoCentro)
-                textCodigoPostalInfoCentro.text = centro.codigoPostal.toString()
+                textCodigoPostalInfoCentro.text = centro.codigoPostal
 
                 val textTelefonoInfoCentro = view.findViewById<TextView>(R.id.textTelefonoInfoCentro)
-                textTelefonoInfoCentro.text = centro.telefono.toString()
+                textTelefonoInfoCentro.text = centro.telefono
 
                 val btnCerrar = view.findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
                 btnCerrar.setOnClickListener{
+                    context.barraBusqueda.clearFocus()
                     dialog.dismiss()
                 }
                 dialog.setCancelable(false)
                 dialog.setContentView(view)
+                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 dialog.show()
             }
 
         }
     }
 
+    private fun hideKeyboardAndClearFocus() {
+        // Obtener el InputMethodManager
+        val inputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+
+        // Ocultar el teclado
+        currentFocus?.let { focusedView ->
+            inputMethodManager.hideSoftInputFromWindow(
+                focusedView.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
+
+            // Quitar el foco del SearchView
+            barraBusqueda.clearFocus()
+        }
+    }
+
+    private fun actualizarCentros() {
+        listaCentros = centroService.listCentersDetailed() as ArrayList<Centro>
+        adaptadorCentro = AdaptadorCentro(listaCentros)
+
+        val controller = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_right_to_left)
+        centroRV.layoutAnimation = controller
+        adaptadorCentro.notifyDataSetChanged()
+        centroRV.scheduleLayoutAnimation()
+        centroRV.adapter = adaptadorCentro
+    }
+
     private fun filter(text: String){
         val filteredList: ArrayList<Centro> = ArrayList()
 
         for (item in listaCentros){
-            if (item.nombre.lowercase().contains(text.lowercase())){
+            if (item.nombreCentro.lowercase().contains(text.lowercase())){
                 filteredList.add(item)
             }
         }
@@ -140,7 +182,9 @@ class CentrosRegistrados : AppCompatActivity() {
         }
     }
 
-    private fun showToast(msg: String){
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    override fun onRestart() {
+        super.onRestart()
+        actualizarCentros()
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
     }
 }

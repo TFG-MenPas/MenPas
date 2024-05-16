@@ -1,0 +1,112 @@
+{
+	"Preguntas": [
+		{
+			"numero": 2,
+			"pregunta": "Tenso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Inestable.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Con los nervios de punta.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "Asustado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Relajado.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Intranquilo.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Inquieto.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Nervioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		},
+		{
+			"numero": 41,
+			"pregunta": "Ansioso.",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Muy Poco",
+				"Poco",
+				"Mucho",
+				"Muchisimo"
+			]
+		}
+	]
+}

@@ -6,12 +6,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 
-class Autores : AppCompatActivity() {
+class Autores : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_autores)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        barraNavegacionInferior.setBackgroundResource(R.drawable.background_bottom_navigation_bar_left)
         BarraNavegacion(barraNavegacionInferior, this)
 
     }

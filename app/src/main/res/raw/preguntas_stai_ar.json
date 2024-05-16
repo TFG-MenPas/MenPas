@@ -1,0 +1,224 @@
+{
+	"Preguntas": [
+		{
+			"numero": 21,
+			"pregunta": "Me siento bien",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 22,
+			"pregunta": "Me canso rápidamente",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 23,
+			"pregunta": "Siento ganas de llorar",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 24,
+			"pregunta": "Me gustaría ser tan feliz como otros",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 25,
+			"pregunta": "Pierdo oportunidades por no decidirme pronto",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 26,
+			"pregunta": "Me siento descansado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 27,
+			"pregunta": "Soy una persona tranquila, serena, y sosegada",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 28,
+			"pregunta": "Veo que las dificultades se amontonan y no puedo con ellas",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 29,
+			"pregunta": "Me preocupo demasiado por cosas sin importancias",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 30,
+			"pregunta": "Soy feliz",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 31,
+			"pregunta": "Suelo tomar las cosas demasiado seriamente",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 32,
+			"pregunta": "Me falta confianza en mi mismo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 33,
+			"pregunta": "Me siento seguro",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 34,
+			"pregunta": "Evito enfrentarme a las crisis o dificultades",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 35,
+			"pregunta": "Me siento triste (melancólico)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 36,
+			"pregunta": "Estoy satisfecho",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 37,
+			"pregunta": "Me rondan y molestan pensamientos sin importancia",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 38,
+			"pregunta": "Me afectan tanto los desengaños, que no puedo olvidarlos",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 39,
+			"pregunta": "Soy una persona estable",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		},
+		{
+			"numero": 40,
+			"pregunta": "Cuando pienso sobre asuntos y preocupaciones actuales, me pongo tenso y agitado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Casi nunca",
+				"A veces",
+				"A menudo",
+				"Casi siempre"
+			]
+		}
+	]
+}

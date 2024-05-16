@@ -76,19 +76,100 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/textLinkReferencia2"
+                android:id="@+id/textReferencia3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textReferencia2"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="@string/link_segunda_referencia"
+                android:text="@string/tercera_referencia"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textReferencia4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReferencia3"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/cuarta_referencia"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textLinkReferencia4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReferencia4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/link_cuarta_referencia"
                 android:textColorLink="@color/light_blue"
                 android:textSize="14sp"
                 android:textStyle="normal" />
 
+            <TextView
+                android:id="@+id/textReferencia5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textLinkReferencia4"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/quinta_referencia"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
+            <TextView
+                android:id="@+id/textLinkReferencia5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReferencia5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/link_quinta_referencia"
+                android:textColorLink="@color/light_blue"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textReferencia6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textLinkReferencia5"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/sexta_referencia"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textLinkReferencia6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textReferencia6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/link_sexta_referencia"
+                android:textColorLink="@color/light_blue"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
         </RelativeLayout>
     </ScrollView>

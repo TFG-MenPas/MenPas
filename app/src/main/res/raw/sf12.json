@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autores": "Crispin Jenkinson, Richard Layte, Damian Jenkinson, Kate Lawrence, Sophie Petersen, Colin Paice and John Stradling.",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/SF12.pdf"
+		},
+	"instructions": {
+		"Instrucciones": "Las preguntas que siguen se refieren a lo que usted piensa sobre su salud. Sus respuestas permitirán saber como se encuentra usted y hasta qué punto es capaz de hacer sus actividades habituales. Por favor, conteste cada pregunta marcando una casilla. Si no está seguro/a de cómo responder a una pregunta, por favor, conteste lo que le parezca más cierto."
+	},
+	"buttons": {
+		"Realizar cuestionario": "preguntas_sf_12"
+	}
+}

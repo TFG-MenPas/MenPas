@@ -3,6 +3,7 @@ package com.uma.menpas.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
@@ -12,15 +13,17 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.text.Normalizer
+import java.util.Locale
 
 
-class Area : AppCompatActivity() {
+class Area : BaseActivity() {
 
     companion object {
         private const val JSON_RESOURCE_NAME = "areas"
@@ -30,7 +33,8 @@ class Area : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
-        var area = intent.getStringExtra("area").toString()
+        val usuarioDB = UsuarioController().getUsuario(this)
+        val area = intent.getStringExtra("area").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_area)
         window.decorView.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
@@ -40,7 +44,12 @@ class Area : AppCompatActivity() {
         iterateSections(area, getSections(area), linearLayout)
 
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        BarraNavegacion(barraNavegacionInferior, this)
+
+        if(usuarioDB == null){
+            barraNavegacionInferior.visibility = View.GONE
+        }else{
+            BarraNavegacion(barraNavegacionInferior, this)
+        }
     }
 
     private fun drawTitle(area: String) {
@@ -74,8 +83,7 @@ class Area : AppCompatActivity() {
             linearLayout.addView(boton)
             boton.setOnClickListener {
                 val intent = Intent(this, Subarea::class.java)
-                val json_resource = Normalizer.normalize(area.toLowerCase(), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "").replace(" ","_") + "_" + Normalizer.normalize(section.toLowerCase().replace(" ", "_"), Normalizer.Form.NFD).replace("[^\\p{ASCII}]".toRegex(), "")
-                val json_resource_name = json_resource.replace(".", "").replace("-", "")
+                val json_resource_name = section.lowercase().replace(".", "").replace(" ","_").replace("-", "")
                 intent.putExtra("json_resource_name", json_resource_name)
                 intent.putExtra("subarea", section)
                 startActivity(intent)

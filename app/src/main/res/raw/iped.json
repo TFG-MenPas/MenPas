@@ -1,0 +1,12 @@
+{
+	"content": {
+		"Autor": "Hernández Mendo, A. (2006).",
+		"Enlace a documentación": "http://150.214.108.138/menpas/Doc%20PDF/Cuestionario_Evaluacion_Psicologica_Ejecucion_Deportiva.pdf"
+	},
+	"instructions": {
+		"Instrucciones": "A continuación encontrarás una serie de afirmaciones referidas a tus pensamientos, sentimientos, actitudes o comportamientos durante los entrenamientos y/o competencias o partidos. Lee atentamente cada frase y decide la frecuencia con la que crees que se produce cada una de ellas."
+	},
+	"buttons": {
+		"Realizar cuestionario": "preguntas_evaluacion_mental_iped"
+	}
+}

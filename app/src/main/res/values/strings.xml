@@ -89,7 +89,6 @@
     <string name="icono_registrar_centro">icono_registrar_centro</string>
 
 
-
     <!-- Desplegable FAQ -->
     <string name="icono_dudas_y_sugerencias">icono dudas y sugerencias</string>
     <string name="dudas_y_sugerencias">Dudas y sugerencias</string>
@@ -164,8 +163,11 @@
 
     <!--Centros registrados-->
     <string name="centros_registrados">Centros registrados</string>
-    <string name="ver_informacion_del_centro">Ver informacion del centro</string>
+    <string name="ver_informacion_del_centro">Ver información del centro</string>
+    <string name="informacion_del_centro">Información del centro</string>
     <string name="cp">CP:</string>
+    <string name="nombre2puntos">Nombre:</string>
+    <string name="pais2puntos">País:</string>
     <string name="direccion2puntos">Dirección:</string>
     <string name="telefono2puntos">Teléfono:</string>
     <string name="boton_cerrar_desplegable">Boton cerrar desplegable</string>
@@ -192,12 +194,14 @@
 
     <!--Detalles cuestionario-->
     <string name="detalles">Detalles</string>
+    <string name="cuestionario">Cuestionario:</string>
     <string name="categoria">Categoría:</string>
     <string name="tipo">Tipo:</string>
     <string name="fecha">Fecha:</string>
     <string name="tiempo">Tiempo:</string>
     <string name="resultados">Resultados:</string>
     <string name="icono_cerrar">icono_cerrar</string>
+    <string name="texto_de_prueba_cuestionario">Cuestionario</string>
     <string name="texto_de_prueba_categoria">Autoconcepto</string>
     <string name="texto_de_prueba_tipo">AF5</string>
     <string name="texto_de_prueba_fecha">11/02/2023-11:07:32</string>
@@ -206,9 +210,15 @@
 
     <!--Referencias-->
     <string name="primera_referencia">González Ruiz, S. L., Hernández Mendo, A., Pastrana Brincones, J.L. (2010). Herramienta software para la evaluación psicosocial de deportistas y entornos deportivos. Lecturas: EF y Deportes. Revista Digital, 15 (144), mayo.</string>
+    <string name="segunda_referencia">González Ruiz, S. L., Gómez Gallego, I., Pastrana Brincones , J.L., Hernández-Mendo, A. (2015). Algoritmos de clasificación y redes neuronales en la observación automatizada de registros. Cuadernos de Psicología del Deporte, 15(1), 31 -40.</string>
+    <string name="tercera_referencia">González-Ruiz, S.L., Domínguez-Alfonso, R., Chica-Merino, E., Pastrana-Brincones, J.L.;Hernández-Mendo, A. (2018). Una plataforma virtual para la evaluación e investigación on-line: MenPas. Cuadernos de Psicología del Deporte, 18(3), 26-48.</string>
+    <string name="cuarta_referencia">Pastrana JL, Reigal RE, Morales-Sánchez V, Morillo-Baro JP, Juárez-Ruiz de Mier R, Alves J and Hernández-Mendo A (2019) Data Mining in the Mixed Methods: Application to the Study of the Psychological Profiles of Athletes. Front. Psychol. 10:2675.</string>
+    <string name="quinta_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez, V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
+    <string name="sexta_referencia">Reigal, R.E., Pastrana-Brincones, J.L., González-Ruiz, S.L., Hernández-Mendo, A., Morillo-Baro, J. P. and Morales-Sánchez, V. (2020) Use of Data Mining to Determine Usage Patterns of an Online Evaluation Platform During the COVID-19 Pandemic. Front. Psychol. 11:588843.</string>
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
-    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
-    <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    <string name="link_cuarta_referencia"><a href="https://doi.org/10.3389/fpsyg.2019.02675">doi.org</a></string>
+    <string name="link_quinta_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    <string name="link_sexta_referencia"><a href="https://doi.org/10.3389/fpsyg.2020.588843">doi.org</a></string>
 
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
@@ -259,14 +269,14 @@
     <string name="title_activity_prueba">prueba</string>
     <string name="escriba_aqui">Escriba aquí...</string>
 
-    <!--Mondrian Colores-->
+    <!--Modrian Colores-->
     <string name="comenzar">Comenzar</string>
     <string name="cadenaFormato">mm:ss (max 30:00)</string>
     <string name="formato">Formato:</string>
     <string name="hintFormato">mm:ss</string>
     <string name="tiempo_de_espera">Tiempo de espera</string>
     <string name="tiempo_de_realizacion">Tiempo de realización</string>
-    <string name="mondrian_colores">Mondrian Colores</string>
+    <string name="mondrian_colores">Modrian Colores</string>
 
     <!--Test D2-->
     <string name="test_de_atencion_d2">Test de atención d2</string>
@@ -302,6 +312,28 @@
     <string name="blanco">Blanco</string>
     <string name="cyan">Cyan</string>
 
+    <!--Desplegable Fotos-->
+    <string name="elija_una_foto">Elija una foto</string>
 
+    <!--Modrian Stroop-->
+    <string name="modrian_stroop">Modrian Stroop</string>
 
+    <!--Modrian Parejas-->
+    <string name="modrian_parejas">Modrian Parejas</string>
+
+    <!--Modrian Simon Inicio-->
+    <string name="modrian_simon">Modrian Simon</string>
+    <string name="modrian_simon_descripcion">El juego de forma aleatoria va iluminando los cuadrantes de colores.\n\n
+        Después de esperar, el usuario debe ir introduciendo la secuencia mostrada en el orden correcto, ayudándose de su memoria visual.\n\n
+        Si lo consigue, éste responderá con una secuencia más larga, y así sucesivamente. Si falla, el usuario debe volver a empezar y se muestra una tabla con los usuarios que han conseguido un mayor nivel.</string>
+
+    <!--Modrian Simon-->
+    <string name="nivel">Nivel:</string>
+    <string name="segundo">1s</string>
+    <string name="stroop">Efecto Stroop</string>
+    <string name="numero_errores">Número de errores: </string>
+    <string name="numero_errores_omision">Número de errores por omisión: </string>
+    <string name="aciertos">Número de aciertos: </string>
+    <string name="fallos_permitidos">Fallos permitidos</string>
+    <string name="_25_matriz">25% Matriz</string>
 </resources>

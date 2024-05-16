@@ -1,0 +1,224 @@
+{
+	"Preguntas": [
+		{
+			"numero": 1,
+			"pregunta": "Me siento calmado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 2,
+			"pregunta": "Me siento seguro",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 3,
+			"pregunta": "Estoy tenso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 4,
+			"pregunta": "Estoy contrariado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 5,
+			"pregunta": "Me siento cómodo (estoy a gusto)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 6,
+			"pregunta": "Me siento alterado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 7,
+			"pregunta": "Estoy preocupado ahora por posibles desgracias futuras",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 8,
+			"pregunta": "Me siento descansado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 9,
+			"pregunta": "Me siento angustiado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 10,
+			"pregunta": "Me siento confortable",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 11,
+			"pregunta": "Tengo confianza en mi mismo",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 12,
+			"pregunta": "Me siento nervioso",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 13,
+			"pregunta": "Estoy desasosegado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 14,
+			"pregunta": "Me siento muy atado (como oprimido)",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 15,
+			"pregunta": "Estoy relajado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 16,
+			"pregunta": "Me siento satisfecho",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 17,
+			"pregunta": "Estoy preocupado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 18,
+			"pregunta": "Me siento aturdido y sobreexcitado",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 19,
+			"pregunta": "Me siento alegre",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		},
+		{
+			"numero": 20,
+			"pregunta": "En este momento me siento bien",
+			"tipo": "seleccionMultiple",
+			"respuestas": [
+				"Nada",
+				"Algo",
+				"Bastante",
+				"Mucho"
+			]
+		}
+	]
+}
