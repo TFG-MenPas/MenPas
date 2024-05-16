@@ -128,11 +128,7 @@ class EfectoStroopGrid : AppCompatActivity() {
     private fun hasFinished() {
         if (valueAciertos + valueErroresOmision >= intentNumeroPresentaciones) {
             timer.cancel()
-            val dialog = AlertDialog.Builder(this)
-                .setMessage("Test finalizado")
-                .setPositiveButton("Aceptar") {_,_ ->}
-                .create()
-            dialog.show()
+
 
             val respuestasUsuario = arrayListOf(valueAciertos.toString(), valueErrores.toString(), timerTotalTime.toString(),
                 intentColores.size.toString(), intentTipo,intentFondo.toString(), intentTiempoExposicion.toString(),
