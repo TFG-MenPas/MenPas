@@ -24,6 +24,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.Fallos
@@ -47,12 +48,14 @@ class MondrianColoresGrid : BaseActivity() {
     private var blancos: Int = 0
     private var cerrado: Boolean = false
     private lateinit var tamanyoTablero : String
-    private lateinit var usuario: String
+
     private var filas: Int = 0
     private var columnas: Int = 4
     private val JSON_RESOURCE_NAME = "cuestionario_modrian_colores"
     private var longTiempoRealizacion: Long = 0
     private var longTiempoEspera: Long = 0
+
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mondrian_colores_grid)
@@ -68,7 +71,7 @@ class MondrianColoresGrid : BaseActivity() {
         numeroFallosPermitidos = intent.getStringExtra("fallosPermitidos").toString()
         colores = findViewById(R.id.gridColores)
         tamanyoTablero = intent.getStringExtra("tamanyoTablero")!!
-        usuario = intent.getStringExtra("usuario") as String
+
         ajustarTablero()
         for (i in 0 until colores.childCount){
             botonColor = colores.getChildAt(i) as ImageButton
@@ -129,7 +132,7 @@ class MondrianColoresGrid : BaseActivity() {
                                 btnColor.clearAnimation()
                                 dialog.dismiss()
                                 if(blancos == 0){
-                                    finalizarCuestionario(usuario)
+                                    finalizarCuestionario(usuario.toString())
                                 }
                             }else{
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
@@ -139,7 +142,7 @@ class MondrianColoresGrid : BaseActivity() {
                                 if(fallos > limiteFallos){
                                     cerrado = true
                                     showToast("Limite de Fallos Alcanzado")
-                                    finalizarCuestionario(usuario)
+                                    finalizarCuestionario(usuario.toString())
                                     finish()
                                 }
                             }
@@ -216,7 +219,7 @@ class MondrianColoresGrid : BaseActivity() {
                         override fun onFinish() {
                             if(!cerrado){
                                 showToast("Limite de Tiempo Alcanzado")
-                                finalizarCuestionario(usuario)
+                                finalizarCuestionario(usuario.toString())
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                                 cerrado = true
                                 finish()

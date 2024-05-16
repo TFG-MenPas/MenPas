@@ -31,7 +31,6 @@ class EfectoStroop : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_efecto_stroop_configuracion)
-        usuario = intent.getStringExtra("usuario") as String
         checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
         backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
         unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
@@ -172,7 +171,6 @@ class EfectoStroop : BaseActivity() {
                 intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text
                     .substring(26).toInt())
                 intent.putExtra("tiempo", convertTiempoExposicion(textTiempo.text.toString()))
-                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             } else {
                 showToast("Debe seleccionar al menos dos colores")

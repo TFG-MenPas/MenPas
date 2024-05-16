@@ -1,15 +1,19 @@
 package com.uma.menpas.activities
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.CalculoResultados
 import com.uma.menpas.utils.QueryParser
@@ -25,7 +29,6 @@ class EfectoStroopGrid : BaseActivity() {
     lateinit var intentTipo: String
     var intentNumeroPresentaciones: Int = 0
     var intentFondo: Boolean = true
-    lateinit var intentUsuario: String
     
     lateinit var viewShowcase: View
     lateinit var viewTextShowcase: TextView
@@ -34,11 +37,15 @@ class EfectoStroopGrid : BaseActivity() {
     lateinit var viewTextAciertos: TextView
     lateinit var viewTextErrores: TextView
     lateinit var viewTextErroresOmision: TextView
+
+    lateinit var vibrator: Vibrator
     
     var valueRandomColor: Int = 0
     var valueAciertos: Int = 0
     var valueErrores: Int = 0
     var valueErroresOmision: Int = 0
+
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
 
     private fun initIntentParams() {
         intentColores = intent.getStringArrayListExtra("arrayColores")!!
@@ -46,7 +53,7 @@ class EfectoStroopGrid : BaseActivity() {
         intentTiempoExposicion = intent.getLongExtra("tiempo", 1000)
         intentNumeroPresentaciones = intent.getIntExtra("numeroPresentaciones",1)
         intentFondo = intent.getBooleanExtra("fondo", true)
-        intentUsuario = intent.getStringExtra("usuario")!!
+        vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }
 
     private fun initXMLElements() {
@@ -122,17 +129,13 @@ class EfectoStroopGrid : BaseActivity() {
     private fun hasFinished() {
         if (valueAciertos + valueErroresOmision >= intentNumeroPresentaciones) {
             timer.cancel()
-            val dialog = AlertDialog.Builder(this)
-                .setMessage("Test finalizado")
-                .setPositiveButton("Aceptar") {_,_ ->}
-                .create()
-            dialog.show()
+
 
             val respuestasUsuario = arrayListOf(valueAciertos.toString(), valueErrores.toString(), timerTotalTime.toString(),
                 intentColores.size.toString(), intentTipo,intentFondo.toString(), intentTiempoExposicion.toString(),
                 intentNumeroPresentaciones.toString(), valueErroresOmision.toString()) as ArrayList<String>
 
-            val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_stroop", respuestasUsuario, intentUsuario, this)
+            val calculosCuestionario: Map<String, String> = CalculoResultados().calculate("cuestionario_stroop", respuestasUsuario, usuario.toString(), this)
 
             val query = QueryParser().parse("cuestionario_stroop", calculosCuestionario)
 
@@ -157,6 +160,7 @@ class EfectoStroopGrid : BaseActivity() {
 
 
         } else {
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
             generateviewShowcase()
             restartTimer()
         }
@@ -188,6 +192,7 @@ class EfectoStroopGrid : BaseActivity() {
                     viewTextAciertos.text = valueAciertos.toString()
                     hasFinished()
                 } else {
+                    vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                     valueErrores++
                     viewTextErrores.text = valueErrores.toString()
                     showToast("Color incorrecto")

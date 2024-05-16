@@ -20,7 +20,7 @@ class ModrianParejas : BaseActivity() {
     lateinit var botonCerrarCuestionario: ImageButton
     lateinit var numeroFallosPermitidos: TextView
     private lateinit var textOpcionTamanyoTablero: TextView
-    private lateinit var usuario: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modrian_parejas)
@@ -32,7 +32,7 @@ class ModrianParejas : BaseActivity() {
         botonCerrarCuestionario.setOnClickListener {
             finish()
         }
-        usuario = intent.getStringExtra("usuario") as String
+
 
         tiempoRealizacion = findViewById(R.id.editTextTiempoRealizacion)
         botonComenzar = findViewById(R.id.buttonComenzar)
@@ -44,7 +44,7 @@ class ModrianParejas : BaseActivity() {
                 intent.putExtra("longTiempoRealizacion", longTiempoRealizacion)
                 intent.putExtra("fallosPermitidos", numeroFallosPermitidos.text)
                 intent.putExtra("tamanyoTablero", textOpcionTamanyoTablero.text)
-                intent.putExtra("usuario", usuario)
+
                 startActivity(intent)
 
             }else if(!esValido(tiempoRealizacion.text.toString())){
@@ -99,12 +99,13 @@ class ModrianParejas : BaseActivity() {
     }
 
     private fun esValido(tiempo: String): Boolean {
-        if(tiempo.contains(":")){
+        if (tiempo.contains(":")) {
             val minSecArray = tiempo.split(":")
             val min = minSecArray[0]
             val sec = minSecArray[1]
-            return min.length == 2 && sec.length == 2
-        }else{
+            return min.length == 2 && sec.length == 2 &&
+                    ((min[1] < '5') || (min[1] == '5' && sec[0] == '0' && sec[1] == '0')) && sec[0] < '6'
+        } else {
             return false
         }
     }

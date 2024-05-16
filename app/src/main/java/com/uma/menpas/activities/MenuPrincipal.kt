@@ -32,56 +32,48 @@ class MenuPrincipal : BaseActivity() {
         val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        lateinit var usuario: String
-        try {
-            usuario = intent.getStringExtra("usuario") as String
-        } catch (e: java.lang.NullPointerException) {
-            usuario = "user"
-        }
-
-
         textNombreUsuario = findViewById(R.id.textNombreUsuario)
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
 
         BarraNavegacion(barraNavegacionInferior, this)
 
         autorregistro.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         ansiedad.setOnClickListener {
-            abrirArea(it.id,usuario)
+            abrirArea(it.id)
         }
 
         autoconcepto.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         atencion.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
         busqueda_talentos.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         burnout.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         dinamica_grupal.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         calidad_vida.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         inteligencia_emocional.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
         entrenamiento_mental.setOnClickListener {
-            abrirArea(it.id, usuario)
+            abrirArea(it.id)
         }
 
     }
@@ -103,7 +95,7 @@ class MenuPrincipal : BaseActivity() {
         actualizarNombreUsuario()
     }
 
-    fun abrirArea(id: Int, usuario: String) {
+    fun abrirArea(id: Int) {
         val nombre = resources.getResourceName(id).split(":id/")[1]
         val intent = Intent(this, Area::class.java)
         when(nombre){
@@ -118,7 +110,6 @@ class MenuPrincipal : BaseActivity() {
             "inteligencia_emocional" -> intent.putExtra("area", "Inteligencia emocional")
             "entrenamiento_mental" -> intent.putExtra("area", "Entrenamiento mental")
         }
-        intent.putExtra("usuario", usuario)
         startActivity(intent)
     }
 

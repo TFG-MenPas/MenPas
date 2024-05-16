@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.Boton.Companion.deshabilitarBoton
 import com.uma.menpas.utils.Boton.Companion.habilitarBoton
 import org.json.JSONArray
@@ -56,7 +57,7 @@ class CuestionarioDinamico : BaseActivity() {
         botonSiguiente = findViewById(R.id.buttonSiguiente)
         rlDinamico = findViewById(R.id.RLDynamicContent)
         respuestasUsuario = ArrayList()
-        val usuario = intent.getStringExtra("usuario") as String
+        val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
 
         val obj = getJSONObjectFromRaw()
         val preguntas = obj.getJSONArray(JSON_OBJECT_NAME)
@@ -66,7 +67,7 @@ class CuestionarioDinamico : BaseActivity() {
             val tipoPregunta = preguntas.getJSONObject(indicePregunta).getString("tipo")
             guardarRespuesta(tipoPregunta)
             if(indicePregunta == preguntas.length() - 1){
-                this.finalizarCuestionario(usuario)
+                this.finalizarCuestionario(usuario.toString())
             }else{
                 indicePregunta++
                 rellenarPregunta(preguntas)

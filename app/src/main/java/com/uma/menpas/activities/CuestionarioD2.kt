@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.uma.menpas.R
+import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.models.D2
 import com.uma.menpas.models.adapters.AdaptadorD2
 import com.uma.menpas.services.CuestionarioService
@@ -48,11 +49,13 @@ class CuestionarioD2 : BaseActivity() {
     private lateinit var tipoTestD2: String
     private val JSON_RESOURCE_NAME = "cuestionario_d2"
     private lateinit var respuestasUsuario: ArrayList<String>
-    private lateinit var usuario: String
+
     private lateinit var TR1_14: String
     private lateinit var TA1_14: String
     private lateinit var O1_14: String
     private lateinit var C1_14: String
+
+    val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
 
     companion object {
         lateinit var myOnClickListener: myOnClickListener
@@ -70,7 +73,7 @@ class CuestionarioD2 : BaseActivity() {
         TA1_14 = ""
         O1_14 = ""
         C1_14 = ""
-        usuario = intent.getStringExtra("usuario") as String
+
         vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
         progressBar = findViewById(R.id.progressBarCuestionario)
         textProgressBar = findViewById(R.id.numeroPreguntaActual)
@@ -136,7 +139,7 @@ class CuestionarioD2 : BaseActivity() {
                         respuestasUsuario.add(TA1_14.dropLast(1))
                         respuestasUsuario.add(O1_14.dropLast(1))
                         respuestasUsuario.add(C1_14.dropLast(1))
-                        finalizarCuestionario(usuario)
+                        finalizarCuestionario(usuario.toString())
                         crono.stop()
                     }else{
                         listaD2.clear()
