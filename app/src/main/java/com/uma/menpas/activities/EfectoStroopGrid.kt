@@ -36,6 +36,8 @@ class EfectoStroopGrid : AppCompatActivity() {
     lateinit var viewTextAciertos: TextView
     lateinit var viewTextErrores: TextView
     lateinit var viewTextErroresOmision: TextView
+
+    lateinit var vibrator: Vibrator
     
     var valueRandomColor: Int = 0
     var valueAciertos: Int = 0
@@ -43,13 +45,14 @@ class EfectoStroopGrid : AppCompatActivity() {
     var valueErroresOmision: Int = 0
 
     val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
-    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
     private fun initIntentParams() {
         intentColores = intent.getStringArrayListExtra("arrayColores")!!
         intentTipo = intent.getStringExtra("modalidad")!!
         intentTiempoExposicion = intent.getLongExtra("tiempo", 1000)
         intentNumeroPresentaciones = intent.getIntExtra("numeroPresentaciones",1)
         intentFondo = intent.getBooleanExtra("fondo", true)
+        vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }
 
     private fun initXMLElements() {
