@@ -99,12 +99,13 @@ class ModrianParejas : AppCompatActivity() {
     }
 
     private fun esValido(tiempo: String): Boolean {
-        if(tiempo.contains(":")){
+        if (tiempo.contains(":")) {
             val minSecArray = tiempo.split(":")
             val min = minSecArray[0]
             val sec = minSecArray[1]
-            return min.length == 2 && sec.length == 2
-        }else{
+            return min.length == 2 && sec.length == 2 &&
+                    ((min[1] < '5') || (min[1] == '5' && sec[0] == '0' && sec[1] == '0')) && sec[0] < '6'
+        } else {
             return false
         }
     }

@@ -51,9 +51,9 @@ class ModrianFotos : AppCompatActivity() {
                 startActivity(intent)
 
             }else if(!esValido(tiempoRealizacion.text.toString())){
-                showToast("Introduzca un tiempo de realizacion valido")
+                showToast("Introduzca un tiempo de realizacion valido (menor que 5 minutos)")
             }else if(!esValido(tiempoEspera.text.toString())){
-                showToast("Introduzca un tiempo de espera valido")
+                showToast("Introduzca un tiempo de espera valido (menor que 5 minutos)")
             }
 
         }
@@ -120,12 +120,13 @@ class ModrianFotos : AppCompatActivity() {
     }
 
     private fun esValido(tiempo: String): Boolean {
-        if(tiempo.contains(":")){
+        if (tiempo.contains(":")) {
             val minSecArray = tiempo.split(":")
             val min = minSecArray[0]
             val sec = minSecArray[1]
-            return min.length == 2 && sec.length == 2
-        }else{
+            return min.length == 2 && sec.length == 2 &&
+                    ((min[1] < '5') || (min[1] == '5' && sec[0] == '0' && sec[1] == '0')) && sec[0] < '6'
+        } else {
             return false
         }
     }
