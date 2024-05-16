@@ -209,7 +209,6 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
-
         </activity>
         <activity
             android:name=".activities.Novedades"

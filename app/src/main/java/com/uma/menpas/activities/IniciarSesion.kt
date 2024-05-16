@@ -32,13 +32,7 @@ class IniciarSesion : BaseActivity() {
         val editTextUsuario = findViewById<EditText>(R.id.editUsuario)
         val editTextContrasenya= findViewById<EditText>(R.id.editContrasenya)
 
-        val usuarioGuardado = inicioSesionController.getUsuarioGuardado(this)
-        if(usuarioGuardado != null){
-            val usuarioActualizado = inicioSesionController.comprobarUsuario(usuarioGuardado.nombreUsuario, usuarioGuardado.contrasenya)
-            inicioSesionController.guardarUsuario(this, usuarioActualizado!!)
-            intent = Intent(this, MenuPrincipal::class.java)
-            startActivity(intent)
-        }
+        isUsuarioGuardado() // Si está guardado, abre el menu principal
 
         lateinit var intent: Intent
 
@@ -75,6 +69,22 @@ class IniciarSesion : BaseActivity() {
                 SnackBarPersonalizada.mostrarSnack(layout, this.resources.getString(R.string.datos_incorrectos), 2000)
             }
         }
+    }
 
+    override fun onRestart() {
+        isUsuarioGuardado() // Si está guardado, abre el menu principal
+        super.onRestart()
+
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+    }
+
+    private fun isUsuarioGuardado(){
+        val usuarioGuardado = inicioSesionController.getUsuarioGuardado(this)
+        if(usuarioGuardado != null){
+            val usuarioActualizado = inicioSesionController.comprobarUsuario(usuarioGuardado.nombreUsuario, usuarioGuardado.contrasenya)
+            inicioSesionController.guardarUsuario(this, usuarioActualizado!!)
+            intent = Intent(this, MenuPrincipal::class.java)
+            startActivity(intent)
+        }
     }
 }
