@@ -153,10 +153,11 @@ class Subarea : BaseActivity() {
                     val url = "http://150.214.108.138/menpas/Doc%20PDF/SETUP%20PROCESOS%20ATENCIONALES%205.rar"
                     intent.data = Uri.parse(url)
                     startActivity(intent)
+                }else {
+                    startActivity(intent)
                 }
 
-
-                if (btn_value.contentEquals("preguntas_abq",true)) {
+                /*if (btn_value.contentEquals("preguntas_abq",true)) {
                     if (!cuestionarioController.isPreliminarABQRealizado(this)) {
                         Toast.makeText(this, "Es obligatorio haber realizado un preliminar ABQ previamente", Toast.LENGTH_SHORT).show()
                     }else{
@@ -165,6 +166,8 @@ class Subarea : BaseActivity() {
                 }else{
                     startActivity(intent)
                 }
+
+                 */
             }
         }
     }
