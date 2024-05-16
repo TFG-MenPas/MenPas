@@ -18,6 +18,7 @@
         <activity
             android:name=".activities.BaseActivity"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
@@ -31,36 +32,42 @@
         <activity
             android:name=".activities.ModrianSimon"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.ModrianSimonInicio"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.ModrianParejas"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.ModrianParejasGrid"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.ModrianStroop"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.ModrianStroopGrid"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
@@ -74,23 +81,27 @@
         <activity
             android:name=".activities.ModrianFotosGrid"
             android:exported="true"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.EfectoStroop"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.Documentacion"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activities.Areas"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
         </activity>
@@ -167,6 +178,7 @@
         <activity
             android:name=".activities.DetallesCuestionario"
             android:exported="true"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
 
