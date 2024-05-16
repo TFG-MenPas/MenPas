@@ -1,9 +1,12 @@
 package com.uma.menpas.activities
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -40,7 +43,7 @@ class EfectoStroopGrid : AppCompatActivity() {
     var valueErroresOmision: Int = 0
 
     val usuario = UsuarioController().getUsuario(this)?.nombreUsuario
-
+    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     private fun initIntentParams() {
         intentColores = intent.getStringArrayListExtra("arrayColores")!!
         intentTipo = intent.getStringExtra("modalidad")!!
@@ -157,6 +160,7 @@ class EfectoStroopGrid : AppCompatActivity() {
 
 
         } else {
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
             generateviewShowcase()
             restartTimer()
         }
@@ -188,6 +192,7 @@ class EfectoStroopGrid : AppCompatActivity() {
                     viewTextAciertos.text = valueAciertos.toString()
                     hasFinished()
                 } else {
+                    vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
                     valueErrores++
                     viewTextErrores.text = valueErrores.toString()
                     showToast("Color incorrecto")
