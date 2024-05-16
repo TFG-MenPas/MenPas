@@ -31,7 +31,6 @@ class EfectoStroop : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_efecto_stroop_configuracion)
-        usuario = intent.getStringExtra("usuario") as String
         checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
         backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
         unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
