@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.widget.NestedScrollView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
@@ -30,6 +31,7 @@ class MenuPrincipal : BaseActivity() {
         val inteligencia_emocional = findViewById<CardView>(R.id.inteligencia_emocional)
         val entrenamiento_mental = findViewById<CardView>(R.id.entrenamiento_mental)
         val barraNavegacionInferior = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
         lateinit var usuario: String
         try {
             usuario = intent.getStringExtra("usuario") as String
@@ -90,7 +92,9 @@ class MenuPrincipal : BaseActivity() {
 
     override fun onRestart() {
         super.onRestart()
+        resetearScroll()
         actualizarNombreUsuario()
+
         //When BACK BUTTON is pressed, the activity on the stack is restarted
     }
 
@@ -120,5 +124,10 @@ class MenuPrincipal : BaseActivity() {
 
     fun actualizarNombreUsuario() {
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
+    }
+
+    fun resetearScroll(){
+        val scrollView = findViewById<NestedScrollView>(R.id.nestedScrollMenuPrincipal)
+        scrollView.scrollTo(0,0)
     }
 }
