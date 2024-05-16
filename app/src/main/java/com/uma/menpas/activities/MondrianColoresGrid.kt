@@ -9,14 +9,18 @@ import android.os.CountDownTimer
 import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.text.InputType
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.widget.Chronometer
+import android.widget.EditText
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.uma.menpas.R
@@ -28,7 +32,7 @@ import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
 
-class MondrianColoresGrid : AppCompatActivity() {
+class MondrianColoresGrid : BaseActivity() {
     lateinit var colores : GridLayout
     lateinit var botonColor : ImageButton
     lateinit var botonCerrar : ImageButton
@@ -182,10 +186,18 @@ class MondrianColoresGrid : AppCompatActivity() {
 
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
-            cerrado = true
-            cronometro.stop()
-            finish()
+            confirmarSalida()
         }
+
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         object : CountDownTimer(longTiempoEspera, 1000){
             @SuppressLint("SetTextI18n")
@@ -196,7 +208,6 @@ class MondrianColoresGrid : AppCompatActivity() {
             override fun onFinish() {
                 if (!cerrado){
                     activarRealizacionCuestionario()
-                    cronometro.start()
                     textTiempo.text = getString(R.string.tiempo_de_realizacion)
                     vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
                     object : CountDownTimer(longTiempoRealizacion, 1000){
@@ -207,7 +218,6 @@ class MondrianColoresGrid : AppCompatActivity() {
 
                         override fun onFinish() {
                             if(!cerrado){
-                                cronometro.stop()
                                 showToast("Limite de Tiempo Alcanzado")
                                 finalizarCuestionario(usuario.toString())
                                 vibrator.vibrate(VibrationEffect.createOneShot(200,VibrationEffect.DEFAULT_AMPLITUDE))
@@ -347,4 +357,26 @@ class MondrianColoresGrid : AppCompatActivity() {
         return (SystemClock.elapsedRealtime() - cronometro.base) - longTiempoEspera
     }
 
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            cerrado = true
+            finish()
+        }
+    }
 }

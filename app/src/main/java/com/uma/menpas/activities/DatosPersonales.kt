@@ -14,7 +14,7 @@ import com.uma.menpas.R
 import com.uma.menpas.controllers.UsuarioController
 import com.uma.menpas.utils.BarraNavegacion
 
-class DatosPersonales : AppCompatActivity() {
+class DatosPersonales : BaseActivity() {
     val usuarioController = UsuarioController()
     lateinit var textNombreUsuario: TextView
     lateinit var textNombre: TextView
@@ -77,8 +77,15 @@ class DatosPersonales : AppCompatActivity() {
         var editTextDialog = EditText(this)
         editTextDialog.inputType = InputType.TYPE_CLASS_TEXT
 
+        val valorTextoEdicion = when (opcion) {
+            1 -> "el nuevo nombre de usuario"
+            2 -> "el nuevo nombre"
+            3 -> "los nuevos apellidos"
+            else -> "el nuevo valor"
+        }
+
         val alertBuilder = AlertDialog.Builder(this)
-            .setTitle("Introduza el nuevo nombre")
+            .setTitle("Introduza $valorTextoEdicion")
             .setPositiveButton("Guardar", null)
             .setNegativeButton("Cancelar", null)
             .setView(editTextDialog)

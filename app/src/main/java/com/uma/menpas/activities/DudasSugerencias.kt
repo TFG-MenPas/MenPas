@@ -10,7 +10,7 @@ import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.controllers.EmailController
 
-class DudasSugerencias : AppCompatActivity() {
+class DudasSugerencias : BaseActivity() {
 
     private val emailController = EmailController()
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import com.uma.menpas.R
 
-class ModrianSimonInicio : AppCompatActivity() {
+class ModrianSimonInicio : BaseActivity() {
 
     lateinit var botonComenzar : Button
 

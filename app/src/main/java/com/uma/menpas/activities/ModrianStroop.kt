@@ -9,7 +9,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.utils.Tiempo
 
-class ModrianStroop : AppCompatActivity() {
+class ModrianStroop : BaseActivity() {
     lateinit var textOpcion : TextView
     lateinit var seekbar : SeekBar
     lateinit var btnFondo : Button
@@ -50,6 +50,8 @@ class ModrianStroop : AppCompatActivity() {
     private fun InicializarSeekbarFallosPermitidos() {
         numeroFallosPermitidos = findViewById(R.id.numero_fallos_permitidos)
         val seekbarFallosPermitidos: SeekBar = findViewById(R.id.seekbar_fallos_permitidos)
+        seekbarFallosPermitidos.progressDrawable = null
+        seekbarFallosPermitidos.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarFallosPermitidos.progress = 0
         seekbarFallosPermitidos.max = 3
 
@@ -70,6 +72,8 @@ class ModrianStroop : AppCompatActivity() {
     private fun seekbarTamanyoTablero() {
         textOpcionTamanyoTablero = findViewById(R.id.textOpcionTamanyoTablero)
         val seekbarTamanyoTablero: SeekBar = findViewById(R.id.seekbarTamanyoTablero)
+        seekbarTamanyoTablero.progressDrawable = null
+        seekbarTamanyoTablero.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbarTamanyoTablero.progress = 0
         seekbarTamanyoTablero.max = 2
 
@@ -90,16 +94,13 @@ class ModrianStroop : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         refreshButtonDrawables()
-        when(textOpcion.text.toString()){
-            "Congruente" -> seekbar.progress = 0
-            "Incongruente" -> seekbar.progress = 1
-            "Mixto" -> seekbar.progress = 2
-        }
     }
 
     private fun barraModalidad(){
         textOpcion = findViewById(R.id.modalidad_stroop)
         seekbar = findViewById(R.id.seekbar_stroop)
+        seekbar.progressDrawable = null
+        seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
         seekbar.progress = 0
         seekbar.max = 2
 
@@ -107,11 +108,7 @@ class ModrianStroop : AppCompatActivity() {
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> textOpcion.text = respuestas[0]
-                    1 -> textOpcion.text = respuestas[1]
-                    2 -> textOpcion.text = respuestas[2]
-                }
+                textOpcion.text = respuestas[progress]
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}

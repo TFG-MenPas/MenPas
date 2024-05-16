@@ -1,14 +1,17 @@
 package com.uma.menpas.activities
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 
-class EfectoStroop : AppCompatActivity() {
+class EfectoStroop : BaseActivity() {
     lateinit var seekbar: SeekBar
     lateinit var seekbarTiempo: SeekBar
     lateinit var seekbarNumeroPresentaciones: SeekBar
@@ -16,15 +19,34 @@ class EfectoStroop : AppCompatActivity() {
     lateinit var textOpcion: TextView
     lateinit var textTiempo: TextView
     lateinit var textNumeroPresentaciones: TextView
-
-
+    lateinit var btnFondo : Button
+    lateinit var colores : MutableMap<Button,Boolean>
+    private lateinit var checked : Drawable
+    private lateinit var backChecked : Drawable
+    private lateinit var unchecked : Drawable
+    private lateinit var backunChecked : Drawable
+    lateinit var usuario: String
+    private var btnFondoChecked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_efecto_stroop_configuracion)
-
+        usuario = intent.getStringExtra("usuario") as String
+        checked = AppCompatResources.getDrawable(this, R.drawable.icon_checked)!!
+        backChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox_checked)!!
+        unchecked = AppCompatResources.getDrawable(this, R.drawable.icon_unchecked)!!
+        backunChecked = AppCompatResources.getDrawable(this, R.drawable.rounded_checkbox)!!
         botones()
         barraModalidad()
+        val botonCerrar = findViewById<ImageButton>(R.id.imageButtonCerrarDesplegable)
+        botonCerrar.setOnClickListener{
+            finish()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshButtonDrawables()
     }
 
     private fun barraModalidad(){
@@ -35,6 +57,12 @@ class EfectoStroop : AppCompatActivity() {
         seekbar = findViewById(R.id.seekbar_stroop)
         seekbarTiempo = findViewById(R.id.seekbar_tiempo_stroop)
         seekbarNumeroPresentaciones = findViewById(R.id.seekbar_numero_stroop)
+        seekbar.progressDrawable = null
+        seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+        seekbarTiempo.progressDrawable = null
+        seekbarTiempo.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
+        seekbarNumeroPresentaciones.progressDrawable = null
+        seekbarNumeroPresentaciones.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
 
         seekbar.progress = 0
         seekbar.max = 2
@@ -56,17 +84,7 @@ class EfectoStroop : AppCompatActivity() {
         val tiempos = arrayOf("1s", "1.5s", "2s", "2.5s", "3s", "3.5s", "4s", "4.5s", "5s")
         seekbarTiempo.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbarTiempo: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> textTiempo.text = "Tiempo de refresco: " + tiempos[0]
-                    1 -> textTiempo.text = "Tiempo de refresco: " + tiempos[1]
-                    2 -> textTiempo.text = "Tiempo de refresco: " + tiempos[2]
-                    3 -> textTiempo.text = "Tiempo de refresco: " + tiempos[3]
-                    4 -> textTiempo.text = "Tiempo de refresco: " + tiempos[4]
-                    5 -> textTiempo.text = "Tiempo de refresco: " + tiempos[5]
-                    6 -> textTiempo.text = "Tiempo de refresco: " + tiempos[6]
-                    7 -> textTiempo.text = "Tiempo de refresco: " + tiempos[7]
-                    8 -> textTiempo.text = "Tiempo de refresco: " + tiempos[8]
-                }
+                textTiempo.text = "Tiempo de refresco: " + tiempos[progress]
             }
             override fun onStartTrackingTouch(p0: SeekBar?) {}
             override fun onStopTrackingTouch(p0: SeekBar?) {}
@@ -78,36 +96,7 @@ class EfectoStroop : AppCompatActivity() {
             "16","17","18","19","20","25","30","35","40","45","50","75","100",)
         seekbarNumeroPresentaciones.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbarTiempo: SeekBar?, progress: Int, fromUser: Boolean) {
-                when(progress) {
-                    0 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[0]
-                    1 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[1]
-                    2 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[2]
-                    3 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[3]
-                    4 -> textNumeroPresentaciones.text = "Número de presentaciones: "+  numeros[4]
-                    5 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[5]
-                    6 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[6]
-                    7 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[7]
-                    8 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[8]
-                    9 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[9]
-                    10 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[10]
-                    11 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[11]
-                    12 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[12]
-                    13 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[13]
-                    14 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[14]
-                    15 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[15]
-                    16 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[16]
-                    17 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[17]
-                    18 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[18]
-                    19 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[19]
-                    20 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[20]
-                    21 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[21]
-                    22 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[22]
-                    23 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[23]
-                    24 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[24]
-                    25 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[25]
-                    26 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[26]
-                    27 -> textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[27]
-                }
+                textNumeroPresentaciones.text = "Número de presentaciones: " + numeros[progress]
             }
             override fun onStartTrackingTouch(p0: SeekBar?) {}
             override fun onStopTrackingTouch(p0: SeekBar?) {}
@@ -115,29 +104,25 @@ class EfectoStroop : AppCompatActivity() {
     }
 
     private fun botones(){
-        val checked = getDrawable(R.drawable.icon_checked)
-        val backChecked = getDrawable(R.drawable.rounded_checkbox_checked)
-        val unchecked = getDrawable(R.drawable.icon_unchecked)
-        val backunChecked = getDrawable(R.drawable.rounded_checkbox)
         val botonComenzar: Button = findViewById(R.id.buttonSiguiente)
 
-        val btn_fondo : Button = findViewById(R.id.button_fondo)
-        var btnChecked = false
+        btnFondo = findViewById(R.id.button_fondo)
+        btnFondoChecked = false
 
-        val colores = mutableMapOf<Button, Boolean>()
-        colores.put(findViewById(R.id.button_rojo) as Button, true)
-        colores.put(findViewById(R.id.button_marron) as Button, true)
-        colores.put(findViewById(R.id.button_verde) as Button, true)
-        colores.put(findViewById(R.id.button_gris) as Button, true)
-        colores.put(findViewById(R.id.button_azul) as Button, true)
-        colores.put(findViewById(R.id.button_rosa) as Button, true)
-        colores.put(findViewById(R.id.button_amarillo) as Button, true)
-        colores.put(findViewById(R.id.button_violeta) as Button, true)
-        colores.put(findViewById(R.id.button_negro) as Button, true)
-        colores.put(findViewById(R.id.button_fucsia) as Button, true)
-        colores.put(findViewById(R.id.button_naranja) as Button, true)
-        colores.put(findViewById(R.id.button_blanco) as Button, true)
-        colores.put(findViewById(R.id.button_cyan) as Button, true)
+        colores = mutableMapOf()
+        colores[findViewById(R.id.button_rojo)] = true
+        colores[findViewById(R.id.button_marron)] = true
+        colores[findViewById(R.id.button_verde)] = true
+        colores[findViewById(R.id.button_gris)] = true
+        colores[findViewById(R.id.button_azul)] = true
+        colores[findViewById(R.id.button_rosa)] = true
+        colores[findViewById(R.id.button_amarillo)] = true
+        colores[findViewById(R.id.button_violeta)] = true
+        colores[findViewById(R.id.button_negro)] = true
+        colores[findViewById(R.id.button_fucsia)] = true
+        colores[findViewById(R.id.button_naranja)] = true
+        colores[findViewById(R.id.button_blanco)] = true
+        colores[findViewById(R.id.button_cyan)] = true
 
         //Colores
         colores.entries.forEach{
@@ -158,15 +143,15 @@ class EfectoStroop : AppCompatActivity() {
         }
 
         //Fondo
-        btn_fondo.setOnClickListener {
-            if (!btnChecked){
-                btn_fondo.background = backChecked
-                btn_fondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
-                btnChecked = true
+        btnFondo.setOnClickListener {
+            if (!btnFondoChecked){
+                btnFondo.background = backChecked
+                btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+                btnFondoChecked = true
             }else{
-                btn_fondo.background = backunChecked
-                btn_fondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
-                btnChecked = false
+                btnFondo.background = backunChecked
+                btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+                btnFondoChecked = false
             }
         }
 
@@ -182,7 +167,7 @@ class EfectoStroop : AppCompatActivity() {
             }
             if (arrayColores.size >= 2) {
                 intent.putExtra("arrayColores", arrayColores)
-                intent.putExtra("fondo", btnChecked)
+                intent.putExtra("fondo", btnFondoChecked)
                 intent.putExtra("modalidad", textOpcion.text)
                 intent.putExtra("numeroPresentaciones", textNumeroPresentaciones.text
                     .substring(26).toInt())
@@ -211,5 +196,26 @@ class EfectoStroop : AppCompatActivity() {
 
     private fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+    private fun refreshButtonDrawables(){
+        colores.entries.forEach{
+                color ->
+            color.key.background = null
+            if(color.value){
+                color.key.background = backChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+            }else{
+                color.key.background = backunChecked
+                color.key.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+            }
+        }
+        btnFondo.background = null
+        if (btnFondoChecked){
+            btnFondo.background = backChecked
+            btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, checked, null)
+        }else{
+            btnFondo.background = backunChecked
+            btnFondo.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, unchecked, null)
+        }
     }
 }

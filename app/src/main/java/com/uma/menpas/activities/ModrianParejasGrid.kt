@@ -18,6 +18,8 @@ import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.controllers.UsuarioController
@@ -27,7 +29,7 @@ import com.uma.menpas.utils.Fallos
 import com.uma.menpas.utils.QueryParser
 import java.util.concurrent.TimeUnit
 
-class ModrianParejasGrid : AppCompatActivity() {
+class ModrianParejasGrid : BaseActivity() {
 
     lateinit var fotos : GridLayout
     lateinit var botonFoto : ImageButton
@@ -70,9 +72,17 @@ class ModrianParejasGrid : AppCompatActivity() {
         numeroCasillasEliminar = ajustarTablero()
         botonCerrar = findViewById(R.id.imageButtonCerrarDesplegable)
         botonCerrar.setOnClickListener {
-            cerrado = true
-            finish()
+            confirmarSalida()
         }
+        val callback = object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                confirmarSalida()
+            }
+        }
+        onBackPressedDispatcher.addCallback(
+            this,
+            callback
+        )
 
         fotoSeleccionada = ImageButton(this)
         fotoSeleccionada.contentDescription = "-1"
@@ -174,8 +184,6 @@ class ModrianParejasGrid : AppCompatActivity() {
             }
 
         }.start()
-
-
     }
 
     private fun ajustarTablero(): Int {
@@ -306,5 +314,27 @@ class ModrianParejasGrid : AppCompatActivity() {
     }
     private fun elapsedTime(): Long {
         return (SystemClock.elapsedRealtime() - cronometro.base)
+    }
+    private fun confirmarSalida() {
+        val alertBuilder = AlertDialog.Builder(this)
+            .setTitle("¿Seguro que desea salir?")
+            .setPositiveButton("No", null)
+            .setNegativeButton("Si", null)
+
+        val mAlertDialog = alertBuilder.create()
+
+        mAlertDialog.show()
+
+        val botonNo = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        botonNo.setOnClickListener {
+            mAlertDialog.cancel()
+        }
+
+        val botonSi = mAlertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+        botonSi.setOnClickListener {
+            mAlertDialog.cancel()
+            cerrado = true
+            finish()
+        }
     }
 }

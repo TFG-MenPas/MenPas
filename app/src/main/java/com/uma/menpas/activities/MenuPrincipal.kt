@@ -5,12 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.widget.NestedScrollView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 import com.uma.menpas.controllers.MenuPrincipalController
 
-class MenuPrincipal : AppCompatActivity() {
+class MenuPrincipal : BaseActivity() {
     val menuPrincipalController = MenuPrincipalController()
 
     lateinit var textNombreUsuario: TextView
@@ -83,7 +84,9 @@ class MenuPrincipal : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
+        resetearScroll()
         actualizarNombreUsuario()
+
         //When BACK BUTTON is pressed, the activity on the stack is restarted
     }
 
@@ -112,5 +115,10 @@ class MenuPrincipal : AppCompatActivity() {
 
     fun actualizarNombreUsuario() {
         textNombreUsuario.text = menuPrincipalController.getNombre(this).toString()
+    }
+
+    fun resetearScroll(){
+        val scrollView = findViewById<NestedScrollView>(R.id.nestedScrollMenuPrincipal)
+        scrollView.scrollTo(0,0)
     }
 }

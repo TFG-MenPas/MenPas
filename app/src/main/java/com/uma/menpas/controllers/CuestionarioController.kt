@@ -17,4 +17,10 @@ class CuestionarioController {
     fun getCuestionarioById(nombreCuestionario: String, id: String): Map<String, String> {
         return cuestionarioService.getCuestionarioById(nombreCuestionario, id)
     }
+
+    fun isPreliminarABQRealizado(context: Context): Boolean {
+        var listaCuestionarios = getCuestionariosRealizados(context)
+        val isPreliminarRealizado = listaCuestionarios.any {it.nombre.uppercase().contentEquals("DATOSABQ", true)}
+        return isPreliminarRealizado
+    }
 }

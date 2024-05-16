@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uma.menpas.utils.BarraNavegacion
 import com.uma.menpas.R
 
-class FAQ : AppCompatActivity() {
+class FAQ : BaseActivity() {
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<PreguntaFAQ>()
     private lateinit var adapter: AdaptadorPreguntaFAQ
