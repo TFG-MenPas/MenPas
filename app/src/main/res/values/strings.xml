@@ -210,9 +210,15 @@
 
     <!--Referencias-->
     <string name="primera_referencia">González Ruiz, S. L., Hernández Mendo, A., Pastrana Brincones, J.L. (2010). Herramienta software para la evaluación psicosocial de deportistas y entornos deportivos. Lecturas: EF y Deportes. Revista Digital, 15 (144), mayo.</string>
+    <string name="segunda_referencia">González Ruiz, S. L., Gómez Gallego, I., Pastrana Brincones , J.L., Hernández-Mendo, A. (2015). Algoritmos de clasificación y redes neuronales en la observación automatizada de registros. Cuadernos de Psicología del Deporte, 15(1), 31 -40.</string>
+    <string name="tercera_referencia">González-Ruiz, S.L., Domínguez-Alfonso, R., Chica-Merino, E., Pastrana-Brincones, J.L.;Hernández-Mendo, A. (2018). Una plataforma virtual para la evaluación e investigación on-line: MenPas. Cuadernos de Psicología del Deporte, 18(3), 26-48.</string>
+    <string name="cuarta_referencia">Pastrana JL, Reigal RE, Morales-Sánchez V, Morillo-Baro JP, Juárez-Ruiz de Mier R, Alves J and Hernández-Mendo A (2019) Data Mining in the Mixed Methods: Application to the Study of the Psychological Profiles of Athletes. Front. Psychol. 10:2675.</string>
+    <string name="quinta_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez, V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Mondrian Color. Sustainability, 12, 7655.</string>
+    <string name="sexta_referencia">Reigal, R.E., Pastrana-Brincones, J.L., González-Ruiz, S.L., Hernández-Mendo, A., Morillo-Baro, J. P. and Morales-Sánchez, V. (2020) Use of Data Mining to Determine Usage Patterns of an Online Evaluation Platform During the COVID-19 Pandemic. Front. Psychol. 11:588843.</string>
     <string name="link_primera_referencia"><a href="http://www.efdeportes.com/efd144/evaluacion-psicosocial-de-deportistas.htm">efdeportes.com</a></string>
-    <string name="segunda_referencia">Reigal, R.E.; González-Guirval, F.; Pastrana-Brincones, J.L.; González-Ruiz, S.; Hernández-Mendo, A.; Morales-Sánchez,V. (2020). Analysis of Reliability and Generalizability of One Instrument for Assessing Visual Attention Span: MenPas Modrian Color. Sustainability, 12, 7655.</string>
-    <string name="link_segunda_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    <string name="link_cuarta_referencia"><a href="https://doi.org/10.3389/fpsyg.2019.02675">doi.org</a></string>
+    <string name="link_quinta_referencia"><a href="https://www.mdpi.com/2071-1050/12/18/7655">mdpi.com</a></string>
+    <string name="link_sexta_referencia"><a href="https://doi.org/10.3389/fpsyg.2020.588843">doi.org</a></string>
 
     <!--Registro de centro-->
     <string name="registro_de_centro">Registro de centro</string>
