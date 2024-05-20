@@ -223,6 +223,12 @@ class CuestionarioDinamico : BaseActivity() {
         val numeroPregunta =  pregunta.getInt("numero")
         val textoPregunta = pregunta.getString("pregunta")
         val tipoPregunta = pregunta.getString("tipo")
+        val maxInputNumber = if (tipoPregunta!!.contentEquals("textoLibre")
+            && pregunta.getString("input")!!.contentEquals("number")){
+            pregunta.getInt("max")
+        }else{
+            -1
+        }
 
         textTotalNumeroPreguntas.text = numeroTotalPreguntas.toString()
         textNumeroPregunta.text = numeroPregunta.toString()
@@ -231,7 +237,7 @@ class CuestionarioDinamico : BaseActivity() {
         textPregunta.text = textoPregunta
 
         when (tipoPregunta) {
-            "textoLibre" -> rellenarPreguntaTextoLibre(pregunta.getString("input"))
+            "textoLibre" -> rellenarPreguntaTextoLibre(pregunta.getString("input"), maxInputNumber)
             "fecha" -> rellenarPreguntaFecha()
             "siNo" -> rellenarPreguntaSiNo()
             "seleccionMultiple" -> rellenarPreguntaSeleccionMultiple(pregunta.getJSONArray("respuestas"))
@@ -311,7 +317,7 @@ class CuestionarioDinamico : BaseActivity() {
         }
     }
 
-    private fun rellenarPreguntaTextoLibre(input: String) {
+    private fun rellenarPreguntaTextoLibre(input: String, maxInputNumber: Int) {
         actualizarLayout(R.layout.cuestionario_texto_libre)
         val editText : EditText = cuestionarioDinamico.findViewById(R.id.editTextCuestionarioTextoLibre)
         editText.clearComposingText()
@@ -336,10 +342,11 @@ class CuestionarioDinamico : BaseActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(editText.text.toString().trim().isEmpty()){
-                    botonSiguiente.deshabilitarBoton()
-                }else{
-                    botonSiguiente.habilitarBoton()
+                if (editText.text.toString().trim().isEmpty()) botonSiguiente.deshabilitarBoton() //Vacio
+                if (editText.text.toString().trim().isNotEmpty()) botonSiguiente.habilitarBoton() //No vacio
+                if (editText.text.toString().trim().isNotEmpty()){
+                    if (maxInputNumber != -1 && editText.text.trim().toString().toInt() <= maxInputNumber)  botonSiguiente.habilitarBoton() //Dentro del max
+                    if (maxInputNumber != -1 && editText.text.trim().toString().toInt() > maxInputNumber) botonSiguiente.deshabilitarBoton() //Fuera del max
                 }
             }
         })
@@ -435,7 +442,6 @@ class CuestionarioDinamico : BaseActivity() {
             textOpcion.text = numeroSeries
             seekbar.progressDrawable = AppCompatResources.getDrawable(this, R.drawable.seekbar_multichoice)
             seekbar.progress = listaRespuestas.indexOf(numeroSeries)
-            //TODO: respuesas series
             for (i in 0 until numeroSeries.toInt()){
                 val respuestaAtleta = respuestaSeries.split('|')[2*i + 1].toInt()
                 val respuestaEntrenador = respuestaSeries.split('|')[2*i + 2].toInt()
