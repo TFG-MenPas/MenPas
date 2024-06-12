@@ -2,9 +2,10 @@
 	"Preguntas": [
 		{
 			"numero": 1,
-			"pregunta": "AÑOS JUGANDO AL FÚTBOL A NIVEL COMPETITIVO",
+			"pregunta": "AÑOS JUGANDO AL FÚTBOL A NIVEL COMPETITIVO (Max: 50):",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 50
 		},
 		{
 			"numero": 2,
@@ -35,16 +36,18 @@
 		},
 		{
 			"numero": 6,
-			"pregunta": "Nº DE ENTRENAMIENTOS A LA SEMANA:",
+			"pregunta": "Nº DE ENTRENAMIENTOS A LA SEMANA (Max: 14):",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 14
 		},
 
 		{
 			"numero": 7,
-			"pregunta": "DURACIÓN APROXIMADA DE CADA ENTRENAMIENTO EN HORAS:",
+			"pregunta": "DURACIÓN APROXIMADA DE CADA ENTRENAMIENTO EN HORAS (Max: 10):",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 10
 		},
 		{
 			"numero": 8,

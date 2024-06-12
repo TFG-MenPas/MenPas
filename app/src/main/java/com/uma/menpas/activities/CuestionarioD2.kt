@@ -82,7 +82,6 @@ class CuestionarioD2 : BaseActivity() {
 
         botonCerrarCuestionario.setOnClickListener {
             confirmarSalida()
-            finish()
         }
         val callback = object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {

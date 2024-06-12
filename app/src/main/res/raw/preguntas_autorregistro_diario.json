@@ -7,15 +7,17 @@
 		},
 		{
 			"numero": 2,
-			"pregunta": "Peso KG",
+			"pregunta": "Peso KG (Max: 300)",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 300
 		},
 		{
 			"numero": 3,
-			"pregunta": "Horas de sueño",
+			"pregunta": "Horas de sueño (Max: 24)",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 24
 		},
 		{
 			"numero": 4,
@@ -216,9 +218,10 @@
 		},
 		{
 			"numero": 14,
-			"pregunta": "Estatura en metros",
+			"pregunta": "Estatura en metros (Max: 3)",
 			"tipo": "textoLibre",
-			"input": "number"
+			"input": "number",
+			"max": 3
 		}
 	]
 }
