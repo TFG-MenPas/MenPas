@@ -58,9 +58,9 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollModrianParejas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true"
-
+        android:layout_marginBottom="100dp"
         android:layout_below="@id/bannerRectanguloAzul"
         android:background="@color/white">
 

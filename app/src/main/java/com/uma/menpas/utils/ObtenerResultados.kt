@@ -654,7 +654,7 @@ class ObtenerResultados {
 
     private fun obtenerResultadosMPS(calculosCuestionario: Map<String, String>): Map<String, String> {
         val resultadosMostrados: MutableMap<String,String> = mutableMapOf()
-        resultadosMostrados["Preocupación por errores:"] = calculosCuestionario["Preocupaciones"] ?: ""
+        resultadosMostrados["Preocupación por errores:"] = calculosCuestionario["Preocupacion"] ?: ""
         resultadosMostrados["Normas de carácter personal:"] = calculosCuestionario["Normas"] ?: ""
         resultadosMostrados["Expectativas de padres:"] = calculosCuestionario["Expectativas"] ?: ""
         resultadosMostrados["Críticas de padres:"] = calculosCuestionario["Criticas"] ?: ""
