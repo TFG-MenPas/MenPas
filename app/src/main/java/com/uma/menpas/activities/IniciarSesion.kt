@@ -1,22 +1,17 @@
 package com.uma.menpas.activities
 
 import android.content.Intent
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.room.Room
-import com.google.android.material.snackbar.Snackbar
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.uma.menpas.R
-import com.uma.menpas.controllers.CuestionarioController
 import com.uma.menpas.controllers.InicioSesionController
-import com.uma.menpas.models.Usuario
-import com.uma.menpas.room.UsuarioDB
 import com.uma.menpas.utils.SnackBarPersonalizada
-import java.time.LocalDateTime
 
 class IniciarSesion : BaseActivity() {
     private val inicioSesionController = InicioSesionController()
@@ -37,8 +32,9 @@ class IniciarSesion : BaseActivity() {
         lateinit var intent: Intent
 
         textOlvidar.setOnClickListener {
-            intent = Intent(this, RecuperarContrasenya::class.java)
-            startActivity(intent)
+            val uriUrl = Uri.parse("http://150.214.108.138/menpas/Usuarios/RecuperarUsuarioClave.aspx")
+            val launchBrowser = Intent(Intent.ACTION_VIEW, uriUrl)
+            startActivity(launchBrowser)
         }
 
         textRegistrar.setOnClickListener {
