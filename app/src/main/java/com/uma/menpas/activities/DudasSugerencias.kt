@@ -29,15 +29,27 @@ class DudasSugerencias : BaseActivity() {
         BarraNavegacion(barraNavegacionInferior, this)
 
         buttonEnviar.setOnClickListener {
-            if (emailController.enviarDudaSugerencia(editNombre.text.toString(),
-                    editCorreo.text.toString(),
-                    editMensaje.text.toString(),
-                    editAsunto.text.toString())) {
-                Toast.makeText(this, "Enviado con exito", Toast.LENGTH_SHORT).show()
-                finish()
-            } else {
-                Toast.makeText(this, "Error al enviar el mensaje", Toast.LENGTH_SHORT).show()
+            val nombre = editNombre.text.toString()
+            val correo = editCorreo.text.toString()
+            val mensaje = editMensaje.text.toString()
+            val asunto = editAsunto.text.toString()
+            if(sonValidosYNoVacios(nombre, correo, mensaje, asunto)){
+                if (emailController.enviarDudaSugerencia(nombre,
+                        correo,
+                        mensaje,
+                        asunto)) {
+                    Toast.makeText(this, "Enviado con exito", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, "Error al enviar el mensaje", Toast.LENGTH_SHORT).show()
+                }
+            }else{
+                Toast.makeText(this, "Uno o varios campos están incompletos", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun sonValidosYNoVacios(nombre: String, correo: String, mensaje: String, asunto: String): Boolean {
+        return nombre.isNotBlank() && correo.isNotBlank() && mensaje.isNotBlank() && asunto.isNotBlank()
     }
 }

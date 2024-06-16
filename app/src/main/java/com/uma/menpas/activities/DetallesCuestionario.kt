@@ -50,12 +50,17 @@ class DetallesCuestionario : BaseActivity() {
 
        val callback = object: OnBackPressedCallback(true){
            override fun handleOnBackPressed() {
-               val intent: Intent = if(usuarioDB == null){
-                   Intent(this@DetallesCuestionario, IniciarSesion::class.java)
+               if(isResultado) {
+                   val intent: Intent = if(usuarioDB == null){
+                       Intent(this@DetallesCuestionario, IniciarSesion::class.java)
+                   }else{
+                       Intent(this@DetallesCuestionario, MenuPrincipal::class.java)
+                   }
+                   startActivity(intent)
                }else{
-                   Intent(this@DetallesCuestionario, MenuPrincipal::class.java)
+                   finish()
                }
-               startActivity(intent)
+
            }
        }
         onBackPressedDispatcher.addCallback(

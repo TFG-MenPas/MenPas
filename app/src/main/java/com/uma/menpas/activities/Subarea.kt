@@ -157,7 +157,7 @@ class Subarea : BaseActivity() {
                     startActivity(intent)
                 }
 
-                /*if (btn_value.contentEquals("preguntas_abq",true)) {
+                if (btn_value.contentEquals("preguntas_abq",true)) {
                     if (!cuestionarioController.isPreliminarABQRealizado(this)) {
                         Toast.makeText(this, "Es obligatorio haber realizado un preliminar ABQ previamente", Toast.LENGTH_SHORT).show()
                     }else{
@@ -166,8 +166,6 @@ class Subarea : BaseActivity() {
                 }else{
                     startActivity(intent)
                 }
-
-                 */
             }
         }
     }

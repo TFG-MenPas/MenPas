@@ -84,7 +84,7 @@
                     android:contentDescription="amarillo" />
                 <ImageButton
                     android:id="@+id/color10"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -92,7 +92,7 @@
                     android:contentDescription="marrón" />
                 <ImageButton
                     android:id="@+id/color11"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -101,7 +101,7 @@
 
                 <ImageButton
                     android:id="@+id/color12"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:contentDescription="rosa"
@@ -109,7 +109,7 @@
                     android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color13"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:contentDescription="violeta"
@@ -117,7 +117,7 @@
                     android:layout_margin="10dp" />
                 <ImageButton
                     android:id="@+id/color20"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -125,7 +125,7 @@
                     android:contentDescription="negro" />
                 <ImageButton
                     android:id="@+id/color21"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -133,7 +133,7 @@
                     android:contentDescription="naranja" />
                 <ImageButton
                     android:id="@+id/color22"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -141,7 +141,7 @@
                     android:contentDescription="cyan" />
                 <ImageButton
                     android:id="@+id/color23"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:layout_columnWeight="3"
@@ -149,7 +149,7 @@
                     android:contentDescription="fucsia" />
                 <ImageButton
                     android:id="@+id/color40"
-                    android:layout_width="48dp"
+                    android:layout_width="68dp"
                     android:layout_height="48dp"
                     android:background="@drawable/grid_button_colores"
                     android:contentDescription="blanco"

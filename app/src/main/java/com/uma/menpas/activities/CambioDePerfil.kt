@@ -30,20 +30,37 @@ class CambioDePerfil : BaseActivity() {
         val editTextobservaciones = findViewById<EditText>(R.id.editTextObservaciones)
 
         buttonEnviar.setOnClickListener {
-            if(emailController.enviarSolicitudAdministrador(this,
-                editTextCuestionariosNecesarios.text.toString(),
-                editTextTituloInvestigacion.text.toString(),
-                editTextEstimacionParticipantes.text.toString(),
-                editTextDuracionEstimada.text.toString(),
-                editTextTipoPublicacion.text.toString(),
-                editTextMotivo.text.toString(),
-                editTextobservaciones.text.toString())) {
-                Toast.makeText(applicationContext, "Solicitud enviada con éxito", Toast.LENGTH_SHORT)
+            val cuestionariosNecesarios = editTextCuestionariosNecesarios.text.toString()
+            val tituloInvestigacion = editTextTituloInvestigacion.text.toString()
+            val estimacionParticipantes = editTextEstimacionParticipantes.text.toString()
+            val duracionEstimada = editTextDuracionEstimada.text.toString()
+            val tipoPublicacion = editTextTipoPublicacion.text.toString()
+            val motivo = editTextMotivo.text.toString()
+            val observaciones = editTextobservaciones.text.toString()
+            if(sonValidosYNoVacios(listOf(cuestionariosNecesarios, tituloInvestigacion, estimacionParticipantes, duracionEstimada, tipoPublicacion, motivo, observaciones))){
+                if(emailController.enviarSolicitudAdministrador(this,
+                        cuestionariosNecesarios,
+                        tituloInvestigacion,
+                        estimacionParticipantes,
+                        duracionEstimada,
+                        tipoPublicacion,
+                        motivo,
+                        observaciones)) {
+                    Toast.makeText(applicationContext, "Solicitud enviada con éxito", Toast.LENGTH_SHORT)
+                        .show()
+                    finish()
+                }else {
+                    Toast.makeText(applicationContext, "Error al enviar la solicitud", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } else {
+                Toast.makeText(applicationContext, "Uno o varios campos están incompletos", Toast.LENGTH_SHORT)
                     .show()
-                finish()
             }
-            Toast.makeText(applicationContext, "Error al enviar la solicitud", Toast.LENGTH_SHORT)
-                .show()
         }
+    }
+
+    private fun sonValidosYNoVacios(listaString: List<String>): Boolean {
+        return listaString.all { it.isNotBlank() }
     }
 }

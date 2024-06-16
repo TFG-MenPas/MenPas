@@ -1,6 +1,5 @@
 package com.uma.menpas.services
 
-import android.util.Log
 import com.uma.menpas.network.PeticionSOAP
 import com.uma.menpas.network.SoapBuilder
 
@@ -44,13 +43,23 @@ class EmailService {
     private fun enviarCorreo(asunto: String, mensaje: String): Boolean {
         val request = SoapBuilder.createSoapObject("sendEmail")
 
-        request.addProperty("Para", "miguelangelcabanillassilva@gmail.com")
-        request.addProperty("CCO", "miguelangelcabanillassilva32131@gmail.com")
+        val menpasmail = obtenerMenpasMail()
+
+        request.addProperty("Para", menpasmail)
+        request.addProperty("CCO", "")
         request.addProperty("asunto", asunto)
         request.addProperty("cuerpo", mensaje)
 
         val response = PeticionSOAP.enviarPeticion(request)
 
         return SoapBuilder.soapObjectABoolean(response)
+    }
+
+    private fun obtenerMenpasMail(): String {
+        val request = SoapBuilder.createSoapObject("MenPasMail")
+
+        val response = PeticionSOAP.enviarPeticion(request)
+
+        return response.getProperty(0).toString()
     }
 }
