@@ -152,6 +152,7 @@ class ModrianParejasGrid : BaseActivity() {
                             aciertos+=2
                             blancos-=2
                             if(blancos == 0){
+                                cerrado = true
                                 finalizarCuestionario(usuario.toString())
                             }
                         }

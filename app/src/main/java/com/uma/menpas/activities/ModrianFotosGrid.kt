@@ -119,6 +119,7 @@ class ModrianFotosGrid : BaseActivity() {
                                 btnFoto.clearAnimation()
                                 dialog.dismiss()
                                 if (blancos == 0) {
+                                    cerrado = true
                                     finalizarCuestionario(usuario.toString())
                                 }
                             }else{
