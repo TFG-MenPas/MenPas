@@ -31,7 +31,7 @@
 		},
 		{
 			"numero": 6,
-			"pregunta": "Número de Series",
+			"pregunta": "Número de Series (deslizar hacia abajo para ver todas las respuestas)",
 			"tipo": "seleccionMultipleSeries",
 			"respuestas": [
 				"1",
