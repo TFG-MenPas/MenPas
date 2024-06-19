@@ -219,6 +219,8 @@ class ObtenerResultados {
         val imc = calcularIMC(calculosCuestionario["Peso"]?.replace("'", "")?.toDouble() ?: 0.0,
             calculosCuestionario["Estatura"]?.replace("'", "")?.toDouble() ?: 0.0)
 
+        val imcRounded = String.format("%.4f", imc).toDouble()
+
         resultadosMostrados["Día:"] = calculosCuestionario["Dia"] ?: ""
         resultadosMostrados["Peso (kg):"] = calculosCuestionario["Peso"] ?: ""
         resultadosMostrados["Horas de sueño:"] = calculosCuestionario["HorasSueño"] ?: ""
@@ -233,7 +235,7 @@ class ObtenerResultados {
         resultadosMostrados["Intensidad del ejercicio:"] = calculosCuestionario["I_Ejercicio"] ?: ""
         resultadosMostrados["Eventos destacados del día:"] = calculosCuestionario["EventoDestacado"] ?: ""
         resultadosMostrados["Estatura (m):"] = calculosCuestionario["Estatura"] ?: ""
-        resultadosMostrados["IMC:"] = imc.toString()
+        resultadosMostrados["IMC:"] = imcRounded.toString()
         resultadosMostrados["nombreCuestionario"] = "Autorregistro diario"
         resultadosMostrados["categoria"] = "Autoregistros"
         return resultadosMostrados.toMap()

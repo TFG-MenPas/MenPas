@@ -7,9 +7,9 @@
 		},
 		{
 			"numero": 2,
-			"pregunta": "Peso KG (Max: 300)",
+			"pregunta": "Peso KG (Max: 300, use punto para separar decimales)",
 			"tipo": "textoLibre",
-			"input": "number",
+			"input": "decimal",
 			"max": 300
 		},
 		{
@@ -218,9 +218,9 @@
 		},
 		{
 			"numero": 14,
-			"pregunta": "Estatura en metros (Max: 3)",
+			"pregunta": "Estatura en metros (Max: 3, use punto para separar decimales)",
 			"tipo": "textoLibre",
-			"input": "number",
+			"input": "decimal",
 			"max": 3
 		}
 	]
