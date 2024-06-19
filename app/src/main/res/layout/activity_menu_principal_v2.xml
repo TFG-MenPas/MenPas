@@ -83,6 +83,64 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ansiedad"
+                android:layout_gravity="center"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="30dp"
+                android:translationZ="5dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ansiedad"
+                    android:textColor="@color/dark_blue"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="20dp"/>
+                <ImageView
+                    android:id="@+id/art_ansiedad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:src="@drawable/art_ansiedad" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/atencion"
+                android:layout_gravity="center"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="30dp"
+                android:translationZ="5dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/atencion"
+                    android:textColor="@color/dark_blue"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/art_atencion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:src="@drawable/art_atencion" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/autorregistro"
                 android:layout_gravity="center"
                 android:layout_width="170dp"
@@ -146,6 +204,35 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/burnout"
+                android:layout_gravity="center"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="30dp"
+                android:translationZ="5dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/burnout"
+                    android:textColor="@color/dark_blue"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/art_burnout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:src="@drawable/art_burnout" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/busqueda_talentos"
                 android:layout_gravity="center"
                 android:layout_width="170dp"
@@ -172,148 +259,6 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30dp"
                     android:src="@drawable/art_busquedatalentos" />
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/dinamicagrupal"
-                android:layout_gravity="center"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                card_view:cardBackgroundColor="@color/white"
-                card_view:cardCornerRadius="30dp"
-                android:translationZ="5dp"
-                android:layout_marginBottom="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dinamica_grupal"
-                    android:textColor="@color/dark_blue"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="17sp"/>
-                <ImageView
-                    android:id="@+id/art_dinamicagrupal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="30dp"
-                    android:src="@drawable/art_dinamicagrupal" />
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/inteligencia_emocional"
-                android:layout_gravity="center"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                card_view:cardBackgroundColor="@color/white"
-                card_view:cardCornerRadius="30dp"
-                android:translationZ="5dp"
-                android:layout_marginBottom="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/inteligencia_emocional"
-                    android:textColor="@color/dark_blue"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="13sp"/>
-                <ImageView
-                    android:id="@+id/art_inteligenciaemocional"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="30dp"
-                    android:src="@drawable/art_inteligenciaemocional" />
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/ansiedad"
-                android:layout_gravity="center"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                card_view:cardBackgroundColor="@color/white"
-                card_view:cardCornerRadius="30dp"
-                android:translationZ="5dp"
-                android:layout_marginBottom="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ansiedad"
-                    android:textColor="@color/dark_blue"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="20dp"/>
-                <ImageView
-                    android:id="@+id/art_ansiedad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="40dp"
-                    android:src="@drawable/art_ansiedad" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/atencion"
-                android:layout_gravity="center"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                card_view:cardBackgroundColor="@color/white"
-                card_view:cardCornerRadius="30dp"
-                android:translationZ="5dp"
-                android:layout_marginBottom="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/atencion"
-                    android:textColor="@color/dark_blue"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="20sp"/>
-                <ImageView
-                    android:id="@+id/art_atencion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="40dp"
-                    android:src="@drawable/art_atencion" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/burnout"
-                android:layout_gravity="center"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                card_view:cardBackgroundColor="@color/white"
-                card_view:cardCornerRadius="30dp"
-                android:translationZ="5dp"
-                android:layout_marginBottom="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/burnout"
-                    android:textColor="@color/dark_blue"
-                    android:textAlignment="center"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="20sp"/>
-                <ImageView
-                    android:id="@+id/art_burnout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="30dp"
-                    android:src="@drawable/art_burnout" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -350,6 +295,35 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/dinamicagrupal"
+                android:layout_gravity="center"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="30dp"
+                android:translationZ="5dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dinamica_grupal"
+                    android:textColor="@color/dark_blue"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="17sp"/>
+                <ImageView
+                    android:id="@+id/art_dinamicagrupal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:src="@drawable/art_dinamicagrupal" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/entrenamiento_mental"
                 android:layout_gravity="center"
                 android:layout_width="170dp"
@@ -375,6 +349,36 @@
                     android:paddingTop="30dp"
                     android:src="@drawable/art_entrenamientomental" />
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/inteligencia_emocional"
+                android:layout_gravity="center"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="30dp"
+                android:translationZ="5dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inteligencia_emocional"
+                    android:textColor="@color/dark_blue"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="13sp"/>
+                <ImageView
+                    android:id="@+id/art_inteligenciaemocional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:src="@drawable/art_inteligenciaemocional" />
+            </androidx.cardview.widget.CardView>
+
         </GridLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -384,4 +388,5 @@
         layout="@layout/menu_navegacion_inferior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 </RelativeLayout>

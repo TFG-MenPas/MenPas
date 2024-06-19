@@ -4,8 +4,10 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputFilter
 import android.text.InputType
 import android.text.TextWatcher
+import android.text.method.DigitsKeyListener
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.*
@@ -14,17 +16,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import com.uma.menpas.R
 import com.uma.menpas.controllers.UsuarioController
+import com.uma.menpas.services.CuestionarioService
 import com.uma.menpas.utils.Boton.Companion.deshabilitarBoton
 import com.uma.menpas.utils.Boton.Companion.habilitarBoton
+import com.uma.menpas.utils.CalculoResultados
+import com.uma.menpas.utils.QueryParser
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import kotlin.collections.ArrayList
-import com.uma.menpas.utils.QueryParser
-import com.uma.menpas.utils.CalculoResultados
-import com.uma.menpas.services.CuestionarioService
+
 
 class CuestionarioDinamico : BaseActivity() {
     lateinit var botonAnterior : RelativeLayout
@@ -327,6 +329,21 @@ class CuestionarioDinamico : BaseActivity() {
             "tiempo" -> editText.inputType = InputType.TYPE_CLASS_DATETIME
             "texto" -> editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
             "number" -> editText.inputType = InputType.TYPE_CLASS_NUMBER
+            "decimal" -> {
+                editText.setKeyListener(DigitsKeyListener.getInstance("0123456789."))
+
+                val filter = InputFilter { source, start, end, dest, dstart, dend ->
+                    for (i in start until end) {
+                        val c = source[i]
+                        if (!Character.isDigit(c) && c != '.') {
+                            return@InputFilter ""
+                        }
+                    }
+                    null
+                }
+
+                editText.filters = arrayOf(filter)
+            }
         }
         if(respuestasUsuario.elementAtOrNull(indicePregunta) != null){
             editText.setText(respuestasUsuario[indicePregunta])
