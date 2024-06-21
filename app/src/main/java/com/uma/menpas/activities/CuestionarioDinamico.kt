@@ -368,10 +368,6 @@ class CuestionarioDinamico : BaseActivity() {
                     ) botonSiguiente.habilitarBoton() //No vacio
                     if (editText.text.toString().trim().isNotEmpty()) {
                         if(input.equals("number")) {
-                            val esMenor = editText.text.trim().toString().toInt() <= maxInputNumber
-                            println("MAXINPUTNUMBER " + maxInputNumber)
-                            println("INPUT " + editText.text.trim().toString().toInt())
-                            println("ESMENOR " + esMenor)
                             if (maxInputNumber != -1 && editText.text.trim().toString()
                                     .toInt() <= maxInputNumber
                             ) botonSiguiente.habilitarBoton() //Dentro del max
@@ -379,11 +375,7 @@ class CuestionarioDinamico : BaseActivity() {
                                     .toInt() > maxInputNumber
                             ) botonSiguiente.deshabilitarBoton() //Fuera del max
                         }else if(input.equals("decimal")){
-                            println("MAXINPUTNUMBER " + maxInputNumber.toDouble())
                             val input = editText.text.trim().toString().toDouble()
-                            println("INPUT " + input)
-                            val esMenor = input <= maxInputNumber.toDouble()
-                            println("ESMENOR " + esMenor)
                             if (maxInputNumber != -1 && input <= maxInputNumber.toDouble()
                             ) botonSiguiente.habilitarBoton() //Dentro del max
                             if (maxInputNumber != -1 && input > maxInputNumber.toDouble()
