@@ -167,7 +167,7 @@ class ObtenerResultados {
         resultadosMostrados["Situación y conducta posterior:"] = calculosCuestionario["Conducta_Posterior"] ?: ""
         resultadosMostrados["El pensamiento positivo debe ser..."] = calculosCuestionario["Pensamiento_Positivo"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autorregistro pensamientos negativos y verbalizaciones"
-        resultadosMostrados["categoria"] = "Autoregistros"
+        resultadosMostrados["categoria"] = "Autorregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -185,7 +185,7 @@ class ObtenerResultados {
         resultadosMostrados["Cuestión 9:"] = calculosCuestionario["campo9"] ?: ""
         resultadosMostrados["Cuestión 10:"] = calculosCuestionario["campo10"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autorregistro libre"
-        resultadosMostrados["categoria"] = "Autoregistros"
+        resultadosMostrados["categoria"] = "Autorregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -198,7 +198,7 @@ class ObtenerResultados {
         resultadosMostrados["Deporte practicado:"] = calculosCuestionario["Deporte"] ?: ""
         resultadosMostrados["Metas:"] = calculosCuestionario["Objetivo"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Adecuación autovalorativa del entrenamiento"
-        resultadosMostrados["categoria"] = "Autoregistros"
+        resultadosMostrados["categoria"] = "Autorregistros"
 
         var contadorSeries = 1
 
@@ -237,7 +237,7 @@ class ObtenerResultados {
         resultadosMostrados["Estatura (m):"] = calculosCuestionario["Estatura"] ?: ""
         resultadosMostrados["IMC:"] = imcRounded.toString()
         resultadosMostrados["nombreCuestionario"] = "Autorregistro diario"
-        resultadosMostrados["categoria"] = "Autoregistros"
+        resultadosMostrados["categoria"] = "Autorregistros"
         return resultadosMostrados.toMap()
     }
 
@@ -542,7 +542,7 @@ class ObtenerResultados {
         resultadosMostrados["Comida y bebida (tipo y cantidad):"] = calculosCuestionario["Comida_tipo"] ?: ""
         resultadosMostrados["Comida y bebida (calorías apróx.):"] = calculosCuestionario["Calorias"] ?: ""
         resultadosMostrados["nombreCuestionario"] = "Autoregistro comida y bebida"
-        resultadosMostrados["categoria"] = "Autoregistros"
+        resultadosMostrados["categoria"] = "Autorregistros"
 
         return resultadosMostrados.toMap()
     }

@@ -32,7 +32,8 @@ class DetallesCuestionario : BaseActivity() {
         val bundle = intent.extras
         val calculosCuestionario = bundle?.keySet()?.associateWith { bundle.getString(it) }
 
-        val isResultado = intent.getBooleanExtra("isResultado",false)
+        val isResultado = intent.getStringExtra("isResultado").equals("true")
+
         val jsonResourceName = intent.getStringExtra("jsonResourceName") ?: ""
 
         val resultadosObtenidos: Map<String,String> = ObtenerResultados().obtenerResultados(jsonResourceName,

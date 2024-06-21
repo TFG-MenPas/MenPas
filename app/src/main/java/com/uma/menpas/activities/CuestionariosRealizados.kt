@@ -89,7 +89,7 @@ class CuestionariosRealizados : BaseActivity() {
             val intent = Intent(context, DetallesCuestionario::class.java)
             intent.putExtras(bundle)
             intent.putExtra("jsonResourceName", cuestionarioJsonResourceName)
-            intent.putExtra("isResultado",false)
+            intent.putExtra("isResultado","false")
             context.startActivity(intent)
         }
     }
