@@ -128,7 +128,7 @@ class CuestionarioDinamico : BaseActivity() {
             val intent = Intent(this, DetallesCuestionario::class.java)
             intent.putExtras(bundle)
             intent.putExtra("jsonResourceName",JSON_RESOURCE_NAME)
-            intent.putExtra("isResultado",true)
+            intent.putExtra("isResultado","true")
             startActivity(intent)
         }
     }
@@ -226,7 +226,7 @@ class CuestionarioDinamico : BaseActivity() {
         val textoPregunta = pregunta.getString("pregunta")
         val tipoPregunta = pregunta.getString("tipo")
         val maxInputNumber = if (tipoPregunta!!.contentEquals("textoLibre")
-            && pregunta.getString("input")!!.contentEquals("number")){
+            && (pregunta.getString("input")!!.contentEquals("number") || pregunta.getString("input")!!.contentEquals("decimal")) ){
             pregunta.getInt("max")
         }else{
             -1
@@ -359,12 +359,38 @@ class CuestionarioDinamico : BaseActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (editText.text.toString().trim().isEmpty()) botonSiguiente.deshabilitarBoton() //Vacio
-                if (editText.text.toString().trim().isNotEmpty()) botonSiguiente.habilitarBoton() //No vacio
-                if (editText.text.toString().trim().isNotEmpty()){
-                    if (maxInputNumber != -1 && editText.text.trim().toString().toInt() <= maxInputNumber)  botonSiguiente.habilitarBoton() //Dentro del max
-                    if (maxInputNumber != -1 && editText.text.trim().toString().toInt() > maxInputNumber) botonSiguiente.deshabilitarBoton() //Fuera del max
-                }
+
+                    if (editText.text.toString().trim()
+                            .isEmpty()
+                    ) botonSiguiente.deshabilitarBoton() //Vacio
+                    if (editText.text.toString().trim()
+                            .isNotEmpty()
+                    ) botonSiguiente.habilitarBoton() //No vacio
+                    if (editText.text.toString().trim().isNotEmpty()) {
+                        if(input.equals("number")) {
+                            val esMenor = editText.text.trim().toString().toInt() <= maxInputNumber
+                            println("MAXINPUTNUMBER " + maxInputNumber)
+                            println("INPUT " + editText.text.trim().toString().toInt())
+                            println("ESMENOR " + esMenor)
+                            if (maxInputNumber != -1 && editText.text.trim().toString()
+                                    .toInt() <= maxInputNumber
+                            ) botonSiguiente.habilitarBoton() //Dentro del max
+                            if (maxInputNumber != -1 && editText.text.trim().toString()
+                                    .toInt() > maxInputNumber
+                            ) botonSiguiente.deshabilitarBoton() //Fuera del max
+                        }else if(input.equals("decimal")){
+                            println("MAXINPUTNUMBER " + maxInputNumber.toDouble())
+                            val input = editText.text.trim().toString().toDouble()
+                            println("INPUT " + input)
+                            val esMenor = input <= maxInputNumber.toDouble()
+                            println("ESMENOR " + esMenor)
+                            if (maxInputNumber != -1 && input <= maxInputNumber.toDouble()
+                            ) botonSiguiente.habilitarBoton() //Dentro del max
+                            if (maxInputNumber != -1 && input > maxInputNumber.toDouble()
+                            ) botonSiguiente.deshabilitarBoton() //Fuera del max
+                        }
+                    }
+
             }
         })
     }
